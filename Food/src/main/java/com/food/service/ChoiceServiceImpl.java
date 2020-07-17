@@ -11,7 +11,7 @@ import com.food.domain.ChoiceMenuVO;
 
 
 
-@Service("choiceService")
+@Service("Cservice")
 public class ChoiceServiceImpl implements ChoiceService{
 	
 	@Autowired
