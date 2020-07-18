@@ -6,9 +6,8 @@
 
 	<!-- Alias 설정 -->
 	<typeAliases>
-	
 		<typeAlias alias="choice" type="com.food.domain.ChoiceMenuVO"/>	
-		
+		<typeAlias alias="member" type="com.food.domain.MemberVO"/>	
 	</typeAliases>
 
 
