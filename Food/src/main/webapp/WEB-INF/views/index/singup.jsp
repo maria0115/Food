@@ -13,7 +13,7 @@
 
 <!-- Title -->
 <title>회원 가입</title>
-
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Favicon -->
 <link rel="icon" href="img/core-img/favicon.ico">
 <link rel="stylesheet" href="resources/css/singup.css">
@@ -80,14 +80,14 @@
       <form method="POST" >
       <!-- 아이디 -->
      
-         <label >아이디</label> <input type="text"
-            class="sing" id="id" name="id" placeholder="ID"
+         <label for="id">아이디</label> <input type="text"
+            class="sing"  id="id"  name="m_id"  placeholder="ID"
             required>   <div class="check_font" id="id_check"></div>
             
       
 
          <label >비밀번호</label> <input type="password"
-            class="sing" id="password1" name="password1"
+            class="sing" id="password1" name="m_pass"
             placeholder="PASSWORD" required>
          <div class="check_font" id="pw_check"></div>
 
@@ -100,33 +100,40 @@
       <!-- 이름 -->
   
          <label>이름</label> <input type="text"
-            class="sing" id="name" name="name"
+            class="sing" id="name" name="m_name"
             placeholder="Name" required>
          <div class="check_font" id="name_check"></div>
 
       <!-- 생년월일 -->
 
          <label>생년월일</label> <input type="text"
-            class="sing" id="birth" name="birth"
+            class="sing" id="birth" name="m_birth"
             placeholder="ex) 19990415" required>
          <div class="check_font" id="birth_check"></div>
 
       <!-- 본인확인 이메일 -->
 
          <label>이메일</label> <input type="text"
-            class="sing" name="email" id="email"
+            class="sing" name="m_email" id="email"
             placeholder="E-mail" required>
         <div class="check_font" id="email_check"></div>
 
       <!-- 휴대전화 -->
 
          <label>휴대전화 </label> <input
-            type="text" class="sing" id="phone" name="phone"
-            placeholder="Phone Number" required><input type="submit" value="전송"> 
+            type="text" class="sing" id="phone" name="m_tel"
+            placeholder="Phone Number" required>
          <div class="check_font" id="phone_check"></div>
          
-                
+               <label>주소입력 </label> <input
+            type="text" class="sing" id="phone" name="m_tel"
+            placeholder="Phone Number" required>
+         <div class="check_font" id="phone_check"></div>    
         
+        <label>좋아하는 음식</label>
+
+
+
 
             <ul class="join_box">
                 <li class="checkBox check01">
@@ -154,7 +161,7 @@
                     <ul class="clearfix">
                         <li>개인정보 수집 및 이용에 대한 안내(필수)</li>
                         <li class="checkBtn">
-                            <input type="checkbox" name="chk" id="check_1">
+                            <input type="checkbox" name="chk"  id="check_2">
                         </li>
                     </ul>
  
@@ -184,11 +191,8 @@
  
                 </li>
             </ul>
-            <ul class="footBtwrap clearfix">
-                <li><button class="fpmgBt1">비동의</button></li>
-                <li><button class="fpmgBt2">동의</button></li>
-            </ul>
-           <input type="submit" value="전송" id="submit">
+         
+           <input type="submit"  value="전송"  id="submit">
         </form>
 
 
@@ -217,6 +221,8 @@
    <script src="resources/js/plugins/plugins.js"></script>
    <!-- Active js -->
    <script src="resources/js/active.js"></script>
+
+   
    <!-- 지섭 -->
 
 

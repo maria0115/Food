@@ -1,7 +1,34 @@
-
-//회원가입 정규화
+//아이디 중복체크
 $(function() {
-	$("#singup_submit")
+	$('input[name=m_id]').blur(function() {
+		var idCheck = $('input[name=m_id]').val();
+		if (idRegex.test(idCheck)) {
+			$.ajax({
+				url : 'idCheck.do?userId=' + idCheck,
+				type : 'get',
+				success : function(data) {
+					var color;
+					var ans;
+					if (data > 0) {
+						ans = '이미있는 아이디입니다.';
+						color = 'red';
+						idPass = false;
+					} else {
+						ans = '회원가입 가능한 아이디입니다.';
+						color = 'blue';
+						idPass = true;
+					}
+					$('#id_check').html(ans);
+					$('#id_check').css('color', color);
+				}
+			})
+		}
+	});
+});
+
+// 회원가입 정규화
+$(function() {
+	$("#submit")
 			.click(
 					function() {
 						var id = /^[a-z]+[a-z0-9]{5,19}$/g;
@@ -12,26 +39,29 @@ $(function() {
 						var pwd1 = $("#password1").val();
 						var pwd2 = $("#password2").val();
 
-						if (!id.test($("input[name=id]").val())) {
+						if (!id.test($("input[name=m_id]").val())) {
 							alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
 							return false;
 						} else if (pwd1 != pwd2) {
 							alert("비밀번호가 일치하지 않습니다.")
 							return false;
-						} else if (!email.test($("input[name=email]").val())) {
+						} else if (!email.test($("input[name=m_email]").val())) {
 							alert("이메일 형식을 확인하세요");
 							return false;
-						} else if (!pass.test($("input[name=password1]").val())) {
+						} else if (!pass.test($("input[name=m_pass]").val())) {
 							alert("비밀번호를 확인해주세요 영문자 혹은 0-9 8자리~16자리 이여야 합니다.");
 							return false;
-						} else if (!name.test($("input[name=name]").val())) {
+						} else if (!name.test($("input[name=m_name]").val())) {
 							alert("이름을 확인해주세요");
 							return false;
-						} else if (!birth.test($("input[name=birth]").val())) {
+						} else if (!birth.test($("input[name=m_birth]").val())) {
 							alert("생년월일을 확인해주세요");
 							return false;
-						} else if ($(".check_1").is(":checked") == false) {
-							alert("약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+						} else if ($("#check_1").is(":checked") == false) {
+							alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+							return false;
+						} else if ($("#check_2").is(":checked") == false) {
+							alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
 							return false;
 						} else {
 							alert("회원가입 완료 가입을 축하드립니다!");
@@ -82,18 +112,18 @@ $(function() {
 						}
 					});
 
-	$('#id').focusout(function() {
-
-		var id = $("#id").val();
-		var id2 = /^[a-z]+[a-z0-9]{5,19}$/g;
-		if (id2.test(id) === false) {
-			$("#id_check").html("영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
-			idcheck = false;
-		} else {
-			$("#id_check").html("유효한 아이디 입니다.");
-			idcheck = true;
-		}
-	});
+	// $('#id').focusout(function() {
+	//
+	// var id = $("#id").val();
+	// var id2 = /^[a-z]+[a-z0-9]{5,19}$/g;
+	// if (id2.test(id) === false) {
+	// $("#id_check").html("영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
+	// idcheck = false;
+	// } else {
+	// $("#id_check").html("유효한 아이디 입니다.");
+	// idcheck = true;
+	// }
+	// });
 
 	$('#password1').focusout(function() {
 
@@ -197,30 +227,6 @@ $(function() {
 		});
 		// 약관동의
 
-		$('#singup_submit').click(function() {
-			// 입력창의 값이 ""라면 메세지출력하고 return
-			if ($("#check_1").is(":checked") == false) {
-				alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
-				return;
-			} else {
-				alert("회원가입완료")
-				$('#frm').submit()
-			}
-
-		});
-
-		$('#singup_submit').click(function() {
-			// 입력창의 값이 ""라면 메세지출력하고 return
-			if ($("#check_2").is(":checked") == false) {
-				alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
-				return;
-			} else {
-				alert("회원가입완료")
-				$('#frm').submit()
-			}
-
-		});
-
 		// 최상단 체크박스 클릭
 		$("#chk").click(function() {
 			// 클릭되었으면
@@ -233,13 +239,6 @@ $(function() {
 				$("input[name=chk]").prop("checked", false);
 			}
 		});
-	});
-
-	$("#message").click(function() {
-		console.log("문자를 전송합니다.");
-		$("#smsForm").attr("action", pageName + ".do"); // 위에 있는 폼태그를 컨트롤러로
-														// 전송한다.
-		$("#smsForm").submit();
 	});
 
 });
