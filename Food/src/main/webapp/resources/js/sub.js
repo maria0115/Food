@@ -1,192 +1,74 @@
-//로그아웃
- $('#logout').click(function(){
-    	event.preventDefault();
-        $.ajax({
-            type:'post',
-            async : true,
-			url : 'logout.do',
-            contentType :'application/x-www-form-urlencoded;charset=UTF-8',
-            success : function(resultData){
-            	//window.location.reload();
-            	window.location = "start.jsp";
-//            	window.location=document.referrer;
-            }
-        });	
+//취소버튼 클릭시
+$('#cancle_btn').click(function(){
+       event.preventDefault();
+        history.back(); //이전 히스토리 가기
     });
+    
 
-//로그인 ajax
-$('#frm').submit(function(){
-    	event.preventDefault();
-        if($("#logpw").val()===""){
-           alert("암호를 입력하세요");
-        }else{
-            $.ajax({
+
+//아이디 중복체크 
+$("#id").blur(function(){
+        $.ajax({
                 type:'post',
                 async:true,
-                url : 'login.do',
+                url : 'checkId.do',
                 contentType :'application/x-www-form-urlencoded;charset=UTF-8',
-                data : "m_id="+ $('#logid').val() + "&m_pass="+$('#logpw').val(),
+                data : "m_id="+ $("#id").val(),
                 success : function(resultData){
-                    if(resultData == '')
-                        alert("아이디와 비밀번호를 다시 확인하세요.");
-                    else{
-                    	$(".login-header").css("display","none");
-                    	$(".access").html(resultData+'</span>/<a href="" id="logout">로그아웃</a>');
-                    	window.location.reload();	
-                    }
-                }
-            });
-        }
-    });
-    
-
-//자동전송 막기 
-$('#frm input[type="text"]').keydown(function() {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-        }
-    });
-
-
-//아이디 중복체크
-var idck = 0;
-$(function() {
-    //idck 버튼을 클릭했을 때 
-    $("#idck").click(function() {
-        
-        //userid 를 param.
-        var id =  $("#id").val(); 
-        
-        $.ajax({
-            async: true,
-            type : 'POST',
-            data : id,
-            url : "idcheck.do",
-            dataType : "json",
-            contentType: "application/json; charset=UTF-8",
-            success : function(data) {
-            	if (data.cnt > 0) {
-                    
-                    alert("아이디가 존재합니다. 다른 아이디를 입력해주세요.");
-                    //아이디가 존제할 경우 빨깡으로 , 아니면 파랑으로 처리하는 디자인
-                    $("#id_check").addClass("has-error")
-                    $("#id_check").removeClass("has-success")
-                    $("#id").focus();
-                   
+                    $("#id_check").html(resultData);
                 
-                } else {
-                    alert("사용가능한 아이디입니다.");
-                    //아이디가 존제할 경우 빨깡으로 , 아니면 파랑으로 처리하는 디자인
-                    $("#id_check").addClass("has-success")
-                    $("#id_check").removeClass("has-error")
-                    $("#password1").focus();
-                    //아이디가 중복하지 않으면  idck = 1 
-                    idck = 1;
-                    
                 }
-            },
-            error : function(error) {
-                
-                alert("error : " + error);
-            }
         });
-    });
-});
-
-
-//주소
-  function execPostCode() {
-         new daum.Postcode({
-             oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
- 
-                // 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
-                var extraRoadAddr = ''; // 도로명 조합형 주소 변수
- 
-                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                    extraRoadAddr += data.bname;
-                }
-                // 건물명이 있고, 공동주택일 경우 추가한다.
-                if(data.buildingName !== '' && data.apartment === 'Y'){
-                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                }
-                // 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                if(extraRoadAddr !== ''){
-                    extraRoadAddr = ' (' + extraRoadAddr + ')';
-                }
-                // 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
-                if(fullRoadAddr !== ''){
-                    fullRoadAddr += extraRoadAddr;
-                }
- 
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                console.log(data.zonecode);
-                console.log(fullRoadAddr);
-                
-                
-                $("[name=m_area]").val(data.zonecode);
-                $("[name=m_area]").val(fullRoadAddr);
-                
-                /* document.getElementById('signUpUserPostNo').value = data.zonecode; //5자리 새우편번호 사용
-                document.getElementById('signUpUserCompanyAddress').value = fullRoadAddr;
-                document.getElementById('signUpUserCompanyAddressDetail').value = data.jibunAddress; */
-            }
-         }).open();
-     }
-
+        	if($("#id").val()==="")
+            $("#id_check").html("아이디를 작성하세요.");
+        });
     
 
-
-  
 // 회원가입 정규화
-$(function() {
-	$("#submit").click(
-					function() {
-						var id = /^[a-z]+[a-z0-9]{5,19}$/g;
-						var email = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-						var name = /^[가-힣]+$/;
-						var birth = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
-						var pass = /^[a-zA-Z0-9]{8,16}/;
-						var pwd1 = $("#password1").val();
-						var pwd2 = $("#password2").val();
-			
-						if (!id.test($("input[name=m_id]").val())) {
+	$("#submit").click(function() {
+							var id = /^[a-z]+[a-z0-9]{5,19}$/g;
+							var email = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+							var name = /^[가-힣]+$/;
+							var birth = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
+							var pass = /^[a-zA-Z0-9]{8,16}/;
+							var pwd1 = $("#password1").val();
+							var pwd2 = $("#password2").val();
+							
+							
+							if (!id.test($("#id").val())) {
 							alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
 							return false;
-						} else if (pwd1 != pwd2) {
-							alert("비밀번호가 일치하지 않습니다.")
-							return false;
-						} else if (!email.test($("input[name=m_email]").val())) {
-							alert("이메일 형식을 확인하세요");
-							return false;
-						} else if (!pass.test($("input[name=m_pass]").val())) {
-							alert("비밀번호를 확인해주세요 영문자 혹은 0-9 8자리~16자리 이여야 합니다.");
-							return false;
-						} else if (!name.test($("input[name=m_name]").val())) {
-							alert("이름을 확인해주세요");
-							return false;
-						} else if (!birth.test($("input[name=m_birth]").val())) {
-							alert("생년월일을 확인해주세요");
-							return false;
-						}else if ($("#addr2").val()==""){
-							alert("주소를 입력해주세요");
-							return false;
-						}   
-						else if ($("#check_1").is(":checked") == false) {
-							alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
-							return false;
-						} else if ($("#check_2").is(":checked") == false) {
-							alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
-							return false;
-						} else {
-							alert("회원가입 완료 가입을 축하드립니다!");
-						}
-					});
+							} else if (pwd1 != pwd2) {
+								alert("비밀번호가 일치하지 않습니다.")
+								return false;
+							} else if (!email.test($("#email").val())) {
+								alert("이메일 형식을 확인하세요");
+								return false;
+							} else if (!pass.test($("#password1").val())) {
+								alert("비밀번호를 확인해주세요 영문자 혹은 0-9 8자리~16자리 이여야 합니다.");
+								return false;
+							} else if (!name.test($("#name").val())) {
+								alert("이름을 확인해주세요");
+								return false;
+							} else if (!birth.test($("#birth").val())) {
+								alert("생년월일을 확인해주세요");
+								return false;
+							} else if ($("#addr2").val() == "") {
+								alert("주소를 입력해주세요");
+								return false;
+							} else if ($("#check_1").is(":checked") == false) {
+								alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+								return false;
+							} else if ($("#check_2").is(":checked") == false) {
+								alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+								return false;
+							} else {
+								alert("회원가입 완료 가입을 축하드립니다!");
+							}
+						});
 
+
+	
 	$('#birth').focusout(
 					function() {
 
@@ -215,8 +97,7 @@ $(function() {
 		}
 	});
 
-	$('#email')
-			.focusout(
+	$('#email').focusout(
 					function() {
 
 						var email = $("#email").val();
@@ -230,18 +111,18 @@ $(function() {
 						}
 					});
 
-	// $('#id').focusout(function() {
-	//
-	// var id = $("#id").val();
-	// var id2 = /^[a-z]+[a-z0-9]{5,19}$/g;
-	// if (id2.test(id) === false) {
-	// $("#id_check").html("영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
-	// idcheck = false;
-	// } else {
-	// $("#id_check").html("유효한 아이디 입니다.");
-	// idcheck = true;
-	// }
-	// });
+/*	$('#id').focusout(function() {
+
+		var id = $("#id").val();
+		var id2 = /^[a-z]+[a-z0-9]{5,19}$/g;
+		if (id2.test(id) === false) {
+			$("#id_check").html("영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
+			idcheck = false;
+		} else {
+			$("#id_check").html("유효한 아이디 입니다.");
+			idcheck = true;
+		}
+	});*/
 
 	$('#password1').focusout(function() {
 
@@ -286,77 +167,142 @@ $(function() {
 		}
 	});
 
-	$('#frm')
-			.submit(
-					function() {
-						event.preventDefault();
-						if ($("#logpw").val() === "") {
-							alert("암호를 입력하세요");
-						} else {
-							$
-									.ajax({
-										type : 'post',
-										async : true,
-										url : 'login.do',
-										contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-										data : "id=" + $('#logid').val()
-												+ "&password="
-												+ $('#logpw').val(),
-										success : function(resultData) {
-											if (resultData == '')
-												alert("아이디와 비밀번호를 다시 확인하세요.");
-											else {
-												$(".login").css("display",
-														"none");
-												$(".login-header").html(
-														resultData);
-												$(".login-header table").css(
-														"display", "none");
-												$(".login-header").slideUp(500);
-												$(".user-access")
-														.html(
-																resultData
-																		+ '</span>/<a href="" id="logout">로그아웃</a>');
+	$("#loginLabel").click(function(e) {
 
-												window.location.reload();
-											}
-										}
-									});
-						}
-					});
+		e.preventDefault();
 
-	$(function() {
-		$("#loginLabel").click(function(e) {
-
-			e.preventDefault();
-
-			if ($('.loginbox').css('display') == 'none') {
-				$('.loginbox').slideDown();
-			} else {
-				$('.loginbox').slideUp();
-			}
-		});
-
-		// 닫힘버튼
-		$(".closeBtn").click(function(e) {
-
+		if ($('.loginbox').css('display') == 'none') {
+			$('.loginbox').slideDown();
+		} else {
 			$('.loginbox').slideUp();
-
-		});
-		// 약관동의
-
-		// 최상단 체크박스 클릭
-		$("#chk").click(function() {
-			// 클릭되었으면
-			if ($("#chk").prop("checked")) {
-				// input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
-				$("li>input[name=chk]").prop("checked", true);
-				// 클릭이 안되있으면
-			} else {
-				// input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
-				$("input[name=chk]").prop("checked", false);
-			}
-		});
+		}
 	});
 
+	// 닫힘버튼
+	$(".closeBtn").click(function(e) {
+
+		$('.loginbox').slideUp();
+
+	});
+	// 약관동의
+
+	// 최상단 체크박스 클릭
+	$("#chk").click(function() {
+		// 클릭되었으면
+		if ($("#chk").prop("checked")) {
+			// input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
+			$("li>input[name=chk]").prop("checked", true);
+			// 클릭이 안되있으면
+		} else {
+			// input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
+			$("input[name=chk]").prop("checked", false);
+		}
+	});
+
+
+// 로그아웃
+$('#logout').click(function() {
+	event.preventDefault();
+	$.ajax({
+		type : 'post',
+		async : true,
+		url : 'logout.do',
+		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+		success : function(resultData) {
+			// window.location.reload();
+			window.location = "start.jsp";
+			// window.location=document.referrer;
+		}
+	});
 });
+
+// 로그인 ajax
+$('#frm')
+		.submit(
+				function() {
+					event.preventDefault();
+					if ($("#logpw").val() === "") {
+						alert("암호를 입력하세요");
+					} else {
+						$
+								.ajax({
+									type : 'post',
+									async : true,
+									url : 'login.do',
+									contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+									data : "m_id=" + $('#logid').val()
+											+ "&m_pass=" + $('#logpw').val(),
+									success : function(resultData) {
+										if (resultData == '')
+											alert("아이디와 비밀번호를 다시 확인하세요.");
+										else {
+											$(".login-header").css("display",
+													"none");
+											$(".access")
+													.html(
+															resultData
+																	+ '</span>/<a href="" id="logout">로그아웃</a>');
+											window.location.reload();
+										}
+									}
+								});
+					}
+				});
+
+// 자동전송 막기
+$('#frm input[type="text"]').keydown(function() {
+	if (event.keyCode === 13) {
+		event.preventDefault();
+	}
+});
+
+// 아이디 중복체크
+
+// 주소
+function execPostCode() {
+	new daum.Postcode({
+		oncomplete : function(data) {
+			// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+			// 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
+			// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+			var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
+			var extraRoadAddr = ''; // 도로명 조합형 주소 변수
+
+			// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+			// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+			if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+				extraRoadAddr += data.bname;
+			}
+			// 건물명이 있고, 공동주택일 경우 추가한다.
+			if (data.buildingName !== '' && data.apartment === 'Y') {
+				extraRoadAddr += (extraRoadAddr !== '' ? ', '
+						+ data.buildingName : data.buildingName);
+			}
+			// 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+			if (extraRoadAddr !== '') {
+				extraRoadAddr = ' (' + extraRoadAddr + ')';
+			}
+			// 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
+			if (fullRoadAddr !== '') {
+				fullRoadAddr += extraRoadAddr;
+			}
+
+			// 우편번호와 주소 정보를 해당 필드에 넣는다.
+			console.log(data.zonecode);
+			console.log(fullRoadAddr);
+
+			$("[name=m_area]").val(data.zonecode);
+			$("[name=m_area]").val(fullRoadAddr);
+
+			/*
+			 * document.getElementById('signUpUserPostNo').value =
+			 * data.zonecode; //5자리 새우편번호 사용
+			 * document.getElementById('signUpUserCompanyAddress').value =
+			 * fullRoadAddr;
+			 * document.getElementById('signUpUserCompanyAddressDetail').value =
+			 * data.jibunAddress;
+			 */
+		}
+	}).open();
+}

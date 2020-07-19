@@ -12,13 +12,6 @@ public class MemberDAOImpl  implements MemberDAO{
 	private SqlSessionTemplate mybatis;
 
 
-	public int idCheck(String id) {
-		System.out.println("여기옴");
-		int cnt = mybatis.selectOne("memberDAO.idCheck", id);
-		return cnt;
-	}
-
-
 	@Override
 	public void insertMember(MemberVO vo) {
 		mybatis.insert("memberDAO.insertMember",vo);
@@ -28,7 +21,14 @@ public class MemberDAOImpl  implements MemberDAO{
 
 	@Override
 	public MemberVO userSingIn(MemberVO vo) {
+		System.out.println("로그인옴");
 		return mybatis.selectOne("memberDAO.selectMember",vo);
+	}
+
+
+	@Override
+	public MemberVO checkId(MemberVO vo) {
+		return mybatis.selectOne("memberDAO.selectID",vo);
 	}
 	
 

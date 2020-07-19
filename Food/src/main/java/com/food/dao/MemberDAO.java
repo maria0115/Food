@@ -6,7 +6,7 @@ public interface MemberDAO {
 
 	public MemberVO userSingIn(MemberVO vo);
 
-	public int idCheck(String id);//중복확인
+	public MemberVO checkId(MemberVO vo);
 	
 	public void insertMember(MemberVO vo);
 }

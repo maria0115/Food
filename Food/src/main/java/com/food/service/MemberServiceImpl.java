@@ -12,11 +12,6 @@ public class MemberServiceImpl  implements MemberService{
 	private MemberDAO memberdao;
 
 
-	public int idCheck(String id) {
-		int cnt=memberdao.idCheck(id);
-		return cnt;
-	}
-
 
 	@Override
 	public void insertMember(MemberVO vo) {
@@ -28,6 +23,12 @@ public class MemberServiceImpl  implements MemberService{
 	@Override
 	public MemberVO userSignIn(MemberVO vo) {
 		return memberdao.userSingIn(vo);
+	}
+
+
+	@Override
+	public MemberVO checkId(MemberVO vo) {
+		return memberdao.checkId(vo);
 	}
 	
 }

@@ -4,9 +4,6 @@
 <mapper namespace="memberDAO">
 
 
-<select id="idCheck" parameterType="String" resultType="Integer" ><!-- 중복확인 -->
-	select count(*) from foodmember where m_id=#{id}
-</select>
 
 
 <select id="selectMember" parameterType="member" resultType="member">
@@ -16,6 +13,9 @@
 		</if>
 </select>
 
+<select id="selectID" parameterType="member" resultType="member">
+		SELECT  * FROM foodmember WHERE m_id = #{m_id}
+</select>
 
 
 

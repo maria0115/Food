@@ -4,7 +4,7 @@ import com.food.domain.MemberVO;
 
 public interface MemberService {
 
-	public int idCheck(String id);
+	public MemberVO checkId(MemberVO vo);
 	
 	public void insertMember(MemberVO vo);
 	

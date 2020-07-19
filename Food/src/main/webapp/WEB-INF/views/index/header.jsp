@@ -100,9 +100,9 @@
 								<!-- Login -->
 						<div class ="login-header">
 								<div class="login">
-									<a href="#" id="loginLabel" >Login</a>
+									<a href="#" id="loginLabel" class="fa fa-user" >Login</a>
 									<div class="loginbox">
-										<form action="login.do" method="post" id="frm" name="frm">
+										<form action="login.do" method="post"  id="frm"  name="frm">
 											<p>
 												<label for="logid">ID</label>&nbsp&nbsp <input type="text"
 													name="m_id" id="logid" placeholder="ID" />

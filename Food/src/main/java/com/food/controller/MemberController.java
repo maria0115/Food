@@ -26,20 +26,20 @@ public class MemberController {
 			return "redirect:/singup.do";
 		}
 		
+		//아이디 중복체크
+		@ResponseBody
+		@RequestMapping(value = "/checkId.do",produces = "application/text; charset=utf-8")
+		public String checkId(MemberVO vo) {
+			String result = "사용가능한 아이디 입니다.";
+			MemberVO checkvo= memberService.checkId(vo);
+			System.out.println(checkvo);
+			if(checkvo != null) {
+				result = "중복된 아이디입니다";
+			}
+			return result;
+		}
 	
-		 @RequestMapping(value ="/idcheck.do")
-		    @ResponseBody
-		    public Map<String, Integer> idcheck(@RequestBody String id) {
-	
-		        int count = 0;
-		        Map<String, Integer> map = new HashMap<String, Integer>();
-		 
-		        count = memberService.idCheck(id);
-		        System.out.println(count);
-		        map.put("cnt", count);
-		        
-		        return map;
-		    }
+
 		 //로그인 구현
 		 @ResponseBody
 		@RequestMapping(value = "/login.do",produces = "application/text; charset=utf-8")

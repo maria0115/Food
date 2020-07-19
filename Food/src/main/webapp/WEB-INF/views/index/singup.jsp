@@ -79,12 +79,12 @@
 	</div>
 
 	<div class='move'>
-		<form action="singupMember.do" method="POST">
+		<form action="singupMember.do" method="POST" >
 			<!-- 아이디 -->
 
-			<label for="id">아이디</label> <input type="text" class="sing" id="id"
-				name="m_id" placeholder="ID" required><button id="idck">중복확인</button>
-			<div class="check_font" id="id_check"></div>
+			<label >아이디</label> <input type="text" class="sing" id="id"
+				name="m_id" placeholder="ID" required>
+			<div class="check_font" id="id_check">아이디를 입력하세요</div>
 
 
 
@@ -194,7 +194,7 @@
 				</li>
 			</ul>
 
-			<input type="submit" value="전송"  id="submit">
+			<button id="cancle_btn">취소하기</button><input type="submit" value="전송"  id="submit">
 		</form>
 
 
