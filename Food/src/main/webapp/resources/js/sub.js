@@ -1,29 +1,96 @@
+//로그아웃
+ $('#logout').click(function(){
+    	event.preventDefault();
+        $.ajax({
+            type:'post',
+            async : true,
+			url : 'logout.do',
+            contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+            success : function(resultData){
+            	//window.location.reload();
+            	window.location = "start.jsp";
+//            	window.location=document.referrer;
+            }
+        });	
+    });
+
+//로그인 ajax
+$('#frm').submit(function(){
+    	event.preventDefault();
+        if($("#logpw").val()===""){
+           alert("암호를 입력하세요");
+        }else{
+            $.ajax({
+                type:'post',
+                async:true,
+                url : 'login.do',
+                contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+                data : "m_id="+ $('#logid').val() + "&m_pass="+$('#logpw').val(),
+                success : function(resultData){
+                    if(resultData == '')
+                        alert("아이디와 비밀번호를 다시 확인하세요.");
+                    else{
+                    	$(".login-header").css("display","none");
+                    	$(".access").html(resultData+'</span>/<a href="" id="logout">로그아웃</a>');
+                    	window.location.reload();	
+                    }
+                }
+            });
+        }
+    });
+    
+
+//자동전송 막기 
+$('#frm input[type="text"]').keydown(function() {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+        }
+    });
+
+
 //아이디 중복체크
+var idck = 0;
 $(function() {
-	$('input[name=m_id]').blur(function() {
-		var idCheck = $('input[name=m_id]').val();
-		if (idRegex.test(idCheck)) {
-			$.ajax({
-				url : 'idCheck?userId=' + idCheck,
-				type : 'get',
-				success : function(data) {
-					var color;
-					var ans;
-					if (data > 0) {
-						ans = '이미있는 아이디입니다.';
-						color = 'red';
-						idPass = false;
-					} else {
-						ans = '회원가입 가능한 아이디입니다.';
-						color = 'blue';
-						idPass = true;
-					}
-					$('#id_check').html(ans);
-					$('#id_check').css('color', color);
-				}
-			})
-		}
-	});
+    //idck 버튼을 클릭했을 때 
+    $("#idck").click(function() {
+        
+        //userid 를 param.
+        var id =  $("#id").val(); 
+        
+        $.ajax({
+            async: true,
+            type : 'POST',
+            data : id,
+            url : "idcheck.do",
+            dataType : "json",
+            contentType: "application/json; charset=UTF-8",
+            success : function(data) {
+            	if (data.cnt > 0) {
+                    
+                    alert("아이디가 존재합니다. 다른 아이디를 입력해주세요.");
+                    //아이디가 존제할 경우 빨깡으로 , 아니면 파랑으로 처리하는 디자인
+                    $("#id_check").addClass("has-error")
+                    $("#id_check").removeClass("has-success")
+                    $("#id").focus();
+                   
+                
+                } else {
+                    alert("사용가능한 아이디입니다.");
+                    //아이디가 존제할 경우 빨깡으로 , 아니면 파랑으로 처리하는 디자인
+                    $("#id_check").addClass("has-success")
+                    $("#id_check").removeClass("has-error")
+                    $("#password1").focus();
+                    //아이디가 중복하지 않으면  idck = 1 
+                    idck = 1;
+                    
+                }
+            },
+            error : function(error) {
+                
+                alert("error : " + error);
+            }
+        });
+    });
 });
 
 

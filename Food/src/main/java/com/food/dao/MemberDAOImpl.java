@@ -13,6 +13,7 @@ public class MemberDAOImpl  implements MemberDAO{
 
 
 	public int idCheck(String id) {
+		System.out.println("여기옴");
 		int cnt = mybatis.selectOne("memberDAO.idCheck", id);
 		return cnt;
 	}
@@ -22,6 +23,12 @@ public class MemberDAOImpl  implements MemberDAO{
 	public void insertMember(MemberVO vo) {
 		mybatis.insert("memberDAO.insertMember",vo);
 		
+	}
+
+
+	@Override
+	public MemberVO userSingIn(MemberVO vo) {
+		return mybatis.selectOne("memberDAO.selectMember",vo);
 	}
 	
 

@@ -83,7 +83,7 @@
 			<!-- 아이디 -->
 
 			<label for="id">아이디</label> <input type="text" class="sing" id="id"
-				name="m_id" placeholder="ID" required>
+				name="m_id" placeholder="ID" required><button id="idck">중복확인</button>
 			<div class="check_font" id="id_check"></div>
 
 
