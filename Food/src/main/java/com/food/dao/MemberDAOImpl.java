@@ -30,6 +30,13 @@ public class MemberDAOImpl  implements MemberDAO{
 	public MemberVO checkId(MemberVO vo) {
 		return mybatis.selectOne("memberDAO.selectID",vo);
 	}
-	
 
+//아이디 찾기
+	@Override
+	public String find_id(String m_email) {
+			return mybatis.selectOne("memberDAO.find_id", m_email);
+	}
+
+
+	
 }

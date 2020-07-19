@@ -1,14 +1,15 @@
 package com.food.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.food.domain.MemberVO;
@@ -66,6 +67,14 @@ public class MemberController {
 				session.removeAttribute("UserIDInfo");
 			}
 			
+	
+		 
+		// 아이디 찾기
+			@RequestMapping(value = "/findid.do", method = RequestMethod.POST)
+			public String find_id(HttpServletResponse response, @RequestParam("m_email") String m_email, Model md) throws Exception{
+				md.addAttribute("m_id", memberService.find_id(response, m_email));
+				return "/index/find_id";
+			}
 		 
 }
 		

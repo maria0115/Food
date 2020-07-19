@@ -119,7 +119,7 @@
 										</form>
 										
 										<a href="singup.do" class="memberInfo">회원가입 </a> <a
-										href="singup.do" class="memberInfo">아이디 비밀번호 찾기 </a>
+										href="find_form.do" class="memberInfo">아이디 비밀번호 찾기 </a>
 									<p class="closeBtn" title="닫기버튼">X</p>
 									</div>
 									</div>

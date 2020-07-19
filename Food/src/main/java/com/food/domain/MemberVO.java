@@ -9,6 +9,7 @@ public class MemberVO {
 	private	String	m_area ;
 	private	String	m_most  ;
 	private	String	m_email ;
+
 	public String getM_id() {
 		return m_id;
 	}

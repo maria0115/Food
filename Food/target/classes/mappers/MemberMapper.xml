@@ -17,6 +17,11 @@
 		SELECT  * FROM foodmember WHERE m_id = #{m_id}
 </select>
 
+<select id="find_id" parameterType="String" resultType="String">
+		select m_id from foodmember where m_email = #{m_email}
+	</select>
+
+
 
 
 <insert id="insertMember" parameterType="member">
