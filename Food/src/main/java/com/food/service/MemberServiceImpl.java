@@ -58,6 +58,12 @@ public class MemberServiceImpl  implements MemberService{
 
 	}
 
+	//이메일 중복체크
+	@Override
+	public MemberVO checkEmail(MemberVO vo) {
+		return memberdao.checkEmail(vo);
+	}
+
 	
 	
 }

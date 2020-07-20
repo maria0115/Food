@@ -37,6 +37,12 @@ public class MemberDAOImpl  implements MemberDAO{
 			return mybatis.selectOne("memberDAO.find_id", m_email);
 	}
 
+//이메일 중복확인
+	@Override
+	public MemberVO checkEmail(MemberVO vo) {
+		return mybatis.selectOne("memberDAO.selectEmail",vo);
+	}
+
 
 	
 }

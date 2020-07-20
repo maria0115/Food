@@ -7,7 +7,7 @@
 
 	
 	<select id="getChoice"  parameterType="choice" resultType="choice">
-		select * from member 
+		select * from store
 	</select>
 	
 

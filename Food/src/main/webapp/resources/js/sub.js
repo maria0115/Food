@@ -4,6 +4,21 @@ $('#cancle_btn').click(function(){
         history.back(); //이전 히스토리 가기
     });
     
+//이메일 중복체크 
+$("#email").blur(function(){
+	
+        $.ajax({
+                url : 'checkEmail.do',
+                contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+                data : "m_email="+ $("#email").val(),
+                success : function(resultData){
+                    $("#email_check2").html(resultData);
+                }
+        });
+        	if($("#email").val()==""){
+            $("#email_check2").html("이메일 작성하세요.");
+        	}
+        });
 
 
 //아이디 중복체크 
@@ -15,12 +30,12 @@ $("#id").blur(function(){
                 contentType :'application/x-www-form-urlencoded;charset=UTF-8',
                 data : "m_id="+ $("#id").val(),
                 success : function(resultData){
-                    $("#id_check").html(resultData);
+                    $("#id_check2").html(resultData);
                 
                 }
         });
-        	if($("#id").val()==="")
-            $("#id_check").html("아이디를 작성하세요.");
+        	if($("#id").val()=="")
+            $("#id_check2").html("아이디를 작성하세요.");
         });
     
 
@@ -106,12 +121,12 @@ $("#id").blur(function(){
 							$("#email_check").html("이메일 형식을 확인해 주세요");
 							emailcheck = false;
 						} else {
-							$("#email_check").html("유효한 이메일 입니다.");
+							$("#email_check").html(" 이메일 입력결과");
 							emailcheck = true;
 						}
 					});
 
-/*	$('#id').focusout(function() {
+$('#id').focusout(function() {
 
 		var id = $("#id").val();
 		var id2 = /^[a-z]+[a-z0-9]{5,19}$/g;
@@ -119,10 +134,10 @@ $("#id").blur(function(){
 			$("#id_check").html("영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
 			idcheck = false;
 		} else {
-			$("#id_check").html("유효한 아이디 입니다.");
+			$("#id_check").html("아이디 입력 결과");
 			idcheck = true;
 		}
-	});*/
+	});
 
 	$('#password1').focusout(function() {
 

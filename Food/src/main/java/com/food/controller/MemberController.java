@@ -29,17 +29,32 @@ public class MemberController {
 		
 		//아이디 중복체크
 		@ResponseBody
-		@RequestMapping(value = "/checkId.do",produces = "application/text; charset=utf-8")
+		@RequestMapping(value = "/checkId.do", produces = "application/text; charset=utf-8")
 		public String checkId(MemberVO vo) {
-			String result = "사용가능한 아이디 입니다.";
-			MemberVO checkvo= memberService.checkId(vo);
-			System.out.println(checkvo);
+			String result = "아이디 확인";
+			MemberVO checkvo = memberService.checkId(vo);
+			System.out.println("<<<<<"+checkvo);
 			if(checkvo != null) {
 				result = "중복된 아이디입니다";
 			}
 			return result;
 		}
 	
+		//이메일 중복체크
+				@ResponseBody
+				@RequestMapping(value = "/checkEmail.do", produces = "application/text; charset=utf-8")
+				public String checkEmail(MemberVO vo) {
+					System.out.println("here>>>>" + vo.getM_email());
+					String result2 = "이메일 확인";
+					MemberVO checkvo2 = memberService.checkEmail(vo);
+					System.out.println(">>>>>>>"+checkvo2);
+					if(checkvo2 != null) {
+						result2 = "중복된 이메일 입니다";
+					}
+					return result2;
+				}
+		
+		
 
 		 //로그인 구현
 		 @ResponseBody
