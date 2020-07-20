@@ -4,10 +4,12 @@
 <mapper namespace="qnaboardDAO">
 
 <select id="selectqna" parameterType="qnaboard" resultType="qnaboard">
-		SELECT * FROM qnaboard
+	SELECT * FROM qnaboard
 </select>
 
-
+<insert id="insertqna" parameterType="qnaboard">
+	INSERT INTO qnaboard values(no_seq_board.nextval,#{q_title},#{q_content},#{q_writer},sysdate)
+</insert>
 
 
 </mapper>

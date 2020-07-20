@@ -20,7 +20,7 @@
 				<div>
 					<p>
 						<label>Email</label>
-						<input class="w3-input" type="text" id="m_email" name="m_email" required>
+						<input class="w3-input" type="text" id="m_email" name="m_email" placeholder="가입시 사용한 Email을 입력해 주세요" required>
 					</p>
 					<p class="w3-center">
 						<button type="submit" id=findBtn class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">find</button>
@@ -40,7 +40,7 @@
 			<form action ="find-password.do" class="findPassword">
 				<p>
 					<label>ID</label>
-					<input class="w3-input" type="text" id="id" name="m_id" required>
+					<input class="w3-input" type="text" id="id" name="m_id" placeholder="가입시 사용한 ID를 입력해 주세요" required>
 				</p>
 				
 				<p class="w3-center">

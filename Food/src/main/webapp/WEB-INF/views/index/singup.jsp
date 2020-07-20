@@ -148,8 +148,10 @@
 
 
 			<label>좋아하는 음식</label>
-			<input type="text" name ="m_most" ><button>추가</button>
-
+			<input type="text" name ="m_most" id="most"><button class ="btn btn-default" id="m_most">추가</button>
+			<div class="check_font" id="most_check"></div>
+			
+			
 
 
 			<ul class="join_box">
@@ -198,7 +200,7 @@
 				</li>
 			</ul>
 
-			<button id="cancle_btn">취소하기</button><input type="submit" value="전송"  id="submit">
+			<button id="cancle_btn" class ="btn btn-default">취소하기</button><input class ="btn btn-danger" type="submit" value="전송"  id="submit">
 		</form>
 	</div>
 

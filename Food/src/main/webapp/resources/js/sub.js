@@ -51,6 +51,18 @@ $("#id").blur(function(){
         });
     
 
+
+
+
+	$("#m_most").click(function() {
+		var a = $("#most").val();
+		
+		if($("#most").val()!="")
+		 $("#most_check").html(a);
+	});
+
+
+
 // 회원가입 정규화
 	$("#submit").click(function() {
 							var id = /^[a-z]+[a-z0-9]{5,19}$/g;

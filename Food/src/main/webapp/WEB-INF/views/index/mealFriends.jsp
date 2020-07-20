@@ -15,11 +15,6 @@
 <!-- Title -->
 <title></title>
 
-<!-- Favicon -->
-<link rel="icon" href="resources/img/core-img/favicon.ico">
-
-<!-- Core Stylesheet -->
-<link rel="stylesheet" href="resources/css/style.css">
 
 <!-- 부트스트랩 -->
 <link
@@ -90,10 +85,21 @@
 					<th>작성자</th>
 					<th>등록일</th>
 					<th>조회수</th>
-					<!-- 추가 -->
-
+					<th>참여인원</th>
 				</tr>
-				<!-- 리뷰 전체 List -->
+				<c:forEach items="${friendlist}" var="friend">
+				<!-- 프라퍼티이름 변경 -->
+				<tr>
+					<td>${friend.f_no}</td>
+					<td>${friend.f_title}</td>
+					<td>${friend.f_content}</td>
+					<td>${friend.m_id}</td>
+					<td>${friend.f_date}</td>
+					<td>${friend.f_viewcount}</td>
+					<td>${friend.f_membercnt}</td>
+					<!-- 추가 -->	
+				</tr>
+			</c:forEach>
 
 			</table>
 
@@ -108,9 +114,7 @@
 
 		<br />
 		
-		<button onclick="location.href='mealBoard/mealFriendsInsert.do'" >
-			<img src="resources/img/write.JPG">
-		</button>
+		<button class="btn btn-default" onclick="location.href='../friendBoard/friendsInsert.do'" ></button>
 		
 	</div>
 
@@ -119,33 +123,8 @@
 	<!-- 게시판 목록 보여주기 끝  -->
 	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="footer.jsp" %>
-	<!-- ##### Footer Area End ##### -->
-
-	<!-- ##### All Javascript Files ##### -->
-	<!-- jQuery-2.2.4 js -->
-	<script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
-	<!-- Popper js -->
-	<script src="resources/js/bootstrap/popper.min.js"></script>
-	<!-- Bootstrap js -->
-	<script src="resources/js/bootstrap/bootstrap.min.js"></script>
-	<!-- All Plugins js -->
-	<script src="resources/js/plugins/plugins.js"></script>
-	<!-- Active js -->
-	<script src="resources/js/active.js"></script>
-	<!-- 지섭 -->
 
 
 

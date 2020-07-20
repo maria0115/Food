@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="managerDAO">
+
+<select id="listAll" resultType="member">
+		SELECT * FROM member
+
+</select>
+
+<select id="allCount" resultType="int">
+		SELECT COUNT(*) FROM member
+</select>
+
+	<!-- 전체출력 & 검색출력 -->
+	<!-- 회원 리스트 -->
+<select id="selectBoard" parameterType="hashmap" resultType="member">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM member 
+						<where>
+							<if test='searchType!=null &amp;&amp; keyword!=null'>${searchType} like '%'||#{keyword}||'%'</if>
+						</where>
+						ORDER BY ROWNUM DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+	
+</select>
+
+<!-- 검색된 회원 숫자 -->
+<select id="searchCount" parameterType="hashmap" resultType="int">
+	SELECT COUNT(*) FROM member
+	<where>
+		<if test='searchType!=null &amp;&amp; keyword!=null'>${searchType} like '%'||#{keyword}||'%'</if>
+	</where>
+</select>
+<delete id="memberDelete" parameterType="member">
+		Delete From member WHERE m_id=#{m_id}
+	</delete>
+	
+</mapper>

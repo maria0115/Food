@@ -17,7 +17,7 @@
 <link rel="icon" href="resources/img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
-<!-- <link rel="stylesheet" href="resources/css/style.css"> -->
+<link rel="stylesheet" href="resources/css/style.css">
 <link rel="stylesheet" href="resources/css/style1.css">
 <link rel="stylesheet" href="resources/css/main1.css">
 <link rel="stylesheet" href="resources/css/normalize1.css">
@@ -31,7 +31,7 @@
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
-<jsp:include page="../header.jsp">
+<jsp:include page="../index/header.jsp">
 	<jsp:param value='' name='folder' />
 </jsp:include>
 </head>
@@ -69,66 +69,54 @@
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
 
+<!-- <script type="text/javascript"> -->
+
+<!-- // // insert 버튼 클릭시  -->
+<!-- // var header = { -->
+<!-- //         pageSubmitFn : function(pageName, form) { -->
+<!-- //            $("#pageName").val(pageName); // input 태그의 value를 설정한다. -->
+<!-- // //            action 부여 후 submit(); -->
+<!-- //             $("#"+form).attr("action",pageName+".do");              -->
+<!-- //             $("#"+form).submit(); -->
+<!-- //         } -->
+<!-- //    } -->
 
 
-<div class='move'>
-<div class="product-status mg-tb-15">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="product-status-wrap">
-                            <h4>Products List</h4>
-                            <div class="add-product">
-                                <a href="product-edit.html">Add Product</a>
+<!-- </script> -->
+
+
+
+<div class='container'><div class="contact-form-area mb-100">
+                        <form action="qnaboard_insert.do" method="post">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-name" placeholder="Your title" name="q_title">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-email" placeholder="Your name" name="q_writer">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="message" cols="30" rows="10" placeholder="Message" name="q_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn alazea-btn mt-15">Send Message</button>
+                                </div>
                             </div>
-                            <table>
-                                <tbody><tr>
-                                    <th>NO</th>
-                                    <th>TITLE</th>
-                                    <th>CONTENT</th>
-                                    <th>WRITER</th>
-                                    <th>DATE</th>
-                                    <th>버튼</th>
-                                </tr>
-                                <c:forEach items="${listVO}" var="list">
-                                <tr>
-                                    <td>${list.no}</td>
-                                    <td>${list.title}</td>
-                                    <td>${list.content}</td>
-                                    <td>${list.writer}</td>
-                                    <td>${list.regdate}</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
-                            <div class="custom-pagination">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
+                        </form>
                     </div>
-                </div>
-            </div>
-        </div>
 </div>
 
 
 
 
-
     <!-- ##### Footer Area Start ##### -->
-    <%@ include file="../footer.jsp" %>
+    <%@ include file="../index/footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->

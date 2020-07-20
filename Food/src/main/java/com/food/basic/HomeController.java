@@ -39,7 +39,7 @@ public class HomeController {
 	
 //	@RequestMapping("/{step}.do")
 //	public String page(@PathVariable String step) {
-//		return "index/"+step;
+//		return step;
 //	}
 	
 }

@@ -8,7 +8,7 @@ public interface QnaBoardService {
 
 	public List<QnaBoardVO> selectqna(QnaBoardVO vo);
 	
-	
+	public void insertqna(QnaBoardVO vo);
 	
 	
 }
