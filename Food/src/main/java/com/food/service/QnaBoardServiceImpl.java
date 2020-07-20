@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.food.dao.QnaBoardDAO;
 import com.food.domain.QnaBoardVO;
 
-@Service
+@Service("qnaboardservice")
 public class QnaBoardServiceImpl implements QnaBoardService{
 
 	private QnaBoardDAO qnaboarddao;

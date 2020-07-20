@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.food.domain.QnaBoardVO;
 
-@Repository
+@Repository("qnaboarddao")
 public class QnaBoardDAOImpl implements QnaBoardDAO {
 
 	@Autowired
