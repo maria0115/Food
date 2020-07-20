@@ -64,6 +64,10 @@ public class MemberServiceImpl  implements MemberService{
 		return memberdao.checkEmail(vo);
 	}
 
+
+	public MemberVO findPassword(MemberVO vo) {
+		return memberdao.findPassword(vo);
+	}
 	
 	
 }

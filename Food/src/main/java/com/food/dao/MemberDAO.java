@@ -5,6 +5,8 @@ import com.food.domain.MemberVO;
 public interface MemberDAO {
 	public String find_id(String m_email);
 	
+	public MemberVO findPassword(MemberVO vo);
+	
 	public MemberVO checkEmail(MemberVO vo);
 	
 	public MemberVO userSingIn(MemberVO vo);

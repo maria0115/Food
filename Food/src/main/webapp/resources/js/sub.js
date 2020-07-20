@@ -1,3 +1,15 @@
+//비밀번호 찾기
+$('#findPasswordNext').click(function(){
+		if( $.trim($("#id").val()) == '' ){
+            alert("아이디를 입력해 주세요.");
+            $("#id").focus();
+            return;
+        }else
+		
+	   $(".findPassword").submit();
+	
+	});
+
 //취소버튼 클릭시
 $('#cancle_btn').click(function(){
        event.preventDefault();
