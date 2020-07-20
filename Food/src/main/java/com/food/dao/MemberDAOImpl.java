@@ -37,6 +37,23 @@ public class MemberDAOImpl  implements MemberDAO{
 			return mybatis.selectOne("memberDAO.find_id", m_email);
 	}
 
+//이메일 중복확인
+	@Override
+	public MemberVO checkEmail(MemberVO vo) {
+		return mybatis.selectOne("memberDAO.selectEmail",vo);
+	}
 
 	
+	
+	
+	
+	
+//이메일 발송 
+	public MemberVO findPassword(MemberVO vo) {
+		System.out.println("===> Mybatis findpassword() 호출");
+		//아이디를 member db에 넘겨서 이메일주소와 아이디 비밀번호를 받아온다.
+		MemberVO result = mybatis.selectOne("memberDAO.findpassword", vo);
+		
+		return result;
+	}
 }

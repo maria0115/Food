@@ -78,13 +78,14 @@
 		</div>
 	</div>
 
-	<div class='move'>
+<div class="container">
 		<form action="singupMember.do" method="POST" >
 			<!-- 아이디 -->
 
 			<label >아이디</label> <input type="text" class="sing" id="id"
 				name="m_id" placeholder="ID" required>
-			<div class="check_font" id="id_check">아이디를 입력하세요</div>
+			<div class="check_font" id="id_check"></div>
+			<div class="check_font" id="id_check2"></div>
 
 
 
@@ -114,7 +115,10 @@
 
 			<label>이메일</label> <input type="text" class="sing" name="m_email"
 				id="email" placeholder="E-mail" required>
-			<div class="check_font" id="email_check"></div>
+				<div class="check_font" id="email_check"></div>
+			<div class="check_font" id="email_check2"></div>
+		
+			
 
 			<!-- 휴대전화 -->
 
@@ -196,10 +200,10 @@
 
 			<button id="cancle_btn">취소하기</button><input type="submit" value="전송"  id="submit">
 		</form>
-
-
-
 	</div>
+
+
+
 	<p></p>
 
 	<!-- Search Form -->

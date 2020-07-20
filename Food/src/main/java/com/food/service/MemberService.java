@@ -6,7 +6,9 @@ import com.food.domain.MemberVO;
 
 public interface MemberService {
 
-
+	public MemberVO findPassword(MemberVO vo);
+	
+	public MemberVO checkEmail(MemberVO vo);
 	
 	public String find_id(HttpServletResponse response, String email)throws Exception;
 	
