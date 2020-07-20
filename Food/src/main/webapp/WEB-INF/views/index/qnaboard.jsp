@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,102 +85,27 @@
                             </div>
                             <table>
                                 <tbody><tr>
-                                    <th>Image</th>
-                                    <th>Product Title</th>
-                                    <th>Status</th>
-                                    <th>Stock</th>
-                                    <th>Price</th>
-                                    <th>Setting</th>
+                                    <th>NO</th>
+                                    <th>TITLE</th>
+                                    <th>CONTENT</th>
+                                    <th>WRITER</th>
+                                    <th>DATE</th>
+                                    <th>xxxxx</th>
                                 </tr>
+                                <c:forEach items="${listVO}" var="list">
                                 <tr>
-                                    <td><img src="img/new-product/5-small.jpg" alt=""></td>
-                                    <td>Jewelery Title 1</td>
-                                    <td>
-                                        <button class="pd-setting">Active</button>
-                                    </td>
-                                    <td>Out Of Stock</td>
-                                    <td>$15</td>
+                                    <td>${list.no}</td>
+                                    <td>${list.title}</td>
+                                    <td>${list.content}</td>
+                                    <td>${list.regdate}</td>
                                     <td>
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><img src="img/new-product/6-small.jpg" alt=""></td>
-                                    <td>Jewelery Title 2</td>
-                                    <td>
-                                        <button class="ps-setting">Paused</button>
-                                    </td>
-                                    <td>60</td>
-                                    <td>$1020</td>
-                                    <td>In Stock</td>
-                                    <td>$17</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="img/new-product/7-small.jpg" alt=""></td>
-                                    <td>Jewelery Title 3</td>
-                                    <td>
-                                        <button class="ds-setting">Disabled</button>
-                                    </td>
-                                    <td>70</td>
-                                    <td>$1050</td>
-                                    <td>Low Stock</td>
-                                    <td>$15</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="img/new-product/5-small.jpg" alt=""></td>
-                                    <td>Jewelery Title 4</td>
-                                    <td>
-                                        <button class="pd-setting">Active</button>
-                                    </td>
-                                    <td>120</td>
-                                    <td>$1440</td>
-                                    <td>In Stock</td>
-                                    <td>$12</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="img/new-product/6-small.jpg" alt=""></td>
-                                    <td>Jewelery Title 5</td>
-                                    <td>
-                                        <button class="pd-setting">Active</button>
-                                    </td>
-                                    <td>30</td>
-                                    <td>$540</td>
-                                    <td>Out Of Stock</td>
-                                    <td>$18</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="img/new-product/7-small.jpg" alt=""></td>
-                                    <td>Jewelery Title 6</td>
-                                    <td>
-                                        <button class="ps-setting">Paused</button>
-                                    </td>
-                                    <td>400</td>
-                                    <td>$4000</td>
-                                    <td>In Stock</td>
-                                    <td>$10</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody></table>
+                                </c:forEach>
+                                </tbody>
+                            </table>
                             <div class="custom-pagination">
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination">
