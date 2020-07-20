@@ -25,7 +25,7 @@ public class managerDAOImpl implements managerDAO{
 	@Override
 	public List<MemberVO> listAll() {
 		System.out.println("==>MemberMapper listAll() 호출");
-		return mybatis.selectList("MemberDAO.listAll");
+		return mybatis.selectList("managerDAO.listAll");
 	}
 	
 	
@@ -38,7 +38,7 @@ public class managerDAOImpl implements managerDAO{
 		map.put("searchType",searchType);
 		map.put("keyword",keyword);
 	
-		return mybatis.selectOne("MemberDAO.searchCount",map);
+		return mybatis.selectOne("managerDAO.searchCount",map);
 	}
 
 	//회원정보 출력, 검색한 값이 있을때는 검색된 회원을 반환하고 검색한 값이 없을때는 전체회원 정보를 반환한다
@@ -50,20 +50,20 @@ public class managerDAOImpl implements managerDAO{
 		map.put("keyword",keyword);
 		map.put("start",pvo.getStart());
 		map.put("end",pvo.getEnd());
-		return mybatis.selectList("MemberDAO.selectBoard",map);
+		return mybatis.selectList("managerDAO.selectBoard",map);
 	}
 
 	//모든 회원 명수
 		@Override
 		public int allCount() {
 			System.out.println("==>MemberMapper allCount() 호출");
-			return mybatis.selectOne("MemberDAO.allCount");
+			return mybatis.selectOne("managerDAO.allCount");
 		}
 
 		@Override
 		public int memberDelete(MemberVO vo) {
 			System.out.println("==>MemberMapper memberDelete() 호출");
-			return mybatis.delete("MemberDAO.memberDelete",vo);
+			return mybatis.delete("managerDAO.memberDelete",vo);
 		}	
 		
 

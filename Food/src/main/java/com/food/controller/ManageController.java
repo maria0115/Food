@@ -18,7 +18,7 @@ import com.food.service.ManagerService;
 
 
 @Controller
-@RequestMapping("manager/")
+@RequestMapping("manager")
 public class ManageController {
 	
 	int curCount=0; //리스트에서 현재 검색된 데이터 숫자를 저장할 변수 선언
