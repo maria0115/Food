@@ -210,7 +210,7 @@
 									<li><a href="<%=folder %>myMenu.do" id="mymenu">My Menu</a></li>
 									<li><a href="<%=folder %>choiceMenu.do" id="choice">Other's Menu</a></li>
 									<li><a href="<%=folder %>mealFriends.do">Happy Meal With Friends</a></li>
-									<li><a href="<%=folder %>stor.do">Menu Map</a></li>
+									<li><a href="<%=folder %>store.do">Store List</a></li>
 								</ul>
 
 								<!-- Search Icon -->

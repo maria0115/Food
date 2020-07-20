@@ -37,9 +37,9 @@ public class HomeController {
 		return "home";
 	}
 	
-//	@RequestMapping("/{step}.do")
-//	public String page(@PathVariable String step) {
-//		return step;
-//	}
+	@RequestMapping("/{step}.do")
+	public String page(@PathVariable String step) {
+		return "index/"+step;
+	}
 	
 }
