@@ -15,7 +15,7 @@ public class QnaBoardDAOImpl implements QnaBoardDAO {
 	private SqlSessionTemplate mybatis;
 	
 	public List<QnaBoardVO> selectqna(QnaBoardVO vo) {
-		System.out.println("selectqna dao");
+		System.out.println("selectqna dao 도착");
 		return mybatis.selectList("qnaboardDAO.selectqna",vo);
 	}
 	

@@ -17,7 +17,7 @@
 <link rel="icon" href="resources/img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
-<link rel="stylesheet" href="resources/css/style.css">
+<!-- <link rel="stylesheet" href="resources/css/style.css"> -->
 <link rel="stylesheet" href="resources/css/style1.css">
 <link rel="stylesheet" href="resources/css/main1.css">
 <link rel="stylesheet" href="resources/css/normalize1.css">
@@ -31,7 +31,7 @@
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
-<jsp:include page="header.jsp">
+<jsp:include page="../header.jsp">
 	<jsp:param value='' name='folder' />
 </jsp:include>
 </head>
@@ -71,11 +71,9 @@
 
 
 
-
-
 <div class='move'>
 <div class="product-status mg-tb-15">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
@@ -90,13 +88,14 @@
                                     <th>CONTENT</th>
                                     <th>WRITER</th>
                                     <th>DATE</th>
-                                    <th>xxxxx</th>
+                                    <th>버튼</th>
                                 </tr>
                                 <c:forEach items="${listVO}" var="list">
                                 <tr>
                                     <td>${list.no}</td>
                                     <td>${list.title}</td>
                                     <td>${list.content}</td>
+                                    <td>${list.writer}</td>
                                     <td>${list.regdate}</td>
                                     <td>
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
@@ -128,22 +127,21 @@
 
 
 
-
     <!-- ##### Footer Area Start ##### -->
-    <%@ include file="footer.jsp" %>
+    <%@ include file="../footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
-    <script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="resources/js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="resources/js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="resources/js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="resources/js/active.js"></script>
+<!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->
+<!--     Popper js -->
+<!--     <script src="resources/js/bootstrap/popper.min.js"></script> -->
+<!--     Bootstrap js -->
+<!--     <script src="resources/js/bootstrap/bootstrap.min.js"></script> -->
+<!--     All Plugins js -->
+<!--     <script src="resources/js/plugins/plugins.js"></script> -->
+<!--     Active js -->
+<!--     <script src="resources/js/active.js"></script> -->
 </body>
 
 </html>

@@ -22,7 +22,7 @@ public class QnaBoardController {
 		List<QnaBoardVO> listVO = qnaboardservice.selectqna(vo);
 		System.out.println("mapper 갔다옴");
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("qnaboard");
+		mv.setViewName("index/qnaboard/qnaboard");
 		mv.addObject("listVO",listVO);
 		return mv;
 		
