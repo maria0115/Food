@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<% String store = (String)request.getAttribute("store"); 
-	System.out.print(store);
 
-%>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -220,7 +217,7 @@
                         <div class="row">
 
                             <!-- Single Product Area -->
-                         
+                         	<c:forEach items="${listVO}" var="store">
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="single-product-area mb-50">
                                     <!-- Product Image -->
@@ -238,14 +235,15 @@
                                     </div>
                                     <!-- Product Info -->
                                     <div class="product-info mt-15 text-center">
-                                        <a href="stor.do">
-                                            <p><%=store%></p>
+                                        <a href="shopDetails.do">
+                                            <p> ${store.s_brand_name}</p>
                                      
                                         </a>
-                                        <h6></h6>
+                                        <h6>aa</h6>
                                     </div>
                                 </div>
                             </div>
+                            </c:forEach>
                           
 
                             <!-- Single Product Area -->
