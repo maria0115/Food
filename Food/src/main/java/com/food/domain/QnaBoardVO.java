@@ -2,43 +2,46 @@ package com.food.domain;
 
 public class QnaBoardVO {
 
-	private int no;
-	private String title;
-	private String content;
-	private String writer;
-	private String regdate;
+	private int q_no;
+	private String q_title;
+	private String q_content;
+	private String q_writer;
+	private String q_regdate;
 	
 	
-	public int getNo() {
-		return no;
+	public int getQ_no() {
+		return q_no;
 	}
-	public void setNo(int no) {
-		this.no = no;
+	public void setQ_no(int q_no) {
+		this.q_no = q_no;
 	}
-	public String getTitle() {
-		return title;
+	public String getQ_title() {
+		return q_title;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setQ_title(String q_title) {
+		this.q_title = q_title;
 	}
-	public String getContent() {
-		return content;
+	public String getQ_content() {
+		return q_content;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setQ_content(String q_content) {
+		this.q_content = q_content;
 	}
-	public String getWriter() {
-		return writer;
+	public String getQ_writer() {
+		return q_writer;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setQ_writer(String q_writer) {
+		this.q_writer = q_writer;
 	}
-	public String getRegdate() {
-		return regdate;
+	public String getQ_regdate() {
+		return q_regdate;
 	}
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
+	public void setQ_regdate(String q_regdate) {
+		this.q_regdate = q_regdate;
 	}
+	
+	
+
 	
 	
 }

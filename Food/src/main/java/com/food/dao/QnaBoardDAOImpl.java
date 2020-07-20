@@ -18,6 +18,12 @@ public class QnaBoardDAOImpl implements QnaBoardDAO {
 		System.out.println("selectqna dao 도착");
 		return mybatis.selectList("qnaboardDAO.selectqna",vo);
 	}
+
+	@Override
+	public void insertqna(QnaBoardVO vo) {
+		System.out.println("insertqna dao 도착");
+		mybatis.insert("qnaboardDAO.insertqna",vo);
+	}
 	
 	
 	

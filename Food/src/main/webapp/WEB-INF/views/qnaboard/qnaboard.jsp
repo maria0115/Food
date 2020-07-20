@@ -31,7 +31,7 @@
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
-<jsp:include page="../header.jsp">
+<jsp:include page="../index/header.jsp">
 	<jsp:param value='' name='folder' />
 </jsp:include>
 </head>
@@ -71,7 +71,7 @@
 
 
 
-<div class='move'>
+<!-- <div class='move'> -->
 <div class="product-status mg-tb-15">
             <div class="container">
                 <div class="row">
@@ -79,7 +79,7 @@
                         <div class="product-status-wrap">
                             <h4>Products List</h4>
                             <div class="add-product">
-                                <a href="product-edit.html">Add Product</a>
+                                <a href="qnaboard_insertpage.do">Add Product</a>
                             </div>
                             <table>
                                 <tbody><tr>
@@ -92,11 +92,11 @@
                                 </tr>
                                 <c:forEach items="${listVO}" var="list">
                                 <tr>
-                                    <td>${list.no}</td>
-                                    <td>${list.title}</td>
-                                    <td>${list.content}</td>
-                                    <td>${list.writer}</td>
-                                    <td>${list.regdate}</td>
+                                    <td>${list.q_no}</td>
+                                    <td>${list.q_title}</td>
+                                    <td>${list.q_content}</td>
+                                    <td>${list.q_writer}</td>
+                                    <td>${list.q_regdate}</td>
                                     <td>
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                         <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -121,14 +121,14 @@
                 </div>
             </div>
         </div>
-</div>
+<!-- </div> -->
 
 
 
 
 
     <!-- ##### Footer Area Start ##### -->
-    <%@ include file="../footer.jsp" %>
+    <%@ include file="../index/footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->

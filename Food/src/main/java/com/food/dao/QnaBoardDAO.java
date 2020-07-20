@@ -8,4 +8,5 @@ public interface QnaBoardDAO {
 
 	public List<QnaBoardVO> selectqna(QnaBoardVO vo);
 	
+	public void insertqna(QnaBoardVO vo);
 }

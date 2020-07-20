@@ -15,8 +15,13 @@ public class QnaBoardServiceImpl implements QnaBoardService{
 	private QnaBoardDAO qnaboarddao;
 	
 	public List<QnaBoardVO> selectqna(QnaBoardVO vo) {
-		System.out.println("service 도착");
+		System.out.println("service selectqna 도착");
 		return qnaboarddao.selectqna(vo);
+	}
+
+	public void insertqna(QnaBoardVO vo) {
+		System.out.println("service insertqna 도착");
+		qnaboarddao.insertqna(vo);
 	}
 	
 	
