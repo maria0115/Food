@@ -111,10 +111,7 @@
 
 		<!-- 페이징 -->
 		<div style="display: block; text-align: center;"></div>
-
-		<br />
-		
-		<button class="btn btn-default" onclick="location.href='../friendBoard/friendsInsert.do'" ></button>
+		<button class="btn btn-default" onclick="location.href='friendBoard/friendsInsert.do'" >글등록</button>
 		
 	</div>
 

@@ -15,10 +15,10 @@
 <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
 
 <!-- Favicon -->
-<link rel="icon" href="resources/img/core-img/favicon.ico">
+<link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="/Food/resources/css/style.css">
 <!-- <link rel="stylesheet" href="resources/css/js.css"> -->
 <!-- 부트스트랩 -->
 <link
@@ -202,17 +202,17 @@
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
+	<script src="/Food/resources/js/jquery/jquery-2.2.4.min.js"></script>
 	<!-- Popper js -->
-	<script src="resources/js/bootstrap/popper.min.js"></script>
+	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
 	<!-- Bootstrap js -->
-	<script src="resources/js/bootstrap/bootstrap.min.js"></script>
+	<script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
 	<!-- All Plugins js -->
-	<script src="resources/js/plugins/plugins.js"></script>
+	<script src="/Food/resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
-	<script src="resources/js/active.js"></script>
+	<script src="/Food/resources/js/active.js"></script>
 	<!-- 지섭 -->
-	<script src="resources/js/sub.js"></script>
+	<script src="/Food/resources/js/sub.js"></script>
 
 
 

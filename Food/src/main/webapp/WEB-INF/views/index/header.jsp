@@ -21,11 +21,11 @@
 <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
 
 <!-- Favicon -->
-<link rel="icon" href="resources/img/core-img/favicon.ico">
+<link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
-<link rel="stylesheet" href="resources/css/style.css">
-<link rel="stylesheet" href="resources/css/js.css">
+<link rel="stylesheet" href="/Food/resources/css/style.css">
+<link rel="stylesheet" href="/Food/resources/css/js.css">
 <!-- 부트스트랩 -->
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
@@ -53,7 +53,7 @@
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
 		<div class="preloader-img">
-			<img src="resources/img/core-img/leaf.png" alt="">
+			<img src="/Food/resources/img/core-img/leaf.png" alt="">
 		</div>
 	</div>
 
@@ -206,11 +206,11 @@
 									</li>
 								</ul>
 								<ul>
-									<li><a href="<%=folder %>index/todayMenu.do" id="today">Today Menu</a></li>
-									<li><a href="<%=folder %>index/myMenu.do" id="mymenu">My Menu</a></li>
-									<li><a href="<%=folder %>index/choiceMenu.do" id="choice">Other's Menu</a></li>
-									<li><a href="<%=folder %>index/mealFriends.do">Happy Meal With Friends</a></li>
-									<li><a href="<%=folder %>index/store.do">Menu Map</a></li>
+									<li><a href="<%=folder %>todayMenu.do" id="today">Today Menu</a></li>
+									<li><a href="<%=folder %>myMenu.do" id="mymenu">My Menu</a></li>
+									<li><a href="<%=folder %>choiceMenu.do" id="choice">Other's Menu</a></li>
+									<li><a href="<%=folder %>mealFriends.do">Happy Meal With Friends</a></li>
+									<li><a href="<%=folder %>stor.do">Menu Map</a></li>
 								</ul>
 
 								<!-- Search Icon -->
@@ -243,15 +243,15 @@
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
+	<script src="/Food/resources/js/jquery/jquery-2.2.4.min.js"></script>
 	<!-- Popper js -->
-	<script src="resources/js/bootstrap/popper.min.js"></script>
+	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
 	<!-- Bootstrap js -->
-	<script src="resources/js/bootstrap/bootstrap.min.js"></script>
+	<script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
 	<!-- All Plugins js -->
-	<script src="resources/js/plugins/plugins.js"></script>
+	<script src="/Food/resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
-	<script src="resources/js/active.js"></script>
+	<script src="/Food/resources/js/active.js"></script>
 	<!-- 지섭-->
 
 
