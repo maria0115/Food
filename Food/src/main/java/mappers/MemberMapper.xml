@@ -4,25 +4,21 @@
 <mapper namespace="memberDAO">
 
 
-<insert id="insertMember" parameterType="member">
- insert into member(m_id,m_name,m_pass,m_tel,m_birth,m_area,m_most,m_email) 
- values (#{m_id},#{m_name},#{m_pass},#{m_tel},#{m_birth},#{m_area},#{m_most},#{m_email})
-</insert>
 
 
 <select id="selectMember" parameterType="member" resultType="member">
-		SELECT * FROM member WHERE m_id = #{m_id}
+		SELECT * FROM foodmember WHERE m_id = #{m_id}
 		<if test="m_pass!=null">
 		AND m_pass = #{m_pass}
 		</if>
 </select>
 
 <select id="selectID" parameterType="member" resultType="member">
-		SELECT  * FROM member WHERE m_id = #{m_id}
+		SELECT  * FROM foodmember WHERE m_id = #{m_id}
 </select>
 
 <select id="find_id" parameterType="String" resultType="String">
-		select m_id from member where m_email = #{m_email}
+		select m_id from foodmember where m_email = #{m_email}
 	</select>
 	
 <select id="selectEmail" parameterType="member" resultType="member">
@@ -32,5 +28,8 @@
 
 
 
-
+<insert id="insertMember" parameterType="member">
+insert into foodmember(m_id,m_name,m_pass,m_tel,m_birth,m_area,m_most,m_email) 
+values(#{m_id},#{m_name},#{m_pass},#{m_tel},#{m_birth},#{m_area},#{m_most},#{m_email})
+</insert>
 </mapper>
