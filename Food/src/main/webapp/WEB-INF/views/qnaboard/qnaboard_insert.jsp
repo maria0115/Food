@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="resources/css/main1.css">
 <link rel="stylesheet" href="resources/css/normalize1.css">
 <link rel="stylesheet" href="resources/css/bootstrap1.min.css">
-<link rel="stylesheet" href="resources/css/font-awesome1.min.css">
 
 <!-- 부트스트랩 -->
 <link
