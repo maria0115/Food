@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	// <jsp:param>의 값 넘겨받기
+	String folder = request.getParameter("folder");
+	if( folder == null || folder.equals("")) folder="";
+	%>  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +53,7 @@
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
 		<div class="preloader-img">
-			<img src="img/core-img/leaf.png" alt="">
+			<img src="resources/img/core-img/leaf.png" alt="">
 		</div>
 	</div>
 
@@ -193,10 +198,10 @@
 									</li>
 								</ul>
 								<ul>
-									<li><a href="todayMenu.do" id="today">Today Menu</a></li>
-									<li><a href="myMenu.do" id="mymenu">My Menu</a></li>
-									<li><a href="choiceMenu.do" id="choice">Other's Menu</a></li>
-									<li><a href="#">Happy Meal With Friends</a></li>
+									<li><a href="<%=folder %>todayMenu.do" id="today">Today Menu</a></li>
+									<li><a href="<%=folder %>myMenu.do" id="mymenu">My Menu</a></li>
+									<li><a href="<%=folder %>choiceMenu.do" id="choice">Other's Menu</a></li>
+									<li><a href="<%=folder %>mealFriends.do">Happy Meal With Friends</a></li>
 									<li><a href="#">Menu Map</a></li>
 								</ul>
 
