@@ -10,9 +10,16 @@ public class FriendBoardVO {
 	private int f_membercnt; //참여인원
 	private int f_viewcount; //조회수
 	private String f_date; //등록일
+	private String f_ip; //사용자ip
 	
 	
 	
+	public String getF_ip() {
+		return f_ip;
+	}
+	public void setF_ip(String f_ip) {
+		this.f_ip = f_ip;
+	}
 	public int getF_no() {
 		return f_no;
 	}

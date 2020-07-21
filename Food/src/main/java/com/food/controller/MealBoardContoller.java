@@ -14,7 +14,7 @@ import com.food.service.FriendBoardService;
 
 @Controller
 @RequestMapping("/mealBoard")
-public class mealBoardContoller {
+public class MealBoardContoller {
 
 	
 	@Autowired
@@ -29,13 +29,17 @@ public class mealBoardContoller {
 	//밥친구 게시판 글 등록하기 
 	@RequestMapping("/friendsave.do")
 	public String friendsave(FriendBoardVO vo , HttpServletRequest request) {
+		
+		String ip = request.getHeader("X-Forwarded-For");
+        if (ip == null) {
+            ip = request.getRemoteAddr();
+        }
+        vo.setF_ip(ip);
 		int result;
 		String addr1 = (String) request.getParameter("addr1");
 		String addr2 = (String) request.getParameter("addr2");
 		String addr = addr1+addr2;
-		
 		vo.setF_addr(addr);
-		
 		result = friendBoardservice.friendsave(vo);
 		if(result==0) {
 			return "../index/error";
