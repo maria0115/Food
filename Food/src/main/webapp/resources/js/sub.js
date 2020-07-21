@@ -150,9 +150,14 @@ $("#id").blur(function(){
 		
 		if(len < 3){
 			var a = $("#testInput").val();
-			var $div = $("<input class='mostfood' name='m_most' value='"+a+"' ><input type='button' class='btn btn-danger' id='mostdelete' value='X'/>")
-			$("#mostfood").append($div)
-			$(this).prev().val("");
+			if(a == ""){
+				alert("좋아하는 음식을 입력해주세요");
+			}else{
+				var $div = $("<input class='mostfood' name='m_most' value='"+a+"' ><input type='button' class='btn btn-danger' id='mostdelete' value='X'/>")
+				$("#mostfood").append($div)
+				$(this).prev().val("");
+			}
+			
 		}else{
 			alert("좋아하는 음식은 3개 까지만 선택가능합니다.");
 			$(this).prev().val("");
