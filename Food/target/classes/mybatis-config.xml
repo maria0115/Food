@@ -10,6 +10,8 @@
 		<typeAlias alias="member"  type="com.food.domain.MemberVO"/>
 		<typeAlias alias="qnaboard"	type="com.food.domain.QnaBoardVO"/>
 		<typeAlias alias="friend" type="com.food.domain.FriendBoardVO"/>
+		<typeAlias alias="blacklist" type="com.food.domain.BlackListVO"/>
+		
 	</typeAliases>
 
 

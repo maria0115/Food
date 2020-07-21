@@ -41,12 +41,12 @@ $(function(){
 		var confirm_val = confirm("정말 삭제하시겠습니까?");
 		
 		if(confirm_val){
-			var checkArr = new Array(); //userId값을 저장할 List 선언
+			var checkArr = new Array(); //Id값을 저장할 List 선언
 			
 			$('input[class="input_check"]:checked').each(function(){ //check된 체크박스 만큼 각각 반복
-				checkArr.push($(this).attr("name")); //checkArr 리스트에 체크된 박스의 name 속성값을 push한다. userId값이 들어있음
+				checkArr.push($(this).attr("name")); //checkArr 리스트에 체크된 박스의 name 속성값을 push한다. Id값이 들어있음
 				$.ajax({
-					url:"Delete.do", //삭제 요청
+					url:"blackDelete.do", //삭제 요청
 					type:"post",
 					data:{input_check : checkArr}, 
 					success:function(url2){

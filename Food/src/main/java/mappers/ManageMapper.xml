@@ -38,8 +38,10 @@
 		<if test='searchType!=null &amp;&amp; keyword!=null'>${searchType} like '%'||#{keyword}||'%'</if>
 	</where>
 </select>
+
+<!-- 회원삭제 -->
 <delete id="memberDelete" parameterType="member">
 		Delete From member WHERE m_id=#{m_id}
-	</delete>
+</delete>
 	
 </mapper>

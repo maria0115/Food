@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Member List</title>
+<title>Black List</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- favicon
@@ -73,16 +73,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="/Food/resources/js/vendor/modernizr-2.8.3.min.js"></script>
-<script type="text/javascript" src="/Food/resources/js/memberList.js"></script>
+<script type="text/javascript" src="/Food/resources/js/blackList.js"></script>
 
 </head>
-
 <body>
-	<!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-	<div class="left-sidebar-pro">
+<div class="left-sidebar-pro">
 		<nav id="sidebar" class="">
 			<div class="sidebar-header">
 				<a href="index.html"><img class="main-logo"
@@ -108,7 +103,7 @@
 								<li><a title="Product List" href="member-list.do"><i
 										class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Member List</span></a></li>
-										<li><a title="Product List" href="black-list.do"><i
+										<li><a title="Product List" href="Black-list.do"><i
 										class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Black List</span></a></li>
 								<li><a title="Product Edit" href="product-edit.html"><i
@@ -1017,7 +1012,7 @@
 										<ul class="breadcome-menu">
 											<li><a href="#">Home</a> <span class="bread-slash">/</span>
 											</li>
-											<li><span class="bread-blod">Product List</span></li>
+											<li><span class="bread-blod">Black List</span></li>
 										</ul>
 									</div>
 								</div>
@@ -1035,65 +1030,64 @@
 						
 								
 								
-									<div class="del-member">
+									<div class="del-black">
 							<button data-toggle="tooltip" title="Trash" class="chk_del">
 											<i class="fa fa-trash-o" aria-hidden="true"></i>
 							
 							</button>
 							</div>
-							<h4>Member List</h4>
-							<table>
+							
+								<h4>Black List</h4>
+								<table>
 								<tr>
 									<th>Id</th>
 									<th>Name</th>
-									<th>Tel</th>
-									<th>Birth</th>
-									<th>Place</th>
-									<th>Most</th>
-									<th>Email</th>
+									<th>Start</th>
+									<th>End</th>
+									<th>Reason</th>
+									<th>State</th>
 									<th><div class="check_all"><input type='checkbox' id="check_all"></div></th>
 							
 							
 								</tr>
-								<c:forEach items="${memList }" var="member">
+								<c:forEach items="${blackList }" var="black">
 									<tr>
-										<td>${member.m_id }</td>
-										<td>${member.m_name }</td>
-										<td>${member.m_tel}</td>
-										<td>${member.m_birth }</td>
-										<td>${member.m_area }</td>
-										<td>${member.m_most}</td>
-										<td>${member.m_email }</td>
+										<td>${black.b_id }</td>
+										<td>${black.b_name }</td>
+										<td>${black.s_start}</td>
+										<td>${black.s_end }</td>
+										<td>${black.reason }</td>
+										<td>${black.s_state}</td>
+										<td></td>
 										<td>
 											<button data-toggle="tooltip" title="Edit"
 												class="pd-setting-ed">
 												<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 											</button> 
-											<button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="location.href='Delete.do?m_id=${member.m_id}'">
+											<button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="location.href='blackDelete.do?b_id=${black.b_id}'">
 											<i class="fa fa-trash-o" aria-hidden="true"></i>
 											</button>
-											<input type='checkbox' class='input_check' name="${member.m_id}">
+											<input type='checkbox' class='input_check' name="${black.b_id}">
 										</td>
 									</tr>
 								</c:forEach>
 							</table>
-
 							<div class="custom-pagination">
 								<nav aria-label="Page navigation example">
 								
 								<div class="breadcome-heading">
 			
-										<form role="search" class="frm">
+										<form role="search" class="blackfrm">
 
 											<div class="form-select-list">
-												<select class="form-control custom-select-value" id="searchType"
+											<select class="form-control custom-select-value" id="searchType"
 													name="searchType">
-													<option <c:if test="${searchType eq 'm_id'}">selected</c:if>>Id</option>
-													<option <c:if test="${searchType eq 'm_tel'}">selected</c:if>>Tel</option>
-													<option <c:if test="${searchType eq 'm_email'}">selected</c:if>>Email</option>
-													<option <c:if test="${searchType eq 'm_area'}">selected</c:if>>Place</option>
-												</select> <input type="text" placeholder="Search..."
-													class="form-control" name='keyword' id='keywordInput' <c:if test="${keyword ne null}">value="${keyword}"</c:if>> <a href="javascript:formname.submit();"
+													<option <c:if test="${searchType eq 'b_id'}">selected</c:if>>Id</option>
+													<option <c:if test="${searchType eq 's_state'}">selected</c:if>>State</option>
+
+												</select>
+												 <input type="text" placeholder="Search..."
+													class="form-control" name='keyword' id='Blackkeyword'> <a href="javascript:formname.submit();"
 													class="searchvalue"><i class="fa fa-search"></i></a>
 											</div>
 
@@ -1112,11 +1106,11 @@
 								<div class='pagediv'>
 									<ul class="pagination">
 										<li class="page-item"><a class="page-link"
-												href="../manager/member-list.do?nowPage=${paging.startPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+												href="../manager/black-list.do?nowPage=${paging.startPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 											style="font-size: 20px;">Start</a></li>
 										<c:if test="${paging.nowPage != 1 }">
 											<li class="page-item"><a class="page-link"
-												href="../manager/member-list.do?nowPage=${paging.nowPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+												href="../manager/black-list.do?nowPage=${paging.nowPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 												style="font-size: 20px;">Previous</a></li>
 										</c:if>
 										<c:forEach begin="${paging.startPage }"
@@ -1128,25 +1122,24 @@
 												</c:when>
 												<c:when test="${p != paging.nowPage }">
 													<li class="page-item"><a class="page-link"
-														href="../manager/member-list.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+														href="../manager/black-list.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 														style="font-size: 20px;">${p }</a></li>
 												</c:when>
 											</c:choose>
 										</c:forEach>
 										<c:if test="${paging.nowPage != paging.lastPage}">
 											<li class="page-item"><a class="page-link"
-												href="../manager/member-list.do?nowPage=${paging.nowPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+												href="../manager/black-list.do?nowPage=${paging.nowPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 												style="font-size: 20px;">Next</a></li>
 										</c:if>
 										<li class="page-item"><a class="page-link"
-											href="../manager/member-list.do?nowPage=${paging.lastPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+											href="../manager/black-list.do?nowPage=${paging.lastPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 											style="font-size: 20px;">End</a></li>
 
 									</ul>
 									</div>
 								</nav>
-								</div>
-								
+							</div>
 									<!-- id는 고유한 이름으로 설정하고 tab의 href와 연결되어야 한다. -->
 						
 									<!-- fade 클래스는 선택적인 사항으로 트랜지션(transition)효과가 있다.
@@ -1232,5 +1225,4 @@
 		============================================ -->
 	<script src="/Food/resources/js/main.js"></script>
 </body>
-
 </html>

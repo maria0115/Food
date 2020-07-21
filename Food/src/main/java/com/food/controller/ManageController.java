@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.food.domain.BlackListVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
+import com.food.service.BlackService;
 import com.food.service.ManagerService;
 
 
@@ -27,6 +29,9 @@ public class ManageController {
 	@Autowired
 	private ManagerService managerService;
 	
+	@Autowired
+	private BlackService blackService;
+	
 	@RequestMapping("/{step}.do")
 	public String page(@PathVariable String step) {
 		return "manager/"+step;
@@ -35,10 +40,21 @@ public class ManageController {
 	
 	//회원리스트 출력
 	@RequestMapping("/member-list.do")
-	public String productList(Model model,HttpServletRequest request,String searchClick,PagingVO pvo,@RequestParam(value="nowPage",required=false)String nowPage,@RequestParam(value="cntPerPage",required=false)String cntPerPage,@RequestParam(value="cntHirePage",required=false)String cntHirePage, String searchType, String keyword, MemberVO vo) {
+	public String memberList(Model model,HttpServletRequest request,String searchClick,PagingVO pvo,@RequestParam(value="nowPage",required=false)String nowPage,@RequestParam(value="cntPerPage",required=false)String cntPerPage,@RequestParam(value="cntHirePage",required=false)String cntHirePage, String searchType, String keyword, MemberVO vo) {
 		int total;//페이징 처리할때 데이터의 총 갯수를 저장할 변수
 		String search = "";//검색을 했는지 여부를 확인할 변수 선언
-		
+
+		if(searchType!=null) {
+			if(searchType.equals("Id")==true) {
+				searchType="m_id";
+			}else if(searchType.equals("Tel")==true) {
+				searchType="m_tel";
+			}else if(searchType.equals("Email")==true) {
+				searchType="m_email";
+			}else if(searchType.equals("Place")==true) {
+				searchType="m_area";
+			}
+		}
 		search = searchType; //검색할때 선택한 검색타입을 받아온다
 		allCount =managerService.allCount(); //데이터의 총 갯수
 		
@@ -74,13 +90,10 @@ public class ManageController {
 		} else if (cntPerPage == null) { 
 			cntPerPage = "5";
 		}
-		System.out.println("total : "+total);
-		System.out.println("cntPerPage: "+cntPerPage);
+
 		//PagingVO생성자 함수로 paging 처리 계산하여 pvo에 객체 생성
 		pvo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
-		System.out.println("StartPage : "+pvo.getStartPage());
-		System.out.println("endPage : "+pvo.getEndPage());
-		System.out.println("lastPage : "+pvo.getLastPage());
+
 		//모델에 "paing" pvo 추가
 		model.addAttribute("paging", pvo);
 		
@@ -97,15 +110,85 @@ public class ManageController {
 		//모델에 "keyword" 검색키워드 추가
 		model.addAttribute("keyword", keyword);
 		
-		//모델에 "curCount" 현재 검색된 데이터 숫자 추가
-		model.addAttribute("curCount", curCount);
-		
-		//모델에 "allCount" 전체 데이터 숫자 추가
-		model.addAttribute("allCount", allCount);
+	
 		
 		
 		return "manager/member-list";
 	}
+	
+	//블랙리스트 출력
+		@RequestMapping("/black-list.do")
+		public String blackList(Model model,HttpServletRequest request,String searchClick,PagingVO pvo,@RequestParam(value="nowPage",required=false)String nowPage,@RequestParam(value="cntPerPage",required=false)String cntPerPage,@RequestParam(value="cntHirePage",required=false)String cntHirePage, String searchType, String keyword, BlackListVO vo) {
+			int total;//페이징 처리할때 데이터의 총 갯수를 저장할 변수
+			String search = "";//검색을 했는지 여부를 확인할 변수 선언
+
+			if(searchType!=null) {
+				if(searchType.equals("Id")==true) {
+					searchType="b_id";
+				}else if(searchType.equals("State")==true) {
+					searchType="s_state";
+				}
+			}
+			search = searchType; //검색할때 선택한 검색타입을 받아온다
+			allCount =blackService.allCount(); //데이터의 총 갯수
+			
+			
+			if(search==null || search.equals("")) {//검색을 하지 않았을 경우
+				
+				total=allCount; //total에 데이터의 총 갯수를 저장
+				curCount=allCount; //검색을 하지 않았기 때문에 현재 검색한 데이터의 갯수를 저장하는 curCount 변수에 데이터의 총 갯수를 저장
+				searchType =null;  //mapper에서 오류를 방지하기위헤 searchType에 null값을 저장
+				keyword=null;	   //mapper에서 오류를 방지하기위헤 keyword에 null값을 저장
+			}else{//검색을 했을 경우
+				
+				//검색한 데이터의 갯수를 curCount에 저장
+				curCount =blackService.searchCount(searchType,keyword);
+				
+				//검색버튼을 클릭했을 경우 페이지를 1페이지부터 보여준다
+				if(searchClick.equals("Y")==true) {
+					nowPage="1";
+				}
+				
+				//총 갯수에 현재 검색한 데이터의 갯수를 저장
+				total=curCount;
+			}
+			
+			//페이지 처음 들어갈때 nowPage와 cntPerPage가 없을 경우
+			if (nowPage == null && cntPerPage == null) {
+				nowPage = "1";
+				cntPerPage = "5";
+			//nowPage만 null일 경우
+			} else if (nowPage == null) {
+				nowPage = "1";
+			//cntPerPage만 null일 경우
+			} else if (cntPerPage == null) { 
+				cntPerPage = "5";
+			}
+
+			//PagingVO생성자 함수로 paging 처리 계산하여 pvo에 객체 생성
+			pvo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+
+			//모델에 "paing" pvo 추가
+			model.addAttribute("paging", pvo);
+			
+			//모델에 "memList" List 추가 , db에서 조건에 해당하는 상품 목록을 가지고 온다
+		
+
+
+			
+			
+			model.addAttribute("blackList",blackService.selectBoard(pvo,searchType,keyword));
+			
+			//모델에 "searchType" 검색타입 추가
+			model.addAttribute("searchType", searchType);
+			//모델에 "keyword" 검색키워드 추가
+			model.addAttribute("keyword", keyword);
+			
+		
+			
+			
+			return "manager/black-list";
+		}
 	
 	//회원리스트에서 회원 삭제
 		@ResponseBody
@@ -128,5 +211,27 @@ public class ManageController {
 			}else		   //삭제 실패
 				return "listFail";
 		}
+		
+		//블랙리스트에서 회원 삭제
+		@ResponseBody
+		@RequestMapping(value="/blackDelete.do")
+		public String BlacklistDelete(@RequestParam(value="input_check[]",required=false)List<String> chArr ,BlackListVO vo) {
+			int result=0;//삭제했을때 반환한 값을 저장할 변수
+			if(chArr!=null) {
+				for(String i : chArr) { // 요청받은 리스트만큼 for문을 반복
+					vo.setB_id(i); //chArr 리스트 안에 있던 Id 값들을 db에 넘겨줄 vo객체에 저장한다
+							result=blackService.blackDelete(vo); //해당하는 Id값이 있을 경우 삭제해준다
+			
+				}
+			}
+			else
+				result=blackService.blackDelete(vo);
+					
+				System.out.println("result: "+result);
+				if(result==1) {//삭제 성공
+				return "listSuccess.do"; 
+				}else		   //삭제 실패
+						return "listFail";
+				}
 	
 }

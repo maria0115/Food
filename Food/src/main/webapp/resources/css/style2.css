@@ -799,9 +799,19 @@ ul.setting-panel-list li{
 	text-align:center;
 }
 
-.searchDiv{
+.form-select-list{
 	
 text-align: center;
+}
+#keywordInput{
+	display:inline-block;
+}
+#searchType{
+	width:150px;
+	display:inline-block;
+}
+#Blackkeyword{
+	display:inline-block;
 }
 .form-control {
     background-color: #FFFFFF;
