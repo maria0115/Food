@@ -15,8 +15,18 @@
 	</insert>
 	
 	<!-- 밥친구게시판 글 목록 가져오기  -->
-	<select id="getmealFriends" resultType="friend">
-		select * from friendBoard
+	<select id="getmealFriends" parameterType="hashmap" resultType="friend">
+		SELECT * 
+	
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM friendBoard
+						ORDER BY f_no DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{start} AND #{end}
 	</select>
 	
 	<!-- 밥친구게시판 글 상세보기 -->
@@ -28,5 +38,10 @@
 	<update id="mealboardViewcount" parameterType="friend">
 		UPDATE friendBoard SET f_viewcount = f_viewcount+1 WHERE f_no = #{f_no}
 	</update>
+	
+	<!-- 밥친구게시판 글 전체수 -->
+	<select id="friendBoardcount" resultType="Int">
+		select count(*) from friendBoard
+	</select>
 
 </mapper>

@@ -23,7 +23,6 @@
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
 <script src="/Food/resources/js/friendBoard.js"></script>
-<script src="/Food/resources/js/friendMap.js"></script>
 
 <!-- <style>
 .menu a {
@@ -46,17 +45,10 @@
 
 <body>
 
-	<section class="hero-area">
-	
-			<!-- Single Hero Post -->
-			<div class="single-hero-post bg-overlay">
-				<!-- Post Image -->
-			</div>
 	
 			<jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
 			</jsp:include>
-		</section>
 	
 	
 
@@ -69,8 +61,8 @@
 		<h1>Happy Meal With Friends</h1>
 		<br />
 
-		<form action="../friendBoard/friendsave.do" method="get"
-			enctype="multipart/form-data" id="frm">
+		<form action="../mealBoard/friendsave.do" method="get"
+			enctype="multipart/form-data" id="mealfrm">
 			<table class="table table-striped">
 
 
@@ -94,7 +86,7 @@
 					<td width="100%">식사장소</td>
 					<td align="left">
 					<input type="text" id="sample4_postcode" name = 'postcode' placeholder="우편번호" readonly>
-					<input type="button" name='search' id='search1' value="우편번호 찾기" onclick="execDaumPostcode();"><br>
+					<input type="button" name='search' id='search1' value="우편번호 찾기" ><br>
 					<input type="text" id="sample4_roadAddress" name="addr1" placeholder="도로명주소" style="width:40%" readonly>
 					<span id="guide" style="color:#999;display:none"></span>
 					<input type="text" id="sample4_detailAddress" name="addr2" placeholder="상세주소" style="width: 40%">
@@ -113,31 +105,17 @@
 						</select>
 					</td>
 				</tr>
-				<tr>
-					<td colspan="2" align="center" >
-					<button class="btn btn-default" id='insertBtn' onclick="insertfriend();">글등록</button>
-					</td>
-				</tr>
 
 			</table>
 		</form>
+		<button class="btn btn-default" id='insertBtn' >글등록</button>
 	</div>
-
-
-
-
-	<!-- 게시판 목록 보여주기 끝  -->
 	
 
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="../index/footer.jsp" %>
 	<!-- ##### Footer Area End ##### -->
 	
-	
-	
-	
-
-
 
 
 </body>
