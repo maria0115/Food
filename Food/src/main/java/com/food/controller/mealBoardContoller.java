@@ -2,6 +2,7 @@ package com.food.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -32,4 +33,8 @@ public class mealBoardContoller {
 		return "redirect:../index/mealFriends";
 	}
 	
+	@RequestMapping("/mealboardView.do")
+	public void mealboardView(FriendBoardVO vo, Model model) {
+		model.addAttribute("friend",friendBoardservice.mealboardView(vo));
+	}
 }

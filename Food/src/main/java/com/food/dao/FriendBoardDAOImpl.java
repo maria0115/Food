@@ -28,4 +28,13 @@ public class FriendBoardDAOImpl implements FriendBoardDAO{
 		return mybatis.selectList("friendDAO.getmealFriends");
 	}
 
+	//밥친구 게시판 글 상세보기
+	@Override
+	public FriendBoardVO mealboardView(FriendBoardVO vo) {
+		System.out.println("mealboardView 도착");
+		//게시글 선택시 조회수 증가
+		mybatis.update("friendDAO.mealboardViewcount",vo);
+		return mybatis.selectOne("friendDAO.mealboardView",vo);
+	}
+
 }

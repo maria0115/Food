@@ -22,24 +22,8 @@
 	rel="stylesheet">
 <script
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-<!-- <style>
-.menu a {
-	cursor: pointer;
-}
-
-.menu .hide {
-	display: none;
-}
-</style> -->
-
-	<!-- ##### Hero Area Start ##### -->
-	
-	
-
-
-
-
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
+<script src="/Food/resources/js/friendMap.js"></script>
 </head>
 
 <body>
@@ -51,8 +35,8 @@
 				<!-- Post Image -->
 			</div>
 	
-			<jsp:include page="header.jsp">
-				<jsp:param value='' name='folder' />
+			<jsp:include page="../index/header.jsp">
+				<jsp:param value='../' name='folder' />
 			</jsp:include>
 		</section>
 	
@@ -79,42 +63,56 @@
 		<div id="noticeDiv">
 			<table class="table table-bordered">
 				<tr>
-					<th>글번호</th>
-					<th>제목</th>
-					<th>글내용</th>
-					<th>작성자</th>
-					<th>등록일</th>
-					<th>조회수</th>
-					<th>참여인원</th>
+					<td width="100">글번호</td>
+					<td align="left">${friend.f_no }</td>
 				</tr>
-				<c:forEach items="${friendlist}" var="friend">
-				<!-- 프라퍼티이름 변경 -->
 				<tr>
-					<td>${friend.f_no}</td>
-					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
-					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_title}</a></td>
-					<td>${friend.f_content}</td>
-					<td>${friend.m_id}</td>
-					<td>${friend.f_date}</td>
-					<td>${friend.f_viewcount}</td>
-					<td>${friend.f_membercnt}</td>
-					<!-- 추가 -->	
+					<td width="100">등록일</td>
+					<td align="left">${friend.f_date }</td>
 				</tr>
-			</c:forEach>
-
+				<tr>
+					<td width="100">조회수</td>
+					<td align="left">${friend.f_viewcount }</td>
+				</tr>
+				<tr>
+					<td width="100">참여인원</td>
+					<td align="left">${friend.f_membercnt}</td>
+				</tr>
+				<tr>
+					<td width="100">작성자</td>
+					<td align="left">${friend.m_id }</td>
+				</tr>
+				<tr>
+					<td width="100">제목</td>
+					<td align="left">${friend.f_title }</td>
+				</tr>
+				<tr>
+					<td width="100">글내용</td>
+					<td align="left">
+					${friend.f_content }
+					</td>
+				</tr>
+				<tr>
+					<td width="100">위치</td>
+					<td align="left">
+					<div id="map" style="width:100%;height:350px;">
+					<input type="hidden" id="f_addr" name="f_addr" value="${friend.f_addr }">
+					<input type="hidden" id="f_title" name="f_title" value="${friend.f_title }">
+					</div>
+					</td>
+				</tr>
+				
 			</table>
 
 		</div>
-		<br />
-		<br /> <br />
-		<br />
 
 
 		<!-- 페이징 -->
 		<div style="display: block; text-align: center;"></div>
 		<button class="btn btn-default" onclick="location.href='friendBoard/friendsInsert.do'" >글등록</button>
-		
-	</div>
+		<button class="btn btn-default" onclick="location.href='../index/mealFriendsmodify.do'" >글수정</button>
+		<button class="btn btn-default" onclick="location.href='../index/mealFriends.do'" >글목록</button>
+		</div>
 
 
 
@@ -122,7 +120,7 @@
 	
 
 	<!-- ##### Footer Area Start ##### -->
-	<%@ include file="footer.jsp" %>
+	<%@ include file="../index/footer.jsp" %>
 
 
 

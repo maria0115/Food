@@ -29,4 +29,11 @@ public class FriendBoardServiceImpl implements FriendBoardService{
 		return friendBoarddao.getmealFriends();
 	}
 
+	//밥친구 게시판 글 상세보기 
+	@Override
+	public FriendBoardVO mealboardView(FriendBoardVO vo) {
+		
+		return friendBoarddao.mealboardView(vo);
+	}
+
 }

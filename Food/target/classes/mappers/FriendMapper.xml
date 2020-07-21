@@ -19,5 +19,14 @@
 		select * from friendBoard
 	</select>
 	
+	<!-- 밥친구게시판 글 상세보기 -->
+	<select id="mealboardView" parameterType="friend" resultType="friend">
+		select * from friendBoard where f_no = #{f_no}
+	</select>
+	
+	<!-- 밥친구게시판 글 상세보기시 조회수 증가 -->
+	<update id="mealboardViewcount" parameterType="friend">
+		UPDATE friendBoard SET f_viewcount = f_viewcount+1 WHERE f_no = #{f_no}
+	</update>
 
 </mapper>

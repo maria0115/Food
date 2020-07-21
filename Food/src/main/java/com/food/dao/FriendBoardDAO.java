@@ -12,4 +12,7 @@ public interface FriendBoardDAO {
 	//밥친구게시판 글 목록 가져오기
 	public List<FriendBoardVO> getmealFriends();
 	
+	//밥친구게시판 글 상세보기 
+	public FriendBoardVO mealboardView(FriendBoardVO vo);
+	
 }
