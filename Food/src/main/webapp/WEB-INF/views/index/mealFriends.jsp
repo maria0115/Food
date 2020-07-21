@@ -44,17 +44,11 @@
 
 <body>
 
-	<section class="hero-area">
-	
-			<!-- Single Hero Post -->
-			<div class="single-hero-post bg-overlay">
-				<!-- Post Image -->
-			</div>
 	
 			<jsp:include page="header.jsp">
 				<jsp:param value='' name='folder' />
 			</jsp:include>
-		</section>
+		
 	
 	
 
@@ -76,7 +70,7 @@
 		<h1>Happy Meal With Friends</h1>
 		<br />
 
-		<div id="noticeDiv">
+		<div >
 			<table class="table table-bordered">
 				<tr>
 					<th>글번호</th>
@@ -93,7 +87,7 @@
 					<td>${friend.f_no}</td>
 					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
 					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_title}</a></td>
-					<td>${friend.f_content}</td>
+					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_content}</a></td>
 					<td>${friend.m_id}</td>
 					<td>${friend.f_date}</td>
 					<td>${friend.f_viewcount}</td>
@@ -105,14 +99,30 @@
 			</table>
 
 		</div>
-		<br />
-		<br /> <br />
-		<br />
-
-
+		
 		<!-- 페이징 -->
+		<div style="display: block; text-align: center;">		
+		<c:if test="${paging.startPage != 1 }">
+			<a href="../index/mealFriends.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+		</c:if>
+		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+			<c:choose>
+				<c:when test="${p == paging.nowPage }">
+					<b>${p }</b>
+				</c:when>
+				<c:when test="${p != paging.nowPage }">
+					<a href="../index/mealFriends.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${paging.endPage != paging.lastPage}">
+			<a href="../index/mealFriends?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+		</c:if>
+        </div>
+
 		<div style="display: block; text-align: center;"></div>
-		<button class="btn btn-default" onclick="location.href='friendBoard/friendsInsert.do'" >글등록</button>
+		
+		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" >글등록</button>
 		
 	</div>
 

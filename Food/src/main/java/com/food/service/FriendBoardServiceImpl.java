@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.food.dao.FriendBoardDAO;
 import com.food.domain.FriendBoardVO;
+import com.food.domain.PagingVO;
 
 @Service("friendBoardService")
 public class FriendBoardServiceImpl implements FriendBoardService{
@@ -24,9 +25,9 @@ public class FriendBoardServiceImpl implements FriendBoardService{
 
 	//밥친구 게시판 글 목록 가져오기 
 	@Override
-	public List<FriendBoardVO> getmealFriends() {
+	public List<FriendBoardVO> getmealFriends(PagingVO vo) {
 		
-		return friendBoarddao.getmealFriends();
+		return friendBoarddao.getmealFriends(vo);
 	}
 
 	//밥친구 게시판 글 상세보기 
@@ -34,6 +35,13 @@ public class FriendBoardServiceImpl implements FriendBoardService{
 	public FriendBoardVO mealboardView(FriendBoardVO vo) {
 		
 		return friendBoarddao.mealboardView(vo);
+	}
+
+	//밥친구 게시판 글 전체수 
+	@Override
+	public Integer friendBoardcount() {
+		
+		return friendBoarddao.friendBoardcount();
 	}
 
 }

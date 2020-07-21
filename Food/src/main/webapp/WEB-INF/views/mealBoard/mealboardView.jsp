@@ -20,36 +20,19 @@
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
-<script
-	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
 <script src="/Food/resources/js/friendMap.js"></script>
+
 </head>
 
 <body>
 
-	<section class="hero-area">
-	
-			<!-- Single Hero Post -->
-			<div class="single-hero-post bg-overlay">
-				<!-- Post Image -->
-			</div>
 	
 			<jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
 			</jsp:include>
-		</section>
 	
-	
-
-	<!-- Preloader -->
-	<div class="preloader d-flex align-items-center justify-content-center">
-		<div class="preloader-circle"></div>
-		<div class="preloader-img">
-			<img src="img/core-img/leaf.png" alt="">
-		</div>
-	</div>
-
 
 	<!-- 게시판 목록 보여주기 시작  -->
 
@@ -109,8 +92,7 @@
 
 		<!-- 페이징 -->
 		<div style="display: block; text-align: center;"></div>
-		<button class="btn btn-default" onclick="location.href='friendBoard/friendsInsert.do'" >글등록</button>
-		<button class="btn btn-default" onclick="location.href='../index/mealFriendsmodify.do'" >글수정</button>
+		<button class="btn btn-default" onclick="location.href='mealFriendsmodify.do?f_no=${friend.f_no }'" >글수정</button>
 		<button class="btn btn-default" onclick="location.href='../index/mealFriends.do'" >글목록</button>
 		</div>
 

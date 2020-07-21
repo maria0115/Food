@@ -50,6 +50,11 @@
 
 <body>
 	<!-- Preloader -->
+	
+	<div class="single-hero-post bg-overlay">
+				<!-- Post Image -->
+			</div>
+	
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
 		<div class="preloader-img">
