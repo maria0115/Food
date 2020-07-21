@@ -52,7 +52,10 @@ Version: - v1.0
      border: none;
 }
 
-
+.manager{
+height: 24px;
+align-self: center;
+}
 
 
 

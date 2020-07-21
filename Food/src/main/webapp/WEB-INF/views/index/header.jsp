@@ -131,13 +131,13 @@
 								</div>
 								</c:if>
 							  <div class="manager">
-                        <ul id="navi">
-                              <li>
+<!--                         <ul id="navi"> -->
+<!--                               <li> -->
                                       <a href="manager/member-list.do"  id="manageLabel" class="fa fa-user" ><br/>Manage</a>
-                               </li>
+<!--                                </li> -->
                                
                            
-                          </ul>
+<!--                           </ul> -->
                         </div>
 
 
