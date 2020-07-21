@@ -1,5 +1,7 @@
 package com.food.controller;
 
+import java.util.List;
+import java.util.Locale;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -10,6 +12,7 @@ import javax.mail.Transport;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -22,14 +25,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.food.dao.MemberDAO;
 import com.food.domain.MemberVO;
 import com.food.service.MemberService;
+import com.google.gson.Gson;
 
 @Controller
 public class MemberController {
 		@Autowired
 		private MemberService memberService;
 	
+		@Autowired
+		private MemberDAO memberdao;
+
+		
 		
 		@RequestMapping("singupMember.do")
 		public String insertMember(MemberVO vo) {
@@ -157,7 +166,8 @@ public class MemberController {
 		        }
 		    }
  
-		 
+			 
+			
 		// 아이디 찾기
 			@RequestMapping(value = "/findid.do", method = RequestMethod.POST)
 			public String find_id(HttpServletResponse response, @RequestParam("m_email") String m_email, Model md) throws Exception{
@@ -165,6 +175,47 @@ public class MemberController {
 				return "/index/find_id";
 			}
 		 
+			
+			
+			//자동완성 검색기능 구현
+			@RequestMapping(value = "search.do", method = RequestMethod.GET, produces="text/plain;charset=UTF-8")
+			@ResponseBody
+			public String json(HttpServletRequest request, Locale locale, Model model) {    
+			  //  String[] array = {"엽기떡볶이", "신전떡볶이", "걸작떡볶이", "신당동떡볶이"}; //배열 생성
+			    String value = request.getParameter("value");
+			    System.out.println(value);
+			   List<MemberVO>reslut= memberService.search(value);
+			       
+			    Gson gson = new Gson(); 
+
+			    return gson.toJson(reslut); //배열 반환
+			}
+			
+			
+			//자동완성 검색기능 구현
+//			@RequestMapping(value = "search.do", method = RequestMethod.GET, produces="text/plain;charset=UTF-8")
+//			@ResponseBody
+//			public String json1(Locale locale, Model model , String msg) {    
+//				List<MemberVO> list =  memberService.search(msg);
+//				
+//				List<String> array ;
+//				
+//				for(MemberVO menu : list) {
+//					array.addAll(menu);
+//					System.out.println(menu);
+//				}
+//			    
+//			        Gson gson = new Gson(); 
+//
+//			    return gson.toJson(array); //배열 반환
+//			}
+
+
+
+			
+			 
+			
+			
 }
 		
 

@@ -37,7 +37,7 @@
 	display: none;
 }
 </style>
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <jsp:include page="header.jsp">
 	<jsp:param value='' name='folder' />
 </jsp:include>
@@ -148,10 +148,13 @@
 
 
 			<label>좋아하는 음식</label>
-			<input type="text" name ="m_most" id="most"><button class ="btn btn-default" id="m_most">추가</button>
+			<div>
+				<input type="text" id="testInput" placeholder="자동완성" name="m_most" />
+			</div>
+			<button class="btn btn-default" id="m_most">추가</button>
 			<div class="check_font" id="most_check"></div>
-			
-			
+
+
 
 
 			<ul class="join_box">
@@ -217,7 +220,10 @@
 	<%@ include file="footer.jsp"%>
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-
+	
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
 	<script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
 	<!-- Popper js -->
 	<script src="resources/js/bootstrap/popper.min.js"></script>

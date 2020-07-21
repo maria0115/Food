@@ -1,5 +1,7 @@
 package com.food.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -56,4 +58,12 @@ public class MemberDAOImpl  implements MemberDAO{
 		
 		return result;
 	}
+
+
+	@Override
+	public List<MemberVO> search(String value) {
+		return mybatis.selectList("memberDAO.search",value);
+	}
+ 
+	
 }

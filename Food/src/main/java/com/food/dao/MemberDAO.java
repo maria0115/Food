@@ -1,5 +1,8 @@
 package com.food.dao;
 
+import java.util.HashMap;
+import java.util.List;
+
 import com.food.domain.MemberVO;
 
 public interface MemberDAO {
@@ -14,4 +17,6 @@ public interface MemberDAO {
 	public MemberVO checkId(MemberVO vo);
 	
 	public void insertMember(MemberVO vo);
+	
+	public List<MemberVO> search(String value);
 }

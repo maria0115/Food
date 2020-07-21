@@ -1,3 +1,48 @@
+//좋아하는 음식 검색하기   
+$('#testInput').autocomplete({
+        source : function(reuqest, response) {
+           var value= $('#testInput').val();
+        	$.ajax({
+                type : 'get',
+                url: 'search.do?value='+value,
+                dataType : 'json',
+                success : function(data) {
+                    //서버에서 json 데이터 response 후 목록 추가
+                    response(
+                        $.map(data, function(item) {
+                        	
+                            return {
+                                label : item.m_most,
+                                value : item.m_most,
+                                test : item + 'test'
+                            }
+                        })
+                    );
+                }
+            });
+        },
+        select : function(event, ui) {
+            console.log(ui);
+            console.log(ui.item.label);
+            console.log(ui.item.value);
+            console.log(ui.item.test);
+        },
+        focus : function(event, ui) {
+            return false;
+        },
+        minLength : 1,
+        autoFocus : true,
+        classes : {
+            'ui-autocomplete': 'highlight'
+        },
+        delay : 500,
+        position : { my : 'right top', at : 'right bottom' },
+        close : function(event) {
+            console.log(event);
+        
+        }
+    });
+
 //비밀번호 찾기
 $('#findPasswordNext').click(function(){
 		if( $.trim($("#id").val()) == '' ){

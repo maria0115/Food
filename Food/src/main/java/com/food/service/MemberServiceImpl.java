@@ -1,6 +1,8 @@
 package com.food.service;
 
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,6 +18,8 @@ public class MemberServiceImpl  implements MemberService{
 	private MemberDAO memberdao;
 
 
+	
+	
 
 	@Override
 	public void insertMember(MemberVO vo) {
@@ -68,6 +72,15 @@ public class MemberServiceImpl  implements MemberService{
 	public MemberVO findPassword(MemberVO vo) {
 		return memberdao.findPassword(vo);
 	}
+
+
+	@Override
+	public List<MemberVO> search(String value) {
+		return memberdao.search(value);
+	}
+
+ 
+	
 	
 	
 }
