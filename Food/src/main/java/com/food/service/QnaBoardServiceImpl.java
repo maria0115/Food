@@ -42,6 +42,12 @@ public class QnaBoardServiceImpl implements QnaBoardService{
 		System.out.println("viewDetail 서비스");
 		return qnaboarddao.viewDetail(vo);
 	}
+
+	@Override
+	public void modifyQna(QnaBoardVO vo) {
+		System.out.println("modifyQna 서비스");
+		qnaboarddao.modifyQna(vo);
+	}
 	
 	
 	

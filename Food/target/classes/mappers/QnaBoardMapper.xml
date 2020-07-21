@@ -35,6 +35,10 @@
 	SELECT * FROM QNABOARD WHERE q_no = #{q_no}
 </select>
 
+<update id="qnaUpdate" parameterType="qnaboard">
+	update QNABOARD SET q_title = #{q_title},q_content = #{q_content} where q_no = #{q_no}
+</update>
+
 
 
 
