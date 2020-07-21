@@ -23,9 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.food.dao.MemberDAO;
 import com.food.domain.MemberVO;
 import com.food.service.MemberService;
 import com.google.gson.Gson;
@@ -87,11 +85,11 @@ public class MemberController {
 					}
 				}
 				return result;
-		 
+		  
 		 } 
 		 //로그아웃 기능 구현
 		 @ResponseBody
-			@RequestMapping(value="/logout.do")
+			@RequestMapping(value="/index/logout.do")
 			public void logout(HttpSession session) {
 				session.removeAttribute("UserID");
 				session.removeAttribute("UserIDInfo");
@@ -186,36 +184,13 @@ public class MemberController {
 			@RequestMapping(value = "search.do", method = RequestMethod.GET, produces="text/plain;charset=UTF-8")
 			@ResponseBody
 			public String json(HttpServletRequest request, Locale locale, Model model) {    
-			  //  String[] array = {"엽기떡볶이", "신전떡볶이", "걸작떡볶이", "신당동떡볶이"}; //배열 생성
+			
 			    String value = request.getParameter("value");
 			    System.out.println(value);
 			   List<MemberVO>reslut= memberService.search(value);
-			       
 			    Gson gson = new Gson(); 
-
 			    return gson.toJson(reslut); //배열 반환
 			}
-			
-			
-			//자동완성 검색기능 구현
-//			@RequestMapping(value = "search.do", method = RequestMethod.GET, produces="text/plain;charset=UTF-8")
-//			@ResponseBody
-//			public String json1(Locale locale, Model model , String msg) {    
-//				List<MemberVO> list =  memberService.search(msg);
-//				
-//				List<String> array ;
-//				
-//				for(MemberVO menu : list) {
-//					array.addAll(menu);
-//					System.out.println(menu);
-//				}
-//			    
-//			        Gson gson = new Gson(); 
-//
-//			    return gson.toJson(array); //배열 반환
-//			}
-
-
 
 			
 			 
