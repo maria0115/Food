@@ -79,7 +79,7 @@
 	</div>
 
 <div class="container">
-		<form action="singupMember.do" method="POST" >
+		<form action="singupMember.do" method="post" >
 			<!-- 아이디 -->
 
 			<label >아이디</label> <input type="text" class="sing" id="id"
@@ -148,11 +148,12 @@
 
 
 			<label>좋아하는 음식</label>
-			<div>
-				<input type="text" id="testInput" placeholder="자동완성" name="m_most" />
+			<div id="mostfood">
+				<input type="text" id="testInput" placeholder="자동완성" />
+				<input type="button" class="btn btn-info" id="m_most" value="추가">
 			</div>
-			<button class="btn btn-default" id="m_most">추가</button>
-			<div class="check_font" id="most_check"></div>
+		   
+			
 
 
 
@@ -202,8 +203,10 @@
 
 				</li>
 			</ul>
-
-			<button id="cancle_btn" class ="btn btn-default">취소하기</button><input class ="btn btn-danger" type="submit" value="전송"  id="submit">
+			<p></p>
+		<div class="move">
+		<input class ="btn btn-danger" type="submit" value="전송"  id="submit">	<button id="cancle_btn" class ="btn btn-default">취소하기</button>
+		</div>	
 		</form>
 	</div>
 

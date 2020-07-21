@@ -145,11 +145,27 @@ $("#id").blur(function(){
 
 
 	$("#m_most").click(function() {
-		var a = $("#most").val();
 		
-		if($("#most").val()!="")
-		 $("#most_check").html(a);
+		var len = $(".mostfood").length;
+		
+		if(len < 3){
+			var a = $("#testInput").val();
+			var $div = $("<input class='mostfood' name='m_most' value='"+a+"' ><input type='button' class='btn btn-danger' id='mostdelete' value='X'/>")
+			$("#mostfood").append($div)
+			$(this).prev().val("");
+		}else{
+			alert("좋아하는 음식은 3개 까지만 선택가능합니다.");
+			$(this).prev().val("");
+		}
+		$($div).click(function(){
+			$(this).prev().remove();
+			$(this).remove();	
+			
+		});
 	});
+		 
+		 
+	
 
 
 
