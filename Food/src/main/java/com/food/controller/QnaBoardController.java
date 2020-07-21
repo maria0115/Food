@@ -91,5 +91,15 @@ public class QnaBoardController {
 	  return mv;
 	}
 	
+	@RequestMapping("modifyqna")
+	public String modifyQna(QnaBoardVO vo) {
+		System.out.println("modifyQna 컨트롤러+"+vo.getQ_no()+" : "+vo.getQ_content()+" : "+vo.getQ_title());
+		qnaboardservice.modifyQna(vo);
+		System.out.println("도착함");
+		return "redirect:qnaboardList";
+	}
+	
+	
+	
 	
 }

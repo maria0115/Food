@@ -47,6 +47,13 @@ public class QnaBoardDAOImpl implements QnaBoardDAO {
 		System.out.println("viewDetail 다오");
 		return mybatis.selectOne("qnaboardDAO.detailBoard",vo);
 	}
+
+	@Override
+	public void modifyQna(QnaBoardVO vo) {
+		System.out.println("modifyQna 다오");
+		mybatis.update("qnaboardDAO.qnaUpdate",vo);
+		
+	}
 	
 	
 

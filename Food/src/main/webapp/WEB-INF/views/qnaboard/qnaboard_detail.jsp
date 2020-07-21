@@ -69,46 +69,56 @@
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
 
-<!-- <script type="text/javascript"> -->
+<script type="text/javascript">
+// 수정 버튼 클릭시 readonly상태에서 readonly삭제
+$(function(){
+	$("#modify").click(function(){
+	$("#contact-title").attr('readonly', false);
+	$("#message").attr('readonly', false);
 
-<!-- // // insert 버튼 클릭시  -->
-<!-- // var header = { -->
-<!-- //         pageSubmitFn : function(pageName, form) { -->
-<!-- //            $("#pageName").val(pageName); // input 태그의 value를 설정한다. -->
-<!-- // //            action 부여 후 submit(); -->
-<!-- //             $("#"+form).attr("action",pageName+".do");              -->
-<!-- //             $("#"+form).submit(); -->
-<!-- //         } -->
-<!-- //    } -->
+	$("#savebtn").click(function(){
+		alert("수정버튼")
+// 		$(this).
+		
+// 		location.href="modifyqna?q_no="+q_no+"&q_content="+q_content+"&q_title="+q_title;
 
-
-<!-- </script> -->
+		})
+	})
+})
+</script>
 
 
 
-<div class='container'><div class="contact-form-area mb-100">
-                        <form action="qnaboard_insert.do" method="post">
+<div class='container'>
+<div class="contact-form-area mb-100">
+                        <form action="modifyqna" method="post">
+                            <input type="hidden" name="q_no" value=${list.q_no} readonly>
                             <div class="row">
                                 <div class="col-12 col-md-6">
+                                	제목
                                     <div class="form-group" style="color:black">
-                                        <input style="color:black" type="text" class="form-control" id="contact-name" placeholder="Your title" name="q_title" value=${list.q_title}>
+                                        <input style="color:black" type="text" class="form-control" id="contact-title" name="q_title" value=${list.q_title} readonly>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
+                                	작성자
                                     <div class="form-group">
-                                        <input style="color:black" type="text" class="form-control" id="contact-email" placeholder="Your name" name="q_writer" value=${list.q_writer}>
+                                        <input style="color:black" type="text" class="form-control" id="contact-writer" name="q_writer" value=${list.q_writer} readonly>
                                     </div>
                                 </div>
                                 <div class="col-12">
+                                	내용
                                     <div class="form-group">
-                                        <textarea style="color:black" class="form-control" id="message" cols="30" rows="10" placeholder="Message" name="q_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;">${list.q_content}</textarea>
+                                        <textarea style="color:black" class="form-control" id="message" cols="30" rows="10" name="q_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" readonly>${list.q_content}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn alazea-btn mt-15">Send Message</button>
+                                    <button id="savebtn" type="submit" class="btn alazea-btn mt-15">SAVE</button>
                                 </div>
                             </div>
                         </form>
+			                        <button id="modify" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+			                        <button id="delete" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                     </div>
 </div>
 
