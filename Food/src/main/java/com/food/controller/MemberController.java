@@ -34,11 +34,7 @@ import com.google.gson.Gson;
 public class MemberController {
 		@Autowired
 		private MemberService memberService;
-	
-		@Autowired
-		private MemberDAO memberdao;
 
-		
 		
 		@RequestMapping("singupMember.do")
 		public String insertMember(MemberVO vo) {
@@ -104,21 +100,30 @@ public class MemberController {
 	
 		// 비밀번호 찾기
 		 @RequestMapping("/find-password.do")
-			public ModelAndView findPassword(MemberVO vo) {
+		 @ResponseBody
+			public String findPassword(MemberVO vo) {
 			 MemberVO result = memberService.findPassword(vo);//아이디를 보냄 아이디에 맞는 비밀번호를 가져옴
-				
-				ModelAndView mv = new ModelAndView();
+			 String rst="";
+				System.out.println(result);
+//				ModelAndView mv = new ModelAndView();
 				//이메일이 없다면 다시 현재페이지로 리턴
 				if (result == null || result.getM_pass() == null) {
-					mv.setViewName("find_form");
+					System.out.println(1);
+					rst="1";
+//					mv.addObject("result",'1');
+//					mv.setViewName("/index/find_form");
+					
+
 			
 				}else {//이메일이 있다면 ,저장돼있는 메일로 비밀번호가 담긴 메일을 보냄
+					System.out.println(2);
 				  gmailSend(result);//저장되어있는 메일로 비밀번호 보냄
-				  mv.setViewName("/index/find_pass");
-				  mv.addObject("email", result.getM_email());//이메일을 넘겨서 화면에 찍어줌
+//				  mv.addObject("result",'2');
+//				  mv.setViewName("/index/find_pass");
+				  rst="2";
 				  
 				}
-				 return mv;		
+				return rst;	
 			}
 		 
 		//이메일 보내는 기능

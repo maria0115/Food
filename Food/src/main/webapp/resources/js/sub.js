@@ -1,3 +1,7 @@
+$(function(){
+	
+
+
 //좋아하는 음식 검색하기   
 $('#testInput').autocomplete({
         source : function(reuqest, response) {
@@ -45,15 +49,27 @@ $('#testInput').autocomplete({
 
 //비밀번호 찾기
 $('#findPasswordNext').click(function(){
-		if( $.trim($("#id").val()) == '' ){
+		alert("aa");
+		if( $("#mail_id").val() == '' ){
             alert("아이디를 입력해 주세요.");
-            $("#id").focus();
+            $("#mail_id").focus();
             return;
-        }else
+        }    
 		
-	   $(".findPassword").submit();
-	
-	});
+		$.ajax({
+            type : 'get',
+            url: 'find-password.do?m_id='+$("#mail_id").val(),
+            dataType : 'int',
+            success : function(data) {
+                //서버에서 json 데이터 response 후 목록 추가
+            	if(data==1){
+            		alert("없는 아이디 입니다")
+            	}else if(data==2){
+            		
+            	}
+            }
+        });
+});
 
 //취소버튼 클릭시
 $('#cancle_btn').click(function(){
@@ -390,3 +406,4 @@ function execPostCode() {
 		}
 	}).open();
 }
+});
