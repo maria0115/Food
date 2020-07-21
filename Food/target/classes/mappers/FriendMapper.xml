@@ -8,10 +8,10 @@
 	<!-- 밥친구게시판 글 등록하기  -->
 	<insert id="friendsave" parameterType="friend">
 	insert into friendboard 
-	(f_no , f_title , f_content, f_addr , f_membercnt,f_viewcount,f_date, m_id )
+	(f_no , f_title , f_content, f_addr , f_membercnt,f_viewcount,f_date, m_id,f_ip )
 	values
 	( friend_f_no.nextval , #{f_title} , #{f_content},#{f_addr} , #{f_membercnt}
-	,#{f_viewcount},sysdate ,#{m_id})
+	,#{f_viewcount},sysdate ,#{m_id},#{f_ip})
 	</insert>
 	
 	<!-- 밥친구게시판 글 목록 가져오기  -->
