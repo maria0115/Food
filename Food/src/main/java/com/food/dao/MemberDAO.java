@@ -1,6 +1,5 @@
 package com.food.dao;
 
-import java.util.HashMap;
 import java.util.List;
 
 import com.food.domain.MemberVO;

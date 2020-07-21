@@ -19,4 +19,10 @@ public interface FriendBoardDAO {
 	//밥친구 게시판 글 전체수 
 	public Integer friendBoardcount();
 	
+	//밥친구 게시판 글 수정하기 
+	public Integer friendmodify(FriendBoardVO vo);
+	
+	//밥친구 게시판 글 삭제하기
+	public Integer friendsdelete(FriendBoardVO vo);
+	
 }

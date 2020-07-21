@@ -44,4 +44,20 @@ public class FriendBoardServiceImpl implements FriendBoardService{
 		return friendBoarddao.friendBoardcount();
 	}
 
+	//밥친구게시판 글 수정하기
+	@Override
+	public Integer friendmodify(FriendBoardVO vo) {
+		
+		return friendBoarddao.friendmodify(vo);
+	}
+
+	//밥친구게시판 글 삭제하기
+	@Override
+	public Integer friendsdelete(FriendBoardVO vo) {
+		
+		return friendBoarddao.friendsdelete(vo);
+	}
+	
+	
+
 }

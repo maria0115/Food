@@ -43,5 +43,18 @@
 	<select id="friendBoardcount" resultType="Int">
 		select count(*) from friendBoard
 	</select>
+	
+	<!-- 밥친구게시판 글 수정하기 -->
+	<update id="friendmodify" parameterType="friend" >
+		UPDATE friendBoard SET f_title = #{f_title},f_content = #{f_content} , 
+		f_addr = #{f_addr} , f_membercnt = #{f_membercnt} 
+		WHERE f_no = #{f_no}
+	</update>
+	
+	<!-- 밥친구게시판 글 삭제하기 -->
+	<delete id="friendsdelete" parameterType="friend">
+		DELETE FROM friendBoard WHERE f_no = #{f_no} AND m_id = #{m_id} 
+	</delete>
+	
 
 </mapper>

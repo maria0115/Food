@@ -49,10 +49,47 @@ public class mealBoardContoller {
 		model.addAttribute("friend",friendBoardservice.mealboardView(vo));
 	}
 	
-	//밥친구 게시판 글 수정하기 페이지
+	//밥친구 게시판 글 수정하기 페이지보여주기
 	@RequestMapping("/mealFriendsmodify.do")
 	public void mealFriendsmodify(FriendBoardVO vo, Model model) {
 		model.addAttribute("friend",friendBoardservice.mealboardView(vo));
+	}
+	
+	//밥친구 게시판 글 수정
+	@RequestMapping("/friendmodify.do")
+	public String friendmodify(FriendBoardVO vo, HttpServletRequest request) {
+		int result;
+		String addr1 = (String) request.getParameter("addr1");
+		String addr2 = (String) request.getParameter("addr2");
+		String addr = addr1+addr2;
+		//넘겨온 주소값이 없을경우 
+		if("".equals(addr)) {
+			result = friendBoardservice.friendmodify(vo);
+			if(result==0) {
+				return "index/error";
+			}
+			return "redirect:../index/mealFriends.do";
+		//넘겨온 주소값이 있을경우
+		}else {
+			vo.setF_addr(addr);
+			result = friendBoardservice.friendmodify(vo);
+			if(result==0) {
+				return "index/error";
+			}
+			return "redirect:../mealBoard/mealboardView.do?f_no="+vo.getF_no();
+		}
+		
+	}
+	
+	//밥친구 게시판 글 삭제하기 
+	@RequestMapping("/friendsdelete.do")
+	public String friendsdelete(FriendBoardVO vo) {
+		int result;
+		result = friendBoardservice.friendsdelete(vo);
+		if(result==0) {
+			return "index/error";
+		}
+		return "redirect:../index/mealFriends.do";
 	}
 	
 }

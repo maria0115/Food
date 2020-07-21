@@ -22,7 +22,7 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
-<script src="/Food/resources/js/friendBoard.js"></script>
+
 
 <!-- <style>
 .menu a {
@@ -74,7 +74,7 @@
 				<tr>
 					<td width="100%">글쓴이</td>
 					<td align="left"><input size="120%" type="text" name="m_id"
-						value="" /></td>
+						value="${sessionScope.user_id}" readonly="readonly" /></td>
 				</tr>
 
 				<tr>
@@ -86,7 +86,7 @@
 					<td width="100%">식사장소</td>
 					<td align="left">
 					<input type="text" id="sample4_postcode" name = 'postcode' placeholder="우편번호" readonly>
-					<input type="button" name='search' id='search1' value="우편번호 찾기" ><br>
+					<input type="button" name='search' id='search1' value="우편번호 찾기" onclick="execDaumPostcode();"><br>
 					<input type="text" id="sample4_roadAddress" name="addr1" placeholder="도로명주소" style="width:40%" readonly>
 					<span id="guide" style="color:#999;display:none"></span>
 					<input type="text" id="sample4_detailAddress" name="addr2" placeholder="상세주소" style="width: 40%">
@@ -108,14 +108,14 @@
 
 			</table>
 		</form>
-		<button class="btn btn-default" id='insertBtn' >글등록</button>
+		<button class="btn btn-default" id='insertBtn' onclick="insertfriend();" >글등록</button>
 	</div>
 	
 
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="../index/footer.jsp" %>
 	<!-- ##### Footer Area End ##### -->
-	
+	<script src="/Food/resources/js/friendBoard.js"></script>
 
 
 </body>

@@ -10,11 +10,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-<!-- Title -->
-<title></title>
-
 
 <!-- 부트스트랩 -->
 <link
@@ -92,7 +87,10 @@
 
 		<!-- 페이징 -->
 		<div style="display: block; text-align: center;"></div>
+		<c:if test="${sessionScope.user_id == friend.m_id}">
 		<button class="btn btn-default" onclick="location.href='mealFriendsmodify.do?f_no=${friend.f_no }'" >글수정</button>
+		<button class="btn btn-default" onclick="location.href='friendsdelete.do?f_no=${friend.f_no }&m_id=${friend.m_id }'" >글삭제</button>
+		</c:if >
 		<button class="btn btn-default" onclick="location.href='../index/mealFriends.do'" >글목록</button>
 		</div>
 

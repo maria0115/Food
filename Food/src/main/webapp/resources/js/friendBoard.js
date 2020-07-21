@@ -1,10 +1,5 @@
-window.onload = function () {
-	
-	var search = document.getElementById('search1');
-	
-	search.onclick=sample4_execDaumPostcode;
-	
-	function sample4_execDaumPostcode() {
+
+	function execDaumPostcode() {
 	        new daum.Postcode({
 	            oncomplete: function(data) {
 	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -49,12 +44,11 @@ window.onload = function () {
 	        }).open();
 	    }
 	
-	var insertBtn =  document.getElementById("insertBtn");
-	insertBtn.onclick = insertfriend;
+	
+	
 	function insertfriend(){
 		
 		document.getElementById("mealfrm").submit();
 		
 	}
 			
-}

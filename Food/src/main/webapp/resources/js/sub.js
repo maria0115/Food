@@ -369,8 +369,7 @@ $('#logout').click(function() {
 });
 
 // 로그인 ajax
-$('#frm')
-		.submit(
+$('#frm').submit(
 				function() {
 					event.preventDefault();
 					if ($("#logpw").val() === "") {
@@ -388,12 +387,8 @@ $('#frm')
 										if (resultData == '')
 											alert("아이디와 비밀번호를 다시 확인하세요.");
 										else {
-											$(".login-header").css("display",
-													"none");
-											$(".access")
-													.html(
-															resultData
-																	+ '</span>/<a href="" id="logout">로그아웃</a>');
+										$(".login-header").css("display","none");
+											$(".access").html(resultData+ '</span>/<a href="" id="logout">로그아웃</a>');
 											window.location.reload();
 										}
 									}

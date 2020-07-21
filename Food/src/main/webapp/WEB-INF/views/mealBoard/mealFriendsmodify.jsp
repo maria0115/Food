@@ -17,13 +17,12 @@
 
 
 <!-- 부트스트랩 -->
-<link
-	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
-<script src="/Food/resources/js/friendBoard.js"></script>
-<script src="/Food/resources/js/friendMap.js"></script>
+
+
 
 <!-- <style>
 .menu a {
@@ -45,7 +44,7 @@
 </head>
 
 <body>
-
+<script src="/Food/resources/js/friendBoard.js"></script>
 	
 			<jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
@@ -62,15 +61,17 @@
 		<h1>Happy Meal With Friends</h1>
 		<br />
 
-		<form action="../friendBoard/friendsave.do" method="get"
-			enctype="multipart/form-data" id="frm">
-			<table class="table table-striped">
+		<form action="../mealBoard/friendmodify.do" method="get"
+			enctype="multipart/form-data" id="modifyfrm">
+			<table class="table table-striped" id="mealtable">
 
 
 				<tr>
 					<td width="100%">제목</td>
 					<td align="left"><input size="120%" type="text"
-						name="f_title" value="${friend.f_title }"/></td>
+						name="f_title" value="${friend.f_title }"/>
+					<input type="hidden" name="f_no" value="${friend.f_no }">
+						</td>
 				</tr>
 				<tr>
 					<td width="100%">글쓴이</td>
@@ -86,20 +87,13 @@
 				<tr>
 					<td>현재 저장된 위치</td>
 					<td>
-					<input size="120%" type="text" name="m_id" value="${friend.f_addr }" readonly="readonly"/>
+					<input size="100%" type="text" name="f_addr" id="f_addr" value="${friend.f_addr }" />
+					&nbsp;
+					<label>주소 변경</label>
+					<input type="checkbox" id="check">
 					</td>
 				</tr>
-				<tr>
-					<td width="100%">식사장소</td>
-					<td align="left">
-					<input type="text" id="sample4_postcode" name = 'postcode' placeholder="우편번호" readonly>
-					<input type="button" name='search' id='search1' value="우편번호 찾기" onclick="execDaumPostcode();"><br>
-					<input type="text" id="sample4_roadAddress" name="addr1" placeholder="도로명주소" style="width:40%" readonly>
-					<span id="guide" style="color:#999;display:none"></span>
-					<input type="text" id="sample4_detailAddress" name="addr2" placeholder="상세주소" style="width: 40%">
-						
-					</td>
-				</tr>
+				<tfoot>
 				<tr>
 					<td width="100%">참여인원</td>
 					<td>
@@ -112,15 +106,11 @@
 						</select>
 					</td>
 				</tr>
-				<tr>
-					<td colspan="2" align="center" >
-					<button class="btn btn-default" id='insertBtn' onclick="insertfriend();">수정하기</button>
-					<button class="btn btn-default" id='insertBtn' onclick="insertfriend();">목록으로</button>
-					</td>
-				</tr>
-
+				</tfoot>
 			</table>
 		</form>
+		<button class="btn btn-default" id='modifyBtn' onclick="modifyfriend();">수정하기</button>
+		<button class="btn btn-default" onclick="location.href='../index/mealFriends.do'" >글목록</button>
 	</div>
 
 
@@ -132,8 +122,8 @@
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="../index/footer.jsp" %>
 	<!-- ##### Footer Area End ##### -->
-	
-	
+	<script src="/Food/resources/js/friendmodify.js"></script>
+	<script src="/Food/resources/js/friendBoard.js"></script>
 	
 	
 

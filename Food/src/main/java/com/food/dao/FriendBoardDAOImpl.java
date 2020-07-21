@@ -49,4 +49,18 @@ public class FriendBoardDAOImpl implements FriendBoardDAO{
 		return mybatis.selectOne("friendDAO.friendBoardcount");
 	}
 
+	//밥친구 게시판 글 수정하기
+	@Override
+	public Integer friendmodify(FriendBoardVO vo) {
+			System.out.println("friendmodify 도착");
+		return mybatis.update("friendDAO.friendmodify",vo);
+	}
+
+	//밥친구 게시판 글 삭제하기
+	@Override
+	public Integer friendsdelete(FriendBoardVO vo) {
+		System.out.println("friendsdelete 도착");
+		return mybatis.delete("friendDAO.friendsdelete",vo);
+	}
+
 }

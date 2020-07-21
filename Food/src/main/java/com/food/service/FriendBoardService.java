@@ -19,6 +19,12 @@ public interface FriendBoardService {
 	//밥친구게시판 글 전체수
 	Integer friendBoardcount();
 	
+	//밥친구게시판 글 수정하기 
+	Integer friendmodify(FriendBoardVO vo);
+	
+	//밥친구게시판 글 삭제하기 
+	Integer friendsdelete(FriendBoardVO vo);
+	
 	
 	
 	

@@ -101,12 +101,12 @@
 								</div>
 							
 									<div class="access">
-									<c:if test="${not empty sessionScope.UserID}">
-										<span class="login-font">${sessionScope.UserID} 님 환영합니다.</span>
+									<c:if test="${not empty sessionScope.user_id}">
+										<span class="login-font">${sessionScope.user_name} 님 환영합니다.</span>
 										<a href="" id="logout" ><button class="logout">로그아웃</button></a>
 									</c:if>
 								</div>	
-						    <c:if test="${empty sessionScope.UserID }">		
+						    <c:if test="${empty sessionScope.user_id }">		
 								<!-- Login -->
 						<div class ="login-header">
 								<div class="login">
@@ -138,7 +138,7 @@
 							  <div class="manager">
 <!--                         <ul id="navi"> -->
 <!--                               <li> -->
-                                      <a href="manager/member-list.do"  id="manageLabel" class="fa fa-user" ><br/>Manage</a>
+                                      <a href="<%=folder %>manager/member-list.do"  id="manageLabel" class="fa fa-user" ><br/>Manage</a>
 <!--                                </li> -->
                                
                            
@@ -195,7 +195,7 @@
 									<li>
 										<!-- -------------------------------------------------------- -->
 										<button class="openbtn" onclick="openNav()">
-											<img src="resources/img/menu_icon.png" alt="#">
+											<img src="/Food/resources/img/menu_icon.png" alt="#">
 										</button> <!-- ------------------------------------------------------- -->
 
 										<div id="mySidepanel" class="sidepanel">

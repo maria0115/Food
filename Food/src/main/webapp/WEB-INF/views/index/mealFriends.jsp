@@ -46,7 +46,7 @@
 
 	
 			<jsp:include page="header.jsp">
-				<jsp:param value='' name='folder' />
+				<jsp:param value='../' name='folder' />
 			</jsp:include>
 		
 	
@@ -71,7 +71,7 @@
 		<br />
 
 		<div >
-			<table class="table table-bordered">
+			<table class="table table-striped">
 				<tr>
 					<th>글번호</th>
 					<th>제목</th>

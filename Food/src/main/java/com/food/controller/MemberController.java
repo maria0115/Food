@@ -71,7 +71,7 @@ public class MemberController {
 
 		 //로그인 구현
 		 @ResponseBody
-		@RequestMapping(value = "/login.do",produces = "application/text; charset=utf-8")
+		@RequestMapping(value = "login.do",produces = "application/text; charset=utf-8")
 			public String login(MemberVO vo, HttpSession session) {
 				MemberVO new_vo = new MemberVO();
 				new_vo =  memberService.userSignIn(vo);
@@ -79,8 +79,9 @@ public class MemberController {
 				if(new_vo != null ) {
 					if(new_vo.getM_name() != null) {
 						result = "<span class=\"in\">"+new_vo.getM_name()+" 님 환영합니다.";
-						session.setAttribute("UserID", new_vo.getM_name());
-						session.setAttribute("UserIDInfo", new_vo);
+						session.setAttribute("user_name", new_vo.getM_name());
+						session.setAttribute("user_id", new_vo.getM_id());
+						session.setAttribute("user_Info", new_vo);
 						
 					}
 				}
@@ -89,10 +90,12 @@ public class MemberController {
 		 } 
 		 //로그아웃 기능 구현
 		 @ResponseBody
-			@RequestMapping(value="/index/logout.do")
+			@RequestMapping(value="logout.do")
 			public void logout(HttpSession session) {
-				session.removeAttribute("UserID");
-				session.removeAttribute("UserIDInfo");
+				session.removeAttribute("user_name");
+				session.removeAttribute("user_id");
+				session.removeAttribute("user_Info");
+			
 			}
 			
 	
