@@ -20,6 +20,8 @@ public interface QnaBoardService {
 	public QnaBoardVO viewDetail(QnaBoardVO vo);
 
 	public void modifyQna(QnaBoardVO vo);
+
+	public void deleteQna(QnaBoardVO vo);
 	
 	
 }

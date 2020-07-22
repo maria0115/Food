@@ -76,13 +76,9 @@ $(function(){
 	$("#contact-title").attr('readonly', false);
 	$("#message").attr('readonly', false);
 
-	$("#savebtn").click(function(){
-		alert("수정버튼")
-// 		$(this).
-		
-// 		location.href="modifyqna?q_no="+q_no+"&q_content="+q_content+"&q_title="+q_title;
-
-		})
+// 	$("#savebtn").click(function(){
+// 		alert("수정되었습니다")
+// 		})
 	})
 })
 </script>

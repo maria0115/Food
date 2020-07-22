@@ -54,6 +54,12 @@ public class QnaBoardDAOImpl implements QnaBoardDAO {
 		mybatis.update("qnaboardDAO.qnaUpdate",vo);
 		
 	}
+
+	@Override
+	public void deleteQna(QnaBoardVO vo) {
+		System.out.println("deleteQna 다오");
+		mybatis.delete("qnaboardDAO.qnaDelete",vo);
+	}
 	
 	
 

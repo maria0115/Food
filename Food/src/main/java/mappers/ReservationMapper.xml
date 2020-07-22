@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reservationDAO">
+
+<insert id="insertReserv" parameterType="reservation">
+	INSERT INTO reservation
+	(r_id,r_date,r_visit_date,r_people_count,r_menu_count,r_menu,m_id,r_note) 
+	VALUES(id_seq_reservation.nextval,sysdate,#{r_visit_date},#{r_people_count},#{r_menu_count},#{r_menu},#{m_id},#{r_note})
+</insert>
+
+
+
+
+
+
+
+
+</mapper>

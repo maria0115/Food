@@ -39,7 +39,9 @@
 	update QNABOARD SET q_title = #{q_title},q_content = #{q_content} where q_no = #{q_no}
 </update>
 
-
+<delete id="qnaDelete" parameterType="qnaboard">
+	DELETE FROM QNABOARD where q_no = #{q_no} 
+</delete>
 
 
 

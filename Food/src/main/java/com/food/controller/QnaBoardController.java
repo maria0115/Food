@@ -99,6 +99,14 @@ public class QnaBoardController {
 		return "redirect:qnaboardList";
 	}
 	
+	@GetMapping("deleteqna")
+	public String deleteQna(QnaBoardVO vo) {
+		System.out.println("deleteQna 컨트롤러");
+		qnaboardservice.deleteQna(vo);
+		System.out.println("도착함");
+		return "redirect:qnaboardList";
+	}
+	
 	
 	
 	

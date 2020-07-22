@@ -48,6 +48,12 @@ public class QnaBoardServiceImpl implements QnaBoardService{
 		System.out.println("modifyQna 서비스");
 		qnaboarddao.modifyQna(vo);
 	}
+
+	@Override
+	public void deleteQna(QnaBoardVO vo) {
+		System.out.println("deleteQna 서비스");
+		qnaboarddao.deleteQna(vo);
+	}
 	
 	
 	
