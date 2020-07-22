@@ -1,13 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page session="true"%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>chatBox</title>
+<%
+	String f_title = request.getParameter("f_title");
+%>
 
 <link rel="stylesheet" href="/Food/resources/css/chat.css">
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -15,10 +21,11 @@
 <div id="container">
 	<main>
 	<div>
-		<div id="title">
-			<h3>여기는 방제목</h3>
+		<div id="header">
+			<h3 style="text-align: center;"><%=f_title %></h3>
 		</div>
-		<ul id="chat">
+		<div id="chat">
+		<!-- <ul>
 			<li class="you">
 				<div class="entete">
 					<span class="status green"></span>
@@ -37,18 +44,17 @@
 					메세지
 				</div>
 			</li>
-			
-		</ul>
+		</ul> -->
+		</div>
 		<footer>
-		<form>
-			<textarea placeholder="메세지를 입력해주세요"></textarea>
-			<a href="">Send</a>
-		</form>
+			<textarea id="messagearea"placeholder="메세지를 입력해주세요"></textarea>
+			<input style="height: 30%;" class="btn btn-primary" onclick="send();" type="button" id="sendBtn" value="전송하기">
 		</footer>
 		</div>
 	</main>
 </div>
-
+<script src="/Food/resources/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/Food/resources/js/chat.js"></script>
 
 </body>
 </html>

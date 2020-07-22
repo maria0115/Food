@@ -83,7 +83,7 @@
 							name="f_content"></textarea></td>
 				</tr>
 				<tr>
-					<td width="100%">식사장소</td>
+					<td width="100%">위치</td>
 					<td align="left">
 					<input type="text" id="sample4_postcode" name = 'postcode' placeholder="우편번호" readonly>
 					<input type="button" name='search' id='search1' value="우편번호 찾기" onclick="execDaumPostcode();"><br>

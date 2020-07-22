@@ -10,7 +10,7 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
  
-@ServerEndpoint("/broadcasting")
+@ServerEndpoint("/mealBoard/chatBox.do")
 public class BroadSocket {
     private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
     

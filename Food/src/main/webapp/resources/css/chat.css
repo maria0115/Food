@@ -5,8 +5,7 @@ body{
 	font-family:Arial;
 }
 #container{
-	/* width:41%; */
-	height:150%;
+	height:100%;
 	background:#eff3f7;
 	margin:0 auto;
 	font-size:0;
@@ -214,9 +213,5 @@ main footer a{
 	margin-left:333px;
 	margin-top:5px;
 	display:inline-block;
-}
-#title{
-	height: 5%;
-    text-align: center;
 }
 

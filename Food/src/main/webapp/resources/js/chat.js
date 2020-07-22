@@ -1,7 +1,6 @@
 
-    var textarea = document.getElementById("messageWindow");
-    var webSocket = new WebSocket('ws://localhost:8090/project0509Final/broadcasting');
-    var inputMessage = document.getElementById('inputMessage');
+    var inputMessage = document.getElementById('messagearea');
+    var webSocket = new WebSocket('ws://localhost:8080/Food/mealBoard/chatBox.do');
     webSocket.onerror = function(event) {
         onError(event)
     };
@@ -15,32 +14,24 @@
         var message = event.data.split("|");
         var sender = message[0];
         var content = message[1];
+        
         if (content == "") {
             
-        } else {
-            if (content.match("/")) {
-                if (content.match(("/" + $("#chat_id").val()))) {
-                    var temp = content.replace("/" + $("#chat_id").val(), "(귓속말) :").split(":");
-                    if (temp[1].trim() == "") {
-                    } else {
-                        $("#messageWindow").html($("#messageWindow").html() + "<p class='whisper'>"
-                            + sender + content.replace("/" + $("#chat_id").val(), "(귓속말) :") + "</p>");
-                    }
-                } else {
-                }
-            } else {
-                if (content.match("!")) {
-                    $("#messageWindow").html($("#messageWindow").html()
-                        + "<p class='chat_content'><b class='impress'>" + sender + " : " + content + "</b></p>");
-                } else {
-                    $("#messageWindow").html($("#messageWindow").html()
-                        + "<p class='chat_content'>" + sender + " : " + content + "</p>");
-                }
-            }
-        }
+        }else {
+        	if (content.match("!")) {
+			$("#chat").html($("#chat").html()+ "<p class='chat_content'><b class='impress'>"
+							+ sender + " : " + content + "</b></p>");
+		} else {
+			$("#chat").html(
+					$("#chat").html() + "<p class='chat_content'>"
+							+ sender + " : " + content + "</p>");
+		}
+
+	}
     }
     function onOpen(event) {
-        $("#messageWindow").html("<p class='chat_content'>채팅에 참여하였습니다.</p>");
+    	var $enter = $("<p class='chat_content'>채팅에 참여하였습니다.</p>");
+        $("#caht").append($enter);
     }
     function onError(event) {
         alert(event.data);
@@ -60,8 +51,11 @@
             send();
         }
     }
+        
+        
+      
     //     채팅이 많아져 스크롤바가 넘어가더라도 자동적으로 스크롤바가 내려가게함
     window.setInterval(function() {
-        var elem = document.getElementById('messageWindow');
+        var elem = document.getElementById('chat');
         elem.scrollTop = elem.scrollHeight;
     }, 0);

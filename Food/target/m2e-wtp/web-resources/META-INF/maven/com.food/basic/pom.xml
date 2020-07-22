@@ -27,6 +27,12 @@
 		<artifactId>ojdbc7</artifactId>
 		<version>12.1.0.2</version>
 	</dependency>
+	<!-- 실시간채팅 -->
+	<dependency>
+    <groupId>org.apache.tiles</groupId>
+    <artifactId>tiles-jsp</artifactId>
+    <version>2.2.1</version>
+</dependency>
 	
 	<!-- json -->
 	<dependency>

@@ -75,7 +75,7 @@
 				<tr>
 					<th>글번호</th>
 					<th>제목</th>
-					<th>글내용</th>
+					<th>위치</th>
 					<th>작성자</th>
 					<th>등록일</th>
 					<th>조회수</th>
@@ -88,14 +88,14 @@
 					<td>${friend.f_no}</td>
 					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
 					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_title}</a></td>
-					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_content}</a></td>
+					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_addr}</a></td>
 					<td>${friend.m_id}</td>
 					<td>${friend.f_date}</td>
 					<td>${friend.f_viewcount}</td>
 					<td>${friend.f_membercnt}
 					</td>
 					<td>
-					<button class="btn btn-primary" onclick="window.open('../mealBoard/chatBox.do','window_nameddddd','width=502,height=735,left=500,top=100,location=no,status=no');">참여하기</button>
+					<button class="btn btn-primary" onclick="window.open('../mealBoard/chatBox.do?f_title=${friend.f_title}','window_nameddddd','width=502,height=750,left=500,top=100,location=no,status=no');">참여하기</button>
 					</td>
 					<!-- 추가 -->	
 				</tr>
