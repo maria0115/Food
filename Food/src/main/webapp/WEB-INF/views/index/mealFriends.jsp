@@ -80,6 +80,7 @@
 					<th>등록일</th>
 					<th>조회수</th>
 					<th>참여인원</th>
+					<th></th>
 				</tr>
 				<c:forEach items="${friendlist}" var="friend">
 				<!-- 프라퍼티이름 변경 -->
@@ -91,7 +92,11 @@
 					<td>${friend.m_id}</td>
 					<td>${friend.f_date}</td>
 					<td>${friend.f_viewcount}</td>
-					<td>${friend.f_membercnt}</td>
+					<td>${friend.f_membercnt}
+					</td>
+					<td>
+					<button class="btn btn-primary" onclick="window.open('../mealBoard/chatBox.do','window_nameddddd','width=502,height=735,left=500,top=100,location=no,status=no');">참여하기</button>
+					</td>
 					<!-- 추가 -->	
 				</tr>
 			</c:forEach>
