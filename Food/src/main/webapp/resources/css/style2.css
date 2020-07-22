@@ -280,6 +280,7 @@ body {}
 	display:block;
 	color: #fff;
 }
+
 .header-top-menu .navbar-nav>li .dropdown-menu a:hover{
 	background:#2b2a2a;
 }
@@ -837,6 +838,13 @@ text-align: center;
     color: #999;
     
 }
+.add-product a{
+	float:right;
+	background: linear-gradient(178deg, #e12503 0%, #85060c 100%);
+	padding: 10px 10px;
+	color: #fff;
+	width:auto;
+	}
 .breadcome-heading{
 	display:inline;
 }
@@ -1068,7 +1076,6 @@ ul.two-part-sp li{
 .chk_del {
 	
 	float:right;
-	position:absolute;
 	top:14px;
 	right:50px;
 	width:40px;

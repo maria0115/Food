@@ -1031,10 +1031,13 @@
 								
 								
 									<div class="del-black">
+									
 							<button data-toggle="tooltip" title="Trash" class="chk_del">
-											<i class="fa fa-trash-o" aria-hidden="true"></i>
-							
+								<i class="fa fa-trash-o" aria-hidden="true"></i>
 							</button>
+							<div class="add-product">
+								<a href="product-edit.html">Add Black</a>
+							</div>
 							</div>
 							
 								<h4>Black List</h4>
@@ -1076,11 +1079,12 @@
 								<nav aria-label="Page navigation example">
 								
 								<div class="breadcome-heading">
-			
+										
 										<form role="search" class="blackfrm">
-
+		
 											<div class="form-select-list">
-											<select class="form-control custom-select-value" id="searchType"
+												
+												<select class="form-control custom-select-value" id="searchType"
 													name="searchType">
 													<option <c:if test="${searchType eq 'b_id'}">selected</c:if>>Id</option>
 													<option <c:if test="${searchType eq 's_state'}">selected</c:if>>State</option>
