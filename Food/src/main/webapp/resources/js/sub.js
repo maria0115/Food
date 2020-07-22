@@ -115,6 +115,7 @@ $("#email").blur(function(){
                 data : "m_email="+ $("#email").val(),
                 success : function(resultData){
                     $("#email_check2").html(resultData);
+                    
                 }
         });
         	if($("#email").val()==""){
@@ -125,7 +126,8 @@ $("#email").blur(function(){
 
 //아이디 중복체크 
 $("#id").blur(function(){
-        $.ajax({
+	
+	$.ajax({
                 type:'post',
                 async:true,
                 url : 'checkId.do',
@@ -133,9 +135,12 @@ $("#id").blur(function(){
                 data : "m_id="+ $("#id").val(),
                 success : function(resultData){
                     $("#id_check2").html(resultData);
-                
-                }
-        });
+                  
+                } 
+				
+        });	
+        	
+		
         	if($("#id").val()=="")
             $("#id_check2").html("아이디를 작성하세요.");
         });
@@ -183,12 +188,21 @@ $("#id").blur(function(){
 							var pass = /^[a-zA-Z0-9]{8,16}/;
 							var pwd1 = $("#password1").val();
 							var pwd2 = $("#password2").val();
-							
+							var idcheck =  $("#id_check2").html();
+							var emailcheck = $("#email_check2").html();
 							
 							if (!id.test($("#id").val())) {
 							alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
 							return false;
-							} else if (pwd1 != pwd2) {
+							}else if(emailcheck == "중복된 이메일 입니다"){
+								alert("중복된 이메일입니다. 이메일을 확인하여주세요")
+								return false;
+							}
+							else if(idcheck == "중복된 아이디입니다"){
+								alert("중복된 아이디입니다. 아이디를 확인하여주세요")
+								return false;
+							}
+								else if (pwd1 != pwd2) {
 								alert("비밀번호가 일치하지 않습니다.")
 								return false;
 							} else if (!email.test($("#email").val())) {
