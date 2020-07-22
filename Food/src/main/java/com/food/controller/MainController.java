@@ -1,12 +1,16 @@
 package com.food.controller;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,37 +26,33 @@ public class MainController {
 	
 	@RequestMapping("/main.do")
 	public ModelAndView mainpagetag(HttpServletRequest request) {
-		
-//			var apiURI = "http://api.openweathermap.org/data/2.5/weather?q=seoul&appid=37dbde539fcdc8cd3ebd105942639fc4";
-//		    $.ajax({
-//		        url: apiURI,
-//		        dataType: "json",
-//		        type: "GET",
-//		        async: "false",
-//		        success: function(resp) {
-//		            console.log(resp);
-//		            console.log("현재온도 : "+ (resp.main.temp- 273.15) );
-//		            console.log("현재습도 : "+ resp.main.humidity);
-//		            console.log("날씨 : "+ resp.weather[0].main );
-//		            console.log("상세날씨설명 : "+ resp.weather[0].description );
-//		            console.log("날씨 이미지 : "+ resp.weather[0].icon );
-//		            console.log("바람   : "+ resp.wind.speed );
-//		            console.log("나라   : "+ resp.sys.country );
-//		            console.log("도시이름  : "+ resp.name );
-//		            console.log("구름  : "+ (resp.clouds.all) +"%" );       
-		String requestUrl = "http://api.openweathermap.org/data/2.5/weather?q=seoul&appid=37dbde539fcdc8cd3ebd105942639fc4";
-		URL url = new URL(requestUrl);
-        URLConnection conn = url.openConnection();
-        BufferedReader bufferedReader = null;
-        bufferedReader = new BufferedReader( new InputStreamReader(conn.getInputStream()) );
+		BufferedReader bufferedReader = null;
+		String resultSet = null;
+		try {
+			String requestUrl = "http://api.openweathermap.org/data/2.5/weather?q=seoul&appid=37dbde539fcdc8cd3ebd105942639fc4";
+			URL url = new URL(requestUrl);
+	        URLConnection conn = url.openConnection();
+	        
+	        bufferedReader = new BufferedReader( new InputStreamReader(conn.getInputStream()) );
 
-        //System.out.println(bufferedReader.readLine());
+	        System.out.println(bufferedReader.readLine());
+	        
+	 
+//	        JSONParser jsonParser = new JSONParser();
+//	        JSONObject jsonObject;
+//			jsonObject = (JSONObject)jsonParser.parse(bufferedReader);
+//			resultSet = jsonObject.toJSONString();
+//			System.out.println(resultSet);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		} catch (ParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+
         
-        resultSet= parseJSONData(bufferedReader);
-        JSONParser jsonParser = new JSONParser();
-        JSONObject jsonObject = (JSONObject)jsonParser.parse(bufferedReader);
-
-        resultSet = jsonObject.toJSONString();
 
 		System.out.println("hi");
 		
