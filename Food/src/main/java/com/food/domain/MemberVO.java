@@ -9,8 +9,14 @@ public class MemberVO {
 	private	String	m_area ;
 	private	String	m_most  ;
 	private	String	m_email ;
+	private String m_post;
 
-
+	public String getM_post() {
+		return m_post;
+	}
+	public void setM_post(String m_post) {
+		this.m_post = m_post;
+	}
 	public String getM_id() {
 		return m_id;
 	}

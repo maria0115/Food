@@ -130,7 +130,7 @@
 			<label>주소</label>
 			<div class="form-group">
 				<input class="sing" style="width: 40%; display: inline;"
-					placeholder="우편번호"  id="addr1" type="text"
+					placeholder="우편번호"  id="addr1" type="text"  name="m_post"
 					readonly="readonly">
 				<button type="button" class="btn btn-default"
 					onclick="execPostCode();">
@@ -148,11 +148,12 @@
 
 
 			<label>좋아하는 음식</label>
+
 			<div id="mostfood">
 				<input type="text" id="testInput" placeholder="자동완성" />
 				<input type="button" class="btn btn-info" id="m_most" value="추가">
 			</div>
-		   
+
 			
 
 

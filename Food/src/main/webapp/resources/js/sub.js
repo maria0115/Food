@@ -35,8 +35,8 @@ function execPostCode() {
 			console.log(data.zonecode);
 			console.log(fullRoadAddr);
 
-			$("[name=m_area]").val(data.zonecode);
-			$("[name=m_area]").val(fullRoadAddr);
+			$("#addr1").val(data.zonecode);
+			$("#addr2").val(fullRoadAddr);
 
 			/*
 			 * document.getElementById('signUpUserPostNo').value =
@@ -55,6 +55,7 @@ function execPostCode() {
 
 
 //좋아하는 음식 검색하기   
+$(function(){
 $('#testInput').autocomplete({
         source : function(reuqest, response) {
            var value= $('#testInput').val();
@@ -68,37 +69,20 @@ $('#testInput').autocomplete({
                         $.map(data, function(item) {
                         	
                             return {
-                                label : item.m_most,
                                 value : item.m_most,
                                 test : item + 'test'
                             }
                         })
                     );
-                }
-            });
-        },
-        select : function(event, ui) {
-            console.log(ui);
-            console.log(ui.item.label);
-            console.log(ui.item.value);
-            console.log(ui.item.test);
-        },
-        focus : function(event, ui) {
-            return false;
-        },
-        minLength : 1,
-        autoFocus : true,
-        classes : {
-            'ui-autocomplete': 'highlight'
-        },
-        delay : 500,
-        position : { my : 'right top', at : 'right bottom' },
-        close : function(event) {
-            console.log(event);
-        
-        }
+                } 
+            }); 
+         }
+        }).autocomplete('instance')._renderItem = function(ul, item) { // UI 변경 부
+            return $('<li>') //기본 tag가 li
+            .append('<div  style="width:auto; height:auto; text-align:center; padding-top:7px; font-size:10pt; border:2px solid skyblue; font-weight: bold; ">' + item.value + '<br>' ) //원하는 모양의 HTML 만들면 됨
+            .appendTo(ul);
+        }; 
     });
-
 
 //취소버튼 클릭시
 $('#cancle_btn').click(function(){
