@@ -55,25 +55,36 @@
 	</div>
 
 
-	
-
-	<!-- ##### Hero Area Start ##### -->
-	<section class="hero-area">
-
-		<!-- Single Hero Post -->
-		<div class="single-hero-post bg-overlay">
-			<!-- Post Image -->
-			<div class="slide-img bg-img"
-				style="background-image: url(img/bg-img/1.jpg);"></div>
-		</div>
-
-		<jsp:include page="header.jsp">
+	<jsp:include page="header.jsp">
 			<jsp:param value='' name='folder' />
 		</jsp:include>
-	</section>
+
+	<!-- ##### Hero Area Start ##### -->
+<!-- 	<section class="hero-area"> -->
+<div class="slide-img bg-img"
+				style="background-image: url(resources/img/bg-img/1.jpg);">
+		<!-- Single Hero Post -->
+		<div class="single-hero-post bg-overlay">
+		
+		<div style="text-align: center; height: 50%; line-height: 50%; transform: translateY(100%); text-shadow: black; position: absolute;width: 100%;">
+			<a href="">hihihihihhihiihih</a>
+			</div>
+			<!-- Post Image -->
+			</div>
+		</div>
+
+		
+<!-- 	</section> -->
 
 
 	<!-- ##### Contact Area End ##### -->
+	
+	
+	
+	
+	
+	
+	
 
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="footer.jsp" %>
