@@ -101,7 +101,7 @@ ul.join_box {
 }
 
 .move {
-	width: 70%;
+	width: 100%;
 	height: auto;
 	display: -webkit-box;
 	display: -ms-flexbox;

@@ -18,5 +18,7 @@ public interface QnaBoardDAO {
 	public List<QnaBoardVO> selectBoard(PagingVO vo);
 
 	public QnaBoardVO viewDetail(QnaBoardVO vo);
+
+	public void modifyQna(QnaBoardVO vo);
 	
 }

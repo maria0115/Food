@@ -90,18 +90,21 @@
                         <form action="qnaboard_insert.do" method="post">
                             <div class="row">
                                 <div class="col-12 col-md-6">
+                             	   제목
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="contact-name" placeholder="Your title" name="q_title">
+                                        <input type="text" class="form-control" id="contact-name" name="q_title">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
+                                	작성자
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="contact-email" placeholder="Your name" name="q_writer">
+                                        <input type="text" class="form-control" id="contact-email" name="q_writer">
                                     </div>
                                 </div>
                                 <div class="col-12">
+                                	내용
                                     <div class="form-group">
-                                        <textarea class="form-control" id="message" cols="30" rows="10" placeholder="Message" name="q_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;"></textarea>
+                                        <textarea class="form-control" id="message" cols="30" rows="10" name="q_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
