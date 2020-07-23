@@ -18,11 +18,14 @@
 	
 	<!-- Core Stylesheet -->
 	<link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/mymenu.css">
     
     <jsp:include page="header.jsp">
 		<jsp:param value='' name='folder' />
 	</jsp:include>
 
+	
+	
 </head>
 
 <body>
@@ -85,30 +88,60 @@
                 </div>
             </div>
 
+
+
+
+<!--        ###################################################### -->
+		<button class="dialog__trigger">Open Dialog</button>
+		
+		<div class="dialog">
+			<span class="dialog__close">&#x2715;</span>
+			<h2 class="dialog__title">예약 내역</h2>
+			<p class="dialog__content" style="color:black">Lorem ipsum dolor sit amet,
+				consectetur adipisicing elit. Impedit necessitatibus illo
+				deleniti doloremque culpa volupta.</p>
+<!-- 			<tr style="text-align: center"> -->
+			<label style="margin-left:10%">매장</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
+			<label style="margin-left:10%">날짜</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
+			<label style="margin-left:10%">인원</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
+			<label style="margin-left:10%">메뉴</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
+			<label style="margin-left:10%">문의</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
+<!-- 			</tr> -->
+			<button class="dialog__action">Read more &#8594;</button>
+		</div>
+<!-- 		###################################################### -->
+
+
+
+
+
             <div class="row alazea-portfolio">
 
                 <!-- Single Portfolio Area -->
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design wow fadeInUp" data-wow-delay="100ms">
                     <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/16.jpg);"></div>
+                    <div class="portfolio-thumbnail bg-img" style="background-image: url(resources/img/bg-img/16.jpg);"></div>
+                	
                     <!-- Portfolio Hover Text -->
                     <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1">
+                    <div class="dialog__trigger">
+<!--                         <a href="resources/img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1"> -->
                             <div class="port-hover-text">
                                 <h3>Minimal Flower Store</h3>
                                 <h5>Office Plants</h5>
                             </div>
-                        </a>
+<!--                         </a> -->
                     </div>
-                </div>
+                    </div>
+				</div>
 
                 <!-- Single Portfolio Area -->
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms">
                     <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/17.jpg);"></div>
+                    <div class="portfolio-thumbnail bg-img" style="background-image: url(resources/img/bg-img/17.jpg);"></div>
                     <!-- Portfolio Hover Text -->
                     <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/17.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2">
+                        <a href="resources/img/bg-img/17.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2">
                             <div class="port-hover-text">
                                 <h3>Minimal Flower Store</h3>
                                 <h5>Office Plants</h5>
@@ -204,16 +237,17 @@
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
+    <script src="resources/js/mymenu.js"></script>
     <!-- jQuery-2.2.4 js -->
-    <script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="resources/js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="resources/js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="resources/js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="resources/js/active.js"></script>
+<!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->
+<!--     Popper js -->
+<!--     <script src="resources/js/bootstrap/popper.min.js"></script> -->
+<!--     Bootstrap js -->
+<!--     <script src="resources/js/bootstrap/bootstrap.min.js"></script> -->
+<!--     All Plugins js -->
+<!--     <script src="resources/js/plugins/plugins.js"></script> -->
+<!--     Active js -->
+<!--     <script src="resources/js/active.js"></script> -->
  
     
 </body>
