@@ -45,9 +45,7 @@ public class MemberDAOImpl  implements MemberDAO{
 		return mybatis.selectOne("memberDAO.selectEmail",vo);
 	}
 
-	
-	
-	
+
 	
 	
 //이메일 발송 
@@ -63,6 +61,12 @@ public class MemberDAOImpl  implements MemberDAO{
 	@Override
 	public List<MemberVO> search(String value) {
 		return mybatis.selectList("memberDAO.search",value);
+	}
+
+	//인증하는 메서드
+	@Override
+	public void authentication(MemberVO vo) {
+			mybatis.insert("memberDAO.authentication",vo);
 	}
  
 	

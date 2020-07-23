@@ -21,4 +21,7 @@ public interface MemberService {
 	public MemberVO userSignIn(MemberVO vo);
 	
 	public List<MemberVO> search(String value);
+	//인증관련 메서드
+	public void authentication(MemberVO vo); 
+	
 }

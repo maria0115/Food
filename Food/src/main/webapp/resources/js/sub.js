@@ -51,6 +51,43 @@ function execPostCode() {
 }
 
 
+//회원가입시이메일 전송
+var  check;
+$("#emailsend").click(function(){
+	$.ajax({
+        type:'post',
+        async:true,
+        url : 'signEmail.do',
+        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+        data : "m_email="+ $("#email").val(),
+        success : function(resultData){
+        	alert("입력하신 E-mail 로 인증번호를 발송해 드렸습니다. 확인해주세요 " )
+        	check = resultData;
+          
+        } ,
+       
+		
+});	
+});
+//이메일 발송후 번호가 맞는지 확인 
+$("#emailsubmit").click(function(){
+	$.ajax({
+        type:'post',
+        async:true,
+        url : 'signcheckEmail.do',
+        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+        data : "check="+ $("#checkmail").val(),
+        success : function(resultData){
+          if(resultData ==check){
+        	  alert("인증이 완료 되었습니다")
+          }else{
+        	  alert("인증번호가 다릅니다.")
+          }
+        } 
+		
+});	
+});
+
 
 
 

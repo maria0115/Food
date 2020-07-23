@@ -10,6 +10,15 @@ select m_id,m_email,m_pass from member where m_id = #{m_id}
 	
 </select>
 
+
+<insert id="authentication" parameterType="member">
+    insert into member (m_id, m_pass,m_email)
+    values (#{m_id}, 0, #{m_email})
+ </insert>
+
+
+
+
 <select id="search" parameterType="String" resultType="member">
 
                select *     
