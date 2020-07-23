@@ -60,7 +60,7 @@ public class MealBoardContoller {
 		int result;
 		String addr1 = (String) request.getParameter("addr1");
 		String addr2 = (String) request.getParameter("addr2");
-		String addr = addr1+addr2;
+		String addr = addr1+" "+addr2;
 		//넘겨온 주소값이 없을경우 
 		if("".equals(addr)) {
 			result = friendBoardservice.friendmodify(vo);

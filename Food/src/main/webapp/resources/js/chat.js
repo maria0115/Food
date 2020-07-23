@@ -25,13 +25,11 @@
 	};
 	
 	var portnum = $.fn.getUrlParameter('f_port');
+	var userId = $.fn.getUrlParameter('m_id');
 	
 	$("#param").text("portnum Value : " + portnum);
 	//alert(portnum);
-	$("#sendBtn").click(function() {
-		sendMessage();
-		$('#messagearea').val('')
-	});
+	
 
 	var webSocket = new WebSocket('ws://192.168.0.17:8080/Food/mealBoard/chatBox.do');
     var inputMessage = document.getElementById('messagearea');
@@ -44,6 +42,11 @@
     webSocket.onmessage = function(event) {
         onMessage(event)
     };
+    
+    $("#sendBtn").click(function() {
+		sendMessage();
+		$('#messagearea').val('')
+	});
 	
     
     function onMessage(event) {
@@ -51,42 +54,42 @@
         var sender = message[0];
         var content = message[1];
         
-        if (content == "") {
-            
-        }else {
-        	if (content.match("!")) {
-			$("#chat").html($("#chat").html()+ "<p class='chat_content'><b class='impress'>"
-							+ sender + " : " + content + "</b></p>");
-		} else {
-			$("#chat").html(
-					$("#chat").html() + "<p class='chat_content'>"
-							+ sender + " : " + content + "</p>");
-		}
+
+	   if (content == "") {
+
+	   } else {
+		$("#chat").html($("#chat").html() + "<p class='chat_content'>" + sender + " : "
+						+ content + "</p>");
 
 	}
     }
+    
+    
     function onOpen(event) {
-    	var $enter = $("<p class='chat_content'>채팅에 참여하였습니다.</p>");
-        $("#caht").append($enter);
+    	var $enter = $("<p class='chat_content' style='font-size: 18px'>"+userId+"님이 채팅에 참여하였습니다.</p>");
+        $("#chat").append($enter);
     }
     function onError(event) {
         alert(event.data);
     }
     function sendMessage() {
         if (inputMessage.value == "") {
+        	alert("메세지를 입력해주세요");
         } else {
-            $("#caht").html($("#caht").html()
-                + "<p class='chat_content'>나 : " + inputMessage.value + "</p>");
+            $("#chat").html($("#chat").html()
+                + "<p class='chat_content'><b class='impress'>"+userId+" : " + inputMessage.value + "</b></p>");
         }
         webSocket.send($("#chat_id").val() + "|" + inputMessage.value);
         inputMessage.value = "";
     }
     //     엔터키를 통해 send함
-    function enterkey() {
-        if (window.event.keyCode == 13) {
-            send();
-        }
-    }
+    $("#messagearea").keyup(function(e){ 
+        var code = e.which; 
+        if(code==13)e.preventDefault();
+        if(code==13){
+        	sendMessage();
+        } 
+    });
         
     //     채팅이 많아져 스크롤바가 넘어가더라도 자동적으로 스크롤바가 내려가게함
     window.setInterval(function() {

@@ -20,6 +20,7 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
+
 	    
 <div id="container">
 	<main>
@@ -35,14 +36,15 @@
 		<div id="chat">
 		</div>
 		<footer>
-			<textarea id="messagearea" placeholder="메세지를 입력해주세요"></textarea>
-			<input style="height: 30%;" class="btn btn-primary" type="button" id="sendBtn" value="전송하기">
+			<input type="text" id="messagearea" placeholder="메세지를 입력해주세요">
+			<input style="height: 30%;" class="btn btn-primary" type="button" onkeyup="enterkey()" id="sendBtn" value="전송하기">
 		</footer>
 		</div>
 	</main>
 </div>
 <script src="/Food/resources/js/jquery/jquery-2.2.4.min.js"></script>
 <script src="/Food/resources/js/chat.js"></script>
+<script src="/Food/resources/js/word.js"></script>
 
 </body>
 </html>
