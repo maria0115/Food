@@ -10,8 +10,14 @@ public class ReservationVO {
 	String r_menu;
 	String m_id;
 	String r_note;
+	String r_menu1;
 	
-	
+	public String getR_menu1() {
+		return r_menu1;
+	}
+	public void setR_menu1(String r_menu1) {
+		this.r_menu1 = r_menu1;
+	}
 	public int getR_id() {
 		return r_id;
 	}

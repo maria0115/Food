@@ -21,6 +21,7 @@ public class ReservationController {
 		System.out.println("visit date:"+vo.getR_visit_date());
 		System.out.println("menu:"+vo.getR_menu());
 		System.out.println("menu cnt:"+vo.getR_menu_count());
+		System.out.println("menu1:"+vo.getR_menu1());
 		reservservice.reservInsert(vo);
 		
 	}

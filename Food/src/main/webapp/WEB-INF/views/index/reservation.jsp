@@ -27,9 +27,15 @@
 <link rel="stylesheet" href="resources/css/reservation_css/owl.carousel.min.css">
 <link rel="stylesheet" href="resources/css/reservation_css/style.css">
 
+
+
+
 </head>
 
 <body>
+
+
+
 
 	<!-- ### 예약 팝업 창 start ### -->
 	<div class="col-md-7 aos-init aos-animate" data-aos="fade-up"
@@ -60,8 +66,6 @@
 							<option value=4>4</option>
 							<option value=5>5</option>
 							<option value=6>6</option>
-							<option value=7>7</option>
-							<option value="8+">8+</option>
 						</select>
 					</div>
 				</div>
@@ -75,10 +79,10 @@
 							<span class="ion-ios-arrow-down"></span>
 						</div>
 						<select name="r_menu" id="r_menu" class="form-control">
-							<option value="메뉴">메뉴</option>
-							<option value="메뉴메뉴">메뉴메뉴</option>
-							<option value="메뉴메뉴메뉴">메뉴메뉴메뉴</option>
-							<option value="메뉴메뉴메뉴메뉴">메뉴메뉴메뉴메뉴</option>
+							<option value="메뉴1">메뉴1</option>
+							<option value="메뉴2">메뉴2</option>
+							<option value="메뉴3">메뉴3</option>
+							<option value="메뉴4">메뉴4</option>
 						</select>
 					</div>
 				</div>
@@ -95,19 +99,22 @@
 							<option value=4>4</option>
 							<option value=5>5</option>
 							<option value=6>6</option>
-							<option value=7>7</option>
-							<option value="8+">8+</option>
 						</select>
 					</div>
 				</div>
-				
 			</div>
-
+			숫자가 초과될 경우 노트에 남겨주세요
 			<div class="row mb-4">
 				<div class="col-md-12 form-group">
 					<label class="text-black font-weight-bold" for="message">Notes</label>
-					<textarea id="message" name="r_note" class="form-control"
-						cols="30" rows="8"></textarea>
+					<textarea id="r_note" name="r_note" class="form-control"
+						cols="30" rows="3"></textarea>
+					<!-- 메뉴 선택하면 추가되는 부분 -->
+					<label style="font-weight:bold;color:black">선택한 메뉴</label>
+					<div id="div1">
+					<!-- input이 추가될 부분 -->
+					</div>
+					<input type='button' class='button1' value='삭제'>
 				</div>
 			</div>
 			<div class="row">
@@ -121,9 +128,13 @@
 	</div>
 	<!-- ### 예약 팝업 창 end ### -->
 
+
+
+
+
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!-- Popper js -->
 	<script src="resources/js/bootstrap/popper.min.js"></script>
 	<!-- Bootstrap js -->
@@ -144,7 +155,25 @@
 	<script src="resources/js/reservation_js/popper.min.js"></script>
 	
 	
-	
+<script>
+$(function(){
+	$("#r_menu_count").change(function(){
+		var addlabel = "<input class='input1' style='border:none' name='r_menu1'><hr>"
+		$("#div1").append(addlabel)
+
+		
+		var sel_menu = $("#r_menu option:selected").val()
+		var sel_menucount = $("#r_menu_count option:selected").val()
+		$(".input1:last").val("메뉴:"+sel_menu+" 수량:"+sel_menucount)
+
+
+	$(".button1").click(function(){
+		$("#div1").children().remove()
+		
+		})
+	})
+})
+</script>
 
 </body>
 

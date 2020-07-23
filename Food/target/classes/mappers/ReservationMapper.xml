@@ -5,8 +5,8 @@
 
 <insert id="insertReserv" parameterType="reservation">
 	INSERT INTO reservation
-	(r_id,r_date,r_visit_date,r_people_count,r_menu_count,r_menu,m_id,r_note) 
-	VALUES(id_seq_reservation.nextval,sysdate,#{r_visit_date},#{r_people_count},#{r_menu_count},#{r_menu},#{m_id},#{r_note})
+	(r_id,r_date,r_visit_date,r_people_count,r_menu_count,r_menu,m_id,r_note,r_menu1) 
+	VALUES(id_seq_reservation.nextval,sysdate,#{r_visit_date},#{r_people_count},#{r_menu_count},#{r_menu},#{m_id},#{r_note},#{r_menu1})
 </insert>
 
 
