@@ -1,26 +1,27 @@
 package com.food.domain;
 
 public class BlackListVO {
+	int b_num;
 	String b_id;
-	String b_name;
 	String s_start;
 	String s_end;
 	String reason;
 	String s_state;
 	
 	
+	public int getB_num() {
+		return b_num;
+	}
+	public void setB_num(int b_num) {
+		this.b_num = b_num;
+	}
 	public String getB_id() {
 		return b_id;
 	}
 	public void setB_id(String b_id) {
 		this.b_id = b_id;
 	}
-	public String getB_name() {
-		return b_name;
-	}
-	public void setB_name(String b_name) {
-		this.b_name = b_name;
-	}
+
 	public String getS_start() {
 		return s_start;
 	}

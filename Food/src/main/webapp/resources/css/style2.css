@@ -838,13 +838,26 @@ text-align: center;
     color: #999;
     
 }
-.add-product a{
+.add-black a{
 	float:right;
 	background: linear-gradient(178deg, #e12503 0%, #85060c 100%);
 	padding: 10px 10px;
 	color: #fff;
 	width:auto;
 	}
+.blackwindow{
+	text-align: center;
+}
+.blackwindow a{
+	background: linear-gradient(178deg, #e12503 0%, #85060c 100%);
+	padding: 10px 10px;
+	color: #fff;
+	width:auto;
+}
+.addrow{
+
+}
+
 .breadcome-heading{
 	display:inline;
 }
@@ -858,6 +871,18 @@ ul.breadcome-menu li {
     font-size: 14px;
     display: inline-block;
 	color:#fff;
+}
+.add-select-list,.modify-select-list{
+	margin-top:10px;
+	text-align: center;
+}
+.modify-select{
+	width:183px;
+	text-align-last:center;
+}
+.add-select{
+	width:150px;
+	text-align-last:center;
 }
 ul.breadcome-menu li a{
     color:#fff;
@@ -1971,6 +1996,9 @@ ul.tab-custon-design li.active a, ul.tab-review-design li.active a{
 .form-group-inner label{
 	font-size:14px;
 	color:#303030;
+}
+.add-group{
+	display:inline-block;
 }
 .form-group-inner input[type="email"], .form-group-inner input[type="password"], .form-group-inner input[type="text"], .form-select-list .custom-select-value{
 	font-size:14px;

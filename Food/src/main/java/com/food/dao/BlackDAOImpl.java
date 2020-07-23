@@ -18,7 +18,7 @@ public class BlackDAOImpl implements BlackDAO {
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public List<BlackListVO> selectBoard(PagingVO pvo, String searchType, String keyword) {
+	public List<HashMap> selectBoard(PagingVO pvo, String searchType, String keyword) {
 		System.out.println("==>BlackMapper selectBoard() 호출");
 		
 		HashMap map = new HashMap();
@@ -58,5 +58,31 @@ public class BlackDAOImpl implements BlackDAO {
 		System.out.println("==>BlackMapper blackDelete() 호출");
 		return mybatis.delete("blackDAO.blackDelete",vo);
 	}
+	
+	@Override
+	public int insertBlack(BlackListVO vo, int term) {
+		System.out.println("==>BlackMapper insertBlack() 호출");
+		HashMap map = new HashMap();
+		map.put("term", term);
+		map.put("b_id",vo.getB_id());
+		map.put("reason",vo.getReason());
+		
+		
+		return mybatis.insert("blackDAO.blackInsert",map);
+	}
+
+	@Override
+	public List<BlackListVO> listSearch(BlackListVO vo) {
+		System.out.println("==>BlackMapper listSearch() 호출");
+		return mybatis.selectOne("blackDAO.listSearch",vo);
+	}
+
+	@Override
+	public int blackUpdate(BlackListVO vo) {
+		System.out.println("==>BlackMapper blackUpdate() 호출");
+		return mybatis.update("blackDAO.blackUpdate",vo);
+	}
+
+
 
 }

@@ -103,7 +103,7 @@
 								<li><a title="Product List" href="member-list.do"><i
 										class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Member List</span></a></li>
-										<li><a title="Product List" href="Black-list.do"><i
+										<li><a title="Product List" href="black-list.do"><i
 										class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Black List</span></a></li>
 								<li><a title="Product Edit" href="product-edit.html"><i
@@ -1035,14 +1035,15 @@
 							<button data-toggle="tooltip" title="Trash" class="chk_del">
 								<i class="fa fa-trash-o" aria-hidden="true"></i>
 							</button>
-							<div class="add-product">
-								<a href="product-edit.html">Add Black</a>
+							<div class="add-black">
+								<a href="#" onclick="window.open('addBlack.do','_blank','width=600 ,height=400');">Add Black</a>
 							</div>
 							</div>
 							
 								<h4>Black List</h4>
 								<table>
 								<tr>
+									<th>No</th>
 									<th>Id</th>
 									<th>Name</th>
 									<th>Start</th>
@@ -1055,22 +1056,24 @@
 								</tr>
 								<c:forEach items="${blackList }" var="black">
 									<tr>
-										<td>${black.b_id }</td>
-										<td>${black.b_name }</td>
-										<td>${black.s_start}</td>
-										<td>${black.s_end }</td>
-										<td>${black.reason }</td>
-										<td>${black.s_state}</td>
+										<td>${black.B_NUM }</td>
+										<td>${black.B_ID }</td>
+										<td>${black.M_NAME }</td>
+										<td>${black.S_START}</td>
+										<td>${black.S_END }</td>
+										<td>${black.REASON }</td>
+										<td><c:if test="${black.S_STATE eq '1'}">ing</c:if>
+										<c:if test="${black.S_STATE eq '0'}">ended</c:if></td>
 										<td></td>
 										<td>
-											<button data-toggle="tooltip" title="Edit"
+											<button data-toggle="tooltip" title="Edit" onclick="window.open('modifyBlack.do?b_id=${black.B_ID}','_blank','width=600 ,height=400');"
 												class="pd-setting-ed">
 												<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 											</button> 
-											<button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="location.href='blackDelete.do?b_id=${black.b_id}'">
+											<button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="location.href='blackDelete.do?b_num=${black.B_NUM}'">
 											<i class="fa fa-trash-o" aria-hidden="true"></i>
 											</button>
-											<input type='checkbox' class='input_check' name="${black.b_id}">
+											<input type='checkbox' class='input_check' name="${black.B_NUM}">
 										</td>
 									</tr>
 								</c:forEach>

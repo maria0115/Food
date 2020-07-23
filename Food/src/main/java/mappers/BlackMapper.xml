@@ -14,13 +14,16 @@
 
 	<!-- 전체출력 & 검색출력 -->
 	<!-- 블랙 리스트 -->
-<select id="selectBoard" parameterType="hashmap" resultType="blacklist">
+<select id="selectBoard" parameterType="hashmap" resultType="hashmap">
 	SELECT * 
 		FROM (
 			SELECT ROWNUM RN, A.* 
 				FROM (
-						SELECT * 
-						FROM blacklist 
+						SELECT b.b_num b_num,b.b_id b_id,m.m_name m_name, TO_CHAR(trunc(b.s_start),'yyyy-MM-DD') as s_start ,
+						TO_CHAR(trunc(b.s_end),'yyyy-MM-DD') as s_end ,
+						reason, s_state
+						FROM blacklist b INNER JOIN member m
+                        ON b.b_id = m.m_id
 						<where>
 							<if test='searchType!=null &amp;&amp; keyword!=null'>${searchType} like '%'||#{keyword}||'%'</if>
 						</where>
@@ -28,6 +31,8 @@
 						) A
 				)
 	WHERE RN BETWEEN #{start} AND #{end}
+	
+	
 	
 </select>
 
@@ -41,8 +46,26 @@
 
 <!-- 블랙리스트 삭제 -->
 <delete id="blackDelete" parameterType="blacklist">
-		Delete From blacklist WHERE b_id=#{b_id}
+		Delete From blacklist WHERE b_num=#{b_num}
 </delete>
+
+<insert id="blackInsert" parameterType="hashmap">
+		Insert Into blacklist (b_num,b_id,s_start,s_end,reason,s_state) values(black_seq.nextval,#{b_id},sysdate,sysdate+#{term},#{reason},'1')
+
+</insert>
+
+<!-- Id에 해당하는 블랙리스트 회원정보 찾아서 반환 -->
+<select id="listSearch" parameterType="blacklist" resultType="blacklist">
+		SELECT b_num,b_id, TO_CHAR(trunc(s_start),'yyyy-MM-DD') as s_start ,TO_CHAR(trunc(s_end),'yyyy-MM-DD') as s_end,reason,s_state FROM blacklist
+		WHERE b_id=#{b_id}
+		
+</select>
+<!-- 블랙리스트 회원정보수정 -->
+<update id="blackUpdate" parameterType="blacklist">
+		Update blacklist set
+		s_start=#{s_start},s_end=#{s_end},reason=#{reason},s_state=#{s_state} WHERE b_id=#{b_id}
+
+</update>
 
 
 </mapper>

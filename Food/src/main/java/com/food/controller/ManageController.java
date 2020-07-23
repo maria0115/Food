@@ -1,5 +1,6 @@
 package com.food.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -170,19 +171,22 @@ public class ManageController {
 
 			//모델에 "paing" pvo 추가
 			model.addAttribute("paging", pvo);
-			
+			System.out.println("CntPerPage:"+pvo.getCntPerPage());
+			System.out.println("EndPage:"+pvo.getEndPage());
+			System.out.println("LastPage:"+pvo.getLastPage());
+			System.out.println("NowPage:"+pvo.getNowPage());
+			System.out.println("StartPage:"+pvo.getStartPage());
 			//모델에 "memList" List 추가 , db에서 조건에 해당하는 상품 목록을 가지고 온다
 		
-
-
+		
 			
-			
-			model.addAttribute("blackList",blackService.selectBoard(pvo,searchType,keyword));
+			model.addAttribute("blackList", blackService.selectBoard(pvo,searchType,keyword));
 			
 			//모델에 "searchType" 검색타입 추가
 			model.addAttribute("searchType", searchType);
 			//모델에 "keyword" 검색키워드 추가
 			model.addAttribute("keyword", keyword);
+			
 			
 		
 			
@@ -217,21 +221,67 @@ public class ManageController {
 		@RequestMapping(value="/blackDelete.do")
 		public String BlacklistDelete(@RequestParam(value="input_check[]",required=false)List<String> chArr ,BlackListVO vo) {
 			int result=0;//삭제했을때 반환한 값을 저장할 변수
+
 			if(chArr!=null) {
 				for(String i : chArr) { // 요청받은 리스트만큼 for문을 반복
-					vo.setB_id(i); //chArr 리스트 안에 있던 Id 값들을 db에 넘겨줄 vo객체에 저장한다
+					System.out.println("i:"+i);
+					vo.setB_num(Integer.parseInt(i)); //chArr 리스트 안에 있던 Id 값들을 db에 넘겨줄 vo객체에 저장한다
 							result=blackService.blackDelete(vo); //해당하는 Id값이 있을 경우 삭제해준다
 			
 				}
+
 			}
 			else
 				result=blackService.blackDelete(vo);
 					
 				System.out.println("result: "+result);
-				if(result==1) {//삭제 성공
+				if(result>0) {//삭제 성공
 				return "listSuccess.do"; 
 				}else		   //삭제 실패
 						return "listFail";
-				}
+		}
+		
+		@ResponseBody
+		@RequestMapping("/blackAdd.do")
+		public String BlackListAdd(BlackListVO vo,String select) {
+			int term =0;
+			if(select.equals("3 Day")==true) {
+				term = 3;
+			}else if(select.equals("7 Day")==true) {
+				term = 7;
+			}else if(select.equals("30 Day")==true) {
+				term = 30;
+			}else if(select.equals("1000 Year")==true) {
+				term = 1000*365;
+			}
+
+			int result = blackService.insertBlack(vo,term);
+			
+			System.out.println("result: "+Integer.toString(result));
+			return "ok";
+		}
+		
+		//수정페이지 창 요청과 동시에 수정페이지에 출력할 회원정보를 갖고옴
+		@RequestMapping("/modifyBlack.do")
+		public String BlackModify(BlackListVO vo,Model model) {
+			model.addAttribute("blackInfo",blackService.listSearch(vo));
+			
+			
+			return "manager/modifyBlack";
+			
+		}
+		
+		//수정페이지에서 수정 요청
+		@RequestMapping("/blackModify.do")
+		public String BlackModify2(BlackListVO vo) {
+			int result = blackService.blackUpdate(vo);
+			if(result==1) {
+				return "manager/listSucces";
+			}
+			else
+				return "manager/listFail";
+			
+		}
+		
 	
 }

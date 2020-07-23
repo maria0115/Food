@@ -1,5 +1,6 @@
 package com.food.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class BlackServiceImpl implements BlackService{
 
 
 	@Override
-	public List<BlackListVO> selectBoard(PagingVO pvo, String searchType, String keyword) {
+	public List<HashMap> selectBoard(PagingVO pvo, String searchType, String keyword) {
 		
 		return blackDAO.selectBoard(pvo, searchType, keyword);
 	}
@@ -45,6 +46,23 @@ public class BlackServiceImpl implements BlackService{
 	public List<BlackListVO> listAll() {
 		
 		return blackDAO.listAll();
+	}
+
+	@Override
+	public int insertBlack(BlackListVO vo,int term) {
+
+		return blackDAO.insertBlack(vo,term);
+	}
+
+	@Override
+	public List<BlackListVO> listSearch(BlackListVO vo) {
+		
+		return blackDAO.listSearch(vo);
+	}
+
+	@Override
+	public int blackUpdate(BlackListVO vo) {
+		return blackDAO.blackUpdate(vo);
 	}
 
 }
