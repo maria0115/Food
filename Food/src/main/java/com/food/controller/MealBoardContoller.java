@@ -31,10 +31,6 @@ public class MealBoardContoller {
 	public String friendsave(FriendBoardVO vo , HttpServletRequest request) {
 		
 		int result;
-		String addr1 = (String) request.getParameter("addr1");
-		String addr2 = (String) request.getParameter("addr2");
-		String addr = addr1+addr2;
-		vo.setF_addr(addr);
 		result = friendBoardservice.friendsave(vo);
 		if(result==0) {
 			return "../index/error";
@@ -58,25 +54,12 @@ public class MealBoardContoller {
 	@RequestMapping("/friendmodify.do")
 	public String friendmodify(FriendBoardVO vo, HttpServletRequest request) {
 		int result;
-		String addr1 = (String) request.getParameter("addr1");
-		String addr2 = (String) request.getParameter("addr2");
-		String addr = addr1+" "+addr2;
-		//넘겨온 주소값이 없을경우 
-		if("".equals(addr)) {
-			result = friendBoardservice.friendmodify(vo);
-			if(result==0) {
-				return "index/error";
-			}
-			return "redirect:../index/mealFriends.do";
-		//넘겨온 주소값이 있을경우
-		}else {
-			vo.setF_addr(addr);
-			result = friendBoardservice.friendmodify(vo);
-			if(result==0) {
-				return "index/error";
-			}
-			return "redirect:../mealBoard/mealboardView.do?f_no="+vo.getF_no();
+		result = friendBoardservice.friendmodify(vo);
+		if(result==0) {
+			return "index/error";
 		}
+		return "redirect:../mealBoard/mealboardView.do?f_no="+vo.getF_no();
+		
 		
 	}
 	

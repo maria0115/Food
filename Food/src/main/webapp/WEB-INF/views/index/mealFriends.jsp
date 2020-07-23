@@ -88,14 +88,14 @@
 					<td>${friend.f_no}</td>
 					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
 					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_title}</a></td>
-					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_addr}</a></td>
+					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_addr1}&nbsp;${friend.f_addr2}</a></td>
 					<td>${friend.m_id}</td>
 					<td>${friend.f_date}</td>
 					<td style="text-align: center;">${friend.f_viewcount}</td>
 					<td style="text-align: center;">${friend.f_membercnt}
 					</td>
 					<td>
-					<button class="btn btn-primary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?f_title=${friend.f_title}&f_port=${friend.f_port}&m_id=${sessionScope.user_id }','_blank','width=502,height=670,left=500,top=100,location=no,status=no');">참여하기</button>
+					<button class="btn btn-primary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?f_title=${friend.f_title}&f_port=${friend.f_port}&m_id=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">참여하기</button>
 					</td>
 					<!-- 추가 -->	
 				</tr>
