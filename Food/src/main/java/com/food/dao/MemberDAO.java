@@ -18,4 +18,6 @@ public interface MemberDAO {
 	public void insertMember(MemberVO vo);
 	
 	public List<MemberVO> search(String value);
+	
+	public void authentication(MemberVO vo); 
 }

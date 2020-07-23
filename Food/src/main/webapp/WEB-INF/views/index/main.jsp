@@ -67,7 +67,7 @@
 		<div class="single-hero-post bg-overlay">
 		
 		<div style="text-align: center; height: 50%; line-height: 50%; transform: translateY(100%); text-shadow: black; position: absolute;width: 100%;">
-			<a href="" style="font-size: 15vw;">hihihihihhihiihih</a>
+			<a href="" style="font-size: 10vw;">hihihihihhihiihih</a>
 			</div>
 			<!-- Post Image -->
 			</div>

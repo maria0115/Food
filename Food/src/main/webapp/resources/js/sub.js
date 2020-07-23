@@ -51,38 +51,47 @@ function execPostCode() {
 }
 
 
+//회원가입시이메일 전송
+var  check;
+$("#emailsend").click(function(){
+	$.ajax({
+        type:'post',
+        async:true,
+        url : 'signEmail.do',
+        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+        data : "m_email="+ $("#email").val(),
+        success : function(resultData){
+        	alert("입력하신 E-mail 로 인증번호를 발송해 드렸습니다. 확인해주세요 " )
+        	check = resultData;
+          
+        } ,
+       
+		
+});	
+});
+//이메일 발송후 번호가 맞는지 확인 
+$("#emailsubmit").click(function(){
+	$.ajax({
+        type:'post',
+        async:true,
+        url : 'signcheckEmail.do',
+        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+        data : "check="+ $("#checkmail").val(),
+        success : function(resultData){
+          if(resultData ==check){
+        	  alert("인증이 완료 되었습니다")
+          }else{
+        	  alert("인증번호가 다릅니다.")
+          }
+        } 
+		
+});	
+});
 
 
 
-//좋아하는 음식 검색하기   
-$(function(){
-$('#testInput').autocomplete({
-        source : function(reuqest, response) {
-           var value= $('#testInput').val();
-        	$.ajax({
-                type : 'get',
-                url: 'search.do?value='+value,
-                dataType : 'json',
-                success : function(data) {
-                    //서버에서 json 데이터 response 후 목록 추가
-                    response(
-                        $.map(data, function(item) {
-                        	
-                            return {
-                                value : item.m_most,
-                                test : item + 'test'
-                            }
-                        })
-                    );
-                } 
-            }); 
-         }
-        }).autocomplete('instance')._renderItem = function(ul, item) { // UI 변경 부
-            return $('<li>') //기본 tag가 li
-            .append('<div  style="width:auto; height:auto; text-align:center; padding-top:7px; font-size:10pt; border:2px solid skyblue; font-weight: bold; ">' + item.value + '<br>' ) //원하는 모양의 HTML 만들면 됨
-            .appendTo(ul);
-        }; 
-    });
+
+
 
 //취소버튼 클릭시
 $('#cancle_btn').click(function(){

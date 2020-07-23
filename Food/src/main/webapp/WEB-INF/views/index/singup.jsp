@@ -112,13 +112,24 @@
 			<div class="check_font" id="birth_check"></div>
 
 			<!-- 본인확인 이메일 -->
+	
+			
 
-			<label>이메일</label> <input type="text" class="sing" name="m_email"
+ 			<span style="color: green; font-weight: bold;">이메일 인증 (이메일을 인증 받아야 다음 단계로 넘어갈 수 있습니다.)</span> <br> <br>    
+                <label>이메일</label> <input type="text" class="sing" name="m_email"
 				id="email" placeholder="E-mail" required>
 				<div class="check_font" id="email_check"></div>
-			<div class="check_font" id="email_check2"></div>
-		
-			
+				<div class="check_font" id="email_check2"></div>          
+			    <input type="button"  id="emailsend" class ="btn btn-primary" value="이메일 인증받기 (이메일 보내기)"/>
+ 				<br>
+            <span style="color: green; font-weight: bold;">입력한 이메일로 받은 인증번호를 입력하세요. (인증번호가 맞아야 다음 단계로 넘어가실 수 있습니다.)</span> <br> <br>       
+        		<div>
+                            인증번호 입력 : <input type="number"  id="checkmail"
+                                placeholder="  인증번호를 입력하세요. "/>
+                				</div>              
+ 				<input  type ="button" id ="emailsubmit"  class ="btn btn-primary" value ="인증번호 전송"><br>
+ 
+        
 
 			<!-- 휴대전화 -->
 
@@ -239,8 +250,38 @@
 	<script src="resources/js/active.js"></script>
 
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+	<script>
+	//좋아하는 음식 검색하기   
+	$(function(){
+	$('#testInput').autocomplete({
+	        source : function(reuqest, response) {
+	           var value= $('#testInput').val();
+	        	$.ajax({
+	                type : 'get',
+	                url: 'search.do?value='+value,
+	                dataType : 'json',
+	                success : function(data) {
+	                    //서버에서 json 데이터 response 후 목록 추가
+	                    response(
+	                        $.map(data, function(item) {
+	                        	
+	                            return {
+	                                value : item.m_most,
+	                                test : item + 'test'
+	                            }
+	                        })
+	                    );
+	                } 
+	            }); 
+	         }
+	        }).autocomplete('instance')._renderItem = function(ul, item) { // UI 변경 부
+	            return $('<li>') //기본 tag가 li
+	            .append('<div  style="width:auto; height:auto; text-align:center; padding-top:7px; font-size:10pt; border:2px solid skyblue; font-weight: bold; ">' + item.value + '<br>' ) //원하는 모양의 HTML 만들면 됨
+	            .appendTo(ul);
+	        }; 
+	    });
 
-
+	</script>
 	<!-- 지섭 -->
 
 
