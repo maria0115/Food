@@ -30,11 +30,6 @@ public class MealBoardContoller {
 	@RequestMapping("/friendsave.do")
 	public String friendsave(FriendBoardVO vo , HttpServletRequest request) {
 		
-		String ip = request.getHeader("X-Forwarded-For");
-        if (ip == null) {
-            ip = request.getRemoteAddr();
-        }
-        vo.setF_ip(ip);
 		int result;
 		String addr1 = (String) request.getParameter("addr1");
 		String addr2 = (String) request.getParameter("addr2");
