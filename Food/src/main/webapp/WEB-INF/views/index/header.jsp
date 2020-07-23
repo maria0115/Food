@@ -20,6 +20,7 @@
 <!-- Title -->
 <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
 
+
 <!-- Favicon -->
 <link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
 
@@ -101,7 +102,8 @@
 										</div>
 									</div>
 								</div>
-							
+							<div id="name"></div>
+							<div id="email"></div>
 									<div class="access">
 									<c:if test="${not empty sessionScope.user_id}">
 										<span class="login-font">${sessionScope.user_name} 님 환영합니다.</span>
@@ -133,6 +135,7 @@
 										<a href="singup.do" class="memberInfo">회원가입 </a> <a
 										href="find_form.do" class="memberInfo">아이디 비밀번호 찾기 </a>
 									<p class="closeBtn" title="닫기버튼">X</p>
+									<a href="loginview.do">소셜로그인</a>
 									</div>
 									</div>
 								</div>
@@ -260,7 +263,7 @@
 	<!-- Active js -->
 	<script src="/Food/resources/js/active.js"></script>
 	<!-- 지섭-->
-
+	
 
 </body>
 

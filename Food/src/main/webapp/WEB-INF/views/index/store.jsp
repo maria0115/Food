@@ -48,10 +48,6 @@
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
        
-        <!-- Top Breadcrumb Area -->
-       <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/24.jpg);">
-            
-        </div>
 
         <div class="container">
             <div class="row">
@@ -235,7 +231,7 @@
                                     </div>
                                     <!-- Product Info -->
                                     <div class="product-info mt-15 text-center">
-                                        <a href="shopDetails.do">
+                                        <a href="storeDetails.do?s_brand_name=${store.s_brand_name}">
                                             <p> ${store.s_brand_name}</p>
                                      
                                         </a>

@@ -134,7 +134,7 @@
 					
 			<!-- 휴대전화 -->
 
-			<label>휴대전화 </label> <input type="text" class="sing" id="phone"
+			<label>휴대전화 </label> <input type="" class="sing" id="phone"
 				name="m_tel" placeholder="Phone Number" required>
 			<div class="check_font" id="phone_check"></div>
 
