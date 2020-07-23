@@ -48,7 +48,7 @@ public class LoginController {
     }
  
     //네이버 로그인 성공시 callback호출 메소드
-    @RequestMapping(value = "/main.do", method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = "/main.jsp", method = { RequestMethod.GET, RequestMethod.POST })
     public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
             throws IOException {
         System.out.println("여기는 callback");
