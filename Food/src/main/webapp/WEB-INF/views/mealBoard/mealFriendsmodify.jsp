@@ -87,7 +87,8 @@
 				<tr>
 					<td>현재 저장된 위치</td>
 					<td>
-					<input size="100%" type="text" name="f_addr" id="f_addr" value="${friend.f_addr }" />
+					<input size="50%" type="text" name="f_addr1" id="f_addr1" value="${friend.f_addr1 }" />
+					<input size="50%" type="text" name="f_addr2" id="f_addr2" value="${friend.f_addr2 }" />
 					&nbsp;
 					<label>주소 변경</label>
 					<input type="checkbox" id="check">

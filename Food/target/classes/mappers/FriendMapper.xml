@@ -8,9 +8,9 @@
 	<!-- 밥친구게시판 글 등록하기  -->
 	<insert id="friendsave" parameterType="friend">
 	insert into friendboard 
-	(f_no , f_title , f_content, f_addr , f_membercnt,f_viewcount,f_date, m_id,f_port )
+	(f_no , f_title , f_content, f_addr1, f_addr2 , f_membercnt,f_viewcount,f_date, m_id,f_port )
 	values
-	( friend_f_no.nextval , #{f_title} , #{f_content},#{f_addr} , #{f_membercnt}
+	( friend_f_no.nextval , #{f_title} , #{f_content},#{f_addr1},#{f_addr2} , #{f_membercnt}
 	,#{f_viewcount},sysdate ,#{m_id},friend_f_port.nextval)
 	</insert>
 	
@@ -47,7 +47,7 @@
 	<!-- 밥친구게시판 글 수정하기 -->
 	<update id="friendmodify" parameterType="friend" >
 		UPDATE friendBoard SET f_title = #{f_title},f_content = #{f_content} , 
-		f_addr = #{f_addr} , f_membercnt = #{f_membercnt} 
+		f_addr1 = #{f_addr1} , f_addr2 = #{f_addr2} , f_membercnt = #{f_membercnt} 
 		WHERE f_no = #{f_no}
 	</update>
 	

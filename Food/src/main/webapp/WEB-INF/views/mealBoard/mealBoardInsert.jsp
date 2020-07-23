@@ -87,9 +87,9 @@
 					<td align="left">
 					<input type="text" id="sample4_postcode" name = 'postcode' placeholder="우편번호" readonly>
 					<input type="button" name='search' id='search1' value="우편번호 찾기" onclick="execDaumPostcode();"><br>
-					<input type="text" id="sample4_roadAddress" name="addr1" placeholder="도로명주소" style="width:40%" readonly>
+					<input type="text" id="sample4_roadAddress" name="f_addr1" placeholder="도로명주소" style="width:40%" readonly>
 					<span id="guide" style="color:#999;display:none"></span>
-					<input type="text" id="sample4_detailAddress" name="addr2" placeholder="상세주소" style="width: 40%">
+					<input type="text" id="sample4_detailAddress" name="f_addr2" placeholder="상세주소" style="width: 40%">
 						
 					</td>
 				</tr>

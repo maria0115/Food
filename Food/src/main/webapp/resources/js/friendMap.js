@@ -11,11 +11,12 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 
 // 주소-좌표 변환 객체를 생성합니다
 var geocoder = new kakao.maps.services.Geocoder();
-var addr  = document.getElementById('f_addr').value;
+var addr1  = document.getElementById('f_addr1').value;
+var addr2 = document.getElementById('f_addr2').value;
 
 
 // 주소로 좌표를 검색합니다
-geocoder.addressSearch(addr, function(result, status) {
+geocoder.addressSearch(addr1, function(result, status) {
 
     // 정상적으로 검색이 완료됐으면 
      if (status === kakao.maps.services.Status.OK) {
@@ -30,7 +31,7 @@ geocoder.addressSearch(addr, function(result, status) {
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+addr+'</div>'
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+addr1+" "+addr2+'</div>'
         });
         infowindow.open(map, marker);
 

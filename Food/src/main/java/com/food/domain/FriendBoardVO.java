@@ -6,7 +6,8 @@ public class FriendBoardVO {
 	private String f_title; //글제목 
 	private String m_id; //작성자
 	private String f_content; //글내용
-	private String f_addr; //주소
+	private String f_addr1; //도로명주소
+	private String f_addr2; //상세주소
 	private int f_membercnt; //참여인원
 	private int f_viewcount; //조회수
 	private String f_date; //등록일
@@ -14,6 +15,18 @@ public class FriendBoardVO {
 	
 	
 	
+	public String getF_addr1() {
+		return f_addr1;
+	}
+	public void setF_addr1(String f_addr1) {
+		this.f_addr1 = f_addr1;
+	}
+	public String getF_addr2() {
+		return f_addr2;
+	}
+	public void setF_addr2(String f_addr2) {
+		this.f_addr2 = f_addr2;
+	}
 	public int getF_port() {
 		return f_port;
 	}
@@ -43,12 +56,6 @@ public class FriendBoardVO {
 	}
 	public void setF_content(String f_content) {
 		this.f_content = f_content;
-	}
-	public String getF_addr() {
-		return f_addr;
-	}
-	public void setF_addr(String f_addr) {
-		this.f_addr = f_addr;
 	}
 	public int getF_membercnt() {
 		return f_membercnt;

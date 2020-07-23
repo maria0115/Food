@@ -74,7 +74,8 @@
 					<td width="100">위치</td>
 					<td align="left">
 					<div id="map" style="width:100%;height:350px;">
-					<input type="hidden" id="f_addr" name="f_addr" value="${friend.f_addr }">
+					<input type="hidden" id="f_addr1" name="f_addr1" value="${friend.f_addr1 }">
+					<input type="hidden" id="f_addr2" name="f_addr2" value="${friend.f_addr2 }">
 					<input type="hidden" id="f_title" name="f_title" value="${friend.f_title }">
 					</div>
 					</td>
