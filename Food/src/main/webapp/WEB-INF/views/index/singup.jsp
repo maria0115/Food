@@ -250,7 +250,38 @@
 	<script src="resources/js/active.js"></script>
 
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-	
+	<script>
+	//좋아하는 음식 검색하기   
+	$(function(){
+	$('#testInput').autocomplete({
+	        source : function(reuqest, response) {
+	           var value= $('#testInput').val();
+	        	$.ajax({
+	                type : 'get',
+	                url: 'search.do?value='+value,
+	                dataType : 'json',
+	                success : function(data) {
+	                    //서버에서 json 데이터 response 후 목록 추가
+	                    response(
+	                        $.map(data, function(item) {
+	                        	
+	                            return {
+	                                value : item.m_most,
+	                                test : item + 'test'
+	                            }
+	                        })
+	                    );
+	                } 
+	            }); 
+	         }
+	        }).autocomplete('instance')._renderItem = function(ul, item) { // UI 변경 부
+	            return $('<li>') //기본 tag가 li
+	            .append('<div  style="width:auto; height:auto; text-align:center; padding-top:7px; font-size:10pt; border:2px solid skyblue; font-weight: bold; ">' + item.value + '<br>' ) //원하는 모양의 HTML 만들면 됨
+	            .appendTo(ul);
+	        }; 
+	    });
+
+	</script>
 	<!-- 지섭 -->
 
 
