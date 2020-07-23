@@ -395,7 +395,7 @@ $('#phone').focusout(function() {
 
 
 // 로그아웃
-$('#logout').click(function() {
+$(document).on("click","#logout",function(){ //$('#logout').click(function() {
 	event.preventDefault();
 	$.ajax({
 		type : 'post',
@@ -403,7 +403,8 @@ $('#logout').click(function() {
 		url : 'logout.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		success : function(resultData) {
-			// window.location.reload();
+			
+			//window.location.reload();
 			window.location = "start.jsp";
 			// window.location=document.referrer;
 		}

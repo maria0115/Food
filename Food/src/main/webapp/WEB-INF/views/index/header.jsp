@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
+
 <%
 	// <jsp:param>의 값 넘겨받기
 	String folder = request.getParameter("folder");
@@ -10,6 +14,16 @@
 <html lang="en">
 
 <head>
+<script type="text/javascript"
+	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js"
+	charset="utf-8"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+
+
+
 <meta charset="UTF-8">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +33,13 @@
 
 <!-- Title -->
 <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var name = ${result}.response.name;
+		$(".login-header").css("display","none");
+		$(".access").html(name+ '님 WelCome</span>/<a href="" id="logout">로그아웃</a>');
+	  });
+</script>
 
 
 <!-- Favicon -->
@@ -102,9 +123,10 @@
 										</div>
 									</div>
 								</div>
-							<div id="name"></div>
-							<div id="email"></div>
-									<div class="access">
+							
+								
+			
+									<div class="access">	
 									<c:if test="${not empty sessionScope.user_id}">
 										<span class="login-font">${sessionScope.user_name} 님 환영합니다.</span>
 										<a href="" id="logout" ><button class="logout">로그아웃</button></a>

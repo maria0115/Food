@@ -105,10 +105,15 @@ public class MemberController {
 		 @ResponseBody
 			@RequestMapping(value="logout.do")
 			public void logout(HttpSession session) {
+			   // String SESSION_STATE = "oauth_state";
+			   // session.removeAttribute(SESSION_STATE);  
+			  // session.removeAttribute("result"); 
 				session.removeAttribute("user_name");
 				session.removeAttribute("user_id");
 				session.removeAttribute("user_Info");
-			
+				session.invalidate();
+				
+				
 			}
 			
 	
