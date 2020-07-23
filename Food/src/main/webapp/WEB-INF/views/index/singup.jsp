@@ -124,14 +124,14 @@
 			    <input type="button"  id="emailsend" class ="btn btn-warning" value="이메일 인증받기 (이메일 보내기)"/>
  				<p>
  				</p>
-        		<div>
+        	
             <label> <span style="color: green; font-weight: bold;">입력한 이메일로 받은 인증번호를 입력하세요. (인증번호가 맞아야 다음 단계로 넘어가실 수 있습니다.)</span></label> <input type="number"  id="checkmail"
                        class="sing"  placeholder="  인증번호를 입력하세요. "/>
-                				</div>              
+                				             
  				<input  type ="button" id ="emailsubmit"  class ="btn btn-primary" value ="인증번호 확인 "><br>
  
-        
-
+        	<p></p>
+					
 			<!-- 휴대전화 -->
 
 			<label>휴대전화 </label> <input type="text" class="sing" id="phone"
