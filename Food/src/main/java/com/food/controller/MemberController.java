@@ -253,7 +253,7 @@ public class MemberController {
 		                System.out.println(e);
 		            }
 		                   
-		            
+		            System.out.println(dice);
 		            return  String.valueOf(dice);
 		            
 		        }

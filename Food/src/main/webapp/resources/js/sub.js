@@ -48,12 +48,17 @@
 							var idcheck =  $("#id_check2").html();
 							var emailcheck = $("#email_check2").html();
 							var mostfood =$(".mostfood").val();
+							var phone = /(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/g;
 							
 							if (!id.test($("#id").val())) {
 							alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
 							return false;							
 							}else if(check == null){
 								alert("이메일 인증후 회원가입 가능합니다.")
+								return false;
+							}
+							else if(!phone.test($("#phone").val())){
+								alert("전화번호 형식을 확인해주세요.")
 								return false;
 							}
 							else if(check !=$("#checkmail").val()){
@@ -292,6 +297,26 @@ $('#id').focusout(function() {
 			idcheck = true;
 		}
 	});
+
+
+$('#phone').focusout(function() {
+
+	var phone = $("#phone").val();
+	var phone2 = /(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/g
+	if (phone2.test(phone) === false) {
+		$("#phone_check").html("전화번호를 확인해주세요");
+		phonecheck = false;
+	} else {
+		$("#phone_check").html("올바른 전화번호 입니다.");
+		phonecheck = true;
+	}
+});
+
+
+
+
+
+
 
 	$('#password1').focusout(function() {
 
