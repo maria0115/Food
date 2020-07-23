@@ -683,10 +683,15 @@ img {
 .hero-post-slides {
   position: relative;
   z-index: 1; }
-
+#single-hero-post2 {
+  width: 100%;
+  height: 1200px;
+  position: relative;
+  z-index: 3;
+  overflow: hidden; }
 .single-hero-post {
   width: 100%;
-  height: 350px;
+  height: 200px;
   position: relative;
   z-index: 3;
   overflow: hidden; }

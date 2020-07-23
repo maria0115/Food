@@ -64,7 +64,7 @@
 <div class="slide-img bg-img"
 				style="background-image: url(resources/img/bg-img/1.jpg);">
 		<!-- Single Hero Post -->
-		<div class="single-hero-post bg-overlay">
+		<div class="single-hero-post2 bg-overlay" id="single-hero-post2">
 		
 		<div style="text-align: center; height: 50%; line-height: 50%; transform: translateY(100%); text-shadow: black; position: absolute;width: 100%;">
 			<a href="" style="font-size: 10vw;">hihihihihhihiihih</a>
