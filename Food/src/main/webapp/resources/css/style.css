@@ -685,28 +685,29 @@ img {
   z-index: 1; }
 .single-hero-post2{
   width: 100%;
-  height: 1200px;
+  height: 1500px;
   position: relative;
   z-index: 3;
   overflow: hidden; }
+  @media only screen and (min-width: 992px) and (max-width: 2000px) {
+    .single-hero-post2 {
+      height: 690px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .single-hero-post2 {
+      height: 600px; } }
+  @media only screen and (max-width: 767px) {
+    .single-hero-post2 {
+      height: 650px; } }
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .single-hero-post2 {
+      height: 500px; } }
 .single-hero-post {
   width: 100%;
   height: 200px;
   position: relative;
   z-index: 3;
   overflow: hidden; }
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .single-hero-post {
-      height: 690px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .single-hero-post {
-      height: 600px; } }
-  @media only screen and (max-width: 767px) {
-    .single-hero-post {
-      height: 650px; } }
-  @media only screen and (min-width: 480px) and (max-width: 767px) {
-    .single-hero-post {
-      height: 500px; } }
+  
   .single-hero-post .slide-img {
     position: absolute;
     width: 100%;
