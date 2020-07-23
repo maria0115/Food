@@ -7,7 +7,10 @@ import com.food.domain.StoreListVO;
 
 public interface StoreDAO {
 
+
 	public List<StoreListVO> getStoreList(StoreListVO vo);
+
+	public StoreListVO storeDetail(StoreListVO vo);
 
 
 }

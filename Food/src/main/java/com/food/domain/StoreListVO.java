@@ -15,7 +15,11 @@ public class StoreListVO{
 	private String s_category;
 	private String s_latitude;
 	private String s_longitude;
+	private String s_info;
 	private int r_id;
+	
+	
+	
 	
 	
 	public String getS_brand_name() {
@@ -60,6 +64,14 @@ public class StoreListVO{
 	public void setS_longitude(String s_longitude) {
 		this.s_longitude = s_longitude;
 	}
+	
+	public String getS_info() {
+		return s_info;
+	}
+	public void setS_info(String s_info) {
+		this.s_info = s_info;
+	}
+	
 	public int getR_id() {
 		return r_id;
 	}

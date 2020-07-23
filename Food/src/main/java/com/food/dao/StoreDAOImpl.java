@@ -15,9 +15,18 @@ public class StoreDAOImpl implements StoreDAO{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 
+	@Override
 	public List<StoreListVO> getStoreList(StoreListVO vo) {
-		System.out.println("다오요");
+		System.out.println("스토어다오요");
 		return mybatis.selectList("StoreDAO.getStore",vo);
+	}
+	@Override
+	public StoreListVO storeDetail(StoreListVO vo) {
+		System.out.println("storeDetail 다오");
+		System.out.println(vo.getS_brand_name());
+//		String name = vo.getS_brand_name()+" ";
+//		vo.setS_brand_name(name);
+		return mybatis.selectOne("StoreDAO.selecStore",vo);
 	}
 
 	

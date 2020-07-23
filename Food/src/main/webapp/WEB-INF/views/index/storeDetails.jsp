@@ -135,10 +135,10 @@
 
                     <div class="col-12 col-md-6">
                         <div class="single_product_desc">
-                            <h4 class="title">Recuerdos Plant</h4>
-                            <h4 class="price">$9.99</h4>
+                            <h4 class="title" >  ${list.s_brand_name}  </h4>
+                            <h4 class="price">가격</h4>
                             <div class="short_overview">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellem malesuada in nibh selama euismod. Curabitur a rhoncus dui. Nunc lobortis cursus magna utrum faucibus. Vivamus justo nibh, pharetra non risus accumsan, tincidunt suscipit leo.</p>
+                                <p>${list.s_info}</p>
                             </div>
 
                             <div class="cart--area d-flex flex-wrap align-items-center">
@@ -159,9 +159,9 @@
                             </div>
 
                             <div class="products--meta">
-                                <p><span>SKU:</span> <span>CT201807</span></p>
-                                <p><span>Category:</span> <span>Outdoor Plants</span></p>
-                                <p><span>Tags:</span> <span>plants, green, cactus </span></p>
+                                <p><span>메뉴:</span> <span></span></p>
+                                <p><span>카테고리:</span> <span>${list.s_category }</span></p>
+                                <p><span>작은카테고리:</span> <span>${list.s_midpart } </span></p>
                                 <p>
                                     <span>Share on:</span>
                                     <span>
@@ -205,7 +205,7 @@
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="addi-info">
                                 <div class="additional_info_area">
-                                    <p>What should I do if I receive a damaged parcel?
+                                    <p>${list.s_info}
                                         <br> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit similique qui, itaque delectus labore.</span></p>
                                     <p>I have received my order but the wrong item was delivered to me.
                                         <br> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quam voluptatum beatae harum tempore, ab?</span></p>

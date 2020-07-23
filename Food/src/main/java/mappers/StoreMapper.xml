@@ -10,5 +10,9 @@
 		select * FROM store 
 	</select>
 	
+	<select id="selecStore"  parameterType="store" resultType="store">
+		select * FROM store where s_brand_name = #{s_brand_name}
+	</select>
+	
 
 </mapper>
