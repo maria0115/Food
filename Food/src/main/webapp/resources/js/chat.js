@@ -33,7 +33,7 @@
 		$('#messagearea').val('')
 	});
 
-	var webSocket = new WebSocket('ws://localhost:8080/Food/mealBoard/chatBox.do');
+	var webSocket = new WebSocket('ws://192.168.0.17:8080/Food/mealBoard/chatBox.do');
     var inputMessage = document.getElementById('messagearea');
     webSocket.onerror = function(event) {
         onError(event)
