@@ -88,7 +88,20 @@
                 </div>
             </div>
 
+			
+			
+			<script>
 
+			// ajax
+			$(function(){
+				$(".dialog__trigger").click(function(){
+// 					alert("aa")
+					location.href='reservSelect'
+
+
+				})
+			})
+			</script>
 
 
 <!--        ###################################################### -->
@@ -100,13 +113,12 @@
 			<p class="dialog__content" style="color:black">Lorem ipsum dolor sit amet,
 				consectetur adipisicing elit. Impedit necessitatibus illo
 				deleniti doloremque culpa volupta.</p>
-<!-- 			<tr style="text-align: center"> -->
-			<label style="margin-left:10%">매장</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
-			<label style="margin-left:10%">날짜</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
-			<label style="margin-left:10%">인원</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
-			<label style="margin-left:10%">메뉴</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
-			<label style="margin-left:10%">문의</label><input style="border:none;margin-left:10%;text-align: center" value="dd"><hr>
-<!-- 			</tr> -->
+			<label class="label_name">매장</label><input class="input_name" value="미구현"><hr>
+			<label class="label_name">날짜</label><input class="input_name" value="list.r_visit_date"><hr>
+			<label class="label_name">인원</label><input class="input_name" value=list.r_ppl_cnt><hr>
+			<label class="label_name">메뉴</label><input class="input_name" value=list.r_menu><hr>
+			<label class="label_name">문의</label><input class="input_name" value=list.b_content><hr>
+
 			<button class="dialog__action">Read more &#8594;</button>
 		</div>
 <!-- 		###################################################### -->
