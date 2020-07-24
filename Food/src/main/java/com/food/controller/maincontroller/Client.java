@@ -5,7 +5,7 @@ import java.net.Socket;
 
 public class Client {
 	Socket socket = null;
-	String serverIp = "127.0.0.1";
+	String serverIp = "192.168.0.10";
 	int serverPort = 5000;
 	String resultweather;
 	String resulttemp;
