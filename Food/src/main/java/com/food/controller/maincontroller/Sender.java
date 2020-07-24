@@ -19,12 +19,14 @@ public class Sender extends Thread {
 	private String resultweather;
 	private String resulttemp;
 	private String result;
+	private String most;
 	private String what;
-	public Sender(Socket socket, String resultweather,String resulttemp,String what) {
+	public Sender(Socket socket, String resultweather,String resulttemp,String most,String what) {
 		//socket 열어줌
 		this.socket = socket;
 		this.resultweather = resultweather;
 		this.resulttemp = resulttemp;
+		this.most = most;
 		this.what = what;
 		try {
 			// 데이터 스트림 생성
@@ -46,6 +48,7 @@ public class Sender extends Thread {
 		System.out.println("weathersend 잘보내짐");
 		return true;
 	}
+
 	
 	public boolean sendTemp(String resultweather) throws IOException {
 //		File imageFile = new File(hello);
@@ -56,7 +59,16 @@ public class Sender extends Thread {
 		System.out.println("tempsend 잘보내짐");
 		return true;
 	}
-
+	
+	public boolean sendMost(String most) throws IOException {
+//		File imageFile = new File(hello);
+//		fileSize = (int) imageFile.length() * 100;
+//		fis = new FileInputStream(imageFile);
+		bos.write(most.getBytes());
+		bos.flush(); //4
+		System.out.println("mostsend 잘보내짐");
+		return true;
+	}
 	public boolean sendWhat(String resultwaht) throws IOException {
 //		File imageFile = new File(hello);
 //		fileSize = (int) imageFile.length() * 100;
@@ -118,6 +130,7 @@ public class Sender extends Thread {
 			{
 				sendWhat(what);
 				receiveData(500);
+				sendMost(most);
 				this.result = receiveData(500);
 				System.out.println("잘왔다");
 			}
