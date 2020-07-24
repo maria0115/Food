@@ -20,15 +20,13 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public int insertBoard(BoardVO vo) {
 		System.out.println("==>BoardMapper insertBoard() 호출");
-		System.out.println(vo.getF_addr1());
-		System.out.println(vo.getF_addr2());
-		return mybatis.insert("boardDAO.insertBoard",vo);
+		return mybatis.insert("blackDAO.insertBoard",vo);
 	}
 
 	@Override
 	public int updateBoard(BoardVO vo) {
 		System.out.println("==>BoardMapper updateBoard() 호출");
-		return mybatis.update("boardDAO.updateBoard",vo);
+		return mybatis.update("blackDAO.updateBoard",vo);
 	}
 
 	
@@ -43,19 +41,19 @@ public class BoardDAOImpl implements BoardDAO {
 		map.put("start",pvo.getStart());
 		map.put("end",pvo.getEnd());
 		
-		return mybatis.selectList("boardDAO.selectBoard",map);
+		return mybatis.selectList("blackDAO.selectBoard",map);
 	}
 	
 	@Override
 	public int countBoard(BoardVO vo) {
 		System.out.println("==>BoardMapper countBoard() 호출");
-		return mybatis.selectOne("boardDAO.countBoard",vo);
+		return mybatis.selectOne("blackDAO.countBoard",vo);
 	}
 
 	@Override
 	public int deleteBoard(BoardVO vo) {
 		System.out.println("==>BoardMapper deleteBoard() 호출");
-		return mybatis.delete("boardDAO.deleteBoard",vo);
+		return mybatis.delete("blackDAO.deleteBoard",vo);
 	}
 
 
