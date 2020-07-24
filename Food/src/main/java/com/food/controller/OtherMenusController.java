@@ -15,7 +15,6 @@ import com.food.domain.MemberVO;
 import com.food.service.MainService;
 
 @Controller
-@RequestMapping("index/")
 public class OtherMenusController {
 
 	@Autowired
@@ -27,10 +26,11 @@ public class OtherMenusController {
 //		System.out.println(session.getAttribute("user_id"));
 		String m_id =(String) session.getAttribute("user_id");
 		String what="other";
+		m_id="mariaa";
 		if(m_id!=null) {
 			MemberVO result = service.othermenulist(m_id);
 			System.out.println("********************"+result.getM_most());
-			String most = result.getM_most();
+			String most = result.getM_id();
 			String resultweather="";
 			String resulttemp="";
 			
