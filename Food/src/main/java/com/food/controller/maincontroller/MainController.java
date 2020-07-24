@@ -150,9 +150,9 @@ public class MainController {
 		ModelAndView mv= new ModelAndView();
 		mv.setViewName("index/main");
 	
-		if(what.equals("main")) {
-			mv.addObject("map",map);
-		}
+//		if(what.equals("main")) {
+//			mv.addObject("map",map);
+//		}
 		
 		
 		return mv;

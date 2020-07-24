@@ -11,7 +11,7 @@ public class Client {
 	String resulttemp;
 	String result;
 
-	public Client(String resultweather,String resulttemp,String what) {
+	public Client(String resultweather,String resulttemp,String most,String what) {
 		this.resultweather = resultweather;
 		this.resulttemp = resulttemp;
 		try {
@@ -20,7 +20,7 @@ public class Client {
 			System.out.println("서버에 연결되었습니다."); //2
 			System.out.println(serverIp + " : " + serverPort);
 
-			Sender Sender = new Sender(socket, resultweather,resulttemp,what);	//2
+			Sender Sender = new Sender(socket, resultweather,resulttemp,most,what);	//2
 			Sender.start();
 			Sender.join();
 			result = Sender.getResult();
