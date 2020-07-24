@@ -29,8 +29,8 @@
 	WHERE RN BETWEEN #{start} AND #{end}
 </select>
 <insert id="insertBoard" parameterType="board">
-      Insert Into board values(#{boardType},${seq}.nextval,#{title},#{userId},#{b_content},#{b_date},#{viewCount},#{f_addr1},#{f_addr2},#{f_membercnt},
-      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},#{r_date},#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize})
+      Insert Into board values(#{boardType},${seq}.nextval,#{title},#{userId},#{b_content},sysdate,#{viewCount},#{f_addr1},#{f_addr2},#{f_membercnt},
+      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize})
 
       
       
