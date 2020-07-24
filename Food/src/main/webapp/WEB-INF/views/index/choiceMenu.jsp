@@ -26,7 +26,7 @@
 
 
 <jsp:include page="header.jsp">
-	<jsp:param value='' name='folder' />
+	<jsp:param value='../' name='folder' />
 </jsp:include>
 </head>
 
