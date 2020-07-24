@@ -11,4 +11,10 @@ public class MainServiceImpl implements MainService{
 		
 	}
 
+	@Override
+	public void othermenulist() {
+		
+		
+	}
+
 }
