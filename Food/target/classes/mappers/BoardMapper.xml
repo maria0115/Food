@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardDAO">
+
+<!-- 게시판 글 숫자 -->
+<select id="countBoard" parameterType="board" resultType="int">
+		SELECT COUNT(*) FROM board WHERE boardType=#{boardType}
+</select>
+
+<!-- 글 삭제 -->
+<delete id="deleteBoard" parameterType="board">
+		Delete From board WHERE boardType=#{boardType} AND b_no=#{b_no}
+</delete>
+
+<select id="selectBoard" parameterType="hashmap" resultType="board">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						select * from board
+						<where>
+							boardType=#{boardType}
+							<if test='searchType!=null &amp;&amp; keyword!=null'>AND ${searchType} like '%'||#{keyword}||'%'</if>
+						</where>
+						ORDER BY ROWNUM DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+</select>
+<insert id="insertBoard" parameterType="board">
+      Insert Into board values(#{boardType},${seq}.nextval,#{title},#{userId},#{b_content},sysdate,#{viewCount},#{f_addr1},#{f_addr2},#{f_membercnt},
+      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize})
+
+      
+      
+</insert>
+
+<update id="updateBoard" parameterType="board">
+      Update board set boardType=#{boardType},b_no=#{b_no},title=#{title},userId=#{userId},b_content=#{b_content},b_date=#{b_date},
+      viewCount=#{viewCount},f_addr1=#{f_addr1},f_addr2=#{f_addr2},f_membercnt=#{f_membercnt},f_date=#{f_date},f_port=#{f_port},f_joincnt=#{f_joincnt},
+      d_suspect=#{d_suspect},r_date=#{r_date},r_visit_date=#{r_visit_date},r_ppl_cnt=#{r_ppl_cnt},r_menu=#{r_menu},v_star=#{v_star},v_fileName=#{v_fileName},v_fileSize=#{v_fileSize}
+      
+
+</update>
+
+
+<!-- <insert id="insertBoard" parameterType="board">
+		Insert Into board values(#{boardType,jdbcType=INTEGER},${seq}.nextval,#{title ,jdbcType=VARCHAR},#{userId,jdbcType=VARCHAR},#{b_content,jdbcType=VARCHAR},sysdate,#{viewCount,jdbcType=INTEGER},#{f_addr1,jdbcType=VARCHAR},#{f_addr2,jdbcType=VARCHAR},#{f_membercnt,jdbcType=INTEGER},
+		#{f_date,jdbcType=VARCHAR},friend_f_port.nextval,#{f_joincnt,jdbcType=INTEGER},#{d_suspect,jdbcType=VARCHAR},sysdate,#{r_visit_date,jdbcType=DATE},#{r_ppl_cnt,jdbcType=INTEGER},#{r_menu,jdbcType=VARCHAR},#{v_star,jdbcType=INTEGER},#{v_fileName,jdbcType=VARCHAR},#{v_fileSize,jdbcType=INTEGER})
+
+		
+		
+</insert>
+
+<update id="updateBoard" parameterType="board">
+		Update board set boardType=#{boardType,jdbcType=INTEGER},b_no=#{b_no,jdbcType=INTEGER},title=#{title,jdbcType=VARCHAR},userId=#{userId,jdbcType=VARCHAR},b_content=#{b_content,jdbcType=VARCHAR},b_date=#{b_date,jdbcType=DATE},
+		viewCount=#{viewCount,jdbcType=INTEGER},f_addr1=#{f_addr1,jdbcType=VARCHAR},f_addr2=#{f_addr2,jdbcType=VARCHAR},f_membercnt=#{f_membercnt,jdbcType=VARCHAR},f_date=#{f_date,jdbcType=VARCHAR},f_joincnt=#{f_joincnt,jdbcType=INTEGER},
+		d_suspect=#{d_suspect,jdbcType=VARCHAR},r_date=#{r_date,jdbcType=DATE},r_visit_date=#{r_visit_date,jdbcType=DATE},r_ppl_cnt=#{r_ppl_cnt,jdbcType=INTEGER},r_menu=#{r_menu,jdbcType=VARCHAR},v_star=#{v_star,jdbcType=INTEGER},v_fileName=#{v_fileName,jdbcType=VARCHAR},v_fileSize=#{v_fileSize,jdbcType=INTEGER}
+		
+
+</update> -->
+
+
+</mapper>

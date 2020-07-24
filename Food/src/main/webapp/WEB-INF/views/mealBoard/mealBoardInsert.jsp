@@ -69,18 +69,23 @@
 				<tr>
 					<td width="100%">제목</td>
 					<td align="left"><input size="120%" type="text"
-						name="f_title" /></td>
+						name="title" /></td>
 				</tr>
 				<tr>
 					<td width="100%">글쓴이</td>
-					<td align="left"><input size="120%" type="text" name="m_id"
+					<td align="left"><input size="120%" type="text" name="userId"
 						value="${sessionScope.user_id}" readonly="readonly" /></td>
 				</tr>
 
 				<tr>
 					<td width="100%">내용</td>
 					<td align="left"><textarea rows=5 cols=120
-							name="f_content"></textarea></td>
+							name="b_content"></textarea></td>
+				</tr>
+				<tr>
+					<td width="100%">약속날짜</td>
+					<td align="left"><input size="120%" type="text"
+						name="f_date" placeholder="00월00일00시00분으로 작성해주세요"/></td>
 				</tr>
 				<tr>
 					<td width="100%">위치</td>

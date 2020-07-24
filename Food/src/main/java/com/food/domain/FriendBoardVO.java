@@ -11,6 +11,7 @@ public class FriendBoardVO {
 	private int f_membercnt; //참여인원
 	private int f_viewcount; //조회수
 	private String f_date; //등록일
+	private String f_joindate; //약속날짜
 	private int f_port; //생성된 포트번호
 	
 	
