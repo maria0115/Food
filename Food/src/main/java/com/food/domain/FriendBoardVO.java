@@ -16,6 +16,12 @@ public class FriendBoardVO {
 	
 	
 	
+	public String getF_joindate() {
+		return f_joindate;
+	}
+	public void setF_joindate(String f_joindate) {
+		this.f_joindate = f_joindate;
+	}
 	public String getF_addr1() {
 		return f_addr1;
 	}

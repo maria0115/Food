@@ -7,6 +7,7 @@ import com.food.domain.PagingVO;
 
 public interface boardService {
 	
+	//게시글등록
 	int insertBoard(BoardVO vo);
 	
 	int updateBoard(BoardVO vo);
@@ -17,5 +18,8 @@ public interface boardService {
 	public List<BoardVO> selectBoard(BoardVO vo,PagingVO pvo,String searchType, String keyword);
 	
 	int deleteBoard(BoardVO vo);
+	
+	
+	BoardVO boardView(BoardVO vo);
 	
 }

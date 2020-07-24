@@ -45,4 +45,10 @@ public class boardServiceImpl implements boardService {
 		return boardDAO.deleteBoard(vo);
 	}
 
+	@Override
+	public BoardVO boardView(BoardVO vo) {
+		
+		return boardDAO.boardView(vo);
+	}
+
 }
