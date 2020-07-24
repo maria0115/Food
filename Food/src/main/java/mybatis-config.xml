@@ -12,6 +12,7 @@
 		<typeAlias alias="friend" type="com.food.domain.FriendBoardVO"/>
 		<typeAlias alias="blacklist" type="com.food.domain.BlackListVO"/>
 		<typeAlias alias="reservation" type="com.food.domain.ReservationVO"/>
+		<typeAlias alias="product"  type="com.food.domain.ProductVO"/>	
 	</typeAliases>
 
 

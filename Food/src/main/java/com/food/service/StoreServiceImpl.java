@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.dao.StoreDAO;
+import com.food.domain.ProductVO;
 import com.food.domain.StoreListVO;
 
 
@@ -26,5 +27,8 @@ public class StoreServiceImpl implements StoreService{
 		System.out.println("storeDetail 서비스");
 		return storeDAO.storeDetail(vo);
 	}
+
+	
+	
 	
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -157,9 +158,9 @@
                                     <a href="#" class="compare-btn ml-15"><i class="arrow_left-right_alt"></i></a>
                                 </div>
                             </div>
-
+							 
                             <div class="products--meta">
-                                <p><span>메뉴:</span> <span></span></p>
+                                <p><span>메뉴:</span> <span>${list.p_name },${list.p_price }</span></p>
                                 <p><span>카테고리:</span> <span>${list.s_category }</span></p>
                                 <p><span>작은카테고리:</span> <span>${list.s_midpart } </span></p>
                                 <p>
@@ -172,6 +173,7 @@
                                 </span>
                                 </p>
                             </div>
+                         
 
                         </div>
                     </div>

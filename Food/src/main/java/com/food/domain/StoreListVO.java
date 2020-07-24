@@ -17,7 +17,9 @@ public class StoreListVO{
 	private String s_longitude;
 	private String s_info;
 	private int r_id;
-	
+	private int p_id;
+	private String p_name;
+	private String p_price;
 	
 	
 	
@@ -77,6 +79,26 @@ public class StoreListVO{
 	}
 	public void setR_id(int r_id) {
 		this.r_id = r_id;
+	}
+			
+	public int getP_id() {
+		return p_id;
+	}
+	public void setP_id(int p_id) {
+		this.p_id = p_id;
+	}
+	
+	public String getP_name() {
+		return p_name;
+	}
+	public void setP_name(String p_name) {
+		this.p_name = p_name;
+	}
+	public String getP_price() {
+		return p_price;
+	}
+	public void setP_price(String p_price) {
+		this.p_price = p_price;
 	}
 	
 	
