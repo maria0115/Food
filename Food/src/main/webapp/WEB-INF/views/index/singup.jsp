@@ -267,7 +267,7 @@
 	                        $.map(data, function(item) {
 	                        	
 	                            return {
-	                                value : item.p_name,
+	                                value : item.p_name_1,
 	                                test : item + 'test'
 	                            }
 	                        })
