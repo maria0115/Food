@@ -35,8 +35,6 @@
       Insert Into board values(#{boardType},${seq}.nextval,#{title},#{userId},#{b_content},sysdate,#{viewCount},#{f_addr1},#{f_addr2},#{f_membercnt},
       #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize})
 
-      
-      
 </insert>
 
 <!-- 게시글 수정 -->
@@ -44,11 +42,19 @@
       Update board set boardType=#{boardType},b_no=#{b_no},title=#{title},userId=#{userId},b_content=#{b_content},
       viewCount=#{viewCount},f_addr1=#{f_addr1},f_addr2=#{f_addr2},f_membercnt=#{f_membercnt},f_date=#{f_date},f_port=#{f_port},f_joincnt=#{f_joincnt},
       d_suspect=#{d_suspect},r_date=#{r_date},r_visit_date=#{r_visit_date},r_ppl_cnt=#{r_ppl_cnt},r_menu=#{r_menu},v_star=#{v_star},v_fileName=#{v_fileName},v_fileSize=#{v_fileSize}
+	  WHERE boardType=#{boardType} AND b_no=#{b_no}
 </update>
 
 <!-- 게시글 상세보기 -->
 <select id="boardView" parameterType="board" resultType="board">
 	SELECT * FROM board WHERE boardType=#{boardType} AND b_no=#{b_no}
 </select>
+
+<!-- 조회수증가 -->
+<update id="boardViewcount" parameterType="board">
+	UPDATE board set viewCount = viewCount+1 WHERE boardType=#{boardType} AND b_no=#{b_no}
+</update>
+
+
 
 </mapper>

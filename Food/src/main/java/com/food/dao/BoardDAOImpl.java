@@ -59,6 +59,7 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public BoardVO boardView(BoardVO vo) {
 		System.out.println("==>BoardMapper boardView() 호출");
+		mybatis.update("boardDAO.boardViewcount",vo);
 		return mybatis.selectOne("boardDAO.boardView",vo);
 	}
 

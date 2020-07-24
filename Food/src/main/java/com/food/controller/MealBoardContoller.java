@@ -72,7 +72,6 @@ public class MealBoardContoller {
 		}
 		return "redirect:../mealBoard/mealboardView.do?b_no="+vo.getB_no();
 		
-		
 	}
 	
 	//밥친구 게시판 글 삭제하기 
@@ -86,5 +85,11 @@ public class MealBoardContoller {
 		}
 		return "redirect:../index/mealFriends.do";
 	}
+	
+	//참여하기 버튼눌렀을때 
+	
+	
+	
+	
 	
 }
