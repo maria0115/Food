@@ -82,6 +82,8 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+
+
 	<div class="left-sidebar-pro">
 		<nav id="sidebar" class="">
 			<div class="sidebar-header">
@@ -329,7 +331,7 @@
 									<div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
 										<div class="header-top-menu tabl-d-n">
 											<ul class="nav navbar-nav mai-top-nav">
-												<li class="nav-item"><a href="../index/main.do" class="nav-link">Home</a>
+												<li class="nav-item"><a href="Home.do" class="nav-link">Home</a>
 												</li>
 												<li class="nav-item"><a href="#" class="nav-link">About</a>
 												</li>

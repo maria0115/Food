@@ -44,6 +44,7 @@ public class ManageController {
 	public String memberList(Model model,HttpServletRequest request,String searchClick,PagingVO pvo,@RequestParam(value="nowPage",required=false)String nowPage,@RequestParam(value="cntPerPage",required=false)String cntPerPage,@RequestParam(value="cntHirePage",required=false)String cntHirePage, String searchType, String keyword, MemberVO vo) {
 		int total;//페이징 처리할때 데이터의 총 갯수를 저장할 변수
 		String search = "";//검색을 했는지 여부를 확인할 변수 선언
+		System.out.println("member-list.do 들어옴");
 
 		if(searchType!=null) {
 			if(searchType.equals("Id")==true) {
@@ -281,6 +282,11 @@ public class ManageController {
 			else
 				return "manager/listFail";
 			
+		}
+		
+		@RequestMapping("/Home.do")
+		public String goHome() {
+			return "redirect:/main.do";
 		}
 		
 	
