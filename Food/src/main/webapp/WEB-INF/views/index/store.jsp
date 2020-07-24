@@ -29,7 +29,7 @@
 
 
 <jsp:include page="header.jsp">
-	<jsp:param value='' name='folder' />
+	<jsp:param value='../' name='folder' />
 </jsp:include>
 </head>
 
@@ -231,7 +231,7 @@
                                     </div>
                                     <!-- Product Info -->
                                     <div class="product-info mt-15 text-center">
-                                        <a href="storeDetails.do?s_brand_name=${store.s_brand_name}">
+                                        <a href="store/storeDetails.do?s_brand_name=${store.s_brand_name}">
                                             <p> ${store.s_brand_name}</p>
                                      
                                         </a>
@@ -286,19 +286,6 @@
     <%@ include file="footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
 
-    <!-- ##### All Javascript Files ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="resources/js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="resources/js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="resources/js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="resources/js/active.js"></script>
-    
-    <script type="text/javascript" src="resources/js/jquery/choice_ktg.js"></script>
 </body>
 
 </html>

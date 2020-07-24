@@ -33,7 +33,7 @@ public class StoreController {
 	}
 	
 	// 상품 상세보기
-	@RequestMapping("/storeDetails.do")
+	@RequestMapping("/store/storeDetails.do")
 	public ModelAndView getSelectStore(StoreListVO vo) {
 		
 		System.out.println("스토어셀렉 controller 도착");
@@ -43,7 +43,7 @@ public class StoreController {
 		System.out.println("스토어셀렉mapper 갔다옴");
 		System.out.println(list+"!!");
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index/storeDetails");
+		mv.setViewName("store/storeDetails");
 		mv.addObject("list",list);
 		
 		return mv;
