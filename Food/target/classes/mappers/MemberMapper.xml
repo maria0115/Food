@@ -19,11 +19,11 @@ select m_id,m_email,m_pass from member where m_id = #{m_id}
 
 
 
-<select id="search" parameterType="String" resultType="member">
+<select id="search" parameterType="String" resultType="store">
 
                select *     
-               from member
-               where m_most like '%'||#{value}||'%'	
+               from product
+               where p_name like '%'||#{value}||'%'	
                
          
         </select>

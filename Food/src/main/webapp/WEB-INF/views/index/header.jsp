@@ -37,7 +37,7 @@
 	$(document).ready(function() {
 		var name = ${result}.response.name;
 		$(".login-header").css("display","none");
-		$(".access").html(name+ '님 WelCome</span>/<a href="" id="logout">로그아웃</a>');
+		$(".access").html("<span class='login-font'>"+name+" 님 환영합니다.</span><a href='#' id='logout' ><button class='logout'>로그아웃</button></a>");
 	  });
 </script>
 
