@@ -153,12 +153,13 @@
 													type="submit" />
 											</p>
 										</form>
-										
+										 
 										<a href="singup.do" class="memberInfo">회원가입 </a> <a
-										href="find_form.do" class="memberInfo">아이디 비밀번호 찾기 </a>
-									<p class="closeBtn" title="닫기버튼">X</p>
-										<p><a id="naver" href="loginview.do">네이버 아이디로 로그인</a></p>
-									</div>
+										href="find_form.do" class="memberInfo">아이디 비밀번호 찾기 </a> 
+											<a id="naver" href="loginview.do">네이버 아이디로 로그인</a>
+										<div class="closeBtn" >X</div>  
+					
+									</div> 
 										
 									</div>
 								</div>
