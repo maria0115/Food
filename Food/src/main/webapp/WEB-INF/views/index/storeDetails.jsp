@@ -142,9 +142,28 @@
                                 <p>${list.s_info}</p>
                             </div>
 
+						
                             <div class="cart--area d-flex flex-wrap align-items-center">
+                               	<div>
+                               		<strong style="margin-right: 15px;font-size: 18px;">성인</strong>
+                               	</div>
                                 <!-- Add to Cart Form -->
                                 <form class="cart clearfix d-flex align-items-center" method="post">
+                                    <div class="quantity">
+                                        <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
+                                        <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    </div>
+                                    <button type="submit" name="addtocart" value="5" class="btn alazea-btn ml-15">Add to cart</button>
+                                </form>
+                                
+                                
+                                <form class="cart clearfix d-flex align-items-center" method="post" style="margin-top: 10px;">
+                                	<div>
+                               		<strong style="margin-right: 15px;font-size: 18px;">아동</strong>
+                               		</div>
+                                	
+                                
                                     <div class="quantity">
                                         <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                         <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
@@ -160,17 +179,25 @@
                             </div>
 							 
                             <div class="products--meta">
-                                <p><span>메뉴:</span> <span>${list.p_name1 },${list.p_price1 }</span></p>
+                                <p><span>메뉴:</span> 
+                                	<span>${list.p_name_1 }<br/> 
+                                		  ${list.p_name_2 }<br/>
+                                		  ${list.p_name_3 }
+                                	</span>
+                                	<span style="display: table-cell; margin: auto;">
+                                		${list.p_price_1 }<br/>
+                                		${list.p_price_2 }<br/>
+                                		${list.p_price_3 }
+                                	</span>
+                                	
+                                	
+                                	
+                                
+                                </p>
                                 <p><span>카테고리:</span> <span>${list.s_category }</span></p>
                                 <p><span>작은카테고리:</span> <span>${list.s_midpart } </span></p>
                                 <p>
-                                    <span>Share on:</span>
-                                    <span>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                </span>
+                                    
                                 </p>
                             </div>
                          
