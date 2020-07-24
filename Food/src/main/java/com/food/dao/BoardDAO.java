@@ -17,5 +17,7 @@ public interface BoardDAO {
 	List<BoardVO> selectBoard(BoardVO vo, PagingVO pvo, String searchType, String keyword);
 
 	int deleteBoard(BoardVO vo);
+	
+	BoardVO boardView(BoardVO vo);
 
 }

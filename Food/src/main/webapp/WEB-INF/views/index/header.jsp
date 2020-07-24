@@ -241,11 +241,11 @@
 									</li>
 								</ul>
 								<ul>
-									<li><a href="<%=folder %>todayMenu.do" id="today">Today Menu</a></li>
-									<li><a href="<%=folder %>myMenu.do" id="mymenu">My Menu</a></li>
-									<li><a href="<%=folder %>choiceMenu.do" id="choice">Other's Menu</a></li>
+									<li><a href="<%=folder %>index/todayMenu.do" id="today">Today Menu</a></li>
+									<li><a href="<%=folder %>index/myMenu.do" id="mymenu">My Menu</a></li>
+									<li><a href="<%=folder %>index/choiceMenu.do" id="choice">Other's Menu</a></li>
 									<li><a href="<%=folder %>index/mealFriends.do">Happy Meal With Friends</a></li>
-									<li><a href="<%=folder %>store.do">Store List</a></li>
+									<li><a href="<%=folder %>index/store.do">Store List</a></li>
 								</ul>
 
 								<!-- Search Icon -->
