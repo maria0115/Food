@@ -160,7 +160,7 @@
                             </div>
 							 
                             <div class="products--meta">
-                                <p><span>메뉴:</span> <span>${list.p_name },${list.p_price }</span></p>
+                                <p><span>메뉴:</span> <span>${list.p_name1 },${list.p_price1 }</span></p>
                                 <p><span>카테고리:</span> <span>${list.s_category }</span></p>
                                 <p><span>작은카테고리:</span> <span>${list.s_midpart } </span></p>
                                 <p>

@@ -11,8 +11,16 @@
 	</select>
 	
 	<select id="selecStore"  parameterType="store" resultType="store">
-		SELECT s.s_brand_name as s_brand_name , s.s_address as s_address , s.s_tel as s_tel , s.s_midpart as s_midpart , s.s_category as s_category , s.s_info as s_info , p.p_id as p_id , p.p_name as p_name ,p.p_price as p_price 
+		SELECT 		s.s_brand_name as s_brand_name , s.s_address as 	s_address   ,
+					s.s_tel        as s_tel        , s.s_midpart as 	s_midpart   ,
+		  			s.s_category   as s_category   , s.s_info    as 	s_info      ,
+		   			p.p_id 		   as p_id 		   , p.p_name    as 	p_name      ,
+		   			p.p_price      as p_price      , p.p_name_1  as		p_name_1    ,
+		   			p.p_name_2     as p_name_2     , p.p_name_3  as 	p_name_3    ,
+		   			p.p_price_1    as p_price_1    , p.p_price_2 as 	p.p_price_2 ,
+		   			p.p_price_3    as p.p_price_3  , p.p_price_3 as 	p.p_price_3
 		FROM STORE S, PRODUCT P
+		
 		WHERE S.S_BRAND_NAME = P.S_BRAND_NAME and S.S_BRAND_NAME = #{s_brand_name}
 	</select>
 	
