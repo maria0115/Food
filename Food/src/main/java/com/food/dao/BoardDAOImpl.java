@@ -56,6 +56,12 @@ public class BoardDAOImpl implements BoardDAO {
 		return mybatis.delete("boardDAO.deleteBoard",vo);
 	}
 
+	@Override
+	public BoardVO boardView(BoardVO vo) {
+		System.out.println("==>BoardMapper boardView() 호출");
+		return mybatis.selectOne("boardDAO.boardView",vo);
+	}
+
 
 
 

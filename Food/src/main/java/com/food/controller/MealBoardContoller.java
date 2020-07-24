@@ -49,34 +49,38 @@ public class MealBoardContoller {
 	
 	//밥친구 게시판 글 상세보기
 	@RequestMapping("/mealboardView.do")
-	public void mealboardView(FriendBoardVO vo, Model model) {
-		model.addAttribute("friend",friendBoardservice.mealboardView(vo));
+	public void mealboardView(BoardVO vo, Model model) {
+		vo.setBoardType(3);
+		model.addAttribute("board",boardService.boardView(vo));
 	}
 	
 	//밥친구 게시판 글 수정하기 페이지보여주기
 	@RequestMapping("/mealFriendsmodify.do")
-	public void mealFriendsmodify(FriendBoardVO vo, Model model) {
-		model.addAttribute("friend",friendBoardservice.mealboardView(vo));
+	public void mealFriendsmodify(BoardVO vo, Model model) {
+		vo.setBoardType(3);
+		model.addAttribute("board",boardService.boardView(vo));
 	}
 	
 	//밥친구 게시판 글 수정
 	@RequestMapping("/friendmodify.do")
-	public String friendmodify(FriendBoardVO vo, HttpServletRequest request) {
+	public String friendmodify(BoardVO vo, HttpServletRequest request) {
 		int result;
-		result = friendBoardservice.friendmodify(vo);
+		vo.setBoardType(3);
+		result = boardService.updateBoard(vo);
 		if(result==0) {
 			return "index/error";
 		}
-		return "redirect:../mealBoard/mealboardView.do?f_no="+vo.getF_no();
+		return "redirect:../mealBoard/mealboardView.do?b_no="+vo.getB_no();
 		
 		
 	}
 	
 	//밥친구 게시판 글 삭제하기 
 	@RequestMapping("/friendsdelete.do")
-	public String friendsdelete(FriendBoardVO vo) {
+	public String friendsdelete(BoardVO vo) {
 		int result;
-		result = friendBoardservice.friendsdelete(vo);
+		vo.setBoardType(3);
+		result = boardService.deleteBoard(vo);
 		if(result==0) {
 			return "index/error";
 		}

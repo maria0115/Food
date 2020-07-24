@@ -131,7 +131,7 @@ public class Sender extends Thread {
 				sendWhat(what);
 				receiveData(500);
 				sendMost(most);
-				this.result = receiveData(500);
+				//this.result = receiveData(500);
 				System.out.println("잘왔다");
 			}
 

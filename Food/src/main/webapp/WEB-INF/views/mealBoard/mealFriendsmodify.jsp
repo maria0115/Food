@@ -69,26 +69,31 @@
 				<tr>
 					<td width="100%">제목</td>
 					<td align="left"><input size="120%" type="text"
-						name="f_title" value="${friend.f_title }"/>
-					<input type="hidden" name="f_no" value="${friend.f_no }">
+						name="title" value="${board.title }"/>
+					<input type="hidden" name="b_no" value="${board.b_no }">
 						</td>
 				</tr>
 				<tr>
 					<td width="100%">글쓴이</td>
-					<td align="left"><input size="120%" type="text" name="m_id"
-						value="${friend.m_id }" readonly="readonly"/></td>
+					<td align="left"><input size="120%" type="text" name="userId"
+						value="${board.userId }" readonly="readonly"/></td>
 				</tr>
 
 				<tr>
 					<td width="100%">내용</td>
 					<td align="left"><textarea rows=5 cols=120
-							name="f_content">${friend.f_content }</textarea></td>
+							name="b_content">${board.b_content }</textarea></td>
+				</tr>
+				<tr>
+					<td width="100%">약속날짜</td>
+					<td align="left"><input size="120%" type="text"
+						name="f_date" value="${board.f_date }"/></td>
 				</tr>
 				<tr>
 					<td>현재 저장된 위치</td>
 					<td>
-					<input size="50%" type="text" name="f_addr1" id="f_addr1" value="${friend.f_addr1 }" />
-					<input size="50%" type="text" name="f_addr2" id="f_addr2" value="${friend.f_addr2 }" />
+					<input size="50%" type="text" name="f_addr1" id="f_addr1" value="${board.f_addr1 }" />
+					<input size="50%" type="text" name="f_addr2" id="f_addr2" value="${board.f_addr2 }" />
 					&nbsp;
 					<label>주소 변경</label>
 					<input type="checkbox" id="check">

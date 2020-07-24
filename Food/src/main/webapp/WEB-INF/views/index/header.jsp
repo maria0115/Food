@@ -37,7 +37,7 @@
 	$(document).ready(function() {
 		var name = ${result}.response.name;
 		$(".login-header").css("display","none");
-		$(".access").html(name+ '님 WelCome</span>/<a href="" id="logout">로그아웃</a>');
+		$(".access").html("<span class='login-font'>"+name+" Welcome.</span><a href='' id='logout' ><button class='logout'>Log-Out</button></a>");
 	  });
 </script>
 
@@ -128,8 +128,8 @@
 			
 									<div class="access">	
 									<c:if test="${not empty sessionScope.user_id}">
-										<span class="login-font">${sessionScope.user_name} 님 환영합니다.</span>
-										<a href="" id="logout" ><button class="logout">로그아웃</button></a>
+										<span class="login-font">${sessionScope.user_name} Welcome.</span>
+										<a href="" id="logout" ><button class="logout">Log-Out</button></a>
 									</c:if>
 								</div>	
 						    <c:if test="${empty sessionScope.user_id }">		
@@ -240,11 +240,11 @@
 									</li>
 								</ul>
 								<ul>
-									<li><a href="<%=folder %>todayMenu.do" id="today">Today Menu</a></li>
-									<li><a href="<%=folder %>myMenu.do" id="mymenu">My Menu</a></li>
-									<li><a href="<%=folder %>choiceMenu.do" id="choice">Other's Menu</a></li>
+									<li><a href="<%=folder %>index/todayMenu.do" id="today">Today Menu</a></li>
+									<li><a href="<%=folder %>index/myMenu.do" id="mymenu">My Menu</a></li>
+									<li><a href="<%=folder %>index/choiceMenu.do" id="choice">Other's Menu</a></li>
 									<li><a href="<%=folder %>index/mealFriends.do">Happy Meal With Friends</a></li>
-									<li><a href="<%=folder %>store.do">Store List</a></li>
+									<li><a href="<%=folder %>index/store.do">Store List</a></li>
 								</ul>
 
 								<!-- Search Icon -->

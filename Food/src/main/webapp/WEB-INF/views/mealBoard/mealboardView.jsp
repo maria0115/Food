@@ -90,9 +90,9 @@
 
 		<!-- 페이징 -->
 		<div style="display: block; text-align: center;"></div>
-		<c:if test="${sessionScope.user_id == friend.m_id}">
-		<button class="btn btn-default" onclick="location.href='mealFriendsmodify.do?f_no=${friend.f_no }'" >글수정</button>
-		<button class="btn btn-default" onclick="location.href='friendsdelete.do?f_no=${friend.f_no }&m_id=${friend.m_id }'" >글삭제</button>
+		<c:if test="${sessionScope.user_id == board.userId}">
+		<button class="btn btn-default" onclick="location.href='mealFriendsmodify.do?b_no=${board.b_no  }'" >글수정</button>
+		<button class="btn btn-default" onclick="location.href='friendsdelete.do?b_no=${board.b_no  }'" >글삭제</button>
 		</c:if >
 		<button class="btn btn-default" onclick="location.href='../index/mealFriends.do'" >글목록</button>
 		</div>
