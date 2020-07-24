@@ -82,6 +82,14 @@
 }
 
 
+#mypage{
+	display: revert;
+    padding-left: 20px;
+    font-size: unset;
+    color: gold;
+} 
+
+
 #loginLabel {
 	display: grid;
 } 
