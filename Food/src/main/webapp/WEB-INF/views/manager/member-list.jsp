@@ -105,18 +105,19 @@
 								<li><a title="Dashboard v.3" href="index-2.html"><i
 										class="fa fa-cube sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Dashboard v.3</span></a></li>
-								<li><a title="Product List" href="member-list.do"><i
+								<li><a title="Member List" href="member-list.do"><i
 										class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Member List</span></a></li>
-										<li><a title="Product List" href="black-list.do"><i
+										<li><a title="Black List" href="black-list.do"><i
 										class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Black List</span></a></li>
-								<li><a title="Product Edit" href="product-edit.html"><i
-										class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span
-										class="mini-sub-pro">Product Edit</span></a></li>
+								<li><a title="Declaration Board" href="declarationBoard.do"><i
+										class="fa big-icon fa-files-o icon-wrap" aria-hidden="true"></i> <span
+										class="mini-click-non">Declaration Board</span></a></li>
 								<li><a title="Product Detail" href="product-detail.html"><i
-										class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span
-										class="mini-sub-pro">Product Detail</span></a></li>
+										class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> 
+										<span class="mini-sub-pro">Product Detail</span></a></li>
+
 								<li><a title="Product Cart" href="product-cart.html"><i
 										class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Product Cart</span></a></li>
@@ -289,21 +290,7 @@
 							aria-expanded="false"><i
 								class="fa big-icon fa-files-o icon-wrap"></i> <span
 								class="mini-click-non">Pages</span></a>
-							<ul class="submenu-angle" aria-expanded="false">
-								<li><a title="Login" href="login.html"><i
-										class="fa fa-hand-rock-o sub-icon-mg" aria-hidden="true"></i><span
-										class="mini-sub-pro">Login</span></a></li>
-								<li><a title="Register" href="register.html"><i
-										class="fa fa-plane sub-icon-mg" aria-hidden="true"></i><span
-										class="mini-sub-pro">Register</span></a></li>
-								<li><a title="Lock" href="lock.html"><i
-										class="fa fa-file sub-icon-mg" aria-hidden="true"></i><span
-										class="mini-sub-pro">Lock</span></a></li>
-								<li><a title="Password Recovery"
-									href="password-recovery.html"><i
-										class="fa fa-wheelchair sub-icon-mg" aria-hidden="true"></i><span
-										class="mini-sub-pro">Password Recovery</span></a></li>
-							</ul></li>
+						</li>
 						<li><a title="Landing Page" href="#" aria-expanded="false"><i
 								class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i>
 								<span class="mini-click-non">Landing Page</span></a></li>
@@ -342,7 +329,7 @@
 									<div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
 										<div class="header-top-menu tabl-d-n">
 											<ul class="nav navbar-nav mai-top-nav">
-												<li class="nav-item"><a href="#" class="nav-link">Home</a>
+												<li class="nav-item"><a href="../index/main.do" class="nav-link">Home</a>
 												</li>
 												<li class="nav-item"><a href="#" class="nav-link">About</a>
 												</li>
