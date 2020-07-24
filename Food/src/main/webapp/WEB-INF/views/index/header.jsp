@@ -37,7 +37,7 @@
 	$(document).ready(function() {
 		var name = ${result}.response.name;
 		$(".login-header").css("display","none");
-		$(".access").html("<span class='login-font'>"+name+" 님 환영합니다.</span><a href='#' id='logout' ><button class='logout'>로그아웃</button></a>");
+		$(".access").html("<span class='login-font'>"+name+" 님 WelCome.</span><a href='#' id='logout' ><button class='logout'>LogOut</button></a>");
 	  });
 </script>
 
@@ -128,8 +128,8 @@
 			
 									<div class="access">	
 									<c:if test="${not empty sessionScope.user_id}">
-										<span class="login-font">${sessionScope.user_name} 님 환영합니다.</span>
-										<a href="" id="logout" ><button class="logout">로그아웃</button></a>
+										<span class="login-font">${sessionScope.user_name} 님 WelCome.</span>
+										<a href="" id="logout" ><button class="logout">LogOut</button></a>
 									</c:if>
 								</div>	
 						    <c:if test="${empty sessionScope.user_id }">		

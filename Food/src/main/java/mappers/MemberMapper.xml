@@ -23,7 +23,7 @@ select m_id,m_email,m_pass from member where m_id = #{m_id}
 
                select *     
                from product
-               where p_name like '%'||#{value}||'%'	
+               where p_name_1 like '%'||#{value}||'%'	 
                
          
         </select>
