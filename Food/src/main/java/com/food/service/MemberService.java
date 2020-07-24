@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import com.food.domain.MemberVO;
+import com.food.domain.ProductVO;
 
 public interface MemberService {
 	//비밀번호찾기
@@ -20,7 +21,7 @@ public interface MemberService {
 	// 로그인 
 	public MemberVO userSignIn(MemberVO vo);
 	
-	public List<MemberVO> search(String value);
+	public List<ProductVO> search(String value);
 	//인증관련 메서드
 	public void authentication(MemberVO vo); 
 	

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.food.dao.MemberDAO;
 import com.food.domain.MemberVO;
+import com.food.domain.ProductVO;
 
 @Service("memberService")
 public class MemberServiceImpl  implements MemberService{
@@ -74,7 +75,7 @@ public class MemberServiceImpl  implements MemberService{
 
 
 	@Override
-	public List<MemberVO> search(String value) {
+	public List<ProductVO> search(String value) {
 		return memberdao.search(value);
 	}
 

@@ -3,6 +3,7 @@ package com.food.dao;
 import java.util.List;
 
 import com.food.domain.MemberVO;
+import com.food.domain.ProductVO;
 
 public interface MemberDAO {
 	public String find_id(String m_email);
@@ -17,7 +18,7 @@ public interface MemberDAO {
 	
 	public void insertMember(MemberVO vo);
 	
-	public List<MemberVO> search(String value);
+	public List<ProductVO> search(String value);
 	
 	public void authentication(MemberVO vo); 
 }
