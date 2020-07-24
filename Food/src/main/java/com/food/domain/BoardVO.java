@@ -1,7 +1,11 @@
 package com.food.domain;
 
+import java.io.File;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class BoardVO {
-	private String boardType;
+	private int boardType;
     private int b_no;
     private String title;
     private String userId;
@@ -19,13 +23,67 @@ public class BoardVO {
     private String r_visit_date;
     private int r_ppl_cnt;
     private String r_menu;
-	public String getBoardType() {
-		return boardType;
-	}
-	public void setBoardType(String boardType) {
-		this.boardType = boardType;
+    private String seq;
+    private int v_star;
+    private String v_fileName;
+    private long v_fileSize;
+    
+    //파일처리할때 필요함 !!!
+    MultipartFile file;
+    
+    
+    public MultipartFile getFile() {
+		return file;
 	}
 
+	public void setFile(MultipartFile file) {
+		this.file = file;
+		
+		if(!file.isEmpty()) { //파일이 있다면!
+			//MultipartFile에서 파일명과 크기만 얻어오기 -> DB입력
+			this.v_fileName = file.getOriginalFilename();//파일명
+			this.v_fileSize = file.getSize();//파일크기
+			
+			File f=  new File("/Food/resources/upload/"+v_fileName);
+			try {
+				file.transferTo(f);
+			} catch (Exception e) {
+				System.out.println("파일전송실패"+e.getMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+    
+	public int getV_star() {
+		return v_star;
+	}
+	public void setV_star(int v_star) {
+		this.v_star = v_star;
+	}
+	public String getV_fileName() {
+		return v_fileName;
+	}
+	public void setV_fileName(String v_fileName) {
+		this.v_fileName = v_fileName;
+	}
+	public long getV_fileSize() {
+		return v_fileSize;
+	}
+	public void setV_fileSize(long v_fileSize) {
+		this.v_fileSize = v_fileSize;
+	}
+	public int getBoardType() {
+		return boardType;
+	}
+	public void setBoardType(int boardType) {
+		this.boardType = boardType;
+	}
+	public String getSeq() {
+		return seq;
+	}
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
 	public String getTitle() {
 		return title;
 	}

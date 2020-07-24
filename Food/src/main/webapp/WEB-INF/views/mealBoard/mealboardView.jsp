@@ -42,41 +42,43 @@
 			<table class="table table-bordered">
 				<tr>
 					<td width="100">글번호</td>
-					<td align="left">${friend.f_no }</td>
+					<td align="left">${board.b_no }</td>
 				</tr>
 				<tr>
 					<td width="100">등록일</td>
-					<td align="left">${friend.f_date }</td>
+					<td align="left">${board.b_date }</td>
 				</tr>
 				<tr>
 					<td width="100">조회수</td>
-					<td align="left">${friend.f_viewcount }</td>
+					<td align="left">${board.viewCount }</td>
 				</tr>
 				<tr>
 					<td width="100">참여인원</td>
-					<td align="left">${friend.f_membercnt}</td>
+					<td align="left">${board.f_membercnt}
+					<input class="btn btn-dark" type="button" id="joinBtn" style="margin-left: 15%" value="참가하기">
+					</td>
 				</tr>
 				<tr>
 					<td width="100">작성자</td>
-					<td align="left">${friend.m_id }</td>
+					<td align="left">${board.userId }</td>
 				</tr>
 				<tr>
 					<td width="100">제목</td>
-					<td align="left">${friend.f_title }</td>
+					<td align="left">${board.title }</td>
 				</tr>
 				<tr>
 					<td width="100">글내용</td>
 					<td align="left">
-					${friend.f_content }
+					${board.b_content }
 					</td>
 				</tr>
 				<tr>
 					<td width="100">위치</td>
 					<td align="left">
 					<div id="map" style="width:100%;height:350px;">
-					<input type="hidden" id="f_addr1" name="f_addr1" value="${friend.f_addr1 }">
-					<input type="hidden" id="f_addr2" name="f_addr2" value="${friend.f_addr2 }">
-					<input type="hidden" id="f_title" name="f_title" value="${friend.f_title }">
+					<input type="hidden" id="f_addr1" name="f_addr1" value="${board.f_addr1 }">
+					<input type="hidden" id="f_addr2" name="f_addr2" value="${board.f_addr2 }">
+					<input type="hidden" id="f_title" name="title" value="${board.title }">
 					</div>
 					</td>
 				</tr>

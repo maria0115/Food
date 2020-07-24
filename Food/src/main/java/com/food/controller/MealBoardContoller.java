@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
 import com.food.service.FriendBoardService;
+import com.food.service.boardService;
 
 
 @Controller
@@ -19,6 +21,9 @@ public class MealBoardContoller {
 	
 	@Autowired
 	FriendBoardService friendBoardservice;
+	@Autowired
+	boardService boardService;
+	
 	
 	//페이지전환
 	@RequestMapping("/{step}.do")
@@ -28,10 +33,14 @@ public class MealBoardContoller {
 	
 	//밥친구 게시판 글 등록하기 
 	@RequestMapping("/friendsave.do")
-	public String friendsave(FriendBoardVO vo , HttpServletRequest request) {
+	public String friendsave(BoardVO vo , HttpServletRequest request) {
 		
 		int result;
-		result = friendBoardservice.friendsave(vo);
+		vo.setBoardType(3);
+		vo.setSeq("friend_f_no");
+		System.out.println(vo.getF_addr1());
+		System.out.println(vo.getF_addr2());
+		result = boardService.insertBoard(vo);
 		if(result==0) {
 			return "../index/error";
 		}

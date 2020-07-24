@@ -80,19 +80,19 @@
 					<th>등록일</th>
 					<th>조회수</th>
 					<th>참여인원</th>
-					<th></th>
+					<th>채팅방</th>
 				</tr>
-				<c:forEach items="${friendlist}" var="friend">
+				<c:forEach items="${friendlist}" var="board">
 				<!-- 프라퍼티이름 변경 -->
 				<tr>
-					<td>${friend.f_no}</td>
+					<td>${board.b_no}</td>
 					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
-					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_title}</a></td>
-					<td><a href="../mealBoard/mealboardView.do?f_no=${friend.f_no }">${friend.f_addr1}&nbsp;${friend.f_addr2}</a></td>
-					<td>${friend.m_id}</td>
-					<td>${friend.f_date}</td>
-					<td style="text-align: center;">${friend.f_viewcount}</td>
-					<td style="text-align: center;">${friend.f_membercnt}
+					<td><a href="../mealBoard/mealboardView.do?f_no=${board.b_no }">${board.title}</a></td>
+					<td><a href="../mealBoard/mealboardView.do?f_no=${board.b_no }">${board.f_addr1}&nbsp;${board.f_addr2}</a></td>
+					<td>${board.userId}</td>
+					<td>${board.b_date}</td>
+					<td style="text-align: center;">${board.viewCount}</td>
+					<td style="text-align: center;">${board.f_membercnt}
 					</td>
 					<td>
 					<button class="btn btn-primary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?f_title=${friend.f_title}&f_port=${friend.f_port}&m_id=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">참여하기</button>
