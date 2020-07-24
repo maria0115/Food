@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.dao.FriendBoardDAO;
+import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
 import com.food.domain.PagingVO;
 
@@ -56,6 +57,19 @@ public class FriendBoardServiceImpl implements FriendBoardService{
 	public Integer friendsdelete(FriendBoardVO vo) {
 		
 		return friendBoarddao.friendsdelete(vo);
+	}
+
+	//밥친구 확정자
+	@Override
+	public Integer mealjoin(BoardVO vo) {
+		
+		return friendBoarddao.mealjoin(vo);
+	}
+
+	//밥친구 확정자 인원수 가져오기
+	@Override
+	public List<FriendBoardVO> getjoinCnt(BoardVO vo) {
+		return friendBoarddao.getjoinCnt(vo);
 	}
 	
 	

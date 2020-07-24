@@ -86,7 +86,16 @@ public class MealBoardContoller {
 		return "redirect:../index/mealFriends.do";
 	}
 	
-	//참여하기 버튼눌렀을때 
+	//참가하기 버튼눌렀을때 
+	@RequestMapping("/mealjoin.do")
+	public String mealjoin(BoardVO vo , Model model) {
+		int result;
+		result = friendBoardservice.mealjoin(vo);
+		if(result==0) {
+			return "index/error";
+		}
+		return "redirect:../index/mealFriends.do";
+	}
 	
 	
 	

@@ -56,5 +56,14 @@
 		DELETE FROM friendBoard WHERE f_no = #{f_no} AND m_id = #{m_id} 
 	</delete>
 	
+	<!-- 밥친구 확정자 인원 추가하기 -->
+	<insert id="mealjoin" parameterType="board">
+		insert into mealjoin (b_no,userId) values (#{b_no},#{userId})
+	</insert>
+	
+	<!-- 밥친구 확정자 인원수 가져오기 -->
+	<select id="getjoinCnt" resultType="friend">
+		select b_no , count(*) as joincnt from mealjoin group by b_no
+	</select>
 
 </mapper>

@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <title>chatBox</title>
 <%
-	String f_title = request.getParameter("f_title");
-	String m_id = request.getParameter("m_id");
+	String f_title = request.getParameter("title");
+	String m_id = request.getParameter("userId");
 
 %>
 

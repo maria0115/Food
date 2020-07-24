@@ -38,8 +38,8 @@ geocoder.addressSearch(addr1, function(result, status) {
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(coords);
     } 
-});    
-	
-	
+}); 
+
+
 	
 };
