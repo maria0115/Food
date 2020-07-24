@@ -1,8 +1,13 @@
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+<% 
 
+HashMap map = (HashMap)request.getAttribute("map"); 
+
+%>
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="">
@@ -67,11 +72,15 @@
 		<div class="single-hero-post2 bg-overlay">
 		
 		<div style="text-align: center; height: 50%; line-height: 50%; transform: translateY(100%); text-shadow: black; position: absolute;width: 100%;">
+			
+			
+			
+			<a href="" style="font-size: 10vw;">현재 <%= map.get("address")%>의 날씨는 <%=map.get("reondo")%>도 <%=map.get("nalsi")%>입니다^^</a>
 			<p>
-			<a href="" style="font-size: 10vw;">hihihihihhihiihih</a>
+			<a href="" style="font-size: 15vw;">오늘은 <%=map.get("category")%>의 <%=map.get("menu")%> 어떠세요? 먹고 싶다면 눌러주세요</a>
 			</p>
-			<a href="" style="font-size: 15vw;">hihihihihhihiihih</a>
 			</div>
+			
 			<!-- Post Image -->
 			</div>
 		</div>

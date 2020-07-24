@@ -19,12 +19,13 @@ public class Sender extends Thread {
 	private String resultweather;
 	private String resulttemp;
 	private String result;
-
-	public Sender(Socket socket, String resultweather,String resulttemp) {
+	private String what;
+	public Sender(Socket socket, String resultweather,String resulttemp,String what) {
 		//socket 열어줌
 		this.socket = socket;
 		this.resultweather = resultweather;
 		this.resulttemp = resulttemp;
+		this.what = what;
 		try {
 			// 데이터 스트림 생성
 			this.os = socket.getOutputStream();	//3
@@ -56,6 +57,15 @@ public class Sender extends Thread {
 		return true;
 	}
 
+	public boolean sendWhat(String resultwaht) throws IOException {
+//		File imageFile = new File(hello);
+//		fileSize = (int) imageFile.length() * 100;
+//		fis = new FileInputStream(imageFile);
+		bos.write(resultwaht.getBytes());
+		bos.flush(); //4
+		System.out.println("sendWhat 잘보내짐");
+		return true;
+	}
 //	public void sendImage(int fileSize) throws IOException {
 //		byte[] data = new byte[(int) (fileSize)];
 //		bos.write(data, 0, fis.read(data));
@@ -93,12 +103,24 @@ public class Sender extends Thread {
 	@Override
 	public void run() {
 		try {
+			if(what.equals("main"))
+			{
+			sendWhat(what);
+			receiveData(500);
 			sendWeather(resultweather);
-			receiveData(100);
+			receiveData(500);
 			sendTemp(resulttemp);
-			receiveData(100);
+			receiveData(500);
 			sendTemp("result");
-			this.result = receiveData(100);
+			this.result = receiveData(500);
+			}
+			else if(what.equals("other"))
+			{
+				sendWhat(what);
+				receiveData(500);
+				this.result = receiveData(500);
+				System.out.println("잘왔다");
+			}
 
 
 		} catch (Exception e) {
