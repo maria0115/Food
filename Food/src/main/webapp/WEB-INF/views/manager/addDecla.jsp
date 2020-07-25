@@ -26,6 +26,26 @@ $(document).ready(function(){
 				});
 	 });
 
+$('#add').click(function(){
+	
+	var queryString = $('form[name=frm]').serialize();
+	alert(queryString);
+	$.ajax({
+		url:"insertDecla.do", 
+		type:"get",
+		dataType:"text",
+		data:queryString, 
+		success:function(result){
+			alert("글등록 성공");
+			opener.location.reload();
+			window.close();
+		},error:function(error){
+		}					
+	});
+	
+		
+	});
+
 
 </script>
 </head>
