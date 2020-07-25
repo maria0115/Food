@@ -1,47 +1,41 @@
 package com.food.controller;
 
 
-import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.food.domain.ProductVO;
+import com.food.domain.BoardVO;
 import com.food.domain.StoreListVO;
 import com.food.service.StoreService;
+import com.food.service.boardService;
+
 
 @Controller
+@RequestMapping("/store")
 public class StoreController {
 	
 	@Autowired
-	private StoreService storeService;
+	StoreService storeService;
 	
+	@Autowired
+	boardService boardService;
 	
-	//Header에서 Store List 클릭했을때
-	@RequestMapping("/store.do")
-	public ModelAndView getStoreList(StoreListVO vo) {
-		
-		System.out.println("스토어 controller 도착");
-		List<StoreListVO> listVO = storeService.getStoreList(vo);
-		System.out.println("스토어mapper 갔다옴");
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index/store");
-		mv.addObject("listVO",listVO);
-		return mv;
-	}
 	
 	// 상품 상세보기
-	@RequestMapping("/store/storeDetails.do")
+	@RequestMapping("/storeDetails.do")
 	public ModelAndView getSelectStore(StoreListVO vo) {
 		
-		System.out.println("스토어셀렉 controller 도착");
-		System.out.println("------------------******************"+vo.getS_brand_name());
+//		System.out.println("스토어셀렉 controller 도착");
+//		System.out.println("------------------******************"+vo.getS_brand_name());
 		
 		StoreListVO list = storeService.storeDetail(vo);
-		System.out.println("스토어셀렉mapper 갔다옴");
-		System.out.println(list+"!!");
+//		System.out.println("스토어셀렉mapper 갔다옴");
+//		System.out.println(list+"!!");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("store/storeDetails");
 		mv.addObject("list",list);
@@ -49,7 +43,26 @@ public class StoreController {
 		return mv;
 	}
 	
-	// 상품 상세보기 menuList 가져오기 
+	@RequestMapping("/reviewInsert.do")
+	public String reviewInsert(BoardVO vo) {
+		System.out.println("리뷰인설트 controller 도착");
+		int result;
+		vo.setBoardType(2);
+		vo.setSeq("review_r_no");
+		System.out.println("======================"+vo.getB_content());
+		System.out.println("======================"+vo.getTitle());
+		System.out.println("======================"+vo.getUserId());
+		System.out.println("======================"+vo.getV_fileName());
+		System.out.println("======================"+vo.getV_fileSize());
+		result = boardService.insertBoard(vo);
+		System.out.println("ddd");
+		if(result==0) {
+			return "../index/error";
+		}
+		return "redirect:/store/storeDetails";
+	}
+	
+	
 
 	
 	

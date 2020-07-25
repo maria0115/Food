@@ -304,12 +304,12 @@
 
                                 <div class="submit_a_review_area mt-50">
                                     <h4>Submit A Review</h4>
-                                    <form action="#" method="post">
+                                    <form action="reviewInsert.do" method="post" enctype="multipart/form-data" id="reviewInsertFrm">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-group d-flex align-items-center">
                                                     <span class="mr-15">Your Ratings:</span>
-                                                    <div class="stars">
+                                                    <!-- <div class="stars">
                                                         <input type="radio" name="star" class="star-1" id="star-1">
                                                         <label class="star-1" for="star-1">1</label>
                                                         <input type="radio" name="star" class="star-2" id="star-2">
@@ -321,35 +321,34 @@
                                                         <input type="radio" name="star" class="star-5" id="star-5">
                                                         <label class="star-5" for="star-5">5</label>
                                                         <span></span>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
-                                                    <label for="name">Nickname</label>
-                                                    <input type="email" class="form-control" id="name" placeholder="Nazrul">
+                                                    <label for="name">제목</label>
+                                                    <input type="text" class="form-control" id="name" name="title" placeholder="Nazrul">
                                                 </div>
                                             </div>
+                                            
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
-                                                    <label for="options">Reason for your rating</label>
-                                                    <select class="form-control" id="options">
-                                                          <option>Quality</option>
-                                                          <option>Value</option>
-                                                          <option>Design</option>
-                                                          <option>Price</option>
-                                                          <option>Others</option>
-                                                    </select>
+                                                    <label for="name">작성자</label>
+                                                    <input type="text" class="form-control" id="name" name="userId" placeholder="Nazrul">
                                                 </div>
                                             </div>
+                                            
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="comments">Comments</label>
-                                                    <textarea class="form-control" id="comments" rows="5" data-max-length="150"></textarea>
+                                                    <label for="comments">내용</label>
+                                                    <input class="form-control" id="comments" name="b_content" rows="5" data-max-length="150">
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button type="submit" class="btn alazea-btn">Submit Your Review</button>
+                                            	
+                                                <input type="button" class="btn alazea-btn" id="reviewInsert" value="리뷰등록">
+                                               	<!-- ************** name은 MultipartFile 프라퍼티임 -->
+												<input type="file" name="file"  maxlength="60" size="40">
                                             </div>
                                         </div>
                                     </form>
@@ -482,6 +481,7 @@
  <!-- ##### Footer Area Start ##### -->
     <%@ include file="../index/footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
+    <script src="/Food/resources/js/store.js"></script>
 
 </body>
 

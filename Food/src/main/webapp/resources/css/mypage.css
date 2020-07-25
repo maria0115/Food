@@ -1,3 +1,10 @@
+.modifybtn{
+	font-size: xx-large;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+
 #nomember{
 	font-size: xx-large;
     font-family: cursive;
@@ -14,7 +21,7 @@
   background: -webkit-linear-gradient(-68deg, #ac32e4 , #4801ff);
   background: -o-linear-gradient(-68deg, #ac32e4 , #4801ff);
   background: -moz-linear-gradient(-68deg, #ac32e4 , #4801ff);
-  background: burlywood;
+  background: ivory;
   width: fit-content;
   margin: auto;
 }
@@ -24,12 +31,13 @@
 }
 
 .table100.ver4 td {
-  font-family: fantasy;
+  font-family: initial;
     font-size: x-large;
-    color: initial;
+    color: black;
     line-height: inherit;
-    border: 5px solid white;
+    border: 5px double black;
     text-align: center;
+    padding: 10px;
 }
 
 .table100.ver4 th {
@@ -37,8 +45,9 @@ font-family: serif;
     font-size: xxx-large;
     color: #fff;
     line-height: inherit;
-    text-transform: capitalize;
-    background-color: black;
+    text-transform: uppercase;
+    background-color: orangered;
+    text-align: center;
 }
 
 .table100.ver4 .row100:hover td {

@@ -231,7 +231,7 @@
                                     </div>
                                     <!-- Product Info -->
                                     <div class="product-info mt-15 text-center">
-                                        <a href="store/storeDetails.do?s_brand_name=${store.s_brand_name}">
+                                        <a href="../store/storeDetails.do?s_brand_name=${store.s_brand_name}">
                                             <p> ${store.s_brand_name}</p>
                                      
                                         </a>
