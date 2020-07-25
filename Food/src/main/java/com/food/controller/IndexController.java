@@ -58,7 +58,7 @@ public class IndexController {
 			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
 		
 		
-		int total = boardService.countBoard(bvo);
+		
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
 			cntPerPage = "10";
@@ -68,6 +68,7 @@ public class IndexController {
 			cntPerPage = "10";
 		}
 		bvo.setBoardType(3);
+		int total = boardService.countBoard(bvo);
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		model.addAttribute("paging", vo); //페이징처리를 위한  가져온 값 넘기기 
 		model.addAttribute("friendlist", boardService.selectBoard(bvo, vo, null, null));

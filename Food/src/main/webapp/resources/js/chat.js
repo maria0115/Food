@@ -26,6 +26,7 @@
 	
 	var portnum = $.fn.getUrlParameter('f_port');
 	var userId = $.fn.getUrlParameter('userId');
+
 	
 	$("#param").text("portnum Value : " + portnum);
 	//alert(portnum);

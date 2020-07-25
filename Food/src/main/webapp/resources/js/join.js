@@ -10,7 +10,7 @@ $(function(){
 	
 	if(joinid.match(id)){ 
 		$("#joinBtn").css("display", "none");
-		var $div = $("<span>참가중</span>");
+		var $div = $("<span style='color:black; font-weight: bolder;'>참가중</span>");
 		$("#joincnt").append($div);
 	} else {
 		
