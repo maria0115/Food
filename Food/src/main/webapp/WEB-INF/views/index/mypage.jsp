@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,31 +31,71 @@
 
 <body>
     <!-- ##### Portfolio Area End ##### -->
-	<div class= "container">
-<h1>회원 정보</h1>
-<table class="rwd-table">
+	
+	<c:if test="${not empty sessionScope.user_id}">
+    	<div class="table100 ver4 m-b-110">
+					<table data-vertable="ver4">
+						<thead>
+							<tr class="row100 head">
+								<th colspan="3" class="column100 column8" data-column="column8">My information</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_id</td>
+								<td class="column100 column2" data-column="column2">${user_Info.m_id}</td>
+								<td><button class="btn btn-dark">수정</button></td>
+							</tr>
 
- <tr>
-    <td data-th="Movie Title">Star Wars</td>
-    <td data-th="Genre">Adventure, Sci-fi</td>
-    <td data-th="Year">1977</td>
-    <td data-th="Gross">$460,935,665</td>
-  </tr>
-  <tr>
-    <td data-th="Movie Title">Howard The Duck</td>
-    <td data-th="Genre">"Comedy"</td>
-    <td data-th="Year">1986</td>
-    <td data-th="Gross">$16,295,774</td>
-  </tr>
-  <tr>
-    <td data-th="Movie Title">American Graffiti</td>
-    <td data-th="Genre">Comedy, Drama</td>
-    <td data-th="Year">1973</td>
-    <td data-th="Gross">$115,000,000</td>
-  </tr>
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_name</td>
+								<td class="column100 column2" data-column="column2">${user_Info.m_name}</td>
+								<td><button class="btn btn-dark">수정</button></td>
+							</tr>
 
-</table>
-</div>
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_Email</td>
+								<td class="column100 column2"  data-column="column2">${user_Info.m_email}</td>
+								<td><button class="btn btn-dark">수정</button></td>
+							</tr>
+  
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_PhoneNumber</td>
+								<td class="column100 column2" data-column="column2">${user_Info.m_tel}</td>
+								<td><button class="btn btn-dark">수정</button></td>
+							</tr>
+
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_BirthDay</td>
+								<td class="column100 column2" data-column="column2">${user_Info.m_birth}</td>
+								<td><button class="btn btn-dark">수정</button></td>
+							</tr>
+
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_Address</td>
+								<td class="column100 column2" data-column="column2">${user_Info.m_area}</td>
+								<td><button class="btn btn-dark">수정</button></td>
+							</tr>
+
+						
+						
+						</tbody>
+					</table>
+				</div>
+    
+    
+	</c:if>
+	
+	<c:if test="${empty sessionScope.user_id}">
+	<div class="container">
+	<div id="nomember">현재 네이버 아이디로 이용중 입니다.
+	네이버 아이디로 로그인시 오늘뭐먹지 MY Page 서비스를 이용하실수 없습니다.
+	회원가입후 MY Page 서비스 이용가능 합니다. 감사합니다.</div>
+	</div>
+	</c:if>
+	
+
     
 
     <!-- ##### Footer Area Start ##### -->
