@@ -58,7 +58,7 @@ public class IndexController {
 			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
 		
 		
-		int total = boardService.countBoard(bvo); //상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
+		int total = boardService.countBoard(bvo);
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
 			cntPerPage = "10";
@@ -70,8 +70,7 @@ public class IndexController {
 		bvo.setBoardType(3);
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		model.addAttribute("paging", vo); //페이징처리를 위한  가져온 값 넘기기 
-		model.addAttribute("friendlist", boardService.selectBoard(bvo, vo, null, null)); //상품별 리뷰 가져온 목록 model에 저장
-		model.addAttribute("joincnt",friendBoardService.getjoinCnt(bvo));
+		model.addAttribute("friendlist", boardService.selectBoard(bvo, vo, null, null));
 		return "index/mealFriends";
 	}
 	

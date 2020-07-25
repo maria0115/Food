@@ -90,7 +90,8 @@ public class MealBoardContoller {
 	@RequestMapping("/mealjoin.do")
 	public String mealjoin(BoardVO vo , Model model) {
 		int result;
-		result = friendBoardservice.mealjoin(vo);
+		vo.setBoardType(3);
+		result = boardService.mealjoin(vo);
 		if(result==0) {
 			return "index/error";
 		}

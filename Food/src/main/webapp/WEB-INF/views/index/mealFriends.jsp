@@ -95,17 +95,14 @@
 					<td>${board.b_date}</td>
 					<td style="text-align: center;">${board.viewCount}</td>
 					<td style="text-align: center;"><span class="membercnt">${board.f_membercnt}</span></td>
-					<c:forEach items="${joincnt }" var="friend">
-					<c:if test="${board.b_no == friend.b_no}">
-					<td ><span class="joincnt">${friend.joincnt }</span></td>
-					</c:if>
-					<c:if test="${ friend.b_no==null}">
-					<td ><span class="joincnt">0</span></td>
-					</c:if>
-					</c:forEach>
+					<td ><span class="joincnt">${board.f_cnt }</span></td>
 					<td>
+					<c:if test="${board.f_membercnt >  board.f_cnt }">
 					<button id="btn" class="btn btn-primary mary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?title=${board.title}&f_port=${board.f_port}&userId=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">입장하기</button>
-					<span class="end" style="visibility: hidden;">입장마감</span>
+					</c:if>
+					<c:if test="${board.f_membercnt == board.f_cnt }">
+					<span>입장마감</span>
+					</c:if>
 					</td>
 					
 				</tr>
@@ -149,7 +146,6 @@
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="footer.jsp" %>
 
-<script src="/Food/resources/js/mealList.js"></script>
 
 
 

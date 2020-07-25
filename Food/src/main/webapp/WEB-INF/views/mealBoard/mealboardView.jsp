@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,9 +55,17 @@
 				</tr>
 				<tr>
 					<td width="100">참여인원</td>
-					<td align="left">${board.f_membercnt}
-					<input class="btn btn-dark" type="button" id="joinBtn" style="margin-left: 15%" value="참가하기"
-					 onclick="location.href='../mealBoard/mealjoin.do?b_no=${board.b_no}&userId=${sessionScope.user_id }'">
+					<td align="left" >${board.f_membercnt}</td>
+				</tr>
+				<tr>
+					<td width="100">참여여부</td>
+					<td align="left" id="joincnt">
+					<form id="joinfrm" method="post" action="../mealBoard/mealjoin.do?f_userId=${sessionScope.user_id }">
+					<input type="hidden" id="joinid" name="f_userId" value="${board.f_userId}">
+					<input type="hidden" id="id" name="f_userId" value="${sessionScope.user_id }">
+					<input type="hidden"  name="b_no" value="${board.b_no }">
+					<input class="btn btn-dark" type="button" id="joinBtn" value="참가하기" >
+					</form>
 					</td>
 				</tr>
 				<tr>
@@ -105,7 +114,7 @@
 
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="../index/footer.jsp" %>
-
+<script src="/Food/resources/js/join.js"></script>
 
 
 
