@@ -20,6 +20,7 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public int insertBoard(BoardVO vo) {
 		System.out.println("==>BoardMapper insertBoard() 호출");
+		System.out.println("seq:"+vo.getSeq());
 		return mybatis.insert("boardDAO.insertBoard",vo);
 	}
 

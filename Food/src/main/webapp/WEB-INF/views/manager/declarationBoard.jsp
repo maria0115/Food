@@ -1045,11 +1045,8 @@
 								</tr>
 								<c:forEach items="${declarationList }" var="board">
 									<tr>
-										<td>
-											<c:if test="${board.b_no eq 3}">밥친구</c:if>
-											<c:if test="${board.b_no eq 5}">예약</c:if>
-											<c:if test="${board.b_no eq 4}">Q&A</c:if>
-										</td>
+										<td>${board.boardType }</td>
+										<td>${board.b_no` }</td>
 										<td>${board.title }</td>
 										<td>${board.userId}</td>
 										<td>${board.b_content }</td>

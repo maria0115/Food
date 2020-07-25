@@ -24,27 +24,28 @@ $(document).ready(function(){
 				} // 추출한 파일명 삽입 
 				$(this).siblings('.upload-name').val(filename); 
 				});
-	 });
 
-$('#add').click(function(){
-	
-	var queryString = $('form[name=frm]').serialize();
-	alert(queryString);
-	$.ajax({
-		url:"insertDecla.do", 
-		type:"get",
-		dataType:"text",
-		data:queryString, 
-		success:function(result){
-			alert("글등록 성공");
-			opener.location.reload();
-			window.close();
-		},error:function(error){
-		}					
-	});
-	
+	$('#add').click(function(){
 		
-	});
+		var queryString = $('form[name=frm]').serialize();
+		$.ajax({
+			url:"insertDecla.do", 
+			type:"get",
+			dataType:"text",
+			data:queryString, 
+			success:function(result){
+				alert("글등록 성공");
+				opener.location.reload();
+				window.close();
+			},error:function(error){
+				alert(error);
+			}					
+		});
+		
+			
+		});
+});
+
 
 
 </script>
@@ -67,8 +68,7 @@ $('#add').click(function(){
 		<h1>신고글 등록</h1>
 		<br />
 	
-		<form action="../mealBoard/friendsave.do" method="get"
-			enctype="multipart/form-data" id="mealfrm">
+		<form method="post"	name="frm">
 	
 			<table class="table table-striped">
 
@@ -83,6 +83,10 @@ $('#add').click(function(){
 					<td align="left"><input size="120%" type="text" name="userId"
 						value="${sessionScope.user_id}" readonly="readonly" /></td>
 				</tr>
+				<tr>
+					<td width="100%">신고대상</td>
+					<td align="left"><input type="text" name="d_suspect"/></td>
+				</tr>
 
 				<tr>
 					<td width="100%">내용</td>
@@ -95,7 +99,7 @@ $('#add').click(function(){
 					<div class="filebox bs3-primary">
 					 	<input class="upload-name" value="파일선택" disabled="disabled">
 						<label for="ex_filename">업로드</label> 
-                        <input type="file" id="ex_filename" class="upload-hidden" style="visibility: hidden"> 
+                        <input type="file" name="file2" id="ex_filename" class="upload-hidden" style="visibility: hidden"> 
 					</div>
 					</td>
 				</tr>

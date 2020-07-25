@@ -71,7 +71,7 @@ public class BoardVO {
 			this.v_fileName = file2.getOriginalFilename();//파일명
 			this.v_fileSize = file2.getSize();//파일크기
 			
-			File f=  new File("/Food/resources/d_upload/"+d_fileName);
+			File f=  new File("D:\\RYU\\Food\\Food\\src\\main\\wepapp\\resources\\wepapp\\d_upload"+d_fileName);
 			try {
 				file2.transferTo(f);
 			} catch (Exception e) {

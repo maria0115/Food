@@ -300,7 +300,9 @@ public class ManageController {
 			
 			int total;//페이징 처리할때 데이터의 총 갯수를 저장할 변수
 			String search = "";//검색을 했는지 여부를 확인할 변수 선언
-			//vo.setSeq("Declaration_SEQ");
+			String boardType="";
+			vo.setBoardType(1);
+			vo.setSeq("Declaration_SEQ");
 			if(searchType!=null) {
 				if(searchType.equals("작성자")==true) {
 					searchType="userId";
@@ -359,20 +361,40 @@ public class ManageController {
 			//모델에 "memList" List 추가 , db에서 조건에 해당하는 상품 목록을 가지고 온다
 		
 		
+			List<BoardVO> a = boardService.selectBoard(vo,pvo,searchType,keyword);
 			
-			model.addAttribute("declarationList", boardService.selectBoard(vo,pvo,searchType,keyword));
+			for(int i=0;i<a.size();i++) {
+				if(a.get(i).getBoardType()==1) {
+					boardType="신고";
+				}else if(a.get(i).getBoardType()==2) {
+					boardType="리뷰";
+				}else if(a.get(i).getBoardType()==3) {
+					boardType="밥친구";
+				}else if(a.get(i).getBoardType()==4) {
+					boardType="Q&A";
+				}else if(a.get(i).getBoardType()==5) {
+					boardType="예약";
+				}
+			}
+			
+			
+			model.addAttribute("declarationList", a);
 			
 			//모델에 "searchType" 검색타입 추가
 			model.addAttribute("searchType", searchType);
 			//모델에 "keyword" 검색키워드 추가
 			model.addAttribute("keyword", keyword);
-			
+			//모델에 "boardType" 게시판타입 추가
+			model.addAttribute("boardType", boardType);
 			return "manager/declarationBoard";
 		}
-		
+	
+	@ResponseBody
 	@RequestMapping("/insertDecla.do")
 	public void insertDecla(BoardVO vo) {
+		System.out.println("들어옴");
 		vo.setBoardType(3);
+		vo.setSeq("DECLARATION_SEQ");
 		
 		boardService.insertBoard(vo);
 
