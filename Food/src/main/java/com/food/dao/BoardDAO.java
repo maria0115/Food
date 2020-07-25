@@ -20,4 +20,8 @@ public interface BoardDAO {
 	
 	BoardVO boardView(BoardVO vo);
 
+	int searchCount(String searchType, String keyword);
+
+	int mealjoin(BoardVO vo);
+
 }

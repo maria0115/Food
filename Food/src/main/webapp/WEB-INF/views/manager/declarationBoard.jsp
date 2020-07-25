@@ -1029,7 +1029,7 @@
 											<i class="fa fa-trash-o" aria-hidden="true"></i>
 							</button>
 							<div class="add-decla">
-								<a href="#" onclick="window.open('addDecla.do','_blank','width=600 ,height=400');">Add Declaration</a>
+								<a href="#" onclick="window.open('addDecla.do','_blank','width=1150 ,height=650');">Add Declaration</a>
 							</div>
 							</div>
 							<h4>Declaration Board	</h4>

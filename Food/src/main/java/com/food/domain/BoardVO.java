@@ -27,10 +27,15 @@ public class BoardVO {
     private int v_star;
     private String v_fileName;	//업로드 파일명
     private long v_fileSize;	//업로드 파일사이즈
+    private String d_fileName;	//신고파일 파일명
+    private int f_cnt;			
+    private int d_fileSize;		//신고파일 파일사이즈
+    private String f_userId;
+    
     
     //파일처리할때 필요함 !!!
     MultipartFile file;
-    
+    MultipartFile file2;
     
     public MultipartFile getFile() {
 		return file;
@@ -47,6 +52,28 @@ public class BoardVO {
 			File f=  new File("/Food/resources/upload/"+v_fileName);
 			try {
 				file.transferTo(f);
+			} catch (Exception e) {
+				System.out.println("파일전송실패"+e.getMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public MultipartFile getFile2() {
+		return file2;
+	}
+
+	public void setFile2(MultipartFile file2) {
+		this.file2 = file2;
+		
+		if(!file2.isEmpty()) { //파일이 있다면!
+			//MultipartFile에서 파일명과 크기만 얻어오기 -> DB입력
+			this.v_fileName = file2.getOriginalFilename();//파일명
+			this.v_fileSize = file2.getSize();//파일크기
+			
+			File f=  new File("/Food/resources/d_upload/"+d_fileName);
+			try {
+				file2.transferTo(f);
 			} catch (Exception e) {
 				System.out.println("파일전송실패"+e.getMessage());
 				e.printStackTrace();
@@ -185,6 +212,38 @@ public class BoardVO {
 	}
 	public void setB_date(String b_date) {
 		this.b_date = b_date;
+	}
+
+	public String getD_fileName() {
+		return d_fileName;
+	}
+
+	public void setD_fileName(String d_fileName) {
+		this.d_fileName = d_fileName;
+	}
+
+	public int getF_cnt() {
+		return f_cnt;
+	}
+
+	public void setF_cnt(int f_cnt) {
+		this.f_cnt = f_cnt;
+	}
+
+	public int getD_fileSize() {
+		return d_fileSize;
+	}
+
+	public void setD_fileSize(int d_fileSize) {
+		this.d_fileSize = d_fileSize;
+	}
+
+	public String getF_userId() {
+		return f_userId;
+	}
+
+	public void setF_userId(String f_userId) {
+		this.f_userId = f_userId;
 	}
     
     

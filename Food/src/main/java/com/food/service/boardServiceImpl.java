@@ -57,4 +57,10 @@ public class boardServiceImpl implements boardService {
 		return boardDAO.searchCount(searchType,keyword);
 	}
 
+	@Override
+	public int mealjoin(BoardVO vo) {
+		
+		return boardDAO.mealjoin(vo);
+	}
+
 }

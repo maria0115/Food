@@ -106,19 +106,9 @@ $(function(){
 
 </head>
 <body>
-	<div class="footer-copyright-area">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<form style="margin-top: 10%;" name="frm" id="frm1">
-	<div class="product-status mg-tb-15">
-			
-		
+
 		<div style="text-align: center;">
 			<div class="add-group">
 				<div class="addrow">
@@ -155,15 +145,6 @@ $(function(){
 			<a href="#" id="add">Add</a> &nbsp;&nbsp; <a href="" onclick="window.close()">Cancel</a>
 
 		</div>
-	</div>	
-		<div class="footer-copyright-area">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-12">
-					</div>
-				</div>
-			</div>
-	</div>
 
 	</form>
 </body>

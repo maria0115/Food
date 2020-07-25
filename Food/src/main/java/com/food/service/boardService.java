@@ -24,4 +24,6 @@ public interface boardService {
 
 	int searchCount(String searchType, String keyword);
 	
+	int mealjoin(BoardVO vo);
+	
 }

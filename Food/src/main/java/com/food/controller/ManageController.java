@@ -370,7 +370,13 @@ public class ManageController {
 			return "manager/declarationBoard";
 		}
 		
+	@RequestMapping("/insertDecla.do")
+	public void insertDecla(BoardVO vo) {
+		vo.setBoardType(3);
 		
+		boardService.insertBoard(vo);
+
+	}
 		
 	
 }

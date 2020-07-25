@@ -63,12 +63,21 @@ public class BoardDAOImpl implements BoardDAO {
 		return mybatis.selectOne("boardDAO.boardView",vo);
 	}
 
+	@Override
 	public int searchCount(String searchType, String keyword) {
 		HashMap map = new HashMap();
 		map.put("searchType", searchType);
 		map.put("keyword",keyword);
 		
 		return mybatis.selectOne("boardDAO.searchCount",map);
+	}
+
+	@Override
+	public int mealjoin(BoardVO vo) {
+		System.out.println("==>BoardMapper mealjoin() 호출");
+	    return mybatis.insert("boardDAO.mealjoin",vo);
+		
+		
 	}
 
 
