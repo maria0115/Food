@@ -80,8 +80,10 @@
 					<th>등록일</th>
 					<th>조회수</th>
 					<th>참여인원</th>
+					<th>확정인원</th>
 					<th>채팅방</th>
 				</tr>
+				
 				<c:forEach items="${friendlist}" var="board">
 				<!-- 프라퍼티이름 변경 -->
 				<tr>
@@ -92,12 +94,20 @@
 					<td>${board.userId}</td>
 					<td>${board.b_date}</td>
 					<td style="text-align: center;">${board.viewCount}</td>
-					<td style="text-align: center;">${board.f_membercnt}
-					</td>
+					<td style="text-align: center;"><span class="membercnt">${board.f_membercnt}</span></td>
+					<c:forEach items="${joincnt }" var="friend">
+					<c:if test="${board.b_no == friend.b_no}">
+					<td ><span class="joincnt">${friend.joincnt }</span></td>
+					</c:if>
+					<c:if test="${ friend.b_no==null}">
+					<td ><span class="joincnt">0</span></td>
+					</c:if>
+					</c:forEach>
 					<td>
-					<button class="btn btn-primary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?title=${board.title}&f_port=${board.f_port}&m_id=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">참여하기</button>
+					<button id="btn" class="btn btn-primary mary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?title=${board.title}&f_port=${board.f_port}&userId=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">입장하기</button>
+					<span class="end" style="visibility: hidden;">입장마감</span>
 					</td>
-					<!-- 추가 -->	
+					
 				</tr>
 			</c:forEach>
 
@@ -139,7 +149,7 @@
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="footer.jsp" %>
 
-
+<script src="/Food/resources/js/mealList.js"></script>
 
 
 

@@ -50,7 +50,7 @@
 }
 
 .dialog {
-  background: white;
+  background: oldlace;
   width: 40%;
   position: absolute;
   left: calc(50% - 35%);
@@ -71,13 +71,24 @@
 }
 .dialog.dialog--active {
   z-index: 150;
-  top: 100%;
+  top: 90%;
   left: 29%;
   visibility: visible;
   opacity: 1;
   -webkit-transition: all 250ms ease-out;
   transition: all 250ms ease-out;
 }
+
+.dialog .label_name {
+  margin-left:10%;
+}
+.dialog .input_name {
+  border:none;
+  margin-left:10%;
+  text-align: center;
+  background-color: oldlace;
+}
+
 .dialog .dialog__close {
   font-size: 2rem;
   line-height: 2rem;

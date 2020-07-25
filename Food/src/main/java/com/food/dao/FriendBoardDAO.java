@@ -2,6 +2,7 @@ package com.food.dao;
 
 import java.util.List;
 
+import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
 import com.food.domain.PagingVO;
 
@@ -24,5 +25,11 @@ public interface FriendBoardDAO {
 	
 	//밥친구 게시판 글 삭제하기
 	public Integer friendsdelete(FriendBoardVO vo);
+	
+	//밥친구 확정
+	public Integer mealjoin(BoardVO vo);
+	
+	//밥친구 확정자 인원수 가져오기
+	public List<FriendBoardVO> getjoinCnt(BoardVO vo);
 	
 }

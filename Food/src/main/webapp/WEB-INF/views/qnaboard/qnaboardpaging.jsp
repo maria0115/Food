@@ -106,26 +106,23 @@
                                 
                                 <script type="text/javascript">
                                 $(document).on("click",".qna_table",function(){
- 									alert($(this).parent().children().eq(0).text())
  									var no = $(this).parent().children().eq(0).text()
- 									location.href="detail?q_no="+no;
+ 									location.href="detail?b_no="+no;
                                 });
                                  $(document).on("click","#trash",function(){
-  									alert("trash")
-  									alert($(this).parent().parent().children().eq(0).text())
   									var no = $(this).parent().parent().children().eq(0).text()
-  									location.href="deleteqna?q_no="+no;
+  									location.href="deleteqna?b_no="+no;
                                  });
                                  </script>
                                 
                                 
                                 <c:forEach items="${listVO}" var="list">
                                 <tr>
-                                    <td class='qna_table'>${list.q_no}</td>
-                                    <td class='qna_table' width="600px">${list.q_title}</td>
+                                    <td class='qna_table'>${list.b_no}</td>
+                                    <td class='qna_table' width="600px">${list.title}</td>
 <%--                                     <td>${list.q_content}</td> --%>
-                                    <td class='qna_table'>${list.q_writer}</td>
-                                    <td class='qna_table'>${list.q_regdate}</td>
+                                    <td class='qna_table'>${list.userId}</td>
+                                    <td class='qna_table'>${list.b_date}</td>
                                     <td>
 <!--                                         <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> -->
                                         <button id="trash" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>

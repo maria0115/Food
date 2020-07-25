@@ -5,28 +5,28 @@ import java.io.File;
 import org.springframework.web.multipart.MultipartFile;
 
 public class BoardVO {
-	private int boardType;
-    private int b_no;
-    private String title;
-    private String userId;
-    private String b_content;
-    private String b_date;
-    private int viewCount;
-    private String f_addr1;
+	private int boardType;		//게시판 분류
+    private int b_no;			//글번호
+    private String title;		//글제목
+    private String userId;		//작성자
+    private String b_content;	//글내용
+    private String b_date;		//글작성날짜
+    private int viewCount;		//조회수
+    private String f_addr1;		
     private String f_addr2;
     private int f_membercnt;
     private String f_date;
     private int f_port;
     private int f_joincnt;
-    private String d_suspect;
+    private String d_suspect;	//신고대상
     private String r_date;
     private String r_visit_date;
     private int r_ppl_cnt;
     private String r_menu;
-    private String seq;
+    private String seq;			//시퀀스명
     private int v_star;
-    private String v_fileName;
-    private long v_fileSize;
+    private String v_fileName;	//업로드 파일명
+    private long v_fileSize;	//업로드 파일사이즈
     
     //파일처리할때 필요함 !!!
     MultipartFile file;

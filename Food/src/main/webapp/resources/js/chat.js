@@ -25,7 +25,7 @@
 	};
 	
 	var portnum = $.fn.getUrlParameter('f_port');
-	var userId = $.fn.getUrlParameter('m_id');
+	var userId = $.fn.getUrlParameter('userId');
 	
 	$("#param").text("portnum Value : " + portnum);
 	//alert(portnum);
@@ -58,15 +58,23 @@
 	   if (content == "") {
 
 	   } else {
-		$("#chat").html($("#chat").html() + "<p class='chat_content'>" + sender + " : "
-						+ content + "</p>");
+		 var $usermsg = $("<li class='you'>"+
+					"<div class='entete'>"+
+						"<h2>"+sender+"</h2>"+
+						"<span class='status green'></span>"+
+					"</div>"+
+					"<div class='message'>"+
+					content+
+					"</div>"+
+			"</li>");
+		 $("#chat").append($usermsg);
 
 	}
     }
     
     
     function onOpen(event) {
-    	var $enter = $("<p class='chat_content' style='font-size: 18px'>"+userId+"님이 채팅에 참여하였습니다.</p>");
+    	var $enter = $("<p class='you' style='font-size: 18px'>"+userId+"님이 채팅에 참여하였습니다.</p>");
         $("#chat").append($enter);
     }
     function onError(event) {
@@ -76,8 +84,16 @@
         if (inputMessage.value == "") {
         	alert("메세지를 입력해주세요");
         } else {
-            $("#chat").html($("#chat").html()
-                + "<p class='chat_content'><b class='impress'>"+userId+" : " + inputMessage.value + "</b></p>");
+            var $usermsg = $("<li class='me'>"+
+					"<div class='entete'>"+
+						"<h2>"+userId+"</h2>"+
+						"<span class='status blue'></span>"+
+					"</div>"+
+					"<div class='message'>"+
+					inputMessage.value+
+					"</div>"+
+			"</li>");
+		 $("#chat").append($usermsg);
         }
         webSocket.send($("#chat_id").val() + "|" + inputMessage.value);
         inputMessage.value = "";

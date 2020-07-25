@@ -63,6 +63,14 @@ public class BoardDAOImpl implements BoardDAO {
 		return mybatis.selectOne("boardDAO.boardView",vo);
 	}
 
+	public int searchCount(String searchType, String keyword) {
+		HashMap map = new HashMap();
+		map.put("searchType", searchType);
+		map.put("keyword",keyword);
+		
+		return mybatis.selectOne("boardDAO.searchCount",map);
+	}
+
 
 
 

@@ -88,24 +88,24 @@ $(function(){
 <div class='container'>
 <div class="contact-form-area mb-100">
                         <form action="modifyqna" method="post">
-                            <input type="hidden" name="q_no" value=${list.q_no} readonly>
+                            <input type="hidden" name="b_no" value=${list.b_no} readonly>
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                 	제목
                                     <div class="form-group" style="color:black">
-                                        <input style="color:black" type="text" class="form-control" id="contact-title" name="q_title" value=${list.q_title} readonly>
+                                        <input style="color:black" type="text" class="form-control" id="contact-title" name="title" value=${list.title} readonly>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                 	작성자
                                     <div class="form-group">
-                                        <input style="color:black" type="text" class="form-control" id="contact-writer" name="q_writer" value=${list.q_writer} readonly>
+                                        <input style="color:black" type="text" class="form-control" id="contact-writer" name="userId" value=${list.userId} readonly>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                 	내용
                                     <div class="form-group">
-                                        <textarea style="color:black" class="form-control" id="message" cols="30" rows="10" name="q_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" readonly>${list.q_content}</textarea>
+                                        <textarea style="color:black" class="form-control" id="message" cols="30" rows="10" name="b_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" readonly>${list.b_content}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">

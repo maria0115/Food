@@ -45,7 +45,7 @@
 			<div class="row">
 				<div class="col-md-12 form-group">
 					<label class="text-black font-weight-bold" for="id">ID</label>
-					<input id="id" class="form-control" name="m_id">
+					<input id="id" class="form-control" name="userId">
 				</div>
 			</div>
 			<div class="row">
@@ -59,7 +59,7 @@
 						<div class="icon">
 							<span class="ion-ios-arrow-down"></span>
 						</div>
-						<select name="r_people_count" id="adults" class="form-control">
+						<select name="r_ppl_cnt" id="adults" class="form-control">
 							<option value=1>1</option>
 							<option value=2>2</option>
 							<option value=3>3</option>
@@ -78,7 +78,7 @@
 						<div class="icon">
 							<span class="ion-ios-arrow-down"></span>
 						</div>
-						<select name="r_menu" id="r_menu" class="form-control">
+						<select name="" id="r_menu" class="form-control">
 							<option value="메뉴1">메뉴1</option>
 							<option value="메뉴2">메뉴2</option>
 							<option value="메뉴3">메뉴3</option>
@@ -92,7 +92,7 @@
 						<div class="icon">
 							<span class="ion-ios-arrow-down"></span>
 						</div>
-						<select name="r_menu_count" id="r_menu_count" class="form-control">
+						<select name="" id="r_menu_count" class="form-control">
 							<option value=1>1</option>
 							<option value=2>2</option>
 							<option value=3>3</option>
@@ -107,7 +107,7 @@
 			<div class="row mb-4">
 				<div class="col-md-12 form-group">
 					<label class="text-black font-weight-bold" for="message">Notes</label>
-					<textarea id="r_note" name="r_note" class="form-control"
+					<textarea id="r_note" name="b_content" class="form-control"
 						cols="30" rows="3"></textarea>
 					<!-- 메뉴 선택하면 추가되는 부분 -->
 					<label style="font-weight:bold;color:black">선택한 메뉴</label>
@@ -158,7 +158,7 @@
 <script>
 $(function(){
 	$("#r_menu_count").change(function(){
-		var addlabel = "<input class='input1' style='border:none' name='r_menu1'><hr>"
+		var addlabel = "<input class='input1' style='border:none' name='r_menu'><hr>"
 		$("#div1").append(addlabel)
 
 		

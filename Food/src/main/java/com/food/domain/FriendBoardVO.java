@@ -2,7 +2,7 @@ package com.food.domain;
 
 public class FriendBoardVO {
 	
-	private int f_no; //글번호
+	private int b_no; //글번호
 	private String f_title; //글제목 
 	private String m_id; //작성자
 	private String f_content; //글내용
@@ -13,9 +13,22 @@ public class FriendBoardVO {
 	private String f_date; //등록일
 	private String f_joindate; //약속날짜
 	private int f_port; //생성된 포트번호
+	private int joincnt; //참여확정인원
 	
 	
 	
+	public int getB_no() {
+		return b_no;
+	}
+	public void setB_no(int b_no) {
+		this.b_no = b_no;
+	}
+	public int getJoincnt() {
+		return joincnt;
+	}
+	public void setJoincnt(int joincnt) {
+		this.joincnt = joincnt;
+	}
 	public String getF_joindate() {
 		return f_joindate;
 	}
@@ -39,12 +52,6 @@ public class FriendBoardVO {
 	}
 	public void setF_port(int f_port) {
 		this.f_port = f_port;
-	}
-	public int getF_no() {
-		return f_no;
-	}
-	public void setF_no(int f_no) {
-		this.f_no = f_no;
 	}
 	public String getF_title() {
 		return f_title;

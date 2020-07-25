@@ -50,7 +50,7 @@ public class IndexController {
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		model.addAttribute("paging", vo); //페이징처리를 위한  가져온 값 넘기기 
 		model.addAttribute("friendlist", boardService.selectBoard(bvo, vo, null, null)); //상품별 리뷰 가져온 목록 model에 저장
-		
+		model.addAttribute("joincnt",friendBoardService.getjoinCnt(bvo));
 		return "index/mealFriends";
 	}
 	

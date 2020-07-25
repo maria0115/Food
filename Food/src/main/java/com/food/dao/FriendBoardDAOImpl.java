@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
 import com.food.domain.PagingVO;
 
@@ -61,6 +62,20 @@ public class FriendBoardDAOImpl implements FriendBoardDAO{
 	public Integer friendsdelete(FriendBoardVO vo) {
 		System.out.println("friendsdelete 도착");
 		return mybatis.delete("friendDAO.friendsdelete",vo);
+	}
+
+	//밥친구 확정
+	@Override
+	public Integer mealjoin(BoardVO vo) {
+		System.out.println("mealjoin 도착");
+		return mybatis.insert("friendDAO.mealjoin",vo);
+	}
+
+	//밥친구 확정자 인원수 가져오기 
+	@Override
+	public List<FriendBoardVO> getjoinCnt(BoardVO vo) {
+		
+		return mybatis.selectList("friendDAO.getjoinCnt",vo);
 	}
 
 }

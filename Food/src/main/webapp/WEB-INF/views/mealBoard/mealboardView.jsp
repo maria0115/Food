@@ -55,7 +55,8 @@
 				<tr>
 					<td width="100">참여인원</td>
 					<td align="left">${board.f_membercnt}
-					<input class="btn btn-dark" type="button" id="joinBtn" style="margin-left: 15%" value="참가하기">
+					<input class="btn btn-dark" type="button" id="joinBtn" style="margin-left: 15%" value="참가하기"
+					 onclick="location.href='../mealBoard/mealjoin.do?b_no=${board.b_no}&userId=${sessionScope.user_id }'">
 					</td>
 				</tr>
 				<tr>
