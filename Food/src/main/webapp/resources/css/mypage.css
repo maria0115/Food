@@ -1,7 +1,7 @@
 .modifybtn{
 	font-size: xx-large;
     font-weight: bold;
-    font-family: cursive;
+    font-family: auto;
 }
 
 
@@ -46,7 +46,7 @@ font-family: serif;
     color: #fff;
     line-height: inherit;
     text-transform: uppercase;
-    background-color: orangered;
+    background-color: black;
     text-align: center;
 }
 
