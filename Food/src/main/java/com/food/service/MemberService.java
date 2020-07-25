@@ -22,7 +22,10 @@ public interface MemberService {
 	public MemberVO userSignIn(MemberVO vo);
 	
 	public List<ProductVO> search(String value);
-	//인증관련 메서드
-	public void authentication(MemberVO vo); 
+	//회원 탈퇴
+	public void deleteMember(MemberVO vo);
+	//회원정보 수정하기
+	public void updateMember(MemberVO vo);
+	
 	
 }

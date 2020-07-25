@@ -64,10 +64,20 @@ public class MemberDAOImpl  implements MemberDAO{
 		return mybatis.selectList("memberDAO.search",value);
 	}
 
-	//인증하는 메서드
+	
+
+
 	@Override
-	public void authentication(MemberVO vo) {
-			mybatis.insert("memberDAO.authentication",vo);
+	public void updateMember(MemberVO vo) {
+		mybatis.update("memberDAO.updateMember",vo);
+		
+	}
+
+
+	@Override
+	public void deleteMember(MemberVO vo) {
+		mybatis.delete("memberDAO.deleteMember",vo);
+		
 	}
  
 	

@@ -79,10 +79,20 @@ public class MemberServiceImpl  implements MemberService{
 		return memberdao.search(value);
 	}
 
-	//인증관련 메서드
+
+
+
 	@Override
-	public void authentication(MemberVO vo) {
-		 memberdao.authentication(vo);
+	public void updateMember(MemberVO vo) {
+		memberdao.updateMember(vo);
+		
+	}
+
+
+	@Override
+	public void deleteMember(MemberVO vo) {
+		memberdao.deleteMember(vo);
+		
 	}
 
  

@@ -270,6 +270,24 @@ public class MemberController {
 		        return check;
 		   
 		    }
+		    
+		    
+		    //회원정보 수정하는 메서드
+		    @RequestMapping("/modify.do")
+		    public String memberUpdate(MemberVO vo){
+		        memberService.updateMember(vo);
+		        return "redirect:mypage.do";
+		    } 
+		    
+		    
+		    //회원 탈퇴하기
+		    @RequestMapping("/deleteMember.do")
+		    public void memberDelete(MemberVO vo ){
+		        memberService.deleteMember(vo);
+		        
+		    } 
+		    
+		    
 }
 			 
 			

@@ -55,5 +55,27 @@ values(#{m_id},#{m_name},#{m_pass},#{m_tel},#{m_birth},#{m_area},#{m_most},#{m_e
 </insert>
 
 
+<update id="updateMember">
+        UPDATE member
+        SET
+            m_pass = #{m_pass},
+            m_name = #{m_name},
+            m_birth = #{m_birth},
+            m_email = #{m_birth},
+            m_tel = #{m_tel},
+            m_area= #{m_area},
+            m_post = #{m_post}
+           
+        WHERE
+            m_id = #{m_id}    
+    </update>
+
+<delete id="deleteMember">
+
+delete from member where m_id =#{m_id}
+
+</delete>
+
+
 
 </mapper>

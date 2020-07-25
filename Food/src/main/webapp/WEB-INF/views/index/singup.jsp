@@ -218,7 +218,7 @@
 			</ul>
 			<p></p>
 		<div class="move">
-		<input class ="btn btn-danger" type="submit" value="전송"  id="submit">	<button id="cancle_btn" class ="btn btn-default">취소하기</button>
+		<input class ="btn btn-danger" type="submit" value="가입하기"  id="submit">	<button id="cancle_btn" class ="btn btn-default">취소하기</button>
 		</div>	
 		</form>
 	</div>

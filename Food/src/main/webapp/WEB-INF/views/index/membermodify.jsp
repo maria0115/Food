@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +38,19 @@
 	display: none;
 }
 </style>
+<style type="text/css">
+.sing2 {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ebebeb;
+    font-size: 14px;
+    color: black;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+</style>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <jsp:include page="header.jsp">
 	<jsp:param value='' name='folder' />
@@ -70,7 +84,7 @@
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="#"><i
 									class="fa fa-home"></i> Home</a></li>
-							<li class="breadcrumb-item active" aria-current="page">회원가입</li>
+							<li class="breadcrumb-item active" aria-current="page">회원 정보 수정</li>
 						</ol>
 					</nav>
 				</div>
@@ -79,150 +93,85 @@
 	</div>
 
 <div class="container">
-		<form action="singupMember.do" method="post" >
+		<form action="modify.do" method="post" >
 			<!-- 아이디 -->
+			<h2 style="color:blue">회원정보 변경 후 수정하기 버튼을 눌러주세요!</h2>
+			<label style="color:red" >아이디는 변경이 불가능합니다.</label> <input type="text" class="sing2" id="id" value='${user_Info.m_id}' 
+				name="m_id"  required readonly="readonly">
+			
+		
 
-			<label >아이디</label> <input type="text" class="sing" id="id"
-				name="m_id" placeholder="ID" required>
-			<div class="check_font" id="id_check"></div>
-			<div class="check_font" id="id_check2"></div>
-
-
-
-			<label>비밀번호</label> <input type="password" class="sing"
-				id="password1" name="m_pass" placeholder="PASSWORD" required>
-			<div class="check_font" id="pw_check"></div>
+			<label>비밀번호 수정</label> <input type="password" class="sing2"
+				id="updatepass1" name="m_pass" placeholder="수정 비밀번호 입력"  required>
+			<div class="check_font"  id="pw_check"></div>
 
 
-			<label>비밀번호 확인</label> <input type="password" class="sing"
-				id="password2" name="password2" placeholder="Confirm Password"
+			<label>수정 비밀번호 확인</label> <input type="password" class="sing2"
+				id="updatepass2" name="password2" placeholder="수정 비밀번호 확인"
 				required>
 			<div class="check_font" id="pw2_check"></div>
 
 			<!-- 이름 -->
 
-			<label>이름</label> <input type="text" class="sing" id="name"
-				name="m_name" placeholder="Name" required>
+			<label>이름 수정</label> <input type="text" class="sing2" id="updatename"
+				name="m_name" value='${user_Info.m_name}'  required>
 			<div class="check_font" id="name_check"></div>
 
 			<!-- 생년월일 -->
 
-			<label>생년월일</label> <input type="text" class="sing" id="birth"
-				name="m_birth" placeholder="ex) 19990415" required>
+			<label>생년월일 수정</label> <input type="text" class="sing2" id="updatebirth"
+				name="m_birth" value='${user_Info.m_birth}'  required>
 			<div class="check_font" id="birth_check"></div>
 
 			<!-- 본인확인 이메일 -->
 	
-			
-
- 			
- 			   
-                <label>	<span style="color: green; font-weight: bold;">이메일 인증 (이메일을 인증 받아야 다음 단계로 넘어갈 수 있습니다.)</span></label> <input type="text" class="sing" name="m_email"
-				id="email" placeholder="E-mail" required>
+   <label>	<span style="color: red; font-weight: bold;">이메일 수정 (이메일을 인증후 수정 가능합니다.)</span></label> <input type="text" class="sing2" name="m_email"
+				id="updateMail" value="${user_Info.m_email}" required>
 				<div class="check_font" id="email_check"></div>
 				<div class="check_font" id="email_check2"></div>          
-			    <input type="button"  id="emailsend" class ="btn btn-warning" value="이메일 인증받기 (이메일 보내기)"/>
+			    <input type="button"  id="emailsend1" class ="btn btn-warning" value="이메일 인증받기 (이메일 보내기)"/>
  				<p>
  				</p>
         	
-            <label> <span style="color: green; font-weight: bold;">입력한 이메일로 받은 인증번호를 입력하세요. (인증번호가 맞아야 다음 단계로 넘어가실 수 있습니다.)</span></label> <input type="number"  id="checkmail"
-                       class="sing"  placeholder="  인증번호를 입력하세요. "/>
+            <label> <span style="color: green; font-weight: bold;">수정한 이메일로 받은 인증번호를 입력하세요. (인증번호가 맞아야 다음 단계로 넘어가실 수 있습니다.)</span></label> <input type="number"  id="checkmail"
+                       class="sing2"  placeholder="  인증번호를 입력하세요. "/>
                 				             
- 				<input  type ="button" id ="emailsubmit"  class ="btn btn-primary" value ="인증번호 확인 "><br>
+ 				<input  type ="button" id ="emailsubmit1"  class ="btn btn-primary" value ="인증번호 확인 "><br>
  
         	<p></p>
 					
 			<!-- 휴대전화 -->
 
-			<label>휴대전화 </label> <input type="" class="sing" id="phone"
-				name="m_tel" placeholder="Phone Number" required>
+			<label>전화번호 수정</label> <input type="text" class="sing2" id="updatephone"
+				name="m_tel" value='${user_Info.m_tel}'  required>
 			<div class="check_font" id="phone_check"></div>
-
-
-			<label>주소</label>
+	
+	
+			<label>주소 수정</label>
 			<div class="form-group">
-				<input class="sing" style="width: 40%; display: inline;"
-					placeholder="우편번호"  id="addr1" type="text"  name="m_post"
+				<input class="sing2" style="width: 40%; display: inline;"
+					  id="updateaddr" type="text"  name="m_post" value="${user_Info.m_post}"
 					readonly="readonly">
 				<button type="button" class="btn btn-default"
-					onclick="execPostCode();">
+					onclick="execPostCode1();">
 					<i class="fa fa-search"></i> 우편번호 찾기
 				</button>
 			</div>
 			<div class="form-group">
-				<input class="sing" style="top: 5px;" placeholder="도로명 주소"
-					name="m_area" id="addr2" type="text" readonly="readonly" />
-			</div>
-			<div class="form-group">
-				<input class="sing" placeholder="상세주소" 
-					id="detailaddr" type="text" />
+				<input class="sing2" style="top: 5px;"  value="${user_Info.m_area}"
+					name="m_area" id="updateaddr2" type="text" readonly="readonly" />
 			</div>
 
+		
 
-			<label>좋아하는 음식</label>
-
-			<div id="mostfood">
-				<input type="text" id="testInput" placeholder="자동완성" />
-				<input type="button" class="btn btn-info" id="m_most" value="추가">
-			</div>
-
-			
-
-
-
-
-			<ul class="join_box">
-				<li class="checkBox check01">
-					<ul class="clearfix">
-						<li>이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), 프로모션 안내 메일 수신(선택)에 모두
-							동의합니다.</li>
-						<li class="checkAllBtn"><input type="checkbox" name="chkAll"
-							id="chk" class="chkAll"></li>
-					</ul>
-				</li>
-				<li class="checkBox check02">
-					<ul class="clearfix">
-						<li>이용약관 동의(필수)</li>
-						<li class="checkBtn"><input type="checkbox" name="chk"
-							id="check_1"></li>
-					</ul> <textarea name="" id="">여러분을 환영합니다.
-오늘뭐먹지 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 오늘뭐먹지 서비스의 이용과 관련하여 오늘뭐먹지 서비스를 제공하는 1조 주식회사(이하 ‘오늘뭐먹지’)와 이를 이용하는 오늘뭐먹지 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 오늘뭐먹지 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
-       </textarea>
-				</li>
-				<li class="checkBox check03">
-					<ul class="clearfix">
-						<li>개인정보 수집 및 이용에 대한 안내(필수)</li>
-						<li class="checkBtn"><input type="checkbox" name="chk"
-							id="check_2"></li>
-					</ul> <textarea name="" id="">여러분을 환영합니다.
-오늘뭐먹지 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 오늘뭐먹지 서비스의 이용과 관련하여 오늘뭐먹지 서비스를 제공하는 1조 주식회사(이하 ‘오늘뭐먹지’)와 이를 이용하는 오늘뭐먹지 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
-       </textarea>
-				</li>
-				<li class="checkBox check03">
-					<ul class="clearfix">
-						<li>위치정보 이용약관 동의(선택)</li>
-						<li class="checkBtn"><input type="checkbox" name="chk">
-						</li>
-					</ul> <textarea name="" id="">여러분을 환영합니다.
-오늘뭐먹지 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 오늘뭐먹지 서비스의 이용과 관련하여 네이버 서비스를 제공하는 오늘뭐먹지 주식회사(이하 ‘오늘뭐먹지’)와 이를 이용하는 오늘뭐먹지 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 오늘뭐먹지 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
-       </textarea>
-				</li>
-				<li class="checkBox check04">
-					<ul class="clearfix">
-						<li>이벤트 등 프로모션 알림 메일 수신(선택</li>
-						<li class="checkBtn"><input type="checkbox" name="chk">
-						</li>
-					</ul>
-
-				</li>
-			</ul>
-			<p></p>
 		<div class="move">
-		<input class ="btn btn-danger" type="submit" value="전송"  id="submit">	<button id="cancle_btn" class ="btn btn-default">취소하기</button>
-		</div>	
+		<button id="cancle" class ="btn btn-info">돌아가기</button><input class ="btn btn-danger" type="submit" value="수정하기"  id="modify">	
+		<a href = "deleteMember.do?m_id=${user_Info.m_id}"><input type="button" value="회원 탈퇴 하기" class="btn btn-dark" id="deletemember"></a>
+		</div>						
+		
 		</form>
 	</div>
-
+		
 
 
 	<p></p>
@@ -251,40 +200,305 @@
 	<script src="resources/js/active.js"></script>
 
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-	<script>
-	//좋아하는 음식 검색하기   
-	$(function(){
-	$('#testInput').autocomplete({
-	        source : function(reuqest, response) {
-	           var value= $('#testInput').val();
-	        	$.ajax({
-	                type : 'get',
-	                url: 'search.do?value='+value,
-	                dataType : 'json',
-	                success : function(data) {
-	                    //서버에서 json 데이터 response 후 목록 추가
-	                    response(
-	                        $.map(data, function(item) {
-	                        	
-	                            return {
-	                                value : item.p_name_1,
-	                                test : item + 'test'
-	                            }
-	                        })
-	                    );
-	                } 
-	            }); 
-	         }
-	        }).autocomplete('instance')._renderItem = function(ul, item) { // UI 변경 부
-	            return $('<li>') //기본 tag가 li
-	            .append('<div  style="width:auto; height:auto; text-align:center; padding-top:7px; font-size:10pt; border:2px solid skyblue; font-weight: bold; ">' + item.value + '<br>' ) //원하는 모양의 HTML 만들면 됨
-	            .appendTo(ul);
-	        }; 
-	    });
+	
+	<!-- 지섭 -->
+	<script >
+
+
+	$("#deletemember").click(function(){
+		var result = confirm("회원님의 모든 정보가 사라지면서 회원 탈퇴가 진행됩니다 진행 하시겠습니까?");
+		 if(result) {
+			$.ajax({
+				type : 'post',
+				async : true,
+				url : 'logout.do',
+				contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+				success : function(resultData) {
+					
+					//window.location.reload();
+					window.location = "start.jsp";
+					// window.location=document.referrer;
+				}
+			});
+			} 
+			else {
+		
+			}
+		})
+
+	
+	
+	//회원수정시이메일 전송
+	var  check;
+	$("#emailsend1").click(function(){
+		$.ajax({
+	        type:'post',
+	        async:true,
+	        url : 'signEmail.do',
+	        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+	        data : "m_email="+ $("#updateMail").val(),
+	        success : function(resultData){
+	        	alert("입력하신 E-mail 로 인증번호를 발송해 드렸습니다. 확인해주세요 " )
+	        	check = resultData;
+	          
+	        } ,
+	       
+			
+	});	
+	});
+	//이메일 발송후 번호가 맞는지 확인 
+	$("#emailsubmit1").click(function(){
+		$.ajax({
+	        type:'post',
+	        async:true,
+	        url : 'signcheckEmail.do',
+	        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+	        data : "check="+ $("#checkmail").val(),
+	        success : function(resultData){
+	          if(resultData ==check){
+	        	  alert("인증이 완료 되었습니다")
+	          }else{
+	        	  alert("인증번호가 다릅니다.")
+	          }
+	        } 
+			
+	});	
+	});
+
+
+// 회원수정 정규화
+	$("#modify").click(function() {
+							var id = /^[a-z]+[a-z0-9]{5,19}$/g;
+							var email = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+							var name = /^[가-힣]+$/;
+							var birth = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
+							var pass = /^[a-zA-Z0-9]{8,16}/;
+							var pwd1 = $("#updatepass1").val();
+							var pwd2 = $("#updatepass2").val();
+							var idcheck =  $("#id_check2").html();
+							var emailcheck = $("#email_check2").html();
+							var mostfood =$(".mostfood").val();
+							var phone = /(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/g;
+							
+							if (!id.test($("#id").val())) {
+							alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
+							return false;							
+							}else if(check == null){
+								alert("이메일 인증후 회원정보 수정이 가능합니다.")
+								return false;
+							}
+							else if(!phone.test($("#updatephone").val())){
+								alert("전화번호 형식을 확인해주세요.")
+								return false;
+							}
+							else if(check !=$("#checkmail").val()){
+								alert("이메일 인증번호가 다릅니다. 이메일 인증후 회원가입 가능합니다.")
+								return false;
+							}
+							else if(emailcheck == "중복된 이메일 입니다"){
+								alert("중복된 이메일입니다. 이메일을 확인하여주세요")
+								return false;
+							}
+							
+								else if (pwd1 != pwd2) {
+								alert("비밀번호가 일치하지 않습니다.")
+								return false;
+							} else if (!email.test($("#updateMail").val())) {
+								alert("이메일 형식을 확인하세요");
+								return false;
+							} else if (!pass.test($("#updatepass1").val())) {
+								alert("비밀번호를 확인해주세요 영문자 혹은 0-9 8자리~16자리 이여야 합니다.");
+								return false;
+							} else if (!name.test($("#updatename").val())) {
+								alert("이름을 확인해주세요");
+								return false;
+							} else if (!birth.test($("#updatebirth").val())) {
+								alert("생년월일을 확인해주세요");
+								return false;
+							} else if ($("#updateaddr2").val() == "") {
+								alert("주소를 입력해주세요");
+								return false;
+							} else {
+								alert("회원 수정이 완료 되었습니다.");
+							}
+						});
+
+
+
+// 주소
+function execPostCode1() {
+	new daum.Postcode({
+		oncomplete : function(data) {
+			// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+			// 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
+			// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+			var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
+			var extraRoadAddr = ''; // 도로명 조합형 주소 변수
+
+			// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+			// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+			if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+				extraRoadAddr += data.bname;
+			}
+			// 건물명이 있고, 공동주택일 경우 추가한다.
+			if (data.buildingName !== '' && data.apartment === 'Y') {
+				extraRoadAddr += (extraRoadAddr !== '' ? ', '
+						+ data.buildingName : data.buildingName);
+			}
+			// 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+			if (extraRoadAddr !== '') {
+				extraRoadAddr = ' (' + extraRoadAddr + ')';
+			}
+			// 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
+			if (fullRoadAddr !== '') {
+				fullRoadAddr += extraRoadAddr;
+			}
+
+			// 우편번호와 주소 정보를 해당 필드에 넣는다.
+			console.log(data.zonecode);
+			console.log(fullRoadAddr);
+
+			$("#updateaddr").val(data.zonecode);
+			$("#updateaddr2").val(fullRoadAddr);
+
+			/*
+			 * document.getElementById('signUpUserPostNo').value =
+			 * data.zonecode; //5자리 새우편번호 사용
+			 * document.getElementById('signUpUserCompanyAddress').value =
+			 * fullRoadAddr;
+			 * document.getElementById('signUpUserCompanyAddressDetail').value =
+			 * data.jibunAddress;
+			 */
+		}
+	}).open();
+}
+
+
+
+
+
+
+
+
+//취소버튼 클릭시
+$('#cancle').click(function(){
+       event.preventDefault();
+        history.back(); //이전 히스토리 가기
+    });
+    
+//이메일 중복체크  
+$("#updateMail").blur(function(){
+	
+        $.ajax({
+                url : 'checkEmail.do',
+                contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+                data : "m_email="+ $("#updateMail").val(),
+                success : function(resultData){
+                    $("#email_check2").html(resultData);
+                    
+                }
+        });
+        	if($("#updateMail").val()==""){
+            $("#email_check2").html("이메일 작성하세요.");
+        	}
+        });
+
+	
+	$('#updatebirth').focusout(
+					function() {
+
+						var birth = $("#updatebirth").val();
+						var birth2 = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
+						if (birth2.test(birth) === false) {
+							$("#birth_check").html("생년월일을 확인해주세요");
+							birthcheck = false;
+						} else {
+							$("#birth_check").html("올바른 생년월일 입니다.");
+							birthcheck = true;
+						}
+
+					});
+
+	$('#updatename').focusout(function() {
+
+		var name = $("#updatename").val();
+		var name2 = /^[가-힣]+$/;
+		if (name2.test(name) === false) {
+			$("#name_check").html("이름은 한글만 가능합니다.");
+			namecheck = false;
+		} else {
+			$("#name_check").html("유효한 이름 입니다.");
+			namecheck = true;
+		}
+	});
+
+	$('#updateMail').focusout(
+					function() {
+
+						var email = $("#updateMail").val();
+						var email2 = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+						if (email2.test(email) === false) {
+							$("#email_check").html("이메일 형식을 확인해 주세요");
+							emailcheck = false;
+						} else {
+							$("#email_check").html(" 이메일 입력결과");
+							emailcheck = true;
+						}
+					});
+
+$('#updatephone').focusout(function() {
+
+	var phone = $("#updatephone").val();
+	var phone2 = /(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/g
+	if (phone2.test(phone) === false) {
+		$("#phone_check").html("전화번호를 확인해주세요");
+		phonecheck = false;
+	} else {
+		$("#phone_check").html("올바른 전화번호 입니다.");
+		phonecheck = true;
+	}
+});
+
+
+
+	$('#updatepass1').focusout(function() {
+
+		var pwd1 = $("#updatepass1").val();
+		var regexp = RegExp("[a-zA-Z0-9]{8,16}");
+		if (regexp.test(pwd1) === false) {
+			$("#pw_check").html("영문자 혹은 0-9 8자리~16자리");
+			passcheck = false;
+		} else {
+			$("#pw_check").html("유효한 비밀번호입니다.");
+			passcheck = true;
+		}
+	});
+	var passcheck = false;
+	
+	// 비밀번호 일치하는지 확인
+	$('#updatepass2').focusout(function() {
+		var pwd1 = $("#updatepass1").val();
+		var pwd2 = $("#updatepass2").val();
+
+		if (pwd1 != '' && pwd2 == '') {
+			null;
+		} else if (pwd1 != "" || pwd2 != "") {
+			if (pwd1 == pwd2) {
+				$("#pw2_check").html("비밀번호가 일치합니다");
+				passcheck = true;
+			} else {
+				$("#pw2_check").html("비밀번호가 불일치합니다");
+				passcheck = false;
+			}
+		}
+	});
+
+
+
+
 
 	</script>
-	<!-- 지섭 -->
-
 
 
 

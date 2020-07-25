@@ -20,5 +20,7 @@ public interface MemberDAO {
 	
 	public List<ProductVO> search(String value);
 	
-	public void authentication(MemberVO vo); 
+	public void deleteMember(MemberVO vo);
+	
+	public void updateMember(MemberVO vo);
 }
