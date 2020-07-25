@@ -49,7 +49,7 @@ public class BoardVO {
 			this.v_fileName = file.getOriginalFilename();//파일명
 			this.v_fileSize = file.getSize();//파일크기
 			
-			File f=  new File("/Food/resources/upload/"+v_fileName);
+			File f=  new File("C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\upload\\"+v_fileName);
 			try {
 				file.transferTo(f);
 			} catch (Exception e) {

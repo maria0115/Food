@@ -1,5 +1,7 @@
 package com.food.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +10,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.food.domain.BoardVO;
 import com.food.domain.PagingVO;
+import com.food.domain.StoreListVO;
 import com.food.service.FriendBoardService;
+import com.food.service.StoreService;
 import com.food.service.boardService;
 
 @Controller
@@ -24,11 +29,27 @@ public class IndexController {
 	@Autowired
 	boardService boardService;
 	
+	@Autowired
+	StoreService storeService;
+	
 	@RequestMapping("{step}.do")
 	public String page(@PathVariable String step) {
 		System.out.println("여기로");
 		return "index/"+step;
 	}
+	
+	//Header에서 Store List 클릭했을때
+	   @RequestMapping("/store.do")
+	   public ModelAndView getStoreList(StoreListVO vo) {
+	      
+	      System.out.println("스토어 controller 도착");
+	      List<StoreListVO> listVO = storeService.getStoreList(vo);
+	      System.out.println("스토어mapper 갔다옴");
+	      ModelAndView mv = new ModelAndView();
+	      mv.setViewName("index/store");
+	      mv.addObject("listVO",listVO);
+	      return mv;
+	   }
 	
 	//밥친구 게시판 글 목록
 	@RequestMapping("mealFriends.do")
