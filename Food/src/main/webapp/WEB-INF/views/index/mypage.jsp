@@ -37,53 +37,65 @@
 					<table data-vertable="ver4">
 						<thead>
 							<tr class="row100 head">
-								<th colspan="3" class="column100 column8" data-column="column8">My information</th>
-								<th></th>
+								<th colspan="2" class="column100 column8" data-column="column8">My information</th>
+								<th colspan="2" class="column100 column8" data-column="column8">Favorite Food</th>
+								
 							</tr>
 						</thead>
 						<tbody>
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_id</td>
 								<td class="column100 column2" data-column="column2">${user_Info.m_id}</td>
-								<td><button class="btn btn-dark">수정</button></td>
+								<td rowspan="2" class="column100 column1" data-column="column1">1위</td>
+								<td rowspan="2" class="column100 column1" data-column="column1">${user_Info.m_most}</td>
+							
 							</tr>
 
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_name</td>
 								<td class="column100 column2" data-column="column2">${user_Info.m_name}</td>
-								<td><button class="btn btn-dark">수정</button></td>
+								
+								
 							</tr>
 
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_Email</td>
 								<td class="column100 column2"  data-column="column2">${user_Info.m_email}</td>
-								<td><button class="btn btn-dark">수정</button></td>
+								<td rowspan="2" class="column100 column1" data-column="column1">2위</td>
+								<td rowspan="2" class="column100 column1" data-column="column1">${user_Info.m_most}</td>
+								
+							
+							
 							</tr>
   
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_PhoneNumber</td>
 								<td class="column100 column2" data-column="column2">${user_Info.m_tel}</td>
-								<td><button class="btn btn-dark">수정</button></td>
+								
+								
 							</tr>
 
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_BirthDay</td>
 								<td class="column100 column2" data-column="column2">${user_Info.m_birth}</td>
-								<td><button class="btn btn-dark">수정</button></td>
+								<td rowspan="2" class="column100 column1" data-column="column1">3위</td>
+								<td rowspan="2" class="column100 column1" data-column="column1">${user_Info.m_most}</td>
+								
 							</tr>
 
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_Address</td>
 								<td class="column100 column2" data-column="column2">${user_Info.m_area}</td>
-								<td><button class="btn btn-dark">수정</button></td>
+								
+								
 							</tr>
-
-						
-						
-						</tbody>
-					</table>
+							<tr class="row100">
+								<td colspan="4" ><a class="modifybtn">회원 정보 수정</a></td>
+								
+							</tr></tbody>
+							</table> 
 				</div>
-    
+				
     
 	</c:if>
 	
