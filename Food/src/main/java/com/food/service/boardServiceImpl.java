@@ -51,4 +51,10 @@ public class boardServiceImpl implements boardService {
 		return boardDAO.boardView(vo);
 	}
 
+	@Override
+	public int searchCount(String searchType, String keyword) {
+		
+		return boardDAO.searchCount(searchType,keyword);
+	}
+
 }

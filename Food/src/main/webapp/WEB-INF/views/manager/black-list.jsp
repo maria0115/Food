@@ -106,9 +106,9 @@
 										<li><a title="Product List" href="black-list.do"><i
 										class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Black List</span></a></li>
-								<li><a title="Product Edit" href="product-edit.html"><i
-										class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span
-										class="mini-sub-pro">Product Edit</span></a></li>
+								<li><a title="Declaration Board" href="declarationBoard.do"><i
+										class="fa big-icon fa-files-o icon-wrap" aria-hidden="true"></i> <span
+										class="mini-click-non">Declaration Board</span></a></li>
 								<li><a title="Product Detail" href="product-detail.html"><i
 										class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Product Detail</span></a></li>
@@ -337,7 +337,7 @@
 									<div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
 										<div class="header-top-menu tabl-d-n">
 											<ul class="nav navbar-nav mai-top-nav">
-												<li class="nav-item"><a href="#" class="nav-link">Home</a>
+												<li class="nav-item"><a href="Home.do" class="nav-link">Home</a>
 												</li>
 												<li class="nav-item"><a href="#" class="nav-link">About</a>
 												</li>

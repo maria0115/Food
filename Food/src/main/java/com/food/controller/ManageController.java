@@ -1,6 +1,5 @@
 package com.food.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.food.domain.BlackListVO;
+import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.service.BlackService;
 import com.food.service.ManagerService;
+import com.food.service.boardService;
 
 
 @Controller
@@ -32,6 +33,9 @@ public class ManageController {
 	
 	@Autowired
 	private BlackService blackService;
+	
+	@Autowired
+	private boardService boardService;
 	
 	@RequestMapping("/{step}.do")
 	public String page(@PathVariable String step) {
@@ -284,10 +288,89 @@ public class ManageController {
 			
 		}
 		
+		//메인페이지 이동하는 Home 버튼
 		@RequestMapping("/Home.do")
 		public String goHome() {
 			return "redirect:/main.do";
 		}
+		
+		//신고게시판
+		@RequestMapping("/declarationBoard.do")
+		public String declarationBoard(Model model,HttpServletRequest request,String searchClick,PagingVO pvo,@RequestParam(value="nowPage",required=false)String nowPage,@RequestParam(value="cntPerPage",required=false)String cntPerPage,@RequestParam(value="cntHirePage",required=false)String cntHirePage, String searchType, String keyword, BoardVO vo) {
+			
+			int total;//페이징 처리할때 데이터의 총 갯수를 저장할 변수
+			String search = "";//검색을 했는지 여부를 확인할 변수 선언
+			//vo.setSeq("Declaration_SEQ");
+			if(searchType!=null) {
+				if(searchType.equals("작성자")==true) {
+					searchType="userId";
+				}else if(searchType.equals("글번호")==true) {
+					searchType="b_no";
+				}else if(searchType.equals("게시판")==true) {
+					searchType="boardType";
+				}
+			}
+			search = searchType; //검색할때 선택한 검색타입을 받아온다
+			allCount =boardService.countBoard(vo); //데이터의 총 갯수
+			
+			
+			if(search==null || search.equals("")) {//검색을 하지 않았을 경우
+				
+				total=allCount; //total에 데이터의 총 갯수를 저장
+				curCount=allCount; //검색을 하지 않았기 때문에 현재 검색한 데이터의 갯수를 저장하는 curCount 변수에 데이터의 총 갯수를 저장
+				searchType =null;  //mapper에서 오류를 방지하기위헤 searchType에 null값을 저장
+				keyword=null;	   //mapper에서 오류를 방지하기위헤 keyword에 null값을 저장
+			}else{//검색을 했을 경우
+				
+				//검색한 데이터의 갯수를 curCount에 저장
+				curCount =boardService.searchCount(searchType,keyword);
+				
+				//검색버튼을 클릭했을 경우 페이지를 1페이지부터 보여준다
+				if(searchClick.equals("Y")==true) {
+					nowPage="1";
+				}
+				
+				//총 갯수에 현재 검색한 데이터의 갯수를 저장
+				total=curCount;
+			}
+			
+			//페이지 처음 들어갈때 nowPage와 cntPerPage가 없을 경우
+			if (nowPage == null && cntPerPage == null) {
+				nowPage = "1";
+				cntPerPage = "5";
+			//nowPage만 null일 경우
+			} else if (nowPage == null) {
+				nowPage = "1";
+			//cntPerPage만 null일 경우
+			} else if (cntPerPage == null) { 
+				cntPerPage = "5";
+			}
+
+			//PagingVO생성자 함수로 paging 처리 계산하여 pvo에 객체 생성
+			pvo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+
+			//모델에 "paing" pvo 추가
+			model.addAttribute("paging", pvo);
+//			System.out.println("CntPerPage:"+pvo.getCntPerPage());
+//			System.out.println("EndPage:"+pvo.getEndPage());
+//			System.out.println("LastPage:"+pvo.getLastPage());
+//			System.out.println("NowPage:"+pvo.getNowPage());
+//			System.out.println("StartPage:"+pvo.getStartPage());
+			//모델에 "memList" List 추가 , db에서 조건에 해당하는 상품 목록을 가지고 온다
+		
+		
+			
+			model.addAttribute("declarationList", boardService.selectBoard(vo,pvo,searchType,keyword));
+			
+			//모델에 "searchType" 검색타입 추가
+			model.addAttribute("searchType", searchType);
+			//모델에 "keyword" 검색키워드 추가
+			model.addAttribute("keyword", keyword);
+			
+			return "manager/declarationBoard";
+		}
+		
+		
 		
 	
 }

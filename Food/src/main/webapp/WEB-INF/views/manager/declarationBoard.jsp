@@ -331,7 +331,7 @@
 									<div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
 										<div class="header-top-menu tabl-d-n">
 											<ul class="nav navbar-nav mai-top-nav">
-												<li class="nav-item"><a href="#" class="nav-link">Home</a>
+												<li class="nav-item"><a href="Home.do" class="nav-link">Home</a>
 												</li>                                                                                                                             
 												<li class="nav-item"><a href="#" class="nav-link">About</a>
 												</li>
@@ -1027,12 +1027,15 @@
 									<div class="del-member">
 							<button data-toggle="tooltip" title="Trash" class="chk_del">
 											<i class="fa fa-trash-o" aria-hidden="true"></i>
-							
 							</button>
+							<div class="add-decla">
+								<a href="#" onclick="window.open('addDecla.do','_blank','width=600 ,height=400');">Add Declaration</a>
+							</div>
 							</div>
 							<h4>Declaration Board	</h4>
 							<table>
 								<tr>
+									<th>게시판</th>
 									<th>번호</th>
 									<th>제목</th>
 									<th>작성자</th>
@@ -1040,15 +1043,18 @@
 									<th>조회수</th>
 									<th><div class="check_all"><input type='checkbox' id="check_all"></div></th>
 								</tr>
-								<c:forEach items="${memList }" var="board">
+								<c:forEach items="${declarationList }" var="board">
 									<tr>
-										<td>${member.m_id }</td>
-										<td>${member.m_name }</td>
-										<td>${member.m_tel}</td>
-										<td>${member.m_birth }</td>
-										<td>${member.m_area }</td>
-										<td>${member.m_most}</td>
-										<td>${member.m_email }</td>
+										<td>
+											<c:if test="${board.b_no eq 3}">밥친구</c:if>
+											<c:if test="${board.b_no eq 5}">예약</c:if>
+											<c:if test="${board.b_no eq 4}">Q&A</c:if>
+										</td>
+										<td>${board.title }</td>
+										<td>${board.userId}</td>
+										<td>${board.b_content }</td>
+										<td>${board.b_date }</td>
+										<td>${board.viewCount}</td>
 										<td>
 											<button data-toggle="tooltip" title="Edit"
 												class="pd-setting-ed">
@@ -1057,7 +1063,8 @@
 											<button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="location.href='Delete.do?m_id=${member.m_id}'">
 											<i class="fa fa-trash-o" aria-hidden="true"></i>
 											</button>
-											<input type='checkbox' class='input_check' name="${member.m_id}">
+											<input type='checkbox' class='input_check' name="${board.b_no}">
+											<input type='hidden' class='boardType' name="${board.boardType}"/>
 										</td>
 									</tr>
 								</c:forEach>
@@ -1073,10 +1080,9 @@
 											<div class="form-select-list">
 												<select class="form-control custom-select-value" id="searchType"
 													name="searchType">
-													<option <c:if test="${searchType eq 'm_id'}">selected</c:if>>Id</option>
-													<option <c:if test="${searchType eq 'm_tel'}">selected</c:if>>Tel</option>
-													<option <c:if test="${searchType eq 'm_email'}">selected</c:if>>Email</option>
-													<option <c:if test="${searchType eq 'm_area'}">selected</c:if>>Place</option>
+													<option <c:if test="${searchType eq 'userId'}">selected</c:if>>작성자</option>
+													<option <c:if test="${searchType eq 'b_no'}">selected</c:if>>글번호</option>
+													<option <c:if test="${searchType eq 'boardType'}">selected</c:if>>게시판</option>
 												</select> <input type="text" placeholder="Search..."
 													class="form-control" name='keyword' id='keywordInput' <c:if test="${keyword ne null}">value="${keyword}"</c:if>> <a href="javascript:formname.submit();"
 													class="searchvalue"><i class="fa fa-search"></i></a>

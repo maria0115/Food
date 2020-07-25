@@ -21,5 +21,7 @@ public interface boardService {
 	
 	
 	BoardVO boardView(BoardVO vo);
+
+	int searchCount(String searchType, String keyword);
 	
 }
