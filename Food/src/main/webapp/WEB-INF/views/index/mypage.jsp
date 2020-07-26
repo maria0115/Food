@@ -94,9 +94,26 @@
 								<td colspan="4" ><a href="membermodify.do" class="modifybtn"><button class ="btn btn-dark">수정하기</button></a></td>
 							</tr>
 								
-						
-								
-						
+							<tr class="row100">
+								<th colspan="4" >My history</th>
+							</tr>
+															
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_id</td>
+								<td colspan="3" class="column100 column2" data-column="column2">${user_Info.m_id}</td>
+							</tr>
+								<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_id</td>
+								<td colspan="3" class="column100 column2" data-column="column2">${user_Info.m_id}</td>
+							</tr>
+								<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_id</td>
+								<td colspan="3" class="column100 column2" data-column="column2">${user_Info.m_id}</td>
+							</tr>
+								<tr class="row100">
+								<td class="column100 column1" data-column="column1">User_id</td>
+								<td colspan="3" class="column100 column2" data-column="column2">${user_Info.m_id}</td>
+							</tr>
 							
 							
 							</tbody>
