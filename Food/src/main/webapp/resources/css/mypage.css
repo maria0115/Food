@@ -1,7 +1,9 @@
+.reservation{
+	 width: 100%;
+}
+
 .modifybtn{
-	font-size: xx-large;
-    font-weight: bold;
-    font-family: auto;
+    display: grid;
 }
 
 
@@ -23,11 +25,12 @@
   background: -moz-linear-gradient(-68deg, #ac32e4 , #4801ff);
   background: ivory;
   width: fit-content;
-  margin: auto;
+  width: auto;
 }
 
 .table100.ver4 table {
   background-color: transparent;
+  margin: auto;
 }
 
 .table100.ver4 td {
@@ -480,7 +483,7 @@ font-family: serif;
 .p-t-208 {padding-top: 208px;}
 .p-t-209 {padding-top: 209px;}
 .p-t-210 {padding-top: 210px;}
-.p-t-211 {padding-top: 211px;}
+.p-t-211 {p	dding-top: 211px;}
 .p-t-212 {padding-top: 212px;}
 .p-t-213 {padding-top: 213px;}
 .p-t-214 {padding-top: 214px;}
@@ -1638,7 +1641,7 @@ font-family: serif;
 .m-b-107 {margin-bottom: 107px;}
 .m-b-108 {margin-bottom: 108px;}
 .m-b-109 {margin-bottom: 109px;}
-.m-b-110 {margin-bottom: 110px;}
+.m-b-110 {margin-bottom: 0px;}
 .m-b-111 {margin-bottom: 111px;}
 .m-b-112 {margin-bottom: 112px;}
 .m-b-113 {margin-bottom: 113px;}

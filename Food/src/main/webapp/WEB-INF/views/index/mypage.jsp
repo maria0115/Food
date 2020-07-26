@@ -34,6 +34,7 @@
 	
 	<c:if test="${not empty sessionScope.user_id}">
     	<div class="table100 ver4 m-b-110">
+				<form action="membermodify.do">
 					<table data-vertable="ver4">
 						<thead>
 							<tr class="row100 head">
@@ -90,11 +91,21 @@
 								
 							</tr>
 							<tr class="row100">
-								<td colspan="4" ><a href = "membermodify.do"class="modifybtn">회원 정보 수정</a></td>
+								<td colspan="4" ><a href="membermodify.do" class="modifybtn"><button class ="btn btn-dark">수정하기</button></a></td>
+							</tr>
 								
-							</tr></tbody>
+						
+								
+						
+							
+							
+							</tbody>
 							</table> 
+							</form>
 				</div>
+			
+				
+				
 				
     
 	</c:if>
