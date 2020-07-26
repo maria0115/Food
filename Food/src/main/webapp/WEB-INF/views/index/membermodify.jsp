@@ -102,12 +102,12 @@
 		
 
 			<label>비밀번호 수정</label> <input type="password" class="sing2"
-				id="updatepass1" name="m_pass" placeholder="수정 비밀번호 입력"  required>
+				id="updatepass1" name="m_pass" value="${user_Info.m_pass}"  required>
 			<div class="check_font"  id="pw_check"></div>
 
 
 			<label>수정 비밀번호 확인</label> <input type="password" class="sing2"
-				id="updatepass2" name="password2" placeholder="수정 비밀번호 확인"
+				id="updatepass2" name="password2"  value="${user_Info.m_pass}" 
 				required>
 			<div class="check_font" id="pw2_check"></div>
 
