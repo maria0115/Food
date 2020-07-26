@@ -204,27 +204,27 @@
 	<!-- 지섭 -->
 	<script >
 
-
-	$("#deletemember").click(function(){
+	$(document).on("click","#deletemember",function(){ 
+		event.preventDefault();
 		var result = confirm("회원님의 모든 정보가 사라지면서 회원 탈퇴가 진행됩니다 진행 하시겠습니까?");
-		 if(result) {
-			$.ajax({
-				type : 'post',
-				async : true,
-				url : 'logout.do',
-				contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-				success : function(resultData) {
-					
-					//window.location.reload();
-					window.location = "start.jsp";
-					// window.location=document.referrer;
-				}
-			});
-			} 
-			else {
-		
-			}
-		})
+			if(result) {
+					$.ajax({
+						type : 'post',
+						async : true,
+						url : 'logout.do', 
+						contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+						success : function(resultData) {
+							
+							//window.location.reload();
+							window.location = "start.jsp"; 
+							// window.location=document.referrer;
+						}
+					});
+				} 
+					else {
+				
+					}
+				});
 
 	
 	
@@ -319,7 +319,19 @@
 								alert("주소를 입력해주세요");
 								return false;
 							} else {
-								alert("회원 수정이 완료 되었습니다.");
+								alert("회원 수정이 완료 되었습니다. 다시 로그인 후 이용해주세요.");
+								$.ajax({
+									type : 'post',
+									async : true,
+									url : 'logout.do', 
+									contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+									success : function(resultData) {
+										
+										//window.location.reload();
+										window.location = "start.jsp"; 
+										// window.location=document.referrer;
+									}
+								});
 							}
 						});
 
