@@ -26,6 +26,8 @@
 <script
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
+<script src="/Food/resources/js/storeMap.js"></script>
+
 
 
 <jsp:include page="header.jsp">
@@ -78,12 +80,15 @@
                         <!-- Search by Terms -->
                         <div class="search_by_terms">
                             <form action="#" method="post" class="form-inline">
-                                <select class="custom-select widget-title">
+                                <select class="custom-select widget-title" onchange="fnGetCtgSub(this.value);">
                                   <option selected>Short by Popularity</option>
                                   <option value="1">Short by Newest</option>
                                   <option value="2">Short by Sales</option>
                                   <option value="3">Short by Ratings</option>
                                 </select>
+                                <select name="ctg_sub_name" id="ctg_sub_name">
+                                	<option value="">선택</option>                               
+								</select>
                                 <select class="custom-select widget-title">
                                   <option selected>Show: 9</option>
                                   <option value="1">12</option>
