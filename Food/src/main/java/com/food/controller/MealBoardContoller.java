@@ -1,6 +1,7 @@
 package com.food.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,13 +34,14 @@ public class MealBoardContoller {
 	
 	//밥친구 게시판 글 등록하기 
 	@RequestMapping("/friendsave.do")
-	public String friendsave(BoardVO vo , HttpServletRequest request) {
+	public String friendsave(BoardVO vo , HttpServletRequest request, HttpSession session) {
 		
 		int result;
 		vo.setBoardType(3);
 		vo.setSeq("friend_f_no");
 		System.out.println(vo.getF_addr1());
 		System.out.println(vo.getF_addr2());
+		session.setAttribute("board", vo.getTitle());
 		result = boardService.insertBoard(vo);
 		if(result==0) {
 			return "../index/error";

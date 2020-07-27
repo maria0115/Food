@@ -107,7 +107,19 @@ public class MemberController {
 				session.removeAttribute("user_name");
 				session.removeAttribute("user_id");
 				session.removeAttribute("user_Info");
-				session.invalidate();
+		
+		
+				
+			}
+		 
+		 @ResponseBody
+			@RequestMapping(value="/naverlogout.do")
+			public void naverlogout(HttpSession session) {
+			   // String SESSION_STATE = "oauth_state";
+			   // session.removeAttribute(SESSION_STATE);  
+			  // session.removeAttribute("result"); 
+			
+			 session.invalidate();
 				
 				
 			}

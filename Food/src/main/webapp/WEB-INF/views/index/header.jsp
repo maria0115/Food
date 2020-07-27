@@ -37,7 +37,7 @@
 	$(document).ready(function() {
 		var name = ${result}.response.name;
 		$(".login-header").css("display","none");
-		$(".access").html("<span class='login-font'>"+name+" Welcome.</span><a href='' id='logout' ><button class='logout'>Log-Out</button></a><a href='mypage.do' id='mypage' class='fa fa-user' >My Page</a>");
+		$(".access").html("<span class='login-font'>"+name+" Welcome.</span><a href='' id='naverlogout' ><button class='logout'>Log-Out</button></a><a href='mypage.do' id='mypage' class='fa fa-user' >My Page</a>");
 	  });
 </script>
 

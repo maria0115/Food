@@ -411,6 +411,22 @@ $(document).on("click","#logout",function(){ //$('#logout').click(function() {
 	});
 });
 
+$(document).on("click","#naverlogout",function(){ //$('#logout').click(function() {
+	event.preventDefault();
+	$.ajax({
+		type : 'post',
+		async : true,
+		url : '/Food/naverlogout.do',
+		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+		success : function(resultData) {
+			
+			window.location.reload();
+			
+			// window.location=document.referrer;
+		}
+	});
+});
+
 // 로그인 ajax
 $('#frm').submit(
 				function() {
