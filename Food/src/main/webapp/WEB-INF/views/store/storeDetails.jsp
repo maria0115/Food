@@ -25,6 +25,7 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
 <script src="/Food/resources/js/storeMap.js"></script>
 
+
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
 
@@ -137,6 +138,9 @@
                                     </div>
                                     <button type="submit" name="addtocart" value="5" class="btn alazea-btn ml-15">Add to cart</button>
                                 </form>
+                                <form class="cart clearfix d-flex align-items-center" method="post" style="margin-top: 10px;">
+                                <button type="submit" name="addtocart" value="5" class="btn alazea-btn ml-15"> 예약 </button>
+                                </form>
                                 <!-- Wishlist & Compare -->
                                 <div class="wishlist-compare d-flex flex-wrap align-items-center">
                                     <a href="#" class="wishlist-btn ml-15"><i class="icon_heart_alt"></i></a>
@@ -188,7 +192,7 @@
                                 <a href="#addi-info" class="nav-link" data-toggle="tab" role="tab">Additional Information</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#reviews" class="nav-link" data-toggle="tab" role="tab">Reviews <span class="text-muted">(1)</span></a>
+                                <a href="#reviews" class="nav-link" data-toggle="tab" role="tab" id="ddd">Reviews <span class="text-muted">(1)</span></a>
                             </li>
                         </ul>
                         <!-- Tab Content -->
@@ -225,7 +229,6 @@
                                 	<c:forEach items="${listVO}" var="board">
                                     <div class="comment-wrapper d-flex" style="padding: 25px 0;">
                                         <!-- Comment Meta -->
-                                    	
                                         <div class="comment-author">
                                             <img src="img/bg-img/37.jpg" alt="">
                                         </div>
@@ -256,9 +259,18 @@
                                     
                                 </div>
                                 
+                              	<div>
+    
+    
+    
+   
+</div>
+
+                              	
+                                
 						        <div style="display: block; text-align: center;">		
 								<c:if test="${paging.startPage != 1 }">
-									<a href="../store/storeDetails.do??nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+									<a href="../store/storeDetails.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
 								</c:if>
 								<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
 									<c:choose>
@@ -299,6 +311,15 @@
                                                     </div> -->
                                                 </div>
                                             </div>
+                                            
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                    <label for="name">가게명</label>
+                                                    <input type="text" class="form-control" id="name" name="s_brand_name" placeholder="Nazrul"
+                                                    value="${list.s_brand_name}">
+                                                </div>
+                                            </div>
+                                            
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label for="name">제목</label>

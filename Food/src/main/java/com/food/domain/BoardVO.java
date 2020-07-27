@@ -31,6 +31,8 @@ public class BoardVO {
     private int f_cnt;			
     private int d_fileSize;		//신고파일 파일사이즈
     private String f_userId;
+    private String s_brand_name;
+    			
     
     
     //파일처리할때 필요함 !!!
@@ -244,6 +246,14 @@ public class BoardVO {
 
 	public void setF_userId(String f_userId) {
 		this.f_userId = f_userId;
+	}
+
+	public String getS_brand_name() {
+		return s_brand_name;
+	}
+
+	public void setS_brand_name(String s_brand_name) {
+		this.s_brand_name = s_brand_name;
 	}
     
     

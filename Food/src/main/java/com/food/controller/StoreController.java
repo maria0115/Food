@@ -60,7 +60,7 @@ public class StoreController {
 		vo2.setBoardType(2);
 		int total = boardService.countBoard(vo2);
 		vo3 = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
-		List<BoardVO> listVO = boardService.selectBoard(vo2,vo3, null, null);
+		List<BoardVO> listVO = boardService.selectReview(vo2,vo3, null, null);
 		
 		
 		System.out.println("스토어셀렉mapper 갔다옴");
@@ -74,6 +74,7 @@ public class StoreController {
 		return mv;
 	}
 	
+	// 리뷰등록
 	@RequestMapping(value ="/reviewInsert.do")
 	public String reviewInsert(BoardVO vo ,HttpServletRequest request) throws UnsupportedEncodingException {
 		System.out.println("리뷰인설트 controller 도착");
@@ -83,6 +84,7 @@ public class StoreController {
 		int result;
 		vo.setBoardType(2);
 		vo.setSeq("review_r_no");
+		System.out.println("======================"+vo.getS_brand_name());
 		System.out.println("======================"+vo.getB_content());
 		System.out.println("======================"+vo.getTitle());
 		System.out.println("======================"+vo.getUserId());

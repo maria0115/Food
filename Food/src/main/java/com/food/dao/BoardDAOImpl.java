@@ -81,6 +81,20 @@ public class BoardDAOImpl implements BoardDAO {
 		
 	}
 
+	public List<BoardVO> selectReview(BoardVO vo, PagingVO pvo, String searchType, String keyword) {
+		System.out.println("==>BoardMapper selectReview() 호출");
+		
+		HashMap map = new HashMap();
+		map.put("boardType",vo.getBoardType());
+		map.put("searchType",searchType);
+		map.put("keyword",keyword);
+		map.put("start",pvo.getStart());
+		map.put("end",pvo.getEnd());
+		
+		return mybatis.selectList("boardDAO.selectReview",map);
+		
+	}
+
 
 
 

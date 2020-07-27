@@ -23,5 +23,7 @@ public interface BoardDAO {
 	int searchCount(String searchType, String keyword);
 
 	int mealjoin(BoardVO vo);
+	
+	List<BoardVO> selectReview(BoardVO vo, PagingVO pvo, String searchType, String keyword);
 
 }

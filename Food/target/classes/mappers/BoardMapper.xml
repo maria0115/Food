@@ -33,7 +33,7 @@
 <!-- 게시글 등록 -->
 <insert id="insertBoard" parameterType="board">
       Insert Into board values(#{boardType},${seq}.nextval,#{title},#{userId},#{b_content},sysdate,#{viewCount},#{f_addr1},#{f_addr2},#{f_membercnt},
-      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize},#{f_cnt},#{d_fileName},#{d_fileSize},#{f_userId})
+      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize},#{f_cnt},#{d_fileName},#{d_fileSize},#{f_userId},#{s_brand_name})
 
 </insert>
 
@@ -42,7 +42,7 @@
       Update board set boardType=#{boardType},b_no=#{b_no},title=#{title},userId=#{userId},b_content=#{b_content},
       viewCount=#{viewCount},f_addr1=#{f_addr1},f_addr2=#{f_addr2},f_membercnt=#{f_membercnt},f_date=#{f_date},f_port=#{f_port},f_joincnt=#{f_joincnt},
       d_suspect=#{d_suspect},r_date=#{r_date},r_visit_date=#{r_visit_date},r_ppl_cnt=#{r_ppl_cnt},r_menu=#{r_menu},v_star=#{v_star},v_fileName=#{v_fileName},v_fileSize=#{v_fileSize},f_cnt=#{f_cnt},
-      d_fileName=#{d_fileName},d_fileSize=#{d_fileSize},f_userId=#{f_userId}
+      d_fileName=#{d_fileName},d_fileSize=#{d_fileSize},f_userId=#{f_userId},s_brand_name=#{s_brand_name}
 	  WHERE boardType=#{boardType} AND b_no=#{b_no}
 </update>
 
@@ -70,6 +70,24 @@
 <update id="mealjoin" parameterType="board">
    UPDATE board SET f_cnt = f_cnt+1 ,f_userId = #{f_userId} WHERE boardType=#{boardType} AND b_no=#{b_no}
 </update>
+
+<!--게시글 목록 -->
+<select id="selectReview" parameterType="hashmap" resultType="board">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						select * from board
+						<where>
+							boardType=#{boardType} and s_brand_name = #{s_brand_name}
+							<if test='searchType!=null &amp;&amp; keyword!=null'>AND ${searchType} like '%'||#{keyword}||'%'</if>
+						</where>
+						ORDER BY ROWNUM DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+</select>
+
 
 
 </mapper>

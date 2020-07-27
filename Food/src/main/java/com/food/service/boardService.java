@@ -26,4 +26,6 @@ public interface boardService {
 	
 	int mealjoin(BoardVO vo);
 	
+	public List<BoardVO> selectReview(BoardVO vo,PagingVO pvo,String searchType, String keyword);
+	
 }

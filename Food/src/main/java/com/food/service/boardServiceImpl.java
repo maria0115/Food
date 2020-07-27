@@ -63,4 +63,10 @@ public class boardServiceImpl implements boardService {
 		return boardDAO.mealjoin(vo);
 	}
 
+	@Override
+	public List<BoardVO> selectReview(BoardVO vo, PagingVO pvo, String searchType, String keyword) {
+		
+		return boardDAO.selectReview(vo,pvo,searchType,keyword);
+	}
+
 }
