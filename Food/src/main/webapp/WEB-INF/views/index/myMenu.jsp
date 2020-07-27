@@ -14,14 +14,14 @@
     <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
 
     <!-- Favicon -->
-	<link rel="icon" href="resources/img/core-img/favicon.ico">
+	<link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
 	
 	<!-- Core Stylesheet -->
-	<link rel="stylesheet" href="resources/css/style.css">
-    <link rel="stylesheet" href="resources/css/mymenu.css">
+	<link rel="stylesheet" href="/Food/resources/css/style.css">
+    <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
     
     <jsp:include page="header.jsp">
-		<jsp:param value='' name='folder' />
+		<jsp:param value='../' name='folder' />
 	</jsp:include>
 
 	
@@ -29,6 +29,8 @@
 </head>
 
 <body>
+
+
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-circle"></div>
@@ -59,6 +61,7 @@
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
 
+<%= request.getParameter("m_id") %>
 
     <section class="alazea-portfolio-area section-padding-100-0">
         <div class="container">
@@ -135,15 +138,15 @@
                 <!-- Single Portfolio Area -->
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design wow fadeInUp" data-wow-delay="100ms">
                     <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(resources/img/bg-img/16.jpg);"></div>
+                    <div class="portfolio-thumbnail bg-img" style="background-image: url(/Food/resources/img/bg-img/16.jpg);"></div>
                 	
                     <!-- Portfolio Hover Text -->
                     <div class="portfolio-hover-overlay">
                     <div class="dialog__trigger">
 <!--                         <a href="resources/img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1"> -->
                             <div class="port-hover-text">
-                                <h3>Minimal Flower Store</h3>
-                                <h5>Office Plants</h5>
+                                <h3>${user_Info.m_name}</h3>
+                                <h5>${user_Info.m_email}</h5>
                             </div>
 <!--                         </a> -->
                     </div>
@@ -153,10 +156,10 @@
                 <!-- Single Portfolio Area -->
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms">
                     <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(resources/img/bg-img/17.jpg);"></div>
+                    <div class="portfolio-thumbnail bg-img" style="background-image: url(/Food/resources/img/bg-img/17.jpg);"></div>
                     <!-- Portfolio Hover Text -->
                     <div class="portfolio-hover-overlay">
-                        <a href="resources/img/bg-img/17.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2">
+                        <a href="/Food/resources/img/bg-img/17.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2">
                             <div class="port-hover-text">
                                 <h3>Minimal Flower Store</h3>
                                 <h5>Office Plants</h5>
@@ -252,7 +255,7 @@
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
-    <script src="resources/js/mymenu.js"></script>
+    <script src="/Food/resources/js/mymenu.js"></script>
     <!-- jQuery-2.2.4 js -->
 <!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->
 <!--     Popper js -->

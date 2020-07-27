@@ -3,6 +3,7 @@ package com.food.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.food.domain.BoardVO;
@@ -38,16 +39,14 @@ public class ReservationController {
 	}
 	
 	// mymenu 페이지에서 예약 내역 확인
-//	@RequestMapping("reservSelect")
-//	public ModelAndView reservSelect(BoardVO vo) {
-//		System.out.println("reservSelect 컨트롤러 도착");
-//		vo.setBoardType(5);
-//		vo.setB_no(1000);
-//		BoardVO list = boardService.boardView(vo);
-//		System.out.println("컨트롤 갔다옴");
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("index/myMenu");
+	@RequestMapping("index/myMenu.do")
+	public ModelAndView reservSelect(ReservationVO vo) {
+		System.out.println("reservSelect 컨트롤러 도착");
+		ReservationService.selectReservation(vo);
+		System.out.println("컨트롤 갔다옴");
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index/myMenu");
 //		mv.addObject("list",list);
-//		return mv;
-//	}
+		return mv;
+	}
 }

@@ -6,5 +6,5 @@ public interface ReservationService {
 
 	public void insertReservation(ReservationVO vo);
 	
-	
+	public void selectReservation(ReservationVO vo);
 }

@@ -6,4 +6,6 @@ public interface ReservationDAO {
 
 	public void insertReservation(ReservationVO vo);
 
+	public void selectReservation(ReservationVO vo);
+
 }

@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="reservationDAO">
 
-<select id="selectReserv" resultType="int">
+<select id="seqGet" resultType="int">
 select r_number_seq.nextval from dual
 </select>
 
@@ -14,10 +14,11 @@ FROM(
 select #{r_menu_count} as r_menu_count,#{r_menu} as r_menu,#{m_id},#{r_note} from dual
 )
 <![CDATA[CONNECT BY LEVEL <= LENGTH(REGEXP_REPLACE(r_menu, '[^,]+'))+1]]>
-
 </insert>
 
-
+<select id="selectReserv" parameterType="reservation" resultType="reservation">
+SELECT * FROM reservation WHERE m_id = #{m_id}
+</select>
 
 </mapper>
 

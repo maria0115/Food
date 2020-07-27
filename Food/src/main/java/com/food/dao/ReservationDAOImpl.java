@@ -16,9 +16,14 @@ public class ReservationDAOImpl implements ReservationDAO {
 	@Override
 	public void insertReservation(ReservationVO vo) {
 		System.out.println("insertReservation DAO 도착");
-		int seq = mybatis.selectOne("reservationDAO.selectReserv");
+		int seq = mybatis.selectOne("reservationDAO.seqGet");
 		vo.setR_number(seq);
 		mybatis.insert("reservationDAO.insertReserv", vo);
 	}
 
+	@Override
+	public void selectReservation(ReservationVO vo) {
+		System.out.println("selectReservation DAO 도착");
+		mybatis.selectList("reservationDAO.selectReserv", vo);
+	}
 }
