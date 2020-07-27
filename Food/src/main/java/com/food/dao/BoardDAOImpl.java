@@ -90,6 +90,7 @@ public class BoardDAOImpl implements BoardDAO {
 		map.put("keyword",keyword);
 		map.put("start",pvo.getStart());
 		map.put("end",pvo.getEnd());
+		map.put("s_brand_name", vo.getS_brand_name());
 		
 		return mybatis.selectList("boardDAO.selectReview",map);
 		

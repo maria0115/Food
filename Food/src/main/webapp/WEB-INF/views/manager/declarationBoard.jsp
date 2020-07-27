@@ -1029,7 +1029,7 @@
 											<i class="fa fa-trash-o" aria-hidden="true"></i>
 							</button>
 							<div class="add-decla">
-								<a href="#" onclick="window.open('addDecla.do','_blank','width=1150 ,height=650');">Add Declaration</a>
+								<a href="#" onclick="window.open('addDecla.do','_blank','width=1150 ,height=650');">신고</a>
 							</div>
 							</div>
 							<h4>Declaration Board	</h4>
@@ -1039,14 +1039,15 @@
 									<th>번호</th>
 									<th>제목</th>
 									<th>작성자</th>
+									<th>내용</th>
 									<th>날짜</th>
 									<th>조회수</th>
 									<th><div class="check_all"><input type='checkbox' id="check_all"></div></th>
 								</tr>
 								<c:forEach items="${declarationList }" var="board">
 									<tr>
-										<td>${board.boardType }</td>
-										<td>${board.b_no` }</td>
+										<td>${boardType}</td>
+										<td>${board.b_no }</td>
 										<td>${board.title }</td>
 										<td>${board.userId}</td>
 										<td>${board.b_content }</td>
@@ -1057,7 +1058,7 @@
 												class="pd-setting-ed">
 												<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 											</button> 
-											<button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="location.href='Delete.do?m_id=${member.m_id}'">
+											<button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="location.href='deleteDecla.do?b_no=${board.b_no}'">
 											<i class="fa fa-trash-o" aria-hidden="true"></i>
 											</button>
 											<input type='checkbox' class='input_check' name="${board.b_no}">
@@ -1099,11 +1100,11 @@
 								<div class='pagediv'>
 									<ul class="pagination">
 										<li class="page-item"><a class="page-link"
-												href="../manager/member-list.do?nowPage=${paging.startPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+												href="../manager/declarationBoard.do?nowPage=${paging.startPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 											style="font-size: 20px;">Start</a></li>
 										<c:if test="${paging.nowPage != 1 }">
 											<li class="page-item"><a class="page-link"
-												href="../manager/member-list.do?nowPage=${paging.nowPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+												href="../manager/declarationBoard.do?nowPage=${paging.nowPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 												style="font-size: 20px;">Previous</a></li>
 										</c:if>
 										<c:forEach begin="${paging.startPage }"
@@ -1115,18 +1116,18 @@
 												</c:when>
 												<c:when test="${p != paging.nowPage }">
 													<li class="page-item"><a class="page-link"
-														href="../manager/member-list.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+														href="../manager/declarationBoard.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 														style="font-size: 20px;">${p }</a></li>
 												</c:when>
 											</c:choose>
 										</c:forEach>
 										<c:if test="${paging.nowPage != paging.lastPage}">
 											<li class="page-item"><a class="page-link"
-												href="../manager/member-list.do?nowPage=${paging.nowPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+												href="../manager/declarationBoard.do?nowPage=${paging.nowPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 												style="font-size: 20px;">Next</a></li>
 										</c:if>
 										<li class="page-item"><a class="page-link"
-											href="../manager/member-list.do?nowPage=${paging.lastPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+											href="../manager/declarationBoard.do?nowPage=${paging.lastPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
 											style="font-size: 20px;">End</a></li>
 
 									</ul>

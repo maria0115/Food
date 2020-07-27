@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.food.domain.BlackListVO;
 import com.food.domain.BoardVO;
@@ -362,8 +363,10 @@ public class ManageController {
 		
 		
 			List<BoardVO> a = boardService.selectBoard(vo,pvo,searchType,keyword);
+
+	
 			
-			for(int i=0;i<a.size();i++) {
+			for(int i=0;i<a.size();i++) { 
 				if(a.get(i).getBoardType()==1) {
 					boardType="신고";
 				}else if(a.get(i).getBoardType()==2) {
@@ -377,6 +380,7 @@ public class ManageController {
 				}
 			}
 			
+	
 			
 			model.addAttribute("declarationList", a);
 			
@@ -386,18 +390,34 @@ public class ManageController {
 			model.addAttribute("keyword", keyword);
 			//모델에 "boardType" 게시판타입 추가
 			model.addAttribute("boardType", boardType);
+
 			return "manager/declarationBoard";
 		}
 	
 	@ResponseBody
 	@RequestMapping("/insertDecla.do")
 	public void insertDecla(BoardVO vo) {
-		System.out.println("들어옴");
-		vo.setBoardType(3);
+
+		vo.setBoardType(1);
 		vo.setSeq("DECLARATION_SEQ");
 		
 		boardService.insertBoard(vo);
 
+	}
+	
+	@RequestMapping("/deleteDecla.do")
+	public String deleteDecla(BoardVO vo) {
+		vo.setBoardType(1);
+		
+		
+		int result = boardService.deleteBoard(vo);
+		if(result==1) {
+			return "declarationBoard";
+		}
+		else {
+			return "listFail";
+		}
+		
 	}
 		
 	

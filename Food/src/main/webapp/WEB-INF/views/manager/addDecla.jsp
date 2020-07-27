@@ -26,13 +26,24 @@ $(document).ready(function(){
 				});
 
 	$('#add').click(function(){
-		
-		var queryString = $('form[name=frm]').serialize();
+		alert("aaa");
+		var formData = new FormData($('#frm')[0]);
+// 		formData.append("title",$("input[name=title]").val());
+// 		formData.append("userId",$("input[name=userId]").val());
+// 		formData.append("d_suspect",$("input[name=d_suspect]").val());
+// 		formData.append("b_content",$("textarea[name=b_content]").val());
+// 		formData.append("file2",$("input[name=file2]")[0].files[0]);
+
+
+	
+
+
 		$.ajax({
 			url:"insertDecla.do", 
-			type:"get",
-			dataType:"text",
-			data:queryString, 
+			type:"post",
+			data:formData,
+			processData: false,
+            contentType: false,
 			success:function(result){
 				alert("글등록 성공");
 				opener.location.reload();
@@ -41,6 +52,7 @@ $(document).ready(function(){
 				alert(error);
 			}					
 		});
+		
 		
 			
 		});
@@ -68,8 +80,9 @@ $(document).ready(function(){
 		<h1>신고글 등록</h1>
 		<br />
 	
-		<form method="post"	name="frm">
-	
+		<form method="post" action="insertDecla.do" name="frm" id="frm" enctype="multipart/form-data">
+
+		
 			<table class="table table-striped">
 
 

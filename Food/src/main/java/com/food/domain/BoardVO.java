@@ -29,7 +29,7 @@ public class BoardVO {
     private long v_fileSize;	//업로드 파일사이즈
     private String d_fileName;	//신고파일 파일명
     private int f_cnt;			
-    private int d_fileSize;		//신고파일 파일사이즈
+    private long d_fileSize;		//신고파일 파일사이즈
     private String f_userId;
     private String s_brand_name;
     			
@@ -73,7 +73,7 @@ public class BoardVO {
 			this.v_fileName = file2.getOriginalFilename();//파일명
 			this.v_fileSize = file2.getSize();//파일크기
 			
-			File f=  new File("D:\\RYU\\Food\\Food\\src\\main\\wepapp\\resources\\wepapp\\d_upload"+d_fileName);
+			File f=  new File("D:\\RYU\\Food\\Food\\src\\main\\webapp\\resources\\d_upload"+d_fileName);
 			try {
 				file2.transferTo(f);
 			} catch (Exception e) {
@@ -232,11 +232,11 @@ public class BoardVO {
 		this.f_cnt = f_cnt;
 	}
 
-	public int getD_fileSize() {
+	public long getD_fileSize() {
 		return d_fileSize;
 	}
 
-	public void setD_fileSize(int d_fileSize) {
+	public void setD_fileSize(long d_fileSize) {
 		this.d_fileSize = d_fileSize;
 	}
 
