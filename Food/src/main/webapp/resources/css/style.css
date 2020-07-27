@@ -83,6 +83,13 @@ align-self: center;
 	cursor: pointer;
 	margin-right: 40px;
 }
+#imageE{
+	margin-right: auto;
+    margin-left: auto;
+}
+.breadcrumb-area .top-breadcrumb-area {
+	height:200px !important;
+}
 
 .site-menu-toggle span {
 	display: block;
