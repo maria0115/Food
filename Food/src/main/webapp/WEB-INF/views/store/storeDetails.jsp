@@ -11,13 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- Title -->
-    <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
-
-    <!-- Favicon -->
-	<link rel="icon" href="resources/img/core-img/favicon.ico">
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="resources/css/style.css">
     
 
 
@@ -28,42 +21,13 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-circle"></div>
-        <div class="preloader-img">
-            <img src="img/core-img/leaf.png" alt="">
-        </div>
-    </div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
+<script src="/Food/resources/js/storeMap.js"></script>
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
 
-        <!-- ***** Top Header Area ***** -->
-       
-
-
-                            <!-- Top Header Content -->
-                                <!-- Language Dropdown -->
-
-        <!-- ***** Navbar Area ***** -->
-
-                        <!-- Nav Brand -->
-
-                        <!-- Navbar Toggler -->
-
-                        <!-- Menu -->
-
-                            <!-- Close Button -->
-
-                            <!-- Navbar Start -->
-                            
-
-                                <!-- Search Icon -->
-                               
-                            <!-- Navbar End -->
-
-                    <!-- Search Form -->
                     <div class="search-form">
                         <form action="#" method="get">
                             <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
@@ -138,8 +102,8 @@
 
                     <div class="col-12 col-md-6">
                         <div class="single_product_desc">
-                            <h4 class="title" >  ${list.s_brand_name}  </h4>
-                            <h4 class="price">가격</h4>
+                            <h4 class="title">  ${list.s_brand_name}  </h4>
+                          	<h4></h4>
                             <div class="short_overview">
                                 <p>${list.s_info}</p>
                             </div>
@@ -196,8 +160,9 @@
                                 	
                                 
                                 </p>
-                                <p><span>카테고리:</span> <span>${list.s_category }</span></p>
-                                <p><span>작은카테고리:</span> <span>${list.s_midpart } </span></p>
+                                <p><span>카테고리 :</span> <span>${list.s_category }</span></p>
+                                <p><span>작은카테고리 :</span> <span>${list.s_midpart } </span></p>
+                                <p><span>주소 :</span> <span >${list.s_address } </span></p>
                                 <p>
                                     
                                 </p>
@@ -230,20 +195,15 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade show active" id="description">
                                 <div class="description_area">
-                                    <p>Sed a facilisis orci. Curabitur magna urna, varius placerat placerat sodales, pretium vitae orci. Aliquam erat volutpat. Cras sit amet suscipit magna. Quisque turpis odio, facilisis vel eleifend eu, dignissim ac odio.</p>
-                                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. In scelerisque augue at the moment mattis. Proin vitae arcu sit amet justo sollicitudin tincidunt sit amet ut velit.Proin placerat vel augue eget euismod. Phasellus cursus orci eu tellus vestibulum, vestibulum urna accumsan. Vestibulum ut ullamcorper sapien. Pellentesque molestie, est ac vestibulum eleifend, lorem ipsum mollis ipsum.</p>
-                                </div>
+									<div id="map" style="width: 100%; height: 350px;">
+										<input type="hidden"  id="title" value="${list.s_brand_name}"> 
+										<input type="hidden" id="addr"  value="${list.s_address }">
+									</div>
+								</div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="addi-info">
                                 <div class="additional_info_area">
-                                    <p>${list.s_info}
-                                        <br> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit similique qui, itaque delectus labore.</span></p>
-                                    <p>I have received my order but the wrong item was delivered to me.
-                                        <br> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quam voluptatum beatae harum tempore, ab?</span></p>
-                                    <p>Product Receipt and Acceptance Confirmation Process
-                                        <br> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ducimus, temporibus soluta impedit minus rerum?</span></p>
-                                    <p>How do I cancel my order?
-                                        <br> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum eius eum, minima!</span></p>
+                                    <p style="">${list.s_info}</p>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="reviews">
@@ -251,60 +211,75 @@
                                     <ul>
                                         <li>
                                             <div class="single_user_review mb-15">
+                                            
 												<div class="comment_area clearfix">
-                            <h4 class="headline">2 Comments</h4>
-
+                          
+                      
+                            <h4 class="headline">Comments</h4>
+							
+							
                             <ol>
                                 <!-- Single Comment Area -->
+                                
                                 <li class="single_comment_area">
+                                	<c:forEach items="${listVO}" var="board">
                                     <div class="comment-wrapper d-flex" style="padding: 25px 0;">
                                         <!-- Comment Meta -->
+                                    	
                                         <div class="comment-author">
                                             <img src="img/bg-img/37.jpg" alt="">
                                         </div>
                                         <!-- Comment Content -->
+                                        
                                         <div class="comment-content" >
                                             <div class="d-flex align-items-center justify-content-between">
-                                                <h5>Simona Halep</h5>
-                                                <span class="comment-date">09:00 AM,  20 Jun 2018</span>
+                                                <h5>${board.boardType}</h5>
+                                                <span class="comment-date"> </span>
                                             </div>
-                                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetu adipisci velit, sed quia non numquam eius modi</p>
+                                            <p>${board.b_content}</p>
                                             
                                         </div>
+                                       
                                     </div>
+                                    </c:forEach>
                                     
                                 </li>
-                                
-                                <li class="single_comment_area">
-                                    <div class="comment-wrapper d-flex" style="padding: 25px 0;">
-                                        <!-- Comment Meta -->
-                                        <div class="comment-author">
-                                            <img src="img/bg-img/37.jpg" alt="">
-                                        </div>
-                                        <!-- Comment Content -->
-                                        <div class="comment-content" >
-                                            <div class="d-flex align-items-center justify-content-between">
-                                                <h5>Simona Halep</h5>
-                                                <span class="comment-date">09:00 AM,  20 Jun 2018</span>
-                                            </div>
-                                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetu adipisci velit, sed quia non numquam eius modi</p>
-                                            
-                                        </div>
-                                    </div>
-                                    
-                                </li>
-                                
                             </ol>
+                            
                         </div>
+                       
                                                 
                                             </div>
                                         </li>
                                     </ul>
+                                    
+                                    
                                 </div>
-
+                                
+						        <div style="display: block; text-align: center;">		
+								<c:if test="${paging.startPage != 1 }">
+									<a href="../store/storeDetails.do??nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+								</c:if>
+								<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+									<c:choose>
+										<c:when test="${p == paging.nowPage }">
+											<b>${p }</b>
+										</c:when>
+										<c:when test="${p != paging.nowPage }">
+											<a href="../store/storeDetails.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+										</c:when>
+									</c:choose>
+								</c:forEach>
+								<c:if test="${paging.endPage != paging.lastPage}">
+									<a href="../store/storeDetails.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+								</c:if>
+						        </div>
+						        
+						        
+								
                                 <div class="submit_a_review_area mt-50">
                                     <h4>Submit A Review</h4>
-                                    <form action="reviewInsert.do" method="post" enctype="multipart/form-data" id="reviewInsertFrm">
+                                    <form action="reviewInsert.do?name=${list.s_brand_name}" method="post" enctype="multipart/form-data" id="reviewInsertFrm">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-group d-flex align-items-center">
