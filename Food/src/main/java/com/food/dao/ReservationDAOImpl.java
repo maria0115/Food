@@ -14,10 +14,11 @@ public class ReservationDAOImpl implements ReservationDAO {
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public void reservInsert(ReservationVO vo) {
-		System.out.println("reservInsert DAO 도착");
+	public void insertReservation(ReservationVO vo) {
+		System.out.println("insertReservation DAO 도착");
+		int seq = mybatis.selectOne("reservationDAO.selectReserv");
+		vo.setR_number(seq);
 		mybatis.insert("reservationDAO.insertReserv", vo);
-		
 	}
 
 }

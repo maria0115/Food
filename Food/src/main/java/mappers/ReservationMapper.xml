@@ -3,17 +3,21 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="reservationDAO">
 
+<select id="selectReserv" resultType="int">
+select r_number_seq.nextval from dual
+</select>
+
 <insert id="insertReserv" parameterType="reservation">
-	INSERT INTO reservation
-	(r_id,r_date,r_visit_date,r_people_count,r_menu_count,r_menu,m_id,r_note,r_menu1) 
-	VALUES(id_seq_reservation.nextval,sysdate,#{r_visit_date},#{r_people_count},#{r_menu_count},#{r_menu},#{m_id},#{r_note},#{r_menu1})
+INSERT INTO reservation(r_id,r_date,r_visit_date,r_people_count,r_menu_count,r_menu,m_id,r_note,r_number,r_store_name)
+SELECT id_seq_reservation.nextval as r_id,sysdate,#{r_visit_date},#{r_people_count},REGEXP_SUBSTR(r_menu_count, '[^,]+', 1, LEVEL) AS r_menu_count,REGEXP_SUBSTR(r_menu, '[^,]+', 1, LEVEL) AS r_menu,#{m_id},#{r_note},#{r_number},#{r_store_name}
+FROM(
+select #{r_menu_count} as r_menu_count,#{r_menu} as r_menu,#{m_id},#{r_note} from dual
+)
+<![CDATA[CONNECT BY LEVEL <= LENGTH(REGEXP_REPLACE(r_menu, '[^,]+'))+1]]>
+
 </insert>
 
 
 
-
-
-
-
-
 </mapper>
+

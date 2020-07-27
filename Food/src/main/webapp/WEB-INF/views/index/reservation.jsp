@@ -36,7 +36,6 @@
 
 
 
-
 	<!-- ### 예약 팝업 창 start ### -->
 	<div class="col-md-7 aos-init aos-animate" data-aos="fade-up"
 		data-aos-delay="100" style='margin: auto'>
@@ -44,8 +43,14 @@
 		<form action="reservInsert.do" method="post" class="bg-white p-md-5 p-4 mb-5 border">
 			<div class="row">
 				<div class="col-md-12 form-group">
+					<label class="text-black font-weight-bold" for="store">매장</label>
+					<input id="store" class="form-control" value=<%= request.getParameter("r_store_name") %> name="r_store_name" readonly>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 form-group">
 					<label class="text-black font-weight-bold" for="id">ID</label>
-					<input id="id" class="form-control" name="userId">
+					<input id="id" class="form-control" name="m_id">
 				</div>
 			</div>
 			<div class="row">
@@ -59,7 +64,7 @@
 						<div class="icon">
 							<span class="ion-ios-arrow-down"></span>
 						</div>
-						<select name="r_ppl_cnt" id="adults" class="form-control">
+						<select name="r_people_count" id="adults" class="form-control">
 							<option value=1>1</option>
 							<option value=2>2</option>
 							<option value=3>3</option>
@@ -79,10 +84,9 @@
 							<span class="ion-ios-arrow-down"></span>
 						</div>
 						<select name="" id="r_menu" class="form-control">
-							<option value="메뉴1">메뉴1</option>
-							<option value="메뉴2">메뉴2</option>
-							<option value="메뉴3">메뉴3</option>
-							<option value="메뉴4">메뉴4</option>
+							<option value=<%= request.getParameter("menu1") %>><%= request.getParameter("menu1") %></option>
+							<option value=<%= request.getParameter("menu2") %>><%= request.getParameter("menu2") %></option>
+							<option value=<%= request.getParameter("menu3") %>><%= request.getParameter("menu3") %></option>
 						</select>
 					</div>
 				</div>
@@ -93,6 +97,7 @@
 							<span class="ion-ios-arrow-down"></span>
 						</div>
 						<select name="" id="r_menu_count" class="form-control">
+							<option id="default" disabled="disabled" selected>수량</option>
 							<option value=1>1</option>
 							<option value=2>2</option>
 							<option value=3>3</option>
@@ -107,7 +112,7 @@
 			<div class="row mb-4">
 				<div class="col-md-12 form-group">
 					<label class="text-black font-weight-bold" for="message">Notes</label>
-					<textarea id="r_note" name="b_content" class="form-control"
+					<textarea id="r_note" name="r_note" class="form-control"
 						cols="30" rows="3"></textarea>
 					<!-- 메뉴 선택하면 추가되는 부분 -->
 					<label style="font-weight:bold;color:black">선택한 메뉴</label>
@@ -158,13 +163,14 @@
 <script>
 $(function(){
 	$("#r_menu_count").change(function(){
-		var addlabel = "<input class='input1' style='border:none' name='r_menu'><hr>"
+		var addlabel = "<label>메뉴 :</label><input class='input1' style='border:none;width:170px' name='r_menu' readonly><label>수량 :</label><input class='input2' style='border:none;width:40px' name='r_menu_count' readonly><hr>"
 		$("#div1").append(addlabel)
 
-		
 		var sel_menu = $("#r_menu option:selected").val()
 		var sel_menucount = $("#r_menu_count option:selected").val()
-		$(".input1:last").val("메뉴:"+sel_menu+" 수량:"+sel_menucount)
+		$(".input1:last").val(sel_menu)
+		$(".input2:last").val(sel_menucount)
+		$("#r_menu_count option:eq(0)").prop("selected", true);
 
 
 	$(".button1").click(function(){

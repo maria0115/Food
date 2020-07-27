@@ -14,30 +14,40 @@ import com.food.service.boardService;
 public class ReservationController {
 
 	@Autowired
-	private boardService boardService;
+	private ReservationService ReservationService;
+	
+//	@RequestMapping("reservation.do")
+//	public void reservation(ReservationVO vo) {
+//		System.out.println("reservation controller");
+//		ReservationService.reservation(vo);
+//	}
+//	
 	
 	
+	
+	// 예약 페이지에서 등록
 	@RequestMapping("reservInsert.do")
-	public void reservInsert(BoardVO vo) {
+	public void reservInsert(ReservationVO vo) {
 		System.out.println("reservInsert 컨트롤러 도착");
-		vo.setBoardType(5);
-		vo.setSeq("NO_RESERVATION_SEQ");
-		System.out.println("id:"+vo.getUserId());
+		System.out.println("id:"+vo.getM_id());
 		System.out.println("visit date:"+vo.getR_visit_date());
 		System.out.println("menu:"+vo.getR_menu());
-		boardService.insertBoard(vo);
+		System.out.println("count:"+vo.getR_menu_count());
+		System.out.println("note:"+vo.getR_note());
+		ReservationService.insertReservation(vo);
 	}
 	
-	@RequestMapping("reservSelect")
-	public ModelAndView reservSelect(BoardVO vo) {
-		System.out.println("reservSelect 컨트롤러 도착");
-		vo.setBoardType(5);
-		vo.setB_no(1000);
-		BoardVO list = boardService.boardView(vo);
-		System.out.println("컨트롤 갔다옴");
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index/myMenu");
-		mv.addObject("list",list);
-		return mv;
-	}
+	// mymenu 페이지에서 예약 내역 확인
+//	@RequestMapping("reservSelect")
+//	public ModelAndView reservSelect(BoardVO vo) {
+//		System.out.println("reservSelect 컨트롤러 도착");
+//		vo.setBoardType(5);
+//		vo.setB_no(1000);
+//		BoardVO list = boardService.boardView(vo);
+//		System.out.println("컨트롤 갔다옴");
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("index/myMenu");
+//		mv.addObject("list",list);
+//		return mv;
+//	}
 }

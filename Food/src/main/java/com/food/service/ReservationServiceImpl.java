@@ -13,9 +13,9 @@ public class ReservationServiceImpl implements ReservationService {
 	private ReservationDAO reservdao;
 
 	@Override
-	public void reservInsert(ReservationVO vo) {
-		System.out.println("service reservInsert 도착");
-		reservdao.reservInsert(vo);
+	public void insertReservation(ReservationVO vo) {
+		System.out.println("service insertReservation 도착");
+		reservdao.insertReservation(vo);
 	}
 	
 	

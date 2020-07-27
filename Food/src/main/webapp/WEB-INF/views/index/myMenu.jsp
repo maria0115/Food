@@ -93,14 +93,14 @@
 			<script>
 
 			// ajax
-			$(function(){
-				$(".dialog__trigger").click(function(){
-// 					alert("aa")
-					location.href='reservSelect'
+// 			$(function(){
+// 				$(".dialog__trigger").click(function(){
+// // 					alert("aa")
+// 					location.href='reservSelect'
 
 
-				})
-			})
+// 				})
+// 			})
 			</script>
 
 
@@ -118,7 +118,10 @@
 			<label class="label_name">인원</label><input class="input_name" value=list.r_ppl_cnt><hr>
 			<label class="label_name">메뉴</label><input class="input_name" value=list.r_menu><hr>
 			<label class="label_name">문의</label><input class="input_name" value=list.b_content><hr>
-
+			<tr>
+			<td class="input_name" style="margin:20px">dddd</td>
+			<td class="input_name" style="margin:20px">dddd</td>
+			</tr>
 			<button class="dialog__action">Read more &#8594;</button>
 		</div>
 <!-- 		###################################################### -->
