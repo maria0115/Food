@@ -400,12 +400,12 @@ $(document).on("click","#logout",function(){ //$('#logout').click(function() {
 	$.ajax({
 		type : 'post',
 		async : true,
-		url : 'logout.do',
+		url : '/Food/logout.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		success : function(resultData) {
 			
-			//window.location.reload();
-			window.location = "start.jsp";
+			window.location.reload();
+			
 			// window.location=document.referrer;
 		}
 	});
@@ -422,7 +422,7 @@ $('#frm').submit(
 								.ajax({
 									type : 'post',
 									async : true,
-									url : 'login.do',
+									url : '/Food/login.do',
 									contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 									data : "m_id=" + $('#logid').val()
 											+ "&m_pass=" + $('#logpw').val(),

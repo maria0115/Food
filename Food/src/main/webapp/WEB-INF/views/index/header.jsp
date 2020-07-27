@@ -139,7 +139,7 @@
 								<div class="login">
 									<a href="#" id="loginLabel" class="fa fa-user" >Login</a>
 									<div class="loginbox">
-										<form action="login.do" method="post"  id="frm"  name="frm">
+										<form  method="post"  id="frm"  name="frm">
 											<p>
 												<label for="logid">ID</label>&nbsp&nbsp <input type="text"
 													name="m_id" id="logid" placeholder="ID" />
@@ -157,7 +157,7 @@
 										 
 										<a href="singup.do" class="memberInfo">회원가입 </a> <a
 										href="find_form.do" class="memberInfo">아이디 비밀번호 찾기 </a> 
-											<a id="naver" href="loginview.do">네이버 아이디로 로그인</a>
+											<a id="naver" href="/Food/loginview.do">네이버 아이디로 로그인</a>
 										<div class="closeBtn" >X</div>  
 					
 									</div> 

@@ -80,7 +80,7 @@ public class MemberController {
 
 		 //로그인 구현
 		 @ResponseBody
-		@RequestMapping(value = "login.do",produces = "application/text; charset=utf-8")
+		@RequestMapping(value = "/login.do",produces = "application/text; charset=utf-8")
 			public String login(MemberVO vo, HttpSession session) {
 				MemberVO new_vo = new MemberVO();
 				new_vo =  memberService.userSignIn(vo);
@@ -99,7 +99,7 @@ public class MemberController {
 		 } 
 		 //로그아웃 기능 구현
 		 @ResponseBody
-			@RequestMapping(value="logout.do")
+			@RequestMapping(value="/logout.do")
 			public void logout(HttpSession session) {
 			   // String SESSION_STATE = "oauth_state";
 			   // session.removeAttribute(SESSION_STATE);  

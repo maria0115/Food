@@ -16,10 +16,10 @@
 
     <!-- Favicon -->
 	<link rel="icon" href="resources/img/core-img/favicon.ico">
-	<link rel="stylesheet" href="resources/css/mypage.css">
+	<link rel="stylesheet" href="/Food/resources/css/mypage.css">
 	<!-- Core Stylesheet -->
-	<link rel="stylesheet" href="resources/css/style.css">
-    <link rel="stylesheet" href="resources/css/mymenu.css">
+	<link rel="stylesheet" href="/Food/resources/css/style.css">
+    <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
     
     <jsp:include page="header.jsp">
 		<jsp:param value='' name='folder' />
@@ -146,7 +146,7 @@
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
-    <script src="resources/js/mymenu.js"></script>
+    <script src="/Food/resources/js/mymenu.js"></script>
     <!-- jQuery-2.2.4 js -->
 <!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->
 <!--     Popper js -->
