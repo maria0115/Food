@@ -65,6 +65,7 @@ public class StoreController {
 		
 		System.out.println("스토어셀렉mapper 갔다옴");
 		System.out.println(list+"!!");
+		System.out.println(listVO+"=============================");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("store/storeDetails");
 		mv.addObject("list",list);
