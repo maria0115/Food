@@ -260,15 +260,27 @@
 
 					<!-- Search Form -->
 					<div class="search-form">
-						<form action="#" method="get">
-							<input type="search" name="search" id="search"
-								placeholder="Type keywords &amp; press enter...">
-							<button type="submit" class="d-none"></button>
-						</form>
-						<!-- Close Icon -->
+						
+						<form action="serchboard.do" method="get">
 						<div class="closeIcon">
 							<i class="fa fa-times" aria-hidden="true"></i>
 						</div>
+						<div>
+						<select class="form-control" id="searchType" name="searchType" style="width: 20%; display: inline;">
+							<option value="한식">한식</option>
+							<option value="중식">중식</option>
+							<option value="일식">일식</option>
+							<option value="분식">분식</option>
+							<option value="양식">양식</option>
+							<option value="동남아">동남아</option>
+						</select>
+							<input type="search" name="keyword" id="keyword"
+								placeholder="검색하실 단어를 입력해주세요" style="width: 65%">
+							<button type="submit" class="serchBtn"></button>
+						</div>
+						</form>
+						<!-- Close Icon -->
+						
 					</div>
 				</div>
 			</div>
