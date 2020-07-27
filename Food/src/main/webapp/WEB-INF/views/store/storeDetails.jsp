@@ -138,10 +138,7 @@
                                     </div>
                                     <button type="submit" name="addtocart" value="5" class="btn alazea-btn ml-15">Add to cart</button>
                                 </form>
-                                <form class="cart clearfix d-flex align-items-center" method="post" style="margin-top: 10px;">
-                                <button type="submit" name="addtocart" value="5" class="btn alazea-btn ml-15"> 예약 </button>
-                                </form>
-                                <!-- Wishlist & Compare -->
+                                                              <!-- Wishlist & Compare -->
                                 <div class="wishlist-compare d-flex flex-wrap align-items-center">
                                     <a href="#" class="wishlist-btn ml-15"><i class="icon_heart_alt"></i></a>
                                     <a href="#" class="compare-btn ml-15"><i class="arrow_left-right_alt"></i></a>
@@ -171,7 +168,18 @@
                                     
                                 </p>
                             </div>
-                         
+                         	
+                         	                              <!-- 예약 버튼 -->
+                                <button id="reserv" name="addtocart" value="5" class="btn alazea-btn ml-15"> 예약 </button>
+                                
+                                <script>
+                        $('#reserv').click(function(){
+//                            location.href='../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}'
+                           window.open('../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}','ddd','width=780,height=843,left=500,top=100,location=no,status=no,scrollbars=yes')
+
+                           })
+//                         }
+                                </script>
 
                         </div>
                     </div>
