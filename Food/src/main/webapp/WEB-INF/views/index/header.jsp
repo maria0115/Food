@@ -231,8 +231,8 @@
 										<div id="mySidepanel" class="sidepanel">
 											<a href="javascript:void(0)" class="closebtn"
 												onclick="closeNav()"><font size="10em">×</font></a> <a
-												href="#">한식</a> <a href="#">중식</a> <a href="#">일식</a> <a
-												href="#">양식</a> <a href="#">동남아</a>
+												href="<%=folder %>index/store.do?category='한식'">한식</a> <a href="<%=folder %>index/store.do?category='중식'">중식</a> <a href="<%=folder %>index/store.do?category='일식'">일식</a> <a
+												href="<%=folder %>index/store.do?category='양식'">양식</a> <a href="<%=folder %>index/store.do?category='동남아'">동남아</a>
 										</div> <!--  -------------------------------------------------------- -->
 
 										<!-- END menu-toggle -->

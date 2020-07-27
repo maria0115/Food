@@ -5,7 +5,11 @@
 <html lang="en">
 <% 
 
-// HashMap map = (HashMap)request.getAttribute("map"); 
+HashMap map = (HashMap)request.getAttribute("map"); 
+
+// <jsp:param>의 값 넘겨받기
+String folder = request.getParameter("folder");
+if( folder == null || folder.equals("")) folder="";
 
 %>
 <head>
@@ -75,16 +79,18 @@
 			
 			
 			
-<%-- 			<a href="" style="font-size: 10vw;">현재 <%= map.get("address")%>의 날씨는 <%=map.get("reondo")%>도 <%=map.get("nalsi")%>입니다^^</a> --%>
+			<a href="" style="font-size: 10vw;">현재 <%= map.get("address")%>의 날씨는 <%=map.get("reondo")%>도 <%=map.get("nalsi")%>입니다^^</a>
+			
+	
+			<a href="<%=folder %>index/todayMenu.do?category=<%=map.get("category")%>" style="font-size: 15vw;">오늘은 <%=map.get("category")%>의 <%=map.get("menu")%> 어떠세요? 먹고 싶다면 눌러주세요</a>
+
+			
+			</div>
+<!-- 			<a href="" style="font-size: 10vw;">현재 의 날씨는 도 입니다^^</a> -->
 <!-- 			<p> -->
-<%-- 			<a href="" style="font-size: 15vw;">오늘은 <%=map.get("category")%>의 <%=map.get("menu")%> 어떠세요? 먹고 싶다면 눌러주세요</a> --%>
+<!-- 			<a href="" style="font-size: 15vw;">오늘은 의  어떠세요? 먹고 싶다면 눌러주세요</a> -->
 <!-- 			</p> -->
 <!-- 			</div> -->
-			<a href="" style="font-size: 10vw;">현재 의 날씨는 도 입니다^^</a>
-			<p>
-			<a href="" style="font-size: 15vw;">오늘은 의  어떠세요? 먹고 싶다면 눌러주세요</a>
-			</p>
-			</div>
 			
 			<!-- Post Image -->
 			</div>

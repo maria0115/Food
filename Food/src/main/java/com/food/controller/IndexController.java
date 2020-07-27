@@ -40,14 +40,16 @@ public class IndexController {
 	
 	//Header에서 Store List 클릭했을때
 	   @RequestMapping("/store.do")
-	   public ModelAndView getStoreList(StoreListVO vo) {
-	      
+	   public ModelAndView getStoreList(StoreListVO vo, String category) {
 	      System.out.println("스토어 controller 도착");
 	      List<StoreListVO> listVO = storeService.getStoreList(vo);
 	      System.out.println("스토어mapper 갔다옴");
 	      ModelAndView mv = new ModelAndView();
 	      mv.setViewName("index/store");
 	      mv.addObject("listVO",listVO);
+	      if(category!=null) {
+	    	  mv.addObject("category",category);
+	      }
 	      return mv;
 	   }
 	

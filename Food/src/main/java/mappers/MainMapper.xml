@@ -6,4 +6,20 @@
 		SELECT * FROM member where m_id=#{m_id}
 
 </select>
+<select id="othermost"  resultType="reservation">
+SELECT *
+FROM reservation
+WHERE m_id IN
+<foreach collection="othermost" item="arr" open="(" close=")" separator=",">
+ #{arr}
+</foreach>
+</select>
+<select id="randomlist" resultType="product" parameterType="String">
+
+select p.P_NAME_1 P_NAME_1,p.S_BRAND_NAME S_BRAND_NAME
+from store s inner join product p
+on s.S_BRAND_NAME = p.S_BRAND_NAME
+where s.s_category = #{value}
+
+</select>
 </mapper>
