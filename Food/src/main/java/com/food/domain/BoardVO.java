@@ -70,10 +70,10 @@ public class BoardVO {
 		
 		if(!file2.isEmpty()) { //파일이 있다면!
 			//MultipartFile에서 파일명과 크기만 얻어오기 -> DB입력
-			this.v_fileName = file2.getOriginalFilename();//파일명
-			this.v_fileSize = file2.getSize();//파일크기
+			this.d_fileName = file2.getOriginalFilename();//파일명
+			this.d_fileSize = file2.getSize();//파일크기
 			
-			File f=  new File("D:\\RYU\\Food\\Food\\src\\main\\webapp\\resources\\d_upload"+d_fileName);
+			File f=  new File("D:\\RYU\\Food\\Food\\src\\main\\webapp\\resources\\d_upload\\"+d_fileName);
 			try {
 				file2.transferTo(f);
 			} catch (Exception e) {
