@@ -64,7 +64,8 @@
                     <!-- Section Heading -->
                     <div class="section-heading">
                         <h2>사진입력란</h2>
-                        <p>사진을 입력하시고 SEND 버튼을 눌러주세요. 그럼 칼로리가 떠요!</p>
+                        <p>사진을 입력하시고 SEND 버튼을 눌러주세요. </p>
+                        그럼 칼로리가 떠요!
                     </div>
                     <!-- Contact Form Area -->
                     <div class="contact-form-area mb-100">

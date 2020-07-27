@@ -110,49 +110,49 @@ public class MainController {
 				e.printStackTrace();
 			}
 
-			String most="";
-			Client client = new Client(resultweather,resulttemp,most,what);	//1
-			String result = client.getResult();
-			ServletOutputStream out;
-			System.out.println("result :"+result);
-
-			System.out.println("hi main");
-
-			JSONParser reparser = new JSONParser();
-			Object obj;
-			String reondo="";
-			String nalsi="";
-			String category="";
-			String menu="";
-			String address="";
-			try {
-				obj = reparser.parse( result );
-				JSONObject jsonObj = (JSONObject) obj;
-				reondo = (String) jsonObj.get("온도");
-				nalsi = (String) jsonObj.get("날씨");
-				category = (String) jsonObj.get("카테고리");
-				menu = (String) jsonObj.get("메뉴");
-				address = (String) jsonObj.get("주소");
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-
-
-			map.put("reondo", reondo.toString());
-			map.put("nalsi", nalsi.toString());
-			map.put("category", category.toString());
-			map.put("menu", menu.toString());
-			map.put("address", address.toString());
+//			String most="";
+//			Client client = new Client(resultweather,resulttemp,most,what);	//1
+//			String result = client.getResult();
+//			ServletOutputStream out;
+//			System.out.println("result :"+result);
+//
+//			System.out.println("hi main");
+//
+//			JSONParser reparser = new JSONParser();
+//			Object obj;
+//			String reondo="";
+//			String nalsi="";
+//			String category="";
+//			String menu="";
+//			String address="";
+//			try {
+//				obj = reparser.parse( result );
+//				JSONObject jsonObj = (JSONObject) obj;
+//				reondo = (String) jsonObj.get("온도");
+//				nalsi = (String) jsonObj.get("날씨");
+//				category = (String) jsonObj.get("카테고리");
+//				menu = (String) jsonObj.get("메뉴");
+//				address = (String) jsonObj.get("주소");
+//			} catch (ParseException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//
+//
+//
+//			map.put("reondo", reondo.toString());
+//			map.put("nalsi", nalsi.toString());
+//			map.put("category", category.toString());
+//			map.put("menu", menu.toString());
+//			map.put("address", address.toString());
 		}
 		//		System.out.println(map.get("reondo"));
 		ModelAndView mv= new ModelAndView();
 		mv.setViewName("index/main");
 	
-		if(what.equals("main")) {
-			mv.addObject("map",map);
-		}
+//		if(what.equals("main")) {
+//			mv.addObject("map",map);
+//		}
 		
 		
 		return mv;

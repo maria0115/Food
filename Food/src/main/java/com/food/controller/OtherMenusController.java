@@ -30,47 +30,47 @@ public class OtherMenusController {
 	public ModelAndView othermenulist(HttpServletRequest request, HttpServletResponse response,HttpSession session) {
 		System.out.println("choiceMenu 들어옴");
 //		System.out.println(session.getAttribute("user_id"));
-		String m_id =(String) session.getAttribute("user_id");
-		String what="other";
-		m_id="mariaa";
-		List<String> list = new ArrayList<String>();
-		if(m_id!=null) {
-			MemberVO result = service.othermenulist(m_id);
-			System.out.println("********************"+result.getM_most());
-			String most = result.getM_id();
-			String resultweather="";
-			String resulttemp="";
-			
-			Client client = new Client(resultweather,resulttemp,most,what);	//1
-			String resultmost = client.getResult();
-			ServletOutputStream out;
-			System.out.println("result :"+resultmost);
-			String []othermost = resultmost.split(",");
-			//service.
-			List<ReservationVO> relistvo = service.otherrecomandlist(othermost);
-			
-			if (relistvo!=null) {
-				for(int i=0;i<relistvo.size();i++) {
-					ReservationVO vo = new ReservationVO();
-					vo = relistvo.get(i);
-					
-					list.add(vo.getR_menu());
-					
-				}
-				TreeSet<String> distinctlist = new TreeSet<String>(list);
-				list = new ArrayList<String>(distinctlist);
-				
-			}
-		
-		}
+//		String m_id =(String) session.getAttribute("user_id");
+//		String what="other";
+//		m_id="mariaa";
+//		List<String> list = new ArrayList<String>();
+//		if(m_id!=null) {
+//			MemberVO result = service.othermenulist(m_id);
+//			System.out.println("********************"+result.getM_most());
+//			String most = result.getM_id();
+//			String resultweather="";
+//			String resulttemp="";
+//			
+//			Client client = new Client(resultweather,resulttemp,most,what);	//1
+//			String resultmost = client.getResult();
+//			ServletOutputStream out;
+//			System.out.println("result :"+resultmost);
+//			String []othermost = resultmost.split(",");
+//			//service.
+//			List<ReservationVO> relistvo = service.otherrecomandlist(othermost);
+//			
+//			if (relistvo!=null) {
+//				for(int i=0;i<relistvo.size();i++) {
+//					ReservationVO vo = new ReservationVO();
+//					vo = relistvo.get(i);
+//					
+//					list.add(vo.getR_menu());
+//					
+//				}
+//				TreeSet<String> distinctlist = new TreeSet<String>(list);
+//				list = new ArrayList<String>(distinctlist);
+//				
+//			}
+//		
+//		}
 		
 		
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index/choiceMenu");
-		if(m_id!=null) {
-			mv.addObject("list",list);
-		}
+//		if(m_id!=null) {
+//			mv.addObject("list",list);
+//		}
 		return mv;
 		
 	}
