@@ -414,7 +414,7 @@ public class ManageController {
 		int result = boardService.deleteBoard(vo);
 		System.out.println(result);
 		if(result==1) {
-			return "manager/declarationBoard";
+			return "redirect:/manager/declarationBoard.do";
 		}
 		else {
 			return "listFail";

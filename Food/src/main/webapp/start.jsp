@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 
-
 <body>
 
 
@@ -18,7 +17,6 @@
 
 	
 	response.sendRedirect("main.do");
-	
 		//response.sendRedirect("qnaboard.do");
 		
 		
