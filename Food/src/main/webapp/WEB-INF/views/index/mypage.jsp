@@ -97,24 +97,15 @@
 							<tr class="row100">
 								<th colspan="4" >My history</th>
 							</tr>
+							<c:forEach items="${boardlist}" var ="board">
 															
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">내가쓴글</td>
-								<td colspan="3" class="column100 column2" data-column="column2">${board}</td>
-							</tr>
-								<tr class="row100">
-								<td class="column100 column1" data-column="column1">User_id</td>
-								<td colspan="3" class="column100 column2" data-column="column2">${user_Info.m_id}</td>
-							</tr>
-								<tr class="row100">
-								<td class="column100 column1" data-column="column1">User_id</td>
-								<td colspan="3" class="column100 column2" data-column="column2">${user_Info.m_id}</td>
-							</tr>
-								<tr class="row100">
-								<td class="column100 column1" data-column="column1">User_id</td>
-								<td colspan="3" class="column100 column2" data-column="column2">${user_Info.m_id}</td>
+								<td colspan="3" class="column100 column2" data-column="column2">${board.title}</td>
 							</tr>
 							
+							</c:forEach>
+					
 							
 							</tbody>
 							</table> 

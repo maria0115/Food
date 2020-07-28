@@ -130,7 +130,7 @@
 									<c:if test="${not empty sessionScope.user_id}">
 										<span class="login-font">${sessionScope.user_name} Welcome.</span>
 										<a href="" id="logout" ><button class="logout">Log-Out</button></a>
-										<a href="mypage.do" id="mypage" class="fa fa-user" >My Page</a>
+										<a href="/Food/mypage.do" id="mypage" class="fa fa-user" >My Page</a>
 									</c:if>
 								</div>	
 						    <c:if test="${empty sessionScope.user_id }">		

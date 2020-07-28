@@ -3,6 +3,7 @@ package com.food.dao;
 import java.util.List;
 
 import com.food.domain.BoardVO;
+import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 
 public interface BoardDAO {
@@ -11,6 +12,8 @@ public interface BoardDAO {
 
 	int updateBoard(BoardVO vo);
 
+	public List<BoardVO> searchboard(MemberVO mvo);
+	
 
 	int countBoard(BoardVO vo);
 

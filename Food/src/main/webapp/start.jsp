@@ -17,6 +17,7 @@
 
 	
 	response.sendRedirect("main.do");
+	
 		//response.sendRedirect("qnaboard.do");
 		
 		

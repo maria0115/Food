@@ -31,6 +31,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 import com.food.service.MemberService;
+import com.github.scribejava.core.model.OAuthRequest;
+import com.github.scribejava.core.model.Verb;
 import com.google.gson.Gson;
 
 @Controller
@@ -115,10 +117,7 @@ public class MemberController {
 		 @ResponseBody
 			@RequestMapping(value="/naverlogout.do")
 			public void naverlogout(HttpSession session) {
-			   // String SESSION_STATE = "oauth_state";
-			   // session.removeAttribute(SESSION_STATE);  
-			  // session.removeAttribute("result"); 
-			
+		
 			 session.invalidate();
 				
 				

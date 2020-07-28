@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.food.domain.BoardVO;
+import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 
 
@@ -96,6 +97,11 @@ public class BoardDAOImpl implements BoardDAO {
 		
 	}
 
+	@Override
+	public List<BoardVO> searchboard(MemberVO mvo) {
+		return mybatis.selectList("boardDAO.searchboard",mvo);
+	}
+ 
 
 
 

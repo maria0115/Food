@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.food.dao.BoardDAOImpl;
 import com.food.domain.BoardVO;
+import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 
 
@@ -67,6 +68,11 @@ public class boardServiceImpl implements boardService {
 	public List<BoardVO> selectReview(BoardVO vo, PagingVO pvo, String searchType, String keyword) {
 		
 		return boardDAO.selectReview(vo,pvo,searchType,keyword);
+	}
+
+	@Override
+	public  List<BoardVO> searchboard(MemberVO mvo) {
+		return boardDAO.searchboard(mvo);  
 	}
 
 }
