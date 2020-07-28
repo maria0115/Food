@@ -25,6 +25,29 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
 <script src="/Food/resources/js/storeMap.js"></script>
 
+<script>
+
+	function reviewSelect(pagingNum){
+
+		$.ajax({ 
+			type : 'POST',
+			url : '이동할 주소(처리할 모델부분이나 기타)', 
+			data : { 'id' : $('#nickname').val(), 
+				// <input type="text" id=nickname value="rkawk"> input 타입의 id값을 바탕으로 value값을 가져오는 방법 'sn' : '{.sn}' }, 
+			async : false,
+			dataType : 'script', 
+			success : function(data) { data = eval('(' + data + ')'); 
+			if (data == "true") { alert("사용 가능한 닉네임 입니다."); 
+				checkID = $('#nickname').val(); }
+			else { alert("사용 불가능한 닉네임 입니다."); } }, 
+				error : function(xhr, status) { 
+				alert('[' + status + ']\n\n' + xhr.responseText); hasError = true; } 
+			});
+
+			
+	} 
+
+</script>
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
@@ -294,6 +317,12 @@
 									<a href="../store/storeDetails.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 								</c:if>
 						        </div>
+						        
+						        
+						        
+						        
+						        
+						        
 						        
 						        
 								

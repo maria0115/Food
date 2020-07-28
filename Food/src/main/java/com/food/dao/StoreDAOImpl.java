@@ -6,7 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.food.domain.ProductVO;
+import com.food.domain.BoardVO;
 import com.food.domain.StoreListVO;
 
 
@@ -30,6 +30,12 @@ public class StoreDAOImpl implements StoreDAO{
 //		String name = vo.getS_brand_name()+" ";
 //		vo.setS_brand_name(name);
 		return mybatis.selectOne("StoreDAO.selecStore",vo);
+	}
+	@Override
+	public List<BoardVO> reviewSelect(StoreListVO vo) {
+		System.out.println("리뷰다ㅓ오오오오오>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+vo.getS_brand_name());
+		System.out.println("리뷰다ㅓ오오오오오>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+vo.getNowPage());
+		return mybatis.selectList("StoreDAO.selecReview",vo);
 	}
 	
 

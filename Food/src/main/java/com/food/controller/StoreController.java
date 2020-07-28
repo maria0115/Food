@@ -56,11 +56,18 @@ public class StoreController {
 		//매장별 상세보기 
 		StoreListVO list = storeService.storeDetail(vo);
 		
-		//리뷰가져오기 
+		//리뷰가져오기
+		
 		vo2.setBoardType(2);
 		int total = boardService.countBoard(vo2);
 		vo3 = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
-		List<BoardVO> listVO = boardService.selectReview(vo2,vo3, null, null);
+		vo.setNowPage("1");
+		
+		List<BoardVO> listVO = storeService.reviewSelect(vo);
+		int reviewPageCnt = listVO.size();
+		if(reviewPageCnt != 0) {
+			reviewPageCnt=reviewPageCnt/5;
+		}
 		
 		
 		System.out.println("스토어셀렉mapper 갔다옴");
@@ -71,6 +78,7 @@ public class StoreController {
 		mv.addObject("list",list);
 		mv.addObject("listVO",listVO);
 		mv.addObject("paging",vo3);
+		mv.addObject("reviewPageCnt",reviewPageCnt);
 		
 		return mv;
 	}
@@ -98,7 +106,19 @@ public class StoreController {
 		}
 		return "redirect:/store/storeDetails.do?s_brand_name="+name;
 	}
-	
+//	
+//	@RequestMapping("/storeDetails.do")
+//	public ModelAndView reviewSelect(StoreListVO vo){
+//		
+//		storeService.reviewSelect(vo);
+//		ModelAndView mv = new ModelAndView();
+//
+//		return mv;
+//		
+//		//리뷰가져오기 
+//		
+//		
+//	}
 	
 
 	

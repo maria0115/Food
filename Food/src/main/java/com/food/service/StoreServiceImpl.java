@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.dao.StoreDAO;
-import com.food.domain.ProductVO;
+import com.food.domain.BoardVO;
 import com.food.domain.StoreListVO;
 
 
@@ -28,6 +28,16 @@ public class StoreServiceImpl implements StoreService{
 		return storeDAO.storeDetail(vo);
 	}
 
+	@Override
+	public List<BoardVO> reviewSelect(StoreListVO vo) {
+		
+		
+		return storeDAO.reviewSelect(vo);
+		
+		
+	}
+	
+	
 	
 	
 	

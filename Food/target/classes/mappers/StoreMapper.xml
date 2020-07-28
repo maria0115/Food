@@ -11,25 +11,69 @@
 	</select>
 	
 	<select id="selecStore"  parameterType="store" resultType="store">
-		SELECT 		s.s_brand_name as s_brand_name , 
-					s.s_address    as s_address    ,
-					s.s_tel        as s_tel        ,
-					s.s_midpart    as s_midpart    ,
-		  			s.s_category   as s_category   , 
-		  			s.s_info       as s_info       ,
-		   			p.p_id 		   as p_id 		   , 
-		   			p.p_name       as p_name       ,
-		   			p.p_price      as p_price      , 
-		   			p.p_name_1     as p_name_1     ,
-		   			p.p_name_2     as p_name_2     , 
-		   			p.p_name_3     as p_name_3     ,
-		   			p.p_price_1    as p_price_1    , 
-		   			p.p_price_2    as p_price_2    ,
-		   			p.p_price_3    as p_price_3    , 
-		   			p.p_price_3    as p_price_3
-		 FROM STORE S, PRODUCT P
-		 WHERE S.S_BRAND_NAME = P.S_BRAND_NAME and S.S_BRAND_NAME = #{s_brand_name}
+	
+<!-- 	<![CDATA[  -->
+<!-- 	SELECT   EXP.* -->
+<!-- FROM ( -->
+<!-- 	SELECT   ROWNUM AS RNUM, DEP1.* -->
+<!-- 	FROM   ( -->
+<!-- 			SELECT COUNT(1) OVER() AS RCNT, DEP2.* -->
+<!-- 			FROM ( -->
+
+			SELECT s.s_brand_name as s_brand_name , 
+			   s.s_address    as s_address    ,
+			   s.s_tel        as s_tel        ,
+			   s.s_midpart    as s_midpart    ,
+		  	   s.s_category   as s_category   , 
+		  	   s.s_info       as s_info       ,
+		   	   p.p_id 		   as p_id 		   , 
+		   	   p.p_name       as p_name       ,
+		   	   p.p_price      as p_price      , 
+		   	   p.p_name_1     as p_name_1     ,
+		   	   p.p_name_2     as p_name_2     , 
+		   	   p.p_name_3     as p_name_3     ,
+		   	   p.p_price_1    as p_price_1    , 
+		   	   p.p_price_2    as p_price_2    ,
+		   	   p.p_price_3    as p_price_3    , 
+		   	   p.p_price_3    as p_price_3
+		 FROM STORE   S, 
+		      PRODUCT P
+		WHERE S.S_BRAND_NAME = P.S_BRAND_NAME 
+		  AND S.S_BRAND_NAME = #{s_brand_name}
+<!-- 			) DEP2 -->
+<!-- 	) DEP1     -->
+<!-- 	WHERE ROWNUM <= ( TO_NUMBER(#{nowPage})* TO_NUMBER(5)) -->
+<!-- ) EXP -->
+<!-- WHERE EXP.RNUM >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1  -->
+<!--  ]]> -->
 	</select>
+	
+	<select id="selecReview"  parameterType="store" resultType="board">
+	<![CDATA[ 
+SELECT   EXP.* 
+FROM ( 
+	SELECT   ROWNUM AS seq, DEP1.* 
+	FROM   ( 
+			SELECT COUNT(1) OVER() AS viewCount, DEP2.* 
+			FROM ( 
+
+select s_brand_name
+from board
+where boardType = '2'
+and s_brand_name = #{s_brand_name}
+
+) DEP2
+	) DEP1    
+	WHERE ROWNUM <= ( TO_NUMBER(#{nowPage})* TO_NUMBER(5))
+) EXP
+WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1 
+
+			
+ ]]>
+	</select>
+	
+		
+		
 	
 	
 

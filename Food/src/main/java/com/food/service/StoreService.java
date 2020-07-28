@@ -2,7 +2,7 @@ package com.food.service;
 
 import java.util.List;
 
-import com.food.domain.ProductVO;
+import com.food.domain.BoardVO;
 import com.food.domain.StoreListVO;
 
 public interface StoreService {
@@ -11,6 +11,9 @@ public interface StoreService {
 
 	StoreListVO storeDetail(StoreListVO vo);
 
+	List<BoardVO> reviewSelect(StoreListVO vo);
+
+	
 	
 	
 	

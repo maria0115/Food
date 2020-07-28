@@ -26,6 +26,11 @@ public class StoreListVO{
 	private String p_price_1;
 	private String p_price_2;
 	private String p_price_3;
+	private String pageNum;
+	private String cnt;
+	private String rowNum;
+	private String nowPage;
+	
 	
 	
 	
@@ -142,6 +147,32 @@ public class StoreListVO{
 	public void setP_price_3(String p_price_3) {
 		this.p_price_3 = p_price_3;
 	}
+	public String getPageNum() {
+		return pageNum;
+	}
+	public void setPageNum(String pageNum) {
+		this.pageNum = pageNum;
+	}
+	public String getCnt() {
+		return cnt;
+	}
+	public void setCnt(String cnt) {
+		this.cnt = cnt;
+	}
+	public String getRowNum() {
+		return rowNum;
+	}
+	public void setRowNum(String rowNum) {
+		this.rowNum = rowNum;
+	}
+	public String getNowPage() {
+		return nowPage;
+	}
+	public void setNowPage(String nowPage) {
+		this.nowPage = nowPage;
+	}
+	
+	
 	
 	
 	
