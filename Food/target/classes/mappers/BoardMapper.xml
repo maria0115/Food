@@ -88,6 +88,14 @@
 	WHERE RN BETWEEN #{start} AND #{end}
 </select>
 
+<select id="searchboard" parameterType="member" resultType="board">
+select * 
+from member m, board b
+where b.userid =  m.m_id AND b.userid=#{m_id}
+
+
+
+</select>
 
 
 </mapper>
