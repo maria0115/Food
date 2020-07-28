@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
@@ -88,18 +89,41 @@ public class MealBoardContoller {
 		return "redirect:../index/mealFriends.do";
 	}
 	
+//	//참가하기 버튼눌렀을때 
+//	@RequestMapping("/mealjoin.do")
+//	public String mealjoin(BoardVO vo , Model model) {
+//		int result;
+//		vo.setBoardType(3);
+//		result = boardService.mealjoin(vo);
+//		if(result==0) {
+//			return "index/error";
+//		}
+//		return "redirect:../index/mealFriends.do";
+//	}
+
 	//참가하기 버튼눌렀을때 
-	@RequestMapping("/mealjoin.do")
-	public String mealjoin(BoardVO vo , Model model) {
-		int result;
-		vo.setBoardType(3);
-		result = boardService.mealjoin(vo);
-		if(result==0) {
-			return "index/error";
+		@RequestMapping("/mealjoin.do")
+		public String mealjoin(BoardVO vo , Model model,@RequestParam(value="f_userId")String f_userId,
+				@RequestParam(value="b_no")int b_no) {
+				
+			System.out.println(f_userId);
+			System.out.println(b_no);
+			
+			int result;
+			String msg="";
+			vo.setBoardType(3);
+			vo.setF_userId(f_userId);
+			vo.setB_no(b_no);
+			result = boardService.mealjoin(vo);
+			if(result==0) {
+				msg = "에러입니다";
+				return msg;
+			}else {
+				
+				msg = "참가중";
+				return msg;
+			}
 		}
-		return "redirect:../index/mealFriends.do";
-	}
-	
 	
 	
 	

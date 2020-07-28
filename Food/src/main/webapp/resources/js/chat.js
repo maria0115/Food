@@ -56,8 +56,9 @@
         var content = message[1];
         
 
-	   if (content == "") {
-
+	   if (!sender.match(userId) && content == "") {
+		   var $enter = $("<p class='you' style='font-size: 16px ;color: red;'>"+sender+"님이 채팅에 참여하였습니다.</p>");
+	        $("#chat").append($enter);
 	   } else {
 		 var $usermsg = $("<li class='you'>"+
 					"<div class='entete'>"+
@@ -71,12 +72,13 @@
 		 $("#chat").append($usermsg);
 
 	}
-    }
+   }
     
     
     function onOpen(event) {
-    	var $enter = $("<p class='you' style='font-size: 18px'>"+userId+"님이 채팅에 참여하였습니다.</p>");
+    	var $enter = $("<p class='you' style='font-size: 18px'>채팅에 입장하셨습니다.</p>");
         $("#chat").append($enter);
+        webSocket.send($("#chat_id").val()+ "|");
     }
     function onError(event) {
         alert(event.data);

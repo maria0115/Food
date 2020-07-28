@@ -104,7 +104,7 @@
 					<button id="btn" class="btn btn-primary mary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?title=${board.title}&f_port=${board.f_port}&userId=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">입장하기</button>
 					</c:if>
 					<!-- 참여인원과 확정인원이 같을때 입장마감으로 바꿔주기 -->
-					<c:if test="${board.f_membercnt == board.f_cnt }">
+					<c:if test="${board.f_membercnt == board.f_cnt && sessionScope.user_id!= null  }">
 					<span style="text-align: center;">입장마감</span>
 					</c:if>
 					</td>

@@ -1,13 +1,5 @@
 
 
-$("#sendBtn").click(function(){
-	
-	wordchk1($("#messagearea").val());
-	wordchk2($("#messagearea").val());
-	
-});
-
-
 function wordchk1(msg){
 	arrList = new Array();
 	arrList[arrList.length]  = "캐쉬스파이더";
@@ -1719,13 +1711,14 @@ function wordchk1(msg){
 	arrList[arrList.length]  = "음독";
 	arrList[arrList.length]  = "청산가리";
 	arrList[arrList.length]  = "청산가루";
+	arrList[arrList.length]  = "고양이";
 
 	for(i=0; i < arrList.length; i++){
 		var badWord = arrList[i];
       
       while(true){
-		if(msg.indexOf(badWord) != -1){
-			msg = msg.replace(badWord, "비속어입니다");
+		if(msg.indexof(badWord)!= -1){
+			msg = msg.replace(badWord, "**");
 			$("#messagearea").val(msg);
 		}
 		else{
@@ -2145,8 +2138,8 @@ function wordchk2(msg) {
 		var badWord = arrList[i];
       
       while(true){
-		if(msg.indexOf(badWord) != -1){
-			msg = msg.replace(badWord, "비속어입니다.");
+		if(msg.indexof(badWord)!= -1){
+			msg = msg.replace(badWord, "**");
 			$("#messagearea").val(msg);
 		}
 		else{

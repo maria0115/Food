@@ -18,9 +18,9 @@
 </head>
 <body>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
+<!-- 비속어 필터링을 위한 script -->
+<script src="/Food/resources/js/word.js"></script>
 	    
 <div id="container">
 	<main>
@@ -43,8 +43,9 @@
 	</main>
 </div>
 <script src="/Food/resources/js/jquery/jquery-2.2.4.min.js"></script>
-<script src="/Food/resources/js/chat.js"></script>
-<script src="/Food/resources/js/word.js"></script>
+<!-- 채팅기능을 위한 script -->
+<script src="/Food/resources/js/chat.js"></script> 
+
 
 </body>
 </html>
