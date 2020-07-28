@@ -35,11 +35,11 @@
 }
 
 .table100.ver4 td {
-  font-family: cursive;
-    font-size: x-large;
+  font-family: fantasy;
+    font-size: xx-large;
     color: black;
     line-height: inherit;
-    border: 5px double black;
+    border: solid;
     text-align: center;
     padding: 10px;
 }

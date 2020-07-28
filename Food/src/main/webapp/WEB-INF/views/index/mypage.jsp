@@ -46,24 +46,24 @@
 						<tbody>
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_id</td>
-								<td class="column100 column2" data-column="column2">${user_Info.m_id}</td>
+								<td class="column100 column2" data-column="column2">${member.m_id}</td>
 								<td rowspan="2" class="column100 column1" data-column="column1">1위</td>
-								<td rowspan="2" class="column100 column1" data-column="column1">${user_Info.m_most}</td>
+								<td rowspan="2" class="column100 column1" data-column="column1">${member.m_most}</td>
 							
 							</tr>
 
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_name</td>
-								<td class="column100 column2" data-column="column2">${user_Info.m_name}</td>
+								<td class="column100 column2" data-column="column2">${member.m_name}</td>
 								
 								
 							</tr>
 
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_Email</td>
-								<td class="column100 column2"  data-column="column2">${user_Info.m_email}</td>
+								<td class="column100 column2"  data-column="column2">${member.m_email}</td>
 								<td rowspan="2" class="column100 column1" data-column="column1">2위</td>
-								<td rowspan="2" class="column100 column1" data-column="column1">${user_Info.m_most}</td>
+								<td rowspan="2" class="column100 column1" data-column="column1">${member.m_most}</td>
 								
 							
 							
@@ -71,22 +71,22 @@
   
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_PhoneNumber</td>
-								<td class="column100 column2" data-column="column2">${user_Info.m_tel}</td>
+								<td class="column100 column2" data-column="column2">${member.m_tel}</td>
 								
 								
 							</tr>
 
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_BirthDay</td>
-								<td class="column100 column2" data-column="column2">${user_Info.m_birth}</td>
+								<td class="column100 column2" data-column="column2">${member.m_birth}</td>
 								<td rowspan="2" class="column100 column1" data-column="column1">3위</td>
-								<td rowspan="2" class="column100 column1" data-column="column1">${user_Info.m_most}</td>
+								<td rowspan="2" class="column100 column1" data-column="column1">${member.m_most}</td>
 								
 							</tr>
 
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">User_Address</td>
-								<td class="column100 column2" data-column="column2">${user_Info.m_area}</td>
+								<td class="column100 column2" data-column="column2">${member.m_area}</td>
 								
 								
 							</tr>
@@ -100,7 +100,12 @@
 							<c:forEach items="${boardlist}" var ="board">
 															
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1">내가쓴글</td>
+								<td class="column100 column1" data-column="column1">DATE</td>
+								<td colspan="3" class="column100 column2" data-column="column2">${board.b_date}</td>
+							</tr>
+							
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">My Writing</td>
 								<td colspan="3" class="column100 column2" data-column="column2">${board.title}</td>
 							</tr>
 							
