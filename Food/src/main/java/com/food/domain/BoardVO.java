@@ -32,6 +32,7 @@ public class BoardVO {
     private long d_fileSize;		//신고파일 파일사이즈
     private String f_userId;
     private String s_brand_name;
+    private String d_reason;
     			
     
     
@@ -254,6 +255,14 @@ public class BoardVO {
 
 	public void setS_brand_name(String s_brand_name) {
 		this.s_brand_name = s_brand_name;
+	}
+
+	public String getD_reason() {
+		return d_reason;
+	}
+
+	public void setD_reason(String d_reason) {
+		this.d_reason = d_reason;
 	}
     
     

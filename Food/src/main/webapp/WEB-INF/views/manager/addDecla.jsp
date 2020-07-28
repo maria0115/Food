@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String boardType = request.getParameter("boardType");
+
+
+%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,6 +106,10 @@ $(document).ready(function(){
 					<td width="100%">신고대상</td>
 					<td align="left"><input type="text" name="d_suspect"/></td>
 				</tr>
+				<tr>
+					<td width="100%">신고사유</td>
+					<td align="left"><input type="text" name="d_reason"/></td>
+				</tr>
 
 				<tr>
 					<td width="100%">내용</td>
@@ -113,6 +123,7 @@ $(document).ready(function(){
 					 	<input class="upload-name" value="파일선택" disabled="disabled">
 						<label for="ex_filename">업로드</label> 
                         <input type="file" name="file2" id="ex_filename" class="upload-hidden" style="visibility: hidden"> 
+                        <input type="hidden" name="boardType" value="<%= boardType %>"/>
 					</div>
 					</td>
 				</tr>
