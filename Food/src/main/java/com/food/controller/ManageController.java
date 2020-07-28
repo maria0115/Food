@@ -423,8 +423,11 @@ public class ManageController {
 	}
 	
 	@RequestMapping("/declaView.do")
-	public void declaView(BoardVO vo, PagingVO pvo) {
-		//boardService.selectBoard(vo, pvo, searchType, keyword)
+	public String declaView(BoardVO vo,Model model) {
+		
+		
+		model.addAttribute("declaView",boardService.boardView(vo));
+		return "manager/declaView";
 	}
 	
 }

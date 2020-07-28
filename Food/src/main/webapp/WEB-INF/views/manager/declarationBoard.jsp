@@ -1059,7 +1059,7 @@
 									<tr>
 										<td>${boardType}</td>
 										<td>${board.b_no }</td>
-										<td><a href="declaView.do?b_no=${board.b_no}&boardType=${boardType}" class="declaView">${board.title }</a></td>
+										<td><a href="declaView.do?b_no=${board.b_no}&boardType=${board.boardType}" class="declaView">${board.title }</a></td>
 										<td>${board.userId}</td>
 										
 										<td>${board.b_date }</td>

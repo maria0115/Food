@@ -1022,15 +1022,17 @@
 							<h4>Declaration Board	</h4>
 							
 							<table class="declaViewTable">
+								
 								<tr>
+								
 									<td id="articleTd">
 									<div>
 										<div class="articleInfo">
 											<div class="articleWriter">
-											<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디</span>
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디 : ${declaView.userId}</span>
 											</div>
-											<div class="articleDate">날짜</div>
-											<div class="articleHit"><strong>조회:&nbsp;&nbsp;&nbsp;&nbsp; </strong></div>
+											<div class="articleDate">${declaView.b_date}</div>
+											<div class="articleHit"><strong>조회 : ${declaView.viewCount}&nbsp;&nbsp;&nbsp;&nbsp; </strong></div>
 										
 										</div>
 									</div>
@@ -1040,24 +1042,23 @@
 									<td>
 									<div class="articleMain">
 										<div class="articleTitle">
-										<h2>title</h2>
+										<h2>${declaview.title}</h2>
 										
 										</div>
 									
 									</div>
 									<div class="articleContent">
 										<div class="contentBody">
-											<label>신고대상 : </label>
-											<label>나다</label><br/>
-											<label>신고사유</label><br/><br/>
-											
+											<label>신고대상 : ${declaView.d_suspect}</label><br/>
+											<label>신고사유 : ${declaView.b_content}</label><br/><br/>
+											<img style="width: 35%;" src="/Food/resources/d_upload/${declaView.d_fileName }">
 											<div id="declaContent" style="">리라도 이기기 직전에 그레이브즈로 컨트롤4 한번 눌렀다가 몇년을 두고두고 까였음</div>
 										</div>
 									</div>
 									</td>
 									</tr>
-
-									
+							
+								
 							</table>
 						
 
