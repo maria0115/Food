@@ -124,7 +124,6 @@
                                     <td class='qna_table'>${list.userId}</td>
                                     <td class='qna_table'>${list.b_date}</td>
                                     <td>
-<!--                                         <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> -->
                                         <button id="trash" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                     </td>
                                 </tr>
@@ -133,7 +132,7 @@
                             </table>
                             
                             
-                            
+
                             
     <div style="display: block; text-align: center;">		
 		<c:if test="${paging.startPage != 1 }">

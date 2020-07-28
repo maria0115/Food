@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.dao.ReservationDAO;
+import com.food.domain.BoardVO;
+import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
 
 @Service("ReservationService")
@@ -31,6 +33,19 @@ public class ReservationServiceImpl implements ReservationService {
 		System.out.println("service reservationDetail 도착");
 		return reservdao.reservationDetail(vo);
 	}
+
+	@Override
+	public int countReserv(PagingVO vo) {
+		System.out.println("service countReserv 도착");
+		return reservdao.countReserv(vo);
+	}
+
+	@Override
+	public List<ReservationVO> selectBoard(PagingVO vo) {
+		return reservdao.selectBoard(vo);
+	}
+
+
 	
 	
 }

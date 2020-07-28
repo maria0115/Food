@@ -11,7 +11,14 @@ public class PagingVO {
 		private int lastPage; //마지막 페이지
 		private int start; //SQL쿼리에 쓸 start
 		private int end; //SQL쿼리에 쓸 end
+		private String m_id; // 아이디
 		
+		public String getM_id() {
+			return m_id;
+		}
+		public void setM_id(String m_id) {
+			this.m_id = m_id;
+		}
 		private int cntPage = 5;
 		
 		public PagingVO() {

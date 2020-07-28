@@ -27,7 +27,12 @@
 	</jsp:include>
 
 	
-	
+	<script>
+	function selChange() {
+		var sel = document.getElementById('cntPerPage').value;
+		location.href="boardList?nowPage=${paging.nowPage}&cntPerPage="+sel;
+	}
+</script>
 </head>
 
 <body>
@@ -64,30 +69,6 @@
     <!-- ##### Breadcrumb Area End ##### -->
 
 <%= request.getParameter("m_id") %>
-
-<%-- ${list.r_number} --%>
-
-<%-- <table border='solid'>
-    <tbody>
-    <tr>
-        <th>m_id</th>
-        <th>r_number</th>
-        <th>r_menu</th>
-        <th>r_menu_count</th>
-        <th>r_visit_date</th>
-    </tr>
-<c:forEach items="${list}" var="list">
-<tr>
-    <td class='qna_table'>${list.m_id}</td>
-    <td class='qna_table'>${list.r_number}</td>
-    <td class='qna_table'>${list.r_menu}</td>
-    <td class='qna_table'>${list.r_menu_count}</td>
-    <td class='qna_table'>${list.r_visit_date}</td>
-</tr>
-</c:forEach>
-    </tbody>
-</table> --%>
-
 
 
     <section class="alazea-portfolio-area section-padding-100-0">
@@ -170,7 +151,7 @@
 
 
             <div class="row alazea-portfolio">
-
+            
 				<c:forEach items="${list}" var="list">
                 <!-- Single Portfolio Area -->
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design wow fadeInUp" data-wow-delay="100ms">
@@ -190,105 +171,36 @@
 <!--                         </a> -->
                     </div>
                     </div>
-				</div>
-				
-				
-				
-				
+				</div>				
 				</c:forEach>
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(/Food/resources/img/bg-img/17.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="/Food/resources/img/bg-img/17.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden design wow fadeInUp" data-wow-delay="300ms"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/18.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/18.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 3"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden office-design wow fadeInUp" data-wow-delay="400ms"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/19.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/19.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 4"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design office-design wow fadeInUp" data-wow-delay="100ms"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/20.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/20.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 5"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/21.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/21.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 6"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-lg-6 single_portfolio_item home-design wow fadeInUp" data-wow-delay="300ms"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/22.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/22.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 7"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
             </div>
+            
+    <div style="display: block; text-align: center;">		
+		<c:if test="${paging.startPage != 1 }">
+			<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+		</c:if>
+		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+			<c:choose>
+				<c:when test="${p == paging.nowPage }">
+					<b>${p }</b>
+				</c:when>
+				<c:when test="${p != paging.nowPage }">
+					<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${paging.endPage != paging.lastPage}">
+			<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+		</c:if>
+	</div>
+            
+            
         </div>
+        
+        
+        
+        
+        
     </section>
     <!-- ##### Portfolio Area End ##### -->
 
