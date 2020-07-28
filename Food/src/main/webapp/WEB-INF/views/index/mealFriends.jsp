@@ -73,21 +73,21 @@
 		<div >
 			<table class="table table-striped">
 				<tr>
-					<th>글번호</th>
+					<th></th>
 					<th>제목</th>
 					<th>위치</th>
 					<th>작성자</th>
 					<th>등록일</th>
 					<th>조회수</th>
-					<th>참여인원</th>
-					<th>확정인원</th>
+					<th>참여</th>
+					<th>확정</th>
 					<th>채팅방</th>
 				</tr>
 				
 				<c:forEach items="${friendlist}" var="board">
 				<!-- 프라퍼티이름 변경 -->
 				<tr>
-					<td>${board.b_no}</td>
+					<td><a href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.b_no}</a></td>
 					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
 					<td><a href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.title}</a></td>
 					<td><a href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.f_addr1}&nbsp;${board.f_addr2}</a></td>
@@ -100,11 +100,11 @@
 					><span class="joincnt">${board.f_cnt }</span></td>
 					<td>
 					<!-- 참여인원이 확정 인원보다 클때만 채팅방 참여하기 버튼 보여주기 -->
-					<c:if test="${board.f_membercnt >  board.f_cnt }">
+					<c:if test="${board.f_membercnt >  board.f_cnt && sessionScope.user_id!= null }">
 					<button id="btn" class="btn btn-primary mary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?title=${board.title}&f_port=${board.f_port}&userId=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">입장하기</button>
 					</c:if>
 					<!-- 참여인원과 확정인원이 같을때 입장마감으로 바꿔주기 -->
-					<c:if test="${board.f_membercnt == board.f_cnt && sessionScope.user_id!= null  }">
+					<c:if test="${board.f_membercnt == board.f_cnt && sessionScope.user_id!= null }">
 					<span style="text-align: center;">입장마감</span>
 					</c:if>
 					</td>
@@ -135,8 +135,9 @@
 			<a href="../index/mealFriends?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 		</c:if>
         </div>
+        <c:if test="${sessionScope.user_id!= null }">
 		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" >글등록</button>
-		
+		</c:if>
 	</div>
 
 

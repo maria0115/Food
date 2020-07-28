@@ -45,7 +45,10 @@
 
 <body>
 <script src="/Food/resources/js/friendBoard.js"></script>
-	
+<script type="text/javascript">
+ window.history.forward();
+ function noBack(){window.history.forward();}
+</script>	
 			<jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
 			</jsp:include>

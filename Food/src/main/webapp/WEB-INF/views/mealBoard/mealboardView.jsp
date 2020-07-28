@@ -67,7 +67,7 @@
 					<c:if test="${board.f_membercnt > board.f_cnt}">
 					<input class="btn btn-dark" type="button" id="joinBtn" value="참가하기" >
 					</c:if>
-					<c:if test="${board.f_membercnt == board.f_cnt}">
+					<c:if test="${board.f_membercnt <= board.f_cnt}">
 					<span id="end">마감되었습니다.</span>
 					</c:if>
 					</form>
