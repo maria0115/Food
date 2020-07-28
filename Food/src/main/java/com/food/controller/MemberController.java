@@ -85,11 +85,11 @@ public class MemberController {
 		 @ResponseBody
 		@RequestMapping(value = "/login.do",produces = "application/text; charset=utf-8")
 			public String login(MemberVO vo, HttpSession session) {
-			 	
+			 	System.out.println("로그인.do 들어옴");
 			 	HashMap new_vo =  memberService.userSignIn(vo);
 				//String result ="";
 				
-				
+				System.out.println("new_vo"+new_vo);
 				
 				if(new_vo != null ) {
 					System.out.println(new_vo.get("M_NAME"));
@@ -111,19 +111,33 @@ public class MemberController {
 		  
 		 } 
 		 //로그아웃 기능 구현
-		 @ResponseBody
-			@RequestMapping(value="/logout.do")
-			public void logout(HttpSession session) {
-			   // String SESSION_STATE = "oauth_state";
-			   // session.removeAttribute(SESSION_STATE);  
-			  // session.removeAttribute("result"); 
-				session.removeAttribute("user_name");
-				session.removeAttribute("user_id");
-				session.removeAttribute("user_Info");
+		@ResponseBody
+		@RequestMapping(value="/logout.do")
+		public void logout(HttpSession session) {
+		   // String SESSION_STATE = "oauth_state";
+		   // session.removeAttribute(SESSION_STATE);  
+		  // session.removeAttribute("result"); 
+			session.removeAttribute("user_name");
+			session.removeAttribute("user_id");
+			session.removeAttribute("user_Info");
 		
 		
-				
-			}
+		}
+		
+		//블랙리스트 회원 로그아웃
+		@RequestMapping(value="/out.do")
+		public String logout2(HttpSession session) {
+		   // String SESSION_STATE = "oauth_state";
+		   // session.removeAttribute(SESSION_STATE);  
+		  // session.removeAttribute("result"); 
+			session.removeAttribute("user_name");
+			session.removeAttribute("user_id");
+			session.removeAttribute("user_Info");
+		
+		
+			return "redirect:/main.do";
+		}
+		
 		 
 		 @ResponseBody
 			@RequestMapping(value="/naverlogout.do")
@@ -303,11 +317,18 @@ public class MemberController {
 		    
 		    
 		    //회원 탈퇴하기
-		    @RequestMapping("/deleteMember.do")
-		    public void memberDelete(MemberVO vo ){
-		        memberService.deleteMember(vo);
-		        
-		    } 
+	          @ResponseBody
+	          @RequestMapping("/deleteMember.do")
+	          public void memberDelete(MemberVO vo,HttpSession session, @RequestParam("m_id") String m_id){
+	              vo.setM_id(m_id);
+	              System.out.println("dhasdfadsgasgo"+m_id);
+	             memberService.deleteMember(vo);
+	              session.removeAttribute("user_name");
+	            session.removeAttribute("user_id");
+	            session.removeAttribute("user_Info");
+	             
+	          } 
+
 		    
 		    
 }

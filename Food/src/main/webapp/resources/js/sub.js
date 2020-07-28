@@ -404,7 +404,7 @@ $(document).on("click","#logout",function(){ //$('#logout').click(function() {
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		success : function(resultData) {
 			
-			window.location.reload();
+			location.href="main.do"
 			
 			// window.location=document.referrer;
 		}
@@ -450,6 +450,8 @@ $('#frm').submit(
 										else{
 										if(resultData.S_STATE=='1'){
 												alert("회원님은 "+resultData.S_END+"까지 정지되셨습니다");
+												
+												location.href="/Food/out.do";
 										}
 										else {
 										$(".login-header").css("display","none");
