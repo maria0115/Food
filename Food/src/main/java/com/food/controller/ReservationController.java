@@ -1,9 +1,15 @@
 package com.food.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.food.domain.BoardVO;
@@ -39,14 +45,36 @@ public class ReservationController {
 	}
 	
 	// mymenu 페이지에서 예약 내역 확인
-	@RequestMapping("index/myMenu.do")
-	public ModelAndView reservSelect(ReservationVO vo) {
+	@RequestMapping(value = "index/myMenu.do", method = RequestMethod.GET)
+	public ModelAndView reservSelect(ReservationVO vo,HttpServletRequest httpServletRequest) {
 		System.out.println("reservSelect 컨트롤러 도착");
-		ReservationService.selectReservation(vo);
+		System.out.println("requestGET :"+RequestMethod.GET);
+		String m_id = httpServletRequest.getParameter("m_id");
+	    System.out.println("m_id : " + m_id);
+	    vo.setM_id(m_id);
+	    List<ReservationVO> list = ReservationService.selectReservation(vo);
 		System.out.println("컨트롤 갔다옴");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index/myMenu");
-//		mv.addObject("list",list);
+		mv.addObject("list",list);
 		return mv;
 	}
+	
+	@RequestMapping(value = "index/myMenuDetail.do", method = RequestMethod.GET)
+	@ResponseBody
+	public ReservationVO myMenuDetail(ReservationVO vo,HttpServletRequest httpServletRequest) {
+		System.out.println("myMenuDetail controller 도착");
+		System.out.println("requestGET :"+RequestMethod.GET);
+		String data = httpServletRequest.getParameter("r_number");
+		int r_number = Integer.parseInt(data);
+		System.out.println("r_number : " + r_number);
+		vo.setR_number(r_number);
+		ReservationVO list = ReservationService.reservationDetail(vo);
+		System.out.println("menu :"+list.getR_menu());
+		System.out.println("visit_date :"+list.getR_visit_date());
+		return list;
+	}
+	
+	
+	
 }

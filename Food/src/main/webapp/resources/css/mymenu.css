@@ -40,6 +40,7 @@
   -webkit-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
   box-shadow: 0 5px 10px rgba(51, 51, 51, 0.4);
+  text-align: center;
 }
 .dialog__trigger:focus, .dialog__action:focus {
   outline: 0;
@@ -70,8 +71,9 @@
   }
 }
 .dialog.dialog--active {
+	position: fixed;
   z-index: 150;
-  top: 90%;
+  top: 20%;
   left: 29%;
   visibility: visible;
   opacity: 1;

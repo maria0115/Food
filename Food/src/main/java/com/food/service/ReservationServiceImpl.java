@@ -1,5 +1,7 @@
 package com.food.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +21,15 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
-	public void selectReservation(ReservationVO vo) {
+	public List<ReservationVO> selectReservation(ReservationVO vo) {
 		System.out.println("service selectReservation 도착");
-		reservdao.selectReservation(vo);
+		return reservdao.selectReservation(vo);
+	}
+
+	@Override
+	public ReservationVO reservationDetail(ReservationVO vo) {
+		System.out.println("service reservationDetail 도착");
+		return reservdao.reservationDetail(vo);
 	}
 	
 	

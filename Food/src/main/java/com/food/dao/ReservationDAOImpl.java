@@ -1,5 +1,7 @@
 package com.food.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,8 +24,14 @@ public class ReservationDAOImpl implements ReservationDAO {
 	}
 
 	@Override
-	public void selectReservation(ReservationVO vo) {
+	public List<ReservationVO> selectReservation(ReservationVO vo) {
 		System.out.println("selectReservation DAO 도착");
-		mybatis.selectList("reservationDAO.selectReserv", vo);
+		return mybatis.selectList("reservationDAO.selectReserv", vo);
+	}
+
+	@Override
+	public ReservationVO reservationDetail(ReservationVO vo) {
+		System.out.println("reservationDetail DAO 도착");
+		return mybatis.selectOne("reservationDAO.detailReserv", vo);
 	}
 }

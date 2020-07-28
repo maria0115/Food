@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,6 +65,31 @@
 
 <%= request.getParameter("m_id") %>
 
+<%-- ${list.r_number} --%>
+
+<%-- <table border='solid'>
+    <tbody>
+    <tr>
+        <th>m_id</th>
+        <th>r_number</th>
+        <th>r_menu</th>
+        <th>r_menu_count</th>
+        <th>r_visit_date</th>
+    </tr>
+<c:forEach items="${list}" var="list">
+<tr>
+    <td class='qna_table'>${list.m_id}</td>
+    <td class='qna_table'>${list.r_number}</td>
+    <td class='qna_table'>${list.r_menu}</td>
+    <td class='qna_table'>${list.r_menu_count}</td>
+    <td class='qna_table'>${list.r_visit_date}</td>
+</tr>
+</c:forEach>
+    </tbody>
+</table> --%>
+
+
+
     <section class="alazea-portfolio-area section-padding-100-0">
         <div class="container">
             <div class="row">
@@ -94,21 +121,33 @@
 			
 			
 			<script>
+			function update_form(r_number){
+				  $.ajax({
+				    url: "myMenuDetail.do",
+				    type: "get",
+				    cache: false,
+				    dataType: "json",
+				    data: "r_number=" + r_number,
+				    success: function(data){
+				  $('.i_store_name').val(data.r_store_name);
+			      $('.i_visit_date').val(data.r_visit_date);  
+			      $('.i_pplcount').val(data.r_people_count);          
+			      $('.i_menu').val(data.r_menu);
+			      $('.i_note').val(data.r_note);
+			    },
+				    error: function (request, status, error){    
+				        var msg = "ERROR : " + request.status + "<br>"
+				      msg +=  + "내용 : " + request.responseText + "<br>" + error;
+				      console.log(msg);              
+				    }
 
-			// ajax
-// 			$(function(){
-// 				$(".dialog__trigger").click(function(){
-// // 					alert("aa")
-// 					location.href='reservSelect'
-
-
-// 				})
-// 			})
+				  });
+				}
 			</script>
 
 
 <!--        ###################################################### -->
-		<button class="dialog__trigger">Open Dialog</button>
+<!-- 		<button class="dialog__trigger">Open Dialog</button> -->
 		
 		<div class="dialog">
 			<span class="dialog__close">&#x2715;</span>
@@ -116,15 +155,12 @@
 			<p class="dialog__content" style="color:black">Lorem ipsum dolor sit amet,
 				consectetur adipisicing elit. Impedit necessitatibus illo
 				deleniti doloremque culpa volupta.</p>
-			<label class="label_name">매장</label><input class="input_name" value="미구현"><hr>
-			<label class="label_name">날짜</label><input class="input_name" value="list.r_visit_date"><hr>
-			<label class="label_name">인원</label><input class="input_name" value=list.r_ppl_cnt><hr>
-			<label class="label_name">메뉴</label><input class="input_name" value=list.r_menu><hr>
-			<label class="label_name">문의</label><input class="input_name" value=list.b_content><hr>
-			<tr>
-			<td class="input_name" style="margin:20px">dddd</td>
-			<td class="input_name" style="margin:20px">dddd</td>
-			</tr>
+			<label class="label_name">매장</label><input class="input_name i_store_name"><hr>
+			<label class="label_name">날짜</label><input class="input_name i_visit_date"><hr>
+			<label class="label_name">인원</label><input class="input_name i_pplcount"><hr>
+			<label class="label_name">메뉴</label><input class="input_name i_menu"><hr>
+			<label class="label_name">문의</label><input class="input_name i_note"><hr>
+
 			<button class="dialog__action">Read more &#8594;</button>
 		</div>
 <!-- 		###################################################### -->
@@ -135,6 +171,7 @@
 
             <div class="row alazea-portfolio">
 
+				<c:forEach items="${list}" var="list">
                 <!-- Single Portfolio Area -->
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design wow fadeInUp" data-wow-delay="100ms">
                     <!-- Portfolio Thumbnail -->
@@ -142,106 +179,113 @@
                 	
                     <!-- Portfolio Hover Text -->
                     <div class="portfolio-hover-overlay">
-                    <div class="dialog__trigger">
+                    <div class="dialog__trigger" onclick="update_form(${list.r_number})" style="height:400px">
 <!--                         <a href="resources/img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1"> -->
-                            <div class="port-hover-text">
-                                <h3>${user_Info.m_name}</h3>
-                                <h5>${user_Info.m_email}</h5>
+                            <div class="port-hover-text" style="padding-top: 35%">
+                                <h3>${list.r_store_name}</h3>
+                                <h5>${list.r_menu}</h5>
+                                <h5>${list.r_visit_date}</h5>
+                                <h5>${list.r_number}</h5>
                             </div>
 <!--                         </a> -->
                     </div>
                     </div>
 				</div>
+				
+				
+				
+				
+				</c:forEach>
 
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(/Food/resources/img/bg-img/17.jpg);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="/Food/resources/img/bg-img/17.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2">
-                            <div class="port-hover-text">
-                                <h3>Minimal Flower Store</h3>
-                                <h5>Office Plants</h5>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+<!--                 Single Portfolio Area -->
+<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms"> -->
+<!--                     Portfolio Thumbnail -->
+<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(/Food/resources/img/bg-img/17.jpg);"></div> -->
+<!--                     Portfolio Hover Text -->
+<!--                     <div class="portfolio-hover-overlay"> -->
+<!--                         <a href="/Food/resources/img/bg-img/17.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2"> -->
+<!--                             <div class="port-hover-text"> -->
+<!--                                 <h3>Minimal Flower Store</h3> -->
+<!--                                 <h5>Office Plants</h5> -->
+<!--                             </div> -->
+<!--                         </a> -->
+<!--                     </div> -->
+<!--                 </div> -->
 
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden design wow fadeInUp" data-wow-delay="300ms">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/18.jpg);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/18.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 3">
-                            <div class="port-hover-text">
-                                <h3>Minimal Flower Store</h3>
-                                <h5>Office Plants</h5>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+<!--                 Single Portfolio Area -->
+<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden design wow fadeInUp" data-wow-delay="300ms"> -->
+<!--                     Portfolio Thumbnail -->
+<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/18.jpg);"></div> -->
+<!--                     Portfolio Hover Text -->
+<!--                     <div class="portfolio-hover-overlay"> -->
+<!--                         <a href="img/bg-img/18.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 3"> -->
+<!--                             <div class="port-hover-text"> -->
+<!--                                 <h3>Minimal Flower Store</h3> -->
+<!--                                 <h5>Office Plants</h5> -->
+<!--                             </div> -->
+<!--                         </a> -->
+<!--                     </div> -->
+<!--                 </div> -->
 
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden office-design wow fadeInUp" data-wow-delay="400ms">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/19.jpg);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/19.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 4">
-                            <div class="port-hover-text">
-                                <h3>Minimal Flower Store</h3>
-                                <h5>Office Plants</h5>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+<!--                 Single Portfolio Area -->
+<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden office-design wow fadeInUp" data-wow-delay="400ms"> -->
+<!--                     Portfolio Thumbnail -->
+<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/19.jpg);"></div> -->
+<!--                     Portfolio Hover Text -->
+<!--                     <div class="portfolio-hover-overlay"> -->
+<!--                         <a href="img/bg-img/19.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 4"> -->
+<!--                             <div class="port-hover-text"> -->
+<!--                                 <h3>Minimal Flower Store</h3> -->
+<!--                                 <h5>Office Plants</h5> -->
+<!--                             </div> -->
+<!--                         </a> -->
+<!--                     </div> -->
+<!--                 </div> -->
 
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design office-design wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/20.jpg);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/20.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 5">
-                            <div class="port-hover-text">
-                                <h3>Minimal Flower Store</h3>
-                                <h5>Office Plants</h5>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+<!--                 Single Portfolio Area -->
+<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design office-design wow fadeInUp" data-wow-delay="100ms"> -->
+<!--                     Portfolio Thumbnail -->
+<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/20.jpg);"></div> -->
+<!--                     Portfolio Hover Text -->
+<!--                     <div class="portfolio-hover-overlay"> -->
+<!--                         <a href="img/bg-img/20.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 5"> -->
+<!--                             <div class="port-hover-text"> -->
+<!--                                 <h3>Minimal Flower Store</h3> -->
+<!--                                 <h5>Office Plants</h5> -->
+<!--                             </div> -->
+<!--                         </a> -->
+<!--                     </div> -->
+<!--                 </div> -->
 
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/21.jpg);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/21.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 6">
-                            <div class="port-hover-text">
-                                <h3>Minimal Flower Store</h3>
-                                <h5>Office Plants</h5>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+<!--                 Single Portfolio Area -->
+<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms"> -->
+<!--                     Portfolio Thumbnail -->
+<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/21.jpg);"></div> -->
+<!--                     Portfolio Hover Text -->
+<!--                     <div class="portfolio-hover-overlay"> -->
+<!--                         <a href="img/bg-img/21.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 6"> -->
+<!--                             <div class="port-hover-text"> -->
+<!--                                 <h3>Minimal Flower Store</h3> -->
+<!--                                 <h5>Office Plants</h5> -->
+<!--                             </div> -->
+<!--                         </a> -->
+<!--                     </div> -->
+<!--                 </div> -->
 
-                <!-- Single Portfolio Area -->
-                <div class="col-12 col-lg-6 single_portfolio_item home-design wow fadeInUp" data-wow-delay="300ms">
-                    <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/22.jpg);"></div>
-                    <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/22.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 7">
-                            <div class="port-hover-text">
-                                <h3>Minimal Flower Store</h3>
-                                <h5>Office Plants</h5>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+<!--                 Single Portfolio Area -->
+<!--                 <div class="col-12 col-lg-6 single_portfolio_item home-design wow fadeInUp" data-wow-delay="300ms"> -->
+<!--                     Portfolio Thumbnail -->
+<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/22.jpg);"></div> -->
+<!--                     Portfolio Hover Text -->
+<!--                     <div class="portfolio-hover-overlay"> -->
+<!--                         <a href="img/bg-img/22.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 7"> -->
+<!--                             <div class="port-hover-text"> -->
+<!--                                 <h3>Minimal Flower Store</h3> -->
+<!--                                 <h5>Office Plants</h5> -->
+<!--                             </div> -->
+<!--                         </a> -->
+<!--                     </div> -->
+<!--                 </div> -->
 
             </div>
         </div>
