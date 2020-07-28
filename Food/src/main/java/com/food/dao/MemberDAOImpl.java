@@ -1,11 +1,13 @@
 package com.food.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.food.domain.BlackListVO;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 
@@ -23,9 +25,13 @@ public class MemberDAOImpl  implements MemberDAO{
 
 
 	@Override
-	public MemberVO userSingIn(MemberVO vo) {
+	public HashMap userSingIn(MemberVO vo) {
 		System.out.println("로그인옴");
-		return mybatis.selectOne("memberDAO.selectMember",vo);
+		HashMap map = new HashMap();
+		map.put("m_id",vo.getM_id());
+		map.put("m_pass", vo.getM_pass());
+	
+		return mybatis.selectOne("memberDAO.selectMember",map);
 	}
 
 

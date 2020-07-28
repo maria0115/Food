@@ -1,5 +1,6 @@
 package com.food.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +20,7 @@ public interface MemberService {
 	//회원가입하기
 	public void insertMember(MemberVO vo);
 	// 로그인 
-	public MemberVO userSignIn(MemberVO vo);
+	public HashMap userSignIn(MemberVO vo);
 	
 	public List<ProductVO> search(String value);
 	//회원 탈퇴

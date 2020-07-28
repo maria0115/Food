@@ -382,6 +382,7 @@ public class ManageController {
 			
 	
 			
+			
 			model.addAttribute("declarationList", a);
 			
 			//모델에 "searchType" 검색타입 추가
@@ -420,6 +421,10 @@ public class ManageController {
 		}
 		
 	}
-		
+	
+	@RequestMapping("/declaView.do")
+	public void declaView(BoardVO vo, PagingVO pvo) {
+		//boardService.selectBoard(vo, pvo, searchType, keyword)
+	}
 	
 }

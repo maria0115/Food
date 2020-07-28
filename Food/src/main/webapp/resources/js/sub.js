@@ -434,23 +434,33 @@ $('#frm').submit(
 					if ($("#logpw").val() === "") {
 						alert("암호를 입력하세요");
 					} else {
-						$
-								.ajax({
+						$.ajax({
 									type : 'post',
 									async : true,
 									url : '/Food/login.do',
 									contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 									data : "m_id=" + $('#logid').val()
 											+ "&m_pass=" + $('#logpw').val(),
-									success : function(resultData) {
-										if (resultData == '')
+									dataType:'json',
+									success : function(resultData) {	
+										if (resultData == null){
 											alert("아이디와 비밀번호를 다시 확인하세요.");
+											return;
+										}
+										else{
+										if(resultData.S_STATE=='1'){
+												alert("회원님은 "+resultData.S_END+"까지 정지되셨습니다");
+										}
 										else {
 										$(".login-header").css("display","none");
-											$(".access").html(resultData+ '</span>/<a href="" id="logout">로그아웃</a>');
+											$(".access").html("<span class=\"in\">"+resultData.M_NAME+" 님 환영합니다."+ '</span>/<a href="" id="logout">로그아웃</a>');
 											window.location.reload();
 										}
+											}
+									},error:function(){
+										alert("error");
 									}
+			
 								});
 					}
 				});

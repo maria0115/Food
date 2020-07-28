@@ -5,9 +5,20 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<style>
+
+#navi a:link, a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+
+</style>
 <title>Member List</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1037,9 +1048,9 @@
 								<tr>
 									<th>게시판</th>
 									<th>번호</th>
-									<th>제목</th>
+									<th class="title col-md-4">제목</th>
 									<th>작성자</th>
-									<th>내용</th>
+									
 									<th>날짜</th>
 									<th>조회수</th>
 									<th><div class="check_all"><input type='checkbox' id="check_all"></div></th>
@@ -1048,9 +1059,9 @@
 									<tr>
 										<td>${boardType}</td>
 										<td>${board.b_no }</td>
-										<td>${board.title }</td>
+										<td><a href="declaView.do?b_no=${board.b_no}&boardType=${boardType}" class="declaView">${board.title }</a></td>
 										<td>${board.userId}</td>
-										<td>${board.b_content }</td>
+										
 										<td>${board.b_date }</td>
 										<td>${board.viewCount}</td>
 										<td>
@@ -1062,7 +1073,7 @@
 											<i class="fa fa-trash-o" aria-hidden="true"></i>
 											</button>
 											<input type='checkbox' class='input_check' name="${board.b_no}">
-											<input type='hidden' class='boardType' name="${board.boardType}"/>
+											
 										</td>
 									</tr>
 								</c:forEach>

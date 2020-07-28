@@ -1,6 +1,8 @@
 package com.food.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
@@ -31,9 +33,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 import com.food.service.MemberService;
-import com.github.scribejava.core.model.OAuthRequest;
-import com.github.scribejava.core.model.Verb;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Controller
 public class MemberController {
@@ -84,19 +85,29 @@ public class MemberController {
 		 @ResponseBody
 		@RequestMapping(value = "/login.do",produces = "application/text; charset=utf-8")
 			public String login(MemberVO vo, HttpSession session) {
-				MemberVO new_vo = new MemberVO();
-				new_vo =  memberService.userSignIn(vo);
-				String result ="";
+			 	
+			 	HashMap new_vo =  memberService.userSignIn(vo);
+				//String result ="";
+				
+				
+				
 				if(new_vo != null ) {
-					if(new_vo.getM_name() != null) {
-						result = "<span class=\"in\">"+new_vo.getM_name()+" 님 환영합니다.";
-						session.setAttribute("user_name", new_vo.getM_name());
-						session.setAttribute("user_id", new_vo.getM_id());
+					System.out.println(new_vo.get("M_NAME"));
+					System.out.println(new_vo.get("M_ID"));
+					if(new_vo.get("M_NAME") != null) {
+						//result = "<span class=\"in\">"+new_vo.get("M_NAME")+" 님 환영합니다.";
+						session.setAttribute("user_name", new_vo.get("M_NAME"));
+						session.setAttribute("user_id", new_vo.get("M_ID"));
 						session.setAttribute("user_Info", new_vo);
 						
+						
 					}
+					
 				}
-				return result;
+				
+			        Gson gson = new GsonBuilder().create();
+			        String json = gson.toJson(new_vo);
+				return json;
 		  
 		 } 
 		 //로그아웃 기능 구현

@@ -30,10 +30,11 @@ select m_id,m_email,m_pass from member where m_id = #{m_id}
 
 
 
-<select id="selectMember" parameterType="member" resultType="member">
-		SELECT * FROM member WHERE m_id = #{m_id}
+<select id="selectMember" parameterType="member" resultType="hashmap">
+		SELECT *FROM member m inner join blacklist b on m.m_id=b.b_id
+		WHERE m.m_id = #{m_id}
 		<if test="m_pass!=null">
-		AND m_pass = #{m_pass}
+		AND m.m_pass = #{m_pass}
 		</if>
 </select>
 

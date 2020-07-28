@@ -85,7 +85,10 @@
 						ORDER BY ROWNUM DESC 
 						) A
 				)
-	WHERE RN BETWEEN #{start} AND #{end}
+	<where>
+	<if test='start!=null &amp;&amp; end!=null'>RN BETWEEN #{start} AND #{end}</if>
+		
+	</where>
 </select>
 
 
