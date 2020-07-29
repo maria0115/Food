@@ -115,6 +115,7 @@
 									<th>Birth</th>
 									<th>Place</th>
 									<th>Most</th>
+									<th>Date</th>
 									<th>Email</th>
 									<th><div class="check_all"><input type='checkbox' id="check_all"></div></th>
 							
@@ -128,6 +129,7 @@
 										<td>${member.m_birth }</td>
 										<td>${member.m_area }</td>
 										<td>${member.m_most}</td>
+										<td>${member.m_date }</td>
 										<td>${member.m_email }</td>
 										<td>
 											<button data-toggle="tooltip" title="Edit"
