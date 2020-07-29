@@ -46,7 +46,11 @@
 }
 }
 
- 
+@media (max-width:1000px){ 
+	.container-fluid .row .logo-pro{
+		display:none;
+	}
+}
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
 .left-sidebar-pro{

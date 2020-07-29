@@ -62,6 +62,7 @@ $(document).ready(function(){
 // 		formData.append("file2",$("input[name=file2]")[0].files[0]);
 
 
+
 	
 
 

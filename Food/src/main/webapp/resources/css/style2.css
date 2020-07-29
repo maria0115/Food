@@ -1116,6 +1116,9 @@ ul.two-part-sp li{
 	padding-top: 30px;
     padding-bottom: 30px;
 }
+.product-status-wrap{
+	margin-top: 30px;
+}
 .product-status-wrap h4 {
     font-size: 20px;
     color: #222;
@@ -3467,9 +3470,13 @@ div#sparklinehome canvas {
 .declaButton{
 	text-align: center;
 }
+.add-decla{
+	float:right;
+	margin-top:10px;
+}
 .add-decla a{
 	background: linear-gradient(178deg, #e12503 0%, #85060c 100%);
-	padding: 10px 10px;
+	padding: 12px 10px;
 	color: #fff;
 	width:auto;
 }
