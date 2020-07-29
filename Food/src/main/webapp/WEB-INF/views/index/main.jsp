@@ -140,7 +140,7 @@
 							  <div class="manager">
 <!--                         <ul id="navi"> -->
 <!--                               <li> -->
-                                      <a href="<%=folder %>manager/member-list.do"  id="manageLabel" class="fa fa-user" ><br/>Manage</a>
+                                      <a href="/Food/manager/member-list.do"  id="manageLabel" class="fa fa-user" ><br/>Manage</a>
 <!--                                </li> -->
                                
                            
@@ -193,8 +193,8 @@
 										<div id="mySidepanel" class="sidepanel">
 											<a href="javascript:void(0)" class="closebtn"
 												onclick="closeNav()"><font size="10em">×</font></a> <a
-												href="<%=folder %>index/store.do?category='한식'">한식</a> <a href="<%=folder %>index/store.do?category='중식'">중식</a> <a href="<%=folder %>index/store.do?category='일식'">일식</a> <a
-												href="<%=folder %>index/store.do?category='양식'">양식</a> <a href="<%=folder %>index/store.do?category='동남아'">동남아</a>
+												href="/Food/index/store.do?category='한식'">한식</a> <a href="/Food/index/store.do?category='중식'">중식</a> <a href="/Food/index/store.do?category='일식'">일식</a> <a
+												href="/Food/index/store.do?category='양식'">양식</a> <a href="/Food/index/store.do?category='동남아'">동남아</a>
 										</div> <!--  -------------------------------------------------------- -->
 
 										<!-- END menu-toggle -->
@@ -264,7 +264,7 @@
 <%-- 			<a href="" style="font-size: 10vw;">현재 <%= map.get("address")%>의 날씨는 <%=map.get("reondo")%>도 <%=map.get("nalsi")%>입니다^^</a> --%>
 			
 	
-<%-- 			<a href="<%=folder %>index/todayMenu.do?category=<%=map.get("category")%>" style="font-size: 15vw;">오늘은 <%=map.get("category")%>의 <%=map.get("menu")%> 어떠세요? 먹고 싶다면 눌러주세요</a> --%>
+<%-- 			<a href="/Food/index/todayMenu.do?category=<%=map.get("category")%>" style="font-size: 15vw;">오늘은 <%=map.get("category")%>의 <%=map.get("menu")%> 어떠세요? 먹고 싶다면 눌러주세요</a> --%>
 
 			
 <!-- 			</div> -->
