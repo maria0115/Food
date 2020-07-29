@@ -26,13 +26,16 @@
 			</jsp:include>
 <style>
     .box{
-      width: auto;
+    width: auto;
     height: 200px;
     padding: 20px;
-    border: 5px solid gray;
+    border: 5px solid chocolate;
     margin: 10 10 10 10;
     font-family: fantasy;
-    font-size: xxx-large;
+    font-size: xx-large;
+    border-style: double;
+    text-align: center;
+    color: darkblue;
         
     }   
     
@@ -104,8 +107,9 @@ html {
 }
 
 .cen{
- text-align: center;
- padding-top: 55px;
+ 	text-align: center;
+    padding-top: 23px;
+    font-size: 28px;
 }
 
 /************************************\
@@ -151,16 +155,17 @@ html {
    		<div class ="container">		
 		<h1 class="jsjs"> my page </h1>
 			<div class ="box">
-			환영합니다.${user_Info.M_ID}님<br> 저희 홈페이지를 방문해 주셔서 감사합니다.
+			환영합니다.
+			${user_Info.M_ID}님<br> 저희 홈페이지를 방문해 주셔서 감사합니다.  ^_^
 			</div>
 		<div class="grid-wrapper">
 </div>
 
   <div class="grid">
-    <div class="grid-cell"><a href="membermodify.do" class="cen">회원 정보 수정 </a></div>
-    <div class="grid-cell"><a href="membermodify.do" class="cen">작성한글 보러가기</a></div>
-    <div class="grid-cell"><a href="membermodify.do" class="cen">나의 예약 현황 </a></div>
-    <div class="grid-cell"><a href="membermodify.do" class="cen">내가 사랑하는 매장</a></div>
+    <div class="grid-cell"><a href="mypage.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>회원 정보 수정 </a></div>
+    <div class="grid-cell"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>작성한글 보러가기</a></div>
+    <div class="grid-cell"><a href="membermodify.do" class="cen"><span style="color: lightcoral;">MY RESERVATION</span><br/>나의 예약 현황 </a></div>
+    <div class="grid-cell"><a href="membermodify.do" class="cen"><span style="color: steelblue;">MY WISH</span><br/>찜목록보기</a></div>
    
   </div>
   

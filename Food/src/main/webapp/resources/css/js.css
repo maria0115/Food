@@ -17,17 +17,17 @@
 }
 
 .logout {
-	border: 2px solid black;
-	background-color: rgba(0, 0, 0, 0);
-	color: black;
-	padding: 5px;
-	border-top-left-radius: 5px; 
-	border-bottom-left-radius: 5px;
-	border-top-right-radius: 5px; 
-	border-bottom-right-radius: 5px;
-	cursor: pointer;
-	font-size: large;
-    font-family: revert;s
+	border: 2px solid aliceblue;
+    background-color: rgba(0, 0, 0, 0);
+    color: aliceblue;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    font-size: large;
+    font-family: revert;
 
 }
 
