@@ -168,7 +168,7 @@
 							  <div class="manager">
 <!--                         <ul id="navi"> -->
 <!--                               <li> -->
-                                      <a href="<%=folder %>manager/member-list.do"  id="manageLabel" class="fa fa-user" ><br/>Manage</a>
+                                      <a href="/Food/manager/member-list.do"  id="manageLabel" class="fa fa-user" ><br/>Manage</a>
 <!--                                </li> -->
                                
                            
@@ -231,8 +231,8 @@
 										<div id="mySidepanel" class="sidepanel">
 											<a href="javascript:void(0)" class="closebtn"
 												onclick="closeNav()"><font size="10em">×</font></a> <a
-												href="<%=folder %>index/store.do?category='한식'">한식</a> <a href="<%=folder %>index/store.do?category='중식'">중식</a> <a href="<%=folder %>index/store.do?category='일식'">일식</a> <a
-												href="<%=folder %>index/store.do?category='양식'">양식</a> <a href="<%=folder %>index/store.do?category='동남아'">동남아</a>
+												href="/Food/index/store.do?category='한식'">한식</a> <a href="/Food/index/store.do?category='중식'">중식</a> <a href="/Food/index/store.do?category='일식'">일식</a> <a
+												href="/Food/index/store.do?category='양식'">양식</a> <a href="/Food/index/store.do?category='동남아'">동남아</a>
 										</div> <!--  -------------------------------------------------------- -->
 
 										<!-- END menu-toggle -->
@@ -241,11 +241,11 @@
 									</li>
 								</ul>
 								<ul>
-									<li><a href="<%=folder %>index/todayMenu.do" id="today">Today Menu</a></li>
-									<li><a href="<%=folder %>index/myMenu.do?m_id=${sessionScope.user_id}" id="mymenu">My Menu</a></li>
-									<li><a href="<%=folder %>index/choiceMenu.do" id="choice">Other's Menu</a></li>
-									<li><a href="<%=folder %>index/mealFriends.do">Happy Meal With Friends</a></li>
-									<li><a href="<%=folder %>index/store.do">Store List</a></li>
+									<li><a href="/Food/todayMenu.do" id="today">Today Menu</a></li>
+									<li><a href="/Food/myMenu.do?m_id=${sessionScope.user_id}" id="mymenu">My Menu</a></li>
+									<li><a href="/Food/index/choiceMenu.do" id="choice">Other's Menu</a></li>
+									<li><a href="/Food/index/mealFriends.do">Happy Meal With Friends</a></li>
+									<li><a href="/Food/store.do">Store List</a></li>
 								</ul>
 
 								<!-- Search Icon -->

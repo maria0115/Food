@@ -175,7 +175,7 @@ public class MemberController {
 		//이메일 보내는 기능
 			public static void gmailSend(MemberVO vo) {
 		        String user = "salcho94@naver.com"; // 네이버일 경우 네이버 계정, gmail경우 gmail 계정
-		        String password = "5vlvkrhtn";   // 패스워드
+		        String password = "1whvmfhwprxm";   // 패스워드
 
 		        // SMTP 서버 정보를 설정한다.
 		        Properties prop = new Properties();

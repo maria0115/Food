@@ -20,6 +20,8 @@
 		//response.sendRedirect("qnaboard.do");
 		
 		
+		
+		
 	%>
 	
 <!-- 	예약 버튼 -->

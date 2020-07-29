@@ -3,6 +3,7 @@ package com.food.naver;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +61,6 @@ public class LoginController {
         session.setAttribute("result", apiResult);
        
         /* 네이버 로그인 성공 페이지 View 호출 */
-        return "index/main";
+        return "index/myMenu";
     }
 }
