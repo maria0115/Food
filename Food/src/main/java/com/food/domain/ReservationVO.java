@@ -12,8 +12,14 @@ public class ReservationVO {
 	String r_note;			// 문의사항
 	int r_number;			// 예약 번호
 	String r_store_name;	// 매장명
+	String type;
 	
-	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public String getR_store_name() {
 		return r_store_name;
 	}

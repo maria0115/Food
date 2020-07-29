@@ -69,8 +69,8 @@
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading text-center">
-                        <h2>NEW ARRIVALS</h2>
-                        <p>We have the latest products, it must be exciting for you</p>
+                        <h2>오늘의 추천 메뉴</h2>
+                        <p>오늘의 날씨와 지역별 직장인들의 월별 요일별 가장많이 먹은 카테고리 중 주문 수가 가장 많은 top 4입니다</p>
                     </div>
                 </div>
             </div>
@@ -87,11 +87,12 @@
                     <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Product Image -->
                         <div class="product-img">
-                            <a href="shop-details.html"><img src="img/bg-img/9.jpg" alt=""></a>
+                            <a href="shop-details.do"><img src="/Food/resources/img/bg-img/9.jpg" alt=""></a>
                             <!-- Product Tag -->
                             <div class="product-tag">
                                 <a href="#">Hot</a>
                             </div>
+<!--                             <div class="product-tag sale-tag"> -->
                             <div class="product-meta d-flex">
                                 <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
                                 <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
@@ -100,7 +101,7 @@
                         </div>
                         <!-- Product Info -->
                         <div class="product-info mt-15 text-center">
-                            <a href="shop-details.html">
+                            <a href="shop-details.do">
                                 <p><%=vo.getP_name_1() %></p>
                                 <p><%=vo.getS_brand_name() %></p>
                             </a>

@@ -7,12 +7,20 @@
 
 </select>
 <select id="othermost"  resultType="reservation">
-SELECT *
-FROM reservation
+select j.r_menu r_menu,j.S_BRAND_NAME r_store_name,s.s_category type
+from (select r.r_menu r_menu, p.S_BRAND_NAME S_BRAND_NAME
+from (select r_menu
+from reservation
 WHERE m_id IN
-<foreach collection="othermost" item="arr" open="(" close=")" separator=",">
+<foreach collection="array" item="arr" open="(" close=")" separator=",">
  #{arr}
 </foreach>
+group by r_menu)r inner join product p
+on r.r_menu=p.P_NAME_1
+or r.r_menu=p.P_NAME_2
+or r.r_menu=p.P_NAME_3)j inner join store s
+on j.S_BRAND_NAME = s.S_BRAND_NAME
+
 </select>
 <select id="randomlist" resultType="product" parameterType="String">
 <![CDATA[

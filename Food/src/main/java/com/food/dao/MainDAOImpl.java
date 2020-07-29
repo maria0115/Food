@@ -32,9 +32,12 @@ public class MainDAOImpl implements MainDAO{
 
 	@Override
 	public List<ReservationVO> otherrecomandlist(String[] othermost) {
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("othermost",othermost);
-		return mybatis.selectList("mainDao.othermost", map);
+//		HashMap<String, Object> map = new HashMap<String, Object>();
+//		map.put("othermost",othermost);
+		for(int i=0; i<othermost.length;i++) {
+			System.out.println(othermost[i]);
+		}
+		return mybatis.selectList("mainDao.othermost", othermost);
 	}
 
 	@Override
