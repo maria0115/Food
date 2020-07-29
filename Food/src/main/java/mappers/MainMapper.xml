@@ -15,11 +15,19 @@ WHERE m_id IN
 </foreach>
 </select>
 <select id="randomlist" resultType="product" parameterType="String">
-
-select p.P_NAME_1 P_NAME_1,p.S_BRAND_NAME S_BRAND_NAME
-from store s inner join product p
+<![CDATA[
+select p.S_BRAND_NAME S_BRAND_NAME,p.P_NAME_1 P_NAME_1,P_PRICE_1 P_PRICE_1
+from (select *
+from (select count(p.P_NAME_1) c,p.P_NAME_1 P_NAME_1
+from store s inner join product p 
 on s.S_BRAND_NAME = p.S_BRAND_NAME
+inner join RESERVATION r
+on r.R_STORE_NAME = p.S_BRAND_NAME
 where s.s_category = #{value}
-
+group by p.P_NAME_1
+order by c desc)
+where rownum<=4)c inner join product p
+on c.P_NAME_1=p.P_NAME_1
+]]>
 </select>
 </mapper>

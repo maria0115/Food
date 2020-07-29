@@ -8,6 +8,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -22,10 +24,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.food.controller.maincontroller.*;
 import com.food.service.MainService;
 
 
@@ -110,8 +114,8 @@ public class MainController {
 				e.printStackTrace();
 			}
 
-//			String most="";
-//			Client client = new Client(resultweather,resulttemp,most,what);	//1
+//			String most="",fileName="";
+//			Client client = new Client(resultweather,resulttemp,most,fileName,what);	//1
 //			String result = client.getResult();
 //			ServletOutputStream out;
 //			System.out.println("result :"+result);
@@ -158,6 +162,58 @@ public class MainController {
 		return mv;
 		
 	}
+	@ResponseBody
+	@RequestMapping(value = "/imagecalorie.do", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")//, method = RequestMethod.POST
+	public String imagecalorie(MultipartHttpServletRequest multipartRequest,HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("imagecalorie.do 컨트롤러 들어옴");
+//		request.getParameter("temp");
+		MultipartFile file = multipartRequest.getFile("uploadFile");
+		System.out.println(file.getOriginalFilename());
+		
+		String filePath = "C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\tmp\\";
+		HandlerFile handlerFile = new HandlerFile(multipartRequest, filePath);
+		
+		Map<String, List<String>> fileNames = handlerFile.getUploadFileName();
+		// 실제저장파일명과 원본파일명 DB저장처리
+		
+		System.err.println(fileNames.toString());
+		String fileName = handlerFile.getFileFullPath();
+		String resultweather="",resulttemp="",most="";
+		String what="image";
+		Client client = new Client(resultweather,resulttemp,most,fileName,what);
+		String result = client.getResult();
+
+		System.out.println("result :"+result);
+		System.out.println("fileName :"+fileName);
+		
+		JSONParser parser = new JSONParser();
+		//json으로 읽기 위한 파싱
+		String name = "", calorie="",percent="";
+
+		Object obj = new Object();
+		
+		try {
+			obj = parser.parse( result );
+			JSONObject jsonObj = (JSONObject) obj;
+			name = (String) jsonObj.get("이름");
+			calorie = (String) jsonObj.get("칼로리");
+			percent = (String) jsonObj.get("정확도");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JSONObject jsonObj = (JSONObject) obj;
+		ModelAndView mv= new ModelAndView();
+		mv.addObject("name", name);
+		mv.addObject("calorie", calorie);
+		mv.addObject("percent", percent);
+		mv.setViewName("index/imagecalorie");
+		System.out.println(name+calorie+percent);
+		String resultper = name+","+calorie+","+percent;
+		return resultper;
+		
+	}
+
 
 
 

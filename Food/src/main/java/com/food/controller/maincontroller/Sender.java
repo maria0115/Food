@@ -2,6 +2,8 @@ package com.food.controller.maincontroller;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,24 +12,31 @@ import java.net.Socket;
 public class Sender extends Thread {
 	private Socket socket;
 
+	private BufferedInputStream bis;
 	private BufferedOutputStream bos;
 
 	private OutputStream os;
-
 	private InputStream is;
-	private BufferedInputStream bis;
+	
+	private FileInputStream fis;
+
 	private String resultweather;
 	private String resulttemp;
 	private String result;
 	private String most;
+	private String filename;
 	private String what;
-	public Sender(Socket socket, String resultweather,String resulttemp,String most,String what) {
+	
+	private int fileSize;
+	
+	public Sender(Socket socket, String resultweather,String resulttemp,String most,String filestr,String what) {
 		//socket 열어줌
 		this.socket = socket;
 		this.resultweather = resultweather;
 		this.resulttemp = resulttemp;
 		this.most = most;
 		this.what = what;
+		this.filename = filestr;
 		try {
 			// 데이터 스트림 생성
 			this.os = socket.getOutputStream();	//3
@@ -78,13 +87,24 @@ public class Sender extends Thread {
 		System.out.println("sendWhat 잘보내짐");
 		return true;
 	}
-//	public void sendImage(int fileSize) throws IOException {
-//		byte[] data = new byte[(int) (fileSize)];
-//		bos.write(data, 0, fis.read(data));
-//		System.out.println("send image ... ");
-//		bos.flush();
-//		fis.close();
-//	}
+	
+	public boolean sendFileSize(String fileName) throws IOException {
+		File imageFile = new File(fileName);
+		fileSize = (int) imageFile.length() * 100;
+		fis = new FileInputStream(imageFile);
+		bos.write(Integer.toString(fileSize).getBytes());
+		bos.flush();
+		System.out.println("send file size : " + fileSize);
+		return true;
+	}
+	
+	public void sendImage(int fileSize) throws IOException {
+		byte[] data = new byte[(int) (fileSize)];
+		bos.write(data, 0, fis.read(data));
+		System.out.println("send image ... ");
+		bos.flush();
+		fis.close();
+	}
 
 	public String receiveData(int buffer_size) throws IOException {
 		byte[] tmp = new byte[buffer_size];
@@ -133,6 +153,13 @@ public class Sender extends Thread {
 				sendMost(most);
 				this.result = receiveData(500);
 				System.out.println("잘왔다");
+			}
+			else if(what.equals("image")) {
+				sendWhat(what);
+				sendFileSize(filename);	//1
+				receiveData(100);//4
+				sendImage(fileSize);	//5
+				this.result = receiveData(1000);
 			}
 
 

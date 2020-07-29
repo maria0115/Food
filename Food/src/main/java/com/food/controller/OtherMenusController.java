@@ -1,6 +1,8 @@
 package com.food.controller;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -39,9 +41,9 @@ public class OtherMenusController {
 //			System.out.println("********************"+result.getM_most());
 //			String most = result.getM_id();
 //			String resultweather="";
-//			String resulttemp="";
+//			String resulttemp="",fileName="";
 //			
-//			Client client = new Client(resultweather,resulttemp,most,what);	//1
+//			Client client = new Client(resultweather,resulttemp,most,fileName,what);	//1
 //			String resultmost = client.getResult();
 //			ServletOutputStream out;
 //			System.out.println("result :"+resultmost);
@@ -74,10 +76,21 @@ public class OtherMenusController {
 		return mv;
 		
 	}
-	@RequestMapping("/index/todayMenu.do")
+	@RequestMapping("todayMenu.do")
 	public ModelAndView TodayMenu(HttpServletRequest request, HttpServletResponse response,HttpSession session, String category) {
 	
+		System.out.println("todayMenu 들어옴");
 		System.out.println(category);
+		if(category==null) {
+
+			String c[] = {"한식","일식","양식","중식","분식","동남아"};
+			Calendar cal = Calendar.getInstance(); 
+
+		      int num = cal.get(Calendar.DAY_OF_WEEK)-1; 
+
+		      category = c[num]; 
+
+		}
 		List<ProductVO> list = service.randomlist(category);
 		for(int i=0; i<list.size();i++) {
 			ProductVO vo = new ProductVO();
@@ -88,6 +101,7 @@ public class OtherMenusController {
 		System.out.println("todayMenu.do로 옴");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index/todayMenu");
+		mv.addObject("list",list);
 		return mv;
 	}
 
