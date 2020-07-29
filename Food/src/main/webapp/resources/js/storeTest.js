@@ -41,7 +41,7 @@ $(function(){
 	})
 	
 	
-	getWriterData();
+	//getWriterData();
 	$('#listSearch').on('keyup', getWriterData);
 //	$('#pagination-demo').on('click', getWriterDataInPaging);
 	$(document).on("click",".btn-primary", updateBtnEvent);
@@ -66,7 +66,7 @@ function getWriterDataInPaging(){
 		async:true,
 		url : 'storeDetailPaging.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-		data : {"searchWord" : $('#listSearch').val(),
+		data : {"s_brand_name" : $('#title').val(),
 				"curPage" : curPage,
 				},
 		dataType : 'json',

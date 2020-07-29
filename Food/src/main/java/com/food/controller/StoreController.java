@@ -136,29 +136,18 @@ public class StoreController {
 		List<BoardVO> listVO2 = storeService.reviewSelect2(map);
 		int listVO2size = listVO2.size();
 		
-		PaginationVO paginationVO = new PaginationVO(curPage,listVO2.size());
+		PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
 		map.put("startRow", paginationVO.getStartIndex()+1);
-		//paginationVO.setPageSize(2);		
+//		paginationVO.setPageSize(2);		
 		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
 		// 내가 지정한 리스트 개수를 가져오기위해서 listVO2에  다시 넣어줌 
+		
 		listVO2 = storeService.reviewPaging(map);
-		
-		
-//		int total = boardService.countBoard(vo2);
-	
-		
-		
-//		List<BoardVO> listVO = storeService.reviewSelect(vo);
-		
-		
-		
-	
-		
-		
-		
+		System.out.println("+++++++++++++++"+listVO2size);	
+		System.out.println("+++++++++++++++"+listVO2.size());
 		result.put("listVO2",listVO2);
-		result.put("paginationVO",paginationVO);
-		result.put("listVO2size",listVO2size);
+		result.put("pagination",paginationVO);
+		result.put("listVO2size",listVO2.size());
 		return result;
 	}
 	

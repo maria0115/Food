@@ -293,7 +293,7 @@
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script src="/Food/resources/js/jquery/jquery-2.2.4.min.js"></script>
+	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Popper js -->
 	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
 	<!-- Bootstrap js -->
@@ -302,6 +302,8 @@
 	<script src="/Food/resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
 	<script src="/Food/resources/js/active.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
+	
 	<!-- 지섭-->
 	
 
