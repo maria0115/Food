@@ -68,8 +68,6 @@
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
 
-<%= request.getParameter("m_id") %>
-
 
     <section class="alazea-portfolio-area section-padding-100-0">
         <div class="container">
@@ -111,7 +109,7 @@
 				    data: "r_number=" + r_number,
 				    success: function(data){
 				  $('.i_store_name').val(data.r_store_name);
-			      $('.i_visit_date').val(data.r_visit_date);  
+			      $('.i_visit_date').val(data.time);  
 			      $('.i_pplcount').val(data.r_people_count);          
 			      $('.i_menu').val(data.r_menu);
 			      $('.i_note').val(data.r_note);
@@ -136,11 +134,11 @@
 			<p class="dialog__content" style="color:black">Lorem ipsum dolor sit amet,
 				consectetur adipisicing elit. Impedit necessitatibus illo
 				deleniti doloremque culpa volupta.</p>
-			<label class="label_name">매장</label><input class="input_name i_store_name"><hr>
-			<label class="label_name">날짜</label><input class="input_name i_visit_date"><hr>
-			<label class="label_name">인원</label><input class="input_name i_pplcount"><hr>
-			<label class="label_name">메뉴</label><input class="input_name i_menu"><hr>
-			<label class="label_name">문의</label><input class="input_name i_note"><hr>
+			<label class="label_name">매장</label><input style="color:black" class="input_name i_store_name" disabled><hr>
+			<label class="label_name">날짜</label><input style="color:black" class="input_name i_visit_date" disabled><hr>
+			<label class="label_name">인원</label><input style="color:black" class="input_name i_pplcount" disabled><hr>
+			<label class="label_name">메뉴</label><input style="color:black" class="input_name i_menu" disabled><hr>
+			<label class="label_name">문의</label><input style="color:black" class="input_name i_note" disabled><hr>
 
 			<button class="dialog__action">Read more &#8594;</button>
 		</div>
@@ -165,7 +163,7 @@
                             <div class="port-hover-text" style="padding-top: 35%">
                                 <h3>${list.r_store_name}</h3>
                                 <h5>${list.r_menu}</h5>
-                                <h5>${list.r_visit_date}</h5>
+                                <h5>${list.time}</h5>
                                 <h5>${list.r_number}</h5>
                             </div>
 <!--                         </a> -->

@@ -12,13 +12,36 @@ public class ReservationVO {
 	String r_note;			// 문의사항
 	int r_number;			// 예약 번호
 	String r_store_name;	// 매장명
+	String r_date_hour;		// 예약 시
+	String r_date_minute;	// 예약 분
+	String time;			// 예약한 시간 ( yy/mm/dd hh:m1 )
 	String type;
+	
 	
 	public String getType() {
 		return type;
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getR_date_hour() {
+		return r_date_hour;
+	}
+	public void setR_date_hour(String r_date_hour) {
+		this.r_date_hour = r_date_hour;
+	}
+	public String getR_date_minute() {
+		return r_date_minute;
+	}
+	public void setR_date_minute(String r_date_minute) {
+		this.r_date_minute = r_date_minute;
 	}
 	public String getR_store_name() {
 		return r_store_name;

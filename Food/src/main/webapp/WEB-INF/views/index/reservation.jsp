@@ -108,6 +108,52 @@
 					</div>
 				</div>
 			</div>
+			
+			<!-- 시간 설정 -->
+			<div class="row">
+				<div class="col-md-6 form-group">
+					<label for="" class="font-weight-bold text-black">Hour</label>
+					<div class="field-icon-wrap">
+						<div class="icon">
+							<span class="ion-ios-arrow-down"></span>
+						</div>
+						<select name="r_date_hour" id="r_date_hour" class="form-control">
+						<option id="" disabled="disabled" selected>선택</option>
+							<option value="09">오전 9 시</option>
+							<option value="10">오전 10 시</option>
+							<option value="11">오전 11 시</option>
+							<option value="12">오후 12 시</option>
+							<option value="13">오후 1 시</option>
+							<option value="14">오후 2 시</option>
+							<option value="15">오후 3 시</option>
+							<option value="16">오후 4 시</option>
+							<option value="17">오후 5 시</option>
+							<option value="18">오후 6 시</option>
+							<option value="19">오후 7 시</option>
+							<option value="20">오후 8 시</option>
+							<option value="21">오후 9 시</option>
+							<option value="22">오후 10 시</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6 form-group">
+					<label for="" class="font-weight-bold text-black">Minute</label>
+					<div class="field-icon-wrap">
+						<div class="icon">
+							<span class="ion-ios-arrow-down"></span>
+						</div>
+						<select name="r_date_minute" id="r_date_minute" class="form-control">
+							<option id="" disabled="disabled" selected>선택</option>
+							<option value=00>00 분</option>
+							<option value=15>15 분</option>
+							<option value=30>30 분</option>
+							<option value=45>45 분</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			
+			
 			숫자가 초과될 경우 노트에 남겨주세요
 			<div class="row mb-4">
 				<div class="col-md-12 form-group">
@@ -160,6 +206,7 @@
 	<script src="resources/js/reservation_js/popper.min.js"></script>
 	
 	
+	
 <script>
 $(function(){
 	$("#r_menu_count").change(function(){
@@ -179,6 +226,7 @@ $(function(){
 		})
 	})
 })
+
 </script>
 
 </body>

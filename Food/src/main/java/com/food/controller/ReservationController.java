@@ -1,5 +1,10 @@
 package com.food.controller;
 
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -48,24 +53,24 @@ public class ReservationController {
 	
 	// mymenu 페이지에서 예약 내역 확인
 //	@RequestMapping(value = "index/myMenu.do", method = RequestMethod.GET)
-	public ModelAndView reservSelect(ReservationVO vo,HttpServletRequest httpServletRequest) {
-		System.out.println("reservSelect 컨트롤러 도착");
-		System.out.println("requestGET :"+RequestMethod.GET);
-		String m_id = httpServletRequest.getParameter("m_id");
-	    System.out.println("m_id : " + m_id);
-	    vo.setM_id(m_id);
-	    List<ReservationVO> list = ReservationService.selectReservation(vo);
-		System.out.println("컨트롤 갔다옴");
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index/myMenu");
-		mv.addObject("list",list);
-		return mv;
-	}
+//	public ModelAndView reservSelect(ReservationVO vo,HttpServletRequest httpServletRequest) {
+//		System.out.println("reservSelect 컨트롤러 도착");
+//		System.out.println("requestGET :"+RequestMethod.GET);
+//		String m_id = httpServletRequest.getParameter("m_id");
+//	    System.out.println("m_id : " + m_id);
+//	    vo.setM_id(m_id);
+//	    List<ReservationVO> list = ReservationService.selectReservation(vo);
+//		System.out.println("컨트롤 갔다옴");
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("index/myMenu");
+//		mv.addObject("list",list);
+//		return mv;
+//	}
 	
 	// 예약 내역 상세보기(클릭)
 	@RequestMapping(value = "index/myMenuDetail.do", method = RequestMethod.GET)
 	@ResponseBody
-	public ReservationVO myMenuDetail(ReservationVO vo,HttpServletRequest httpServletRequest) {
+	public ReservationVO myMenuDetail(ReservationVO vo,HttpServletRequest httpServletRequest) throws ParseException {
 		System.out.println("myMenuDetail controller 도착");
 		System.out.println("requestGET :"+RequestMethod.GET);
 		String data = httpServletRequest.getParameter("r_number");
@@ -75,6 +80,23 @@ public class ReservationController {
 		ReservationVO list = ReservationService.reservationDetail(vo);
 		System.out.println("menu :"+list.getR_menu());
 		System.out.println("visit_date :"+list.getR_visit_date());
+		System.out.println("time :"+list.getTime());
+		
+		SimpleDateFormat format1 = new SimpleDateFormat ( "yy/MM/dd HH:mm");
+		Calendar time = Calendar.getInstance();
+		// 시스템 현재 시간
+		String format_time1 = format1.format(time.getTime());
+		System.out.println("시스템 시간 :"+format_time1);
+		
+		if (format_time1.compareTo(list.getTime()) > 0) {
+	        System.out.println("예약 취소 못해");
+	        // 반환을 0으로 ajax에서 0일 경우 버튼 삭제
+	    } else {
+	        System.out.println("예약 취소 가능");
+	        // 반환을 1로 
+	        
+	    }
+		
 		return list;
 	}
 	
@@ -92,7 +114,7 @@ public class ReservationController {
 		System.out.println("페이지수 :"+total);
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
-			cntPerPage = "3";
+			cntPerPage = "8";
 		} else if (nowPage == null) {
 			nowPage = "1";
 		} else if (cntPerPage == null) {
