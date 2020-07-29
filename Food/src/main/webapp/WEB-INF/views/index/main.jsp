@@ -207,7 +207,7 @@
 									<li><a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}" id="mymenu">My Menu</a></li>
 									<li><a href="/Food/index/choiceMenu.do" id="choice">Other's Menu</a></li>
 									<li><a href="/Food/index/mealFriends.do">Happy Meal With Friends</a></li>
-									<li><a href="/Food/store.do">Store List</a></li>
+									<li><a href="/Food/index/store.do">Store List</a></li>
 								</ul>
                             
 

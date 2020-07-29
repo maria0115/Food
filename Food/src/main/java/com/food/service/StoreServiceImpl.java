@@ -1,6 +1,8 @@
 package com.food.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +38,28 @@ public class StoreServiceImpl implements StoreService{
 		
 		
 	}
+
+	@Override
+	public List<BoardVO> selectWriterSearchByNameWithPaging(Map map) {
+		return storeDAO.selectWriterSearchByNameWithPaging(map);
+	}
+	@Override
+	public int selectWriterCntByNameWithPaging(String searchWord) {
+		return storeDAO.selectWriterCntByNameWithPaging(searchWord);
+	}
+
+	@Override
+	public List<BoardVO> reviewSelect2(Map map) {
+		return storeDAO.reviewSelect2(map);
+	}
+
+	@Override
+	public List<BoardVO> reviewPaging(Map map) {
+		System.out.println("ssssssssnsonsonsonsonsonosnsonsono"+map.get("s_brand_name"));
+		return storeDAO.reviewPaging(map);
+	}
+
+
 	
 	
 	

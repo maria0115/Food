@@ -1,6 +1,8 @@
 package com.food.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.food.domain.BoardVO;
 import com.food.domain.StoreListVO;
@@ -17,5 +19,13 @@ public interface StoreDAO {
 	public StoreListVO storeDetail(StoreListVO vo);
 
 	public List<BoardVO> reviewSelect(StoreListVO vo);
+
+	public List<BoardVO> selectWriterSearchByNameWithPaging(Map map);
+
+	public int selectWriterCntByNameWithPaging(String searchWord);
+
+	public List<BoardVO> reviewSelect2(Map map);
+
+	public List<BoardVO> reviewPaging(Map map);
 
 }

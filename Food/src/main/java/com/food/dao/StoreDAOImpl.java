@@ -1,6 +1,8 @@
 package com.food.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +29,7 @@ public class StoreDAOImpl implements StoreDAO{
 		System.out.println(vo.getS_brand_name());
 		System.out.println(vo.getP_name());
 		System.out.println(vo.getP_price());
-//		String name = vo.getS_brand_name()+" ";
-//		vo.setS_brand_name(name);
+
 		return mybatis.selectOne("StoreDAO.selecStore",vo);
 	}
 	@Override
@@ -37,7 +38,28 @@ public class StoreDAOImpl implements StoreDAO{
 		System.out.println("리뷰다ㅓ오오오오오>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+vo.getNowPage());
 		return mybatis.selectList("StoreDAO.selecReview",vo);
 	}
+	@Override
+	public List<BoardVO> selectWriterSearchByNameWithPaging(Map map) {
+		return mybatis.selectList("StoreDAO.selectWriterSearchByNameWithPaging", map);	
+	}
 	
+	
+	@Override
+	public int selectWriterCntByNameWithPaging(String searchWord) {
+		return mybatis.selectOne("StoreDAO.selectWriterCntByNameWithPaging", searchWord);
+	}
+	@Override
+	public List<BoardVO> reviewSelect2(Map map) {
+		List<BoardVO> result=mybatis.selectList("StoreDAO.reviewSelect2",map);
+	
+		return mybatis.selectList("StoreDAO.reviewSelect2",map);
+	}
+	@Override
+	public List<BoardVO> reviewPaging(Map map) {
+		List<BoardVO> result=mybatis.selectList("StoreDAO.reviewPaging",map);	
+				
+		return mybatis.selectList("StoreDAO.reviewPaging",map);
+	}
 
 	
 }
