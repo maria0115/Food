@@ -253,7 +253,7 @@
 	<!-- ##### Hero Area Start ##### -->
 <!-- 	<section class="hero-area"> -->
 <div class="slide-img bg-img"
-				style="background-image: url(resources/img/bg-img/1.jpg);">
+				style="background-image: url(/Food/resources/img/bg-img/1.jpg);">
 		<!-- Single Hero Post -->
 		<div class="single-hero-post2 bg-overlay">
 		
