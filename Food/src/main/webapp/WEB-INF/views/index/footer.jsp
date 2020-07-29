@@ -202,18 +202,18 @@
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-	<!-- Popper js -->
+	<!-- <script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	Popper js
 	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
-	<!-- Bootstrap js -->
+	Bootstrap js
 	<script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
-	<!-- All Plugins js -->
+	All Plugins js
 	<script src="/Food/resources/js/plugins/plugins.js"></script>
-	<!-- Active js -->
+	Active js
 	<script src="/Food/resources/js/active.js"></script>
-	<!-- 지섭 --> -->
+	지섭 
 	<script src="/Food/resources/js/sub.js"></script>
-
+ -->
 
 
 
