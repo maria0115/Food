@@ -6,15 +6,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
-<% 
 
-// HashMap map = (HashMap)request.getAttribute("map"); 
-
-// <jsp:param>의 값 넘겨받기
-String folder = request.getParameter("folder");
-if( folder == null || folder.equals("")) folder="";
-
-%>
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="">
@@ -211,11 +203,11 @@ if( folder == null || folder.equals("")) folder="";
 									</li>
 								</ul>
 								<ul>
-									<li><a href="<%=folder %>index/todayMenu.do" id="today">Today Menu</a></li>
-									<li><a href="<%=folder %>index/myMenu.do?m_id=${sessionScope.user_id}" id="mymenu">My Menu</a></li>
-									<li><a href="<%=folder %>index/choiceMenu.do" id="choice">Other's Menu</a></li>
-									<li><a href="<%=folder %>index/mealFriends.do">Happy Meal With Friends</a></li>
-									<li><a href="<%=folder %>index/store.do">Store List</a></li>
+									<li><a href="/Food/todayMenu.do" id="today">Today Menu</a></li>
+									<li><a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}" id="mymenu">My Menu</a></li>
+									<li><a href="/Food/index/choiceMenu.do" id="choice">Other's Menu</a></li>
+									<li><a href="/Food/index/mealFriends.do">Happy Meal With Friends</a></li>
+									<li><a href="/Food/store.do">Store List</a></li>
 								</ul>
                             
 
