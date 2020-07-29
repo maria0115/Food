@@ -127,12 +127,15 @@ function drawWriterTable(data){
 	var div6 ='<div class="d-flex align-items-center justify-content-between">';
 	var h51 = '<h5>';
 	var h52 = '</h5>';
-	var span = '<span class="comment-date"> </span>';
+	var span = '<span class="comment-date">';
+	var span2 = '</span>';
 	var div7 ='</div>';
 	var p1 = '<p>';
 	var p2 = '</p>';
 	var div8 ='</div>';
 	var div9 ='</div>';
+	var a1 = '<a type="button" class="btn alazea-btn" id="reviewUpdate" value="수정"></a>';
+	var a2= '<a type="button" class="btn alazea-btn" id="reviewDelete" value="삭제"></a>';
 	alert('>'+data.listVO2size);
 	alert(">>"+data.listVO2);
        for(var i=0; i<data.listVO2size; i++){
@@ -143,11 +146,12 @@ function drawWriterTable(data){
 			div4+
 			div5+
 			div6+
-			h51+data.listVO2[i].s_brand_name+h52+
-			span+
+			h51+data.listVO2[i].title+h52+
+			span+data.listVO2[i].b_date+span2+
 			div7+
-			p1+
-			p2+
+			p1+data.listVO2[i].title+p2+
+			a1+
+			a2+
 			div8+
 			div9
 			

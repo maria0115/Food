@@ -279,27 +279,28 @@
 													
 													<li class="single_comment_area" id="reviewContainer">
 													
-														<c:forEach items="${listVO}" var="board">
-															<div class="comment-wrapper d-flex"
-																style="padding: 25px 0;">
-																<!-- Comment Meta -->
-																<div class="comment-author">
-																	<img src="img/bg-img/37.jpg" alt="">
-																</div>
-																<!-- Comment Content -->
+					<c:forEach items="${listVO}" var="board">
+						<div class="comment-wrapper d-flex"
+							style="padding: 25px 0;">
+							<!-- Comment Meta -->
+							<div class="comment-author">
+								<img src="img/bg-img/37.jpg" alt="">
+							</div>
+							<!-- Comment Content -->
 
-																<div class="comment-content">
-																	<div
-																		class="d-flex align-items-center justify-content-between">
-																		<h5>${board.s_brand_name}</h5>
-																		<span class="comment-date"> </span>
-																	</div>
-																	<p>${board.b_content}</p>
+							<div class="comment-content">
+								<div
+									class="d-flex align-items-center justify-content-between">
+									<h5>${board.s_brand_name}</h5>
+									
+									<span class="comment-date"> </span>
+								</div>
+								<p>${board.b_content}</p>
 
-																</div>
+							</div>
 
-															</div>
-														</c:forEach>
+						</div>
+					</c:forEach>
 											
 
 							
@@ -393,7 +394,7 @@
 											<div class="form-group">
 												<label for="name">제목</label> <input type="text"
 													class="form-control" id="name" name="title"
-													placeholder="Nazrul">
+													placeholder="제목">
 											</div>
 										</div>
 
@@ -401,23 +402,23 @@
 											<div class="form-group">
 												<label for="name">작성자</label> <input type="text"
 													class="form-control" id="name" name="userId"
-													placeholder="Nazrul">
+													placeholder="작성자">
 											</div>
 										</div>
 
 										<div class="col-12">
 											<div class="form-group">
-												<label for="comments">내용</label> <input class="form-control"
+												<label for="comments">내용</label> <textarea class="form-control"
 													id="comments" name="b_content" rows="5"
-													data-max-length="150">
+													data-max-length="150"></textarea>
 											</div>
 										</div>
 										<div class="col-12">
 
-											<input type="button" class="btn alazea-btn" id="reviewInsert"
-												value="리뷰등록">
 											<!-- ************** name은 MultipartFile 프라퍼티임 -->
 											<input type="file" name="file" maxlength="60" size="40">
+											<input type="button" class="btn alazea-btn" id="reviewInsert"
+												value="리뷰등록">																					
 										</div>
 									</div>
 								</form>

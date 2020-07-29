@@ -212,7 +212,7 @@
 <!-- 	<!-- Active js --> -->
 <!-- 	<script src="/Food/resources/js/active.js"></script> -->
 <!-- 	<!-- 지섭 --> -->
-<!-- 	<script src="/Food/resources/js/sub.js"></script> -->
+	<script src="/Food/resources/js/sub.js"></script>
 
 
 
