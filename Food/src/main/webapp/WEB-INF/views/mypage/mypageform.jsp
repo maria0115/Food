@@ -34,10 +34,10 @@
     <!-- ##### Portfolio Area End ##### -->
 	
 	<c:if test="${not empty sessionScope.user_id}">
-    
-
-				
-    
+   			<div class ="container">		
+		<h1 style="text-align: center;"> my page </h1>
+			</div>		
+    	
 	</c:if>
 	
 	<c:if test="${empty sessionScope.user_id}">
