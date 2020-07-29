@@ -21,9 +21,9 @@ select m_id,m_email,m_pass from member where m_id = #{m_id}
 
 <select id="search" parameterType="String" resultType="product">
 
-               select *     
-               from product
-               where p_name_1 like '%'||#{value}||'%'	 
+               select menu as P_name_1    
+               from menu
+               where Menu like '%'||#{value}||'%'	 
                
          
         </select>
@@ -51,8 +51,8 @@ select m_id,m_email,m_pass from member where m_id = #{m_id}
 </select>
 
 <insert id="insertMember" parameterType="member">
-insert into member(m_id,m_name,m_pass,m_tel,m_birth,m_area,m_most,m_email,m_post) 
-values(#{m_id},#{m_name},#{m_pass},#{m_tel},#{m_birth},#{m_area},#{m_most},#{m_email},#{m_post})
+insert into member(m_id,m_name,m_pass,m_tel,m_birth,m_area,m_most,m_email,m_post,m_date) 
+values(#{m_id},#{m_name},#{m_pass},#{m_tel},#{m_birth},#{m_area},#{m_most},#{m_email},#{m_post},sysdate)
 </insert>
 
 

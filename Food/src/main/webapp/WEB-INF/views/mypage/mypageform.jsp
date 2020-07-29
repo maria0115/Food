@@ -24,7 +24,33 @@
   			 <jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
 			</jsp:include>
-	
+<style>
+    .box{
+       width:auto;
+        height: 200px;
+        padding: 20px;
+        border: 5px solid gray;
+        margin: 10 10 10 10;
+        
+    }   
+    
+ 
+    h1{
+    	padding: 30px;
+    	text-align: center;
+    } 
+    
+    .grid {
+  /* 외곽 간격을 동일하게 설정 */
+  padding: 20px 0 0 20px;
+}
+
+.grid-cell {
+  /* 간격 설정 */
+  border: 0 solid transparent;
+  border-width: 0 20px 20px 0;
+}
+</style>    	
 
 	 
 	 
@@ -34,9 +60,26 @@
     <!-- ##### Portfolio Area End ##### -->
 	
 	<c:if test="${not empty sessionScope.user_id}">
-   			<div class ="container">		
-		<h1 style="text-align: center;"> my page </h1>
-			</div>		
+   		<div class ="container">		
+		<h1 > my page </h1>
+			<div class ="box">
+			${user_Info}
+			</div>
+		<div class="grid-wrapper">
+
+  <div class="grid">
+    <div class="grid-cell"></div>
+    <div class="grid-cell"></div>
+    <div class="grid-cell"></div>
+    <div class="grid-cell"></div>
+    <div class="grid-cell"></div>
+    <div class="grid-cell"></div>
+  </div>
+  
+</div>
+</div>
+
+		
     	
 	</c:if>
 	

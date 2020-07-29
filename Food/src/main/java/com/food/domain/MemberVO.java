@@ -10,7 +10,14 @@ public class MemberVO {
 	private	String	m_most  ;
 	private	String	m_email ;
 	private String m_post;
+	private String m_date;
 
+	public String getM_date() {
+		return m_date;
+	}
+	public void setM_date(String m_date) {
+		this.m_date = m_date;
+	}
 	public String getM_post() {
 		return m_post;
 	}
