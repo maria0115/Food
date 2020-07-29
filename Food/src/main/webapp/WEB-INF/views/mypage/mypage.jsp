@@ -21,12 +21,13 @@
 	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
     
-    <jsp:include page="header.jsp">
-		<jsp:param value='' name='folder' />
-	</jsp:include>
+  			 <jsp:include page="../index/header.jsp">
+				<jsp:param value='../' name='folder' />
+			</jsp:include>
+	
 
-	
-	
+	 
+	 
 </head>
 
 <body>
@@ -137,8 +138,8 @@
 
     
 
-    <!-- ##### Footer Area Start ##### -->
-    <%@ include file="footer.jsp" %>
+    <!-- ##### Footer Area Start ##### --> 
+    <%@ include file="../index/footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->

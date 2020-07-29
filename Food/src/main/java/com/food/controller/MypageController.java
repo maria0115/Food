@@ -26,7 +26,7 @@ public class MypageController {
 		@Autowired
 		private MemberService memberService;
 		
-		@RequestMapping("mypage.do")
+		@RequestMapping("mypageform.do")
 		public String modify(HttpSession session,BoardVO vo, MemberVO mvo,Model model) {
 	
 			
@@ -39,7 +39,12 @@ public class MypageController {
 			model.addAttribute("member",member);
 		
 			
-			return "index/mypage";
+			return "mypage/mypageform";
 		}
-
+		
+		
+		
+		
+	
+		
 }
