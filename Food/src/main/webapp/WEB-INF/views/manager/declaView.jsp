@@ -1050,9 +1050,9 @@
 									<div class="articleContent">
 										<div class="contentBody">
 											<label>신고대상 : ${declaView.d_suspect}</label><br/>
-											<label>신고사유 : ${declaView.b_content}</label><br/><br/>
+											<label>신고사유 : ${declaView.d_reason}</label><br/><br/>
 											<img style="width: 35%;" src="/Food/resources/d_upload/${declaView.d_fileName }">
-											<div id="declaContent" style="">리라도 이기기 직전에 그레이브즈로 컨트롤4 한번 눌렀다가 몇년을 두고두고 까였음</div>
+											<div id="declaContent" style="">${declaView.b_content}</div>
 										</div>
 									</div>
 									</td>
@@ -1063,7 +1063,7 @@
 						
 
 							<div class="declaButton">
-							<a href="#" onclick="window.open('addBlack.do','_blank','width=600 ,height=400');">블랙리스트 추가</a>
+							<a href="#" onclick="window.open('addBlack.do?d_suspect=${declaView.d_suspect}&b_content','_blank','width=600 ,height=400');">블랙리스트 추가</a>
 							<a href="javascript:history.back()">뒤로가기</a>
 							</div>
 								

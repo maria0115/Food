@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +27,33 @@ $(document).ready(function(){
 				$(this).siblings('.upload-name').val(filename); 
 				});
 
+	$("#d_suspect").blur(function(){
+		
+		$.ajax({
+	                type:'post',
+	                async:true,
+	                url : '/Food/checkId.do',
+	                contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+	                data : "m_id="+ $("#d_suspect").val(),
+	                success : function(resultData){
+		                if(resultData=="중복된 아이디입니다"){
+		                	
+		                }
+		                else{
+		                	$("#check").html("없는 회원 입니다");
+			                }
+		                
+	                   
+	                  	
+	                } 
+					
+	        });	
+	        	
+			
+	        
+	        });
+
 	$('#add').click(function(){
-		alert("aaa");
 		var formData = new FormData($('#frm')[0]);
 // 		formData.append("title",$("input[name=title]").val());
 // 		formData.append("userId",$("input[name=userId]").val());
@@ -98,7 +125,11 @@ $(document).ready(function(){
 				</tr>
 				<tr>
 					<td width="100%">신고대상</td>
-					<td align="left"><input type="text" name="d_suspect"/></td>
+					<td align="left"><input type="text" name="d_suspect" id="d_suspect"/><div id="check"></div></td>
+				</tr>
+				<tr>
+					<td width="100%">신고사유</td>
+					<td align="left"><input type="text" name="d_reason"/></td>
 				</tr>
 
 				<tr>
@@ -113,6 +144,7 @@ $(document).ready(function(){
 					 	<input class="upload-name" value="파일선택" disabled="disabled">
 						<label for="ex_filename">업로드</label> 
                         <input type="file" name="file2" id="ex_filename" class="upload-hidden" style="visibility: hidden"> 
+                        
 					</div>
 					</td>
 				</tr>

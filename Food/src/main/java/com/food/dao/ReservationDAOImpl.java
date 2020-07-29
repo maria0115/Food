@@ -1,11 +1,14 @@
 package com.food.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.food.domain.BoardVO;
+import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
 import com.food.service.ReservationService;
 
@@ -34,4 +37,24 @@ public class ReservationDAOImpl implements ReservationDAO {
 		System.out.println("reservationDetail DAO 도착");
 		return mybatis.selectOne("reservationDAO.detailReserv", vo);
 	}
+
+	@Override
+	public int countReserv(PagingVO vo) {
+		System.out.println("countReserv DAO 도착");
+		return mybatis.selectOne("reservationDAO.countReserv",vo);
+	}
+
+	@Override
+	public List<ReservationVO> selectBoard(PagingVO vo) {
+		System.out.println(vo.getEnd());
+		System.out.println(vo.getStart());
+		System.out.println(vo.getTotal());
+		System.out.println(vo.getM_id());
+		return mybatis.selectList("reservationDAO.selectBoard", vo);
+	}
+
+	
+	
+	
+	
 }

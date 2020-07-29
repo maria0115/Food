@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.food.domain.BoardVO;
+import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
 import com.food.service.ReservationService;
 import com.food.service.boardService;
@@ -31,7 +34,6 @@ public class ReservationController {
 //	
 	
 	
-	
 	// 예약 페이지에서 등록
 	@RequestMapping("reservInsert.do")
 	public void reservInsert(ReservationVO vo) {
@@ -45,7 +47,7 @@ public class ReservationController {
 	}
 	
 	// mymenu 페이지에서 예약 내역 확인
-	@RequestMapping(value = "index/myMenu.do", method = RequestMethod.GET)
+//	@RequestMapping(value = "index/myMenu.do", method = RequestMethod.GET)
 	public ModelAndView reservSelect(ReservationVO vo,HttpServletRequest httpServletRequest) {
 		System.out.println("reservSelect 컨트롤러 도착");
 		System.out.println("requestGET :"+RequestMethod.GET);
@@ -60,6 +62,7 @@ public class ReservationController {
 		return mv;
 	}
 	
+	// 예약 내역 상세보기(클릭)
 	@RequestMapping(value = "index/myMenuDetail.do", method = RequestMethod.GET)
 	@ResponseBody
 	public ReservationVO myMenuDetail(ReservationVO vo,HttpServletRequest httpServletRequest) {
@@ -75,6 +78,32 @@ public class ReservationController {
 		return list;
 	}
 	
-	
+	// myMenu 페이징
+	@RequestMapping(value = "index/myMenu.do", method = RequestMethod.GET)
+	public String pagingReservation(PagingVO vo,ReservationVO rvo, Model model
+			, @RequestParam(value="nowPage", required=false)String nowPage
+			, @RequestParam(value="cntPerPage", required=false)String cntPerPage
+			, HttpServletRequest httpServletRequest) {
+		System.out.println("pagingReservation 컨트롤러");
+		String m_id = httpServletRequest.getParameter("m_id");
+		System.out.println("m_id : " + m_id);
+		vo.setM_id(m_id);
+		int total = ReservationService.countReserv(vo);
+		System.out.println("페이지수 :"+total);
+		if (nowPage == null && cntPerPage == null) {
+			nowPage = "1";
+			cntPerPage = "3";
+		} else if (nowPage == null) {
+			nowPage = "1";
+		} else if (cntPerPage == null) {
+			cntPerPage = "5";
+		}
+		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		vo.setM_id(m_id);
+		System.out.println("vo m_id"+vo.getM_id());
+		model.addAttribute("paging", vo);
+		model.addAttribute("list", ReservationService.selectBoard(vo));
+		return "index/myMenu";
+	}
 	
 }
