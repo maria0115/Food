@@ -19,8 +19,7 @@
 <body>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
-<!-- 비속어 필터링을 위한 script -->
-<script src="/Food/resources/js/word.js"></script>
+
 	    
 <div id="container">
 	<main>
@@ -30,6 +29,7 @@
 	    
 	
 		<div id="header">
+		
 			<h3 style="text-align: center;"><%=f_title %></h3>
 		</div>
 		<!-- 채팅메세지를 주고받는 부분 -->

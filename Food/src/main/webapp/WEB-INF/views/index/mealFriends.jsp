@@ -71,7 +71,7 @@
 		<br />
 
 		<div >
-			<table class="table table-striped">
+			<table class="table table-striped" style="font-size: 15px;">
 				<tr>
 					<th></th>
 					<th>제목</th>
@@ -138,6 +138,9 @@
         <c:if test="${sessionScope.user_id!= null }">
 		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" >글등록</button>
 		</c:if>
+		<div class="add-decla">
+            <a href="#" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');">신고</a>
+        </div>
 	</div>
 
 
