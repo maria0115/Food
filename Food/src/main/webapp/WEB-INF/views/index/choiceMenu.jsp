@@ -122,96 +122,6 @@ map.put("동남아", "east");
                 
                 <%} %>
 
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-6 single_portfolio_item kor"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/17.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/17.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden ch"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/19.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/19.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 4"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design ch"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/20.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/20.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 5"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item ch"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/21.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/21.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 6"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-6 single_portfolio_item jap"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/22.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/22.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 7"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-<!--                 Single Portfolio Area -->
-<!--                 <div class="col-12 col-sm-6 col-lg-6 single_portfolio_item design jap"> -->
-<!--                     Portfolio Thumbnail -->
-<!--                     <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/16.jpg);"></div> -->
-<!--                     Portfolio Hover Text -->
-<!--                     <div class="portfolio-hover-overlay"> -->
-<!--                         <a href="img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1"> -->
-<!--                             <div class="port-hover-text"> -->
-<!--                                 <h3>Minimal Flower Store</h3> -->
-<!--                                 <h5>Office Plants</h5> -->
-<!--                             </div> -->
-<!--                         </a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
 
             </div>
         </div>
@@ -225,17 +135,17 @@ map.put("동남아", "east");
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
-    <script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="/Food/resources/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="resources/js/bootstrap/popper.min.js"></script>
+    <script src="/Food/resources/js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src="resources/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="resources/js/plugins/plugins.js"></script>
+    <script src="/Food/resources/js/plugins/plugins.js"></script>
     <!-- Active js -->
-    <script src="resources/js/active.js"></script>
+    <script src="/Food/resources/js/active.js"></script>
     
-    <script type="text/javascript" src="resources/js/jquery/choice_ktg.js"></script>
+    <script type="text/javascript" src="/Food/resources/js/jquery/choice_ktg.js"></script>
 </body>
 
 </html>

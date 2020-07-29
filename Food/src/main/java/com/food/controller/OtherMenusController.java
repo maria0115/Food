@@ -57,6 +57,8 @@ public class OtherMenusController {
 				ReservationVO vo = new ReservationVO();
 				vo = list.get(i);
 				System.out.println(vo.getR_store_name());
+				System.out.println(vo.getR_menu());
+				System.out.println(vo.getType());
 				}
 			}
 //			if (relistvo!=null) {
