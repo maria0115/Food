@@ -26,29 +26,117 @@
 			</jsp:include>
 <style>
     .box{
-       width:auto;
-        height: 200px;
-        padding: 20px;
-        border: 5px solid gray;
-        margin: 10 10 10 10;
+      width: auto;
+    height: 200px;
+    padding: 20px;
+    border: 5px solid gray;
+    margin: 10 10 10 10;
+    font-family: fantasy;
+    font-size: xxx-large;
         
     }   
     
  
-    h1{
+    .jsjs{
     	padding: 30px;
-    	text-align: center;
+    text-align: center;
+    /* font-family: serif; */
+    font-size: -webkit-xxx-large;
+    text-transform: uppercase;
+}
+
     } 
     
-    .grid {
-  /* 외곽 간격을 동일하게 설정 */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.grid-wrapper {
+    /* Prevents odd margin behaviour */
+    // overflow: hidden;
+    padding: 0.1px 0;
+}
+
+.grid {
+  /* forces equal cell heights */
+  display: flex;
+  flex-wrap: wrap;
+
+  /* creates gaps */
   padding: 20px 0 0 20px;
+
+    /* pulls grid cells hard against edges */
+    margin: -20px;
 }
 
 .grid-cell {
-  /* 간격 설정 */
+  /* sets column count */
+  width: calc(100% / 1); /* 1 columns */
+
+  /* creates gaps */
   border: 0 solid transparent;
   border-width: 0 20px 20px 0;
+    
+  /* prevents background bleed */
+  background-clip: padding-box;
+
+  /* forces inner to take up full grid cell height */
+  display: flex;
+}
+
+@media (min-width: 400px){
+    .grid-cell {
+    width: calc(100% / 2); /* 2 columns */
+    }
+}
+
+@media (min-width: 600px){
+    .grid-cell {
+    width: calc(100% / 4); /* 3 columns */
+    }
+}
+
+.grid-cell-inner {
+    width: 100%;
+}
+
+.cen{
+ text-align: center;
+ padding-top: 55px;
+}
+
+/************************************\
+  Prettiness only below this point
+\************************************/
+
+.grid-cell-inner {
+    box-shadow: 0 0 10px 3px blue;
+}
+
+.grid-cell {
+    /* So that we can see the grid cells */
+    box-shadow: inset 0 0 0 3px #0119;
+    height: 150px;
+    margin-bottom: 100px;
+    -webkit-text-stroke-width: medium;
+   justify-content: center
+}
+
+.grid-wrapper {
+    /* So that we can see the edges of the grid */
+    // border: 3px solid green;
+}
+
+.grid-wrapper {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+html {
+  margin: 20px;
 }
 </style>    	
 
@@ -61,23 +149,23 @@
 	
 	<c:if test="${not empty sessionScope.user_id}">
    		<div class ="container">		
-		<h1 > my page </h1>
+		<h1 class="jsjs"> my page </h1>
 			<div class ="box">
-			${user_Info}
+			환영합니다.${user_Info.M_ID}님<br> 저희 홈페이지를 방문해 주셔서 감사합니다.
 			</div>
 		<div class="grid-wrapper">
+</div>
 
   <div class="grid">
-    <div class="grid-cell"></div>
-    <div class="grid-cell"></div>
-    <div class="grid-cell"></div>
-    <div class="grid-cell"></div>
-    <div class="grid-cell"></div>
-    <div class="grid-cell"></div>
+    <div class="grid-cell"><a href="membermodify.do" class="cen">회원 정보 수정 </a></div>
+    <div class="grid-cell"><a href="membermodify.do" class="cen">작성한글 보러가기</a></div>
+    <div class="grid-cell"><a href="membermodify.do" class="cen">나의 예약 현황 </a></div>
+    <div class="grid-cell"><a href="membermodify.do" class="cen">내가 사랑하는 매장</a></div>
+   
   </div>
   
 </div>
-</div>
+
 
 		
     	
