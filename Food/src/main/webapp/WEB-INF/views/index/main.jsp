@@ -306,6 +306,8 @@
 	<script src="resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
 	<script src="resources/js/active.js"></script>
+	
+	<script src="/Food/resources/js/sub.js"></script>
 	<!-- 지섭 -->
 
 
