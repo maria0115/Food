@@ -5,6 +5,8 @@ import java.util.List;
 import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
 import com.food.domain.PagingVO;
+import com.food.domain.ReservationVO;
+import com.food.domain.StoreListVO;
 
 public interface FriendBoardDAO {
 
@@ -31,5 +33,8 @@ public interface FriendBoardDAO {
 	
 	//밥친구 확정자 인원수 가져오기
 	public List<FriendBoardVO> getjoinCnt(BoardVO vo);
+	
+	public List<StoreListVO> test();
+	
 	
 }

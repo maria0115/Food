@@ -10,6 +10,8 @@ import org.springframework.stereotype.Repository;
 import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
 import com.food.domain.PagingVO;
+import com.food.domain.ReservationVO;
+import com.food.domain.StoreListVO;
 
 @Repository("friendBoarddao")
 public class FriendBoardDAOImpl implements FriendBoardDAO{
@@ -76,6 +78,13 @@ public class FriendBoardDAOImpl implements FriendBoardDAO{
 	public List<FriendBoardVO> getjoinCnt(BoardVO vo) {
 		
 		return mybatis.selectList("friendDAO.getjoinCnt",vo);
+	}
+
+	//test용
+	@Override
+	public List<StoreListVO> test() {
+		
+		return mybatis.selectList("friendDAO.test");
 	}
 
 }

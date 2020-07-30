@@ -1,5 +1,7 @@
 package com.food.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
+import com.food.domain.ReservationVO;
+import com.food.domain.StoreListVO;
 import com.food.service.FriendBoardService;
 import com.food.service.boardService;
 import com.google.gson.Gson;
@@ -90,39 +94,45 @@ public class MealBoardContoller {
 		}
 		return "redirect:../index/mealFriends.do";
 	}
-	
-//	//참가하기 버튼눌렀을때 
-//	@RequestMapping("/mealjoin.do")
-//	public String mealjoin(BoardVO vo , Model model) {
-//		int result;
-//		vo.setBoardType(3);
-//		result = boardService.mealjoin(vo);
-//		if(result==0) {
-//			return "index/error";
-//		}
-//		return "redirect:../index/mealFriends.do";
-//	}
 
 	//참가하기 버튼눌렀을때 
 	
-		@RequestMapping("/mealjoin.do")
-		@ResponseBody
-		public int mealjoin(BoardVO vo , Model model,@RequestParam(value="f_userId")String f_userId,
-				@RequestParam(value="b_no")int b_no) {
+	@RequestMapping("/mealjoin.do")
+	@ResponseBody
+	public int mealjoin(BoardVO vo , Model model,@RequestParam(value="f_userId")String f_userId,
+			@RequestParam(value="b_no")int b_no) {
 				
-			System.out.println(f_userId);
-			System.out.println(b_no);
+		System.out.println(f_userId);
+		System.out.println(b_no);
 			
-			int result;
-			vo.setBoardType(3);
-			vo.setF_userId(f_userId);
-			vo.setB_no(b_no);
-			result = boardService.mealjoin(vo);
+		int result;
+		vo.setBoardType(3);
+		vo.setF_userId(f_userId);
+		vo.setB_no(b_no);
+		result = boardService.mealjoin(vo);
 			
 				
-				return result;
-			}
-		}
+			return result;
+	}
+
+	@RequestMapping("/test.do")
+	public String test(ReservationVO vo, Model model) {
+		
+		model.addAttribute("list",friendBoardservice.test());
+		
+		return"/mealBoard/test";
+	}
+
+
+
+
+
+
+
+}
+	
+
+
 	
 	
 	

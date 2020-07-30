@@ -9,6 +9,8 @@ import com.food.dao.FriendBoardDAO;
 import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
 import com.food.domain.PagingVO;
+import com.food.domain.ReservationVO;
+import com.food.domain.StoreListVO;
 
 @Service("friendBoardService")
 public class FriendBoardServiceImpl implements FriendBoardService{
@@ -70,6 +72,12 @@ public class FriendBoardServiceImpl implements FriendBoardService{
 	@Override
 	public List<FriendBoardVO> getjoinCnt(BoardVO vo) {
 		return friendBoarddao.getjoinCnt(vo);
+	}
+
+	@Override
+	public List<StoreListVO> test() {
+		
+		return friendBoarddao.test();
 	}
 	
 	

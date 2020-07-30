@@ -10,6 +10,7 @@ $(function(){
 			$("#f_addr1").removeAttr('name');
 			$("#f_addr2").removeAttr('name');
 			
+			//새로운 주소를 입력할수있게 ui만들어주기 
 			var $div = $('<tr id="ckeck_addr">'+
 					'<td width="100%">식사장소</td>'+
 					'<td align="left">'+
@@ -31,6 +32,7 @@ $(function(){
 		}
 	});
 	
+	//수정하기 버튼을 눌렀을때
 	$("#modifyBtn").click(function(){
 		$("#modifyfrm").submit();
 	});

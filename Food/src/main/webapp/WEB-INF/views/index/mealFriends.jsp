@@ -10,34 +10,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-<!-- Title -->
-<title></title>
-
 
 <!-- 부트스트랩 -->
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
-<script
-	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-<!-- <style>
-.menu a {
-	cursor: pointer;
-}
-
-.menu .hide {
-	display: none;
-}
-</style> -->
-
-	<!-- ##### Hero Area Start ##### -->
-	
-	
-
-
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
 </head>
@@ -95,9 +73,7 @@
 					<td>${board.b_date}</td>
 					<td style="text-align: center;">${board.viewCount}</td>
 					<td style="text-align: center;"><span class="membercnt">${board.f_membercnt}</span></td>
-					<td style="text-align: center;" 
-					
-					><span class="joincnt">${board.f_cnt }</span></td>
+					<td style="text-align: center;"><span class="joincnt">${board.f_cnt }</span></td>
 					<td>
 					<!-- 참여인원이 확정 인원보다 클때만 채팅방 참여하기 버튼 보여주기 -->
 					<c:if test="${board.f_membercnt >  board.f_cnt && sessionScope.user_id!= null }">
@@ -135,6 +111,7 @@
 			<a href="../index/mealFriends?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 		</c:if>
         </div>
+        <!-- 페이지에 접속했을때 로그인을 하지 않았을경우 글등록 버튼 안보여주기 -->
         <c:if test="${sessionScope.user_id!= null }">
 		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" >글등록</button>
 		</c:if>
@@ -142,7 +119,7 @@
             <a href="#" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');">신고</a>
         </div>
 	</div>
-
+	<a href="../mealBoard/test.do" >test</a>
 
 
 	<!-- 게시판 목록 보여주기 끝  -->

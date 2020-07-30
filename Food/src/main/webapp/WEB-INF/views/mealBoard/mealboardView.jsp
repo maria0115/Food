@@ -64,9 +64,11 @@
 					<input type="hidden" id="joinid" name="f_userId" value="${board.f_userId}">
 					<input type="hidden" id="id" name="f_userId" value="${sessionScope.user_id }">
 					<input type="hidden" id="b_no" name="b_no" value="${board.b_no }">
+					<!-- 참여인원이 확정인원보다 크면 참가하기 버튼 보여주기 -->
 					<c:if test="${board.f_membercnt > board.f_cnt}">
 					<input class="btn btn-dark" type="button" id="joinBtn" value="참가하기" >
 					</c:if>
+					<!-- 참여인원이 확정인원보다 같거나 작으면 마감되었습니다 보여주기  -->
 					<c:if test="${board.f_membercnt <= board.f_cnt}">
 					<span id="end">마감되었습니다.</span>
 					</c:if>
@@ -105,6 +107,7 @@
 
 		<!-- 페이징 -->
 		<div style="display: block; text-align: center;"></div>
+		<!-- 로그인된 아이디가 글작성한 유저일경우에만 수정 삭제 버튼 보여주기  -->
 		<c:if test="${sessionScope.user_id == board.userId}">
 		<button class="btn btn-default" onclick="location.href='mealFriendsmodify.do?b_no=${board.b_no  }'" >글수정</button>
 		<button class="btn btn-default" onclick="location.href='friendsdelete.do?b_no=${board.b_no  }'" >글삭제</button>

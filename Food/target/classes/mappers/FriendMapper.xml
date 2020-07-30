@@ -65,5 +65,22 @@
 	<select id="getjoinCnt" resultType="friend">
 		select b_no , count(*) as joincnt from mealjoin group by b_no
 	</select>
+	
+	<select id="test" resultType="store">
+	SELECT * 
+	
+		FROM (
+			SELECT ROWNUM cnt, A.* 
+				FROM (
+						select r.r_store_name as s_brand_name ,s.s_address as s_address ,count(*) as count
+                        from  reservation r, store s 
+                        where r.r_store_name = s.s_brand_name 
+                        group by r.r_store_name, s.s_address
+                        order by count desc
+						) A
+				)
+		WHERE cnt BETWEEN 1 AND 3
+	
+	</select>
 
 </mapper>

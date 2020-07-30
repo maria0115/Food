@@ -45,7 +45,7 @@
 	    }
 	
 	
-	
+	//글등록버튼을 눌렀을때
 	function insertfriend(){
 		
 		document.getElementById("mealfrm").submit();
