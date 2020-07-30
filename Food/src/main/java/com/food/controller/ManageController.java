@@ -429,5 +429,10 @@ public class ManageController {
 		model.addAttribute("declaView",boardService.boardView(vo));
 		return "manager/declaView";
 	}
+	@RequestMapping("/dashBoard.do")
+	public String dash() {
+		
+		return "manager/dashBoard";
+	}
 	
 }
