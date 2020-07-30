@@ -211,7 +211,7 @@
 	<script src="/Food/resources/js/plugins/plugins.js"></script>
 	Active js-->
 	<script src="/Food/resources/js/active.js"></script>
-	지섭 
+<!-- 	지섭  -->
 	<script src="/Food/resources/js/sub.js"></script>
 
 
