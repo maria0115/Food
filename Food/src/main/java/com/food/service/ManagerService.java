@@ -23,5 +23,11 @@ public interface ManagerService {
 	public int memberDelete(MemberVO vo);
 
 
+	public int todayHire(MemberVO vo);
+
+
+	public int yesterdayHire(MemberVO vo);
+
+
 
 }

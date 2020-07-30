@@ -219,7 +219,7 @@
 
                             <!-- Single Product Area -->
                          	<c:forEach items="${listVO}" var="store">
-                            <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4" id="storeList" >
                                 <div class="single-product-area mb-50">
                                     <!-- Product Image -->
                                     <div class="product-img">
@@ -273,14 +273,12 @@
                         </div>
 
                         <!-- Pagination -->
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-                            </ul>
-                        </nav>
-                    </div>
+						<div id="pagination-div">
+							<div id="pagination_container">
+								<ul id="pagination-demo" class="pagination-lg"></ul>
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
         </div>
@@ -290,7 +288,7 @@
     <!-- ##### Footer Area Start ##### -->
     <%@ include file="footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
-
+<script src="/Food/resources/js/storePaging.js"></script>
 </body>
 
 </html>

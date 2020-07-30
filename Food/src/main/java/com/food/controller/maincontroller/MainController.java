@@ -176,7 +176,7 @@ public class MainController {
 		
 	}
 	@ResponseBody
-	@RequestMapping(value = "/imagecalorie.do", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")//, method = RequestMethod.POST
+	@RequestMapping(value = "/imagecalorie2.do", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")//, method = RequestMethod.POST
 	public String imagecalorie(MultipartHttpServletRequest multipartRequest,HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("imagecalorie.do 컨트롤러 들어옴");
 //		request.getParameter("temp");

@@ -28,4 +28,8 @@ public interface StoreDAO {
 
 	public List<BoardVO> reviewPaging(Map map);
 
+	public List<BoardVO> selectStoreList(Map map);
+
+	public List<BoardVO> selectStorePaging(Map map);
+
 }

@@ -171,7 +171,7 @@ html {
   <div class="grid">
     <div class="grid-cell"><a href="mypage.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>회원 정보</a></div>
     <div class="grid-cell"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>나의 글목록</a></div>
-    <div class="grid-cell"><a href="membermodify.do" class="cen"><span style="color: lightcoral;">MY BIORHYTHM</span><br/>나의 칼로리 </a></div>
+    <div class="grid-cell"><a href="foodcalorie.do" class="cen"><span style="color: lightcoral;">MY BIORHYTHM</span><br/>나의 칼로리 </a></div>
     <div class="grid-cell"><a href="membermodify.do" class="cen"><span style="color: steelblue;">MY WISH</span><br/>찜목록보기</a></div>
    	<div class="grid-cell"><a href="mypage.do" class="cen"><span style="color: crimson;">MY RESERVATION</span><br/>예약 리스트</a></div>
   </div>

@@ -38,5 +38,17 @@ public class ManagerServiceimpl implements ManagerService{
 		
 		return managerDAO.memberDelete(vo);
 	}
+
+	@Override
+	public int todayHire(MemberVO vo) {
+	
+		return managerDAO.todayHire(vo);
+	}
+
+	@Override
+	public int yesterdayHire(MemberVO vo) {
+		
+		return managerDAO.yesterdayHire(vo);
+	}
 	
 }

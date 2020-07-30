@@ -183,9 +183,15 @@
 
 								<!-- Cart -->
 							<div class="cart">
-								<a href="cart.do"><i class="fa fa-shopping-cart"
+								<a href="../selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-shopping-cart"
 									aria-hidden="true"></i> <span>Cart <span
 										class="cart-quantity">(1)</span></span></a>
+
+
+
+
+
+
 							</div>
 						</div>
 					</div>
@@ -248,7 +254,7 @@
 									<li><a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}" id="mymenu">My Menu</a></li>
 									<li><a href="/Food/index/choiceMenu.do" id="choice">Other's Menu</a></li>
 									<li><a href="/Food/index/mealFriends.do">Happy Meal With Friends</a></li>
-									<li><a href="/Food/index/store.do">Store List</a></li>
+									<li><a href="/Food/index/storelist.do" id="storeListPaging">Store List</a></li>
 								</ul>
 
 								<!-- Search Icon -->
@@ -303,7 +309,9 @@
 	<!-- Active js -->
 	<script src="/Food/resources/js/active.js"></script>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
-	
+	<script src="/Food/resources/js/storeTest.js"></script>
+	<script src="/Food/resources/js/storePaging.js"></script>
+
 	<!-- 지섭-->
 	
 
