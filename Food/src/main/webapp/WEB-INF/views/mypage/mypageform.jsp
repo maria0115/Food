@@ -21,9 +21,7 @@
 	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
     
-  			 <jsp:include page="../index/header.jsp">
-				<jsp:param value='../' name='folder' />
-			</jsp:include>
+  		
 <style>
     .box{
     width: auto;
@@ -31,11 +29,12 @@
     padding: 20px;
     border: slategray;
     margin: 10 10 10 10;
-    font-family: fantasy;
+    font-family: serif;
     font-size: x-large;
     border-style: double;
     text-align: center;
-    color: darkblue;
+    color: black;
+    -webkit-text-stroke-width: medium;
         
     }   
     
@@ -52,6 +51,7 @@
     
 html {
   box-sizing: border-box;
+  
 }
 *, *::before, *::after {
   box-sizing: inherit;
@@ -140,7 +140,7 @@ html {
 }
 
 html {
-  margin: 20px;
+  margin: auto;
 }
 </style>    	
 
@@ -149,14 +149,21 @@ html {
 </head>
 
 <body>
+ <jsp:include page="../index/header.jsp">
+				<jsp:param value='../' name='folder' />
+			</jsp:include>
+	
+
     <!-- ##### Portfolio Area End ##### -->
 	
 	<c:if test="${not empty sessionScope.user_id}">
    		<div class ="container">		
 		<h1 class="jsjs"> my page </h1>
 			<div class ="box">
-			환영합니다.
-			${user_Info.M_ID}님<br> 저희 홈페이지를 방문해 주셔서 감사합니다.  ^_^
+			환영합니다.${user_Info.M_ID}님<br> 
+			저희 홈페이지를 방문해 주셔서 감사합니다.<br>
+			회원님의 가입일은 ${user_Info.M_DATE} 입니다
+			
 			</div>
 		<div class="grid-wrapper">
 </div>
