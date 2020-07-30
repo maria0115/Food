@@ -30,11 +30,17 @@ public class StoreListVO{
 	private String cnt;
 	private String rowNum;
 	private String nowPage;
+	private String m_id;
 	
 	
 	
 	
-	
+	public String getM_id() {
+		return m_id;
+	}
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
+	}
 	public String getS_brand_name() {
 		return s_brand_name;
 	}

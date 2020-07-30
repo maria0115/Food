@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wishlistDAO">
+
+<insert id="insertCart" parameterType="wishlist">
+	insert into wishlist values(#{w_store_name},#{w_address},#{w_midpart},#{m_id})
+</insert>
+
+<select id="selectCart" parameterType="wishlist" resultType="wishlist">
+	select * from wishlist where m_id = #{m_id}
+</select>
+
+<delete id="deleteCart" parameterType="wishlist">
+	delete from wishlist where m_id = #{m_id} and w_store_name = #{w_store_name}
+</delete>
+
+
+<select id="selectName" parameterType="wishlist" resultType="String">
+	select w_store_name from wishlist where w_store_name = #{s_brand_name}
+</select>
+</mapper>

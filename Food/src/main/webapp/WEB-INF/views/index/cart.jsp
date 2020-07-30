@@ -66,15 +66,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="cart-table clearfix">
+                    <div class="cart-table clearfix" style="padding:0% 0%">
                         <table class="table table-responsive">
-                            <tbody>
+                            <tbody style="padding:0% 0%">
                             <thead>
-                                <tr>
-                                    <th>매장</th>
-                                    <th>메뉴</th>
-                                    <th>가격</th>
-                                    <th></th>
+                                <tr style="padding:0% 0%">
+                                    <th style="width:25%; font-weight:600">매장</th>
+                                    <th style="width:60%; font-weight:600">위치</th>
+                                    <th style="width:15%; font-weight:600">분류</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -95,15 +94,14 @@
                                  });
                                  </script>
                             
-<%--                             <c:forEach items="${listVO}" var="list"> --%>
-                                <tr>
-                                    <td class="cart_menu"><h5>Recuerdos Plant</h5></td>
-                                    <td class="cart_menu"><h5>음식</h5></td>
-                                    <td class="cart_menu"><h5>$9.99</h5></td>
-                                    <td class="cart_menu"><span></span></td>
-                                    <td class="trash"><a href="#"><i class="icon_close"></i></a></td>
+                            <c:forEach items="${list}" var="list">
+                                <tr style="padding:0% 0%; font-weight:400">
+                                    <td class="cart_menu" style="padding:1% 0%; font-weight:400">${list.w_store_name}</td>
+                                    <td class="cart_menu" style="padding:1% 0%; font-weight:400">${list.w_address}</td>
+                                    <td class="cart_menu" style="padding:1% 0%; font-weight:400">${list.w_midpart}</td>
+                                    <td class="trash" style="padding:1% 0%"><a href="#"><i class="icon_close"></i></a></td>
                                 </tr>
-<%--                                 </c:forEach> --%>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

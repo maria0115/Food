@@ -19,6 +19,7 @@
 		<typeAlias alias="reservation" type="com.food.domain.ReservationVO"/>
 		<typeAlias alias="product"  type="com.food.domain.ProductVO"/>	
 		<typeAlias alias="board"  type="com.food.domain.BoardVO"/>	
+		<typeAlias alias="wishlist"  type="com.food.domain.WishlistVO"/>
 	</typeAliases>
 	
 

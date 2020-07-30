@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.food.domain.BoardVO;
 import com.food.domain.PaginationVO;
 import com.food.domain.StoreListVO;
+import com.food.service.CartService;
 import com.food.service.StoreService;
 import com.food.service.boardService;
 
@@ -37,6 +38,18 @@ public class StoreController {
 	@Autowired
 	boardService boardService;
 	
+	@Autowired
+	CartService cartService;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping("/{step}.do")
 	public String page(@PathVariable String step) {
 		System.out.println("여기로");
@@ -49,14 +62,28 @@ public class StoreController {
 	@RequestMapping("/storeDetails.do" )
 	public ModelAndView getSelectStore(StoreListVO vo,BoardVO vo2,HttpServletRequest request) {
 		
+		
+		
+		System.out.println("ajax 왔어 "+vo2.getS_brand_name());
+		
+		System.out.println("스토어셀렉 controller 도착");
+		System.out.println("------------------******************"+vo.getS_brand_name());
+		
 		StoreListVO list = storeService.storeDetail(vo);
 		List<BoardVO> listVO = storeService.reviewSelect(vo);
 		
+		// 매장명 가져오는거 -------------
+		String s_name = cartService.selectName(vo);
+		System.out.println("s_name :"+s_name);
+		
+		System.out.println("스토어셀렉mapper 갔다옴");
+		System.out.println(list+"!!");
+		System.out.println(listVO+"=============================");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("store/storeDetails");
 		mv.addObject("list",list);
 		mv.addObject("listVO",listVO);
-				
+		mv.addObject("s_name",s_name);
 		return mv;
 	}
 	

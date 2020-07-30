@@ -166,11 +166,59 @@
 							</form>
 							<!-- Wishlist & Compare -->
 							<div class="wishlist-compare d-flex flex-wrap align-items-center">
-								<a href="#" class="wishlist-btn ml-15"><i
+								<a href="#" class="wishlist-btn ml-15" onclick=""><i
 									class="icon_heart_alt"></i></a> <a href="#"
 									class="compare-btn ml-15"><i class="arrow_left-right_alt"></i></a>
-							</div>
-						</div>
+									
+									
+									
+									
+						// 찜하기 기능-----------------------------------------------------------
+						<span id='m_id' style="visibility: hidden">${sessionScope.user_id}</span>
+						<script>
+						$(function(){
+// 							alert($('.title').text())
+							if($('#name_check').val().match($('.title').text())){
+// 								alert('zz')
+								$('.wishlist-btn').css("background-color","lightpink")
+								$('.wishlist-btn').removeAttr('onclick')
+							}
+							$('.wishlist-btn').click(function(){
+								if(this.hasAttribute("onclick")){
+									$(this).css("background-color","lightpink")
+									$(this).removeAttr('onclick')
+// 									alert('vvv')
+									
+									$.ajax({
+										url: "../insertCart.do",
+										type: "post",
+										cache: false,
+										dataType: "json",
+										data: "w_store_name="+$('.title').text()+"&w_midpart="
+										+$('#midpart').text()+"&w_address="+$('#addr').text()+"&m_id="+$('#m_id').text()
+									});
+								
+								}else{
+									$(this).removeAttr('style')
+									$(this).attr('onclick','')
+
+									$.ajax({
+										url: "../deleteCart.do",
+										type: "post",
+										cache: false,
+										dataType: "json",
+										data: "w_store_name="+$('.title').text()+"&m_id="+$('#m_id').text()
+									});
+									
+								}
+
+							})
+						})
+						</script>
+						<input id='name_check' type="hidden" value="${s_name}">
+						----------------------------------------------------------------------------
+
+
 
 						<div class="products--meta">
 							<p>
