@@ -294,7 +294,7 @@
                         return false;
                      }
                      else if(check !=$("#checkmail").val()){
-                        alert("이메일 인증번호가 다릅니다. 이메일 인증후 회원가입 가능합니다.")
+                        alert("이메일 인증번호가 다릅니다. 이메일 인증후 회원정보수정 가능합니다.")
                         return false;
                      }
                      else if(emailcheck == "중복된 이메일 입니다"){
