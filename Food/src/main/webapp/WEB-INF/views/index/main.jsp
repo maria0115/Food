@@ -6,7 +6,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
-
+<% HashMap map = (HashMap)request.getAttribute("map"); %>
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="">
@@ -261,18 +261,18 @@
 			
 			
 			
-<%-- 			<a href="" style="font-size: 10vw;">현재 <%= map.get("address")%>의 날씨는 <%=map.get("reondo")%>도 <%=map.get("nalsi")%>입니다^^</a> --%>
+			<a href="" style="font-size: 10vw;">현재 <%= map.get("address")%>의 날씨는 <%=map.get("reondo")%>도 <%=map.get("nalsi")%>입니다^^</a>
 			
 	
-<%-- 			<a href="/Food/index/todayMenu.do?category=<%=map.get("category")%>" style="font-size: 15vw;">오늘은 <%=map.get("category")%>의 <%=map.get("menu")%> 어떠세요? 먹고 싶다면 눌러주세요</a> --%>
+			<a href="/Food/todayMenu.do" style="font-size: 15vw;">오늘은 <%=map.get("category")%>의 <%=map.get("menu")%> 어떠세요? 먹고 싶다면 눌러주세요</a>
 
 			
-<!-- 			</div> -->
-			<a href="" style="font-size: 10vw;">현재 의 날씨는 도 입니다^^</a>
-			<p>
-			<a href="" style="font-size: 15vw;">오늘은 의  어떠세요? 먹고 싶다면 눌러주세요</a>
-			</p>
 			</div>
+<!-- 			<a href="" style="font-size: 10vw;">현재 의 날씨는 도 입니다^^</a> -->
+<!-- 			<p> -->
+<!-- 			<a href="" style="font-size: 15vw;">오늘은 의  어떠세요? 먹고 싶다면 눌러주세요</a> -->
+<!-- 			</p> -->
+<!-- 			</div> -->
 			
 			<!-- Post Image -->
 			</div>

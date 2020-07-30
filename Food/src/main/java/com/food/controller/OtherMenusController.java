@@ -34,7 +34,6 @@ public class OtherMenusController {
 		System.out.println(session.getAttribute("user_id"));
 		String m_id =(String) session.getAttribute("user_id");
 		String what="other";
-		m_id="mariaa";
 		String state = "로그아웃";
 		List<ReservationVO>  list = new ArrayList<ReservationVO>();
 		if(m_id!=null) {
@@ -88,21 +87,10 @@ public class OtherMenusController {
 		
 	}
 	@RequestMapping("todayMenu.do")
-	public ModelAndView TodayMenu(HttpServletRequest request, HttpServletResponse response,HttpSession session, String category) {
+	public ModelAndView TodayMenu(HttpServletRequest request, HttpServletResponse response,HttpSession session) {
 	
 		System.out.println("todayMenu 들어옴");
-		System.out.println(category);
-		if(category==null) {
-
-			String c[] = {"한식","일식","양식","중식","분식","동남아"};
-			Calendar cal = Calendar.getInstance(); 
-
-		      int num = cal.get(Calendar.DAY_OF_WEEK)-1; 
-
-		      category = c[num]; 
-		      category="양식";
-
-		}
+		String category = (String)session.getAttribute("category");
 		List<ProductVO> list = service.randomlist(category);
 		for(int i=0; i<list.size();i++) {
 			ProductVO vo = new ProductVO();

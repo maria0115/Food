@@ -54,7 +54,7 @@ map.put("동남아", "east");
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                            <li class="breadcrumb-item active" aria-current="page">Other's Menu</li>
                         </ol>
                     </nav>
                 </div>
@@ -118,7 +118,10 @@ map.put("동남아", "east");
                     </div>
                 </div>
                 <%}}else{ %>
-                <h3>로그인 하셔야 이 페이지 사용할 수 있습니다</h3>
+                <div class="col-12 col-sm-6 col-lg-12 single_portfolio_item design" style="text-align: center;">
+                    <h4>로그인 하셔야 이 페이지 사용할 수 있습니다</h4>
+                </div>
+                
                 
                 <%} %>
 

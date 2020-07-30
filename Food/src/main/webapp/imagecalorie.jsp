@@ -36,8 +36,7 @@ $(function(){
 			$('#name').text(data[0])
 			$('#calorie').text(data[1])
 			$('#percent').text(data[2])
-			
-			alert(data[0]);
+
 
 			},error:function(error){
 				alert(error);

@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -45,7 +46,7 @@ public class MainController {
 	//	}
 
 	@RequestMapping("/main.do")//, method = RequestMethod.POST
-	public ModelAndView mainpagetag(HttpServletRequest request, HttpServletResponse response, String longitude, String latitude,String region) {
+	public ModelAndView mainpagetag(HttpServletRequest request, HttpServletResponse response, String longitude, String latitude,String region,HttpSession session) {
 
 		System.out.println("l"+longitude+"2"+latitude+"3"+region);
 		String what = "main";
@@ -142,7 +143,7 @@ public class MainController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
+			session.setAttribute("category", category);
 
 
 			map.put("reondo", reondo.toString());
