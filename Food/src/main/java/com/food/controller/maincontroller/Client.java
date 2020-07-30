@@ -9,24 +9,27 @@ public class Client {
 	int serverPort = 5000;
 	String resultweather;
 	String resulttemp;
+	String region;
 	String most;
 	String fileName;
 	String what;
 	String result;
 
-	public Client(String resultweather,String resulttemp,String most,String fileName,String what) {
+	public Client(String resultweather,String resulttemp,String region,String most,String fileName,String what) {
 		this.resultweather = resultweather;
 		this.resulttemp = resulttemp;
+		this.region = region;
 		this.most = most;
 		this.fileName = fileName;
 		this.what = what;
+		
 		try {
 			// 서버 연결
 			socket = new Socket(serverIp, serverPort); // socket(),connect();
 			System.out.println("서버에 연결되었습니다."); //2
 			System.out.println(serverIp + " : " + serverPort);
 
-			Sender Sender = new Sender(socket, resultweather,resulttemp,most,fileName,what);	//2
+			Sender Sender = new Sender(socket, resultweather,resulttemp,region,most,fileName,what);	//2
 			Sender.start();
 			Sender.join();
 			result = Sender.getResult();

@@ -22,6 +22,7 @@ public class Sender extends Thread {
 
 	private String resultweather;
 	private String resulttemp;
+	private String region;
 	private String result;
 	private String most;
 	private String filename;
@@ -29,11 +30,12 @@ public class Sender extends Thread {
 	
 	private int fileSize;
 	
-	public Sender(Socket socket, String resultweather,String resulttemp,String most,String filestr,String what) {
+	public Sender(Socket socket, String resultweather,String resulttemp,String region,String most,String filestr,String what) {
 		//socket 열어줌
 		this.socket = socket;
 		this.resultweather = resultweather;
 		this.resulttemp = resulttemp;
+		this.region = region;
 		this.most = most;
 		this.what = what;
 		this.filename = filestr;
@@ -59,13 +61,23 @@ public class Sender extends Thread {
 	}
 
 	
-	public boolean sendTemp(String resultweather) throws IOException {
+	public boolean sendTemp(String resulttemp) throws IOException {
 //		File imageFile = new File(hello);
 //		fileSize = (int) imageFile.length() * 100;
 //		fis = new FileInputStream(imageFile);
-		bos.write(resultweather.getBytes());
+		bos.write(resulttemp.getBytes());
 		bos.flush(); //4
 		System.out.println("tempsend 잘보내짐");
+		return true;
+	}
+	
+	public boolean sendRegion(String region) throws IOException {
+//		File imageFile = new File(hello);
+//		fileSize = (int) imageFile.length() * 100;
+//		fis = new FileInputStream(imageFile);
+		bos.write(region.getBytes());
+		bos.flush(); //4
+		System.out.println("regionsend 잘보내짐");
 		return true;
 	}
 	
@@ -142,6 +154,8 @@ public class Sender extends Thread {
 			sendWeather(resultweather);
 			receiveData(500);
 			sendTemp(resulttemp);
+			receiveData(500);
+			sendRegion(region);
 			receiveData(500);
 			sendTemp("result");
 			this.result = receiveData(500);

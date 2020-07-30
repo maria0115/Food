@@ -16,10 +16,7 @@ $(function(){
 				$(this).siblings('.upload-name').val(filename); 
 				});
 
-// 	navigator.geolocation.getCurrentPosition((position) => {
-// 		  alert(position.coords.latitude);
-		  
-// 		});
+
 	$("#send").click(function(){
 		var formData = new FormData($('#form')[0]);
 		$.ajax({

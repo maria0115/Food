@@ -43,9 +43,9 @@ public class OtherMenusController {
 			System.out.println("********************"+result.getM_most());
 			String most = result.getM_id();
 			String resultweather="";
-			String resulttemp="",fileName="";
+			String resulttemp="",fileName="",region="";
 			
-			Client client = new Client(resultweather,resulttemp,most,fileName,what);	//1
+			Client client = new Client(resultweather,resulttemp,region,most,fileName,what);	//1
 			String resultmost = client.getResult();
 			ServletOutputStream out;
 			System.out.println("result :"+resultmost);
