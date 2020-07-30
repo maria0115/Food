@@ -29,10 +29,10 @@
     width: auto;
     height: 200px;
     padding: 20px;
-    border: 5px solid chocolate;
+    border: slategray;
     margin: 10 10 10 10;
     font-family: fantasy;
-    font-size: xx-large;
+    font-size: x-large;
     border-style: double;
     text-align: center;
     color: darkblue;
@@ -122,7 +122,7 @@ html {
 
 .grid-cell {
     /* So that we can see the grid cells */
-    box-shadow: inset 0 0 0 3px #0119;
+ /*    box-shadow: inset 0 0 0 3px #0119; */
     height: 150px;
     margin-bottom: 100px;
     -webkit-text-stroke-width: medium;
