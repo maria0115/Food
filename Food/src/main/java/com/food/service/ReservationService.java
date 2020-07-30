@@ -16,4 +16,6 @@ public interface ReservationService {
 	public List<ReservationVO> selectBoard(PagingVO vo);
 
 	int countReserv(PagingVO vo);
+
+	public void deleteReservation(ReservationVO vo);
 }

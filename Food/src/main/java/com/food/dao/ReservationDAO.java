@@ -17,4 +17,6 @@ public interface ReservationDAO {
 
 	public List<ReservationVO> selectBoard(PagingVO vo);
 
+	public void deleteReservation(ReservationVO vo);
+
 }

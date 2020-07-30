@@ -37,6 +37,18 @@ public class ReservationController {
 //		ReservationService.reservation(vo);
 //	}
 //	
+	// 예약 상세 페이지 예약 취소 버튼
+	@RequestMapping(value = "index/reservDelete.do")
+	public String reservDelete(ReservationVO vo, @RequestParam(value="r_number")String temp_number
+			, @RequestParam(value="m_id")String m_id) {
+		System.out.println("reservDelete 컨트롤러 도착");
+		System.out.println("m_id : "+m_id);
+		int r_number = Integer.parseInt(temp_number);
+		vo.setR_number(r_number);
+		vo.setM_id(m_id);
+		ReservationService.deleteReservation(vo);
+		return "redirect:myMenu.do?m_id="+m_id;
+	}
 	
 	
 	// 예약 페이지에서 등록
@@ -91,10 +103,11 @@ public class ReservationController {
 		if (format_time1.compareTo(list.getTime()) > 0) {
 	        System.out.println("예약 취소 못해");
 	        // 반환을 0으로 ajax에서 0일 경우 버튼 삭제
+	        list.setR_state(0);
 	    } else {
 	        System.out.println("예약 취소 가능");
 	        // 반환을 1로 
-	        
+	        list.setR_state(1);
 	    }
 		
 		return list;
@@ -107,6 +120,7 @@ public class ReservationController {
 			, @RequestParam(value="cntPerPage", required=false)String cntPerPage
 			, HttpServletRequest httpServletRequest) {
 		System.out.println("pagingReservation 컨트롤러");
+		System.out.println("m_id1"+vo.getM_id());
 		String m_id = httpServletRequest.getParameter("m_id");
 		System.out.println("m_id : " + m_id);
 		vo.setM_id(m_id);

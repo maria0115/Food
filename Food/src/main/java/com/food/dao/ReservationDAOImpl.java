@@ -53,6 +53,12 @@ public class ReservationDAOImpl implements ReservationDAO {
 		return mybatis.selectList("reservationDAO.selectBoard", vo);
 	}
 
+	@Override
+	public void deleteReservation(ReservationVO vo) {
+		
+		mybatis.delete("reservationDAO.deleteReserv", vo);
+	}
+
 	
 	
 	

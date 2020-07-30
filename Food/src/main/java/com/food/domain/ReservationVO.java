@@ -16,8 +16,15 @@ public class ReservationVO {
 	String r_date_minute;	// 예약 분
 	String time;			// 예약한 시간 ( yy/mm/dd hh:m1 )
 	String type;
+	int r_state;
 	
 	
+	public int getR_state() {
+		return r_state;
+	}
+	public void setR_state(int r_state) {
+		this.r_state = r_state;
+	}
 	public String getType() {
 		return type;
 	}

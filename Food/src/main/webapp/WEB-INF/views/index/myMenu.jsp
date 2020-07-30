@@ -113,6 +113,13 @@
 			      $('.i_pplcount').val(data.r_people_count);          
 			      $('.i_menu').val(data.r_menu);
 			      $('.i_note').val(data.r_note);
+			      $('.r_cancel').val(data.r_number);
+					if(data.r_state == 0){
+// 						alert("취소 불가")
+						$(".r_cancel").attr("disabled",true)
+					}else{
+						$(".r_cancel").attr("disabled",false)
+					}
 			    },
 				    error: function (request, status, error){    
 				        var msg = "ERROR : " + request.status + "<br>"
@@ -122,6 +129,16 @@
 
 				  });
 				}
+			</script>
+			<script>
+			$(function(){
+				$(".r_cancel").click(function(){
+					var cancel = $(".r_cancel").val()
+					alert(cancel)
+					location.href="reservDelete.do?r_number="+cancel+"&m_id=${sessionScope.user_id}"
+				})
+			})
+
 			</script>
 
 
@@ -140,7 +157,7 @@
 			<label class="label_name">메뉴</label><input style="color:black" class="input_name i_menu" disabled><hr>
 			<label class="label_name">문의</label><input style="color:black" class="input_name i_note" disabled><hr>
 
-			<button class="dialog__action">Read more &#8594;</button>
+			<button class="r_cancel" value="">예약 취소</button>
 		</div>
 <!-- 		###################################################### -->
 

@@ -45,6 +45,11 @@ public class ReservationServiceImpl implements ReservationService {
 		return reservdao.selectBoard(vo);
 	}
 
+	@Override
+	public void deleteReservation(ReservationVO vo) {
+		reservdao.deleteReservation(vo);
+	}
+
 
 	
 	

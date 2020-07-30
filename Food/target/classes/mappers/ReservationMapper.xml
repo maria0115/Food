@@ -65,4 +65,9 @@ select #{r_menu_count} as r_menu_count,#{r_menu} as r_menu,#{m_id},#{r_note} fro
  (select r_number from reservation where m_id=#{m_id} group by r_number)
  </select>
  
+ <delete id="deleteReserv" parameterType="reservation">
+ 	delete from reservation where r_number=#{r_number}
+ </delete>
+ 
+ 
 </mapper>
