@@ -34,11 +34,17 @@ var defaultOpts = {
 
 // 윈도우 온로드랑 비슷개념 
 $(function(){
-	//눌렀을때 실행되는거
-	$("#reviewKing").on("click", function(){
+	alert("54654d")
 	
+	//눌렀을때 실행되는거
+	$("#storeListPaging").on("click", function(e){
+		alert("ddd")
+		
 		getWriterData();
 	})
+	
+	getWriterData();
+	
 	
 	
 	//getWriterData();
@@ -64,7 +70,7 @@ function getWriterDataInPaging(){
 	$.ajax({
 		type : 'post',
 		async:true,
-		url : 'storeDetailPaging.do',
+		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {"s_brand_name" : $('#title').val(),
 				"curPage" : curPage,
@@ -84,18 +90,19 @@ function getWriterDataInPaging(){
 }
 
 function getWriterData(){
-	
+	alert("ddd")
 	$.ajax({
 		type : 'post',
 		async:true,
-		url : 'storeDetailPaging.do',
+		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {"s_brand_name" : $('#title').val(),
 				"curPage" : curPage
 				},
 		dataType : 'json',
+		
 		success : function(resultData){
-			
+			alert("성공")
 			
 			drawWriterTable(resultData);
 			var totalPages = resultData.pagination.pageCnt;
@@ -118,29 +125,29 @@ function getWriterData(){
 
 function drawWriterTable(data){
 	console.log(data);
-	$('#reviewContainer').empty();
-	var div1 = '<div class="comment-wrapper d-flex" style="padding: 25px 0;">';
-    var div2 ='<div class="comment-author">';
-	var div3 =' <img src="img/bg-img/37.jpg" alt="">';
-	var div4 ='</div>';
-    var div5 ='<div class="comment-content" >';
-	var div6 ='<div class="d-flex align-items-center justify-content-between">';
-	var h51 = '<h5 id="reviewName">';
-	var titleA ='<a href="storeReviewDetails.do?b_no=';
-	var titleAend = '">';
-	var aEnd = '</a>';
-	var h52 = '</h5>';
-	var span = '<span class="comment-date">';
-	var span2 = '</span>';
-	var input ='<input type="hidden" id="test" value="';
+	$('#storeList').empty();
+	var div1 = '<div class="single-product-area mb-50">';
+    var div2 =' <div class="product-img">';
+	var div3 =' <a href="shopDetails.do"><img src="./resources/img/bg-img/40.png" alt=""></a>';
+	var div4 ='<div class="product-tag">';
+    var div5 ='<a href="#">Hot</a>';
+	var div6 ='  </div>';
+	var h51 = ' <div class="product-meta d-flex">';
+	var titleA ='<a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>';
+	var titleAend = '<a href="cart.html" class="add-to-cart-btn">Add to cart</a>';
+	var aEnd = '<a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>';
+	var h52 = '</div>';
+	var span = '</div>';
+	var span2 = '<div class="product-info mt-15 text-center">';
+	var input ='<a href="../store/storeDetails.do?s_brand_name=';
 	var input2 = '">';
-	var div7 ='</div>';
-	var p1 = '<p>';
-	var p2 = '</p>';
+	var div7 ='<p>';
+	var endP='</p>';
+	var p1 = '</a>';
+	var p2 = '<h6>aa</h6>';
 	var div8 ='</div>';
 	var div9 ='</div>';
-	var a1 = '<a type="button" class="btn alazea-btn" id="reviewUpdate" value="수정"></a>';
-	var a2= '<a href="reviewDelete.do" class="btn alazea-btn" id="reviewDelete" value="삭제"></a>';
+	var a1 = '</div>';
 
        for(var i=0; i<data.listVO2size; i++){
 		var listContent =
@@ -151,21 +158,23 @@ function drawWriterTable(data){
 			div5+
 			div6+
 			h51+
-			titleA+data.listVO2[i].b_no+titleAend +data.listVO2[i].title+aEnd +
+			titleA+
+			titleAend+
+			aEnd+
 			h52+
-			span+data.listVO2[i].b_date+span2+
-			input+data.listVO2[i].b_no+input2+
-			div7+
-			p1+data.listVO2[i].title+p2+
+			span+
+			span2+
+			input+	listVO2[i].s_brand_name	+input2+
+			div7+ listVO2[i].s_brand_name +endP+
+			p1+
+			p2+
+			div8+ 
+			div9+
 			a1+
-			a2+
-			div8+
-			div9
-			
 			
 			
 						 
-		$('#reviewContainer').append(listContent);
+		$('#storeList').append(listContent);
 		
 		
 		

@@ -59,6 +59,19 @@ public class StoreServiceImpl implements StoreService{
 		return storeDAO.reviewPaging(map);
 	}
 
+	@Override
+	public List<BoardVO> selectStoreList(Map map) {
+		return storeDAO.selectStoreList(map);
+	}
+		
+	@Override
+	public List<BoardVO> selectStorePaging(Map map) {
+		System.out.println("ssssssssnsonsonsonsonsonosnsonsono"+map.get("s_brand_name"));
+		return storeDAO.selectStorePaging(map);
+	}
+
+	
+
 
 	
 	

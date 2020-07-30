@@ -124,7 +124,26 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	where RNUM>=#{startRow} and RNUM<=#{endRow}
 	]]>
 	</select> 
+	
+	<select id="selectStoreList" parameterType="hashmap" resultType="board">
+	
+		select *from STORE
+			
+	</select> 
+	
+	
+	<select id="selectStorePaging" parameterType="hashmap" resultType="board">
+	<![CDATA[
+	select *
+	from(
+		select ROWNUM AS RNUM , S_BRAND_NAME, S_ADDRESS
+		from STORE
 		
+	)
+
+	where RNUM>=#{startRow} and RNUM<=#{endRow}
+	]]>
+	</select> 
 	
 	
 

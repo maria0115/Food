@@ -48,17 +48,35 @@ public class StoreDAOImpl implements StoreDAO{
 	public int selectWriterCntByNameWithPaging(String searchWord) {
 		return mybatis.selectOne("StoreDAO.selectWriterCntByNameWithPaging", searchWord);
 	}
+	//리뷰가져오기
 	@Override
 	public List<BoardVO> reviewSelect2(Map map) {
 		List<BoardVO> result=mybatis.selectList("StoreDAO.reviewSelect2",map);
 	
 		return mybatis.selectList("StoreDAO.reviewSelect2",map);
 	}
+	//리뷰 페이징
 	@Override
 	public List<BoardVO> reviewPaging(Map map) {
 		List<BoardVO> result=mybatis.selectList("StoreDAO.reviewPaging",map);	
 				
 		return mybatis.selectList("StoreDAO.reviewPaging",map);
+	}
+	
+	
+	//가게 리스트가져오기
+	@Override
+	public List<BoardVO> selectStoreList(Map map) {
+		List<BoardVO> result=mybatis.selectList("StoreDAO.selectStoreList",map);
+		
+		return mybatis.selectList("StoreDAO.selectStoreList",map);
+	}
+	//가게리스트 페이징
+	@Override
+	public List<BoardVO> selectStorePaging(Map map) {
+		List<BoardVO> result=mybatis.selectList("StoreDAO.selectStorePaging",map);	
+		
+		return mybatis.selectList("StoreDAO.selectStorePaging",map);
 	}
 
 	
