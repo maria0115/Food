@@ -40,7 +40,7 @@
 
 
 
-
+<body>
 <!-- ##### Header Area Start ##### -->
 
 <!-- ##### Breadcrumb Area Start ##### -->
@@ -263,7 +263,7 @@
 													<!-- Single Comment Area -->
 													
 													<li class="single_comment_area" id="reviewContainer">
-													
+					<form action="">								
 					<c:forEach items="${listVO}" var="board">
 						<div class="comment-wrapper d-flex"
 							style="padding: 25px 0;">
@@ -276,24 +276,35 @@
 							<div class="comment-content">
 								<div
 									class="d-flex align-items-center justify-content-between">
-									<h5>${board.s_brand_name}</h5>
+									<h5 id="reviewName">${board.s_brand_name}</h5>
 									
 									<span class="comment-date"> </span>
 								</div>
 								<p>${board.b_content}</p>
-
+								<input type="hidden">
 							</div>
-
+						
 						</div>
 					</c:forEach>
+			
+						<script>
+
+							/* function clickTest(){
+								alert("aa")
+								location.href='storeReviewDetails.do?b_no=${board.b_no}';
+								//window.open('storeReviewDetails.do','ddd','width=780,height=843,left=500,top=100,location=no,status=no,scrollbars=yes')
+								
+								}
+                         */
+
+                        </script>
+					</form>
 											
 
 							
 													</li>
 											
 												</ol>
-
-
 
 
 
@@ -324,8 +335,8 @@
 
 
 							<div></div>
-
-
+			
+					
 
 
 
@@ -387,23 +398,20 @@
 													class="form-control" id="name" name="s_brand_name"
 													placeholder="Nazrul" value="${list.s_brand_name}">
 											</div>
-										</div>
-
-										<div class="col-12 col-md-6">
 											<div class="form-group">
 												<label for="name">제목</label> <input type="text"
 													class="form-control" id="name" name="title"
 													placeholder="제목">
 											</div>
-										</div>
-
-										<div class="col-12 col-md-6">
 											<div class="form-group">
 												<label for="name">작성자</label> <input type="text"
 													class="form-control" id="name" name="userId"
 													placeholder="작성자">
 											</div>
 										</div>
+										
+
+										
 
 										<div class="col-12">
 											<div class="form-group">

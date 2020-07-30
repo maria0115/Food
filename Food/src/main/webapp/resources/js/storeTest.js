@@ -96,7 +96,7 @@ function getWriterData(){
 		dataType : 'json',
 		success : function(resultData){
 			
-			alert("페이징성고오오옹")
+			
 			drawWriterTable(resultData);
 			var totalPages = resultData.pagination.pageCnt;
 			var currentPage = $('#pagination-demo').twbsPagination('getCurrentPage');
@@ -125,19 +125,23 @@ function drawWriterTable(data){
 	var div4 ='</div>';
     var div5 ='<div class="comment-content" >';
 	var div6 ='<div class="d-flex align-items-center justify-content-between">';
-	var h51 = '<h5>';
+	var h51 = '<h5 id="reviewName">';
+	var titleA ='<a href="storeReviewDetails.do?b_no=';
+	var titleAend = '">';
+	var aEnd = '</a>';
 	var h52 = '</h5>';
 	var span = '<span class="comment-date">';
 	var span2 = '</span>';
+	var input ='<input type="hidden" id="test" value="';
+	var input2 = '">';
 	var div7 ='</div>';
 	var p1 = '<p>';
 	var p2 = '</p>';
 	var div8 ='</div>';
 	var div9 ='</div>';
 	var a1 = '<a type="button" class="btn alazea-btn" id="reviewUpdate" value="수정"></a>';
-	var a2= '<a href="reviewDelete.do" type="button" class="btn alazea-btn" id="reviewDelete" value="삭제"></a>';
-	alert('>'+data.listVO2size);
-	alert(">>"+data.listVO2);
+	var a2= '<a href="reviewDelete.do" class="btn alazea-btn" id="reviewDelete" value="삭제"></a>';
+
        for(var i=0; i<data.listVO2size; i++){
 		var listContent =
 			div1+
@@ -146,8 +150,11 @@ function drawWriterTable(data){
 			div4+
 			div5+
 			div6+
-			h51+data.listVO2[i].title+h52+
+			h51+
+			titleA+data.listVO2[i].b_no+titleAend +data.listVO2[i].title+aEnd +
+			h52+
 			span+data.listVO2[i].b_date+span2+
+			input+data.listVO2[i].b_no+input2+
 			div7+
 			p1+data.listVO2[i].title+p2+
 			a1+

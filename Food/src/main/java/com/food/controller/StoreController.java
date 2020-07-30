@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,24 +37,21 @@ public class StoreController {
 	@Autowired
 	boardService boardService;
 	
+	@RequestMapping("/{step}.do")
+	public String page(@PathVariable String step) {
+		System.out.println("여기로");
+		return "/store/" + step;
+	}
+	
+	
 	
 //	 상품 상세보기 
 	@RequestMapping("/storeDetails.do" )
 	public ModelAndView getSelectStore(StoreListVO vo,BoardVO vo2,HttpServletRequest request) {
 		
-		
-		
-		System.out.println("ajax 왔어 "+vo2.getS_brand_name());
-		
-		System.out.println("스토어셀렉 controller 도착");
-		System.out.println("------------------******************"+vo.getS_brand_name());
-		
 		StoreListVO list = storeService.storeDetail(vo);
 		List<BoardVO> listVO = storeService.reviewSelect(vo);
 		
-		System.out.println("스토어셀렉mapper 갔다옴");
-		System.out.println(list+"!!");
-		System.out.println(listVO+"=============================");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("store/storeDetails");
 		mv.addObject("list",list);
@@ -73,14 +73,9 @@ public class StoreController {
 		int result;
 		vo.setBoardType(2);
 		vo.setSeq("review_r_no");
-		System.out.println("======================"+vo.getS_brand_name());
-		System.out.println("======================"+vo.getB_content());
-		System.out.println("======================"+vo.getTitle());
-		System.out.println("======================"+vo.getUserId());
-		System.out.println("======================"+vo.getV_fileName());
-		System.out.println("======================"+vo.getV_fileSize());
+	
 		result = boardService.insertBoard(vo);
-		System.out.println("ddd");
+		
 		if(result==0) {
 			return "../index/error";
 		}
@@ -105,8 +100,7 @@ public class StoreController {
 		int boardType = vo2.getBoardType();
 		String s_brand_name = vo2.getS_brand_name();
 		String title = vo2.getTitle();
-		System.out.println(s_brand_name+"2222222333333333344444444444");
-		System.out.println(title+"2222222333333333344444444444");
+	
 		map.put("boardType",boardType);
 		map.put("s_brand_name",s_brand_name);
 			
@@ -116,10 +110,9 @@ public class StoreController {
 		
 		PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
 		map.put("startRow", paginationVO.getStartIndex()+1);
-//		paginationVO.setPageSize(2);		
 		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
-		// 내가 지정한 리스트 개수를 가져오기위해서 listVO2에  다시 넣어줌 
 		
+		// 내가 지정한 리스트 개수를 가져오기위해서 listVO2에  다시 넣어줌 
 		listVO2 = storeService.reviewPaging(map);
 		System.out.println("+++++++++++++++"+listVO2size);	
 		System.out.println("+++++++++++++++"+listVO2.size());
@@ -129,13 +122,56 @@ public class StoreController {
 		return result;
 	}
 	
-//	@RequestMapping("/reviewDelete.do")
-//	public ModelAndView reviewDelete(BoardVO vo) {
-//		
-//		
-//	}
-
+	//삭제하기
+	@RequestMapping(value ="/storeReviewDetaildelete.do")
+	public String reviewDetailDelete(BoardVO vo,HttpServletRequest request) throws UnsupportedEncodingException{
+		System.out.println("리뷰인설트 controller 도착");
+		String name = request.getParameter("s_brand_name");
+		System.out.println(name);
+		name = URLEncoder.encode(name,"UTF-8");	
+		int result;
+		vo.setBoardType(2);
+		
+		result = boardService.deleteBoard(vo);
+		if(result==0) {
+			return "index/error";
+		}
+		return "redirect:/store/storeDetails.do?s_brand_name="+name;
+	}
 	
+	// 리뷰 눌렀을때 상세보기
+	@RequestMapping("/storeReviewDetails.do")
+	public void storeReviewDetail(BoardVO vo, Model model) {
+		
+		System.out.println("storeReviewDetails.do 도착");
+		vo.setBoardType(2);
+		model.addAttribute("board",boardService.boardView(vo));
+	}
+	
+	// 수정할 페이지보여주기
+	@RequestMapping("/storeReviewDetailsmodify.do")
+	public void storeReviewDetailsmodify(BoardVO vo, Model model) {
+		vo.setBoardType(2);
+		model.addAttribute("board",boardService.boardView(vo));
+		
+	}
+	
+	// 수정하기
+	@RequestMapping("/storeReviewDetailsmodifyEnd.do")
+	public String storeReviewDetailsmodifyEnd(BoardVO vo, HttpServletRequest request) {
+		
+		int result;
+		vo.setBoardType(2);
+		System.out.println(vo.getTitle()+"***************");
+		result = boardService.updateBoard(vo);
+		
+		if(result==0) {
+			System.out.println("에러");
+			return "index/error";
+		}
+		return "redirect:../store/storeReviewDetails.do?b_no="+vo.getB_no();
+		
+	}
 	
 	
 	
