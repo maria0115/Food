@@ -404,7 +404,7 @@ $(document).on("click","#logout",function(){ //$('#logout').click(function() {
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		success : function(resultData) {
 			
-			location.href="main.do"
+			location.href="/Food/main.do"
 			
 			// window.location=document.referrer;
 		}
