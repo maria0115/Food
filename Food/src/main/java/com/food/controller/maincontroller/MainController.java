@@ -46,8 +46,18 @@ public class MainController {
 	//	}
 
 	@RequestMapping("/main.do")//, method = RequestMethod.POST
-	public ModelAndView mainpagetag(HttpServletRequest request, HttpServletResponse response, String longitude, String latitude,String region,HttpSession session) {
+	public ModelAndView mainpagetag(String longitude,String latitude,String region,HttpServletRequest request, HttpServletResponse response,HttpSession session) {
 
+		if((longitude!=null)&&(latitude!=null)&&(region!=null)) {
+		session.setAttribute("longitude", longitude);
+		session.setAttribute("latitude", latitude);
+		session.setAttribute("region", region);
+		}else {
+			longitude = (String)session.getAttribute("longitude");
+			latitude = (String)session.getAttribute("latitude");
+			region = (String)session.getAttribute("region");
+		}
+		
 		System.out.println("l"+longitude+"2"+latitude+"3"+region);
 		String what = "main";
 		BufferedReader bufferedReader = null;
@@ -215,6 +225,13 @@ public class MainController {
 		return resultper;
 		
 	}
+//	@ResponseBody
+//	@RequestMapping(value = "/startpage.do", produces="text/plain;charset=UTF-8")//, method = RequestMethod.POST
+//	public void startpage(,HttpSession session) {
+//		System.out.println(longitude);
+//		
+//	
+//	}
 
 
 
