@@ -18,8 +18,15 @@ public class ProductVO{
 	private String p_price_1;
 	private String p_price_2;
 	private String p_price_3;
+	private String type;
 	
 	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public String getS_brand_name() {
 		return s_brand_name;
 	}

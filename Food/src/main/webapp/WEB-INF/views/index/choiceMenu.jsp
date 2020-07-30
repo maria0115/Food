@@ -106,10 +106,10 @@ map.put("동남아", "east");
                 <!-- Single Portfolio Area -->
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design <%=map.get(vo.getType()) %>">
                     <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(img/bg-img/16.jpg);"></div>
+                    <div class="portfolio-thumbnail bg-img" style="background-image: url(/Food/resources/storemenu/<%=map.get(vo.getType()) %>/<%=vo.getR_store_name() %>_<%=vo.getR_menu() %>.jpg);"></div>
                     <!-- Portfolio Hover Text -->
                     <div class="portfolio-hover-overlay">
-                        <a href="img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1">
+                        <a href="/Food/resources/storemenu/<%=map.get(vo.getType()) %>/<%=vo.getR_store_name() %>_<%=vo.getR_menu() %>.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1">
                             <div class="port-hover-text">
                                 <h3><%=vo.getR_menu() %></h3>
                                 <h5><%=vo.getR_store_name() %></h5>

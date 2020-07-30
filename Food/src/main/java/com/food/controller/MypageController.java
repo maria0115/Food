@@ -75,7 +75,12 @@ public class MypageController {
 		}
 		
 		
+		@RequestMapping("/foodcalorie.do")
+		public String foodcalorie() {
 		
+			
+			return "mypage/imagecalorie";
+		}
 		
 	
 		

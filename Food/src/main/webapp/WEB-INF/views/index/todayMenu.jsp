@@ -1,10 +1,20 @@
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.food.domain.ProductVO" %>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang="en">
-<% List<ProductVO> list =(List<ProductVO>) request.getAttribute("list"); %>
+<% List<ProductVO> list =(List<ProductVO>) request.getAttribute("list"); 
+HashMap map = new HashMap();
+map.put("한식", "kor");
+map.put("중식", "ch");
+map.put("일식", "jap");
+map.put("양식", "ame");
+map.put("분식", "school");
+map.put("동남아", "east");
+
+%>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -87,7 +97,7 @@
                     <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Product Image -->
                         <div class="product-img">
-                            <a href="shop-details.do"><img src="/Food/resources/img/bg-img/9.jpg" alt=""></a>
+                            <a href="shop-details.do"><img class='productimg' style="background-size: contain; width: 270px; height: 270px;" src="/Food/resources/storemenu/<%=map.get(vo.getType()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_1() %>.jpg" alt=""></a>
                             <!-- Product Tag -->
                             <div class="product-tag">
                                 <a href="#">Hot</a>
