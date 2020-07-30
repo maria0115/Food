@@ -42,21 +42,6 @@
 
 
 <!-- ##### Header Area Start ##### -->
-<header class="header-area">
-
-	<div class="search-form">
-		<form action="#" method="get">
-			<input type="search" name="search" id="search"
-				placeholder="Type keywords &amp; press enter...">
-			<button type="submit" class="d-none"></button>
-		</form>
-		<!-- Close Icon -->
-		<div class="closeIcon">
-			<i class="fa fa-times" aria-hidden="true"></i>
-		</div>
-	</div>
-</header>
-<!-- ##### Header Area End ##### -->
 
 <!-- ##### Breadcrumb Area Start ##### -->
 <div class="breadcrumb-area">
@@ -487,6 +472,7 @@
 					</div>
 				</div>
 			</div>
+			
 
 			<!-- Single Product Area -->
 			<div class="col-12 col-sm-6 col-lg-3">

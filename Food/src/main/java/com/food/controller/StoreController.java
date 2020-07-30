@@ -35,7 +35,7 @@ public class StoreController {
 	boardService boardService;
 	
 	
-//	 상품 상세보기
+//	 상품 상세보기 
 	@RequestMapping("/storeDetails.do" )
 	public ModelAndView getSelectStore(StoreListVO vo,BoardVO vo2,HttpServletRequest request) {
 		
@@ -45,25 +45,9 @@ public class StoreController {
 		
 		System.out.println("스토어셀렉 controller 도착");
 		System.out.println("------------------******************"+vo.getS_brand_name());
-		 //상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
-	
 		
-		//매장별 상세보기 
 		StoreListVO list = storeService.storeDetail(vo);
-		
-	
-		
-		
-		//가게별 리뷰가져오기 
-	
-		
-		
-	
-		
-		
 		List<BoardVO> listVO = storeService.reviewSelect(vo);
-		
-		
 		
 		System.out.println("스토어셀렉mapper 갔다옴");
 		System.out.println(list+"!!");
@@ -104,6 +88,7 @@ public class StoreController {
 	}
 	
 	
+	// 리뷰리스트 , 페이징 처리 
 	@ResponseBody
 	@RequestMapping(value = "/storeDetailPaging.do" , produces = "application/json; charset=utf-8")
 	public Map getSelectStore(StoreListVO vo,BoardVO vo2,HttpServletRequest request,
@@ -111,14 +96,9 @@ public class StoreController {
 		
 		Map map = new HashMap();
 		Map result = new HashMap();
-		
-		
+				
 		 //상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
 	
-		
-		
-		
-		
 		//리뷰가져오기
 		
 		vo2.setBoardType(2);
@@ -129,9 +109,7 @@ public class StoreController {
 		System.out.println(title+"2222222333333333344444444444");
 		map.put("boardType",boardType);
 		map.put("s_brand_name",s_brand_name);
-		
-		
-		
+			
 		//가게별 리뷰가져오기 
 		List<BoardVO> listVO2 = storeService.reviewSelect2(map);
 		int listVO2size = listVO2.size();
@@ -151,109 +129,16 @@ public class StoreController {
 		return result;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	
-//	@RequestMapping("/storeDetails.do")
-//	public ModelAndView reviewSelect(StoreListVO vo){
-//		
-//		storeService.reviewSelect(vo);
-//		ModelAndView mv = new ModelAndView();
-//
-//		return mv;
-//		
-//		//리뷰가져오기 
+//	@RequestMapping("/reviewDelete.do")
+//	public ModelAndView reviewDelete(BoardVO vo) {
 //		
 //		
 //	}
-	
-//	@RequestMapping(value="/storeDetails.do", produces = "application/json; charset=utf-8")
-//	@ResponseBody
-//	public Map getWriterDataWithPaging(StoreListVO vo,BoardVO vo2,HttpSession session,  @RequestParam(defaultValue="1")
-//							int curPage, @RequestParam(value = "searchWord") String searchWord) {
-//		Map result = new HashMap();		
-//		
-//		//매장별 상세보기 
-//		StoreListVO list = storeService.storeDetail(vo);
-//				
-//		//리뷰가져오기
-//		
-//		vo2.setBoardType(2);
-//		int total = boardService.countBoard(vo2);
-//	
-//		vo.setNowPage("1");
-//		
-//		List<BoardVO> listVO = storeService.reviewSelect(vo);
-//		
-//		int listCnt = storeService.selectWriterCntByNameWithPaging(searchWord);
-//		
-//		PaginationVO paginationVO = new PaginationVO(listCnt, curPage);
-//	
-//		int reviewPageCnt = listVO.size();
-//		if(reviewPageCnt != 0) {
-//			reviewPageCnt=reviewPageCnt/5;
-//		}
-//		
-//		
-//		Map searchMap = new HashMap();
-//		searchMap.put("searchWord", searchWord);
-//		searchMap.put("startRow", paginationVO.getStartIndex()+1);
-//		searchMap.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
-//		List<BoardVO> writerList = storeService.selectWriterSearchByNameWithPaging(searchMap);
-//		result.put("pagination", paginationVO);
-//		result.put("writerList", writerList);
-//		result.put("writerListSize", writerList.size());
-//		
-//		return result;
-//	}
-//	
+
 	
 	
 	
 	
 	
-	
-//	@RequestMapping("/store.do")
-//	public void getBoardList(StoreListVO vo, Model model) {
-//		System.out.println("컨트롤러요");
-//		
-//		model.addAttribute("storeList",storeService.getStoreList(vo));
-//		// ViewResolver를 지정하지 않으면 아래처럼 페이지명 지정
-//		// return "views/getBoardList.jsp"; // View 이름 리턴
-//		System.out.println("컨트롤러2");
-//		
-//	}
-//	@RequestMapping(value="/admin/getWriterDataWithPaging.do", produces = "application/json; charset=utf-8")
-//	@ResponseBody
-//	public Map getWriterDataWithPaging(HttpSession session,  @RequestParam(defaultValue="1") int curPage, @RequestParam(value = "searchWord") String searchWord) {
-//		Map result = new HashMap();		
-//		
-//		int listCnt = storeService.selectWriterCntByNameWithPaging(searchWord);
-//		
-//		PaginationVO paginationVO = new PaginationVO(listCnt, curPage);
-//		Map searchMap = new HashMap();
-//		searchMap.put("searchWord", searchWord);
-//		searchMap.put("startRow", paginationVO.getStartIndex()+1);
-//		searchMap.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
-//		List<BoardVO> writerList = storeService.selectWriterSearchByNameWithPaging(searchMap);
-//		result.put("pagination", paginationVO);
-//		result.put("writerList", writerList);
-//		result.put("writerListSize", writerList.size());
-//		
-//		return result;
-//	}
+
 }

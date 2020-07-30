@@ -135,7 +135,7 @@ function drawWriterTable(data){
 	var div8 ='</div>';
 	var div9 ='</div>';
 	var a1 = '<a type="button" class="btn alazea-btn" id="reviewUpdate" value="수정"></a>';
-	var a2= '<a type="button" class="btn alazea-btn" id="reviewDelete" value="삭제"></a>';
+	var a2= '<a href="reviewDelete.do" type="button" class="btn alazea-btn" id="reviewDelete" value="삭제"></a>';
 	alert('>'+data.listVO2size);
 	alert(">>"+data.listVO2);
        for(var i=0; i<data.listVO2size; i++){
