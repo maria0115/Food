@@ -40,11 +40,11 @@
 						<thead>
 							<tr class="row100 head">
 								<tr class="row100">
-								<th colspan="1" >제목/</th>
-								<th colspan="1" >위치/</th>
-								<th colspan="1" >등록일/</th>
-								<th colspan="1" >조회수/</th>
-								<th colspan="1" >참여인원</th>
+								<th  >제목</th>
+								<th >위치</th>
+								<th >등록일</th>
+								<th >조회수</th>
+								<th >참여인원</th>
 								
 							</tr>
 						</thead>
@@ -53,12 +53,13 @@
 							<c:forEach items="${boardlist}" var ="board">
 															
 							<tr class="row100">
+							
 								<td class="column100 column1" data-column="column1">${board.title}</td>
 								<td  class="column100 column2" data-column="column2">${board.f_addr1}</td>
 								<td class="column100 column1" data-column="column1">${board.f_date}</td>
 								<td  class="column100 column2" data-column="column2">${board.f_cnt}</td>
 								<td class="column100 column1" data-column="column1">${board.f_joincnt}</td>
-								
+							
 							
 							</tr>
 							

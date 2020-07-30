@@ -98,7 +98,7 @@ html {
 
 @media (min-width: 600px){
     .grid-cell {
-    width: calc(100% / 4); /* 3 columns */
+    width: calc(100% / 5); /* 3 columns */
     }
 }
 
@@ -169,11 +169,11 @@ html {
 </div>
 
   <div class="grid">
-    <div class="grid-cell"><a href="mypage.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>회원 정보 수정 </a></div>
-    <div class="grid-cell"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>작성한글 보러가기</a></div>
-    <div class="grid-cell"><a href="membermodify.do" class="cen"><span style="color: lightcoral;">MY RESERVATION</span><br/>나의 예약 현황 </a></div>
+    <div class="grid-cell"><a href="mypage.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>회원 정보</a></div>
+    <div class="grid-cell"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>나의 글목록</a></div>
+    <div class="grid-cell"><a href="membermodify.do" class="cen"><span style="color: lightcoral;">MY BIORHYTHM</span><br/>나의 칼로리 </a></div>
     <div class="grid-cell"><a href="membermodify.do" class="cen"><span style="color: steelblue;">MY WISH</span><br/>찜목록보기</a></div>
-   
+   	<div class="grid-cell"><a href="mypage.do" class="cen"><span style="color: crimson;">MY RESERVATION</span><br/>예약 리스트</a></div>
   </div>
   
 </div>
