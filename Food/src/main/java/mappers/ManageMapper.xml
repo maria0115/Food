@@ -43,5 +43,13 @@
 <delete id="memberDelete" parameterType="member">
 		Delete From member WHERE m_id=#{m_id}
 </delete>
-	
+
+<select id="todayHire" parameterType="member" resultType="int">
+	select count(*) todayHire from member where m_date = (SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD') FROM DUAL )
+
+</select>	
+<select id="yesterdayHire" parameterType="member" resultType="int">
+	select count(*) yesterdayHire from member where m_date = (SELECT TO_CHAR(SYSDATE-1, 'YYYY-MM-DD') FROM DUAL )
+
+</select>	
 </mapper>

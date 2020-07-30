@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,17 +99,28 @@
 			<div class="page-header">
 				<h1 class="page-title">Dashboard</h1>
 			</div>
+			
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
-						<div class="text-right text-green">
-							6% <i class="icon-up"></i>
+						<c:if test="${newMember lt 0}">
+						<div class="text-right text-red">
+							${newMember}%<i class="icon-down"></i>
 						</div>
-						<div class="h1 m-0">43</div>
+						</c:if> 
+						<c:if test="${newMember gt 0}">
+						<div class="text-right text-green">
+							${newMember}%<i class="icon-up"></i>
+						</div>
+						</c:if> 
+
+						
+						<div class="h1 m-0">${todayHire }</div>
 						<div class="text-muted mb-4">신규회원</div>
 					</div>
 				</div>
 			</div>
+			
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">

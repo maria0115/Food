@@ -18,4 +18,8 @@ public interface managerDAO {
 		int allCount();
 
 		int memberDelete(MemberVO vo);
+
+		int todayHire(MemberVO vo);
+
+		int yesterdayHire(MemberVO vo);
 }

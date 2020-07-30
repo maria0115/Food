@@ -19,6 +19,7 @@ import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.service.BlackService;
 import com.food.service.ManagerService;
+import com.food.service.MemberService;
 import com.food.service.boardService;
 
 
@@ -28,6 +29,8 @@ public class ManageController {
 	
 	int curCount=0; //리스트에서 현재 검색된 데이터 숫자를 저장할 변수 선언
 	int allCount; //리스트에서 모든 데이터의 숫자를 저장한 변수 선언
+	
+	
 	
 	@Autowired
 	private ManagerService managerService;
@@ -430,7 +433,14 @@ public class ManageController {
 		return "manager/declaView";
 	}
 	@RequestMapping("/dashBoard.do")
-	public String dash() {
+	public String dash(MemberVO vo, Model model) {
+		int todayHire = managerService.todayHire(vo);
+		int yesterdayHire = managerService.yesterdayHire(vo);
+		System.out.println(todayHire);
+		System.out.println(yesterdayHire);
+		int newMember = (int)(((double)todayHire / (double)yesterdayHire) *100-100);
+		model.addAttribute("todayHire",todayHire);
+		model.addAttribute("newMember",newMember);
 		
 		return "manager/dashBoard";
 	}

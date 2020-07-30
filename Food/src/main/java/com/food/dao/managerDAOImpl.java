@@ -24,7 +24,7 @@ public class managerDAOImpl implements managerDAO{
 	//모든 회원정보
 	@Override
 	public List<MemberVO> listAll() {
-		System.out.println("==>MemberMapper listAll() 호출");
+		System.out.println("==>ManagerMapper listAll() 호출");
 		return mybatis.selectList("managerDAO.listAll");
 	}
 	
@@ -32,7 +32,7 @@ public class managerDAOImpl implements managerDAO{
 	//searchType 타입의 keyword값으로 검색했을때 검색된 회원 숫자
 	@Override
 	public int searchCount(String searchType, String keyword) {
-		System.out.println("==>MemberMapper searchCount() 호출");
+		System.out.println("==>ManagerMapper searchCount() 호출");
 		
 		HashMap map = new HashMap();
 		map.put("searchType",searchType);
@@ -43,7 +43,7 @@ public class managerDAOImpl implements managerDAO{
 
 	//회원정보 출력, 검색한 값이 있을때는 검색된 회원을 반환하고 검색한 값이 없을때는 전체회원 정보를 반환한다
 	public List<MemberVO> selectBoard(PagingVO pvo, String searchType, String keyword) {
-		System.out.println("==>MemberMapper selectBoard() 호출");
+		System.out.println("==>ManagerMapper selectBoard() 호출");
 		
 		HashMap map = new HashMap();
 		map.put("searchType",searchType);
@@ -56,14 +56,26 @@ public class managerDAOImpl implements managerDAO{
 	//모든 회원 명수
 		@Override
 		public int allCount() {
-			System.out.println("==>MemberMapper allCount() 호출");
+			System.out.println("==>ManagerMapper allCount() 호출");
 			return mybatis.selectOne("managerDAO.allCount");
 		}
 
 		@Override
 		public int memberDelete(MemberVO vo) {
-			System.out.println("==>MemberMapper memberDelete() 호출");
+			System.out.println("==>ManagerMapper memberDelete() 호출");
 			return mybatis.delete("managerDAO.memberDelete",vo);
+		}
+
+		@Override
+		public int todayHire(MemberVO vo) {
+			System.out.println("==>ManagerMapper todayHire() 호출");
+			return mybatis.selectOne("managerDAO.todayHire",vo);
+		}
+
+		@Override
+		public int yesterdayHire(MemberVO vo) {
+			System.out.println("==>ManagerMapper yesterdayHire() 호출");
+			return mybatis.selectOne("managerDAO.yesterdayHire",vo);
 		}	
 		
 
