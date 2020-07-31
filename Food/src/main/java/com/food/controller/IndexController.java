@@ -44,19 +44,13 @@ public class IndexController {
 	}
 	
 	//Header에서 Store List 클릭했을때
-//	@RequestMapping("/store.do")
-//	public ModelAndView getStoreList(StoreListVO vo, String category) {
-//		System.out.println("스토어 controller 도착");
-//	    List<StoreListVO> listVO = storeService.getStoreList(vo);
-//	    System.out.println("스토어mapper 갔다옴");
-//	    ModelAndView mv = new ModelAndView();
-//	    mv.setViewName("index/store");
-//	    mv.addObject("listVO",listVO);
-//	    if(category!=null) {
-//	    mv.addObject("category",category);
-//	    }
-//	    return mv;
-//	   }
+	@RequestMapping("/store.do")
+	public void getStoreList(StoreListVO vo, String category, Model model) {
+		
+		model.addAttribute("map",friendBoardservice.test());
+	
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "/storelist.do" , produces = "application/json; charset=utf-8")
 	public Map selectStorePaging(StoreListVO vo,BoardVO vo2,HttpServletRequest request,
@@ -93,11 +87,11 @@ public class IndexController {
 		
 		System.out.println("+++++++++++++++"+listVO2size);	
 		System.out.println("+++++++++++++++"+listVO2.size());
-		List<StoreListVO> map1 = friendBoardservice.test();
+		
 		result.put("listVO2",listVO2);
 		result.put("pagination",paginationVO);
 		result.put("listVO2size",listVO2.size());
-		result.put("map",map1);
+		
 		return result;
 	}
 	

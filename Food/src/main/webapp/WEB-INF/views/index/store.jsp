@@ -37,7 +37,7 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62"></script>
 <script src="/Food/resources/js/marker.js"></script>
-<!-- <script src="/Food/resources/js/storeMap.js"></script> -->
+
 
 
 
@@ -117,24 +117,24 @@
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="shop-sidebar-area">
 
-						<div class="shop-widget catagory mb-50">
+						<!-- <div class="shop-widget catagory mb-50">
 							<h4 class="widget-title">Categories</h4>
 							<div class="widget-desc">
-								<!-- Single Checkbox -->
+								Single Checkbox
 								<div
 									class="custom-control custom-checkbox d-flex align-items-center mb-2">
 									<input type="checkbox" class="custom-control-input"
 										id="checkAll" name="checkList"> <label class="custom-control-label"
 										for="checkAll">All <span class="text-muted">(72)</span></label>
 								</div>
-								<!-- Single Checkbox -->
+								Single Checkbox
 								<div
 									class="custom-control custom-checkbox d-flex align-items-center mb-2">
 									<input type="checkbox" class="custom-control-input"
 										id="checkKorean" name="checkList"> <label class="custom-control-label"
 										for="checkKorean">Korean Food<span class="text-muted">(20)</span></label>
 								</div>
-								<!-- Single Checkbox -->
+								Single Checkbox
 								<div
 									class="custom-control custom-checkbox d-flex align-items-center mb-2">
 									<input type="checkbox" class="custom-control-input"
@@ -142,7 +142,7 @@
 										for="checkChinese">Chinese Food <span
 										class="text-muted">(15)</span></label>
 								</div>
-								<!-- Single Checkbox -->
+								Single Checkbox
 								<div
 									class="custom-control custom-checkbox d-flex align-items-center mb-2">
 									<input type="checkbox" class="custom-control-input"
@@ -151,7 +151,7 @@
 										Food <span class="text-muted">(20)</span>
 									</label>
 								</div>
-								<!-- Single Checkbox -->
+								Single Checkbox
 								<div
 									class="custom-control custom-checkbox d-flex align-items-center mb-2">
 									<input type="checkbox" class="custom-control-input"
@@ -159,7 +159,7 @@
 										for="checkWestern">Western Food <span
 										class="text-muted">(15)</span></label>
 								</div>
-								<!-- Single Checkbox -->
+								Single Checkbox
 								<div
 									class="custom-control custom-checkbox d-flex align-items-center mb-2">
 									<input type="checkbox" class="custom-control-input"
@@ -170,7 +170,7 @@
 								</div>
 
 							</div>
-						</div>
+						</div> -->
 						
 
 						<!-- Shop Widget -->
@@ -238,10 +238,10 @@
                     <!-- 예약 best3 지도 마커 찍기 -->
                     <div class="shop-widget best-seller mb-50">
                             <h4 class="widget-title">BEST TOP 3</h4>
-                            <div id="map" style="width: 100%; height: 10%;">
+                            <div id="map" style="width: 90%; height: 188px;">
 							<c:forEach items="${map}" var="store">
-							<input type="text" name="name" value="${store.s_brand_name }">
-							<input type="text" name="addr" value="${store.s_address }">
+							<input type="hidden" name="name" value="${store.s_brand_name }">
+							<input type="hidden" name="addr" value="${store.s_address }">
 							</c:forEach>
 							</div>
                             </div>
@@ -309,16 +309,22 @@
                             
                         </div>
 
-                        <!-- Pagination -->
-						<div id="pagination-div">
+                      
+                        <!-- Shop Page Count -->
+                        
+                        <!-- Search by Terms -->
+                        
+                    
+						<div class="container" id="pagination-div">
 							<div id="pagination_container">
 								<ul id="pagination-demo" class="pagination-lg"></ul>
 							</div>
 						</div>
 					</div>
                 </div>
-            </div>
-        </div>
+                </div>
+                        </div>
+         
     </section>
     <!-- ##### Shop Area End ##### -->
 

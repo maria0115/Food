@@ -3,7 +3,7 @@ window.onload = function(){
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
 mapOption = { 
     center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-    level: 8 // 지도의 확대 레벨
+    level: 9 // 지도의 확대 레벨
 };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -29,11 +29,9 @@ for(i=0;i<size;i++){
 		var marker = {};
 		var geocoder = new kakao.maps.services.Geocoder();
 		var bounds = new kakao.maps.LatLngBounds();
-		alert("주소!!111111"+addr[i]);
 		geocoder.addressSearch(addr[i], function(result, status) {
 		     // 정상적으로 검색이 완료됐으면 
 		     if (status === kakao.maps.services.Status.OK) {
-		    	 alert("주소!!22222"+addr[i]);
 		        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 		        positions[i]=coords;
 		        

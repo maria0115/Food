@@ -1,1 +1,0 @@
-$("input:checkbox[name=checkList]:checked")

@@ -6,6 +6,7 @@
 <script type="text/javascript">
 var latitude="";
 var longitude="";
+
 var detailAddr="";
 	navigator.geolocation.getCurrentPosition((position) => {
 		longitude = position.coords.longitude;
