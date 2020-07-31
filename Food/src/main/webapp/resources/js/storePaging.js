@@ -73,7 +73,7 @@ function getWriterDataInPaging(){
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {"s_brand_name" : $('#title').val(),
-				"s_address" : $('#addr').val(),
+				"s_address" : $('#addrs').val(),
 				"curPage" : curPage,
 				},
 		dataType : 'json',
@@ -98,7 +98,7 @@ function getWriterData(){
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {"s_brand_name" : $('#title').val(),
-				"s_address" : $('#addr').val(),
+				"s_address" : $('#addrs').val(),
 				"curPage" : curPage
 				},
 		dataType : 'json',

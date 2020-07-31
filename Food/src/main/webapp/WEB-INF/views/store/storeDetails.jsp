@@ -241,7 +241,7 @@
 								<span>작은카테고리 :</span> <span id='midpart'>${list.s_midpart } </span>
 							</p>
 							<p>
-								<span>주소 :</span> <span id='addr'>${list.s_address } </span>
+								<span>주소 :</span> <span id='addrs'>${list.s_address } </span>
 							</p>
 							<p></p>
 						</div>
