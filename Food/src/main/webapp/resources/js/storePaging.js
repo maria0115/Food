@@ -73,6 +73,7 @@ function getWriterDataInPaging(){
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {"s_brand_name" : $('#title').val(),
+				"s_address" : $('#addr').val(),
 				"curPage" : curPage,
 				},
 		dataType : 'json',
@@ -97,6 +98,7 @@ function getWriterData(){
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {"s_brand_name" : $('#title').val(),
+				"s_address" : $('#addr').val(),
 				"curPage" : curPage
 				},
 		dataType : 'json',
@@ -125,56 +127,60 @@ function getWriterData(){
 
 function drawWriterTable(data){
 	console.log(data);
-	$('#storeList').empty();
-	var div1 = '<div class="single-product-area mb-50">';
-    var div2 =' <div class="product-img">';
-	var div3 =' <a href="shopDetails.do"><img src="./resources/img/bg-img/40.png" alt=""></a>';
-	var div4 ='<div class="product-tag">';
-    var div5 ='<a href="#">Hot</a>';
-	var div6 ='  </div>';
-	var h51 = ' <div class="product-meta d-flex">';
-	var titleA ='<a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>';
-	var titleAend = '<a href="cart.html" class="add-to-cart-btn">Add to cart</a>';
-	var aEnd = '<a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>';
-	var h52 = '</div>';
-	var span = '</div>';
-	var span2 = '<div class="product-info mt-15 text-center">';
-	var input ='<a href="../store/storeDetails.do?s_brand_name=';
-	var input2 = '">';
-	var div7 ='<p>';
-	var endP='</p>';
-	var p1 = '</a>';
-	var p2 = '<h6>aa</h6>';
-	var div8 ='</div>';
-	var div9 ='</div>';
-	var a1 = '</div>';
-
-       for(var i=0; i<data.listVO2size; i++){
+	$('#storeTT').empty();
+		div1 ='<div class="col-12 col-sm-6 col-lg-4">';
+		div2 ='<div class="single-product-area mb-50">';
+		div3 ='<div class="product-img">';
+		imgA ='<a href="shopDetails.do">';
+		imgSrc = '<img src="./resources/img/bg-img/40.png" alt="">';
+		imgAend='</a>';
+		div4 ='<div class="product-tag">';
+		aHot ='<a href="#">Hot</a>';
+		div4End ='</div>';
+		div5 ='<div class="product-meta d-flex">';
+		div5a1 ='<a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>';
+		div5a2 ='<a href="cart.html" class="add-to-cart-btn">Add to cart</a>';
+		div5a3 ='<a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>';
+		div5End ='</div>';
+		div3End ='</div>'; 
+		div6 = '<div class="product-info mt-15 text-center">';
+		div6A='<a href="../store/storeDetails.do?s_brand_name=';
+		div6A2='">';
+		pTag='<p>';
+		pTagEnd='</p>';
+		div6Aend='</a>';
+		h6Tag = '<h6>';
+		h6TagEnd='</h6>';
+		div6End='</div>';
+		div2End='</div>';
+		div1End='</div>';
+		for(var i=0; i<data.listVO2size; i++){
+    	   
 		var listContent =
-			div1+
+			div1+ 
 			div2+
-			div3+
+			div3+ 
+			imgA+ imgSrc+ imgAend+
 			div4+
-			div5+
+			aHot+
+			div4End+
+			div5a1+
+			div5a2+
+			div5a3+
+			div5End+
+			div3End+
 			div6+
-			h51+
-			titleA+
-			titleAend+
-			aEnd+
-			h52+
-			span+
-			span2+
-			input+	listVO2[i].s_brand_name	+input2+
-			div7+ listVO2[i].s_brand_name +endP+
-			p1+
-			p2+
-			div8+ 
-			div9+
-			a1+
+			div6A+data.listVO2[i].s_brand_name+ div6A2 +
+			pTag+data.listVO2[i].s_brand_name+ pTagEnd+
+			div6Aend+
+			h6Tag+data.listVO2[i].s_address+ h6TagEnd+
+			div6End+
+			div2End+
+			div1End
 			
-			
+					
 						 
-		$('#storeList').append(listContent);
+		$('#storeTT').append(listContent);
 		
 		
 		

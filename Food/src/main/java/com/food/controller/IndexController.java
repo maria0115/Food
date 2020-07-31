@@ -43,56 +43,60 @@ public class IndexController {
 	}
 	
 	//Header에서 Store List 클릭했을때
-	   @RequestMapping("/store.do")
-	   public ModelAndView getStoreList(StoreListVO vo, String category) {
-	      System.out.println("스토어 controller 도착");
-	      List<StoreListVO> listVO = storeService.getStoreList(vo);
-	      System.out.println("스토어mapper 갔다옴");
-	      ModelAndView mv = new ModelAndView();
-	      mv.setViewName("index/store");
-	      mv.addObject("listVO",listVO);
-	      if(category!=null) {
-	    	  mv.addObject("category",category);
-	      }
-	      return mv;
-	   }
-//	@ResponseBody
-//	@RequestMapping(value = "/storelist.do" , produces = "application/json; charset=utf-8")
-//	public Map selectStorePaging(StoreListVO vo,BoardVO vo2,HttpServletRequest request,
-//			@RequestParam(defaultValue = "1")int curPage) {
-//		System.out.println("왔더");
-//		Map map = new HashMap();
-//		Map result = new HashMap();
-//				
-//		 //상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
-//	
-//		//리뷰가져오기
-//		
-//		vo2.setBoardType(2);
-//		int boardType = vo2.getBoardType();
-//		String s_brand_name = vo2.getS_brand_name();
-//		String title = vo2.getTitle();
-////	
-//		map.put("boardType",boardType);
-//		map.put("s_brand_name",s_brand_name);
-//			
-//		//가게별 리뷰가져오기 
-//		List<BoardVO> listVO2 = storeService.selectStoreList(map);
-//		int listVO2size = listVO2.size();
-//		
-//		PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
-//		map.put("startRow", paginationVO.getStartIndex()+1);
-//		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
-//		
-//		// 내가 지정한 리스트 개수를 가져오기위해서 listVO2에  다시 넣어줌 
-//		listVO2 = storeService.selectStorePaging(map);
-//		System.out.println("+++++++++++++++"+listVO2size);	
-//		System.out.println("+++++++++++++++"+listVO2.size());
-//		result.put("listVO2",listVO2);
-//		result.put("pagination",paginationVO);
-//		result.put("listVO2size",listVO2.size());
-//		return result;
-//	}
+//	@RequestMapping("/store.do")
+//	public ModelAndView getStoreList(StoreListVO vo, String category) {
+//		System.out.println("스토어 controller 도착");
+//	    List<StoreListVO> listVO = storeService.getStoreList(vo);
+//	    System.out.println("스토어mapper 갔다옴");
+//	    ModelAndView mv = new ModelAndView();
+//	    mv.setViewName("index/store");
+//	    mv.addObject("listVO",listVO);
+//	    if(category!=null) {
+//	    mv.addObject("category",category);
+//	    }
+//	    return mv;
+//	   }
+	@ResponseBody
+	@RequestMapping(value = "/storelist.do" , produces = "application/json; charset=utf-8")
+	public Map selectStorePaging(StoreListVO vo,BoardVO vo2,HttpServletRequest request,
+			@RequestParam(defaultValue = "1")int curPage) {
+		System.out.println("왔더");
+		Map map = new HashMap();
+		Map result = new HashMap();
+				
+		 //상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
+	
+		//리뷰가져오기
+		
+		vo2.setBoardType(2);
+		int boardType = vo2.getBoardType();
+		String s_brand_name = vo2.getS_brand_name();
+		String s_address = vo.getS_address();
+		String title = vo2.getTitle();
+	
+		map.put("boardType",boardType);
+		map.put("s_brand_name",s_brand_name);
+		map.put("s_address",s_address);
+			
+		//가게 가져오기 
+		List<StoreListVO> listVO2 = storeService.selectStoreList(map);
+		int listVO2size = listVO2.size();
+		
+		PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
+		map.put("startRow", paginationVO.getStartIndex()+1);
+		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
+		
+		// 내가 지정한 리스트 개수를 가져오기위해서 listVO2에  다시 넣어줌 
+		listVO2 = storeService.selectStorePaging(map);
+		
+		System.out.println("+++++++++++++++"+listVO2size);	
+		System.out.println("+++++++++++++++"+listVO2.size());
+
+		result.put("listVO2",listVO2);
+		result.put("pagination",paginationVO);
+		result.put("listVO2size",listVO2.size()-1);
+		return result;
+	}
 	
 	
 	

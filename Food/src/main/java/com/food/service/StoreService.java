@@ -22,9 +22,9 @@ public interface StoreService {
 	List<BoardVO> reviewPaging(Map map);
 
 	//가게 가져오기
-	List<BoardVO> selectStoreList(Map map);
+	List<StoreListVO> selectStoreList(Map map);
 	//가게리스트 페이징
-	List<BoardVO> selectStorePaging(Map map);
+	List<StoreListVO> selectStorePaging(Map map);
 	
 	
 	

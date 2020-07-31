@@ -125,14 +125,14 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	]]>
 	</select> 
 	
-	<select id="selectStoreList" parameterType="hashmap" resultType="board">
+	<select id="selectStoreList" parameterType="hashmap" resultType="store">
 	
 		select *from STORE
 			
 	</select> 
 	
 	
-	<select id="selectStorePaging" parameterType="hashmap" resultType="board">
+	<select id="selectStorePaging" parameterType="hashmap" resultType="store">
 	<![CDATA[
 	select *
 	from(

@@ -215,11 +215,11 @@
                 <!-- All Products Area -->
                 <div class="col-12 col-md-8 col-lg-9">
                     <div class="shop-products-area">
-                        <div class="row">
+                        <div class="row"  id='storeTT'>
 
                             <!-- Single Product Area -->
                          	<c:forEach items="${listVO}" var="store">
-                            <div class="col-12 col-sm-6 col-lg-4" id="storeList" >
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="single-product-area mb-50">
                                     <!-- Product Image -->
                                     <div class="product-img">
@@ -288,7 +288,7 @@
     <!-- ##### Footer Area Start ##### -->
     <%@ include file="footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
-<!-- <script src="/Food/resources/js/storePaging.js"></script> -->
+<script src="/Food/resources/js/storePaging.js"></script>
 </body>
 
 </html>

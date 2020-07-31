@@ -66,15 +66,15 @@ public class StoreDAOImpl implements StoreDAO{
 	
 	//가게 리스트가져오기
 	@Override
-	public List<BoardVO> selectStoreList(Map map) {
-		List<BoardVO> result=mybatis.selectList("StoreDAO.selectStoreList",map);
+	public List<StoreListVO> selectStoreList(Map map) {
+		List<StoreListVO> result=mybatis.selectList("StoreDAO.selectStoreList",map);
 		
 		return mybatis.selectList("StoreDAO.selectStoreList",map);
 	}
 	//가게리스트 페이징
 	@Override
-	public List<BoardVO> selectStorePaging(Map map) {
-		List<BoardVO> result=mybatis.selectList("StoreDAO.selectStorePaging",map);	
+	public List<StoreListVO> selectStorePaging(Map map) {
+		List<StoreListVO> result=mybatis.selectList("StoreDAO.selectStorePaging",map);	
 		
 		return mybatis.selectList("StoreDAO.selectStorePaging",map);
 	}
