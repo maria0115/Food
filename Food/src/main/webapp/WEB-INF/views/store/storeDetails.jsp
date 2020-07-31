@@ -170,8 +170,8 @@
 								<a href="#" class="wishlist-btn ml-15" onclick=""><i
 									class="icon_heart_alt"></i></a> <a href="#"
 									class="compare-btn ml-15"><i class="arrow_left-right_alt"></i></a>
-									</c:if>
-									
+							</c:if>
+							</div>
 									
 									
 <!-- 						 찜하기 기능----------------------------------------------------------- -->
@@ -259,7 +259,7 @@
 //                         }
                                 </script>
 
-					</div>
+				
 				</div>
 			</div>
 		</div>

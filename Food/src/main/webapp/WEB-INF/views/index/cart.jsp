@@ -80,17 +80,36 @@
                             
                             	<script type="text/javascript">
                                 $(document).on("click",".cart_menu",function(){
-//  									alert($(this).parent().children().eq(0).text())
  									var no = $(this).parent().children().eq(0).text()
+// 									게시글을 누르면 해당 매장으로 상세페이지 이동
+ 									location.href="/Food/store/storeDetails.do?s_brand_name="+no
  									
-//  									경로 수정
-//  									location.href="detail?q_no="+no;
                                 });
+                              	
                                  $(document).on("click",".trash",function(){
   									alert("trash1")
-  									alert($(this).parent().children().eq(0).text())
   									var no = $(this).parent().children().eq(0).text()
-//   									location.href="deleteqna?q_no="+no;
+									
+									
+  	  							$.ajax({
+								    url: "deleteCart.do",
+								    type: "post",
+								    cache: false,
+								    data: "w_store_name="+no,
+								    success: function(){
+									    alert("success")
+								    },
+								    
+								    error: function (request, status, error){        
+								        var msg = "ERROR : " + request.status + "<br>"
+								      msg +=  + "내용 : " + request.responseText + "<br>" + error;
+								      console.log(msg);              
+								    }
+								  });
+
+  									$(this).parent().remove()
+  									
+
                                  });
                                  </script>
                             
@@ -101,7 +120,7 @@
                                     <td class="cart_menu" style="padding:1% 0%; font-weight:400">${list.w_midpart}</td>
                                     <td class="trash" style="padding:1% 0%"><a href="#"><i class="icon_close"></i></a></td>
                                 </tr>
-                                </c:forEach>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

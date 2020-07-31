@@ -2,10 +2,13 @@ package com.food.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.food.domain.WishlistVO;
@@ -42,10 +45,13 @@ public class CartController {
 		return mv;
 	};
 	
-	// 찜 하기 버튼 누르면 등록
+	// 찜 하기 삭제
 	@RequestMapping("deleteCart.do")
-	public void deleteCart(WishlistVO vo) {
+	@ResponseBody
+	public void deleteCart(WishlistVO vo, HttpSession session) {
 		System.out.println("deleteCart controller");
+		String m_id = (String) session.getAttribute("user_id");
+		vo.setM_id(m_id);
 		System.out.println("가게명 :"+vo.getW_store_name());
 		System.out.println("m_id :"+vo.getM_id());
 		CartService.deleteCart(vo);	
