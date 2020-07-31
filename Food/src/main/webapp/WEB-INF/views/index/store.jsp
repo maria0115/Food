@@ -156,7 +156,7 @@
                                 <!-- Single Best Seller Products -->
                                 <div class="single-best-seller-product d-flex align-items-center">
                                     <div class="product-thumbnail">
-                                        <a href="shop-details.html"><img src="./resources/img/bg-img/4.jpg" alt=""></a>
+                                        <a href="shop-details.html"><img src="../resources/store/ame/또바기피자.jpg" alt=""></a>
                                     </div>
                                     <div class="product-info">
                                         <a href="shop-details.html"></a>
@@ -192,7 +192,7 @@
                                 <!-- Single Best Seller Products -->
                                 <div class="single-best-seller-product d-flex align-items-center">
                                     <div class="product-thumbnail">
-                                        <a href="shop-details.html"><img src="./resources/img/bg-img/34.jpg" alt=""></a>
+                                        <a href="shop-details.html"><img src="../resources/store/ame/경성함바그 현대시티아울렛 가산점.jpg" alt=""></a>
                                     </div>
                                     <div class="product-info">
                                         <a href="shop-details.html">Recuerdos Plant</a>

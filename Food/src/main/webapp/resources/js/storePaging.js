@@ -126,13 +126,15 @@ function getWriterData(){
 }
 
 function drawWriterTable(data){
-	console.log(data);
+	console.log("그리기"+data);
+	
 	$('#storeTT').empty();
 		div1 ='<div class="col-12 col-sm-6 col-lg-4">';
 		div2 ='<div class="single-product-area mb-50">';
 		div3 ='<div class="product-img">';
 		imgA ='<a href="shopDetails.do">';
-		imgSrc = '<img src="./resources/img/bg-img/40.png" alt="">';
+		imgSrc = '<img src="../resources/store/ame/';
+		imgSrcEnd ='.jpg" alt="">';
 		imgAend='</a>';
 		div4 ='<div class="product-tag">';
 		aHot ='<a href="#">Hot</a>';
@@ -160,7 +162,9 @@ function drawWriterTable(data){
 			div1+ 
 			div2+
 			div3+ 
-			imgA+ imgSrc+ imgAend+
+			imgA+ 
+			imgSrc+data.listVO2[i].s_brand_name+imgSrcEnd+
+			imgAend+
 			div4+
 			aHot+
 			div4End+
