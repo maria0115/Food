@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.food.domain.BoardVO;
 import com.food.domain.PaginationVO;
@@ -65,6 +64,7 @@ public class IndexController {
 		System.out.println("왔더");
 		Map map = new HashMap();
 		Map result = new HashMap();
+		
 				
 		 //상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
 	
@@ -84,9 +84,7 @@ public class IndexController {
 		List<StoreListVO> listVO2 = storeService.selectStoreList(map);
 		int listVO2size = listVO2.size();
 		
-		//PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
-		PaginationVO paginationVO = new PaginationVO(9, listVO2.size(),curPage);
-//		paginationVO.setPageSize(9);
+		PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
 		map.put("startRow", paginationVO.getStartIndex()+1);
 		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
 		
@@ -99,6 +97,7 @@ public class IndexController {
 		result.put("listVO2",listVO2);
 		result.put("pagination",paginationVO);
 		result.put("listVO2size",listVO2.size());
+		result.put("map",friendBoardservice.test());
 		return result;
 	}
 	
