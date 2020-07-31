@@ -18,15 +18,15 @@
 <link rel="stylesheet" href="/Food/resources/css/marker.css">
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="/Food/resources/css/style.css">
-<!-- <style type="text/css">
-img {
+<style type="text/css">
+.listImg {
   display: block;
-  max-width:230px;
-  max-height:140px;
+  max-width:255px;
+  max-height:130px;
   width: auto;
   height: auto;
 }
-</style> -->
+</style> 
 
 <!-- 부트스트랩 -->
 <link
