@@ -166,14 +166,15 @@
 							</form>
 							<!-- Wishlist & Compare -->
 							<div class="wishlist-compare d-flex flex-wrap align-items-center">
+							<c:if test="${not empty sessionScope.user_id}">
 								<a href="#" class="wishlist-btn ml-15" onclick=""><i
 									class="icon_heart_alt"></i></a> <a href="#"
 									class="compare-btn ml-15"><i class="arrow_left-right_alt"></i></a>
+									</c:if>
 									
 									
 									
-									
-						// 찜하기 기능-----------------------------------------------------------
+<!-- 						 찜하기 기능----------------------------------------------------------- -->
 						<span id='m_id' style="visibility: hidden">${sessionScope.user_id}</span>
 						<script>
 						$(function(){
@@ -216,7 +217,7 @@
 						})
 						</script>
 						<input id='name_check' type="hidden" value="${s_name}">
-						----------------------------------------------------------------------------
+<!-- 						---------------------------------------------------------------------------- -->
 
 
 
@@ -237,10 +238,10 @@
 								<span>카테고리 :</span> <span>${list.s_category }</span>
 							</p>
 							<p>
-								<span>작은카테고리 :</span> <span>${list.s_midpart } </span>
+								<span>작은카테고리 :</span> <span id='midpart'>${list.s_midpart } </span>
 							</p>
 							<p>
-								<span>주소 :</span> <span>${list.s_address } </span>
+								<span>주소 :</span> <span id='addr'>${list.s_address } </span>
 							</p>
 							<p></p>
 						</div>
