@@ -84,9 +84,9 @@
 							<span class="ion-ios-arrow-down"></span>
 						</div>
 						<select name="" id="r_menu" class="form-control">
-							<option value=<%= request.getParameter("menu1") %>><%= request.getParameter("menu1") %></option>
-							<option value=<%= request.getParameter("menu2") %>><%= request.getParameter("menu2") %></option>
-							<option value=<%= request.getParameter("menu3") %>><%= request.getParameter("menu3") %></option>
+							<option value="<%= request.getParameter("menu1") %>"><%= request.getParameter("menu1") %></option>
+							<option value="<%= request.getParameter("menu2") %>"><%= request.getParameter("menu2") %></option>
+							<option value="<%= request.getParameter("menu3") %>"><%= request.getParameter("menu3") %></option>
 						</select>
 					</div>
 				</div>
@@ -215,6 +215,7 @@ $(function(){
 
 		var sel_menu = $("#r_menu option:selected").val()
 		var sel_menucount = $("#r_menu_count option:selected").val()
+		alert(sel_menu)
 		$(".input1:last").val(sel_menu)
 		$(".input2:last").val(sel_menucount)
 		$("#r_menu_count option:eq(0)").prop("selected", true);
