@@ -288,7 +288,7 @@
     <!-- ##### Footer Area Start ##### -->
     <%@ include file="footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
-<script src="/Food/resources/js/storePaging.js"></script>
+<!-- <script src="/Food/resources/js/storePaging.js"></script> -->
 </body>
 
 </html>
