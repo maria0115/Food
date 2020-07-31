@@ -183,7 +183,7 @@
 
 								<!-- Cart -->
 							<div class="cart">
-								<a href="../selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-shopping-cart"
+								<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-shopping-cart"
 									aria-hidden="true"></i> <span>Cart <span
 										class="cart-quantity">(1)</span></span></a>
 
