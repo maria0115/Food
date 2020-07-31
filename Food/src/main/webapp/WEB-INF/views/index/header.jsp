@@ -101,10 +101,10 @@
 							class="top-header-content d-flex align-items-center justify-content-between">
 							<!-- Top Header Content -->
 							<div class="top-header-meta">
-								<a href="#" data-toggle="tooltip" data-placement="bottom"
-									title="infodeercreative@gmail.com"></a> <a href="#"
-									data-toggle="tooltip" data-placement="bottom"
-									title="+1 234 122 122"></a>
+								<img alt="" src="/Food/resources/img/logo1.jpg">
+								<a href="/Food/main.do" class="nav-brand"><img
+								src="/Food/resources/img/logo.png" alt="" class="logo">
+								</a>
 							</div>
 							
 							<!-- Top Header Content -->

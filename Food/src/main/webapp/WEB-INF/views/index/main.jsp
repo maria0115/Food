@@ -47,6 +47,11 @@
 .menu .hide {
 	display: none;
 }
+
+.logo{
+	height: 10%;
+	width: 10;
+}
 </style>
 
 
@@ -76,13 +81,10 @@
 							class="top-header-content d-flex align-items-center justify-content-between">
 							<!-- Top Header Content -->
 							<div class="top-header-meta">
-								<a href="#" data-toggle="tooltip" data-placement="bottom"
-									title="infodeercreative@gmail.com"><i
-									class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email:
-										infodeercreative@gmail.com</span></a> <a href="#" data-toggle="tooltip"
-									data-placement="bottom" title="+1 234 122 122"><i
-									class="fa fa-phone" aria-hidden="true"></i> <span>Call
-										Us: +1 234 122 122</span></a>
+							<img alt="" src="/Food/resources/img/logo1.jpg">
+								<a href="/Food/main.do" class="nav-brand"><img
+							src="/Food/resources/img/logo.png" alt="" class="logo">
+						</a>
 							</div>
 
 							<!-- Top Header Content -->
@@ -179,7 +181,7 @@
 
 						<!-- Nav Brand -->
 						<a href="index.html" class="nav-brand"><img
-							src="img/core-img/logo.png" alt=""></a>
+                     src="img/core-img/logo.png" alt=""></a>
 
 						<!-- Navbar Toggler -->
 						<div class="classy-navbar-toggler">
@@ -221,15 +223,14 @@
 									</li>
 								</ul>
 								<ul>
-									<li><a href="/Food/todayMenu.do" id="today">Today Menu</a></li>
+									<li><a href="/Food/todayMenu.do" id="today">오늘의 메뉴</a></li>
 									<li><a
 										href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}"
-										id="mymenu">My Menu</a></li>
+										id="mymenu" style="padding: 0 24px;">My Menu</a></li>
 									<li><a href="/Food/index/choiceMenu.do" id="choice">Other's
 											Menu</a></li>
-									<li><a href="/Food/index/mealFriends.do">Happy Meal
-											With Friends</a></li>
-									<li><a href="/Food/index/store.do">Store List</a></li>
+									<li><a href="/Food/index/mealFriends.do">밥친구 만들기</a></li>
+									<li><a href="/Food/index/store.do">매장 정보</a></li>
 								</ul>
 
 
