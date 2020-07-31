@@ -220,7 +220,7 @@ public class MainController {
 		mv.addObject("name", name);
 		mv.addObject("calorie", calorie);
 		mv.addObject("percent", percent);
-		mv.setViewName("index/imagecalorie");
+		mv.setViewName("mypage/imagecalorie");
 		System.out.println(name+calorie+percent);
 		String resultper = name+","+calorie+","+percent;
 		return resultper;
