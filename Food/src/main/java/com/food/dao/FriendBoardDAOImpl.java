@@ -19,72 +19,42 @@ public class FriendBoardDAOImpl implements FriendBoardDAO{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
-	//밥친구 게시판 글 등록하기 
-	@Override
-	public Integer friendsave(FriendBoardVO vo) {
-		System.out.println("insertFriends 도착");
-		return mybatis.insert("friendDAO.friendsave",vo);
-	}
-
-	//밥친구 게시판 글 목록 가져오기 
-	@Override
-	public List<FriendBoardVO> getmealFriends(PagingVO vo) {
-		System.out.println("getmealFriends 도착 ");
-		HashMap map = new HashMap();
-		map.put("start", vo.getStart());
-		map.put("end", vo.getEnd());
-		return mybatis.selectList("friendDAO.getmealFriends",map);
-	}
-
-	//밥친구 게시판 글 상세보기
-	@Override
-	public FriendBoardVO mealboardView(FriendBoardVO vo) {
-		System.out.println("mealboardView 도착");
-		//게시글 선택시 조회수 증가
-		mybatis.update("friendDAO.mealboardViewcount",vo);
-		return mybatis.selectOne("friendDAO.mealboardView",vo);
-	}
-
-	//밥친구 게시판 글 전체수 
-	@Override
-	public Integer friendBoardcount() {
-		System.out.println("friendBoardcount 도착");
-		return mybatis.selectOne("friendDAO.friendBoardcount");
-	}
-
-	//밥친구 게시판 글 수정하기
-	@Override
-	public Integer friendmodify(FriendBoardVO vo) {
-			System.out.println("friendmodify 도착");
-		return mybatis.update("friendDAO.friendmodify",vo);
-	}
-
-	//밥친구 게시판 글 삭제하기
-	@Override
-	public Integer friendsdelete(FriendBoardVO vo) {
-		System.out.println("friendsdelete 도착");
-		return mybatis.delete("friendDAO.friendsdelete",vo);
-	}
-
-	//밥친구 확정
-	@Override
-	public Integer mealjoin(BoardVO vo) {
-		System.out.println("mealjoin 도착");
-		return mybatis.insert("friendDAO.mealjoin",vo);
-	}
-
-	//밥친구 확정자 인원수 가져오기 
-	@Override
-	public List<FriendBoardVO> getjoinCnt(BoardVO vo) {
-		
-		return mybatis.selectList("friendDAO.getjoinCnt",vo);
-	}
-
+	
 	//test용
 	@Override
 	public List<StoreListVO> test() {
 		
 		return mybatis.selectList("friendDAO.test");
+	}
+
+
+	@Override
+	public Integer allcount() {
+		
+		return mybatis.selectOne("friendDAO.allcount");
+	}
+
+
+	@Override
+	public Integer searchCount(String searchType, String keyword) {
+		
+		HashMap map = new HashMap();
+		map.put("searchType", searchType);
+		map.put("keyword", keyword);
+		
+		return mybatis.selectOne("friendDAO.allcount",map);
+	}
+
+
+	@Override
+	public List<StoreListVO> selectStore(PagingVO pvo, String searchType, String keyword) {
+		HashMap map = new HashMap();
+		map.put("searchType",searchType);
+		map.put("keyword",keyword);
+		map.put("start",pvo.getStart());
+		map.put("end",pvo.getEnd());
+		
+		return mybatis.selectList("friendDAO.selectStorelist",map);
 	}
 
 }

@@ -49,22 +49,22 @@
 		<br />
 
 		<div >
-			<table class="table table-striped" style="font-size: 15px;">
-				<tr>
+			<table class="table table-striped" >
+				<tr style="font-size: 14px;">
 					<th></th>
-					<th>제목</th>
-					<th>위치</th>
+					<th style="width: 25%;">제목</th>
+					<th style="width: 25%;">위치</th>
 					<th>작성자</th>
 					<th>등록일</th>
-					<th>조회수</th>
-					<th>참여</th>
-					<th>확정</th>
+					<th style="width: 6%;">조회수</th>
+					<th style="width: 6%;">참여</th>
+					<th style="width: 6%;">확정</th>
 					<th>채팅방</th>
 				</tr>
 				
 				<c:forEach items="${friendlist}" var="board">
 				<!-- 프라퍼티이름 변경 -->
-				<tr>
+				<tr style="font-size: 16px;">
 					<td><a href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.b_no}</a></td>
 					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
 					<td><a href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.title}</a></td>
@@ -115,9 +115,7 @@
         <c:if test="${sessionScope.user_id!= null }">
 		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" >글등록</button>
 		</c:if>
-		<div class="add-decla">
-            <a href="#" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');">신고</a>
-        </div>
+            <button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');">신고하기</button>
 	</div>
 	<a href="../mealBoard/test.do" >test</a>
 

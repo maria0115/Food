@@ -3,69 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="friendDAO">
 
-
-
-	<!-- 밥친구게시판 글 등록하기  -->
-	<insert id="friendsave" parameterType="friend">
-	insert into friendboard 
-	(f_no , f_title , f_content, f_addr1, f_addr2 , f_membercnt,f_viewcount,f_date, m_id,f_port )
-	values
-	( friend_f_no.nextval , #{f_title} , #{f_content},#{f_addr1},#{f_addr2} , #{f_membercnt}
-	,#{f_viewcount},sysdate ,#{m_id},friend_f_port.nextval)
-	</insert>
-	
-	<!-- 밥친구게시판 글 목록 가져오기  -->
-	<select id="getmealFriends" parameterType="hashmap" resultType="friend">
-		SELECT * 
-	
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM friendBoard
-						ORDER BY f_no DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{start} AND #{end}
-	</select>
-	
-	<!-- 밥친구게시판 글 상세보기 -->
-	<select id="mealboardView" parameterType="friend" resultType="friend">
-		select * from friendBoard where f_no = #{f_no}
-	</select>
-	
-	<!-- 밥친구게시판 글 상세보기시 조회수 증가 -->
-	<update id="mealboardViewcount" parameterType="friend">
-		UPDATE friendBoard SET f_viewcount = f_viewcount+1 WHERE f_no = #{f_no}
-	</update>
-	
-	<!-- 밥친구게시판 글 전체수 -->
-	<select id="friendBoardcount" resultType="Int">
-		select count(*) from friendBoard
-	</select>
-	
-	<!-- 밥친구게시판 글 수정하기 -->
-	<update id="friendmodify" parameterType="friend" >
-		UPDATE friendBoard SET f_title = #{f_title},f_content = #{f_content} , 
-		f_addr1 = #{f_addr1} , f_addr2 = #{f_addr2} , f_membercnt = #{f_membercnt} 
-		WHERE f_no = #{f_no}
-	</update>
-	
-	<!-- 밥친구게시판 글 삭제하기 -->
-	<delete id="friendsdelete" parameterType="friend">
-		DELETE FROM friendBoard WHERE f_no = #{f_no} AND m_id = #{m_id} 
-	</delete>
-	
-	<!-- 밥친구 확정자 인원 추가하기 -->
-	<insert id="mealjoin" parameterType="board">
-		insert into mealjoin (b_no,userId) values (#{b_no},#{userId})
-	</insert>
-	
-	<!-- 밥친구 확정자 인원수 가져오기 -->
-	<select id="getjoinCnt" resultType="friend">
-		select b_no , count(*) as joincnt from mealjoin group by b_no
-	</select>
-	
+	<!-- 예약률 상위3개 마커찍기 -->
 	<select id="test" resultType="store">
 	SELECT * 
 	
@@ -82,5 +20,44 @@
 		WHERE cnt BETWEEN 1 AND 3
 	
 	</select>
+	
+	<!-- 전체매장갯수 -->
+	<select id="allcount" resultType="int">
+		select count(*) from store
+	</select>
+	
+	<!-- 검색된 갯수 -->
+	<select id="searchCount" parameterType="hashmap" resultType="int"> 
+		SELECT COUNT(*) FROM store
+	<where>
+		<if test='searchType!=null &amp;&amp; keyword!=null'>
+		S_CATEGORY = ${searchType}
+		AND
+		S_BRAND_NAME like '%'||#{keyword}||'%'
+		</if>
+	</where>
+	</select>
+	
+	<!-- 검색한 결과 list로 보내주기 -->
+	<select id="selectStorelist" parameterType="hashmap" resultType="store">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM store 
+						<where>
+							<if test='searchType!=null &amp;&amp; keyword!=null'>
+                            S_CATEGORY = #{searchType}
+                            AND
+                            S_BRAND_NAME like '%'||#{keyword}||'%'
+                            </if>
+						</where>
+						ORDER BY ROWNUM DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+
 
 </mapper>

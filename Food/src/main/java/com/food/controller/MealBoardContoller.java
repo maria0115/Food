@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.food.domain.BoardVO;
 import com.food.domain.FriendBoardVO;
+import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
 import com.food.domain.StoreListVO;
 import com.food.service.FriendBoardService;
@@ -25,7 +26,10 @@ import com.google.gson.Gson;
 @Controller
 @RequestMapping("/mealBoard")
 public class MealBoardContoller {
-
+	
+	int curCount=0; //리스트에서 현재 검색된 데이터 숫자를 저장할 변수 선언
+	int allcount; //리스트에서 모든 데이터의 숫자를 저장한 변수 선언
+	
 	
 	@Autowired
 	FriendBoardService friendBoardservice;
@@ -122,6 +126,8 @@ public class MealBoardContoller {
 		
 		return"/mealBoard/test";
 	}
+	
+	
 
 
 
