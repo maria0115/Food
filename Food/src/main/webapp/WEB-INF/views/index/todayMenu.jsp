@@ -28,6 +28,14 @@ map.put("동남아", "east");
     <!-- Favicon -->
 	<link rel="icon" href="resources/img/core-img/favicon.ico">
 	
+	<style type="text/css">
+	#bestfo{
+	font-size: 23px;
+    color: darkblue;
+    padding-top: 23px;
+    border-bottom-style: double;
+    }
+	</style>
 	<!-- Core Stylesheet -->
 	<link rel="stylesheet" href="resources/css/style.css">
     
@@ -75,8 +83,8 @@ map.put("동남아", "east");
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading text-center">
-                        <h2>오늘의 추천 메뉴</h2>
-                        <p>오늘의 날씨와 지역별 직장인들의 월별 요일별 가장많이 먹은 카테고리 중 주문 수가 가장 많은 top 4입니다</p>
+                        <h2 style="font-family: cursive;">오늘의 추천 메뉴</h2>
+                        <p id="bestfo">오늘의 날씨와 지역별 직장인들의 월별 요일별 가장많이 먹은 카테고리 중 주문 수가 가장 많은 top 4입니다</p>
                     </div>
                 </div>
             </div>
