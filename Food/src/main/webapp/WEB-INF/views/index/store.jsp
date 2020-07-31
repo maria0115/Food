@@ -18,15 +18,15 @@
 <link rel="stylesheet" href="/Food/resources/css/marker.css">
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="/Food/resources/css/style.css">
-<style type="text/css">
+<!-- <style type="text/css">
 img {
   display: block;
   max-width:230px;
-  max-height:150px;
+  max-height:140px;
   width: auto;
   height: auto;
 }
-</style>
+</style> -->
 
 <!-- 부트스트랩 -->
 <link
@@ -116,49 +116,64 @@ img {
                 <!-- Sidebar Area -->
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="shop-sidebar-area">
-                        
-                        <div class="shop-widget catagory mb-50">
-                            <h4 class="widget-title">Categories</h4>
-                            <div class="widget-desc">
-                                <!-- Single Checkbox -->
-                                <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="checkAll">
-                                    <label class="custom-control-label" for="checkAll">All <span class="text-muted">(72)</span></label>
-                                </div>
-                                <!-- Single Checkbox -->
-                                <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="checkKorean">
-                                    <label class="custom-control-label" for="checkKorean">Korean Food<span class="text-muted">(20)</span></label>
-                                </div>
-                                <!-- Single Checkbox -->
-                                <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="checkChinese">
-                                    <label class="custom-control-label" for="checkChinese">Chinese Food <span class="text-muted">(15)</span></label>
-                                </div>
-                                <!-- Single Checkbox -->
-                                <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="checkJapanese">
-                                    <label class="custom-control-label" for="checkJapanese">Japanese Food <span class="text-muted">(20)</span></label>
-                                </div>
-                                <!-- Single Checkbox -->
-                                <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="checkWestern">
-                                    <label class="custom-control-label" for="checkWestern">Western Food <span class="text-muted">(15)</span></label>
-                                </div>
-                                <!-- Single Checkbox -->
-                                <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="checkSoutheastAsian">
-                                    <label class="custom-control-label" for="checkSoutheastAsian">Southeast Asian food <span class="text-muted">(2)</span></label>
-                                </div>
-                                 <!-- Single Checkbox -->
-                                <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="checkOthers">
-                                    <label class="custom-control-label" for="checkOthers">Others <span class="text-muted">(2)</span></label>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Shop Widget -->
+						<div class="shop-widget catagory mb-50">
+							<h4 class="widget-title">Categories</h4>
+							<div class="widget-desc">
+								<!-- Single Checkbox -->
+								<div
+									class="custom-control custom-checkbox d-flex align-items-center mb-2">
+									<input type="checkbox" class="custom-control-input"
+										id="checkAll" name="checkList"> <label class="custom-control-label"
+										for="checkAll">All <span class="text-muted">(72)</span></label>
+								</div>
+								<!-- Single Checkbox -->
+								<div
+									class="custom-control custom-checkbox d-flex align-items-center mb-2">
+									<input type="checkbox" class="custom-control-input"
+										id="checkKorean" name="checkList"> <label class="custom-control-label"
+										for="checkKorean">Korean Food<span class="text-muted">(20)</span></label>
+								</div>
+								<!-- Single Checkbox -->
+								<div
+									class="custom-control custom-checkbox d-flex align-items-center mb-2">
+									<input type="checkbox" class="custom-control-input"
+										id="checkChinese"name="checkList"> <label class="custom-control-label"
+										for="checkChinese">Chinese Food <span
+										class="text-muted">(15)</span></label>
+								</div>
+								<!-- Single Checkbox -->
+								<div
+									class="custom-control custom-checkbox d-flex align-items-center mb-2">
+									<input type="checkbox" class="custom-control-input"
+										id="checkJapanese" name="checkList"> <label
+										class="custom-control-label" for="checkJapanese">Japanese
+										Food <span class="text-muted">(20)</span>
+									</label>
+								</div>
+								<!-- Single Checkbox -->
+								<div
+									class="custom-control custom-checkbox d-flex align-items-center mb-2">
+									<input type="checkbox" class="custom-control-input"
+										id="checkWestern" name="checkList"> <label class="custom-control-label"
+										for="checkWestern">Western Food <span
+										class="text-muted">(15)</span></label>
+								</div>
+								<!-- Single Checkbox -->
+								<div
+									class="custom-control custom-checkbox d-flex align-items-center mb-2">
+									<input type="checkbox" class="custom-control-input"
+										id="checkSoutheastAsian" name="checkList"> <label
+										class="custom-control-label" for="checkSoutheastAsian">Southeast
+										Asian food <span class="text-muted">(2)</span>
+									</label>
+								</div>
+
+							</div>
+						</div>
+						
+
+						<!-- Shop Widget -->
                         <!-- Shop Widget -->
                         <div class="shop-widget best-seller mb-50">
                             <h4 class="widget-title">BEST FOOD</h4>
@@ -312,7 +327,7 @@ img {
     <!-- ##### Footer Area End ##### -->
 
 <script src="/Food/resources/js/storePaging.js"></script>
-
+<script src="/Food/resources/js/storeCheckBox.js"></script>
 
 </body>
 

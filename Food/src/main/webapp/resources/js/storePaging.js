@@ -168,16 +168,10 @@ function drawWriterTable(data){
 			div4+
 			aHot+
 			div4End+
-			div5a1+
-			div5a2+
-			div5a3+
-			div5End+
-			div3End+
 			div6+
 			div6A+data.listVO2[i].s_brand_name+ div6A2 +
 			pTag+data.listVO2[i].s_brand_name+ pTagEnd+
 			div6Aend+
-			h6Tag+data.listVO2[i].s_address+ h6TagEnd+
 			div6End+
 			div2End+
 			div1End
