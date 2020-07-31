@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.food.domain.BoardVO;
+import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
 import com.food.service.ReservationService;
@@ -57,6 +58,12 @@ public class ReservationDAOImpl implements ReservationDAO {
 	public void deleteReservation(ReservationVO vo) {
 		
 		mybatis.delete("reservationDAO.deleteReserv", vo);
+	}
+
+	@Override
+	public List<ReservationVO> selectReservation(MemberVO mvo) {
+		
+		return mybatis.selectList("reservationDAO.selectreservation",mvo);
 	}
 
 	

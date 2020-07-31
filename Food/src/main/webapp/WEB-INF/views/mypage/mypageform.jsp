@@ -29,7 +29,7 @@
     padding: 20px;
     border: slategray;
     margin: 10 10 10 10;
-    font-family: serif;
+    font-family: inherit;
     font-size: x-large;
     border-style: double;
     text-align: center;
@@ -162,7 +162,7 @@ html {
 			<div class ="box">
 			환영합니다.${user_Info.M_ID}님<br> 
 			저희 홈페이지를 방문해 주셔서 감사합니다.<br>
-			회원님의 가입일은 ${user_Info.M_DATE} 입니다
+			회원님의 가입일은 ${user_Info.M_DATE} 입니다.
 			
 			</div>
 		<div class="grid-wrapper">
@@ -171,12 +171,12 @@ html {
   <div class="grid">
     <div class="grid-cell"><a href="mypage.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>회원 정보</a></div>
     <div class="grid-cell"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>나의 글목록</a></div>
-    <div class="grid-cell"><a href="foodcalorie.do" class="cen"><span style="color: lightcoral;">MY BIORHYTHM</span><br/>나의 칼로리 </a></div>
-    <div class="grid-cell"><a href="membermodify.do" class="cen"><span style="color: steelblue;">MY WISH</span><br/>찜목록보기</a></div>
-   	<div class="grid-cell"><a href="mypage.do" class="cen"><span style="color: crimson;">MY RESERVATION</span><br/>예약 리스트</a></div>
+    <div class="grid-cell"><a href="foodcalorie.do" class="cen"><span style="color: lightcoral;">CALORIE CALCULATOR</span><br/>칼로리?</a></div>
+    <div class="grid-cell"><a href="selectCart.do?m_id=${user_Info.M_ID}" class="cen"><span style="color: steelblue;">MY WISH</span><br/>찜목록보기</a></div>
+   	<div class="grid-cell"><a href="myreservation.do" class="cen"><span style="color: crimson;">MY RESERVATION</span><br/>예약 리스트</a></div>
   </div>
   
-</div>
+</div>	
 
 
 		

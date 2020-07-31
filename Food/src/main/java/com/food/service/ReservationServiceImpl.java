@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.dao.ReservationDAO;
-import com.food.domain.BoardVO;
+import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
 
@@ -48,6 +48,13 @@ public class ReservationServiceImpl implements ReservationService {
 	@Override
 	public void deleteReservation(ReservationVO vo) {
 		reservdao.deleteReservation(vo);
+	}
+ 
+	
+	@Override 
+	public List<ReservationVO> selectReservation(MemberVO mvo){
+		 
+		return reservdao.selectReservation(mvo); 
 	}
 
 

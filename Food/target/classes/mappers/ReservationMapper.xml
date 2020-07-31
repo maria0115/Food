@@ -70,4 +70,13 @@ select #{r_menu_count} as r_menu_count,#{r_menu} as r_menu,#{m_id},#{r_note} fro
  </delete>
  
  
+ <select id="selectreservation" parameterType="member" resultType="reservation">
+select * 
+from member m, RESERVATION r
+where r.M_ID =  m.m_id AND r.M_ID=#{m_id}
+
+</select>
+ 
+ 
+ 
 </mapper>

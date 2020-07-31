@@ -2,6 +2,7 @@ package com.food.service;
 
 import java.util.List;
 
+import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
 
@@ -18,4 +19,6 @@ public interface ReservationService {
 	int countReserv(PagingVO vo);
 
 	public void deleteReservation(ReservationVO vo);
+
+	public List<ReservationVO> selectReservation(MemberVO mvo);
 }

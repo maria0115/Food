@@ -2,6 +2,7 @@ package com.food.dao;
 
 import java.util.List;
 
+import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
 
@@ -19,4 +20,5 @@ public interface ReservationDAO {
 
 	public void deleteReservation(ReservationVO vo);
 
+	public List<ReservationVO> selectReservation(MemberVO mvo);
 }
