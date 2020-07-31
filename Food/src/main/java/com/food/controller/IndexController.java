@@ -93,11 +93,11 @@ public class IndexController {
 		
 		System.out.println("+++++++++++++++"+listVO2size);	
 		System.out.println("+++++++++++++++"+listVO2.size());
-
+		List<StoreListVO> map1 = friendBoardservice.test();
 		result.put("listVO2",listVO2);
 		result.put("pagination",paginationVO);
 		result.put("listVO2size",listVO2.size());
-		result.put("map",friendBoardservice.test());
+		result.put("map",map1);
 		return result;
 	}
 	
