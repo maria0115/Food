@@ -52,10 +52,6 @@ map.put("동남아", "east");
 
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
-        <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/24.jpg);">
-            
-        </div>
 
         <div class="container">
             <div class="row">

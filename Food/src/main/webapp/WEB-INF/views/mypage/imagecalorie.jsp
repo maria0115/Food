@@ -99,14 +99,9 @@ function LoadImg(value) {
 
 	<!-- ##### Breadcrumb Area Start ##### -->
 	<div class="breadcrumb-area">
-		<!-- Top Breadcrumb Area -->
-		<div
-			class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
-			style="background-image: url(img/bg-img/24.jpg);">
-			<h2>음식사진 칼로리재기</h2>
-		</div>
 
 		<div class="container">
+		<h2 style="margin-left: 35%;">음식사진 칼로리재기</h2>
 			<div class="row">
 				<div class="col-12">
 					<nav aria-label="breadcrumb">

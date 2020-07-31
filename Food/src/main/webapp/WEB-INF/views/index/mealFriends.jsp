@@ -117,7 +117,6 @@
 		</c:if>
             <button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');">신고하기</button>
 	</div>
-	<a href="../mealBoard/test.do" >test</a>
 
 
 	<!-- 게시판 목록 보여주기 끝  -->

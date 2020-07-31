@@ -44,11 +44,11 @@ map.put("동남아", "east");
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/24.jpg);">
-            <h2>나와 취향 비슷한 다른사람들의 메뉴</h2>
-        </div>
+        
+            
 
         <div class="container">
+        <h2 style="margin-left: 28%;">나와 취향 비슷한 다른사람들의 메뉴</h2>
             <div class="row">
                 <div class="col-12">
                     <nav aria-label="breadcrumb">

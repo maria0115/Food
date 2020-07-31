@@ -250,11 +250,14 @@
 									</li>
 								</ul>
 								<ul>
-									<li><a href="/Food/todayMenu.do" id="today">Today Menu</a></li>
-									<li><a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}" id="mymenu">My Menu</a></li>
-									<li><a href="/Food/index/choiceMenu.do" id="choice">Other's Menu</a></li>
-									<li><a href="/Food/index/mealFriends.do">Happy Meal With Friends</a></li>
-									<li><a href="/Food/index/store.do" id="storeListPaging">Store List</a></li>
+									<li><a href="/Food/todayMenu.do" id="today">오늘의 메뉴</a></li>
+									<li><a
+										href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}"
+										id="mymenu" style="padding: 0 24px;">My Menu</a></li>
+									<li><a href="/Food/index/choiceMenu.do" id="choice">Other's
+											Menu</a></li>
+									<li><a href="/Food/index/mealFriends.do">밥친구 만들기</a></li>
+									<li><a href="/Food/index/store.do">매장 정보</a></li>
 								</ul>
 
 								<!-- Search Icon -->
