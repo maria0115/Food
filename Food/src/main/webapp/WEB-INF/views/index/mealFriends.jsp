@@ -77,7 +77,7 @@
 					<td>
 					<!-- 참여인원이 확정 인원보다 클때만 채팅방 참여하기 버튼 보여주기 -->
 					<c:if test="${board.f_membercnt >  board.f_cnt && sessionScope.user_id!= null }">
-					<button id="btn" class="btn btn-primary mary" onclick="window.open('http://localhost:8080/Food/mealBoard/chatBox.do?title=${board.title}&f_port=${board.f_port}&userId=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">입장하기</button>
+					<button id="btn" class="btn btn-primary mary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?title=${board.title}&f_port=${board.f_port}&userId=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">입장하기</button>
 					</c:if>
 					<!-- 참여인원과 확정인원이 같을때 입장마감으로 바꿔주기 -->
 					<c:if test="${board.f_membercnt == board.f_cnt && sessionScope.user_id!= null }">

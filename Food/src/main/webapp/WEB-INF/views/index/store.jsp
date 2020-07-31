@@ -14,10 +14,10 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Favicon -->
-<link rel="icon" href="resources/img/core-img/favicon.ico">
-
+<link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
+<link rel="stylesheet" href="/Food/resources/css/marker.css">
 <!-- Core Stylesheet -->
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="/Food/resources/css/style.css">
 <style type="text/css">
 img {
   display: block;
@@ -34,8 +34,10 @@ img {
 	rel="stylesheet">
 <script
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-<script src="/Food/resources/js/storeMap.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62"></script>
+<script src="/Food/resources/js/marker.js"></script>
+<!-- <script src="/Food/resources/js/storeMap.js"></script> -->
 
 
 
@@ -215,11 +217,22 @@ img {
                                         </div>
                                     </div>
                                 </div>
-
+                                
                             </div>
-                        </div>
+                    </div>
+                    <!-- 예약 best3 지도 마커 찍기 -->
+                    <div class="shop-widget best-seller mb-50">
+                            <h4 class="widget-title">BEST TOP 3</h4>
+                            <div id="map" style="width: 100%; height: 10%;">
+							<c:forEach items="${map}" var="store">
+							<input type="text" name="name" value="${store.s_brand_name }">
+							<input type="text" name="addr" value="${store.s_address }">
+							</c:forEach>
+							</div>
+                            </div>
                     </div>
                 </div>
+                
 
                 <!-- All Products Area -->
                 <div class="col-12 col-md-8 col-lg-9">
@@ -297,7 +310,10 @@ img {
     <!-- ##### Footer Area Start ##### -->
     <%@ include file="footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
+
 <script src="/Food/resources/js/storePaging.js"></script>
+
+
 </body>
 
 </html>

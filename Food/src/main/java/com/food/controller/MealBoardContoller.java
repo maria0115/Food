@@ -118,14 +118,6 @@ public class MealBoardContoller {
 				
 			return result;
 	}
-
-	@RequestMapping("/test.do")
-	public String test(ReservationVO vo, Model model) {
-		
-		model.addAttribute("list",friendBoardservice.test());
-		
-		return"/mealBoard/test";
-	}
 	
 	
 
