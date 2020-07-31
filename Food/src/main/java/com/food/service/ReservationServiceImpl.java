@@ -52,9 +52,9 @@ public class ReservationServiceImpl implements ReservationService {
  
 	
 	@Override 
-	public List<ReservationVO> selectReservation(MemberVO mvo){
+	public List<ReservationVO> selectReservation(PagingVO vo){
 		 
-		return reservdao.selectReservation(mvo); 
+		return reservdao.selectReservation(vo); 
 	}
 
 

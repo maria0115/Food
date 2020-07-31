@@ -20,5 +20,5 @@ public interface ReservationService {
 
 	public void deleteReservation(ReservationVO vo);
 
-	public List<ReservationVO> selectReservation(MemberVO mvo);
+	public List<ReservationVO> selectReservation(PagingVO vo);
 }

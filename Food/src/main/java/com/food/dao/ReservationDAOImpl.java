@@ -61,9 +61,13 @@ public class ReservationDAOImpl implements ReservationDAO {
 	}
 
 	@Override
-	public List<ReservationVO> selectReservation(MemberVO mvo) {
+	public List<ReservationVO> selectReservation(PagingVO vo) {
+		HashMap map = new HashMap();
+		map.put("m_id", vo.getM_id());
+		map.put("start", vo.getStart());
+		map.put("end", vo.getEnd());
 		
-		return mybatis.selectList("reservationDAO.selectreservation",mvo);
+		return mybatis.selectList("reservationDAO.selectreservation",map);
 	}
 
 	
