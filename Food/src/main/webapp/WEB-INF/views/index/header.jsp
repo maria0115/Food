@@ -269,27 +269,28 @@
 
 					<!-- Search Form -->
 					<div class="search-form">
-						
-						<form action="serchboard.do" method="get">
+
+						<form action="/Food/index/serchstore.do" method="get" id="searchfrm">
+							<div class="closeIcon">
+								<i class="fa fa-times" aria-hidden="true"></i>
+							</div>
+							<div>
+								<select class="form-control" id="searchType" name="searchType"
+									style="width: 20%; display: inline;">
+									<option value="한식">한식</option>
+									<option value="중식">중식</option>
+									<option value="일식">일식</option>
+									<option value="분식">분식</option>
+									<option value="양식">양식</option>
+									<option value="동남아">동남아</option>
+								</select> <input type="search" name="keyword" id="keyword"
+									placeholder="매장명을 입력해주세요" style="width: 65%">
+							</div>
+						</form>
+						<!-- Close Icon -->
 						<div class="closeIcon">
 							<i class="fa fa-times" aria-hidden="true"></i>
 						</div>
-						<div>
-						<select class="form-control" id="searchType" name="searchType" style="width: 20%; display: inline;">
-							<option value="한식">한식</option>
-							<option value="중식">중식</option>
-							<option value="일식">일식</option>
-							<option value="분식">분식</option>
-							<option value="양식">양식</option>
-							<option value="동남아">동남아</option>
-						</select>
-							<input type="search" name="keyword" id="keyword"
-								placeholder="검색하실 단어를 입력해주세요" style="width: 65%">
-							<button type="submit" class="serchBtn"></button>
-						</div>
-						</form>
-						<!-- Close Icon -->
-						
 					</div>
 				</div>
 			</div>
@@ -310,6 +311,7 @@
 	<script src="/Food/resources/js/active.js"></script>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
 	<script src="/Food/resources/js/storeTest.js"></script>
+	<script src="/Food/resources/js/search.js"></script>
 	<!-- <script src="/Food/resources/js/storePaging.js"></script> -->
 
 	<!-- 지섭-->
