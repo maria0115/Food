@@ -34,7 +34,7 @@ var defaultOpts = {
 
 // 윈도우 온로드랑 비슷개념 
 $(function(){
-	alert("54654d")
+	
 	
 	//눌렀을때 실행되는거
 	$("#storeListPaging").on("click", function(e){
@@ -91,7 +91,7 @@ function getWriterDataInPaging(){
 }
 
 function getWriterData(){
-	alert("ddd")
+	
 	$.ajax({
 		type : 'post',
 		async:true,
@@ -104,7 +104,7 @@ function getWriterData(){
 		dataType : 'json',
 		
 		success : function(resultData){
-			alert("성공")
+			
 			
 			drawWriterTable(resultData);
 			var totalPages = resultData.pagination.pageCnt;
