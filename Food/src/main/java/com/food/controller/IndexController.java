@@ -96,7 +96,7 @@ public class IndexController {
 
 		result.put("listVO2",listVO2);
 		result.put("pagination",paginationVO);
-		result.put("listVO2size",listVO2.size()-1);
+		result.put("listVO2size",listVO2.size());
 		return result;
 	}
 	

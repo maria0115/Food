@@ -18,6 +18,15 @@
 
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="resources/css/style.css">
+<style type="text/css">
+img {
+  display: block;
+  max-width:230px;
+  max-height:150px;
+  width: auto;
+  height: auto;
+}
+</style>
 
 <!-- 부트스트랩 -->
 <link

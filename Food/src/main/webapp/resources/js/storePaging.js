@@ -133,7 +133,7 @@ function drawWriterTable(data){
 		div2 ='<div class="single-product-area mb-50">';
 		div3 ='<div class="product-img">';
 		imgA ='<a href="shopDetails.do">';
-		imgSrc = '<img src="../resources/store/ame/';
+		imgSrc = '<img src="../resources/store/';
 		imgSrcEnd ='.jpg" alt="">';
 		imgAend='</a>';
 		div4 ='<div class="product-tag">';
