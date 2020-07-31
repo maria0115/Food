@@ -38,7 +38,7 @@ $(function(){
 	
 	//눌렀을때 실행되는거
 	$("#storeListPaging").on("click", function(e){
-		alert("ddd")
+		
 		
 		getWriterData();
 	})

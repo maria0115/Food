@@ -84,7 +84,7 @@ public class IndexController {
 		List<StoreListVO> listVO2 = storeService.selectStoreList(map);
 		int listVO2size = listVO2.size();
 		
-		PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
+		PaginationVO paginationVO = new PaginationVO(9,listVO2.size(),curPage);
 		map.put("startRow", paginationVO.getStartIndex()+1);
 		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
 		
