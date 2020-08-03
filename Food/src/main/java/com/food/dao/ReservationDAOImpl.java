@@ -42,16 +42,27 @@ public class ReservationDAOImpl implements ReservationDAO {
 	@Override
 	public int countReserv(PagingVO vo) {
 		System.out.println("countReserv DAO 도착");
+		
+		if(vo.getM_id().equals("admin1234")) {
+		return mybatis.selectOne("reservationDAO.countReserv1",vo);	
+		}else {
 		return mybatis.selectOne("reservationDAO.countReserv",vo);
+		}
 	}
 
 	@Override
 	public List<ReservationVO> selectBoard(PagingVO vo) {
-		System.out.println(vo.getEnd());
 		System.out.println(vo.getStart());
+		System.out.println(vo.getEnd());
 		System.out.println(vo.getTotal());
 		System.out.println(vo.getM_id());
-		return mybatis.selectList("reservationDAO.selectBoard", vo);
+		if(vo.getM_id().equals("admin1234")) {
+			System.out.println("if");
+			return mybatis.selectList("reservationDAO.selectBoard1", vo);
+		}else {
+			System.out.println("else");
+			return mybatis.selectList("reservationDAO.selectBoard", vo);
+		}
 	}
 
 	@Override
