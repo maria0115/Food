@@ -27,6 +27,7 @@ public class Sender extends Thread {
 	private String most;
 	private String filename;
 	private String what;
+	private String ip;
 	
 	private int fileSize;
 	
@@ -135,6 +136,10 @@ public class Sender extends Thread {
 		return result;
 	}
 	
+	public String getIp() {
+		return ip;
+	}
+	
 	public void close() {
 		try {
 		bos.close();
@@ -151,6 +156,8 @@ public class Sender extends Thread {
 			{
 			sendWhat(what);
 			receiveData(500);
+			sendWhat("ip");
+			this.ip = receiveData(500);
 			sendWeather(resultweather);
 			receiveData(500);
 			sendTemp(resulttemp);
