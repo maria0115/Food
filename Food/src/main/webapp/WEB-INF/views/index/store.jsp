@@ -91,21 +91,18 @@
                         <!-- Search by Terms -->
                         <div class="search_by_terms">
                             <form action="#" method="post" class="form-inline">
-                                <select class="custom-select widget-title" onchange="fnGetCtgSub(this.value);">
-                                  <option selected>Short by Popularity</option>
-                                  <option value="1">Short by Newest</option>
-                                  <option value="2">Short by Sales</option>
-                                  <option value="3">Short by Ratings</option>
+                                <select class="custom-select widget-title" id="selectBox" onchange="fnGetCtgSub(this.value);">
+                                  <!-- <option selected>한식</option> -->
+                                  <option value="0"></option>
+                                  <option value="한식">한식</option>
+                                  <option value="중식">중식</option>
+                                  <option value="양식">양식</option>
+                                  <option value="일식">일식</option>
+                                  <option value="동남아">동남아</option>
                                 </select>
-                                <select name="ctg_sub_name" id="ctg_sub_name">
-                                	<option value="">선택</option>                               
-								</select>
-                                <select class="custom-select widget-title">
-                                  <option selected>Show: 9</option>
-                                  <option value="1">12</option>
-                                  <option value="2">18</option>
-                                  <option value="3">24</option>
-                                </select>
+                                <input type="search" name="keyword" id="keyword" placeholder="매장명을 입력해주세요" style="width: 50%">
+                                <td id="content">내용내용내용</td>
+                                
                             </form>
                         </div>
                     </div>

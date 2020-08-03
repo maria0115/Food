@@ -19,176 +19,180 @@
 		ㄴ 동적 페이징 처리
 	ㄴ 수정 버튼 이벤트 핸들러 연결
 	ㄴ 삭제 버튼 이벤트 핸들러 연결
-*/
+ */
 var curPage;
 var writerData_total_page;
 var defaultOpts = {
-        totalPages: 20,
-        onPageClick: function (event, page) {
-            $('#page-content').text('Page ' + page);
-            curPage=page;
-            console.log('curPage확인 :' + curPage);
-            getWriterDataInPaging();
-        }
-    };
+	totalPages : 20,
+	onPageClick : function(event, page) {
+		$('#page-content').text('Page ' + page);
+		curPage = page;
+		console.log('curPage확인 :' + curPage);
+		getWriterDataInPaging();
+	}
+};
 
-// 윈도우 온로드랑 비슷개념 
-$(function(){
-	
-	
-	//눌렀을때 실행되는거
-	$("#storeListPaging").on("click", function(e){
-		
-		
+// 윈도우 온로드랑 비슷개념
+$(function() {
+
+	// 눌렀을때 실행되는거
+	$("#storeListPaging").on("click", function(e) {
+
 		getWriterData();
 	})
-	
+
 	getWriterData();
-	
-	
-	
-	//getWriterData();
+
+	// getWriterData();
 	$('#listSearch').on('keyup', getWriterData);
-//	$('#pagination-demo').on('click', getWriterDataInPaging);
-	$(document).on("click",".btn-primary", updateBtnEvent);
-	$(document).on("click",".btn-warning", deleteBtnEvent);
+	// $('#pagination-demo').on('click', getWriterDataInPaging);
+	$(document).on("click", ".btn-primary", updateBtnEvent);
+	$(document).on("click", ".btn-warning", deleteBtnEvent);
 });
 
-
-function updateBtnEvent(){
-	console.log( $(this).parent().prev().prev().text() );
-	console.log( $(this).parent().prev().text() );
+function updateBtnEvent() {
+	console.log($(this).parent().prev().prev().text());
+	console.log($(this).parent().prev().text());
 	$(this).next().submit();
 }
 
-function deleteBtnEvent(){
-	console.log( $(this).parent().prev().prev().prev().text() );
-	console.log( $(this).parent().prev().prev().text() );
+function deleteBtnEvent() {
+	console.log($(this).parent().prev().prev().prev().text());
+	console.log($(this).parent().prev().prev().text());
 	$(this).next().submit();
 }
-function getWriterDataInPaging(){
+function getWriterDataInPaging() {
 	$.ajax({
 		type : 'post',
-		async:true,
+		async : true,
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-		data : {"s_brand_name" : $('#title').val(),
-				"s_address" : $('#addrs').val(),
-				"curPage" : curPage,
-				},
+		data : {
+			"s_brand_name" : $('#title').val(),
+			"s_address" : $('#addrs').val(),
+			"curPage" : curPage,
+		},
 		dataType : 'json',
-		success : function(resultData){
+		success : function(resultData) {
 			drawWriterTable(resultData);
 			console.log("페이지 안에서 뭔가를 불러오긴하냐");
 			console.log(resultData);
 			console.log("ajax 안에서 curPage 확인 : " + curPage);
 		},
-		error:function(request,status,error){
-			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		error : function(request, status, error) {
+			console.log("code:" + request.status + "\n" + "message:"
+					+ request.responseText + "\n" + "error:" + error);
 		}
-		
+
 	});
 }
 
-function getWriterData(){
-	
+function getWriterData() {
+
 	$.ajax({
 		type : 'post',
-		async:true,
+		async : true,
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-		data : {"s_brand_name" : $('#title').val(),
-				"s_address" : $('#addrs').val(),
-				"curPage" : curPage
-				},
+		data : {
+			"s_brand_name" : $('#title').val(),
+			"s_address" : $('#addrs').val(),
+			"curPage" : curPage
+		},
 		dataType : 'json',
-		
-		success : function(resultData){
-			
-			
+
+		success : function(resultData) {
+
 			drawWriterTable(resultData);
 			var totalPages = resultData.pagination.pageCnt;
-			var currentPage = $('#pagination-demo').twbsPagination('getCurrentPage');
-  		  
-            $('#pagination-demo').twbsPagination('destroy');
-            $('#pagination-demo').twbsPagination($.extend({}, defaultOpts, {
-            	startPage: currentPage,
-                totalPages: totalPages
-            }));
-          
+			var currentPage = $('#pagination-demo').twbsPagination(
+					'getCurrentPage');
+
+			$('#pagination-demo').twbsPagination('destroy');
+			$('#pagination-demo').twbsPagination($.extend({}, defaultOpts, {
+				startPage : currentPage,
+				totalPages : totalPages
+			}));
+
 		},
-		error:function(request,status,error){
-			alert("실패패패패패iok"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		error : function(request, status, error) {
+			alert("실패패패패패iok" + "code:" + request.status + "\n" + "message:"
+					+ request.responseText + "\n" + "error:" + error);
+			console.log("code:" + request.status + "\n" + "message:"
+					+ request.responseText + "\n" + "error:" + error);
 		}
-		
+
 	});
 }
 
-function drawWriterTable(data){
-	console.log("그리기"+data);
-	
+function drawWriterTable(data) {
+	console.log("그리기" + data);
+
 	$('#storeTT').empty();
-		div1 ='<div class="col-12 col-sm-6 col-lg-4">';
-		div2 ='<div class="single-product-area mb-50">';
-		div3 ='<div class="product-img">';
-		imgA ='<a href="shopDetails.do">';
-		imgSrc = '<img class="listImg" src="../resources/store/';
-		imgSrcEnd ='.jpg" alt="">';
-		imgAend='</a>';
-		div4 ='<div class="product-tag">';
-		aHot ='<a href="#">Hot</a>';
-		div4End ='</div>';
-		div5 ='<div class="product-meta d-flex">';
-		div5a1 ='<a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>';
-		div5a2 ='<a href="cart.html" class="add-to-cart-btn">Add to cart</a>';
-		div5a3 ='<a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>';
-		div5End ='</div>';
-		div3End ='</div>'; 
-		div6 = '<div class="product-info mt-15 text-center">';
-		div6A='<a href="../store/storeDetails.do?s_brand_name=';
-		div6A2='">';
-		pTag='<p>';
-		pTagEnd='</p>';
-		div6Aend='</a>';
-		h6Tag = '<h6>';
-		h6TagEnd='</h6>';
-		div6End='</div>';
-		div2End='</div>';
-		div1End='</div>';
-		for(var i=0; i<data.listVO2size; i++){
-    	   
-		var listContent =
-			div1+ 
-			div2+
-			div3+ 
-			imgA+ 
-			imgSrc+data.listVO2[i].s_brand_name+imgSrcEnd+
-			imgAend+
-			div4+
-			aHot+
-			div4End+
-			div6+
-			div6A+data.listVO2[i].s_brand_name+ div6A2 +
-			pTag+data.listVO2[i].s_brand_name+ pTagEnd+
-			div6Aend+
-			div6End+
-			div2End+
-			div1End
-			
-					
-						 
+	div1 = '<div class="col-12 col-sm-6 col-lg-4">';
+	div2 = '<div class="single-product-area mb-50">';
+	div3 = '<div class="product-img">';
+	imgA = '<a href="shopDetails.do">';
+	imgSrc = '<img class="listImg" src="../resources/store/';
+	imgSrcEnd = '.jpg" alt="">';
+	imgAend = '</a>';
+	div4 = '<div class="product-tag">';
+	aHot = '<a href="#">Hot</a>';
+	div4End = '</div>';
+	div5 = '<div class="product-meta d-flex">';
+	div5a1 = '<a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>';
+	div5a2 = '<a href="cart.html" class="add-to-cart-btn">Add to cart</a>';
+	div5a3 = '<a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>';
+	div5End = '</div>';
+	div3End = '</div>';
+	div6 = '<div class="product-info mt-15 text-center">';
+	div6A = '<a href="../store/storeDetails.do?s_brand_name=';
+	div6A2 = '">';
+	pTag = '<p>';
+	pTagEnd = '</p>';
+	div6Aend = '</a>';
+	h6Tag = '<h6>';
+	h6TagEnd = '</h6>';
+	div6End = '</div>';
+	div2End = '</div>';
+	div1End = '</div>';
+	for (var i = 0; i < data.listVO2size; i++) {
+
+		var listContent = div1 + div2 + div3 + imgA + imgSrc
+				+ data.listVO2[i].s_brand_name + imgSrcEnd + imgAend + div4
+				+ aHot + div4End + div6 + div6A + data.listVO2[i].s_brand_name
+				+ div6A2 + pTag + data.listVO2[i].s_brand_name + pTagEnd
+				+ div6Aend + div6End + div2End + div1End
+
 		$('#storeTT').append(listContent);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 }
+
+
+
+$('#selectBox').change(changeselectBox=function(){
+	alert("ss")
+	$.ajax({
+	
+	url:'selectBox.do',
+	data:'selectBox='+$(this).val(),
+	dataType:'json',
+	success:function(data){
+	if(!data.data || data.data=='' || data.data.length<1) return false;
+	$('#content').html(data.data[0].CONTENT);
+	},
+	}); // $.ajax
+	});
+
+
+
+
+
+
+
+
+
+
+
+
