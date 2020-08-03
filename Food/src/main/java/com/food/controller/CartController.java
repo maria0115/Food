@@ -59,6 +59,7 @@ public class CartController {
 		System.out.println("가게명 :"+vo.getW_store_name());
 		System.out.println("m_id :"+vo.getM_id());
 		CartService.deleteCart(vo);	
+		session.removeAttribute("wish");
 	}
 	
 };
