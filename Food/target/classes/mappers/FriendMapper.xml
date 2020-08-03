@@ -38,7 +38,9 @@
 	</where>
 	</select>
 	
-
+	<select id="nexalist" resultType="board">
+		select * from board where boardType=2 AND boardType=3 AND boardType=4
+	</select>
 
 
 </mapper>

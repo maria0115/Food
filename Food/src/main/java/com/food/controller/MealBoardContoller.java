@@ -1,6 +1,5 @@
 package com.food.controller;
 
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -14,13 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.food.domain.BoardVO;
-import com.food.domain.FriendBoardVO;
-import com.food.domain.PagingVO;
-import com.food.domain.ReservationVO;
-import com.food.domain.StoreListVO;
 import com.food.service.FriendBoardService;
 import com.food.service.boardService;
-import com.google.gson.Gson;
 
 
 @Controller
@@ -118,6 +112,8 @@ public class MealBoardContoller {
 				
 			return result;
 	}
+	
+	
 	
 	
 

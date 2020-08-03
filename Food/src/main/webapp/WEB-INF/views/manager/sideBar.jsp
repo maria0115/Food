@@ -40,7 +40,7 @@
 								<li><a title="Report Board" href="declarationBoard.do"><i
 										class="fa big-icon fa-files-o icon-wrap" aria-hidden="true"></i> <span
 										class="mini-click-non">Report Board</span></a></li>
-								<li><a title="Report Board" href="BoardList.do"><i
+								<li><a title="Report Board" href="/Food/nexalist.do"><i
 										class="fa big-icon fa-files-o icon-wrap" aria-hidden="true"></i> <span
 										class="mini-click-non">Board List</span></a></li>
 

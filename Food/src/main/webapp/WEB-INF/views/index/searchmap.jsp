@@ -34,7 +34,7 @@
 				<td>
 				<form action="/Food/index/searchmap.do">
 				<label>다른 맛집 검색해보기</label>
-				<input type="text" id="keyword" name="keyword" placeholder="oo 맛집">
+				<input type="text" id="keyword" name="keyword" placeholder="검색하실 단어를 입력해주세요 ">
 				<input type="hidden" id="word" value="${word}">
 				<button class="btn btn-default">검색</button>
 				</form>

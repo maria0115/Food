@@ -2,6 +2,7 @@ package com.food.service;
 
 import java.util.List;
 
+import com.food.domain.BoardVO;
 import com.food.domain.PagingVO;
 import com.food.domain.StoreListVO;
 
@@ -20,6 +21,8 @@ public interface FriendBoardService {
 	//검색해서 나온 결과 가져오기
 	List<StoreListVO> selectStore(PagingVO pvo, String searchType, String keyword);
 	
+	//넥사크로
+	List<BoardVO> nexalist(PagingVO pvo, String searchType, String keyword);
 	
 	
 	
