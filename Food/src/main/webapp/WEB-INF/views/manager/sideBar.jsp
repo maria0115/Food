@@ -40,9 +40,9 @@
 								<li><a title="Report Board" href="declarationBoard.do"><i
 										class="fa big-icon fa-files-o icon-wrap" aria-hidden="true"></i> <span
 										class="mini-click-non">Report Board</span></a></li>
-								<li><a title="Product Detail" href="product-detail.html"><i
-										class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> 
-										<span class="mini-sub-pro">Product Detail</span></a></li>
+								<li><a title="Report Board" href="BoardList.do"><i
+										class="fa big-icon fa-files-o icon-wrap" aria-hidden="true"></i> <span
+										class="mini-click-non">Board List</span></a></li>
 
 								<li><a title="Product Cart" href="product-cart.html"><i
 										class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span

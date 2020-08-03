@@ -277,8 +277,7 @@
 								<i class="fa fa-times" aria-hidden="true"></i>
 							</div>
 							<div>
-								<input type="search" name="keyword" id="keyword"
-									placeholder="ex)   가산 맛집 ">
+								<input type="search" name="keyword" id="keyword" >
 							</div>
 						</form>
 					</div>

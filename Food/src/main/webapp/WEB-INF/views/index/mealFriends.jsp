@@ -43,10 +43,21 @@
 	<!-- 게시판 목록 보여주기 시작  -->
 
 	<div class="container">
-		<br />
-		<br />
+        <div class="breadcrumb-area">
+       
 
-		<h1>Happy Meal With Friends</h1>
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Food/main.do"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">밥친구 만들기</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+    </div>
+
 		<br />
 
 		<div >
