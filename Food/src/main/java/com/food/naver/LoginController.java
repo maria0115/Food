@@ -61,6 +61,6 @@ public class LoginController {
         session.setAttribute("result", apiResult);
        
         /* 네이버 로그인 성공 페이지 View 호출 */
-        return "index/myMenu";
+        return "index/singup";
     }
 }
