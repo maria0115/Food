@@ -277,7 +277,7 @@
 								<i class="fa fa-times" aria-hidden="true"></i>
 							</div>
 							<div>
-								<input type="search" name="keyword" id="keyword" >
+								<input type="search" name="keyword" id="keyword" placeholder="검색하실 단어를 입력해주세요 " >
 							</div>
 						</form>
 					</div>
