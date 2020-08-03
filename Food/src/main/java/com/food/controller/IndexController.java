@@ -54,7 +54,8 @@ public class IndexController {
 	@ResponseBody
 	@RequestMapping(value = "/storelist.do" , produces = "application/json; charset=utf-8")
 	public Map selectStorePaging(StoreListVO vo,BoardVO vo2,HttpServletRequest request,
-			@RequestParam(defaultValue = "1")int curPage) {
+			@RequestParam(defaultValue = "1")int curPage,
+			@RequestParam String s_category ) {
 		System.out.println("왔더");
 		Map map = new HashMap();
 		Map result = new HashMap();
@@ -69,15 +70,16 @@ public class IndexController {
 		String s_brand_name = vo2.getS_brand_name();
 		String s_address = vo.getS_address();
 		String title = vo2.getTitle();
-	
+		
 		map.put("boardType",boardType);
 		map.put("s_brand_name",s_brand_name);
 		map.put("s_address",s_address);
-			
+		map.put("s_category",s_category);
+		System.out.println("123456789"+s_category);
 		//가게 가져오기 
 		List<StoreListVO> listVO2 = storeService.selectStoreList(map);
 		int listVO2size = listVO2.size();
-		
+		System.out.println(listVO2size);
 		PaginationVO paginationVO = new PaginationVO(9,listVO2.size(),curPage);
 		map.put("startRow", paginationVO.getStartIndex()+1);
 		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
@@ -85,6 +87,10 @@ public class IndexController {
 		// 내가 지정한 리스트 개수를 가져오기위해서 listVO2에  다시 넣어줌 
 		listVO2 = storeService.selectStorePaging(map);
 		
+		for (StoreListVO i : listVO2) {
+			
+			System.out.println(i.getS_brand_name());
+		}
 		System.out.println("+++++++++++++++"+listVO2size);	
 		System.out.println("+++++++++++++++"+listVO2.size());
 		

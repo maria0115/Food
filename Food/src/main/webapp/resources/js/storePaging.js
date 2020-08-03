@@ -20,6 +20,7 @@
 	ㄴ 수정 버튼 이벤트 핸들러 연결
 	ㄴ 삭제 버튼 이벤트 핸들러 연결
  */
+var category;
 var curPage;
 var writerData_total_page;
 var defaultOpts = {
@@ -28,20 +29,28 @@ var defaultOpts = {
 		$('#page-content').text('Page ' + page);
 		curPage = page;
 		console.log('curPage확인 :' + curPage);
-		getWriterDataInPaging();
+		getWriterDataInPaging(category);
 	}
 };
 
 // 윈도우 온로드랑 비슷개념
 $(function() {
-
-	// 눌렀을때 실행되는거
+	category="all";
+	getWriterData(category);
+	$('#selectBox').change(changeselectBox=function(){
+		category = $(this).val();
+		alert(category)
+		getWriterData(category);
+	});
+	
+	
+	/*// 눌렀을때 실행되는거
 	$("#storeListPaging").on("click", function(e) {
 
-		getWriterData();
+		
 	})
-
-	getWriterData();
+*/
+	
 
 	// getWriterData();
 	$('#listSearch').on('keyup', getWriterData);
@@ -61,13 +70,14 @@ function deleteBtnEvent() {
 	console.log($(this).parent().prev().prev().text());
 	$(this).next().submit();
 }
-function getWriterDataInPaging() {
+function getWriterDataInPaging(category) {
 	$.ajax({
 		type : 'post',
 		async : true,
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {
+			"s_category" : category,
 			"s_brand_name" : $('#title').val(),
 			"s_address" : $('#addrs').val(),
 			"curPage" : curPage,
@@ -87,7 +97,7 @@ function getWriterDataInPaging() {
 	});
 }
 
-function getWriterData() {
+function getWriterData(category) {
 
 	$.ajax({
 		type : 'post',
@@ -95,6 +105,7 @@ function getWriterData() {
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {
+			"s_category" : category,
 			"s_brand_name" : $('#title').val(),
 			"s_address" : $('#addrs').val(),
 			"curPage" : curPage
@@ -105,9 +116,10 @@ function getWriterData() {
 
 			drawWriterTable(resultData);
 			var totalPages = resultData.pagination.pageCnt;
-			var currentPage = $('#pagination-demo').twbsPagination(
-					'getCurrentPage');
+			/*var currentPage = $('#pagination-demo').twbsPagination(
+					'getCurrentPage');*/
 
+			var currentPage =1; 
 			$('#pagination-demo').twbsPagination('destroy');
 			$('#pagination-demo').twbsPagination($.extend({}, defaultOpts, {
 				startPage : currentPage,
@@ -127,7 +139,7 @@ function getWriterData() {
 
 function drawWriterTable(data) {
 	console.log("그리기" + data);
-
+	alert("그리기")
 	$('#storeTT').empty();
 	div1 = '<div class="col-12 col-sm-6 col-lg-4">';
 	div2 = '<div class="single-product-area mb-50">';
@@ -163,7 +175,7 @@ function drawWriterTable(data) {
 				+ aHot + div4End + div6 + div6A + data.listVO2[i].s_brand_name
 				+ div6A2 + pTag + data.listVO2[i].s_brand_name + pTagEnd
 				+ div6Aend + div6End + div2End + div1End
-
+		
 		$('#storeTT').append(listContent);
 
 	}
@@ -171,24 +183,7 @@ function drawWriterTable(data) {
 
 
 
-$('#selectBox').change(changeselectBox=function(){
-	alert("ss")
-	$.ajax({
-		type : 'post',
-		async : true,
-		url:'/Food/store/searchBox.do',
-		data:'selectBox='+$(this).val(),
-		dataType:'json',
-		success:function(data){
-			if(!data.data || data.data=='' || data.data.length<1) return false;
-			$('#content').html(data.data[0].CONTENT);
-		},
-		error : function(request, status, error) {
-			console.log("code:" + request.status + "\n" + "message:"
-					+ request.responseText + "\n" + "error:" + error);
-		}
-		}); // $.ajax
-	});
+
 
 
 

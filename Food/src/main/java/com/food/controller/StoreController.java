@@ -239,46 +239,46 @@ public class StoreController {
 //		return result;
 //	}
 	
-	@ResponseBody
-	@RequestMapping(value = "searchBox.do" , produces = "application/json; charset=utf-8")
-	public Map selectBox(StoreListVO vo,BoardVO vo2,HttpServletRequest request,
-			@RequestParam(defaultValue = "1")int curPage,
-			@RequestParam String selectBox) {
-		System.out.println(selectBox);
-		Map map = new HashMap();
-		Map result = new HashMap();
-		map.put("select", selectBox);
-		//상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
-	
-		//리뷰가져오기
-		
-		vo2.setBoardType(2);
-		int boardType = vo2.getBoardType();
-		String s_brand_name = vo2.getS_brand_name();
-		String selectBoxName = vo.getS_category();
-		
-		map.put("boardType",boardType);
-		map.put("s_brand_name",s_brand_name);
-		map.put("selectBoxName",selectBoxName);
-			
-		//가게별 리뷰가져오기 
-		List<StoreListVO> listVO2 = storeService.serchSelect(map);
-		int listVO2size = listVO2.size();
-		
-		PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
-		map.put("startRow", paginationVO.getStartIndex()+1);
-		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
-		
-		// 내가 지정한 리스트 개수를 가져오기위해서 listVO2에  다시 넣어줌 
-		listVO2 = storeService.searchSelectPaging(map);
-		System.out.println("+++++++++++++++"+listVO2size);	
-		System.out.println("+++++++++++++++"+listVO2.size());
-		result.put("listVO2",listVO2);
-		result.put("pagination",paginationVO);
-		result.put("listVO2size",listVO2.size());
-		
-		return result;
-	}
+//	@ResponseBody
+//	@RequestMapping(value = "searchBox.do" , produces = "application/json; charset=utf-8")
+//	public Map selectBox(StoreListVO vo,BoardVO vo2,HttpServletRequest request,
+//			@RequestParam(defaultValue = "1")int curPage,
+//			@RequestParam String selectBox) {
+//		System.out.println(selectBox);
+//		Map map = new HashMap();
+//		Map result = new HashMap();
+//		map.put("select", selectBox);
+//		//상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
+//	
+//		//리뷰가져오기
+//		
+//		vo2.setBoardType(2);
+//		int boardType = vo2.getBoardType();
+//		String s_brand_name = vo2.getS_brand_name();
+//		String selectBoxName = vo.getS_category();
+//		
+//		map.put("boardType",boardType);
+//		map.put("s_brand_name",s_brand_name);
+//		map.put("selectBoxName",selectBoxName);
+//			
+//		//가게별 리뷰가져오기 
+//		List<StoreListVO> listVO2 = storeService.serchSelect(map);
+//		int listVO2size = listVO2.size();
+//		
+//		PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
+//		map.put("startRow", paginationVO.getStartIndex()+1);
+//		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
+//		
+//		// 내가 지정한 리스트 개수를 가져오기위해서 listVO2에  다시 넣어줌 
+//		listVO2 = storeService.searchSelectPaging(map);
+//		System.out.println("+++++++++++++++"+listVO2size);	
+//		System.out.println("+++++++++++++++"+listVO2.size());
+//		result.put("listVO2",listVO2);
+//		result.put("pagination",paginationVO);
+//		result.put("listVO2size",listVO2.size());
+//		
+//		return result;
+//	}
 	
 	
 	

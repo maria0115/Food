@@ -94,11 +94,12 @@
 								<select class="custom-select widget-title" id="selectBox"
 									onchange="fnGetCtgSub(this.value);">
 									<!-- <option selected>한식</option> -->
-									<option value="0"></option>
+									<option value="all"></option>
 									<option value="한식">한식</option>
 									<option value="중식">중식</option>
 									<option value="양식">양식</option>
 									<option value="일식">일식</option>
+									<option value="분식">분식</option>
 									<option value="동남아">동남아</option>
 								</select> <input type="search" name="keyword" id="keyword"
 									placeholder="매장명을 입력해주세요" style="width: 50%">
