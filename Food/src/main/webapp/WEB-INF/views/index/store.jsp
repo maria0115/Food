@@ -89,10 +89,10 @@
                             <p>Showing 1–9 of 72 results</p>
                         </div>
                         <!-- Search by Terms -->
-                        <div class="search_by_terms">
-							<form action="#" method="post" class="form-inline">
+                        <div class="search_by_terms" >
+							<form action="#" method="post" class="form-inline" style="width: 500px;">
 								<select class="custom-select widget-title" id="selectBox"
-									onchange="fnGetCtgSub(this.value);">
+									onchange="fnGetCtgSub(this.value);" style="width: 33%;">
 									<!-- <option selected>한식</option> -->
 									<option value="all"></option>
 									<option value="한식">한식</option>
@@ -101,8 +101,9 @@
 									<option value="일식">일식</option>
 									<option value="분식">분식</option>
 									<option value="동남아">동남아</option>
-								</select> <input type="search" name="keyword" id="keyword"
-									placeholder="매장명을 입력해주세요" style="width: 50%">
+								</select> 
+								<input type="search" name="keyword" id="keyword"
+									placeholder="매장명을 입력해주세요" style="width: 40%; height: 38px;">
 							</form>
 						</div>
                     </div>
