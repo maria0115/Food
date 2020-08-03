@@ -20,11 +20,11 @@ public class ReservationDAOImpl implements ReservationDAO {
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public void insertReservation(ReservationVO vo) {
+	public int insertReservation(ReservationVO vo) {
 		System.out.println("insertReservation DAO 도착");
 		int seq = mybatis.selectOne("reservationDAO.seqGet");
 		vo.setR_number(seq);
-		mybatis.insert("reservationDAO.insertReserv", vo);
+		return mybatis.insert("reservationDAO.insertReserv", vo);
 	}
 
 	@Override

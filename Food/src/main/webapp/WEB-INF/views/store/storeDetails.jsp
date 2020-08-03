@@ -253,7 +253,7 @@
 						<script>
                         $('#reserv').click(function(){
 //                            location.href='../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}'
-                           window.open('../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}','ddd','width=780,height=843,left=500,top=100,location=no,status=no,scrollbars=yes')
+                           window.open('../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}&m_id=${sessionScope.user_id}','ddd','width=780,height=843,left=500,top=100,location=no,status=no,scrollbars=yes')
 
                            })
 //                         }

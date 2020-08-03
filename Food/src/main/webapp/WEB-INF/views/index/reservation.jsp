@@ -40,17 +40,17 @@
 	<div class="col-md-7 aos-init aos-animate" data-aos="fade-up"
 		data-aos-delay="100" style='margin: auto'>
 
-		<form action="reservInsert.do" method="post" class="bg-white p-md-5 p-4 mb-5 border">
+		<form id='frm10' action="reservInsert.do" method="post" class="bg-white p-md-5 p-4 mb-5 border">
 			<div class="row">
 				<div class="col-md-12 form-group">
-					<label class="text-black font-weight-bold" for="store">매장</label>
-					<input id="store" class="form-control" value=<%= request.getParameter("r_store_name") %> name="r_store_name" readonly>
+					<label class="text-black font-weight-bold" for="id">ID</label>
+					<input id="id" class="form-control" value="<%= request.getParameter("m_id") %>" name="m_id" readonly>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 form-group">
-					<label class="text-black font-weight-bold" for="id">ID</label>
-					<input id="id" class="form-control" name="m_id">
+					<label class="text-black font-weight-bold" for="store">매장</label>
+					<input id="store" class="form-control" value="<%= request.getParameter("r_store_name") %>" name="r_store_name" readonly>
 				</div>
 			</div>
 			<div class="row">
@@ -170,7 +170,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6 form-group">
-					<input type="submit" value="Reserve Now"
+					<input id='btn_reserv' type="submit" value="Reserve Now"
 						class="btn btn-primary text-white py-3 px-5 font-weight-bold"
 						onclick="alert('예약되었습니다')">
 				</div>
@@ -204,31 +204,9 @@
 	<script src="resources/js/reservation_js/main.js"></script>
 	<script src="resources/js/reservation_js/owl.carousel.min.js"></script>
 	<script src="resources/js/reservation_js/popper.min.js"></script>
+	<script src="resources/js/reservation_js/reserv_hc.js"></script>
 	
 	
-	
-<script>
-$(function(){
-	$("#r_menu_count").change(function(){
-		var addlabel = "<label>메뉴 :</label><input class='input1' style='border:none;width:170px' name='r_menu' readonly><label>수량 :</label><input class='input2' style='border:none;width:40px' name='r_menu_count' readonly><hr>"
-		$("#div1").append(addlabel)
-
-		var sel_menu = $("#r_menu option:selected").val()
-		var sel_menucount = $("#r_menu_count option:selected").val()
-		alert(sel_menu)
-		$(".input1:last").val(sel_menu)
-		$(".input2:last").val(sel_menucount)
-		$("#r_menu_count option:eq(0)").prop("selected", true);
-
-
-	$(".button1").click(function(){
-		$("#div1").children().remove()
-		
-		})
-	})
-})
-
-</script>
 
 </body>
 

@@ -53,14 +53,16 @@ public class ReservationController {
 	
 	// 예약 페이지에서 등록
 	@RequestMapping("reservInsert.do")
-	public void reservInsert(ReservationVO vo) {
+	@ResponseBody
+	public int reservInsert(ReservationVO vo) {
 		System.out.println("reservInsert 컨트롤러 도착");
 		System.out.println("id:"+vo.getM_id());
 		System.out.println("visit date:"+vo.getR_visit_date());
 		System.out.println("menu:"+vo.getR_menu());
 		System.out.println("count:"+vo.getR_menu_count());
 		System.out.println("note:"+vo.getR_note());
-		ReservationService.insertReservation(vo);
+		int result = ReservationService.insertReservation(vo);
+		return result;
 	}
 	
 	// mymenu 페이지에서 예약 내역 확인

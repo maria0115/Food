@@ -8,7 +8,7 @@ import com.food.domain.ReservationVO;
 
 public interface ReservationDAO {
 
-	public void insertReservation(ReservationVO vo);
+	public int insertReservation(ReservationVO vo);
 
 	public List<ReservationVO> selectReservation(ReservationVO vo);
 
