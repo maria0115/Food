@@ -30,9 +30,9 @@ public class CartController {
 		System.out.println("중분류 :"+vo.getW_midpart());
 		System.out.println("m_id :"+vo.getM_id());
 		mvo.setM_id(vo.getM_id());
+		CartService.insertCart(vo);
 		int wish = CartService.selectCount(mvo); 
 		session.setAttribute("wish", wish);
-		CartService.insertCart(vo);	
 	}
 	
 	// 찜 목록 보기
@@ -52,7 +52,7 @@ public class CartController {
 	// 찜 하기 삭제
 	@RequestMapping("deleteCart.do")
 	@ResponseBody
-	public void deleteCart(WishlistVO vo, HttpSession session) {
+	public void deleteCart(WishlistVO vo, HttpSession session,MemberVO mvo) {
 		System.out.println("deleteCart controller");
 		String m_id = (String) session.getAttribute("user_id");
 		vo.setM_id(m_id);
@@ -60,6 +60,9 @@ public class CartController {
 		System.out.println("m_id :"+vo.getM_id());
 		CartService.deleteCart(vo);	
 		session.removeAttribute("wish");
+		mvo.setM_id(vo.getM_id());
+		int wish = CartService.selectCount(mvo); 
+		session.setAttribute("wish", wish);
 	}
 	
 };
