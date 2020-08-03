@@ -34,64 +34,65 @@
     <!-- ##### Portfolio Area End ##### -->
 	
 	<c:if test="${not empty sessionScope.user_id}">
-    	<div class="table100 ver4 m-b-110">
+    	<div id="memberpage">
+    	<div class="container">
 				<form action="membermodify.do">
-					<table data-vertable="ver4">
+					<table class="table table-danger table-hover">
 						<thead>
-							<tr class="row100 head">
-								<th colspan="4" class="column100 column8" data-column="column8">회원 정보/음식 BEST</th>
+							<tr >
+								<th colspan="4" >회원 정보/음식 BEST</th>
 							
 								
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="row100">
-								<td class="column100 column1" data-column="column1">User_id</td>
-								<td class="column100 column2" data-column="column2">${member.m_id}</td>
-								<td rowspan="2" class="column100 column1" data-column="column1">1위</td>
-								<td rowspan="2" class="column100 column1" data-column="column1">${member.m_most}</td>
+							<tr >
+								<td >User_id</td>
+								<td >${member.m_id}</td>
+								<td rowspan="2" >1위</td>
+								<td rowspan="2" >${member.m_most}</td>
 							
 							</tr>
 
-							<tr class="row100">
-								<td class="column100 column1" data-column="column1">User_name</td>
-								<td class="column100 column2" data-column="column2">${member.m_name}</td>
+							<tr >
+								<td >User_name</td>
+								<td >${member.m_name}</td>
 								
 								
 							</tr>
 
-							<tr class="row100">
-								<td class="column100 column1" data-column="column1">User_Email</td>
-								<td class="column100 column2"  data-column="column2">${member.m_email}</td>
-								<td rowspan="2" class="column100 column1" data-column="column1">2위</td>
-								<td rowspan="2" class="column100 column1" data-column="column1">${member.m_most}</td>
+							<tr >
+								<td >User_Email</td>
+								<td >${member.m_email}</td>
+								<td rowspan="2" >2위</td>
+								<td rowspan="2" >${member.m_most}</td>
 								
 							
 							
 							</tr>
   
-							<tr class="row100">
-								<td class="column100 column1" data-column="column1">User_PhoneNumber</td>
-								<td class="column100 column2" data-column="column2">${member.m_tel}</td>
+							<tr >
+								<td >User_PhoneNumber</td>
+								<td >${member.m_tel}</td>
 								
 								
 							</tr>
 
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1">User_BirthDay</td>
-								<td class="column100 column2" data-column="column2">${member.m_birth}</td>
-								<td rowspan="2" class="column100 column1" data-column="column1">3위</td>
-								<td rowspan="2" class="column100 column1" data-column="column1">${member.m_most}</td>
+								<td >User_BirthDay</td>
+								<td >${member.m_birth}</td>
+								<td rowspan="2">3위</td>
+								<td rowspan="2" >${member.m_most}</td>
 								
 							</tr>
 
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1">User_Address</td>
-								<td class="column100 column2" data-column="column2">${member.m_area}</td>
+								<td >User_Address</td>
+								<td >${member.m_area}</td>
 								
 								
 							</tr>
-							<tr class="row100">
+							<tr >
 								<td colspan="4" ><a href="membermodify.do" class="modifybtn"><button class ="btn btn-dark">수정하기</button></a></td>
 							</tr>
 					
@@ -101,7 +102,7 @@
 							</table> 
 							</form>
 				</div>
-			
+			</div>
 				
 				
 				

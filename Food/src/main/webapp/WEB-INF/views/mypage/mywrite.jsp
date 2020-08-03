@@ -20,7 +20,7 @@
 	<!-- Core Stylesheet -->
 	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
-    
+  
   			 <jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
 			</jsp:include>
@@ -35,48 +35,69 @@
 	
 	<c:if test="${not empty sessionScope.user_id}">
 
-    	<div class="table100 ver4 m-b-110">
-					<table data-vertable="ver4">
-						<thead>
-							<tr class="row100 head">
-								<tr class="row100">
-								<th  >제목</th>
-								<th >위치</th>
-								<th >등록일</th>
-								<th >조회수</th>
-								<th >참여인원</th>
-								
-							</tr>
-						</thead>
-						<tbody>
-							
-							<c:forEach items="${boardlist}" var ="board">
-															
-							<tr class="row100">
-							
-								<td class="column100 column1" data-column="column1">${board.title}</td>
-								<td  class="column100 column2" data-column="column2">${board.f_addr1}</td>
-								<td class="column100 column1" data-column="column1">${board.f_date}</td>
-								<td  class="column100 column2" data-column="column2">${board.f_cnt}</td>
-								<td class="column100 column1" data-column="column1">${board.f_joincnt}</td>
-							
-							
-							</tr>
-							
-							
-							
-							</c:forEach>
+    		
+
+	<!-- Preloader -->
+	<div class="preloader d-flex align-items-center justify-content-center">
+		<div class="preloader-circle"></div>
+		<div class="preloader-img">
+			<img src="img/core-img/leaf.png" alt="">
+		</div>
+	</div>
 
 
-							</table> 
+	<!-- 게시판 목록 보여주기 시작  -->
+
+	<div class="container">
+		<br />
+		<br />
+
+		<h1 style="font-family: fantasy;">MY WRITE</h1>
+		<br />
+
+		<div >
+			<table class="table table-hover" >
+				<tr style="font-size: 14px;">
+					<th></th>
+					<th style="width: 25%;">제목</th>
+					<th style="width: 25%;">위치</th>
+					<th>작성자</th>
+					<th>등록일</th>
+					<th style="width: 6%;">조회수</th>
+				
+				</tr>
+				
+				<c:forEach items="${boardlist}" var="board">
+				<!-- 프라퍼티이름 변경 -->
+				<tr style="font-size: 16px;">
+					<td><a href="/Food/mealBoard/mealboardView.do?b_no=${board.b_no }">${board.b_no}</a></td>
+					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
+					<td><a href="/Food/mealBoard/mealboardView.do?b_no=${board.b_no }">${board.title}</a></td>
+					<td><a href="/Food/mealBoard/mealboardView.do?b_no=${board.b_no }">${board.f_addr1}&nbsp;${board.f_addr2}</a></td>
+					<td>${board.userId}</td>
+					<td>${board.b_date}</td>
+					<td style="text-align: center;">${board.viewCount}</td>
+				
+				
 					
-				</div>
+				</tr>
+			</c:forEach>
+
+			</table>
+
+		</div>
+		
+
+</div>    
+	</c:if>
+
+
+	<!-- 게시판 목록 보여주기 끝  -->
+	
 			
 				
 				
-				
-    
-	</c:if>
+
 	
 	<c:if test="${empty sessionScope.user_id}">
 	<div class="container">

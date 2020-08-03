@@ -124,4 +124,5 @@ ul.join_box {
     margin-bottom: 20px;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
+    border-radius: 80px / 100px;
 }
