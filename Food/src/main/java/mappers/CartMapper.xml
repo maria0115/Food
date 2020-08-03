@@ -19,4 +19,14 @@
 <select id="selectName" parameterType="wishlist" resultType="String">
 	select w_store_name from wishlist where w_store_name = #{s_brand_name}
 </select>
+
+
+<select id="selectCount" parameterType="member" resultType="integer">
+select count(*)
+from wishlist
+where m_id =#{m_id}
+
+
+</select>
+
 </mapper>

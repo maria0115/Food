@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.dao.CartDAO;
+import com.food.domain.MemberVO;
 import com.food.domain.StoreListVO;
 import com.food.domain.WishlistVO;
 
@@ -34,6 +35,11 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public String selectName(StoreListVO vo) {
 		return CartDao.selectName(vo);
+	}
+
+	@Override
+	public int selectCount(MemberVO vo) {
+		return CartDao.selectCount(vo);
 	}
 
 }

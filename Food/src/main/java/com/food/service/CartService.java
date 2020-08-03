@@ -2,6 +2,7 @@ package com.food.service;
 
 import java.util.List;
 
+import com.food.domain.MemberVO;
 import com.food.domain.StoreListVO;
 import com.food.domain.WishlistVO;
 
@@ -14,5 +15,7 @@ public interface CartService{
 	void deleteCart(WishlistVO vo);
 
 	String selectName(StoreListVO vo);
+	
+	int selectCount(MemberVO vo);
 
 }

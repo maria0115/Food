@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.food.domain.MemberVO;
 import com.food.domain.StoreListVO;
 import com.food.domain.WishlistVO;
 
@@ -37,6 +38,11 @@ public class CartDAOImpl implements CartDAO {
 	@Override
 	public String selectName(StoreListVO vo) {
 		return mydatis.selectOne("wishlistDAO.selectName", vo);
+	}
+
+	@Override
+	public int selectCount(MemberVO vo) {
+		return mydatis.selectOne("wishlistDAO.selectCount",vo);
 	}
 	
 	

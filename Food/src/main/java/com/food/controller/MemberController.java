@@ -2,7 +2,6 @@ package com.food.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
@@ -32,6 +31,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
+import com.food.domain.WishlistVO;
+import com.food.service.CartService;
 import com.food.service.MemberService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -42,9 +43,44 @@ public class MemberController {
 		private MemberService memberService;
 		
 		@Autowired
+		private CartService CartService;
+	
+		@Autowired
 		private  JavaMailSender mailSender; 
 		 
 		
+		
+		
+		 @ResponseBody
+			@RequestMapping(value = "/login.do",produces = "application/text; charset=utf-8")
+				public String login(MemberVO vo, HttpSession session,WishlistVO wvo) {
+				 	System.out.println("로그인.do 들어옴");
+				 	HashMap new_vo =  memberService.userSignIn(vo);
+					//String result ="";
+				 	int wish = CartService.selectCount(vo); 
+				 	System.out.println(wish);
+					System.out.println("new_vo"+new_vo);
+					
+					if(new_vo != null ) {
+						System.out.println(new_vo.get("M_NAME"));
+						System.out.println(new_vo.get("M_ID"));
+						if(new_vo.get("M_NAME") != null) {
+							//result = "<span class=\"in\">"+new_vo.get("M_NAME")+" 님 환영합니다.";
+							session.setAttribute("user_name", new_vo.get("M_NAME"));
+							session.setAttribute("user_id", new_vo.get("M_ID"));
+							session.setAttribute("user_Info", new_vo);
+							session.setAttribute("wish", wish);
+							
+							
+						}
+						
+					}
+					
+				        Gson gson = new GsonBuilder().create();
+				        String json = gson.toJson(new_vo);
+					return json;
+			  
+			 } 
 		
 		@RequestMapping("singupMember.do")
 		public String insertMember(MemberVO vo) {
@@ -82,34 +118,7 @@ public class MemberController {
 		
 
 		 //로그인 구현
-		 @ResponseBody
-		@RequestMapping(value = "/login.do",produces = "application/text; charset=utf-8")
-			public String login(MemberVO vo, HttpSession session) {
-			 	System.out.println("로그인.do 들어옴");
-			 	HashMap new_vo =  memberService.userSignIn(vo);
-				//String result ="";
-				
-				System.out.println("new_vo"+new_vo);
-				
-				if(new_vo != null ) {
-					System.out.println(new_vo.get("M_NAME"));
-					System.out.println(new_vo.get("M_ID"));
-					if(new_vo.get("M_NAME") != null) {
-						//result = "<span class=\"in\">"+new_vo.get("M_NAME")+" 님 환영합니다.";
-						session.setAttribute("user_name", new_vo.get("M_NAME"));
-						session.setAttribute("user_id", new_vo.get("M_ID"));
-						session.setAttribute("user_Info", new_vo);
-						
-						
-					}
-					
-				}
-				
-			        Gson gson = new GsonBuilder().create();
-			        String json = gson.toJson(new_vo);
-				return json;
-		  
-		 } 
+		
 		 //로그아웃 기능 구현
 		@ResponseBody
 		@RequestMapping(value="/logout.do")

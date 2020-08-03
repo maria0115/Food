@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.food.domain.MemberVO;
 import com.food.domain.WishlistVO;
 import com.food.service.CartService;
 
@@ -22,12 +23,15 @@ public class CartController {
 	
 	// 찜 하기 버튼 누르면 등록
 	@RequestMapping("insertCart.do")
-	public void insertCart(WishlistVO vo) {
+	public void insertCart(MemberVO mvo,WishlistVO vo,HttpSession session) {
 		System.out.println("insertCart controller");
 		System.out.println("가게명 :"+vo.getW_store_name());
 		System.out.println("주소 :"+vo.getW_address());
 		System.out.println("중분류 :"+vo.getW_midpart());
 		System.out.println("m_id :"+vo.getM_id());
+		mvo.setM_id(vo.getM_id());
+		int wish = CartService.selectCount(mvo); 
+		session.setAttribute("wish", wish);
 		CartService.insertCart(vo);	
 	}
 	
