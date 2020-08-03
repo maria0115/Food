@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -130,8 +132,24 @@ public class MainController {
 			String most="",fileName="";
 			Client client = new Client(resultweather,resulttemp,region,most,fileName,what);	//1
 			String result = client.getResult();
+			String ip = client.getIp();
 			ServletOutputStream out;
 			System.out.println("result :"+result);
+			
+			System.out.println(ip);
+			
+			Date today = new Date();
+		    System.out.println(today);
+		        
+		    SimpleDateFormat date = new SimpleDateFormat("yyyy/MM/dd");
+		    SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
+		        
+		    System.out.println("Date: "+date.format(today));
+		    System.out.println("Time: "+time.format(today));
+		    
+		    session.setAttribute("longitude", longitude);
+
+
 
 			System.out.println("hi main");
 

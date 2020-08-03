@@ -14,6 +14,7 @@ public class Client {
 	String fileName;
 	String what;
 	String result;
+	String ip;
 
 	public Client(String resultweather,String resulttemp,String region,String most,String fileName,String what) {
 		this.resultweather = resultweather;
@@ -33,6 +34,7 @@ public class Client {
 			Sender.start();
 			Sender.join();
 			result = Sender.getResult();
+			ip = Sender.getIp();
 			System.out.println("result from server : " + result);
 		} catch (Exception e) {
 			System.out.println("서버에 연결할 수 없습니다"+e.getMessage());
@@ -41,6 +43,9 @@ public class Client {
 	
 	public String getResult() {
 		return result;
+	}
+	public String getIp() {
+		return ip;
 	}
 
 
