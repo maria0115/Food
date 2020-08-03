@@ -123,7 +123,7 @@
 								<span class="cart">
 									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-heart-o"
 										aria-hidden="true"></i> <span>Wish <span
-											class="cart-quantity">(1)</span></span></a>
+											class="cart-quantity">(${wish})</span></span></a>
 								</span>
 									</c:if>
 								</div>
