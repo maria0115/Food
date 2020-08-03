@@ -272,10 +272,10 @@
 
 	<!-- ##### Hero Area Start ##### -->
 	<!-- 	<section class="hero-area"> -->
-	<div class="slide-img bg-img"
+		<div class="slide-img bg-img"
 		style="background-image: url(/Food/resources/img/mainmenu/<%=map.get("menu")%>.jpg);">
 		<!-- Single Hero Post -->
-		<div class="single-hero-post2 bg-overlay">
+		<div class="single-hero-post2 bg-overlay" >
 
 			<div
 				style="text-align: center; height: 50%; line-height: 50%; transform: translateY(100%); text-shadow: black; position: absolute; width: 100%;">
@@ -288,7 +288,7 @@
 				</p>
 				<p>
 				<a style="color:black; font-size: 2vw;font-weight: 900;">202006 요일별 직장인 방문 음식점 업종 TOP5 - </a>
-					<a href="https://kdx.kr/data/list?search=202006%2520%25EC%259A%2594%25EC%259D%25BC%25EB%25B3%2584%2520%25EC%25A7%2581%25EC%259E%25A5%25EC%259D%25B8%2520%25EB%25B0%25A9%25EB%25AC%25B8%2520%25EC%259D%258C%25EC%258B%259D%25EC%25A0%2590%2520%25EC%2597%2585%25EC%25A2%2585%2520TOP5&search_option=all" style="font-size: 3vw;color:white;">KDX한국데이터거래소</a>
+					<a href="https://kdx.kr/data/view?product_id=4322" style="font-size: 3vw;color:white;">KDX한국데이터거래소</a>
 				</p>
 				<p>
 				<a style="color:black; font-size: 2vw;font-weight: 900;">날씨 </a>
