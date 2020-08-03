@@ -43,7 +43,7 @@
 		</jsp:include>
         <!-- Top Breadcrumb Area -->
         <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(resources/img/bg-img/24.jpg);">
-            <h2>Cart</h2>
+            <h2>My Wish</h2>
         </div>
 
         <div class="container">
@@ -52,7 +52,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                            <li class="breadcrumb-item active" aria-current="page">My Wish</li>
                         </ol>
                     </nav>
                 </div>
@@ -126,6 +126,7 @@
                     </div>
                 </div>
             </div>
+            	<button  onclick="history.go(-1);" class="btn btn-default" >돌아가기</button> 	
 
 <!--             <div class="row"> -->
 
