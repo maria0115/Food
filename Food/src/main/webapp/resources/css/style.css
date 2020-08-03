@@ -551,10 +551,10 @@ img {
           height: 70px; } }
     .header-area .alazea-main-menu .classynav ul li a {
       padding: 0 30px;
-      font-weight: 500;
-      text-transform: capitalize;
-      font-size: 20px;
-      color: #ffffff; }
+    font-weight: bolder;
+    text-transform: capitalize;
+    font-size: 25px;
+    color: snow; }
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .header-area .alazea-main-menu .classynav ul li a {
           font-size: 18px;

@@ -88,6 +88,7 @@
 	
 	<div class="single-hero-post bg-overlay">
 				<!-- Post Image -->
+			<img style="width:100%; height: 100%;" src="/Food/resources/img/header.jpg" alt="">
 			</div>
 	
 	<div class="preloader d-flex align-items-center justify-content-center">
