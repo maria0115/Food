@@ -143,7 +143,7 @@
 										<a href="" id="logout" ><button class="logout">Log-Out</button></a>
 										<a href="/Food/mypageform.do" id="mypage" class="fa fa-user" >My Page</a>
 											<span class="wish">
-								<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart"
+								<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
 									aria-hidden="true"></i> <span style="font-size: 17px;">Wish <span
 										class="cart-quantity">(${wish})</span></span></a>
 
