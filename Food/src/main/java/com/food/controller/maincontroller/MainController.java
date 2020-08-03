@@ -48,7 +48,7 @@ public class MainController {
 	@RequestMapping("/main.do")//, method = RequestMethod.POST
 	public ModelAndView mainpagetag(String longitude,String latitude,String region,HttpServletRequest request, HttpServletResponse response,HttpSession session) {
 
-		region="금천구";
+//		region="금천구";
 		if((longitude!=null)&&(latitude!=null)&&(region!=null)) {
 		session.setAttribute("longitude", longitude);
 		session.setAttribute("latitude", latitude);
