@@ -145,6 +145,30 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	]]>
 	</select> 
 	
+	<select id="serchSelect" parameterType="hashmap" resultType="store">
+	
+		SELECT 	  *
+		FROM 	STORE
+		WHERE S_CATEGORY = #{selectBoxName}	
+	</select> 
+	
+	
+	<select id="searchSelectPaging" parameterType="hashmap" resultType="store">
+	<![CDATA[
+	select *
+	from(
+		select ROWNUM AS RNUM , S_BRAND_NAME, S_ADDRESS
+		from STORE
+		
+	)
+
+	where RNUM>=#{startRow} and RNUM<=#{endRow}
+	]]>
+	</select> 
+	
+
+	
+	
 	
 
 </mapper>

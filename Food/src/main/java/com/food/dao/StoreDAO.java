@@ -10,10 +10,6 @@ import com.food.domain.StoreListVO;
 
 public interface StoreDAO {
 
-
-	
-
-
 	public List<StoreListVO> getStoreList(StoreListVO vo);
 
 	public StoreListVO storeDetail(StoreListVO vo);
@@ -31,5 +27,9 @@ public interface StoreDAO {
 	public List<StoreListVO> selectStoreList(Map map);
 
 	public List<StoreListVO> selectStorePaging(Map map);
+
+	public List<StoreListVO> serchSelect(Map map);
+
+	public List<StoreListVO> searchSelectPaging(Map map);
 
 }

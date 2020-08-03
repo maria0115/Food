@@ -70,6 +70,18 @@ public class StoreServiceImpl implements StoreService{
 		return storeDAO.selectStorePaging(map);
 	}
 
+	@Override
+	public List<StoreListVO> serchSelect(Map map) {
+		System.out.println("ssssssssnsonsonsonsonsonosnsonsono"+map.get("selectBoxName"));
+		return storeDAO.serchSelect(map);
+	}
+
+	@Override
+	public List<StoreListVO> searchSelectPaging(Map map) {
+		
+		return storeDAO.searchSelectPaging(map);
+	}
+
 	
 
 

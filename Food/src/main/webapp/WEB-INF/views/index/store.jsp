@@ -90,21 +90,20 @@
                         </div>
                         <!-- Search by Terms -->
                         <div class="search_by_terms">
-                            <form action="#" method="post" class="form-inline">
-                                <select class="custom-select widget-title" id="selectBox" onchange="fnGetCtgSub(this.value);">
-                                  <!-- <option selected>한식</option> -->
-                                  <option value="0"></option>
-                                  <option value="한식">한식</option>
-                                  <option value="중식">중식</option>
-                                  <option value="양식">양식</option>
-                                  <option value="일식">일식</option>
-                                  <option value="동남아">동남아</option>
-                                </select>
-                                <input type="search" name="keyword" id="keyword" placeholder="매장명을 입력해주세요" style="width: 50%">
-                                <td id="content">내용내용내용</td>
-                                
-                            </form>
-                        </div>
+							<form action="#" method="post" class="form-inline">
+								<select class="custom-select widget-title" id="selectBox"
+									onchange="fnGetCtgSub(this.value);">
+									<!-- <option selected>한식</option> -->
+									<option value="0"></option>
+									<option value="한식">한식</option>
+									<option value="중식">중식</option>
+									<option value="양식">양식</option>
+									<option value="일식">일식</option>
+									<option value="동남아">동남아</option>
+								</select> <input type="search" name="keyword" id="keyword"
+									placeholder="매장명을 입력해주세요" style="width: 50%">
+							</form>
+						</div>
                     </div>
                 </div>
             </div>
@@ -331,6 +330,7 @@
 
 <script src="/Food/resources/js/storePaging.js"></script>
 <script src="/Food/resources/js/storeCheckBox.js"></script>
+<script src="/Food/resources/js/active.js"></script>
 
 </body>
 

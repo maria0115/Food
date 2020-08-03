@@ -25,6 +25,10 @@ public interface StoreService {
 	List<StoreListVO> selectStoreList(Map map);
 	//가게리스트 페이징
 	List<StoreListVO> selectStorePaging(Map map);
+	//셀렉가게가져오기
+	List<StoreListVO> serchSelect(Map map);
+	//셀렉페이징처리
+	List<StoreListVO> searchSelectPaging(Map map);
 	
 	
 	

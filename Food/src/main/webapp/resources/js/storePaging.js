@@ -174,15 +174,20 @@ function drawWriterTable(data) {
 $('#selectBox').change(changeselectBox=function(){
 	alert("ss")
 	$.ajax({
-	
-	url:'selectBox.do',
-	data:'selectBox='+$(this).val(),
-	dataType:'json',
-	success:function(data){
-	if(!data.data || data.data=='' || data.data.length<1) return false;
-	$('#content').html(data.data[0].CONTENT);
-	},
-	}); // $.ajax
+		type : 'post',
+		async : true,
+		url:'/Food/store/searchBox.do',
+		data:'selectBox='+$(this).val(),
+		dataType:'json',
+		success:function(data){
+			if(!data.data || data.data=='' || data.data.length<1) return false;
+			$('#content').html(data.data[0].CONTENT);
+		},
+		error : function(request, status, error) {
+			console.log("code:" + request.status + "\n" + "message:"
+					+ request.responseText + "\n" + "error:" + error);
+		}
+		}); // $.ajax
 	});
 
 
