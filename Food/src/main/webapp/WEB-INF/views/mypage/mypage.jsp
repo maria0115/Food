@@ -37,7 +37,7 @@
     	<div id="memberpage">
     	<div class="container">
 				<form action="membermodify.do">
-					<table class="table table-danger table-hover">
+					<table class="table table-sucsess table-hover">
 						<thead>
 							<tr >
 								<th colspan="4" >회원 정보/음식 BEST</th>

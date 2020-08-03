@@ -21,7 +21,9 @@
     padding-bottom: 40px;
     width: 100%;
     font-family: fantasy;
-    border: 10px double deeppink;
+    font-size: x-large;
+    text-align: center;
+    color: black;
 }
 
 
