@@ -520,7 +520,7 @@ img {
         .header-area .top-header-area .top-header-content .top-header-meta .cart::after {
           width: 1px;
           height: 100%;
-          background-color: rgba(235, 235, 235, 0.2);
+/*           background-color: rgba(235, 235, 235, 0.2); */
           content: '';
           top: 0;
           left: -15px;

@@ -138,6 +138,13 @@
 										<span class="login-font">${sessionScope.user_name} Welcome.</span>
 										<a href="" id="logout" ><button class="logout">Log-Out</button></a>
 										<a href="/Food/mypageform.do" id="mypage" class="fa fa-user" >My Page</a>
+											<span class="cart">
+								<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-heart-o"
+									aria-hidden="true"></i> <span>Wish <span
+										class="cart-quantity">(1)</span></span></a>
+
+
+							</span>
 									</c:if>
 								</div>	
 						    <c:if test="${empty sessionScope.user_id }">		
@@ -171,30 +178,20 @@
 										
 									</div>
 								</div>
-								</c:if>
+							
 							 
 <!--                         <ul id="navi"> -->
 <!--                               <li> -->
                                       <a href="/Food/manager/member-list.do"  id="manageLabel1" class="fa fa-user" ><br/>Manage</a>
 <!--                                </li> -->
                                
-                           
+                           	</c:if>
 
 
 
 
 								<!-- Cart -->
-							<div class="cart">
-								<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-shopping-cart"
-									aria-hidden="true"></i> <span>Cart <span
-										class="cart-quantity">(1)</span></span></a>
-
-
-
-
-
-
-							</div>
+						
 						</div>
 					</div>
 				</div>

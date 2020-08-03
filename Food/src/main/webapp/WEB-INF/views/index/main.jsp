@@ -120,6 +120,11 @@
 										<a href="" id="logout"><button class="logout">Log-Out</button></a>
 										<a href="mypageform.do" id="mypage" class="fa fa-user">My
 											Page</a>
+								<span class="cart">
+									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-heart-o"
+										aria-hidden="true"></i> <span>Wish <span
+											class="cart-quantity">(1)</span></span></a>
+								</span>
 									</c:if>
 								</div>
 								<c:if test="${empty sessionScope.user_id }">
@@ -153,7 +158,7 @@
 
 										</div>
 									</div>
-								</c:if>
+								
 						
 									<!--                         <ul id="navi"> -->
 									<!--                               <li> -->
@@ -165,11 +170,8 @@
 									<!--                           </ul> -->
 					
 								<!-- Cart -->
-								<div class="cart">
-									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-shopping-cart"
-										aria-hidden="true"></i> <span>Cart <span
-											class="cart-quantity">(1)</span></span></a>
-								</div>
+							
+								</c:if>
 							</div>
 						</div>
 					</div>
