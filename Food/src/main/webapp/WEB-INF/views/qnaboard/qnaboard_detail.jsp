@@ -69,37 +69,22 @@
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
 
-<script type="text/javascript">
-// 수정 버튼 클릭시 readonly상태에서 readonly삭제
-$(function(){
-	$("#modify").click(function(){
-	$("#contact-title").attr('readonly', false);
-	$("#message").attr('readonly', false);
-
-// 	$("#savebtn").click(function(){
-// 		alert("수정되었습니다")
-// 		})
-	})
-})
-</script>
-
-
 
 <div class='container'>
 <div class="contact-form-area mb-100">
                         <form action="modifyqna" method="post">
-                            <input type="hidden" name="b_no" value=${list.b_no} readonly>
+                            <input type="hidden" name="b_no" value="${list.b_no}" readonly>
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                 	제목
                                     <div class="form-group" style="color:black">
-                                        <input style="color:black" type="text" class="form-control" id="contact-title" name="title" value=${list.title} readonly>
+                                        <input style="color:black" type="text" class="form-control" id="contact-title" name="title" value="${list.title}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                 	작성자
                                     <div class="form-group">
-                                        <input style="color:black" type="text" class="form-control" id="contact-writer" name="userId" value=${list.userId} readonly>
+                                        <input style="color:black" type="text" class="form-control" id="contact-writer" name="userId" value="${list.userId}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -113,18 +98,28 @@ $(function(){
                                 </div>
                             </div>
                         </form>
-			                        <button id="modify" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-			                        <button id="delete" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                <c:if test="${sessionScope.user_id == list.userId}">
+			                <button id="modify" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+			                <button id="delete" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			                	</c:if>
                     </div>
-</div>
+				</div>
 
+						<script type="text/javascript">
+						$('#delete').click(function(){
+							alert('aa')
+							var no = $('input[name=b_no]').val()
+							location.href="deleteqna?b_no="+no;
+						})
+						</script>
 
 
 
     <!-- ##### Footer Area Start ##### -->
     <%@ include file="../index/footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
-
+<script src="resources/js/reservation_js/qna_hc.js"></script>
+<script src="/Food/resources/js/active.js"></script>
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
 <!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->

@@ -225,6 +225,7 @@
 
     <!-- ##### All Javascript Files ##### -->
     <script src="/Food/resources/js/mymenu.js"></script>
+    <script src="/Food/resources/js/active.js"></script>
     <!-- jQuery-2.2.4 js -->
 <!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->
 <!--     Popper js -->

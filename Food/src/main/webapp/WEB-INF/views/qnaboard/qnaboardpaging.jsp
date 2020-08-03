@@ -85,23 +85,19 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>Products List</h4>
+                            <h4>QnA 게시판</h4>
+                            	<c:if test="${not empty sessionScope.user_id}">
                             <div class="add-product">
                                 <a href="qnaboard_insertpage.do">글쓰기</a>
                             </div>
-<!--                                 <div class="col-12"> -->
-<!--                                     <button type="submit" class="btn alazea-btn mt-15">Send Message</button> -->
-<!--                                 </div> -->
-
+                            	</c:if>
 
                             <table>
                                 <tbody><tr>
                                     <th>NO</th>
                                     <th>TITLE</th>
-<!--                                     <th>CONTENT</th> -->
                                     <th>WRITER</th>
                                     <th>DATE</th>
-                                    <th>버튼</th>
                                 </tr>
                                 
                                 <script type="text/javascript">
@@ -120,12 +116,8 @@
                                 <tr>
                                     <td class='qna_table'>${list.b_no}</td>
                                     <td class='qna_table' width="600px">${list.title}</td>
-<%--                                     <td>${list.q_content}</td> --%>
                                     <td class='qna_table'>${list.userId}</td>
                                     <td class='qna_table'>${list.b_date}</td>
-                                    <td>
-                                        <button id="trash" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
                                 </tr>
                                 </c:forEach>
                                 </tbody>
@@ -154,18 +146,6 @@
 	</div>
                             
                             
-<!--                             <div class="custom-pagination"> -->
-<!--                                 <nav aria-label="Page navigation example"> -->
-<!--                                     <ul class="pagination"> -->
-<!--                                         <a href="#">Previous</a> -->
-<!--                                         <li class="page-item"><a class="page-link" href="#">1</a></li> -->
-<!--                                         <li class="page-item"><a class="page-link" href="#">2</a></li> -->
-<!--                                         <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-<!--                                         <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
-<!--                                     </ul> -->
-<!--                                 </nav> -->
-<!--                             </div> -->
-                            
                             
                         </div>
                     </div>
@@ -181,7 +161,7 @@
     <!-- ##### Footer Area Start ##### -->
     <%@ include file="../index/footer.jsp" %>
     <!-- ##### Footer Area End ##### -->
-
+<script src="/Food/resources/js/active.js"></script>
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
 <!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->
