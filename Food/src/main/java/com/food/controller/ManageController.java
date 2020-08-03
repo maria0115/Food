@@ -11,15 +11,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.food.domain.BlackListVO;
 import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
+import com.food.domain.ReservationVO;
 import com.food.service.BlackService;
 import com.food.service.ManagerService;
-import com.food.service.MemberService;
 import com.food.service.boardService;
 
 
@@ -433,16 +432,60 @@ public class ManageController {
 		return "manager/declaView";
 	}
 	@RequestMapping("/dashBoard.do")
-	public String dash(MemberVO vo, Model model) {
-		int todayHire = managerService.todayHire(vo);
-		int yesterdayHire = managerService.yesterdayHire(vo);
-		System.out.println(todayHire);
-		System.out.println(yesterdayHire);
-		int newMember = (int)(((double)todayHire / (double)yesterdayHire) *100-100);
-		model.addAttribute("todayHire",todayHire);
-		model.addAttribute("newMember",newMember);
+	public String dash(Model model) {
+		int todayHire = managerService.todayHire();
+		int yesterdayHire = managerService.yesterdayHire();
+		int todayReserv = managerService.todayReserv();
+		int yesterdayReserv = managerService.yesterdayReserv();
+		int todayBoard = managerService.todayBoard();
+		int yesterdayBoard = managerService.yesterdayBoard();
+		int todayBlack = managerService.todayBlack();
+		int yesterdayBlack = managerService.yesterdayBlack();
+		int thisMonth = managerService.thisMonth();
+		int totalMember= managerService.totalMember();
+		int todayReview = managerService.todayReview();
 		
+		System.out.println("todayHire:"+todayHire);
+		System.out.println("yesterdayHire:"+yesterdayHire);
+		System.out.println("todayReserv:"+todayReserv);
+		System.out.println("yesterdayReserv:"+yesterdayReserv);
+		System.out.println("todayBoard:"+todayBoard);
+		System.out.println("yesterdayBoard:"+yesterdayBoard);
+		System.out.println("todayBlack:"+todayBlack);
+		System.out.println("yesterdayBlack:"+yesterdayBlack);
+		System.out.println("thisMonth:"+thisMonth);
+		System.out.println("totalMember	:"+totalMember);
+		System.out.println("totalMember	:"+todayReview);
+		
+		model.addAttribute("todayHire",todayHire);
+		model.addAttribute("newMember", per(todayHire,yesterdayHire));
+		
+		model.addAttribute("todayReserv",todayReserv);
+		model.addAttribute("newReserv", per(todayReserv,yesterdayReserv));
+		
+		model.addAttribute("todayBoard",todayBoard);
+		model.addAttribute("newBoard", per(todayBoard,yesterdayBoard));
+		
+		model.addAttribute("todayBlack",todayBlack);
+		model.addAttribute("newBlack", per(todayBlack,yesterdayBlack));
+		
+		model.addAttribute("thisMonth",thisMonth);
+		model.addAttribute("totalMember",totalMember);
+		model.addAttribute("todayReview",todayReview);
 		return "manager/dashBoard";
+	}
+	
+	public int per(int today, int yesterday) {
+		int percent=0;
+		if(yesterday==0) {
+			return yesterday;
+		}
+		else if(today==0) {
+			return yesterday;
+		}else {
+		percent = (int)(((double)today / (double)yesterday) *100-100);
+		}
+		return percent;
 	}
 	
 }

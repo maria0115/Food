@@ -7,9 +7,11 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
+import com.food.domain.BlackListVO;
+import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
+import com.food.domain.ReservationVO;
 
 @Repository("managerDAO")
 public class managerDAOImpl implements managerDAO{
@@ -67,16 +69,72 @@ public class managerDAOImpl implements managerDAO{
 		}
 
 		@Override
-		public int todayHire(MemberVO vo) {
+		public int todayHire() {
 			System.out.println("==>ManagerMapper todayHire() 호출");
-			return mybatis.selectOne("managerDAO.todayHire",vo);
+			return mybatis.selectOne("managerDAO.todayHire");
 		}
 
 		@Override
-		public int yesterdayHire(MemberVO vo) {
+		public int yesterdayHire() {
 			System.out.println("==>ManagerMapper yesterdayHire() 호출");
-			return mybatis.selectOne("managerDAO.yesterdayHire",vo);
-		}	
+			return mybatis.selectOne("managerDAO.yesterdayHire");
+		}
+
+		@Override
+		public int todayReserv() {
+			System.out.println("==>ManagerMapper todayReserv() 호출");
+			return mybatis.selectOne("managerDAO.todayReserv");
+		}
+
+		@Override
+		public int yesterdayReserv() {
+			System.out.println("==>ManagerMapper yesterdayReserv() 호출");
+			return mybatis.selectOne("managerDAO.yesterdayReserv");
+		}
+
+		@Override
+		public int todayBoard() {
+			System.out.println("==>ManagerMapper todayBoard() 호출");
+			return mybatis.selectOne("managerDAO.todayBoard");
+		}
+
+		@Override
+		public int yesterdayBoard() {
+			System.out.println("==>ManagerMapper yesterdayBoard() 호출");
+			return mybatis.selectOne("managerDAO.yesterdayBoard");
+		}
+
+		@Override
+		public int todayBlack() {
+			System.out.println("==>ManagerMapper todayBlack() 호출");
+			return mybatis.selectOne("managerDAO.todayBlack");
+		}
+
+		@Override
+		public int yesterdayBlack() {
+			System.out.println("==>ManagerMapper yesterdayBlack() 호출");
+			return mybatis.selectOne("managerDAO.yesterdayBlack");
+		}
+
+		@Override
+		public int thisMonth() {
+			System.out.println("==>ManagerMapper thisMonth() 호출");
+			return mybatis.selectOne("managerDAO.thisMonth");
+		}
+
+		@Override
+		public int totalMember() {
+			System.out.println("==>ManagerMapper totalMember() 호출");
+			return mybatis.selectOne("managerDAO.totalMember");
+		}
+
+		@Override
+		public int todayReview() {
+			System.out.println("==>ManagerMapper todayReview() 호출");
+			return mybatis.selectOne("managerDAO.todayReview");
+		}
+
+
 		
 
 

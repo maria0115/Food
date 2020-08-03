@@ -2,8 +2,11 @@ package com.food.dao;
 
 import java.util.List;
 
+import com.food.domain.BlackListVO;
+import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
+import com.food.domain.ReservationVO;
 
 public interface managerDAO {
 
@@ -19,7 +22,25 @@ public interface managerDAO {
 
 		int memberDelete(MemberVO vo);
 
-		int todayHire(MemberVO vo);
+		int todayHire();
 
-		int yesterdayHire(MemberVO vo);
+		int yesterdayHire();
+
+		int todayReserv();
+
+		int yesterdayReserv();
+
+		int todayBoard();
+
+		int yesterdayBoard();
+
+		int todayBlack();
+
+		int yesterdayBlack();
+
+		int thisMonth();
+
+		int totalMember();
+
+		int todayReview();
 }

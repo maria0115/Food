@@ -152,3 +152,24 @@ body{
     border: 1px solid #ddd;
     border-top-color: transparent;
 }
+.display-4{
+	
+	font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 700;
+}
+.h5{
+	margin-bottom: 0.66em;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-top:40px;
+    margin-bottom:10px;
+    font-size:1rem;
+}
+.mb-4{
+	margin-bottom: 1rem !important;
+	height: 79px;
+}
+.mb-5{
+	margin-bottom: 1rem !important;
+}

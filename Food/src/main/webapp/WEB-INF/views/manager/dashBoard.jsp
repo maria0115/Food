@@ -80,10 +80,11 @@
 <script src="/Food/resources/js/vendor/modernizr-2.8.3.min.js"></script>
 <!-- Dashboard Core -->
 <link href="/Food/resources/css/dashboard.css" rel="stylesheet" />
-<script src="/Food/resources/css/dashboard/dashboard.js"></script>
+<!-- <script src="/Food/resources/js/dashboard/dashboard.js"></script> -->
 <!-- c3.js Charts Plugin -->
 <link href="/Food/resources/css/dashboard/charts-c3.css" rel="stylesheet" />
-<script src="/Food/resources/css/dashboard/charts-c3.js"></script>
+<!-- <script src="/Food/resources/js/dashboard/charts-c3.js"></script> -->
+
 </head>
 <body>
 	<jsp:include page="sideBar.jsp">
@@ -103,6 +104,7 @@
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
+						<a href="/Food/manager/member-list.do" style="text-decoration: none !important; color: #495057;">
 						<c:if test="${newMember lt 0}">
 						<div class="text-right text-red">
 							${newMember}%<i class="icon-down"></i>
@@ -114,9 +116,9 @@
 						</div>
 						</c:if> 
 
-						
 						<div class="h1 m-0">${todayHire }</div>
-						<div class="text-muted mb-4">신규회원</div>
+						<div class="text-muted mb-5">신규회원</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -124,60 +126,100 @@
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
+					<a href="/Food/manager/member-list.do" style="text-decoration: none !important; color: #495057;">
+						<c:if test="${newReserv lt 0}">
 						<div class="text-right text-red">
-							-3% <i class="icon-down"></i>
+							${newReserv}%<i class="icon-down"></i>
 						</div>
-						<div class="h1 m-0">17</div>
-						<div class="text-muted mb-4">신규예약</div>
+						</c:if> 
+						<c:if test="${newReserv gt 0}">
+						<div class="text-right text-green">
+							${newReserv}%<i class="icon-up"></i>
+						</div>
+						</c:if> 
+						<div class="text-right">
+						<c:if test="${newReserv eq 0}">
+							-
+						</c:if>
+						</div>
+						<div class="h1 m-0">${todayReserv}</div>
+						<div class="text-muted mb-5">신규예약</div>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
+					<a href="/Food/manager/member-list.do" style="text-decoration: none !important; color: #495057;">
 						<div class="text-right text-green">
 							9% <i class="icon-up"></i>
 						</div>
 						<div class="h1 m-0">7</div>
-						<div class="text-muted mb-4">페이지 뷰</div>
+						<div class="text-muted mb-5">페이지 뷰</div>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
+					<a href="/Food/manager/BoardList.do" style="text-decoration: none !important; color: #495057;">
+						<c:if test="${newBoard lt 0}">
+						<div class="text-right text-red">
+							${newBoard}%<i class="icon-down"></i>
+						</div>
+						</c:if> 
+						<c:if test="${newBoard gt 0}">
 						<div class="text-right text-green">
-							3% <i class="icon-up"></i>
+							${newBoard}%<i class="icon-up"></i>
 						</div>
-						<div class="h1 m-0">27.3K</div>
-						<div class="text-muted mb-4">Followers</div>
+						</c:if> 
+						<div class="text-right">
+						<c:if test="${newBoard eq 0}">
+							-
+						</c:if>
+						</div>
+						<div class="h1 m-0">${todayBoard}</div>
+						<div class="text-muted mb-5">신규 게시글</div>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
+					<a href="/Food/manager/declarationBoard.do" style="text-decoration: none !important; color: #495057;">
+						<c:if test="${newBlack lt 0}">
 						<div class="text-right text-red">
-							-2%
-							<!--                       <i class="icon-down"></i> -->
-							<!-- 						<img src='/Food/resources/img/chevron-down.svg' class="svgcss"> -->
-							<i class="icon-down"></i>
-
-
+							${newBlack}%<i class="icon-down"></i>
 						</div>
-						<div class="h1 m-0">$95</div>
-						<div class="text-muted mb-4">Daily Earnings</div>
+						</c:if> 
+						<c:if test="${newBlack gt 0}">
+						<div class="text-right text-green">
+							${newBlack}%<i class="icon-up"></i>
+						</div>
+						</c:if> 
+						<div class="text-right">
+						<c:if test="${newBlack eq 0}">
+							-
+						</c:if>
+						</div>
+						<div class="h1 m-0">${todayBlack}</div>
+						<div class="text-muted mb-5">신규 신고글</div>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
-						<div class="text-right text-red">
-							-1% <i class="icon-down"></i>
+					<a href="/Food/manager/member-list.do" style="text-decoration: none !important; color: #495057;">
+						<div class="text-right" style="height:22px;">
 						</div>
-						<div class="h1 m-0">621</div>
-						<div class="text-muted mb-4">Products</div>
+						<div class="h1 m-0">${thisMonth }</div>
+						<div class="text-muted mb-5">매장수</div>
+					</a>
 					</div>
 				</div>
 			</div>
@@ -219,79 +261,11 @@
 					</div>
 
 				</div>
-				<script>
-                  require(['c3', 'jquery'], function(c3, $) {
-                  	$(document).ready(function(){
-                  		var chart = c3.generate({
-                  			bindto: '#chart-development-activity', // id of chart wrapper
-                  			data: {
-                  				columns: [
-                  				    // each columns data
-                  					['data1', 0, 5, 1, 2, 7, 5, 6, 8, 24, 7, 12, 5, 6, 3, 2, 2, 6, 30, 10, 10, 15, 14, 47, 65, 55]
-                  				],
-                  				type: 'area', // default type of chart
-                  				groups: [
-                  					[ 'data1', 'data2', 'data3']
-                  				],
-                  				colors: {
-                  					'data1': tabler.colors["blue"]
-                  				},
-                  				names: {
-                  				    // name of each serie
-                  					'data1': 'Purchases'
-                  				}
-                  			},
-                  			axis: {
-                  				y: {
-                  					padding: {
-                  						bottom: 0,
-                  					},
-                  					show: false,
-                  						tick: {
-                  						outer: false
-                  					}
-                  				},
-                  				x: {
-                  					padding: {
-                  						left: 0,
-                  						right: 0
-                  					},
-                  					show: false
-                  				}
-                  			},
-                  			legend: {
-                  				position: 'inset',
-                  				padding: 0,
-                  				inset: {
-                                      anchor: 'top-left',
-                  					x: 20,
-                  					y: 8,
-                  					step: 10
-                  				}
-                  			},
-                  			tooltip: {
-                  				format: {
-                  					title: function (x) {
-                  						return '';
-                  					}
-                  				}
-                  			},
-                  			padding: {
-                  				bottom: 0,
-                  				left: -1,
-                  				right: -1
-                  			},
-                  			point: {
-                  				show: false
-                  			}
-                  		});
-                  	});
-                  });
-                </script>
+               
 			</div>
 			<div class="col-md-6">
 				<div class="alert alert-primary">
-					 차트를 더 보고 싶다면?<a href="" class="alert-link">&nbsp;&nbsp;차트</a>를 누르세요
+					 차트를 더 보고 싶다면?<a href="chart.do" class="alert-link">&nbsp;&nbsp;차트</a>를 누르세요
 				</div>
 				<div class="row">
 					<div class="col-sm-6">
@@ -303,41 +277,7 @@
 								<div id="chart-donut" style="height: 12rem;"></div>
 							</div>
 						</div>
-						<script>
-                      require(['c3', 'jquery'], function(c3, $) {
-                      	$(document).ready(function(){
-                      		var chart = c3.generate({
-                      			bindto: '#chart-donut', // id of chart wrapper
-                      			data: {
-                      				columns: [
-                      				    // each columns data
-                      					['data1', 63],
-                      					['data2', 37]
-                      				],
-                      				type: 'donut', // default type of chart
-                      				colors: {
-                      					'data1': tabler.colors["green"],
-                      					'data2': tabler.colors["green-light"]
-                      				},
-                      				names: {
-                      				    // name of each serie
-                      					'data1': 'Maximum',
-                      					'data2': 'Minimum'
-                      				}
-                      			},
-                      			axis: {
-                      			},
-                      			legend: {
-                                      show: false, //hide legend
-                      			},
-                      			padding: {
-                      				bottom: 0,
-                      				top: 0
-                      			},
-                      		});
-                      	});
-                      });
-                    </script>
+						
 					</div>
 					<div class="col-sm-6">
 						<div class="card">
@@ -348,132 +288,29 @@
 								<div id="chart-pie" style="height: 12rem;"></div>
 							</div>
 						</div>
-						<script>
-                      require(['c3', 'jquery'], function(c3, $) {
-                      	$(document).ready(function(){
-                      		var chart = c3.generate({
-                      			bindto: '#chart-pie', // id of chart wrapper
-                      			data: {
-                      				columns: [
-                      				    // each columns data
-                      					['data1', 63],
-                      					['data2', 44],
-                      					['data3', 12],
-                      					['data4', 14]
-                      				],
-                      				type: 'pie', // default type of chart
-                      				colors: {
-                      					'data1': tabler.colors["blue-darker"],
-                      					'data2': tabler.colors["blue"],
-                      					'data3': tabler.colors["blue-light"],
-                      					'data4': tabler.colors["blue-lighter"]
-                      				},
-                      				names: {
-                      				    // name of each serie
-                      					'data1': 'A',
-                      					'data2': 'B',
-                      					'data3': 'C',
-                      					'data4': 'D'
-                      				}
-                      			},
-                      			axis: {
-                      			},
-                      			legend: {
-                                      show: false, //hide legend
-                      			},
-                      			padding: {
-                      				bottom: 0,
-                      				top: 0
-                      			},
-                      		});
-                      	});
-                      });
-                    </script>
+						
 					</div>
 					<div class="col-sm-6">
 						<div class="card">
 							<div class="card-body text-center">
-								<div class="h5">New feedback</div>
-								<div class="display-4 font-weight-bold mb-4">62</div>
-								<div class="progress progress-sm">
-									<div class="progress-bar bg-red" style="width: 28%"></div>
-								</div>
+								<div class="h5">새 리뷰</div>
+								<div class="display-4 font-weight-bold mb-4">${todayReview }</div>
+								
 							</div>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="card">
 							<div class="card-body text-center">
-								<div class="h5">Today profit</div>
-								<div class="display-4 font-weight-bold mb-4">$652</div>
-								<div class="progress progress-sm">
-									<div class="progress-bar bg-green" style="width: 84%"></div>
-								</div>
+								<div class="h5">총 회원수</div>
+								<div class="display-4 font-weight-bold mb-4">${totalMember }</div>
+								
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-lg-3">
-				<div class="card p-3">
-					<div class="d-flex align-items-center">
-						<span class="stamp stamp-md bg-blue mr-3"> <i
-							class="fe fe-dollar-sign"></i>
-						</span>
-						<div>
-							<h4 class="m-0">
-								<a href="javascript:void(0)">132 <small>Sales</small></a>
-							</h4>
-							<small class="text-muted">12 waiting payments</small>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-lg-3">
-				<div class="card p-3">
-					<div class="d-flex align-items-center">
-						<span class="stamp stamp-md bg-green mr-3"> <i
-							class="fe fe-shopping-cart"></i>
-						</span>
-						<div>
-							<h4 class="m-0">
-								<a href="javascript:void(0)">78 <small>Orders</small></a>
-							</h4>
-							<small class="text-muted">32 shipped</small>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-lg-3">
-				<div class="card p-3">
-					<div class="d-flex align-items-center">
-						<span class="stamp stamp-md bg-red mr-3"> <i
-							class="fe fe-users"></i>
-						</span>
-						<div>
-							<h4 class="m-0">
-								<a href="javascript:void(0)">1,352 <small>Members</small></a>
-							</h4>
-							<small class="text-muted">163 registered today</small>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-lg-3">
-				<div class="card p-3">
-					<div class="d-flex align-items-center">
-						<span class="stamp stamp-md bg-yellow mr-3"> <i
-							class="fe fe-message-square"></i>
-						</span>
-						<div>
-							<h4 class="m-0">
-								<a href="javascript:void(0)">132 <small>Comments</small></a>
-							</h4>
-							<small class="text-muted">16 waiting</small>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 
 

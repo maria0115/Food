@@ -37,7 +37,7 @@ $(document).ready(function(){
 	                data : "m_id="+ $("#d_suspect").val(),
 	                success : function(resultData){
 		                if(resultData=="중복된 아이디입니다"){
-		                	
+		                	$("#check").html("등록된 회원 입니다");
 		                }
 		                else{
 		                	$("#check").html("없는 회원 입니다");

@@ -25,6 +25,7 @@ var detailAddr="";
 		geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
 		
 		}); 
+	
  		
 
 		
