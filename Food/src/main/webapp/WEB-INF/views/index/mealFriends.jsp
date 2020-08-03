@@ -10,6 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/Food/resources/css/style.css">
 
 <!-- 부트스트랩 -->
 <link
@@ -114,8 +115,8 @@
         <!-- 페이지에 접속했을때 로그인을 하지 않았을경우 글등록 버튼 안보여주기 -->
         <c:if test="${sessionScope.user_id!= null }">
 		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" >글등록</button>
+		<button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');">신고하기</button>
 		</c:if>
-            <button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');">신고하기</button>
 	</div>
 
 
@@ -124,7 +125,7 @@
 
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="footer.jsp" %>
-
+	<script src="/Food/resources/js/active.js"></script>
 
 
 

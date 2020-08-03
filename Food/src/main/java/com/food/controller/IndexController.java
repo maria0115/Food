@@ -121,85 +121,15 @@ public class IndexController {
 		return "index/mealFriends";
 	}
 	
-	//메인에서 검색했을때
-			@RequestMapping("/serchstore.do")
-			public String serchboard(Model model,HttpServletRequest request,String searchClick,PagingVO pvo,
-					@RequestParam(value="nowPage",required=false)String nowPage,
-					@RequestParam(value="cntPerPage",required=false)String cntPerPage,
-					@RequestParam(value="cntHirePage",required=false)String cntHirePage,
-					String searchType, String keyword) {
-				
-				int total;//페이징 처리할때 데이터의 총 갯수를 저장할 변수
-				String search = "";//검색을 했는지 여부를 확인할 변수 선언
-				
-				if(searchType!=null) {
-					if(searchType.equals("한식")==true) {
-						searchType="한식";
-					}else if(searchType.equals("양식")==true) {
-						searchType="양식";
-					}else if(searchType.equals("중식")==true) {
-						searchType="중식";
-					}else if(searchType.equals("일식")==true) {
-						searchType="일식";
-					}else if(searchType.equals("분식")==true) {
-						searchType="분식";
-					}else if(searchType.equals("동남아")==true) {
-						searchType="동남아";
-					}
-				}
-				search = searchType; //검색할때 선택한 검색타입을 받아온다
-				allcount = friendBoardservice.allcount();
-				
-				if(search==null || search.equals("")) {//검색을 하지 않았을 경우
-					
-					total=allcount; //total에 데이터의 총 갯수를 저장
-					curCount=allcount; //검색을 하지 않았기 때문에 현재 검색한 데이터의 갯수를 저장하는 curCount 변수에 데이터의 총 갯수를 저장
-					searchType =null;  //mapper에서 오류를 방지하기위헤 searchType에 null값을 저장
-					keyword=null;	   //mapper에서 오류를 방지하기위헤 keyword에 null값을 저장
-				}else{//검색을 했을 경우
-					
-					//검색한 데이터의 갯수를 curCount에 저장
-					curCount = friendBoardservice.searchCount(searchType,keyword);
-					//총 갯수에 현재 검색한 데이터의 갯수를 저장
-					total=curCount;
-				}
-				
-				//페이지 처음 들어갈때 nowPage와 cntPerPage가 없을 경우
-				if (nowPage == null && cntPerPage == null) {
-					nowPage = "1";
-					cntPerPage = "5";
-				//nowPage만 null일 경우
-				} else if (nowPage == null) {
-					nowPage = "1";
-				//cntPerPage만 null일 경우
-				} else if (cntPerPage == null) { 
-					cntPerPage = "5";
-				}
-
-				//PagingVO생성자 함수로 paging 처리 계산하여 pvo에 객체 생성
-				pvo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
-
-				//모델에 "paing" pvo 추가
-				model.addAttribute("paging", pvo);
-				
-				//모델에 "memList" List 추가 , db에서 조건에 해당하는 상품 목록을 가지고 온다
-			
-
-
-				
-				
-				model.addAttribute("listVO",friendBoardservice.selectStore(pvo,searchType,keyword));
-				
-				//모델에 "searchType" 검색타입 추가
-				model.addAttribute("searchType", searchType);
-				//모델에 "keyword" 검색키워드 추가
-				model.addAttribute("keyword", keyword);
-				
-			
-				
-				
-				return "index/store";
-			}
+	//맛집 검색하기 
+	@RequestMapping("searchmap.do")
+	public String searchmap(Model model, HttpServletRequest request) {
+		
+		model.addAttribute("word",request.getParameter("keyword"));
+		
+		return"index/searchmap";
+	}
+	
 	
 	
 

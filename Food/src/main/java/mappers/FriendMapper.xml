@@ -38,26 +38,7 @@
 	</where>
 	</select>
 	
-	<!-- 검색한 결과 list로 보내주기 -->
-	<select id="selectStorelist" parameterType="hashmap" resultType="store">
-	SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM store 
-						<where>
-							<if test='searchType!=null &amp;&amp; keyword!=null'>
-                            S_CATEGORY = #{searchType}
-                            AND
-                            S_BRAND_NAME like '%'||#{keyword}||'%'
-                            </if>
-						</where>
-						ORDER BY ROWNUM DESC 
-						) A
-				)
-	WHERE RN BETWEEN #{start} AND #{end}
-	</select>
+
 
 
 </mapper>

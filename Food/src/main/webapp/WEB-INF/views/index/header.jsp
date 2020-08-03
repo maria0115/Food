@@ -272,27 +272,15 @@
 					<!-- Search Form -->
 					<div class="search-form">
 
-						<form action="/Food/index/serchstore.do" method="get" id="searchfrm">
+						<form action="/Food/index/searchmap.do" method="get" id="searchfrm">
 							<div class="closeIcon">
 								<i class="fa fa-times" aria-hidden="true"></i>
 							</div>
 							<div>
-								<select class="form-control" id="searchType" name="searchType"
-									style="width: 20%; display: inline;">
-									<option value="한식">한식</option>
-									<option value="중식">중식</option>
-									<option value="일식">일식</option>
-									<option value="분식">분식</option>
-									<option value="양식">양식</option>
-									<option value="동남아">동남아</option>
-								</select> <input type="search" name="keyword" id="keyword"
-									placeholder="매장명을 입력해주세요" style="width: 65%">
+								<input type="search" name="keyword" id="keyword"
+									placeholder="ex)   가산 맛집 ">
 							</div>
 						</form>
-						<!-- Close Icon -->
-						<div class="closeIcon">
-							<i class="fa fa-times" aria-hidden="true"></i>
-						</div>
 					</div>
 				</div>
 			</div>
