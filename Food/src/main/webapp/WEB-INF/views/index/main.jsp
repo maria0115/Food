@@ -52,6 +52,12 @@
 	height: 10%;
 	width: 10;
 }
+
+#manageLabel1 {
+   display: revert;
+    font-size: larger;
+    margin-right: 25px;
+}
 </style>
 
 
@@ -148,17 +154,16 @@
 										</div>
 									</div>
 								</c:if>
-								<div class="manager">
+						
 									<!--                         <ul id="navi"> -->
 									<!--                               <li> -->
-									<a href="/Food/manager/member-list.do" id="manageLabel"
+									<a href="/Food/manager/member-list.do" id="manageLabel1"
 										class="fa fa-user"><br />Manage</a>
 									<!--                                </li> -->
 
 
 									<!--                           </ul> -->
-								</div>
-
+					
 								<!-- Cart -->
 								<div class="cart">
 									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-shopping-cart"

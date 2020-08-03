@@ -67,7 +67,11 @@
 .menu .hide {
 	display: none;
 }
-
+#manageLabel1 {
+   display: revert;
+    font-size: larger;
+    margin-right: 25px;
+}
 
 </style>
 
@@ -168,15 +172,13 @@
 									</div>
 								</div>
 								</c:if>
-							  <div class="manager">
+							 
 <!--                         <ul id="navi"> -->
 <!--                               <li> -->
-                                      <a href="/Food/manager/member-list.do"  id="manageLabel" class="fa fa-user" ><br/>Manage</a>
+                                      <a href="/Food/manager/member-list.do"  id="manageLabel1" class="fa fa-user" ><br/>Manage</a>
 <!--                                </li> -->
                                
                            
-<!--                           </ul> -->
-                        </div>
 
 
 
