@@ -88,4 +88,9 @@
 <select id="todayReview" resultType="int">
 	select count(*) todayReview from board where boardType = 2 AND TO_CHAR(b_date, 'YYYY-MM-DD') = TO_CHAR(sysdate, 'YYYY-MM-DD')
 </select>
+
+<select id="membercount" resultType="hashmap">
+	select To_char(m_date,'YYYY-MM-DD') m_date,count(*) memberCount from member group by To_char(m_date,'YYYY-MM-DD') order by m_date
+</select>
+
 </mapper>

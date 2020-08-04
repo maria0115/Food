@@ -115,6 +115,11 @@
 							${newMember}%<i class="icon-up"></i>
 						</div>
 						</c:if> 
+						<div class="text-right">
+						<c:if test="${newMember eq 0}">
+							-
+						</c:if>
+						</div>
 
 						<div class="h1 m-0">${todayHire }</div>
 						<div class="text-muted mb-5">신규회원</div>
@@ -332,7 +337,7 @@
 			</div>
 		</div>
 	</div>
-	</div>
+	
 
 	<!-- jquery
 		============================================ -->

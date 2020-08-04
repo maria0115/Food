@@ -44,16 +44,13 @@
 										class="mini-sub-pro">Black List</span></a></li>
 							</ul></li>
 
-						<li><a class="has-arrow" href="#" aria-expanded="false">
-								<i class="fa big-icon fa-bar-chart-o icon-wrap"></i> <span
-								class="mini-click-non">Charts</span>
-						</a>
-							<ul class="submenu-angle" aria-expanded="true">
-								<li><a title="Analytics" href="/Food/chart.do"><i
+						<li>
+							
+								<a title="Analytics" href="/Food/manager/chart.do"><i
 										class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span
-										class="mini-sub-pro">Chart</span></a></li>
+										class="mini-sub-pro">Chart</span></a>
 
-							</ul></li>
+						</li>
 
 						<li><a class="has-arrow" href="#" aria-expanded="false">
 								<i class="fa big-icon fa-files-o icon-wrap"></i> <span

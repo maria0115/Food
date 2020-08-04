@@ -1,5 +1,8 @@
 package com.food.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -444,18 +447,7 @@ public class ManageController {
 		int thisMonth = managerService.thisMonth();
 		int totalMember= managerService.totalMember();
 		int todayReview = managerService.todayReview();
-		
-		System.out.println("todayHire:"+todayHire);
-		System.out.println("yesterdayHire:"+yesterdayHire);
-		System.out.println("todayReserv:"+todayReserv);
-		System.out.println("yesterdayReserv:"+yesterdayReserv);
-		System.out.println("todayBoard:"+todayBoard);
-		System.out.println("yesterdayBoard:"+yesterdayBoard);
-		System.out.println("todayBlack:"+todayBlack);
-		System.out.println("yesterdayBlack:"+yesterdayBlack);
-		System.out.println("thisMonth:"+thisMonth);
-		System.out.println("totalMember	:"+totalMember);
-		System.out.println("totalMember	:"+todayReview);
+	
 		
 		model.addAttribute("todayHire",todayHire);
 		model.addAttribute("newMember", per(todayHire,yesterdayHire));
@@ -481,11 +473,34 @@ public class ManageController {
 			return yesterday;
 		}
 		else if(today==0) {
-			return yesterday;
+			return today;
 		}else {
 		percent = (int)(((double)today / (double)yesterday) *100-100);
 		}
 		return percent;
+	}
+	
+	@RequestMapping("dayReservChart.do")
+	public String barchart(Model model) {
+		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+		HashMap memberCount = new HashMap();
+		
+		memberCount=managerService.membercount();
+		 Iterator mapIter = memberCount.keySet().iterator();
+		 
+	        while(mapIter.hasNext()){
+	 
+	            String key = (String) mapIter.next();
+	            String value = (String) memberCount.get( key );
+	 
+	            System.out.println(key+" : "+value);
+	 
+	        }
+		
+		
+		
+		return null;
+		
 	}
 	
 }

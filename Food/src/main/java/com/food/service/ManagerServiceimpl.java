@@ -1,5 +1,6 @@
 package com.food.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,6 +107,11 @@ public class ManagerServiceimpl implements ManagerService{
 	public int todayReview() {
 	
 		return managerDAO.todayReview();
+	}
+
+	@Override
+	public HashMap membercount() {
+		return managerDAO.membercount();
 	}
 
 

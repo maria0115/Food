@@ -134,6 +134,16 @@ public class managerDAOImpl implements managerDAO{
 			return mybatis.selectOne("managerDAO.todayReview");
 		}
 
+		@Override
+		public HashMap membercount() {
+			System.out.println("==>ManagerMapper membercount() 호출");
+			HashMap map = new HashMap();
+			
+			map.put("list", mybatis.selectList("managerDAO.membercount"));
+			System.out.println(map);
+			return map;
+		}
+
 
 		
 

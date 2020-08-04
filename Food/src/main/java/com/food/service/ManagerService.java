@@ -1,5 +1,6 @@
 package com.food.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.food.domain.BlackListVO;
@@ -56,6 +57,9 @@ public interface ManagerService {
 
 
 	public int todayReview();
+
+
+	public HashMap membercount();
 
 
 
