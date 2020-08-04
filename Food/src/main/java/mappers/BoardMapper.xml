@@ -33,7 +33,7 @@
 <!-- 게시글 등록 -->
 <insert id="insertBoard" parameterType="board">
       Insert Into board values(#{boardType},${seq}.nextval,#{title},#{userId},#{b_content},sysdate,#{viewCount},#{f_addr1},#{f_addr2},#{f_membercnt},
-      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize},#{f_cnt},#{d_fileName},#{d_fileSize},#{f_userId},#{s_brand_name},#{d_reason})
+      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize},#{f_cnt},#{d_fileName},#{d_fileSize},#{f_userId},#{s_brand_name},#{d_reason},#{r_replyOrigin})
 
 </insert>
 
@@ -93,9 +93,10 @@ select *
 from member m, board b
 where b.userid =  m.m_id AND b.userid=#{m_id}
 
-
-
 </select>
+
+
+
 
 
 </mapper>
