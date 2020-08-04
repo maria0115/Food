@@ -95,7 +95,7 @@
         <hr>
   			
   		</div>
-  	</div>	<img style="max-width: 100%; background-size: contain;" src="/Food/resources/img/header.jpg" alt="">
+  	</div>	
   </footer>
 	<!-- ##### Footer Area End ##### -->
 
