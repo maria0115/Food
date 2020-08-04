@@ -49,8 +49,8 @@
 }
 
 .logo{
-	height: 10%;
-	width: 10;
+	max-width: 100%;
+	height:auto;
 }
 
 #manageLabel1 {
