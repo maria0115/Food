@@ -175,7 +175,7 @@ public class MainController {
 			session.setAttribute("category", category);
 
 
-			map.put("reondo", reondo.toString());
+			map.put("reondo", resulttemp);
 			map.put("nalsi", nalsi.toString());
 			map.put("category", category.toString());
 			map.put("menu", menu.toString());
