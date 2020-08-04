@@ -33,10 +33,19 @@ public class BoardVO {
     private String f_userId;
     private String s_brand_name;
     private String d_reason;
-    			
+    private int r_replyOrigin;
     
-    
-    //파일처리할때 필요함 !!!
+  
+
+	public int getR_replyOrigin() {
+		return r_replyOrigin;
+	}
+
+	public void setR_replyOrigin(int r_replyOrigin) {
+		this.r_replyOrigin = r_replyOrigin;
+	}
+
+	//파일처리할때 필요함 !!!
     MultipartFile file;
     MultipartFile file2;
     
@@ -84,6 +93,9 @@ public class BoardVO {
 		}
 	}
     
+	
+
+
 	public int getV_star() {
 		return v_star;
 	}
