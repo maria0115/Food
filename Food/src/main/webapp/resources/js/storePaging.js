@@ -20,6 +20,10 @@
 	ㄴ 수정 버튼 이벤트 핸들러 연결
 	ㄴ 삭제 버튼 이벤트 핸들러 연결
  */
+
+
+
+
 var searchWard;
 var category;
 var curPage;
@@ -40,15 +44,15 @@ $(function() {
 	getWriterData(category);
 	$('#selectBox').change(changeselectBox=function(){
 		category = $(this).val();
-		alert(category)
+		
 		getWriterData(category);
 	});
 	
 	
 	$("#searchButton").on("click", function(e) {
 						
-		searchWard = searchButton();
-		getWriterData(searchWard);
+//		searchWard = searchButton();
+		getWriterData(category);
 		
 	})
 	
@@ -149,7 +153,7 @@ function getWriterData(category) {
 
 function drawWriterTable(data) {
 	console.log("그리기" + data);
-	alert("그리기")
+	
 	$('#storeTT').empty();
 	div1 = '<div class="col-12 col-sm-6 col-lg-4">';
 	div2 = '<div class="single-product-area mb-50">';
@@ -196,10 +200,13 @@ function drawWriterTable(data) {
 function searchButton(){
 	var searchText = document.getElementById("listSearch").value;
 
-	alert(searchText);
+	
 	return searchText;
 	
 }
-
+// 셀렉박스클릭시 텍스트박스 초기화
+$("#selectBox").click(function(){
+	$("#listSearch").val("");
+});
 
 
