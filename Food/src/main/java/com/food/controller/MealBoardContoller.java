@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -93,16 +94,11 @@ public class MealBoardContoller {
 		return "redirect:../index/mealFriends.do";
 	}
 
-	//참가하기 버튼눌렀을때 
-	
+	//참가하기 버튼눌렀을때
 	@RequestMapping("/mealjoin.do")
 	@ResponseBody
 	public int mealjoin(BoardVO vo , Model model,@RequestParam(value="f_userId")String f_userId,
 			@RequestParam(value="b_no")int b_no) {
-				
-		System.out.println(f_userId);
-		System.out.println(b_no);
-			
 		int result;
 		vo.setBoardType(3);
 		vo.setF_userId(f_userId);
@@ -111,6 +107,19 @@ public class MealBoardContoller {
 			
 				
 			return result;
+	}
+	
+	//취소하기 버튼 눌렀을때
+	@RequestMapping(value="/cancel.do",method=RequestMethod.POST)
+	@ResponseBody
+	public int mealcancel(BoardVO vo, Model model,@RequestParam("f_userId")String f_userId,
+			@RequestParam("b_no")int b_no,@RequestParam("userId")String userId ) {
+		int result = 0;
+		System.out.println("취소버튼 컨트롤러 확인");
+		System.out.println(f_userId);
+		System.out.println(userId);
+		
+		return result;
 	}
 	
 	

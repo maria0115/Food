@@ -60,7 +60,7 @@
 				<tr>
 					<td width="100">참여여부</td>
 					<td align="left" id="joincnt">
-					<form id="joinfrm" method="post" action="../mealBoard/mealjoin.do?f_userId=${sessionScope.user_id }">
+					
 					<input type="hidden" id="joinid" name="f_userId" value="${board.f_userId}">
 					<input type="hidden" id="id" name="f_userId" value="${sessionScope.user_id }">
 					<input type="hidden" id="b_no" name="b_no" value="${board.b_no }">
@@ -72,7 +72,6 @@
 					<c:if test="${board.f_membercnt <= board.f_cnt}">
 					<span id="end">마감되었습니다.</span>
 					</c:if>
-					</form>
 					</td>
 				</tr>
 				<tr>
@@ -129,7 +128,52 @@
 
 
 
+<script type="text/javascript">
 
+//취소하기 버튼을 눌렀을때 
+$("#cancel").click(function(){
+	
+    $.ajax({
+    		type:'post',
+    		async:true,
+            url : 'cancel.do',
+            contentType :'application/x-www-form-urlencoded;charset=UTF-8',
+            data :
+        		"f_userId=" + $("#joinid").val()+"&userId="+$("#id").val()+
+        		"&b_no="+ $("#b_no").val(),
+        	//dataType:"text",
+            success : function(resultData){
+            	alert("성공")
+            	//넘겨받은 결과값이 0이 아니라면 
+//            	if(resultData != 0){
+//            		//참가하기 버튼 숨기고
+//            		$("#cancelBtn").css("display", "none");
+//            		//참가중 문구띄워주기 
+//            		var $div = $('<input class="btn btn-dark" type="button" id="joinBtn" value="참가하기" >');
+//            		$("#joincnt").append($div);
+//            		
+//            		//span태그 안에 마감되었습니다 라는 문자가 있다면 
+//            		if(end.match("마감되었습니다.")){
+//            			//참가중 문구 지워주기
+//            			$("#join").remove();
+//            		}
+//            		
+//            	}else{
+//            		
+//            	}
+            	
+            	
+            },
+    		error:function(xhr, ajaxOptions, thrownError){
+    			alert("에러"+xhr.status);
+    			alert("에러"+thrownError);
+    			
+    		}
+    });
+});
+
+
+</script>
 </body>
 
 </html>
