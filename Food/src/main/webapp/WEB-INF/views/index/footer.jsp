@@ -17,6 +17,7 @@
 <!-- Favicon -->
 <link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
 
+<link rel="stylesheet" href="/Food/resources/css/myfooter.css">
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="/Food/resources/css/style.css">
 <!-- <link rel="stylesheet" href="resources/css/js.css"> -->
@@ -44,160 +45,58 @@
 <body>
 	
 	<!-- ##### Footer Area Start ##### -->
-	<footer class="footer-area bg-img"
-		style="background-image: url(img/bg-img/3.jpg);">
-		<!-- Main Footer Area -->
-		<div class="main-footer-area">
-			<div class="container">
-				<div class="row">
+	    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+          </div>
 
-					<!-- Single Footer Widget -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="single-footer-widget">
-							<div class="footer-logo mb-30">
-								<a href="#"><img src="img/core-img/logo.png" alt=""></a>
-							</div>
-							<p>Lorem ipsum dolor sit samet, consectetur adipiscing elit.
-								India situs atione mantor</p>
-							<div class="social-info">
-								<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-								<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-								<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-								<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-								<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-							</div>
-						</div>
-					</div>
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            </ul>
+          </div>
 
-					<!-- Single Footer Widget -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="single-footer-widget">
-							<div class="widget-title">
-								<h5>QUICK LINK</h5>
-							</div>
-							<nav class="widget-nav">
-								<ul>
-									<li><a href="#">Purchase</a></li>
-									<li><a href="#">FAQs</a></li>
-									<li><a href="#">Payment</a></li>
-									<li><a href="#">News</a></li>
-									<li><a href="#">Return</a></li>
-									<li><a href="#">Advertise</a></li>
-									<li><a href="#">Shipping</a></li>
-									<li><a href="#">Career</a></li>
-									<li><a href="#">Orders</a></li>
-									<li><a href="#">Policities</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/about/">About Us</a></li>
+              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+         <a href="#">Scanfcode</a>.
+            </p>
+          </div>
 
-					<!-- Single Footer Widget -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="single-footer-widget">
-							<div class="widget-title">
-								<h5>BEST SELLER</h5>
-							</div>
-
-							<!-- Single Best Seller Products -->
-							<div class="single-best-seller-product d-flex align-items-center">
-								<div class="product-thumbnail">
-									<a href="shop-details.html"><img src="img/bg-img/4.jpg"
-										alt=""></a>
-								</div>
-								<div class="product-info">
-									<a href="shop-details.html">Cactus Flower</a>
-									<p>$10.99</p>
-								</div>
-							</div>
-
-							<!-- Single Best Seller Products -->
-							<div class="single-best-seller-product d-flex align-items-center">
-								<div class="product-thumbnail">
-									<a href="shop-details.html"><img src="img/bg-img/5.jpg"
-										alt=""></a>
-								</div>
-								<div class="product-info">
-									<a href="shop-details.html">Tulip Flower</a>
-									<p>$11.99</p>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Single Footer Widget -->
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="single-footer-widget">
-							<div class="widget-title">
-								<h5>CONTACT</h5>
-							</div>
-
-							<div class="contact-information">
-								<p>
-									<span>Address:</span> 505 Silk Rd, New York
-								</p>
-								<p>
-									<span>Phone:</span> +1 234 122 122
-								</p>
-								<p>
-									<span>Email:</span> info.deercreative@gmail.com
-								</p>
-								<p>
-									<span>Open hours:</span> Mon - Sun: 8 AM to 9 PM
-								</p>
-								<p>
-									<span>Happy hours:</span> Sat: 2 PM to 4 PM
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Footer Bottom Area -->
-		<div class="footer-bottom-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="border-line"></div>
-					</div>
-					<!-- Copywrite Text -->
-					<div class="col-12 col-md-6">
-						<div class="copywrite-text">
-							<p>
-								&copy;
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;
-								<script>
-									document.write(new Date().getFullYear());
-								</script>
-								All rights reserved | This template is made with <i
-									class="fa fa-heart-o" aria-hidden="true"></i> by <a
-									href="https://colorlib.com" target="_blank">Colorlib</a>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</p>
-						</div>
-					</div>
-					<!-- Footer Nav -->
-					<div class="col-12 col-md-6">
-						<div class="footer-nav">
-							<nav>
-								<ul>
-									<li><a href="#">Home</a></li>
-									<li><a href="#">About</a></li>
-									<li><a href="#">Service</a></li>
-									<li><a href="#">Portfolio</a></li>
-									<li><a href="#">Blog</a></li>
-									<li><a href="#">Contact</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
 	<!-- ##### Footer Area End ##### -->
 
 	<!-- ##### All Javascript Files ##### -->
