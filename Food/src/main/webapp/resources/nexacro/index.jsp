@@ -98,7 +98,7 @@
 	
 	
 	<!-- Start Welcome area -->
-	<jsp:include page="/WEB-INF/views/manager/wrapper.jsp" />
+	<%-- <jsp:include page="/WEB-INF/views/manager/wrapper.jsp" /> --%>
 	<script>
 		function oninitframework()
 		{

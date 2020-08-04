@@ -22,7 +22,7 @@ public interface FriendBoardService {
 	List<StoreListVO> selectStore(PagingVO pvo, String searchType, String keyword);
 	
 	//넥사크로
-	List<BoardVO> nexalist(PagingVO pvo, String searchType, String keyword);
+	List<BoardVO> nexalist();
 	
 	
 	

@@ -19,7 +19,7 @@ public interface FriendBoardDAO {
 	
 	public List<StoreListVO> selectStore(PagingVO pvo, String searchType, String keyword);
 	
-	public List<BoardVO> nexalist(PagingVO pvo, String searchType, String keyword);
+	public List<BoardVO> nexalist();
 	
 	
 }

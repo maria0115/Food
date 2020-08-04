@@ -39,7 +39,7 @@
 	</select>
 	
 	<select id="nexalist" resultType="board">
-		select * from board where boardType=2 AND boardType=3 AND boardType=4
+		select boardType,b_no,userid,title,b_content,b_date from board where boardtype=2 or boardtype=3 or boardtype=4 order by b_no
 	</select>
 
 

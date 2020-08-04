@@ -17,45 +17,50 @@
             }
             
             // Object(Dataset, ExcelExportObject) Initialize
-            obj = new Dataset("Dataset00", this);
-            obj._setContents("<ColumnInfo><Column id=\"b_no\" type=\"INT\" size=\"256\"/><Column id=\"userId\" type=\"STRING\" size=\"256\"/><Column id=\"title\" type=\"STRING\" size=\"256\"/><Column id=\"b_content\" type=\"STRING\" size=\"256\"/><Column id=\"b_date\" type=\"DATE\" size=\"256\"/></ColumnInfo>");
+            obj = new Dataset("board", this);
+            obj._setContents("<ColumnInfo><Column id=\"boardtype\" type=\"INT\" size=\"256\" sumtext=\"\"/><Column id=\"b_no\" type=\"INT\" size=\"256\" sumtext=\"\"/><Column id=\"userid\" type=\"STRING\" size=\"100\" sumtext=\"\"/><Column id=\"title\" type=\"STRING\" size=\"40\" sumtext=\"\"/><Column id=\"b_content\" type=\"STRING\" size=\"200\" sumtext=\"\"/><Column id=\"b_date\" type=\"DATE\" size=\"256\"/></ColumnInfo>");
             this.addChild(obj.name, obj);
             
             // UI Components Initialize
-            obj = new Grid("Grid00","215","122","873","445",null,null,null,null,null,null,this);
+            obj = new Div("listdiv","0","10","1280","710",null,null,null,null,null,null,this);
             obj.set_taborder("0");
-            obj.set_binddataset("Dataset00");
-            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"138\"/><Column size=\"243\"/><Column size=\"230\"/><Column size=\"179\"/></Columns><Rows><Row size=\"24\" band=\"head\"/></Rows><Band id=\"head\"><Cell text=\"번호\"/><Cell col=\"1\" text=\"작성자\"/><Cell col=\"2\" text=\"제목\"/><Cell col=\"3\" text=\"내용\"/><Cell col=\"4\" text=\"작성일\"/></Band></Format></Formats>");
+            obj.set_text("Div00");
             this.addChild(obj.name, obj);
 
-            obj = new Combo("boardType","215","80","203","42",null,null,null,null,null,null,this);
+            obj = new Grid("Grid00","350","99","811","428",null,null,null,null,null,null,this.listdiv.form);
+            obj.set_taborder("0");
+            obj.set_binddataset("board");
+            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"203\"/><Column size=\"255\"/><Column size=\"110\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"게시판번호\"/><Cell col=\"1\" text=\"글번호\"/><Cell col=\"2\" text=\"작성자\"/><Cell col=\"3\" text=\"제목\"/><Cell col=\"4\" text=\"내용\"/><Cell col=\"5\" text=\"작성일\"/></Band><Band id=\"body\"><Cell text=\"bind:boardtype\"/><Cell col=\"1\" text=\"bind:b_no\"/><Cell col=\"2\" text=\"bind:userid\"/><Cell col=\"3\" text=\"bind:title\"/><Cell col=\"4\" text=\"bind:b_content\"/><Cell col=\"5\" text=\"bind:b_date\"/></Band></Format></Formats>");
+            this.listdiv.addChild(obj.name, obj);
+
+            obj = new Combo("boardType","350","67","203","33",null,null,null,null,null,null,this.listdiv.form);
             obj.set_taborder("1");
             obj.set_codecolumn("codecolumn");
             obj.set_datacolumn("datacolumn");
-            var boardType_innerdataset = new nexacro.NormalDataset("boardType_innerdataset", obj);
-            boardType_innerdataset._setContents("<ColumnInfo><Column id=\"codecolumn\" size=\"256\"/><Column id=\"datacolumn\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"codecolumn\">3</Col><Col id=\"datacolumn\">QnA</Col></Row><Row><Col id=\"codecolumn\">4</Col><Col id=\"datacolumn\">밥친구</Col></Row><Row><Col id=\"codecolumn\">2</Col><Col id=\"datacolumn\">매장리뷰</Col></Row><Row><Col id=\"codecolumn\">5</Col><Col id=\"datacolumn\">예약목록</Col></Row></Rows>");
-            obj.set_innerdataset(boardType_innerdataset);
+            var listdiv_form_boardType_innerdataset = new nexacro.NormalDataset("listdiv_form_boardType_innerdataset", obj);
+            listdiv_form_boardType_innerdataset._setContents("<ColumnInfo><Column id=\"codecolumn\" size=\"256\"/><Column id=\"datacolumn\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"codecolumn\">3</Col><Col id=\"datacolumn\">QnA</Col></Row><Row><Col id=\"codecolumn\">4</Col><Col id=\"datacolumn\">밥친구</Col></Row><Row><Col id=\"codecolumn\">2</Col><Col id=\"datacolumn\">매장리뷰</Col></Row><Row><Col id=\"codecolumn\">5</Col><Col id=\"datacolumn\">예약목록</Col></Row></Rows>");
+            obj.set_innerdataset(listdiv_form_boardType_innerdataset);
             obj.set_text("Combo00");
-            this.addChild(obj.name, obj);
+            this.listdiv.addChild(obj.name, obj);
 
-            obj = new Combo("searchType","215","567","244","42",null,null,null,null,null,null,this);
+            obj = new Combo("searchType","350","527","203","25",null,null,null,null,null,null,this.listdiv.form);
             obj.set_taborder("2");
             obj.set_codecolumn("codecolumn");
             obj.set_datacolumn("datacolumn");
-            var searchType_innerdataset = new nexacro.NormalDataset("searchType_innerdataset", obj);
-            searchType_innerdataset._setContents("<ColumnInfo><Column id=\"codecolumn\" size=\"256\"/><Column id=\"datacolumn\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"codecolumn\">userId</Col><Col id=\"datacolumn\">작성자</Col></Row><Row><Col id=\"codecolumn\">title</Col><Col id=\"datacolumn\">제목</Col></Row><Row><Col id=\"codecolumn\">b_content</Col><Col id=\"datacolumn\">내용</Col></Row></Rows>");
-            obj.set_innerdataset(searchType_innerdataset);
+            var listdiv_form_searchType_innerdataset = new nexacro.NormalDataset("listdiv_form_searchType_innerdataset", obj);
+            listdiv_form_searchType_innerdataset._setContents("<ColumnInfo><Column id=\"codecolumn\" size=\"256\"/><Column id=\"datacolumn\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"codecolumn\">userId</Col><Col id=\"datacolumn\">작성자</Col></Row><Row><Col id=\"codecolumn\">title</Col><Col id=\"datacolumn\">제목</Col></Row><Row><Col id=\"codecolumn\">b_content</Col><Col id=\"datacolumn\">내용</Col></Row></Rows>");
+            obj.set_innerdataset(listdiv_form_searchType_innerdataset);
             obj.set_text("Combo01");
-            this.addChild(obj.name, obj);
+            this.listdiv.addChild(obj.name, obj);
 
-            obj = new Edit("keyword","459","567","431","42",null,null,null,null,null,null,this);
+            obj = new Edit("keyword","553","527","420","25",null,null,null,null,null,null,this.listdiv.form);
             obj.set_taborder("3");
-            this.addChild(obj.name, obj);
+            this.listdiv.addChild(obj.name, obj);
 
-            obj = new Button("searchBtn","890","567","198","42",null,null,null,null,null,null,this);
+            obj = new Button("searchBtn","973","527","188","25",null,null,null,null,null,null,this.listdiv.form);
             obj.set_taborder("4");
             obj.set_text("검색");
-            this.addChild(obj.name, obj);
+            this.listdiv.addChild(obj.name, obj);
 
             // Layout Functions
             //-- Default Layout : this
@@ -77,15 +82,15 @@
         this.searchBtn_onclick = function(obj,e)
         {
         	this.transaction(
-        		"urlTest01",	//strSvcID,
-        		"strURL::all",	//strURL("http://localhost:8080/step01/all" 직접 링크는 됨)
+        		"search",	//strSvcID,
+        		"strURL::/Food/nexasearch.do",	//strURL("http://localhost:8080/step01/all" 직접 링크는 됨)
         		"",	        //strInDatasets,
         		" dsdept=ar ",  //strOutDatasets 데이터셋에 바인딩 될 부분,
         		"",		//"deptno=10dname=총무부", //strArgument  이부분은 파라미터 ,
         		"fn_callback"     //strCallbackFunc[,bAsync[,nDataType[,bCompress]]]
         	);
         	this.fn_callback = function(svcID, errCD, errMSG){
-        		let ret = (errMSG=="FAILED" || svcID != "urlTest01") ? "error" : "success";
+        		let ret = (errMSG=="FAILED" || svcID != "search") ? "error" : "success";
         		if(ret=="error")
         			this.alert("[폼이름_fn_callback] "+ret + " : " + svcID + ", " + errCD + ", " + errMSG);
         		else
@@ -109,9 +114,9 @@
         // Regist UI Components Event
         this.on_initEvent = function()
         {
-            this.boardType.addEventHandler("onitemchanged",this.boardType_onitemchanged,this);
-            this.searchType.addEventHandler("onitemchanged",this.searchType_onitemchanged,this);
-            this.searchBtn.addEventHandler("onclick",this.searchBtn_onclick,this);
+            this.listdiv.form.boardType.addEventHandler("onitemchanged",this.boardType_onitemchanged,this);
+            this.listdiv.form.searchType.addEventHandler("onitemchanged",this.searchType_onitemchanged,this);
+            this.listdiv.form.searchBtn.addEventHandler("onclick",this.searchBtn_onclick,this);
         };
 
         this.loadIncludeScript("Form_Work.xfdl");

@@ -41,9 +41,9 @@ public class FriendBoardServiceImpl implements FriendBoardService{
 	}
 
 	@Override
-	public List<BoardVO> nexalist(PagingVO pvo, String searchType, String keyword) {
+	public List<BoardVO> nexalist() {
 		
-		return friendBoarddao.nexalist(pvo,searchType,keyword);
+		return friendBoarddao.nexalist();
 	}
 	
 	

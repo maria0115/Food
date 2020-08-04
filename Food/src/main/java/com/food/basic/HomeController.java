@@ -20,6 +20,7 @@ import com.food.service.FriendBoardService;
 import com.food.service.boardService;
 import com.nexacro17.xapi.data.DataSet;
 import com.nexacro17.xapi.data.DataTypes;
+import com.nexacro17.xapi.data.datatype.DataType;
 
 /**
  * Handles requests for the application home page.
@@ -59,36 +60,41 @@ public class HomeController {
 		@RequestMapping(value="/nexalist.do")
 		public String defaultMain(Model model) {
 			
-			
 			return "redirect:/resources/nexacro/index.jsp";
 		}
 		
 	//검색버튼 눌렀을때
-		@RequestMapping(value="/all")
-		public String defaultMain(Model model,BoardVO vo, PagingVO pvo) {
-			System.out.println("-----------all---------------");
-			List<BoardVO>list= friendBoardservice.nexalist( pvo, null, null);		
+		@RequestMapping(value="/nexasearch.do")
+		public String defaultMain(Model model,BoardVO vo, PagingVO pvo
+				,String searchType, String keyword,int boardType) {
+			
+			System.out.println("-----------nexasearch---------------");
+			List<BoardVO>list= friendBoardservice.nexalist();		
 			
 			// 나중에 넥사크로의 데이터셋으로 바인딩 될 이름
 			DataSet ds = new DataSet("ar"); 
 			// 데이터 셋에 들어갈 이름과 자료형이 동일해야 한다.
+			ds.addColumn("boardtype",DataTypes.INT,256);
 			ds.addColumn("b_no", DataTypes.INT,256);
-			ds.addColumn("userId", DataTypes.STRING,256);
-			ds.addColumn("title", DataTypes.STRING,256);
-			ds.addColumn("b_content", DataTypes.STRING,256);
+			ds.addColumn("userId", DataTypes.STRING,100);
+			ds.addColumn("title", DataTypes.STRING,40);
+			ds.addColumn("b_content", DataTypes.STRING,200);
 			ds.addColumn("b_date", DataTypes.DATE,256);
 			for(BoardVO vo1 : list){
 				int row = ds.newRow();
+				ds.set(row, "boardtype", vo1.getBoardType());
 				ds.set(row, "b_no", vo1.getB_no());
 				ds.set(row, "userId", vo1.getUserId());
 				ds.set(row, "title", vo1.getTitle());
 				ds.set(row, "b_content", vo1.getB_content());
 				ds.set(row, "b_date", vo1.getB_date());
+				System.out.println("데이터확인---->"+vo1.getTitle());
 				
 				
 			}
 			model.addAttribute("ds", ds);
-			return "redirect:/resources/nexacro/index.jsp";
+			
+			return "nexasearch.do";
 		}
 	
 	

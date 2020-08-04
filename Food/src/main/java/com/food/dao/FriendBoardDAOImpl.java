@@ -59,11 +59,8 @@ public class FriendBoardDAOImpl implements FriendBoardDAO{
 
 
 	@Override
-	public List<BoardVO> nexalist(PagingVO pvo, String searchType, String keyword) {
-		HashMap map = new HashMap();
-		map.put("start", pvo.getStart());
-		map.put("end", pvo.getEnd());
-		return mybatis.selectList("friendDAO.nexalist",map);
+	public List<BoardVO> nexalist() {
+		return mybatis.selectList("friendDAO.nexalist");
 	}
 
 }
