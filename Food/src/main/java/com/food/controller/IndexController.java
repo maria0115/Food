@@ -55,7 +55,8 @@ public class IndexController {
 	@RequestMapping(value = "/storelist.do" , produces = "application/json; charset=utf-8")
 	public Map selectStorePaging(StoreListVO vo,BoardVO vo2,HttpServletRequest request,
 			@RequestParam(defaultValue = "1")int curPage,
-			@RequestParam String s_category ) {
+			@RequestParam String s_category,
+			@RequestParam String searchWord) {
 		System.out.println("왔더");
 		Map map = new HashMap();
 		Map result = new HashMap();
@@ -75,7 +76,10 @@ public class IndexController {
 		map.put("s_brand_name",s_brand_name);
 		map.put("s_address",s_address);
 		map.put("s_category",s_category);
+		map.put("searchWord",searchWord);
+		
 		System.out.println("123456789"+s_category);
+		System.out.println("1234567891011"+searchWord);
 		//가게 가져오기 
 		List<StoreListVO> listVO2 = storeService.selectStoreList(map);
 		int listVO2size = listVO2.size();

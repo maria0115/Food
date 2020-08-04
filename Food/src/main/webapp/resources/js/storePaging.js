@@ -20,6 +20,7 @@
 	ㄴ 수정 버튼 이벤트 핸들러 연결
 	ㄴ 삭제 버튼 이벤트 핸들러 연결
  */
+var searchWard;
 var category;
 var curPage;
 var writerData_total_page;
@@ -44,6 +45,13 @@ $(function() {
 	});
 	
 	
+	$("#searchButton").on("click", function(e) {
+						
+		searchWard = searchButton();
+		getWriterData(searchWard);
+		
+	})
+	
 	/*// 눌렀을때 실행되는거
 	$("#storeListPaging").on("click", function(e) {
 
@@ -53,7 +61,7 @@ $(function() {
 	
 
 	// getWriterData();
-	$('#listSearch').on('keyup', getWriterData);
+//	$('#listSearch').on('keyup', getWriterData);
 	// $('#pagination-demo').on('click', getWriterDataInPaging);
 	$(document).on("click", ".btn-primary", updateBtnEvent);
 	$(document).on("click", ".btn-warning", deleteBtnEvent);
@@ -77,6 +85,7 @@ function getWriterDataInPaging(category) {
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {
+			"searchWord" : $('#listSearch').val(),
 			"s_category" : category,
 			"s_brand_name" : $('#title').val(),
 			"s_address" : $('#addrs').val(),
@@ -105,6 +114,7 @@ function getWriterData(category) {
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {
+			"searchWord" : $('#listSearch').val(),
 			"s_category" : category,
 			"s_brand_name" : $('#title').val(),
 			"s_address" : $('#addrs').val(),
@@ -143,7 +153,7 @@ function drawWriterTable(data) {
 	$('#storeTT').empty();
 	div1 = '<div class="col-12 col-sm-6 col-lg-4">';
 	div2 = '<div class="single-product-area mb-50">';
-	div3 = '<div class="product-img">';
+	div3 = '<div class="product-img" id="photo">';
 	imgA = '<a href="shopDetails.do">';
 	imgSrc = '<img class="listImg" src="../resources/store/';
 	imgSrcEnd = '.jpg" alt="">';
@@ -179,20 +189,17 @@ function drawWriterTable(data) {
 		$('#storeTT').append(listContent);
 
 	}
+	
+	
 }
 
+function searchButton(){
+	var searchText = document.getElementById("listSearch").value;
 
-
-
-
-
-
-
-
-
-
-
-
+	alert(searchText);
+	return searchText;
+	
+}
 
 
 

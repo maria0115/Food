@@ -130,7 +130,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 		select * from STORE
 		<where>
 		<if test="s_category != 'all' ">
-		S_CATEGORY = #{s_category}
+		S_CATEGORY = #{s_category} AND S_BRAND_NAME like '%'||#{searchWord}||'%'
 		
 		</if>
 		</where>
@@ -145,7 +145,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 		select ROWNUM AS RNUM , S_BRAND_NAME, S_ADDRESS
 		from STORE
 		<if test="s_category != 'all'">
-		where S_CATEGORY = #{s_category}
+		where S_CATEGORY = #{s_category} AND S_BRAND_NAME like '%'||#{searchWord}||'%'
 		</if>
 	)
 	<![CDATA[

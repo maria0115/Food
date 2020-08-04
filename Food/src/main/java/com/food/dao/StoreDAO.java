@@ -28,8 +28,6 @@ public interface StoreDAO {
 
 	public List<StoreListVO> selectStorePaging(Map map);
 
-	public List<StoreListVO> serchSelect(Map map);
-
-	public List<StoreListVO> searchSelectPaging(Map map);
+	
 
 }

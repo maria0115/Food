@@ -79,16 +79,7 @@ public class StoreDAOImpl implements StoreDAO{
 		return mybatis.selectList("StoreDAO.selectStorePaging",map);
 	}
 	
-	@Override
-	public List<StoreListVO> serchSelect(Map map) {
-		
-		return mybatis.selectList("StoreDAO.serchSelect",map);
-	}
-	@Override
-	public List<StoreListVO> searchSelectPaging(Map map) {
-		
-		return mybatis.selectList("StoreDAO.searchSelectPaging",map);
-	}
+	
 
 	
 }

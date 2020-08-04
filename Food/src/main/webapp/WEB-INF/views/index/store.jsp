@@ -102,8 +102,9 @@
 									<option value="분식">분식</option>
 									<option value="동남아">동남아</option>
 								</select> 
-								<input type="search" name="keyword" id="keyword"
+								<input type="text" name="searchWard" id="listSearch"
 									placeholder="매장명을 입력해주세요" style="width: 40%; height: 38px;">
+								<input type="button" name="searchButton" id="searchButton" value="검색"> 
 							</form>
 						</div>
                     </div>
