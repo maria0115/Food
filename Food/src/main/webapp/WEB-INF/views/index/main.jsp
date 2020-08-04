@@ -147,7 +147,7 @@
 						
 									<!--                         <ul id="navi"> -->
 									<!--                               <li> -->
-									<a href="/Food/manager/member-list.do" id="manageLabel1"
+									<a href="/Food/manager/dashBoard.do" id="manageLabel1"
 										class="fa fa-user"><br />Manage</a>
 									<!--                                </li> -->
 
