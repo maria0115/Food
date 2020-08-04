@@ -93,6 +93,7 @@
 
 #loginLabel {
 	display: revert;
+	color: snow;
     font-size: x-large;
 } 
 
@@ -164,7 +165,7 @@
 
 .loginbox .memberInfo {
 	margin-top: 13px;
-	float: left;
+	
 	color: snow;
 }
 

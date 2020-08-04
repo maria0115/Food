@@ -370,12 +370,10 @@ $('#phone').focusout(function() {
 			$('.classy-navbar-toggler').css('display','none');
 		} else {
 			$('.loginbox').slideUp();
-			if($('.single-hero-post2').css('height')=='650px'){
-			setTimeout(function() {
+		    setTimeout(function() {
 				$('.classy-navbar-toggler').css('display','block');
 				}, 500);
-			}else
-				$('.classy-navbar-toggler').css('display','none');
+			
 			
 			
 		}

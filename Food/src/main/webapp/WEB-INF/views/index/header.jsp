@@ -60,6 +60,12 @@
 
 
 <style>
+.access{
+ will-change: auto;
+    /* width: auto; */
+    width: max-content;
+
+}
 .menu a {
 	cursor: pointer;
 }
@@ -102,7 +108,7 @@
 	<header class="header-area">
 	
 		<!-- ***** Top Header Area ***** -->
-		<div class="top-header-area">
+		
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -110,7 +116,7 @@
 							class="top-header-content d-flex align-items-center justify-content-between">
 							<!-- Top Header Content -->
 							<div class="top-header-meta">
-								<img alt="" src="/Food/resources/img/logo1.jpg" style="max-width: 100%;">
+								<!--로고 이미지 들어올곳  -->
 								<a href="/Food/main.do" class="nav-brand"><img
 								src="/Food/resources/img/logo.png" alt="" class="logo">
 								</a>
@@ -122,14 +128,14 @@
 								
 								
 			 
-									<div class="access" style="max-width: 100%; height: 100%;">	
+									<div class="access" >	
 									<c:if test="${not empty sessionScope.user_id}">
 										<span class="login-font" >${sessionScope.user_name} Welcome.</span>
 										<a href="" id="logout" ><button class="logout" >Log-Out</button></a> 
 										<a href="/Food/mypageform.do" id="mypage" class="fa fa-user" >My Page</a>
 											<span class="wish">
 								<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
-									aria-hidden="true"></i> <span style="font-size: 17px;">Wish <span
+									aria-hidden="true"></i> <span style="font-size: 17px; color: red;">Wish <span
 										class="cart-quantity">(${wish})</span></span></a>
 
 
@@ -141,7 +147,7 @@
 						<div class ="login-header">
 								<div class="login">
 									<a href="#" id="loginLabel" class="fa fa-user" >Login</a>
-									<div class="loginbox">
+									<div class="loginbox" style="z-index: 2;">
 										<form  method="post"  id="frm"  name="frm">
 											<p>
 												<label for="logid">ID</label>&nbsp&nbsp <input type="text"
@@ -186,7 +192,7 @@
 				</div>
 			</div>
 		</div>
-		</div>
+	
 					
 							
 		<!-- ***** Navbar Area ***** -->

@@ -58,6 +58,17 @@
     font-size: larger;
     margin-right: 25px;
 }
+.access{
+ will-change: auto;
+    /* width: auto; */
+    width: max-content;
+
+}
+
+
+
+
+
 </style>
 
 
@@ -65,8 +76,13 @@
 
 </head>
 
-<body>
 
+
+<body>
+<div class="single-hero-post bg-overlay">
+				<!-- Post Image -->
+			<img style="max-width: 100%; background-size: contain;" src="/Food/resources/img/header.jpg" alt="">
+			</div>
 	<!-- Preloader -->
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
@@ -79,7 +95,7 @@
 	<header class="header-area">
 
 		<!-- ***** Top Header Area ***** -->
-		<div class="top-header-area">
+		
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -87,7 +103,7 @@
 							class="top-header-content d-flex align-items-center justify-content-between">
 							<!-- Top Header Content -->
 							<div class="top-header-meta">
-							<img alt="" src="/Food/resources/img/logo1.jpg">
+									<!--로고 이미지 들어올곳  -->
 								<a href="/Food/main.do" class="nav-brand"><img
 							src="/Food/resources/img/logo.png" alt="" class="logo">
 						</a>
@@ -98,7 +114,7 @@
 								<!-- Language Dropdown -->
 								
 								<!-- Login -->
-								<div class="access" style="max-width: 100%; height: 100%;">
+								<div class="access" >
 									<c:if test="${not empty sessionScope.user_id}">
 										<span class="login-font">${sessionScope.user_name}
 											Welcome.</span>
@@ -107,7 +123,7 @@
 											Page</a>
 								<span class="cart">
 									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
-									aria-hidden="true"></i> <span style="font-size: 17px;">Wish <span
+									aria-hidden="true"></i> <span style="font-size: 17px; color: red;">Wish <span
 										class="cart-quantity">(${wish})</span></span></a>
 								</span>
 									</c:if>
@@ -117,7 +133,7 @@
 									<div class="login-header">
 										<div class="login">
 											<a href="#" id="loginLabel" class="fa fa-user">Login</a>
-											<div class="loginbox">
+											<div class="loginbox" style="z-index: 2;">
 												<form action="login.do" method="post" id="frm" name="frm">
 													<p>
 														<label for="logid">ID</label>&nbsp&nbsp <input type="text"
@@ -147,7 +163,7 @@
 						
 									<!--                         <ul id="navi"> -->
 									<!--                               <li> -->
-									<a href="/Food/manager/dashBoard.do" id="manageLabel1"
+									<a href="/Food/manager/member-list.do" id="manageLabel1"
 										class="fa fa-user"><br />Manage</a>
 									<!--                                </li> -->
 
@@ -162,7 +178,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+	
 
 		<!-- ***** Navbar Area ***** -->
 		<div class="alazea-main-menu">
@@ -235,9 +251,9 @@
 	</header>
 
 	<!-- ##### Hero Area Start ##### -->
-	<!-- 	<section class="hero-area"> -->
+	<!-- 	<section class="hero-area"> --> 
 		<div class="slide-img bg-img"
-		style="background-image: url(/Food/resources/img/mainmenu/<%=map.get("menu")%>.jpg);">
+style='background-image: url(/Food/resources/img/mainmenu/<%=map.get("menu")%>.jpg)'>
 		<!-- Single Hero Post -->
 		<div class="single-hero-post2 bg-overlay">
 
