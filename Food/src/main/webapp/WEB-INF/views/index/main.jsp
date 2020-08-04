@@ -96,24 +96,9 @@
 							<!-- Top Header Content -->
 							<div class="top-header-meta d-flex">
 								<!-- Language Dropdown -->
-								<div class="language-dropdown">
-									<div class="dropdown">
-										<button class="btn btn-secondary dropdown-toggle mr-30"
-											type="button" id="dropdownMenuButton" data-toggle="dropdown"
-											aria-haspopup="true" aria-expanded="false">Language</button>
-										<div class="dropdown-menu"
-											aria-labelledby="dropdownMenuButton">
-											<a class="dropdown-item" href="#">USA</a> <a
-												class="dropdown-item" href="#">UK</a> <a
-												class="dropdown-item" href="#">Bangla</a> <a
-												class="dropdown-item" href="#">Hindi</a> <a
-												class="dropdown-item" href="#">Spanish</a> <a
-												class="dropdown-item" href="#">Latin</a>
-										</div>
-									</div>
-								</div>
+								
 								<!-- Login -->
-								<div class="access">
+								<div class="access" style="max-width: 100%; height: 100%;">
 									<c:if test="${not empty sessionScope.user_id}">
 										<span class="login-font">${sessionScope.user_name}
 											Welcome.</span>
@@ -121,9 +106,9 @@
 										<a href="mypageform.do" id="mypage" class="fa fa-user">My
 											Page</a>
 								<span class="cart">
-									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i class="fa fa-heart-o"
-										aria-hidden="true"></i> <span>Wish <span
-											class="cart-quantity">(${wish})</span></span></a>
+									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
+									aria-hidden="true"></i> <span style="font-size: 17px;">Wish <span
+										class="cart-quantity">(${wish})</span></span></a>
 								</span>
 									</c:if>
 								</div>
@@ -207,28 +192,7 @@
 
 							<!-- Navbar Start -->
 							<div class="classynav">
-								<ul>
-									<li>
-										<!-- -------------------------------------------------------- -->
-										<button class="openbtn" onclick="openNav()">
-											<img src="/Food/resources/img/menu_icon.png" alt="#">
-										</button> <!-- ------------------------------------------------------- -->
-
-										<div id="mySidepanel" class="sidepanel">
-											<a href="javascript:void(0)" class="closebtn"
-												onclick="closeNav()"><font size="10em">×</font></a> <a
-												href="/Food/index/store.do?category='한식'">한식</a> <a
-												href="/Food/index/store.do?category='중식'">중식</a> <a
-												href="/Food/index/store.do?category='일식'">일식</a> <a
-												href="/Food/index/store.do?category='양식'">양식</a> <a
-												href="/Food/index/store.do?category='동남아'">동남아</a>
-										</div> <!--  -------------------------------------------------------- -->
-
-										<!-- END menu-toggle -->
-
-
-									</li>
-								</ul>
+								
 								<ul>
 									<li><a href="/Food/todayMenu.do" id="today">오늘의 메뉴</a></li>
 									<li><a
@@ -275,7 +239,7 @@
 		<div class="slide-img bg-img"
 		style="background-image: url(/Food/resources/img/mainmenu/<%=map.get("menu")%>.jpg);">
 		<!-- Single Hero Post -->
-		<div class="single-hero-post2 bg-overlay" >
+		<div class="single-hero-post2 bg-overlay">
 
 			<div
 				style="text-align: center; height: 50%; line-height: 50%; transform: translateY(100%); text-shadow: black; position: absolute; width: 100%;">

@@ -695,10 +695,18 @@ img {
   height: 1500px;
   position: relative;
   z-index: 3;
-  overflow: hidden; }
+  overflow: hidden; 
+  toggle:0;
+  }
 
   @media only screen and (max-width: 767px) {
+  	.nav-brand{
+  	display: none !important;;
+  	}
+  	.loginbox{
+  	  		transform: translateX(-42%) !important;	}
     .single-hero-post2 {
+      toggle:1;
       height: 650px; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     .single-hero-post2 {

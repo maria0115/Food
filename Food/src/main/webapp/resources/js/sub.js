@@ -367,8 +367,17 @@ $('#phone').focusout(function() {
 
 		if ($('.loginbox').css('display') == 'none') {
 			$('.loginbox').slideDown();
+			$('.classy-navbar-toggler').css('display','none');
 		} else {
 			$('.loginbox').slideUp();
+			if($('.single-hero-post2').css('height')=='650px'){
+			setTimeout(function() {
+				$('.classy-navbar-toggler').css('display','block');
+				}, 500);
+			}else
+				$('.classy-navbar-toggler').css('display','none');
+			
+			
 		}
 	});
 
