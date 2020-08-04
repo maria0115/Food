@@ -11,13 +11,16 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="/Food/resources/css/style.css">
+<link rel="stylesheet" href="/Food/resources/css/marker.css">
 
 <!-- 부트스트랩 -->
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62"></script>
+<script src="/Food/resources/js/mealboardMap.js"></script>
 
 </head>
 
@@ -38,11 +41,17 @@
 			<img src="img/core-img/leaf.png" alt="">
 		</div>
 	</div>
-
-
+	
+	<!-- 밥친구 게시판에 등록된 게시글 위치 마커 찍어주기 -->
+	
+   
 	<!-- 게시판 목록 보여주기 시작  -->
+	
 
 	<div class="container">
+	
+	<!-- 예약 best3 지도 마커 찍기 -->
+    
         <div class="breadcrumb-area">
        
 
@@ -59,6 +68,15 @@
     </div>
 
 		<br />
+		
+		<div class="shop-widget best-seller mb-50">
+        <div id="map" style="width: 100%; height: 400px;">
+			<c:forEach items="${friendlist}" var="board">
+			<input type="hidden" name="name" value="${board.title}">
+			<input type="hidden" name="addr" value="${board.f_addr1 }">
+			</c:forEach>
+		</div>
+    </div>
 
 		<div >
 			<table class="table table-striped" >
@@ -161,7 +179,7 @@
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="footer.jsp" %>
 	<script src="/Food/resources/js/active.js"></script>
-
+	
 
 
 

@@ -58,15 +58,14 @@ public class HomeController {
 	
 	//관리자페이지에서 검색버튼 눌렀을때
 		@RequestMapping(value="/nexalist.do")
-		public String defaultMain(Model model) {
+		public String nexalist() {
 			
 			return "redirect:/resources/nexacro/index.jsp";
 		}
 		
 	//검색버튼 눌렀을때
 		@RequestMapping(value="/nexasearch.do")
-		public String defaultMain(Model model,BoardVO vo, PagingVO pvo
-				,String searchType, String keyword,int boardType) {
+		public String nexasearch(Model model) {
 			
 			System.out.println("-----------nexasearch---------------");
 			List<BoardVO>list= friendBoardservice.nexalist();		
@@ -94,7 +93,7 @@ public class HomeController {
 			}
 			model.addAttribute("ds", ds);
 			
-			return "nexasearch.do";
+			return "manager/all";
 		}
 	
 	
