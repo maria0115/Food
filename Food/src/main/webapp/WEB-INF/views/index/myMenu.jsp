@@ -67,7 +67,7 @@
     <!-- ##### Breadcrumb Area End ##### -->
 
 
-    <section class="alazea-portfolio-area section-padding-100-0">
+    <section class="alazea-portfolio-area section-padding-10-0">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -139,7 +139,13 @@
 
 			</script>
 
-
+<c:if test="${empty sessionScope.user_id}">
+<div class="row alazea-portfolio" style="position: relative; height: 340px;">
+                <div class="col-12 col-sm-6 col-lg-12 single_portfolio_item design" style="text-align: center; position: absolute; left: 0%; top: 0px;">
+                    <h4>로그인 하셔야 이 페이지 사용할 수 있습니다</h4>
+                </div>
+            </div>
+</c:if>
 <!--        ###################################################### -->
 <!-- 		<button class="dialog__trigger">Open Dialog</button> -->
 		
@@ -161,22 +167,22 @@
 
 
 
-
-
             <div class="row alazea-portfolio">
             
 				<c:forEach items="${list}" var="list">
+
+
                 <!-- Single Portfolio Area -->
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design wow fadeInUp" data-wow-delay="100ms">
                     <!-- Portfolio Thumbnail -->
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(/Food/resources/img/bg-img/16.jpg);"></div>
+                    <div class="portfolio-thumbnail bg-img" style='background-image: url(/Food/resources/store/${list.r_store_name}.jpg)'></div>
                 	
                     <!-- Portfolio Hover Text -->
                     <div class="portfolio-hover-overlay">
                     <div class="dialog__trigger" onclick="update_form(${list.r_number})" style="height:400px">
 <!--                         <a href="resources/img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1"> -->
                             <div class="port-hover-text" style="padding-top: 35%">
-                                <h3>${list.r_store_name}</h3>
+                                <h3 class='aa'>${list.r_store_name}</h3>
                                 <h5>${list.r_menu}</h5>
                                 <h5>${list.time}</h5>
                                 <h5>${list.r_number}</h5>
@@ -184,7 +190,13 @@
 <!--                         </a> -->
                     </div>
                     </div>
-				</div>				
+				</div>		
+				
+<script type="text/javascript">
+var regText = $('.aa:last').text()
+var aa = regText.replace(/ /gi, "%20");
+$('.portfolio-thumbnail:last').css('background-image','url(/Food/resources/store/'+aa+'.jpg)')
+</script>		
 				</c:forEach>
             </div>
             
@@ -206,8 +218,6 @@
 			<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 		</c:if>
 	</div>
-            
-            
         </div>
         
         

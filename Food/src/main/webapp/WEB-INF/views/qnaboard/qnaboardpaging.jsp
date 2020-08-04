@@ -144,7 +144,20 @@
 			<a href="/Food/qnaboardList?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 		</c:if>
 	</div>
-                            
+                            <form action="#" method="post" class="form-inline" style="width: 500px;">
+								<select class="custom-select widget-title" id="selectBox" onchange="fnGetCtgSub(this.value);" style="width: 33%;">
+									<!-- <option selected>한식</option> -->
+									<option value="all"></option>
+									<option value="한식">한식</option>
+									<option value="중식">중식</option>
+									<option value="양식">양식</option>
+									<option value="일식">일식</option>
+									<option value="분식">분식</option>
+									<option value="동남아">동남아</option>
+								</select> 
+								<input type="text" name="searchWard" id="listSearch" placeholder="매장명을 입력해주세요" style="width: 40%; height: 38px;">
+								<input type="button" name="searchButton" id="searchButton" value="검색"> 
+							</form>
                             
                             
                         </div>
