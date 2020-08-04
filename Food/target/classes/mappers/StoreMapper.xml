@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="StoreDAO">
+
+
+
+	
+	<select id="getStore"  parameterType="store" resultType="store">
+		select * FROM store 
+	</select>
+	
+	<select id="selecStore"  parameterType="store" resultType="store">
+	
+<!-- 	<![CDATA[  -->
+<!-- 	SELECT   EXP.* -->
+<!-- FROM ( -->
+<!-- 	SELECT   ROWNUM AS RNUM, DEP1.* -->
+<!-- 	FROM   ( -->
+<!-- 			SELECT COUNT(1) OVER() AS RCNT, DEP2.* -->
+<!-- 			FROM ( -->
+
+			SELECT s.s_brand_name as s_brand_name , 
+			   s.s_address    as s_address    ,
+			   s.s_tel        as s_tel        ,
+			   s.s_midpart    as s_midpart    ,
+		  	   s.s_category   as s_category   , 
+		  	   s.s_info       as s_info       ,
+		   	   p.p_id 		   as p_id 		   , 
+		   	   p.p_name       as p_name       ,
+		   	   p.p_price      as p_price      , 
+		   	   p.p_name_1     as p_name_1     ,
+		   	   p.p_name_2     as p_name_2     , 
+		   	   p.p_name_3     as p_name_3     ,
+		   	   p.p_price_1    as p_price_1    , 
+		   	   p.p_price_2    as p_price_2    ,
+		   	   p.p_price_3    as p_price_3    , 
+		   	   p.p_price_3    as p_price_3
+		 FROM STORE   S, 
+		      PRODUCT P
+		WHERE S.S_BRAND_NAME = P.S_BRAND_NAME 
+		  AND S.S_BRAND_NAME = #{s_brand_name}
+<!-- 			) DEP2 -->
+<!-- 	) DEP1     -->
+<!-- 	WHERE ROWNUM <= ( TO_NUMBER(#{nowPage})* TO_NUMBER(5)) -->
+<!-- ) EXP -->
+<!-- WHERE EXP.RNUM >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1  -->
+<!--  ]]> -->
+	</select>
+	
+	<select id="selecReview"  parameterType="store" resultType="board">
+	<![CDATA[ 
+SELECT   EXP.* 
+FROM ( 
+	SELECT   ROWNUM AS seq, DEP1.* 
+	FROM   ( 
+			SELECT COUNT(1) OVER() AS viewCount, DEP2.* 
+			FROM ( 
+
+select s_brand_name
+from board
+where boardType = '2'
+and s_brand_name = #{s_brand_name}
+
+) DEP2
+	) DEP1    
+	WHERE ROWNUM <= ( TO_NUMBER(#{nowPage})* TO_NUMBER(5))
+) EXP
+WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1 
+
+			
+ ]]>
+	</select>
+	
+	<!--    저자출력 : 저자명 + 저자명으로 검색 + 페이징 -->
+	<!--    저자출력 : 저자명 + 저자명으로 검색 + 페이징 -->
+	
+	<select id="selectWriterSearchByNameWithPaging" parameterType="hashmap" resultType="board">
+	<![CDATA[
+	    select *
+	    from (
+			SELECT WRITER_ID, WRITER_NAME, ROWNUM AS RNUM
+			FROM writer
+			where REGEXP_LIKE (WRITER_NAME, '(*)'||#{searchWord}||'(*)')
+			ORDER BY WRITER_ID ASC
+		) where RNUM>=#{startRow} and RNUM<=#{endRow}
+	]]>
+	</select>
+	<!--    저자출력 : 저자명 + 저자명으로 검색 + 페이징 -->
+	<!--    저자출력 : 저자명 + 저자명으로 검색 + 페이징 -->
+	<select id="selectWriterCntByNameWithPaging" parameterType="string" resultType="int">
+	<![CDATA[
+	    select count(*)
+	    from (
+			SELECT WRITER_ID, WRITER_NAME
+			FROM writer
+			where REGEXP_LIKE (WRITER_NAME, '(*)'||#{searchWord}||'(*)')
+			ORDER BY WRITER_ID ASC
+		)
+	]]>
+	</select>
+		
+		
+	<select id="reviewSelect2" parameterType="hashmap" resultType="board">
+	
+		select *
+		from BOARD
+		where BOARDTYPE = 2
+		and S_BRAND_NAME = #{s_brand_name}
+	
+	
+	</select> 
+	
+	<select id="reviewPaging" parameterType="hashmap" resultType="board">
+	<![CDATA[
+	select *
+	from(
+		select ROWNUM AS RNUM , S_BRAND_NAME, TITLE, B_CONTENT, B_NO
+		from BOARD
+		where BOARDTYPE = 2
+		and S_BRAND_NAME = #{s_brand_name}
+	)
+
+	where RNUM>=#{startRow} and RNUM<=#{endRow}
+	]]>
+	</select> 
+	
+	<select id="selectStoreList" parameterType="hashmap" resultType="store">
+	
+		select * from STORE
+		
+		<choose>
+		<when test = "s_category != 'all' ">
+		
+		where S_CATEGORY = #{s_category} AND S_BRAND_NAME like '%'||#{searchWord}||'%'
+		</when>
+		
+		<otherwise>
+
+		where S_BRAND_NAME like '%'||#{searchWord}||'%'
+
+		</otherwise>
+		
+		
+		</choose>	
+	</select>
+	
+	
+	<select id="selectStorePaging" parameterType="hashmap" resultType="store">
+	
+	select *
+	from(
+		select ROWNUM AS RNUM , S_BRAND_NAME, S_ADDRESS
+		from STORE
+		<choose>
+		<when test ="s_category != 'all'">
+		where S_CATEGORY = #{s_category} AND S_BRAND_NAME like '%'||#{searchWord}||'%'
+		</when>
+		<otherwise>
+
+		where S_BRAND_NAME like '%'||#{searchWord}||'%'
+
+		</otherwise>
+		
+		</choose>
+	)
+	<![CDATA[
+	where RNUM>=#{startRow} and RNUM<=#{endRow}
+	]]>
+	</select> 
+	
+	
+
+</mapper>

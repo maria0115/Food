@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="friendDAO">
+
+	<!-- 예약률 상위3개 마커찍기 -->
+	<select id="test" resultType="store">
+	SELECT * 
+	
+		FROM (
+			SELECT ROWNUM cnt, A.* 
+				FROM (
+						select r.r_store_name as s_brand_name ,s.s_address as s_address ,count(*) as count
+                        from  reservation r, store s 
+                        where r.r_store_name = s.s_brand_name 
+                        group by r.r_store_name, s.s_address
+                        order by count desc
+						) A
+				)
+		WHERE cnt BETWEEN 1 AND 3
+	
+	</select>
+	
+	<!-- 전체매장갯수 -->
+	<select id="allcount" resultType="int">
+		select count(*) from store
+	</select>
+	
+	<!-- 검색된 갯수 -->
+	<select id="searchCount" parameterType="hashmap" resultType="int"> 
+		SELECT COUNT(*) FROM board
+	<where>
+		boardtype = #{boardtype}
+		<if test='searchType!=null &amp;&amp; keyword!=null'>
+		${searchType} '%'||#{keyword}||'%'
+		</if>
+	</where>
+	</select>
+	
+	<select id="nexalist" resultType="board">
+		select boardType,b_no,userid,title,b_content,b_date from board where boardtype=2 or boardtype=3 or boardtype=4 order by b_no
+	</select>
+
+
+</mapper>

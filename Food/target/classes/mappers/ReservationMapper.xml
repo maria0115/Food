@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reservationDAO">
+
+<select id="seqGet" resultType="int">
+select r_number_seq.nextval from dual
+</select>
+
+<!-- 예약 등록 -->
+<insert id="insertReserv" parameterType="reservation">
+INSERT INTO reservation(r_id,r_date,r_visit_date,r_people_count,r_menu_count,r_menu,m_id,r_note,r_number,r_store_name,r_date_hour,r_date_minute)
+SELECT id_seq_reservation.nextval as r_id,sysdate,#{r_visit_date},#{r_people_count},REGEXP_SUBSTR(r_menu_count, '[^,]+', 1, LEVEL) AS r_menu_count,REGEXP_SUBSTR(r_menu, '[^,]+', 1, LEVEL) AS r_menu,#{m_id},#{r_note},#{r_number},#{r_store_name},#{r_date_hour},#{r_date_minute}
+FROM(
+select #{r_menu_count} as r_menu_count,#{r_menu} as r_menu,#{m_id},#{r_note} from dual
+)
+<![CDATA[CONNECT BY LEVEL <= LENGTH(REGEXP_REPLACE(r_menu, '[^,]+'))+1]]>
+</insert>
+
+<!-- 페이징 처리 후 게시글 조회 -->
+<select id="selectBoard" resultType="reservation">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT r_number,m_id,R_DATE,r_store_name,R_PEOPLE_COUNT,R_NOTE,r_visit_date,r_visit_date||' '||r_date_hour||':'||r_date_minute as time
+     , SUBSTR(
+        XMLAGG(
+            XMLELEMENT(COL ,'/', r_menu) ORDER BY r_menu).EXTRACT('//text()'
+        ).GETSTRINGVAL()
+       , 2) r_menu
+  FROM reservation WHERE m_id=#{m_id}
+ GROUP BY r_number,m_id,R_DATE,r_visit_date,r_store_name,R_PEOPLE_COUNT,R_NOTE,r_date_hour,r_date_minute
+ order by r_date desc ) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+</select>
+
+<!-- 	myMenu 리스트 -->
+<!-- <select id="selectReserv" parameterType="reservation" resultType="reservation"> -->
+<!-- SELECT r_number,m_id,r_visit_date,r_store_name -->
+<!--      , SUBSTR( -->
+<!--         XMLAGG( -->
+<!--             XMLELEMENT(COL ,'/', r_menu) ORDER BY r_menu).EXTRACT('//text()' -->
+<!--         ).GETSTRINGVAL() -->
+<!--        , 2) r_menu -->
+<!--   FROM reservation WHERE m_id=#{m_id} -->
+<!--  GROUP BY r_number,m_id,r_visit_date,r_store_name -->
+<!--  </select> -->
+ 
+ <select id="detailReserv" parameterType="reservation" resultType="reservation">
+ SELECT r_number,m_id,R_DATE,r_store_name,R_PEOPLE_COUNT,R_NOTE,r_visit_date,to_char(to_date(r_visit_date||' '||r_date_hour||':'||r_date_minute,'yy/mm/dd hh24:mi'),'yy/mm/dd hh24:mi') as time
+     , SUBSTR(
+        XMLAGG(
+            XMLELEMENT(COL ,'/', r_menu) ORDER BY r_menu).EXTRACT('//text()'
+        ).GETSTRINGVAL()
+       , 2) r_menu
+  FROM reservation WHERE r_number=#{r_number}
+ GROUP BY r_number,m_id,R_DATE,r_visit_date,r_store_name,R_PEOPLE_COUNT,R_NOTE,r_date_hour,r_date_minute
+ </select>
+ 
+<!--  페이징 행 개수 가져오기 -->
+ <select id="countReserv" resultType="int">
+ select count(*) from
+ (select r_number from reservation where m_id=#{m_id} group by r_number)
+ </select>
+ 
+ <delete id="deleteReserv" parameterType="reservation">
+ 	delete from reservation where r_number=#{r_number}
+ </delete>
+ 
+ 
+ <select id="selectreservation" parameterType="hashmap" resultType="reservation">
+SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT r_number,m_id,R_DATE,r_store_name,R_PEOPLE_COUNT,R_NOTE,r_visit_date,r_visit_date||' '||r_date_hour||':'||r_date_minute as time
+     , SUBSTR(
+        XMLAGG(
+            XMLELEMENT(COL ,'/', r_menu) ORDER BY r_menu).EXTRACT('//text()'
+        ).GETSTRINGVAL()
+       , 2) r_menu
+  FROM reservation WHERE m_id=#{m_id}
+ GROUP BY r_number,m_id,R_DATE,r_visit_date,r_store_name,R_PEOPLE_COUNT,R_NOTE,r_date_hour,r_date_minute
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+
+</select>
+ 
+ 
+ 
+</mapper>

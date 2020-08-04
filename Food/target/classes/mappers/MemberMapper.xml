@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberDAO">
+
+
+<select id="findpassword" parameterType="member" resultType="member">
+		
+select m_id,m_email,m_pass from member where m_id = #{m_id}
+	
+</select>
+
+
+<insert id="authentication" parameterType="member">
+    insert into member (m_id, m_pass,m_email)
+    values (#{m_id}, 0, #{m_email})
+ </insert>
+
+
+
+
+<select id="search" parameterType="String" resultType="product">
+
+               select menu as P_name_1    
+               from menu
+               where Menu like '%'||#{value}||'%'	 
+               
+         
+        </select>
+
+
+
+<select id="selectMember" parameterType="member" resultType="hashmap">
+		
+		SELECT m.m_id m_id, m.m_name m_name, m.m_pass m_pass, m.m_tel m_tel, m.m_birth m_birth, m.m_area m_area,
+    	m.m_most m_most, m.m_email m_email, m.m_post m_post, m.m_date m_date, b.b_num b_num, b.b_id b_id, b.s_start s_start, 
+   		TO_CHAR(trunc(b.s_end),'yyyy-MM-DD') s_end, b.reason reason, b.s_state s_state
+   		FROM member m left outer join blacklist b on m.m_id=b.b_id
+		WHERE m.m_id = #{m_id}
+		<if test="m_pass!=null">
+		AND m.m_pass = #{m_pass}
+		</if>
+</select>
+
+<select id="selectID" parameterType="member" resultType="member">
+		SELECT  * FROM member WHERE m_id = #{m_id}
+</select>
+
+<select id="find_id" parameterType="String" resultType="String">
+		select m_id from member where m_email = #{m_email}
+	</select>
+	
+<select id="selectEmail" parameterType="member" resultType="member">
+		SELECT  * FROM member WHERE m_email = #{m_email}
+</select>
+
+<insert id="insertMember" parameterType="member">
+insert into member(m_id,m_name,m_pass,m_tel,m_birth,m_area,m_most,m_email,m_post,m_date) 
+values(#{m_id},#{m_name},#{m_pass},#{m_tel},#{m_birth},#{m_area},#{m_most},#{m_email},#{m_post},sysdate)
+</insert>
+
+
+<update id="updateMember" parameterType="member">
+        UPDATE member
+        SET
+            m_pass = #{m_pass},
+            m_name = #{m_name},
+            m_birth = #{m_birth},
+            m_email = #{m_email},
+            m_tel = #{m_tel},
+            m_area= #{m_area},
+            m_post = #{m_post}
+           
+        WHERE
+            m_id = #{m_id}    
+    </update>
+
+<delete id="deleteMember">
+
+delete from member where m_id =#{m_id}
+
+</delete>
+
+
+
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qnaboardDAO">
+
+<select id="selectqna" parameterType="qnaboard" resultType="qnaboard">
+	SELECT * FROM qnaboard order by q_no desc
+</select>
+
+<insert id="insertqna" parameterType="qnaboard">
+	INSERT INTO qnaboard values(no_seq_board.nextval,#{q_title},#{q_content},#{q_writer},sysdate)
+</insert>
+
+
+<!-- 총 게시글 갯수 출력 -->
+<select id="countBoard" resultType="int">
+	SELECT COUNT(*) FROM QNABOARD
+</select>
+
+<!-- 페이징 처리 후 게시글 조회 -->
+<select id="selectBoard" resultType="qnaboard">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM QNABOARD 
+						ORDER BY q_no DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+</select>
+
+<select id="detailBoard" parameterType="qnaboard" resultType="qnaboard">
+	SELECT * FROM QNABOARD WHERE q_no = #{q_no}
+</select>
+
+<update id="qnaUpdate" parameterType="qnaboard">
+	update QNABOARD SET q_title = #{q_title},q_content = #{q_content} where q_no = #{q_no}
+</update>
+
+<delete id="qnaDelete" parameterType="qnaboard">
+	DELETE FROM QNABOARD where q_no = #{q_no} 
+</delete>
+
+
+
+
+</mapper>
