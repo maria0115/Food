@@ -102,8 +102,6 @@
 
 			</table>
 
-		</div>
-		
 		<!-- 페이징 -->
 		<div style="display: block; text-align: center;">		
 		<c:if test="${paging.startPage != 1 }">
@@ -129,7 +127,33 @@
 		<button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');">신고하기</button>
 		</c:if>
 	</div>
-
+	
+	</div>
+		<div class="search-form">
+		<form action="mealFriends.do">
+		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
+		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }"> 
+		<input type="hidden" id="searchClick" name="searchClick" value="Y">
+		<table style=" margin-left: 40%;">
+			<tr>
+				<td>
+					<select class="form-control" id="searchType" name="searchType">
+						<option value="title">제목</option>
+						<option value="userId">작성자</option>
+						<option value="b_content">내용</option>
+					</select>
+				</td>
+				<td>
+				<input class="form-control" type="text" name="keyword" id="keyword">
+				</td>
+				<td>
+				<button class="btn btn-default" id="mealsearchBtn" type="submit">검색</button>
+				</td>
+			</tr>
+		</table>
+		</form>
+		</div>
+		<br/><br/><br/>
 
 	<!-- 게시판 목록 보여주기 끝  -->
 	

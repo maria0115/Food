@@ -81,16 +81,16 @@
 
         this.searchBtn_onclick = function(obj,e)
         {
-        	this.transaction(
-        		"search",	//strSvcID,
-        		"strURL::/Food/nexasearch.do",	//strURL("http://localhost:8080/step01/all" 직접 링크는 됨)
-        		"",	        //strInDatasets,
-        		" dsdept=ar ",  //strOutDatasets 데이터셋에 바인딩 될 부분,
-        		"",		//"deptno=10dname=총무부", //strArgument  이부분은 파라미터 ,
-        		"fn_callback"     //strCallbackFunc[,bAsync[,nDataType[,bCompress]]]
-        	);
+        	var id = "search";
+            var url = "http://localhost:8080/Food/nexasearch.do";
+            var reqDs = "";
+            var respDs = "dsdept=ar";
+            var args = "";
+            var callback = "received";
+        	 this.transaction(id, url, reqDs, respDs, args, callback);
+
         	this.fn_callback = function(svcID, errCD, errMSG){
-        		let ret = (errMSG=="FAILED" || svcID != "search") ? "error" : "success";
+        		let ret = (errMSG=="FAILED" || svcID != "urlTest01") ? "error" : "success";
         		if(ret=="error")
         			this.alert("[폼이름_fn_callback] "+ret + " : " + svcID + ", " + errCD + ", " + errMSG);
         		else

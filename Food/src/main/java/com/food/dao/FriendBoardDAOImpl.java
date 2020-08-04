@@ -39,6 +39,7 @@ public class FriendBoardDAOImpl implements FriendBoardDAO{
 	public Integer searchCount(String searchType, String keyword) {
 		
 		HashMap map = new HashMap();
+		map.put("boardtype", 3);
 		map.put("searchType", searchType);
 		map.put("keyword", keyword);
 		

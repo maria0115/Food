@@ -27,7 +27,7 @@ import com.food.service.boardService;
 public class IndexController {
 	
 	int curCount=0; //리스트에서 현재 검색된 데이터 숫자를 저장할 변수 선언
-	int allcount; //리스트에서 모든 데이터의 숫자를 저장한 변수 선언
+	int allCount; //리스트에서 모든 데이터의 숫자를 저장한 변수 선언
 	@Autowired
 	FriendBoardService friendBoardservice;
 	
@@ -111,23 +111,65 @@ public class IndexController {
 	@RequestMapping("mealFriends.do")
 	public String mealFriends(Model model,PagingVO vo ,BoardVO bvo, HttpServletRequest request
 			, @RequestParam(value="nowPage", required=false)String nowPage
-			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
+			, @RequestParam(value="cntPerPage", required=false)String cntPerPage,
+			String searchType, String keyword, String searchClick) {
+		bvo.setBoardType(3);
+		String search = "";//검색을 했는지 여부를 확인할 변수 선언
+		int total;
 		
 		
+		if(searchType!=null) {
+			if(searchType.equals("title")==true) {
+				searchType="title";
+			}else if(searchType.equals("b_content")==true) {
+				searchType="b_content";
+			}else if(searchType.equals("userid")==true) {
+				searchType="userid";
+			}
+		}
+		
+		
+		search = searchType; //검색할때 선택한 검색타입을 받아온다
+		allCount = boardService.countBoard(bvo);
+		
+		if(search==null || search.equals("")) {//검색을 하지 않았을 경우
+			
+			total=allCount; //total에 데이터의 총 갯수를 저장
+			curCount=allCount; //검색을 하지 않았기 때문에 현재 검색한 데이터의 갯수를 저장하는 curCount 변수에 데이터의 총 갯수를 저장
+			searchType =null;  //mapper에서 오류를 방지하기위헤 searchType에 null값을 저장
+			keyword=null;	   //mapper에서 오류를 방지하기위헤 keyword에 null값을 저장
+		}else{//검색을 했을 경우
+			
+			//검색한 데이터의 갯수를 curCount에 저장
+			curCount =friendBoardservice.searchCount(searchType,keyword);
+			
+			//검색버튼을 클릭했을 경우 페이지를 1페이지부터 보여준다
+			if(searchClick.equals("Y")==true) {
+				nowPage="1";
+			}
+			
+			//총 갯수에 현재 검색한 데이터의 갯수를 저장
+			total=curCount;
+		}
 		
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
-			cntPerPage = "10";
+			cntPerPage = "5";
 		} else if (nowPage == null) {
 			nowPage = "1";
 		} else if (cntPerPage == null) { 
-			cntPerPage = "10";
+			cntPerPage = "5";
 		}
-		bvo.setBoardType(3);
-		int total = boardService.countBoard(bvo);
+		
+		
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		model.addAttribute("paging", vo); //페이징처리를 위한  가져온 값 넘기기 
-		model.addAttribute("friendlist", boardService.selectBoard(bvo, vo, null, null));
+		model.addAttribute("friendlist", boardService.selectBoard(bvo, vo, searchType, keyword));
+		//모델에 "searchType" 검색타입 추가
+		model.addAttribute("searchType", searchType);
+		//모델에 "keyword" 검색키워드 추가
+		model.addAttribute("keyword", keyword);
+		
 		return "index/mealFriends";
 	}
 	
