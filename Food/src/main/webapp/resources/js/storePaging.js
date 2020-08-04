@@ -158,9 +158,10 @@ function drawWriterTable(data) {
 	div1 = '<div class="col-12 col-sm-6 col-lg-4">';
 	div2 = '<div class="single-product-area mb-50">';
 	div3 = '<div class="product-img" id="photo">';
-	imgA = '<a href="shopDetails.do">';
+	imgA = '<a href="../store/storeDetails.do?s_brand_name=';
+	imgAtest ='">';
 	imgSrc = '<img class="listImg" src="../resources/store/';
-	imgSrcEnd = '.jpg" alt="">';
+	imgSrcEnd = '.jpg" alt="" style="cursor:pointer" onclick="window.open("../resources/store/101번지남산돈까스 현대시티아울렛가산점.jpg","asdfo8or","scrollbars=yes,width=417,height=385,top=10,left=20");">';
 	imgAend = '</a>';
 	div4 = '<div class="product-tag">';
 	aHot = '<a href="#">Hot</a>';
@@ -184,7 +185,7 @@ function drawWriterTable(data) {
 	div1End = '</div>';
 	for (var i = 0; i < data.listVO2size; i++) {
 
-		var listContent = div1 + div2 + div3 + imgA + imgSrc
+		var listContent = div1 + div2 + div3 + imgA+ data.listVO2[i].s_brand_name +imgAtest+ imgSrc
 				+ data.listVO2[i].s_brand_name + imgSrcEnd + imgAend + div4
 				+ aHot + div4End + div6 + div6A + data.listVO2[i].s_brand_name
 				+ div6A2 + pTag + data.listVO2[i].s_brand_name + pTagEnd

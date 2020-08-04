@@ -67,8 +67,7 @@
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">3</li>
+                            <li class="breadcrumb-item"><a href="#"></a></li>
                         </ol>
                     </nav>
                 </div>
@@ -86,7 +85,7 @@
                     <div class="shop-sorting-data d-flex flex-wrap align-items-center justify-content-between">
                         <!-- Shop Page Count -->
                         <div class="shop-page-count">
-                            <p>Showing 1–9 of 72 results</p>
+                            <p></p>
                         </div>
                         <!-- Search by Terms -->
                         <div class="search_by_terms" >
@@ -234,6 +233,7 @@
                                 
                             </div>
                     </div>
+                   
                     <!-- 예약 best3 지도 마커 찍기 -->
                     <div class="shop-widget best-seller mb-50">
                             <h4 class="widget-title">BEST TOP 3</h4>
@@ -281,8 +281,18 @@
                                 </div>
                             </div>
                             </c:forEach>
-                          
+                          <script type="text/javascript">
+                         	 function new(){
+                        	  window.open("test.asp","new", 
+                        	 "width=300, height=200, left=30, top=30, 
+                        	 scrollbars=no,titlebar=no,status=no,resizable=no,fullscreen=no");
+                        	 }
+                        	
+                        	
+							
 
+                          </script>
+ 							
                             <!-- Single Product Area -->
                             
 
