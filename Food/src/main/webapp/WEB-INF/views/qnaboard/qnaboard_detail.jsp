@@ -71,48 +71,85 @@
 
 
 <div class='container'>
-<div class="contact-form-area mb-100">
-                        <form action="modifyqna" method="post">
-                            <input type="hidden" name="b_no" value="${list.b_no}" readonly>
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                	제목
-                                    <div class="form-group" style="color:black">
-                                        <input style="color:black" type="text" class="form-control" id="contact-title" name="title" value="${list.title}" readonly>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                	작성자
-                                    <div class="form-group">
-                                        <input style="color:black" type="text" class="form-control" id="contact-writer" name="userId" value="${list.userId}" readonly>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                	내용
-                                    <div class="form-group">
-                                        <textarea style="color:black" class="form-control" id="message" cols="30" rows="10" name="b_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" readonly>${list.b_content}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button id="savebtn" type="submit" class="btn alazea-btn mt-15">SAVE</button>
-                                </div>
-                            </div>
-                        </form>
-                                <c:if test="${sessionScope.user_id == list.userId}">
-			                <button id="modify" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-			                <button id="delete" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-			                	</c:if>
+	<div class="contact-form-area mb-100">
+        <form action="modifyqna" method="post">
+            <input type="hidden" name="b_no" value="${list.b_no}" readonly>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                	<label>제목</label>
+                    <div class="form-group" style="color:black">
+                        <input style="color:black" type="text" class="form-control" id="contact-title" name="title" value="${list.title}" readonly>
                     </div>
-				</div>
+                </div>
+                <div class="col-12 col-md-6">
+                	<label>작성자</label>
+                    <div class="form-group">
+                        <input style="color:black" type="text" class="form-control" id="contact-writer" name="userId" value="${list.userId}" readonly>
+                    </div>
+                </div>
+                <div class="col-12">
+                	<label>내용</label>
+                    <div class="form-group">
+                        <textarea style="color:black" class="form-control" id="message" cols="30" rows="10" name="b_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" readonly>${list.b_content}</textarea>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button id="savebtn" type="submit" class="btn alazea-btn mt-15">SAVE</button>
+                </div>
+            </div>
+        </form>
+         		<c:if test="${sessionScope.user_id == list.userId}">
+		    <button id="modify" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+		    <button id="delete" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+				</c:if>
+			<br><hr><br>
+    	<div class="form-group">
+    		<label style="font-size: 20px">댓글</label>
+    	
+							<c:forEach items="${listVO}" var="list">
+							<table>
+                                <tr>
+                                    <td class='qna_table' width="600px">${list.b_content}</td><hr>
+                                    <td class='qna_table' width="600px">${list.b_date}</td>
+                                </tr><br>
+                            </table>
+							</c:forEach>
 
-						<script type="text/javascript">
-						$('#delete').click(function(){
-							alert('aa')
-							var no = $('input[name=b_no]').val()
-							location.href="deleteqna?b_no="+no;
-						})
-						</script>
+        	<textarea style="color:black;margin-top:40px" class="form-control" id="replytext" cols="30" rows="10" name="b_reply" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" ></textarea>
+        	<button style="float:right;min-width:50px" id="replybtn" type="submit" class="btn alazea-btn">등록</button>
+    	</div>
+    </div>
+</div>
 
+
+<script type="text/javascript">
+$("#replybtn").click(function(){
+	alert($('#replytext').val())
+	alert($('input[name=b_no]').val())
+	$.ajax({
+		type: 'post',
+		url: "insertReply.do",
+		data: "b_content="+$('#replytext').val()+"&f_cnt="+$('input[name=b_no]').val(),
+        success : function(resultData){
+        	alert("성공" )
+        
+        }
+
+
+		
+	})
+})
+</script>
+
+
+
+<script type="text/javascript">
+$('#delete').click(function(){
+	alert('aa')
+	var no = $('input[name=b_no]').val()
+	location.href="deleteqna?b_no="+no;
+})
+</script>
 
 
     <!-- ##### Footer Area Start ##### -->

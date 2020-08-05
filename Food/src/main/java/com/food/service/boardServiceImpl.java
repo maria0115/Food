@@ -76,10 +76,19 @@ public class boardServiceImpl implements boardService {
 		return boardDAO.searchboard(mvo);  
 	}
 
-	//밥친구게시판 취소하기 버튼 눌렀을때
+	@Override
+	public void insertReply(BoardVO vo) {
+		boardDAO.insertReply(vo);
+	}
+
+	@Override
+	public List<BoardVO> selectReply(BoardVO vo) {
+		return boardDAO.selectReply(vo);
+	}
+
+	//밥친구 게시판 취소하기 버튼 눌렀을때
 	@Override
 	public int mealcancel(BoardVO vo) {
-		
 		return boardDAO.mealcancel(vo);
 	}
 

@@ -100,6 +100,14 @@ where b.userid =  m.m_id AND b.userid=#{m_id}
 	UPDATE board SET f_cnt = f_cnt-1 ,f_userId = #{f_userId} WHERE boardType=#{boardType} AND b_no=#{b_no}
 </update>
 
+<!-- qna 게시판 답글 insert -->
+<insert id="insertReply">
+insert into board(boardtype,b_content,f_cnt,b_date) values(#{boardType},#{b_content},#{f_cnt},sysdate)
+</insert>
 
+<!-- qna 게시판 답글 select -->
+<select id="selectReply" resultType="board">
+select * from board where f_cnt=#{b_no} and boardtype=5
+</select>
 
 </mapper>
