@@ -146,7 +146,7 @@
 <!--                     </div> -->
 <!--                 </div> -->
 <!--             </div> -->
-<button  onclick="history.go(-1);" class="btn btn-default" >돌아가기</button> 	
+ <a href="mypageform.do"><button  class="btn btn-default" >돌아가기</button></a> 	
 
         </div>
                                      <div style="display: block; text-align: center;">		

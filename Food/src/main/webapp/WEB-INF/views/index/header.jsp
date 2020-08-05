@@ -49,7 +49,7 @@
 <link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
 <link rel="stylesheet" href="/Food/resources/css/style.css">
 <link rel="stylesheet" href="/Food/resources/css/js.css">
 <!-- 부트스트랩 -->
@@ -281,7 +281,7 @@
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
-	<script src="/Food/resources/js/index.js"></script>
+	
 	
 	<!-- <script src="/Food/resources/js/storePaging.js"></script> -->
 

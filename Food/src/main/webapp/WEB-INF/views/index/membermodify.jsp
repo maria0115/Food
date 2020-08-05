@@ -71,7 +71,7 @@
    <!-- ##### Header Area End ##### -->
 
    <!-- ##### Breadcrumb Area Start ##### -->
-   <div class="breadcrumb-area">
+
       <!-- Top Breadcrumb Area -->
       <div
          class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
@@ -90,7 +90,7 @@
             </div>
          </div>
       </div>
-   </div>
+
 
 <div class="container">
       <form action="modify.do" method="post" >

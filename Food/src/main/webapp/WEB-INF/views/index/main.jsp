@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="resources/css/style.css">
 <link rel="stylesheet" href="/Food/resources/css/js.css">
 <!-- 부트스트랩 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
