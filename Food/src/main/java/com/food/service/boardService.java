@@ -31,7 +31,9 @@ public interface boardService {
 	//밥친구 게시판 취소하기 버튼 눌렀을때
 	int mealcancel (BoardVO vo);
 	
-	
 	public List<BoardVO> selectReview(BoardVO vo,PagingVO pvo,String searchType, String keyword);
 	
+	void insertReply(BoardVO vo);
+
+	List<BoardVO> selectReply(BoardVO vo);
 }

@@ -33,4 +33,7 @@ public interface BoardDAO {
 	
 	List<BoardVO> selectReview(BoardVO vo, PagingVO pvo, String searchType, String keyword);
 
+	void insertReply(BoardVO vo);
+	
+	List<BoardVO> selectReply(BoardVO vo);
 }

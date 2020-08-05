@@ -110,7 +110,16 @@ public class BoardDAOImpl implements BoardDAO {
 	    return mybatis.update("boardDAO.mealcancel",vo);
 	}
  
+	public void insertReply(BoardVO vo) {
+		mybatis.insert("boardDAO.insertReply",vo);
+	}
 
+	@Override
+	public List<BoardVO> selectReply(BoardVO vo) {
+		System.out.println("selectReply DAO");
+		System.out.println("vo f_cnt:"+vo.getF_cnt());
+		return mybatis.selectList("boardDAO.selectReply",vo);
+	}
 
 
 }

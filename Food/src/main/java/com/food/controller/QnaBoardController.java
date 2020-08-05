@@ -2,10 +2,13 @@ package com.food.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -69,7 +72,7 @@ public class QnaBoardController {
 		int total = boardService.countBoard(vo);
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
-			cntPerPage = "10";
+			cntPerPage = "4";
 		} else if (nowPage == null) {
 			nowPage = "1";
 		} else if (cntPerPage == null) { 
@@ -89,9 +92,11 @@ public class QnaBoardController {
 	  BoardVO list = boardService.boardView(vo);
 	  System.out.println("viewDetail 매퍼갔다옴");
 	  System.out.println("content : "+list.getB_content());
-	  System.out.println("list: "+ list.getB_content());
+	  
+	  List<BoardVO> listvo = boardService.selectReply(vo);
 	  ModelAndView mv = new ModelAndView();
 	  mv.addObject("list",list);
+	  mv.addObject("listVO",listvo);
 	  mv.setViewName("qnaboard/qnaboard_detail");
 	  return mv;
 	}
@@ -114,7 +119,18 @@ public class QnaBoardController {
 		return "redirect:qnaboardList";
 	}
 	
-	
+	// 댓글 입력
+    @RequestMapping("insertReply.do")
+    public void insertReply(@ModelAttribute BoardVO vo, HttpSession session){
+        String user_id = (String) session.getAttribute("user_id");
+        System.out.println("userid :"+user_id);
+        System.out.println("content :"+vo.getB_content());
+        System.out.println("원 게시글 번호 :"+vo.getF_cnt());
+        vo.setBoardType(5);
+        System.out.println("vo.getboardtype:"+vo.getBoardType());
+        
+        boardService.insertReply(vo);
+    }
 	
 	
 }
