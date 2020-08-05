@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="resources/css/style.css">
 <link rel="stylesheet" href="/Food/resources/css/js.css">
 <!-- 부트스트랩 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
@@ -65,22 +66,6 @@
 
 }
 
-
-#mainimage{
-
-        height: 100vh;
-
-        /*background-image: url("02.jpg");
-
-            background-repeat: no-repeat;
-
-            background-position: center;
-
-            background-size: cover;*/
-
-        background: url("01.jpg") no-repeat center/cover;
-
-    }
 
 
 </style>
@@ -135,11 +120,13 @@
 										<a href="" id="logout"><button class="logout">Log-Out</button></a>
 										<a href="mypageform.do" id="mypage" class="fa fa-user">My
 											Page</a>
+											<span class="glyphicon glyphicon-bell" style="color: snow; font-size:17px; ">Notice</span><span style="color: snow; margin-right: 10px;">(1)</span>					
 								<span class="cart">
 									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
-									aria-hidden="true"></i> <span style="font-size: 17px; color: red;">Wish <span
-										class="cart-quantity">(${wish})</span></span></a>
+									aria-hidden="true"></i> <span style="font-size: 17px; color: red; font-weight: bold;" >Wish<span
+										>(${wish})</span></span></a>
 								</span>
+							
 									</c:if>
 								</div>
 								<c:if test="${empty sessionScope.user_id }">
@@ -331,6 +318,7 @@
 
 	<script src="/Food/resources/js/sub.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
+	<script src="/Food/resources/js/index.js"></script>
 	<!-- 지섭 -->
 
 

@@ -49,6 +49,7 @@
 <link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="/Food/resources/css/style.css">
 <link rel="stylesheet" href="/Food/resources/css/js.css">
 <!-- 부트스트랩 -->
@@ -133,10 +134,11 @@
 										<span class="login-font" >${sessionScope.user_name} Welcome.</span>
 										<a href="" id="logout" ><button class="logout" >Log-Out</button></a> 
 										<a href="/Food/mypageform.do" id="mypage" class="fa fa-user" >My Page</a>
+										<span class="glyphicon glyphicon-bell" style="color: snow; font-size:17px; ">Notice</span><span style="color: snow; margin-right: 10px;">(1)</span>	
 											<span class="wish">
 								<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
 									aria-hidden="true"></i> <span style="font-size: 17px; color: red;">Wish <span
-										class="cart-quantity">(${wish})</span></span></a>
+										>(${wish})</span></span></a>
 
 
 							</span>
@@ -279,6 +281,7 @@
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
+	<script src="/Food/resources/js/index.js"></script>
 	
 	<!-- <script src="/Food/resources/js/storePaging.js"></script> -->
 

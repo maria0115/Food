@@ -20,7 +20,7 @@
 	border: 2px solid aliceblue;
     background-color: rgba(0, 0, 0, 0);
     color: aliceblue;
-    padding: 5px;
+    padding: 2px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -84,10 +84,10 @@
 
 #mypage{
 	display: revert;
-    padding-left: 20px;
-    font-size: unset;
+    margin-left:10px;
+    font-size: 17px;
     color: gold;
-    margin-right: 23px;
+    margin-right:10px;
 } 
 
 
