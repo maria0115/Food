@@ -17,11 +17,11 @@
 <link rel="icon" href="resources/img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
-<link rel="stylesheet" href="resources/css/style.css">
-<link rel="stylesheet" href="resources/css/style1.css">
-<link rel="stylesheet" href="resources/css/main1.css">
-<link rel="stylesheet" href="resources/css/normalize1.css">
-<link rel="stylesheet" href="resources/css/bootstrap1.min.css">
+<!-- <link rel="stylesheet" href="resources/css/style.css"> -->
+<!-- <link rel="stylesheet" href="resources/css/style1.css"> -->
+<!-- <link rel="stylesheet" href="resources/css/main1.css"> -->
+<!-- <link rel="stylesheet" href="resources/css/normalize1.css"> -->
+<!-- <link rel="stylesheet" href="resources/css/bootstrap1.min.css"> -->
 
 <!-- 부트스트랩 -->
 <link
@@ -34,6 +34,42 @@
 <jsp:include page="../index/header.jsp">
 	<jsp:param value='' name='folder' />
 </jsp:include>
+
+<style type="text/css">
+.title {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #dbdbdb;
+    background: #f7f7f7; 
+}
+#contact-title {
+	background: #f7f7f7;
+	padding: 0 0 0 2%;
+    margin: 0;
+}
+#contact-writer{
+	padding: 0 0 0 2%;
+    margin: 0;
+}
+.writer{
+    padding: 0;
+    margin: 0;
+	overflow: hidden;
+    border-bottom: 1px solid #dbdbdb;
+}
+#date1{
+    padding: 10px 2% 0 0;
+    margin: 0;
+}
+#viewcount{
+    padding: 10px 2% 0 0;
+    margin: 0;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -75,22 +111,24 @@
         <form action="modifyqna" method="post">
             <input type="hidden" name="b_no" value="${list.b_no}" readonly>
             <div class="row">
-                <div class="col-12 col-md-6">
-                	<label>제목</label>
-                    <div class="form-group" style="color:black">
-                        <input style="color:black" type="text" class="form-control" id="contact-title" name="title" value="${list.title}" readonly>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                	<label>작성자</label>
-                    <div class="form-group">
-                        <input style="color:black" type="text" class="form-control" id="contact-writer" name="userId" value="${list.userId}" readonly>
+                <div class="col-12">
+                    <div class="form-group title" style="color:black">
+<!--                 	<label style='font-weight: bold'>제목</label> -->
+                    <input style="color:black;border:none;display:inline;width: 50%;" type="text" class="form-control" id="contact-title" name="title" value="${list.title}" readonly>
+                    <span id='date1' style='float:right'>${list.b_date}</span>
                     </div>
                 </div>
                 <div class="col-12">
-                	<label>내용</label>
-                    <div class="form-group">
-                        <textarea style="color:black" class="form-control" id="message" cols="30" rows="10" name="b_content" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" readonly>${list.b_content}</textarea>
+                    <div class="form-group writer" style="color:black">
+<!--                 	<label style='font-weight: bold'>작성자</label> -->
+                        <input style="color:black;border:none;display:inline;width: 40%;" type="text" class="form-control" id="contact-writer" name="userId" value="${list.userId}" readonly>
+						<span id='viewcount' style='float:right'>조회수&nbsp;:&nbsp;${list.viewCount}</span>
+                    </div>
+                </div>
+                <div class="col-12" style="padding-top: 45px;">
+                    <div class="form-group" style="color:black">
+                	<label style="font-size: 30px;font-weight: bold">Question</label>
+                        <textarea style="color:black;height: 120px;" class="form-control" id="message" cols="30" rows="10" name="b_content" readonly>${list.b_content}</textarea>
                     </div>
                 </div>
                 <div class="col-12">
@@ -103,8 +141,8 @@
 		    <button id="delete" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 				</c:if>
 			<br><hr><br>
-    	<div class="form-group">
-    		<label style="font-size: 20px">댓글</label>
+    	<div class="form-group" style="color:black">
+    		<label style="font-size: 30px">Answer</label>
     	
 							<c:forEach items="${listVO}" var="list">
 							<table>
