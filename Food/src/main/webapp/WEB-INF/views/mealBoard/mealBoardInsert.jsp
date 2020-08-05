@@ -19,6 +19,10 @@
 <!-- 부트스트랩 -->
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+
+
+
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
@@ -87,8 +91,26 @@
 				</tr>
 				<tr>
 					<td width="100%">약속날짜</td>
-					<td align="left"><input size="120%" type="text"
-						name="f_date" placeholder="00월00일00시00분으로 작성해주세요"/></td>
+					<td align="left" style="display: flex;">
+					<input type="date" style="width: 20%; " name="f_date" id="f_date" placeholder="날짜를 선택해주세요">
+					<select name="f_date" id="f_date" class="form-control" style="width: 35%">
+						<option id="" disabled="disabled" selected>시간을 선택해주세요</option>
+							<option value="09">오전 9 시</option>
+							<option value="10">오전 10 시</option>
+							<option value="11">오전 11 시</option>
+							<option value="12">오후 12 시</option>
+							<option value="13">오후 1 시</option>
+							<option value="14">오후 2 시</option>
+							<option value="15">오후 3 시</option>
+							<option value="16">오후 4 시</option>
+							<option value="17">오후 5 시</option>
+							<option value="18">오후 6 시</option>
+							<option value="19">오후 7 시</option>
+							<option value="20">오후 8 시</option>
+							<option value="21">오후 9 시</option>
+							<option value="22">오후 10 시</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td width="100%">위치</td>
@@ -124,6 +146,7 @@
 	<%@ include file="../index/footer.jsp" %>
 	<!-- ##### Footer Area End ##### -->
 	<script src="/Food/resources/js/friendBoard.js"></script>
+	
 
 
 </body>

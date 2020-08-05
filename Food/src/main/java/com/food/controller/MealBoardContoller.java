@@ -43,10 +43,13 @@ public class MealBoardContoller {
 	public String friendsave(BoardVO vo , HttpServletRequest request, HttpSession session) {
 		
 		int result;
+		System.out.println(vo.getF_date());
+		String f_date = vo.getF_date();
+		f_date = f_date.replace(",", "-");
 		vo.setBoardType(3);
 		vo.setSeq("friend_f_no");
-		System.out.println(vo.getF_addr1());
-		System.out.println(vo.getF_addr2());
+		vo.setF_date(f_date);
+		
 		session.setAttribute("board", vo.getTitle());
 		result = boardService.insertBoard(vo);
 		if(result==0) {

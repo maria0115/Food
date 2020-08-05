@@ -14,12 +14,14 @@ var size = $("input[name='name']").length;
 var name = new Array();
 var addr = new Array();
 var positions = new Array();
+var b_no = new Array();
+
 	
 
 for(i=0;i<size;i++){
 	name[i]=$("input[name='name']").eq(i).attr("value");
 	addr[i]=$("input[name='addr']").eq(i).attr("value");
-	//alert( i + "매장명 : " + $("input[name='name']").eq(i).attr("value"));
+	b_no[i]=$("input[name='b_no']").eq(i).attr("value");
 }
 
 	//주소로 좌표를 검색합니다
@@ -55,9 +57,10 @@ for(i=0;i<size;i++){
 				});
 				customOverlay.setMap(map);
 				marker.setMap(map);
-				map.setCenter(positions[1]);
+				map.setCenter(positions[0]);
 		    };
 		});
 	});
+	
 	
 }

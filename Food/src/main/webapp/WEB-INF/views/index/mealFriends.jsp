@@ -74,6 +74,7 @@
 			<c:forEach items="${friendlist}" var="board">
 			<input type="hidden" name="name" value="${board.title}">
 			<input type="hidden" name="addr" value="${board.f_addr1 }">
+			<input type="hidden" id="b_no" name="b_no" value="${board.b_no }">
 			</c:forEach>
 		</div>
     </div>
@@ -95,18 +96,18 @@
 				<c:forEach items="${friendlist}" var="board">
 				<!-- 프라퍼티이름 변경 -->
 				<tr style="font-size: 16px;">
-					<td><a href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.b_no}</a></td>
+					<td><a class="mealck" href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.b_no}</a></td>
 					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
-					<td><a href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.title}</a></td>
-					<td><a href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.f_addr1}&nbsp;${board.f_addr2}</a></td>
-					<td>${board.userId}</td>
+					<td><a class="mealck" href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.title}</a></td>
+					<td><a class="mealck" href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.f_addr1}&nbsp;${board.f_addr2}</a></td>
+					<td>${board.userId}<input type="hidden" name="f_date" value="${board.f_date }"></td>
 					<td>${board.b_date}</td>
 					<td style="text-align: center;">${board.viewCount}</td>
 					<td style="text-align: center;"><span class="membercnt">${board.f_membercnt}</span></td>
 					<td style="text-align: center;"><span class="joincnt">${board.f_cnt }</span></td>
 					<td>
 					<!-- 참여인원이 확정 인원보다 클때만 채팅방 참여하기 버튼 보여주기 -->
-					<c:if test="${board.f_membercnt >  board.f_cnt && sessionScope.user_id!= null }">
+					<c:if test="${board.f_membercnt >  board.f_cnt && sessionScope.user_id!= null}">
 					<button id="btn" class="btn btn-primary mary" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?title=${board.title}&f_port=${board.f_port}&userId=${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">입장하기</button>
 					</c:if>
 					<!-- 참여인원과 확정인원이 같을때 입장마감으로 바꿔주기 -->
@@ -179,6 +180,7 @@
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="footer.jsp" %>
 	<script src="/Food/resources/js/active.js"></script>
+	<script src="/Food/resources/js/jointimeck.js"></script>
 	
 
 

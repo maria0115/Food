@@ -1,5 +1,7 @@
 package com.food.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -169,6 +171,7 @@ public class IndexController {
 		model.addAttribute("searchType", searchType);
 		//모델에 "keyword" 검색키워드 추가
 		model.addAttribute("keyword", keyword);
+		
 		
 		return "index/mealFriends";
 	}

@@ -83,6 +83,12 @@
 					<td align="left">${board.title }</td>
 				</tr>
 				<tr>
+					<td width="100">약속날짜</td>
+					<td align="left">
+					${board.f_date }시
+					</td>
+				</tr>
+				<tr>
 					<td width="100">글내용</td>
 					<td align="left">
 					${board.b_content }
@@ -95,6 +101,7 @@
 					<input type="hidden" id="f_addr1" name="f_addr1" value="${board.f_addr1 }">
 					<input type="hidden" id="f_addr2" name="f_addr2" value="${board.f_addr2 }">
 					<input type="hidden" id="f_title" name="title" value="${board.title }">
+					
 					</div>
 					</td>
 				</tr>
