@@ -204,13 +204,12 @@
 
 						<!-- Nav Brand -->
 						<a href="index.html" class="nav-brand"><img
-							src="img/core-img/logo.png" alt=""></a>
+                     src="img/core-img/logo.png" alt=""></a>
 
 						<!-- Navbar Toggler -->
 						<div class="classy-navbar-toggler">
 							<span class="navbarToggler"><span></span><span></span><span></span></span>
 						</div>
-
 
 						<!-- Menu -->
 						<div class="classy-menu">
@@ -224,7 +223,7 @@
 
 							<!-- Navbar Start -->
 							<div class="classynav">
-
+								
 								<ul>
 									<li><a href="/Food/todayMenu.do" id="today">오늘의 메뉴</a></li>
 									<li><a
@@ -235,6 +234,7 @@
 									<li><a href="/Food/index/mealFriends.do">밥친구 만들기</a></li>
 									<li><a href="/Food/index/store.do">매장 정보</a></li>
 								</ul>
+
 
 								<!-- Search Icon -->
 								<div id="searchIcon">
@@ -254,7 +254,8 @@
 								<i class="fa fa-times" aria-hidden="true"></i>
 							</div>
 							<div>
-								<input type="search" name="keyword" id="keyword" placeholder="검색하실 단어를 입력해주세요 " >
+								<input type="search" name="keyword" id="keyword"
+									placeholder="검색하실 단어를 입력해주세요 " >
 							</div>
 						</form>
 					</div>
@@ -278,6 +279,7 @@
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
+	
 	<!-- <script src="/Food/resources/js/storePaging.js"></script> -->
 
 	<!-- 지섭-->
