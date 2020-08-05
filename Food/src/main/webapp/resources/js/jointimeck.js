@@ -1,7 +1,6 @@
 
 	
 	//약속날짜 비교해서 게시글 비활성화
-	var today = new Date();
 	var size = $("input[name='f_date']").length;
 	//약속날짜 
 	var joindate = new Array();
@@ -9,6 +8,9 @@
 	var join = new Array();
 	//게시판 채팅방버튼 
 	var btn = new Array();
+	//지도에 마커a태그 
+	var marker = new Array();
+	
 	
 	//오늘날짜 필요한 형식으로 format
 	function getFormatDate(date){
@@ -32,7 +34,7 @@
 		joindate[i] = $("input[name='f_date']").eq(i).attr("value");
 		join[i] = $("input[name='f_date']").eq(i).parent().prevAll().find("a");
 		btn[i] = $("input[name='f_date']").eq(i).parent().siblings(5).find("button");
-		
+		marker[i]=$("span[class='center']").eq(i).find("a");
 	}
 	
 	//저장된 값들로 약속날짜가 지나있다면 a태그 채팅방 버튼 비활성화 
@@ -47,6 +49,7 @@
 		
 	    if(date>joindate[i]){
 	    	join[i].css({ 'pointer-events': 'none' });
+	    	marker[i].css({ 'pointer-events': 'none' });
 	    	btn[i].css({ 'display': 'none' });
 	    	
 	    }

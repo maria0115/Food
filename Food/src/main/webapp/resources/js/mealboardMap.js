@@ -16,6 +16,8 @@ var addr = new Array();
 var positions = new Array();
 var b_no = new Array();
 
+
+
 	
 
 for(i=0;i<size;i++){
@@ -23,6 +25,9 @@ for(i=0;i<size;i++){
 	addr[i]=$("input[name='addr']").eq(i).attr("value");
 	b_no[i]=$("input[name='b_no']").eq(i).attr("value");
 }
+
+
+
 
 	//주소로 좌표를 검색합니다
 	name.forEach(function(v,i){
@@ -48,7 +53,10 @@ for(i=0;i<size;i++){
 			        image: markerImage // 마커이미지 설정 
 			    });
 			    
-			    var content = '<div class ="label"><span class="left"></span><span class="center">'+name[i]+'</span><span class="right"></span></div>';
+			    var content = '<div class ="label"><span class="left"></span>'+
+			    	'<span class="center">'+
+			    	'<a name="mealck" href="../mealBoard/mealboardView.do?b_no='+b_no[i]+'">'+name[i]+'</a>'+	
+			    	'</span><span class="right"></span></div>';
 
 				var customOverlay = new kakao.maps.CustomOverlay({
 					position : coords,
@@ -61,6 +69,8 @@ for(i=0;i<size;i++){
 		    };
 		});
 	});
+	
+	
 	
 	
 }

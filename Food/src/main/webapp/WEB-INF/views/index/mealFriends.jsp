@@ -75,6 +75,7 @@
 			<input type="hidden" name="name" value="${board.title}">
 			<input type="hidden" name="addr" value="${board.f_addr1 }">
 			<input type="hidden" id="b_no" name="b_no" value="${board.b_no }">
+			<input type="hidden" name="f_date" value="${board.f_date }">
 			</c:forEach>
 		</div>
     </div>
