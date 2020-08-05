@@ -428,26 +428,7 @@ map.put("동남아", "east");
 
 
 
-										<div
-											class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design wow fadeInUp"
-											data-wow-delay="100ms">
-											<!-- Portfolio Thumbnail -->
-											<div class="portfolio-thumbnail bg-img"
-												style="background-image: url(/Food/resources/img/bg-img/16.jpg);"></div>
-
-											<!-- Portfolio Hover Text -->
-											<div class="portfolio-hover-overlay">
-												<div class="dialog__trigger" onclick="update_form"
-													style="height: 400px">
-													<!--                         <a href="resources/img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1"> -->
-													<div class="port-hover-text" style="padding-top: 35%">
-
-													</div>
-													<!--                         </a> -->
-												</div>
-											</div>
-										</div>
-
+										
 
 
 

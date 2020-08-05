@@ -24,7 +24,7 @@
 						<where>
 							<if test='searchType!=null &amp;&amp; keyword!=null'>${searchType} like '%'||#{keyword}||'%'</if>
 						</where>
-						ORDER BY ROWNUM DESC 
+						ORDER BY m_date DESC 
 						) A
 				)
 	WHERE RN BETWEEN #{start} AND #{end}

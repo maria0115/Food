@@ -66,7 +66,7 @@
 					<input type="hidden" id="b_no" name="b_no" value="${board.b_no }">
 					<!-- 참여인원이 확정인원보다 크면 참가하기 버튼 보여주기 -->
 					<c:if test="${board.f_membercnt > board.f_cnt}">
-					<input class="btn btn-dark" type="button" id="joinBtn" value="참가하기" >
+					<input class="btn btn-info" type="button" id="joinBtn" value="참가하기" >
 					</c:if>
 					<!-- 참여인원이 확정인원보다 같거나 작으면 마감되었습니다 보여주기  -->
 					<c:if test="${board.f_membercnt <= board.f_cnt}">
@@ -143,24 +143,24 @@ $("#cancel").click(function(){
         		"&b_no="+ $("#b_no").val(),
         	//dataType:"text",
             success : function(resultData){
-            	alert("성공")
+            	alert("밥친구가 취소되었습니다.");
             	//넘겨받은 결과값이 0이 아니라면 
-//            	if(resultData != 0){
-//            		//참가하기 버튼 숨기고
-//            		$("#cancelBtn").css("display", "none");
-//            		//참가중 문구띄워주기 
-//            		var $div = $('<input class="btn btn-dark" type="button" id="joinBtn" value="참가하기" >');
-//            		$("#joincnt").append($div);
-//            		
-//            		//span태그 안에 마감되었습니다 라는 문자가 있다면 
-//            		if(end.match("마감되었습니다.")){
-//            			//참가중 문구 지워주기
-//            			$("#join").remove();
-//            		}
-//            		
-//            	}else{
-//            		
-//            	}
+            	if(resultData != 0){
+            		//취소하기 버튼 숨기고
+            		$("#cancel").css("display", "none");
+           		//참가하기 버튼 띄워주기
+            		var $div = $('<input class="btn btn-info" type="button" id="joinBtn" value="참가하기" >');
+            		$("#joincnt").append($div);
+           		
+            		//span태그 안에 마감되었습니다 라는 문자가 있다면 
+            		if(end.match("마감되었습니다.")){
+            			//취소버튼 지워주기
+            			$("#cancel").remove();
+           			}
+           		
+            	}else{
+            		
+  	}
             	
             	
             },
