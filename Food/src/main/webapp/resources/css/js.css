@@ -40,14 +40,13 @@
 }
 
 #btn_submit {
-	background-image: url('../img/login/loginBtn.png');
-	background-position: 0px 0px;
-	background-repeat: round;
-	width: 50px;
-	height: 50px;
-	border: 0px;
-	cursor: pointer;
-	outline: double;
+	background-image: url(../img/login/loginBtn.jpg);
+    background-repeat: round;
+    width: 65px;
+    cursor: pointer;
+    margin-top: px;
+    padding-top: 7px;
+    border: 5px ridge gold;
 }
 
 #navi {
@@ -115,17 +114,18 @@
 
 .loginbox {
 	display: none;
-	width: 350px;
-	height: 180px;
-	padding-left: 30px;
-	padding-top: 35px;
-	background: dimgray;
-	color: #39b;
-	font-family: '';
-	font-weight: bold;
-	font-size: 11px;
-	position: absolute;
-	transform: translateX(-72%);
+    width: 350px;
+    height: 180px;
+    padding-left: 28px;
+    padding-top: 30px;
+    background: darkred;
+    color: #39b;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 11px;
+    position: absolute;
+    transform: translateX(-72%);
+    border: 5px ridge gold;
 }
 
 .loginbox form {
