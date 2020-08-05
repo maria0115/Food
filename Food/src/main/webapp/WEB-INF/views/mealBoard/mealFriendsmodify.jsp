@@ -66,8 +66,36 @@
 				</tr>
 				<tr>
 					<td width="100%">약속날짜</td>
-					<td align="left"><input size="120%" type="text"
-						name="f_date" value="${board.f_date }"/></td>
+					<td align="left" style="display: flex;">
+					<input type="date" style="width: 20%; " name="f_date" id="f_date" placeholder="날짜를 선택해주세요">
+					<select name="f_date" id="f_date" class="form-control" style="width: 35%">
+						<option id="" disabled="disabled" selected>시간을 선택해주세요</option>
+							<option value="01">오전 1 시</option>
+							<option value="02">오전 2 시</option>
+							<option value="03">오전 3 시</option>
+							<option value="04">오전 4 시</option>
+							<option value="05">오전 5 시</option>
+							<option value="06">오전 6 시</option>
+							<option value="07">오전 7 시</option>
+							<option value="08">오전 8 시</option>
+							<option value="09">오전 9 시</option>
+							<option value="10">오전 10 시</option>
+							<option value="11">오전 11 시</option>
+							<option value="12">오후 12 시</option>
+							<option value="13">오후 1 시</option>
+							<option value="14">오후 2 시</option>
+							<option value="15">오후 3 시</option>
+							<option value="16">오후 4 시</option>
+							<option value="17">오후 5 시</option>
+							<option value="18">오후 6 시</option>
+							<option value="19">오후 7 시</option>
+							<option value="20">오후 8 시</option>
+							<option value="21">오후 9 시</option>
+							<option value="22">오후 10 시</option>
+							<option value="23">오후 11 시</option>
+							<option value="00">오전 0 시</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td>현재 저장된 위치</td>

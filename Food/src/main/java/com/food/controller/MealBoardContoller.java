@@ -132,6 +132,19 @@ public class MealBoardContoller {
 		return result;
 	}
 	
+	//길찾기 test
+	@RequestMapping("storemap.do")
+	public String storemap(HttpSession session, Model model) {
+		String userx = (String)session.getAttribute("longitude");
+		String usery = (String)session.getAttribute("latitude");
+		
+		
+		model.addAttribute("userx",userx);
+		model.addAttribute("usery",usery);
+		
+		return"/store/storemap";
+	}
+	
 	
 	
 	

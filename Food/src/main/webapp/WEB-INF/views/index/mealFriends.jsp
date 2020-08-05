@@ -172,6 +172,7 @@
 			</tr>
 		</table>
 		</form>
+		<a href="../mealBoard/storemap.do">test</a>
 		</div>
 		<br/><br/><br/>
 
