@@ -74,6 +74,7 @@ public class BoardDAOImpl implements BoardDAO {
 		return mybatis.selectOne("boardDAO.searchCount",map);
 	}
 
+	//밥친구 게시판 참여하기 버튼 눌렀을때
 	@Override
 	public int mealjoin(BoardVO vo) {
 		System.out.println("==>BoardMapper mealjoin() 호출");
@@ -100,6 +101,13 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public List<BoardVO> searchboard(MemberVO mvo) {
 		return mybatis.selectList("boardDAO.searchboard",mvo);
+	}
+
+	//밥친구 게시판 취소하기 버튼 눌렀을때
+	@Override
+	public int mealcancel(BoardVO vo) {
+		System.out.println("==>BoardMapper mealcancel() 호출");
+	    return mybatis.update("boardDAO.mealcancel",vo);
 	}
  
 

@@ -58,6 +58,7 @@ public class boardServiceImpl implements boardService {
 		return boardDAO.searchCount(searchType,keyword);
 	}
 
+	//밥친구 게시판 참여하기 버튼 눌렀을때
 	@Override
 	public int mealjoin(BoardVO vo) {
 		
@@ -73,6 +74,13 @@ public class boardServiceImpl implements boardService {
 	@Override
 	public  List<BoardVO> searchboard(MemberVO mvo) {
 		return boardDAO.searchboard(mvo);  
+	}
+
+	//밥친구게시판 취소하기 버튼 눌렀을때
+	@Override
+	public int mealcancel(BoardVO vo) {
+		
+		return boardDAO.mealcancel(vo);
 	}
 
 }

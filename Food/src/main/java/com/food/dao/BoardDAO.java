@@ -25,7 +25,11 @@ public interface BoardDAO {
 
 	int searchCount(String searchType, String keyword);
 
+	//밥친구 게시판 참가하기 버튼 눌렀을때
 	int mealjoin(BoardVO vo);
+
+	//밥친구 게시판 취소하기 버튼 눌렀을때
+	int mealcancel(BoardVO vo);
 	
 	List<BoardVO> selectReview(BoardVO vo, PagingVO pvo, String searchType, String keyword);
 

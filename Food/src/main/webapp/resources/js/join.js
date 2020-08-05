@@ -7,7 +7,7 @@
 	//참여하기를 누른사용자중에 로그인한유저의 아이디가 있다면 
 	if(joinid.match(id)){ 
 		$("#joinBtn").css("display", "none");
-		var $div = $('<input class="btn btn-dark" type="button" id="cancel" value="취소하기"/>');
+		var $div = $('<input class="btn btn-danger" type="button" id="cancel" value="취소하기"/>');
 		
 		$("#joincnt").append($div);
 		
@@ -33,18 +33,19 @@
 	            		"&b_no="+ $("#b_no").val(),
 	            	dataType:"text",
 	                success : function(resultData){
+	                	alert("밥친구로 확정되었습니다.");
 	                	//넘겨받은 결과값이 0이 아니라면 
 	                	if(resultData != 0){
 	                		//참가하기 버튼 숨기고
 	                		$("#joinBtn").css("display", "none");
-	                		//참가중 문구띄워주기 
-	                		var $div = $('<input class="btn btn-dark" type="button" id="cancel" value="취소하기">');
+	                		//취소하기버튼 띄워주기 
+	                		var $div = $('<input class="btn btn-danger" type="button" id="cancel" value="취소하기">');
 	                		$("#joincnt").append($div);
 	                		
 	                		//span태그 안에 마감되었습니다 라는 문자가 있다면 
 	                		if(end.match("마감되었습니다.")){
-	                			//참가중 문구 지워주기
-	                			$("#join").remove();
+	                			//취소버튼 지워주기
+	                			$("#cancel").remove();
 	                		}
 	                		
 	                	}else{
