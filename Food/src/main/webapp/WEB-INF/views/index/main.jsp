@@ -66,7 +66,21 @@
 }
 
 
+#mainimage{
 
+        height: 100vh;
+
+        /*background-image: url("02.jpg");
+
+            background-repeat: no-repeat;
+
+            background-position: center;
+
+            background-size: cover;*/
+
+        background: url("01.jpg") no-repeat center/cover;
+
+    }
 
 
 </style>
@@ -253,7 +267,7 @@
 	<!-- ##### Hero Area Start ##### -->
 	<!-- 	<section class="hero-area"> --> 
 		<div class="slide-img bg-img"
-style='background-image: url(/Food/resources/img/mainmenu/<%=map.get("menu")%>.jpg)'>
+       style='background-image: url(/Food/resources/img/mainmenu/<%=map.get("menu")%>.jpg)'>
 		<!-- Single Hero Post -->
 		<div class="single-hero-post2 bg-overlay">
 
