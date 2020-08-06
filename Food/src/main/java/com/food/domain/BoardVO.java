@@ -33,16 +33,16 @@ public class BoardVO {
     private String f_userId;
     private String s_brand_name;
     private String d_reason;
-    private int r_replyOrigin;
+    private int q_replyno;
     
-  
 
-	public int getR_replyOrigin() {
-		return r_replyOrigin;
+
+	public int getQ_replyno() {
+		return q_replyno;
 	}
 
-	public void setR_replyOrigin(int r_replyOrigin) {
-		this.r_replyOrigin = r_replyOrigin;
+	public void setQ_replyno(int q_replyno) {
+		this.q_replyno = q_replyno;
 	}
 
 	//파일처리할때 필요함 !!!
