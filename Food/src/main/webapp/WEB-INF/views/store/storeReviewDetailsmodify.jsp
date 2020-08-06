@@ -126,6 +126,7 @@
 													class="form-control" id="name" name="s_brand_name"
 													placeholder="Nazrul" value="${board.s_brand_name}">
 											</div>
+											
 											<div class="form-group">
 												<label for="name">제목</label> 
 												<input type="text"

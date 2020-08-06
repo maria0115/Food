@@ -152,12 +152,9 @@ public class StoreController {
 
 		System.out.println("reviewDetailsPop.do 도착");
 		vo.setBoardType(2);
+		System.out.println(vo.getB_no());
 		BoardVO list =  boardService.boardView(vo);
 		
-		
-		
-		
-	
 		return list;
 		
 	}

@@ -36,8 +36,9 @@ var defaultOpts = {
 $(function(){
 	//눌렀을때 실행되는거
 	$("#reviewKing").on("click", function(){
-	
+		
 		getWriterData();
+		
 	})
 	
 	
@@ -123,7 +124,7 @@ function drawWriterTable(data){
     var div2 ='<div class="comment-author">';
 	var div3 =' <img src="img/bg-img/37.jpg" alt="">';
 	var div4 ='</div>';
-    var div5 ='<div class="comment-content" onclick="divClick()">';
+    var div5 ='<div class="comment-content" test="temp" onclick="divClick(this)">';
 	var div6 ='<div class="d-flex align-items-center justify-content-between">';
 	var h51 = '<h5 id="reviewName">';
 	var titleA ='<a href="storeReviewDetails.do?b_no=';
@@ -132,7 +133,7 @@ function drawWriterTable(data){
 	var h52 = '</h5>';
 	var span = '<span class="comment-date">';
 	var span2 = '</span>';
-	var input ='<input type="hidden" id="b_num" value="';
+	var input ='<input type="hidden" name="b_num" value="';
 	var input2 = '">';
 	var div7 ='</div>';
 	var p1 = '<p>';
@@ -148,12 +149,13 @@ function drawWriterTable(data){
 			div3+
 			div4+
 			div5+
+			input+data.listVO2[i].b_no+input2+
 			div6+
 			h51+
 			titleA+data.listVO2[i].b_no+titleAend +data.listVO2[i].title+aEnd +
 			h52+
 			span+data.listVO2[i].b_date+span2+
-			input+data.listVO2[i].b_no+input2+
+			
 			div7+
 			p1+data.listVO2[i].title+p2+
 			div8+
@@ -178,7 +180,18 @@ function drawWriterTable(data){
 }
 
 //리뷰목록 클릭했을때 리뷰 상세보기 레이어팝업 띄우기
-function divClick(){
+function divClick(elem){
+	
+	alert("시작:"+ $(this));	
+	
+	//var b_no = elem.getAttribute('test')
+	//alert(b_no)
+	//alert($(this).attr('test'));
+	
+	var childs = elem.childNodes;
+	var b_num = childs[0].getAttribute('value');
+	alert(b_num);
+	$("#checkLock").val(b_num);
 	
 	$.ajax({
 		type : 'post',
@@ -186,8 +199,8 @@ function divClick(){
 		url : 'reviewDetailsPop.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {
-				"b_no" : $('#b_num').val()
-				
+				"b_no" : b_num,
+				 
 				},
 		dataType : 'json',
 		success : function(resultData){ 
@@ -198,6 +211,7 @@ function divClick(){
 			$("#reviewDetailCount").text(resultData.viewCount)
 			$("#reviewDetailTitle").val(resultData.title)
 			$("#reviewDetailContent").val(resultData.b_content)
+			$("#boardNoHidden").val(resultData.b_no)
 			
 			$("#reviewcol").remove();
 			$("#detailReviewModify").css({"display" : "inline-block"});
@@ -206,6 +220,7 @@ function divClick(){
 			$('#detailModify').remove();
 			$('#reviewDetailTitle').attr("style" , "border : none");
 			$('#reviewDetailContent').attr("style" , "border : none");
+
 			
 		},
 		error:function(request,status,error){
@@ -217,7 +232,46 @@ function divClick(){
 	
 	
 }
+function modifyre(){
+	var b_num = $('#checkLock').val()
+	
+	$.ajax({
+		type : 'post',
+		async:true,
+		url : 'reviewDetailsPop.do',
+		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+		data : {
+				"b_no" : b_num,
+				 
+				},
+		dataType : 'json',
+		success : function(resultData){ 
+			layer_popup('#layer2',resultData)
+			$("#reviewDetailBrandName").text(resultData.s_brand_name)
+			$("#reviewDetailName").text(resultData.userId)
+			$("#reviewDetailDate").text(resultData.b_date)
+			$("#reviewDetailCount").text(resultData.viewCount)
+			$("#reviewDetailTitle").val(resultData.title)
+			$("#reviewDetailContent").val(resultData.b_content)
+			$("#boardNoHidden").val(resultData.b_no)
+			
+			$("#reviewcol").remove();
+			$("#detailReviewModify").css({"display" : "inline-block"});
+			$('#reviewDetailTitle').attr("readonly","readonly");
+			$('#reviewDetailContent').attr("readonly","readonly");
+			$('#detailModify').remove();
+			$('#reviewDetailTitle').attr("style" , "border : none");
+			$('#reviewDetailContent').attr("style" , "border : none");
 
+			
+		},
+		error:function(request,status,error){
+			alert("divClick실패"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+		
+	});
+}
 
 
 
@@ -281,7 +335,7 @@ $('#detailReviewDelete').click(function(){
 // 리뷰 디테일에서 삭제버튼 눌렸을때 
 function detailReviewDelete() {
 	alert("dd")
-
+	
 	
 	$.ajax({
 		type : 'post',
@@ -289,7 +343,8 @@ function detailReviewDelete() {
 		url : 'storeReviewDetaildelete.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {
-				"b_no" : $('#b_num').val()
+					
+			"b_no" : $("#boardNoHidden").val()
 				
 				},
 		dataType : 'json',
@@ -343,7 +398,7 @@ $('#detailReviewModify').click(function(){
 
 //리뷰 디테일에서 수정완료 눌렸을때 
 function detailReviewModify() {
-	alert("dd")
+	alert("수정완료 스크립트");
 
 	
 	$.ajax({
@@ -352,7 +407,7 @@ function detailReviewModify() {
 		url : 'storeReviewDetailsmodifyEnd.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {
-				"b_no" : $('#b_num').val(),
+				"b_no" : $("#boardNoHidden").val(),
 				"s_brand_name" :$('#title').val(),		
 				"title": $('#reviewDetailTitle').val(),
 				"b_content" : $('#reviewDetailContent').val()
@@ -362,8 +417,11 @@ function detailReviewModify() {
 			
 			$('.dim-layer').fadeOut();
 			getWriterData();
-			divClick();
-			
+			alert($("#boardNoHidden").val());
+	
+
+			alert("다시보기");
+			modifyre();
 			
 		},
 		error:function(request,status,error){

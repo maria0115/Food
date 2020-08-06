@@ -27,7 +27,9 @@ map.put("동남아", "east");
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+<script type="text/javascript">
+$fun
+</script>
 
 
 
@@ -48,7 +50,11 @@ map.put("동남아", "east");
 
 
 
-
+<script type="text/javascript">
+$(function(){
+	
+});
+</script>
 </head>
 
 
@@ -187,7 +193,8 @@ map.put("동남아", "east");
 					    box-sizing: border-box;
 					    border-radius: 4px;">
                			<span>별점</span></br>
-               			 
+               			<input id="boardNoHidden" type="hidden" value="${board.b_no}">
+               			<input type="hidden" id ="checkLock" value="">
                			<span id="reviewDetailName" >이름</span><span>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp</span>
                			<span id="reviewDetailDate" >날짜</span><span>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp</span>
                			<span id="reviewDetailCount">조회수</span>
@@ -271,6 +278,7 @@ map.put("동남아", "east");
 								<span id='m_id' style="visibility: hidden">${sessionScope.user_id}</span>
 								<script>
 						$(function(){
+							
 // 							alert($('.title').text())
 							if($('#name_check').val().match($('.title').text())){
 // 								alert('zz')
@@ -504,7 +512,7 @@ map.put("동남아", "east");
 													<div class="col-12">
 														<div class="form-group d-flex align-items-center">
 															<span class="mr-15">Your Ratings:</span>
-															<!-- <div class="stars">
+													<div class="stars">
                                                         <input type="radio" name="star" class="star-1" id="star-1">
                                                         <label class="star-1" for="star-1">1</label>
                                                         <input type="radio" name="star" class="star-2" id="star-2">
@@ -516,7 +524,7 @@ map.put("동남아", "east");
                                                         <input type="radio" name="star" class="star-5" id="star-5">
                                                         <label class="star-5" for="star-5">5</label>
                                                         <span></span>
-                                                    </div> -->
+                                                    </div> 
 														</div>
 													</div>
 
