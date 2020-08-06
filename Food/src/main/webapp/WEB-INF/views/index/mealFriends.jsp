@@ -138,7 +138,7 @@
 			</c:choose>
 		</c:forEach>
 		<c:if test="${paging.endPage != paging.lastPage}">
-			<a href="../index/mealFriends?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+			<a href="../index/mealFriends.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 		</c:if>
         </div>
         <!-- 페이지에 접속했을때 로그인을 하지 않았을경우 글등록 버튼 안보여주기 -->
@@ -172,7 +172,7 @@
 			</tr>
 		</table>
 		</form>
-		<a href="../mealBoard/storemap.do">test</a>
+		<input type="hidden" id="loginId" value="${sessionScope.user_id }">
 		</div>
 		<br/><br/><br/>
 
@@ -183,7 +183,7 @@
 	<%@ include file="footer.jsp" %>
 	<script src="/Food/resources/js/active.js"></script>
 	<script src="/Food/resources/js/jointimeck.js"></script>
-	
+	<script src="/Food/resources/js/mainsocket.js"></script>
 
 
 

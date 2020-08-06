@@ -134,7 +134,7 @@
 										<span class="login-font" >${sessionScope.user_name} Welcome.</span>
 										<a href="" id="logout" ><button class="logout" >Log-Out</button></a> 
 										<a href="/Food/mypageform.do" id="mypage" class="fa fa-user" >My Page</a>
-										<span class="glyphicon glyphicon-bell" style="color: snow; font-size:17px; ">Notice</span><span style="color: snow; margin-right: 10px;">(1)</span>	
+										<a><img src="/Food/resources/img/bell.jpg"></a>
 											<span class="wish">
 								<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
 									aria-hidden="true"></i> <span style="font-size: 17px; color: red;">Wish <span

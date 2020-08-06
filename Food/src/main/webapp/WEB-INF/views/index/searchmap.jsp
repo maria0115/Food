@@ -32,11 +32,11 @@
 		<table class="table" style="border-top: none;">
 			<tr>
 				<td>
-				<form action="/Food/index/searchmap.do">
-				<label>다른 맛집 검색해보기</label>
-				<input type="text" id="keyword" name="keyword" placeholder="검색하실 단어를 입력해주세요 ">
+				<form action="/Food/index/searchmap.do" style="display: flex;">
+				<input style="width: 25%" class="form-control" type="text" id="keyword" name="keyword" placeholder="검색하실 단어를 입력해주세요 ">
 				<input type="hidden" id="word" value="${word}">
 				<button class="btn btn-default">검색</button>
+				<span style="margin-top: 1%;">다른 맛집 검색해보기</span>
 				</form>
 				</td>
 			</tr>
