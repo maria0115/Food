@@ -5,11 +5,16 @@ import java.util.HashSet;
 import java.util.Set;
  
 import javax.websocket.OnClose;
+import javax.websocket.OnError;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
- 
+
+import org.springframework.stereotype.Controller;
+
+
+@Controller
 @ServerEndpoint("/Food/")
 public class MainSocket {
     private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
@@ -29,11 +34,17 @@ public class MainSocket {
     @OnOpen
     public void onOpen(Session session) {
         System.out.println(session);
+        System.out.println("연결됨!!!...");
         clients.add(session);
     }
     
     @OnClose
     public void onClose(Session session) {
         clients.remove(session);
+    }
+    
+    @OnError
+    public void onError(Throwable e) {
+        System.out.println("에러==========>"+e.getMessage());
     }
 }

@@ -31,44 +31,43 @@
         var content = message[1];
         
 
-        //세션에 넘겨받은 아이디가 현재 접속한 아이디와 다르고 메세지가 없다면 
-	   if (!sender.match(writer)) {
-		   //상대방이 채팅방에 입장했다고 메세지 띄워주기
-		   var $enter = $("<p class='you' style='font-size: 16px;color: red;'>"+sender+"님이 채팅에 참여하였습니다.</p>");
-		   //채팅창에 메세지 붙여주기 
-	        $("#chat").append($enter);
-	   } else {
-		   //넘겨받은 메세지에 내용이 있다면 메세지창에 넘겨받은 메세지, 아이디값 넣어서 
-		 var $usermsg = $("<li class='you'>"+
-					"<div class='entete'>"+
-						"<h2>"+sender+"</h2>"+
-						"<span class='status green'></span>"+
-					"</div>"+
-					"<div class='message'>"+
-					content+
-					"</div>"+
-			"</li>");
-		 
-		 //채팅방에 붙여주기 
-		 $("#chat").append($usermsg);
-
-	}
+//        //세션에 넘겨받은 아이디가 현재 접속한 아이디와 다르고 메세지가 없다면 
+//	   if (!sender.match(writer)) {
+//		   //상대방이 채팅방에 입장했다고 메세지 띄워주기
+//		   var $enter = $("<p class='you' style='font-size: 16px;color: red;'>"+sender+"님이 채팅에 참여하였습니다.</p>");
+//		   //채팅창에 메세지 붙여주기 
+//	        $("#chat").append($enter);
+//	   } else {
+//		   //넘겨받은 메세지에 내용이 있다면 메세지창에 넘겨받은 메세지, 아이디값 넣어서 
+//		 var $usermsg = $("<li class='you'>"+
+//					"<div class='entete'>"+
+//						"<h2>"+sender+"</h2>"+
+//						"<span class='status green'></span>"+
+//					"</div>"+
+//					"<div class='message'>"+
+//					content+
+//					"</div>"+
+//			"</li>");
+//		 
+//		 //채팅방에 붙여주기 
+//		 $("#chat").append($usermsg);
+//
+//	}
    }
     
    
-	
     
-    
-    
-    //페이지를 열었을때
+    //채팅방을 열었을때
     function onOpen(event) {
         //웹소켓에 아이디와 메세지를 구분할 "|" 로 문장 만들어서 전송해주기 
         webSocket.send(userid+"|"+" 님이 채팅방에 입장하셨습니다.");
+        alert("소켓 열림!");
     }
     //에러가 났을때 
     function onError(event) {
     	//알림창 띄워주기 
         alert("웹소켓에러"+event.data);
+        webSoket.send(event.data);
     }
     //메세지 보내기 
     function sendMessage() {
