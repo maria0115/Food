@@ -4,14 +4,17 @@ package com.food.naver;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.codehaus.jackson.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
  
@@ -58,9 +61,53 @@ public class LoginController {
         //로그인 사용자 정보를 읽어온다.
         apiResult = naverLoginBO.getUserProfile(oauthToken);
         System.out.println("값"+ apiResult);
-        session.setAttribute("result", apiResult);
+        session.setAttribute("result", apiResult); 
        
         /* 네이버 로그인 성공 페이지 View 호출 */
-        return "index/singup";
+        return"index/singup";
     }
+    
+    @RequestMapping(value="/loginview.do")
+    public String login(@RequestParam("code") String code) {
+        System.out.println("code : " + code);
+        return "index";
+    }
+
+    @RequestMapping(value="/kakaologin.do", produces = "application/json", method = {RequestMethod.GET, RequestMethod.POST})
+	public String kakaoLogin(@RequestParam("code") String code, HttpServletRequest request, HttpServletResponse httpServlet, HttpSession session) {
+		
+		System.out.println("code : "+code);
+		JsonNode accessToken;
+		 
+        // JsonNode트리형태로 토큰받아온다
+        JsonNode jsonToken = KakaoAccessToken.getKakaoAccessToken(code);
+        // 여러 json객체 중 access_token을 가져온다
+        accessToken = jsonToken.get("access_token");
+ 
+        System.out.println("access_token : " + accessToken);
+        
+     // access_token을 통해 사용자 정보 요청
+        JsonNode userInfo = KakaoUserInfo.getKakaoUserInfo(accessToken);
+ 
+        // Get id
+        String id = userInfo.path("id").asText();
+        String name = null;
+        String email = null;
+ 
+        // 유저정보 카카오에서 가져오기 Get properties
+        JsonNode properties = userInfo.path("properties");
+        JsonNode kakao_account = userInfo.path("kakao_account");
+ 
+        name = properties.path("nickname").asText();
+        email = kakao_account.path("email").asText();
+ 
+        System.out.println("id : " + id);
+        System.out.println("name : " + name);
+        System.out.println("email : " + email);
+        
+        session.setAttribute("user_id", id);
+        session.setAttribute("user_name", name);
+		
+		return"redirect:start.jsp";
+	}
 }
