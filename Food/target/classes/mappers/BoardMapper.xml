@@ -33,7 +33,7 @@
 <!-- 게시글 등록 -->
 <insert id="insertBoard" parameterType="board">
       Insert Into board values(#{boardType},${seq}.nextval,#{title},#{userId},#{b_content},sysdate,#{viewCount},#{f_addr1},#{f_addr2},#{f_membercnt},
-      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize},#{f_cnt},#{d_fileName},#{d_fileSize},#{f_userId},#{s_brand_name},#{d_reason})
+      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize},#{f_cnt},#{d_fileName},#{d_fileSize},#{f_userId},#{s_brand_name},#{d_reason},qna_reply_seq.nextval)
 
 </insert>
 
@@ -109,5 +109,11 @@ insert into board(boardtype,b_content,f_cnt,b_date) values(#{boardType},#{b_cont
 <select id="selectReply" resultType="board">
 select * from board where f_cnt=#{b_no} and boardtype=5
 </select>
+
+<update id="modifyReply" parameterType="board">
+update board
+set B_CONTENT = #{b_content}
+where boardtype=5 and Q_REPLYNO=#{q_replyno}
+</update>
 
 </mapper>

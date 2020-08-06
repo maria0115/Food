@@ -198,8 +198,8 @@ map.put("동남아", "east");
     					border-top: 1px dashed #e2e2e2;">
                			<label>제목</label><br/>
                			<input id="reviewDetailTitle" type="text" readonly="readonly" 
-               			style="border: none;">
-               			<br/><label>내용</label><br/>
+               			style="border: none; "><br/>
+               			<label >내용</label><br/>
 				 		<textarea id="reviewDetailContent" readonly="readonly" style="width:100%; border: none;">내용</textarea>
                		</div>
                		
