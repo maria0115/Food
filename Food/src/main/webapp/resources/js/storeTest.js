@@ -109,7 +109,7 @@ function getWriterData(){
           
 		},
 		error:function(request,status,error){
-			alert("실패패패패패iok"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			alert("getWriterData 실패"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 		
@@ -198,9 +198,16 @@ function divClick(){
 			$("#reviewDetailCount").text(resultData.viewCount)
 			$("#reviewDetailTitle").val(resultData.title)
 			$("#reviewDetailContent").val(resultData.b_content)
+			
+			$("#reviewcol").remove();
+			$("#detailReviewModify").css({"display" : "inline-block"});
+			$('#reviewDetailTitle').attr("readonly","readonly");
+			$('#reviewDetailContent').attr("readonly","readonly");
+			$('#detailModify').remove();
+			
 		},
 		error:function(request,status,error){
-			alert("실패패패패패iok"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			alert("divClick실패"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 		
@@ -285,13 +292,13 @@ function detailReviewDelete() {
 				},
 		dataType : 'json',
 		success : function(resultData){
-			divClick();
+			
 			$('.dim-layer').fadeOut();
 			getWriterData();
 			
 		},
 		error:function(request,status,error){
-			alert("실패패패패패iok"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			alert("삭제실패입니다k"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 		
@@ -300,7 +307,7 @@ function detailReviewDelete() {
 	
 }
 
-
+//수정버튼 눌렀을때
 $('#detailReviewModify').click(function(){
     
 	$('#reviewDetailTitle').removeAttr("readonly","readonly");
@@ -310,20 +317,21 @@ $('#detailReviewModify').click(function(){
 	$("#detailReviewModify").css({"display" : "none"});
 	$div = $('<a href="#none" id ="detailModify">수정완료</a>');
 	$("#btnArea").append($div);
-	$fileDiv = $('<div class="col-12">');
+	
+	$fileDiv = $('<div class="col-12" id="reviewcol"> </div>');
 	$fileDivInputFile=$('<input type="file" name="file" maxlength="60" size="40">');
 	$fileDivInputBtn = $('<input type="button" class="btn alazea-btn" id="reviewInsert" value="리뷰등록">');
-	$fileDivEnd = $('</div>');
 	$("#titleAndContent").append($fileDiv);
-	$("#titleAndContent").append($fileDivInputFile);
-	$("#titleAndContent").append($fileDivInputBtn);
-	$("#titleAndContent").append($fileDivEnd);
+	$("#reviewcol").append($fileDivInputFile);
+	$("#reviewcol").append($fileDivInputBtn);
+
 	
 	
 	
 	$('#detailModify').click(function(){
 		alert("dd")
-		 detailReviewModify();
+		detailReviewModify();
+		
 	});
 
 
@@ -349,9 +357,11 @@ function detailReviewModify() {
 				},
 		dataType : 'json',
 		success : function(resultData){
+			
 			$('.dim-layer').fadeOut();
-			divClick()
 			getWriterData();
+			divClick();
+			
 			
 		},
 		error:function(request,status,error){
