@@ -7,9 +7,10 @@
 
 <%
 	// <jsp:param>의 값 넘겨받기
-	String folder = request.getParameter("folder");
-	if( folder == null || folder.equals("")) folder="";
-	%>  
+String folder = request.getParameter("folder");
+if (folder == null || folder.equals(""))
+	folder = "";
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,8 +22,8 @@
 	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <style type="text/css">
-.qna_table{
-cursor: pointer;
+.qna_table {
+	cursor: pointer;
 }
 </style>
 
@@ -65,12 +66,12 @@ cursor: pointer;
 
 
 <style>
-.access{
- will-change: auto;
-    /* width: auto; */
-    width: max-content;
-
+.access {
+	will-change: auto;
+	/* width: auto; */
+	width: max-content;
 }
+
 .menu a {
 	cursor: pointer;
 }
@@ -78,16 +79,16 @@ cursor: pointer;
 .menu .hide {
 	display: none;
 }
+
 #manageLabel1 {
-   display: revert;
-    font-size: larger;
-    margin-right: 25px;
+	display: revert;
+	font-size: larger;
+	margin-right: 25px;
 }
 
-.wish{
--webkit-text-stroke-width: medium;
+.wish {
+	-webkit-text-stroke-width: medium;
 }
-
 </style>
 
 
@@ -96,12 +97,13 @@ cursor: pointer;
 
 <body>
 	<!-- Preloader -->
-	
+
 	<div class="single-hero-post bg-overlay">
-				<!-- Post Image -->
-			<img style="max-width: 100%; background-size: contain;" src="/Food/resources/img/header.jpg" alt="">
-			</div>
-	
+		<!-- Post Image -->
+		<img style="max-width: 100%; background-size: contain;"
+			src="/Food/resources/img/header.jpg" alt="">
+	</div>
+
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
 		<div class="preloader-img">
@@ -111,96 +113,99 @@ cursor: pointer;
 
 	<!-- ##### Header Area Start ##### -->
 	<header class="header-area">
-	
+
 		<!-- ***** Top Header Area ***** -->
-		
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div
-							class="top-header-content d-flex align-items-center justify-content-between">
-							<!-- Top Header Content -->
-							<div class="top-header-meta">
-								<!--로고 이미지 들어올곳  -->
-								<a href="/Food/main.do" class="nav-brand"><img
-								src="/Food/resources/img/logo.png" alt="" class="logo">
-								</a>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div
+						class="top-header-content d-flex align-items-center justify-content-between">
+						<!-- Top Header Content -->
+						<div class="top-header-meta">
+							<!--로고 이미지 들어올곳  -->
+							<a href="/Food/main.do" class="nav-brand"><img
+								src="/Food/resources/img/logo.png" alt="" class="logo"> </a>
+						</div>
+
+						<!-- Top Header Content -->
+						<div class="top-header-meta d-flex">
+							<!-- Language Dropdown -->
+
+
+
+							<div class="access">
+								<c:if test="${not empty sessionScope.user_id}">
+									<span class="login-font">${sessionScope.user_name}
+										Welcome.</span>
+									<a href="" id="logout"><button class="logout">Log-Out</button></a>
+									<a href="/Food/mypageform.do" id="mypage" class="fa fa-user">My
+										Page</a>
+									<a><img src="/Food/resources/img/bell.jpg"></a>
+									<span class="wish"> <a
+										href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i
+											style="font-size: 17px; color: red;" class="fa fa-heart-o"
+											aria-hidden="true"></i> <span
+											style="font-size: 17px; color: red;">Wish <span>(${wish})</span></span></a>
+
+
+									</span>
+								</c:if>
 							</div>
-							
-							<!-- Top Header Content -->
-							<div class="top-header-meta d-flex">
-								<!-- Language Dropdown -->
-								
-								
-			 
-									<div class="access" >	
-									<c:if test="${not empty sessionScope.user_id}">
-										<span class="login-font" >${sessionScope.user_name} Welcome.</span>
-										<a href="" id="logout" ><button class="logout" >Log-Out</button></a> 
-										<a href="/Food/mypageform.do" id="mypage" class="fa fa-user" >My Page</a>
-										<a><img src="/Food/resources/img/bell.jpg"></a>
-											<span class="wish">
-								<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
-									aria-hidden="true"></i> <span style="font-size: 17px; color: red;">Wish <span
-										>(${wish})</span></span></a>
-
-
-							</span>
-									</c:if>
-								</div>	
-						    <c:if test="${empty sessionScope.user_id }">		
+							<c:if test="${empty sessionScope.user_id }">
 								<!-- Login -->
-						<div class ="login-header">
-								<div class="login">
-									<a href="#" id="loginLabel" class="fa fa-user" >Login</a>
-									<div class="loginbox" style="z-index: 2;">
-										<form  method="post"  id="frm"  name="frm">
-											<p>
-												<label for="logid">ID</label>&nbsp&nbsp <input type="text"
-													name="m_id" id="logid" placeholder="ID" />
-											</p>
-											<p>
-												<label for="logpw">PW</label>&nbsp&nbsp <input
-													type="password" name="m_pass" id="logpw"
-													placeholder="PassWord" />
-											</p>
-											<p>
-												<input class="loginBtn" id="btn_submit" value=""
-													type="submit" />
-											</p>
-										</form>
-										 
-										<a href="singup.do" class="memberInfo">회원가입 </a> <a
-										href="find_form.do" class="memberInfo">아이디 비밀번호 찾기 </a> 
-											<a id="naver" href="/Food/loginview.do">네이버 아이디로 로그인</a>
-										<div class="closeBtn" >X</div>  
-					
-									</div> 
-										
+								<div class="login-header">
+									<div class="login">
+										<a href="#" id="loginLabel" class="fa fa-user">Login</a>
+										<div class="loginbox" style="z-index: 2;">
+											<form method="post" id="frm" name="frm">
+												<p>
+													<label for="logid">ID</label>&nbsp&nbsp <input type="text"
+														name="m_id" id="logid" placeholder="ID" />
+												</p>
+												<p>
+													<label for="logpw">PW</label>&nbsp&nbsp <input
+														type="password" name="m_pass" id="logpw"
+														placeholder="PassWord" />
+												</p>
+												<p>
+													<input class="loginBtn" id="btn_submit" value=""
+														type="submit" />
+												</p>
+											</form>
+
+											<a href="singup.do" class="memberInfo">회원가입 </a> <a
+												href="find_form.do" class="memberInfo">아이디 비밀번호 찾기 </a> <a
+												id="naver" href="/Food/loginview.do">소셜 로그인</a>
+											<div class="closeBtn">X</div>
+
+										</div>
+
 									</div>
 								</div>
-							
-							 
-<!--                         <ul id="navi"> -->
-<!--                               <li> -->
-                                      <a href="/Food/manager/dashBoard.do"  id="manageLabel1" class="fa fa-user" ><br/>Manage</a>
-<!--                                </li> -->
-                               
-                           	</c:if>
+
+
+								<!--                         <ul id="navi"> -->
+								<!--                               <li> -->
+								<a href="/Food/manager/dashBoard.do" id="manageLabel1"
+									class="fa fa-user"><br />Manage</a>
+								<!--                                </li> -->
+
+							</c:if>
 
 
 
 
-								<!-- Cart -->
-						
+							<!-- Cart -->
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
-					
-							
+
+
+
 		<!-- ***** Navbar Area ***** -->
 		<div class="alazea-main-menu">
 			<div class="classy-nav-container breakpoint-off">
@@ -210,7 +215,7 @@ cursor: pointer;
 
 						<!-- Nav Brand -->
 						<a href="index.html" class="nav-brand"><img
-                     src="img/core-img/logo.png" alt=""></a>
+							src="img/core-img/logo.png" alt=""></a>
 
 						<!-- Navbar Toggler -->
 						<div class="classy-navbar-toggler">
@@ -229,7 +234,7 @@ cursor: pointer;
 
 							<!-- Navbar Start -->
 							<div class="classynav">
-								
+
 								<ul>
 									<li><a href="/Food/todayMenu.do" id="today">오늘의 메뉴</a></li>
 									<li><a
@@ -255,13 +260,14 @@ cursor: pointer;
 					<!-- Search Form -->
 					<div class="search-form">
 
-						<form action="/Food/index/searchmap.do" method="get" id="searchfrm">
+						<form action="/Food/index/searchmap.do" method="get"
+							id="searchfrm">
 							<div class="closeIcon">
 								<i class="fa fa-times" aria-hidden="true"></i>
 							</div>
 							<div>
 								<input type="search" name="keyword" id="keyword"
-									placeholder="검색하실 단어를 입력해주세요 " >
+									placeholder="검색하실 단어를 입력해주세요 ">
 							</div>
 						</form>
 					</div>
@@ -273,7 +279,8 @@ cursor: pointer;
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Popper js -->
 	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
 	<!-- Bootstrap js -->
@@ -282,15 +289,16 @@ cursor: pointer;
 	<script src="/Food/resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
 	<script src="/Food/resources/js/active.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
-	
-	
+
+
 	<!-- <script src="/Food/resources/js/storePaging.js"></script> -->
 
 	<!-- 지섭-->
-	
+
 
 </body>
 
