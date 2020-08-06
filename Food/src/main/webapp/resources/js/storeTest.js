@@ -123,7 +123,7 @@ function drawWriterTable(data){
     var div2 ='<div class="comment-author">';
 	var div3 =' <img src="img/bg-img/37.jpg" alt="">';
 	var div4 ='</div>';
-    var div5 ='<div class="comment-content" >';
+    var div5 ='<div class="comment-content" onclick="divClick()">';
 	var div6 ='<div class="d-flex align-items-center justify-content-between">';
 	var h51 = '<h5 id="reviewName">';
 	var titleA ='<a href="storeReviewDetails.do?b_no=';
@@ -132,15 +132,14 @@ function drawWriterTable(data){
 	var h52 = '</h5>';
 	var span = '<span class="comment-date">';
 	var span2 = '</span>';
-	var input ='<input type="hidden" id="test" value="';
+	var input ='<input type="hidden" id="b_num" value="';
 	var input2 = '">';
 	var div7 ='</div>';
 	var p1 = '<p>';
 	var p2 = '</p>';
 	var div8 ='</div>';
 	var div9 ='</div>';
-	var a1 = '<a type="button" class="btn alazea-btn" id="reviewUpdate" value="수정"></a>';
-	var a2= '<a href="reviewDelete.do" class="btn alazea-btn" id="reviewDelete" value="삭제"></a>';
+	
 
        for(var i=0; i<data.listVO2size; i++){
 		var listContent =
@@ -157,8 +156,6 @@ function drawWriterTable(data){
 			input+data.listVO2[i].b_no+input2+
 			div7+
 			p1+data.listVO2[i].title+p2+
-			a1+
-			a2+
 			div8+
 			div9
 			
@@ -179,3 +176,213 @@ function drawWriterTable(data){
 		
 	}
 }
+
+//리뷰목록 클릭했을때 리뷰 상세보기 레이어팝업 띄우기
+function divClick(){
+	
+	$.ajax({
+		type : 'post',
+		async:true,
+		url : 'reviewDetailsPop.do',
+		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+		data : {
+				"b_no" : $('#b_num').val()
+				
+				},
+		dataType : 'json',
+		success : function(resultData){ 
+			layer_popup('#layer2',resultData)
+			$("#reviewDetailBrandName").text(resultData.s_brand_name)
+			$("#reviewDetailName").text(resultData.userId)
+			$("#reviewDetailDate").text(resultData.b_date)
+			$("#reviewDetailCount").text(resultData.viewCount)
+			$("#reviewDetailTitle").val(resultData.title)
+			$("#reviewDetailContent").val(resultData.b_content)
+		},
+		error:function(request,status,error){
+			alert("실패패패패패iok"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+		
+	});
+	
+	
+}
+
+
+
+
+
+$('.btn-example').click(function(){
+	var $href = $(this).attr('href');
+	layer_popup($href);
+});
+
+
+// 테스트
+function layer_popup(el){
+
+    var $el = $(el);        //레이어의 id를 $el 변수에 저장
+    var isDim = $el.prev().hasClass('dimBg');   //dimmed 레이어를 감지하기 위한 boolean 변수
+
+    isDim ? $('.dim-layer').fadeIn() : $el.fadeIn();
+
+    var $elWidth = ~~($el.outerWidth()),
+        $elHeight = ~~($el.outerHeight()),
+        docWidth = $(document).width(),
+        docHeight = $(document).height();
+
+    // 화면의 중앙에 레이어를 띄운다.
+    if ($elHeight < docHeight || $elWidth < docWidth) {
+        $el.css({
+            marginTop: -$elHeight /2,
+            marginLeft: -$elWidth/2
+        })
+    } else {
+        $el.css({top: 0, left: 0});
+    }
+
+    $el.find('a.btn-layerClose').click(function(){
+        isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+        return false;
+    });
+
+    $('.layer .dimBg').click(function(){
+        $('.dim-layer').fadeOut();
+        return false;
+    });
+
+}
+
+// 리뷰 삭제 버튼 클릭시 
+$('#detailReviewDelete').click(function(){
+    
+	var result = confirm("삭제하시겠습니까 ? ");
+	
+	if(result){
+	    detailReviewDelete();
+	    alert("삭제되었습니다");
+	}else{
+	    return false;
+	}
+
+
+});
+
+// 리뷰 디테일에서 삭제버튼 눌렸을때 
+function detailReviewDelete() {
+	alert("dd")
+
+	
+	$.ajax({
+		type : 'post',
+		async:true,
+		url : 'storeReviewDetaildelete.do',
+		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+		data : {
+				"b_no" : $('#b_num').val()
+				
+				},
+		dataType : 'json',
+		success : function(resultData){
+			divClick();
+			$('.dim-layer').fadeOut();
+			getWriterData();
+			
+		},
+		error:function(request,status,error){
+			alert("실패패패패패iok"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+		
+	});
+	
+	
+}
+
+
+$('#detailReviewModify').click(function(){
+    
+	$('#reviewDetailTitle').removeAttr("readonly","readonly");
+	$('#reviewDetailContent').removeAttr("readonly","readonly");
+//	$('#reviewDetailTitle').Attr("border","1");
+//	$('#reviewDetailTitle').Attr("border","1");
+	$("#detailReviewModify").css({"display" : "none"});
+	$div = $('<a href="#none" id ="detailModify">수정완료</a>');
+	$("#btnArea").append($div);
+	$fileDiv = $('<div class="col-12">');
+	$fileDivInputFile=$('<input type="file" name="file" maxlength="60" size="40">');
+	$fileDivInputBtn = $('<input type="button" class="btn alazea-btn" id="reviewInsert" value="리뷰등록">');
+	$fileDivEnd = $('</div>');
+	$("#titleAndContent").append($fileDiv);
+	$("#titleAndContent").append($fileDivInputFile);
+	$("#titleAndContent").append($fileDivInputBtn);
+	$("#titleAndContent").append($fileDivEnd);
+	
+	
+	
+	$('#detailModify').click(function(){
+		alert("dd")
+		 detailReviewModify();
+	});
+
+
+});
+
+
+
+//리뷰 디테일에서 수정완료 눌렸을때 
+function detailReviewModify() {
+	alert("dd")
+
+	
+	$.ajax({
+		type : 'post',
+		async:true,
+		url : 'storeReviewDetailsmodifyEnd.do',
+		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+		data : {
+				"b_no" : $('#b_num').val(),
+				"s_brand_name" :$('#title').val(),		
+				"title": $('#reviewDetailTitle').val(),
+				"b_content" : $('#reviewDetailContent').val()
+				},
+		dataType : 'json',
+		success : function(resultData){
+			$('.dim-layer').fadeOut();
+			divClick()
+			getWriterData();
+			
+		},
+		error:function(request,status,error){
+			alert("실패패패패패iok"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+		
+	});
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

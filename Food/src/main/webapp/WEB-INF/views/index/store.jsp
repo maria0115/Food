@@ -63,15 +63,21 @@
        
 
         <div class="container">
+            <div class="breadcrumb-area">
+       
+
             <div class="row">
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#"></a></li>
+                            <li class="breadcrumb-item"><a href="/Food/main.do"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">매장정보</li>
                         </ol>
                     </nav>
                 </div>
             </div>
+    </div>
+
         </div>
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
@@ -281,49 +287,10 @@
                                 </div>
                             </div>
                             </c:forEach>
-                          <script type="text/javascript">
-                         	 function new(){
-                        	  window.open("test.asp","new", 
-                        	 "width=300, height=200, left=30, top=30, 
-                        	 scrollbars=no,titlebar=no,status=no,resizable=no,fullscreen=no");
-                        	 }
-                        	
-                        	
-							
-
-                          </script>
- 							
-                            <!-- Single Product Area -->
-                            
-
-                            <!-- Single Product Area -->
-                            
-
-                            <!-- Single Product Area -->
-                            
-
-                            <!-- Single Product Area -->
-                            
-
-                            <!-- Single Product Area -->
-                            
-
-                            <!-- Single Product Area -->
-                            
-
-                            <!-- Single Product Area -->
-                            
-
-                            <!-- Single Product Area -->
+                      
                             
                         </div>
-
-                      
-                        <!-- Shop Page Count -->
-                        
-                        <!-- Search by Terms -->
-                        
-                    
+                
 						<div class="container" id="pagination-div">
 							<div id="pagination_container">
 								<ul id="pagination-demo" class="pagination-lg"></ul>

@@ -50,11 +50,11 @@ public class StoreController {
 	
 	
 	
-//	@RequestMapping("/{step}.do")
-//	public String page(@PathVariable String step) {
-//		System.out.println("여기로");
-//		return "/store/" + step;
-//	}
+	@RequestMapping("/{step}.do")
+	public String page(@PathVariable String step) {
+		System.out.println("여기로");
+		return "/store/" + step;
+	}
 	
 	
 	
@@ -116,14 +116,10 @@ public class StoreController {
 	@RequestMapping(value = "/storeDetailPaging.do" , produces = "application/json; charset=utf-8")
 	public Map getSelectStore(StoreListVO vo,BoardVO vo2,HttpServletRequest request,
 			@RequestParam(defaultValue = "1")int curPage) {
-		
 		Map map = new HashMap();
 		Map result = new HashMap();
-				
-		 //상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
-	
+		//상세보기 페이지 안에 상품별 리뷰리스트 페이징 처리를 위한 상세보기전체글 갯수
 		//리뷰가져오기
-		
 		vo2.setBoardType(2);
 		int boardType = vo2.getBoardType();
 		String s_brand_name = vo2.getS_brand_name();
@@ -149,55 +145,82 @@ public class StoreController {
 		result.put("listVO2size",listVO2.size());
 		return result;
 	}
+	// 리뷰 눌렀을때 상세보기
+	@ResponseBody
+	@RequestMapping(value ="/reviewDetailsPop.do" , produces = "application/json; charset=utf-8")
+	public BoardVO storeReviewDetail(BoardVO vo) {
+
+		System.out.println("reviewDetailsPop.do 도착");
+		vo.setBoardType(2);
+		BoardVO list =  boardService.boardView(vo);
+		
+		
+		
+		
+	
+		return list;
+		
+	}
+	
+	
+	
+	
+//	// 리뷰 눌렀을때 상세보기
+		@RequestMapping("/storeReviewDetails.do")
+		public void storeReviewDetail(BoardVO vo, Model model) {
+			
+			System.out.println("storeReviewDetails.do 도착");
+			vo.setBoardType(2);
+			model.addAttribute("board",boardService.boardView(vo));
+		}
 	
 	//삭제하기
-	@RequestMapping(value ="/storeReviewDetaildelete.do")
-	public String reviewDetailDelete(BoardVO vo,HttpServletRequest request) throws UnsupportedEncodingException{
-		System.out.println("리뷰인설트 controller 도착");
-		String name = request.getParameter("s_brand_name");
-		System.out.println(name);
-		name = URLEncoder.encode(name,"UTF-8");	
+	@ResponseBody	
+	@RequestMapping(value ="/storeReviewDetaildelete.do" , produces = "application/json; charset=utf-8")
+	public int reviewDetailDelete(BoardVO vo,HttpServletRequest request) throws UnsupportedEncodingException{
+		System.out.println("리뷰삭제 controller 도착");
+//		String name = request.getParameter("reviewDetailBrandName");
+//		System.out.println(name);
+//		name = URLEncoder.encode(name,"UTF-8");	
 		int result;
 		vo.setBoardType(2);
 		
 		result = boardService.deleteBoard(vo);
 		if(result==0) {
-			return "index/error";
+			
+			return result;
 		}
-		return "redirect:/store/storeDetails.do?s_brand_name="+name;
-	}
-	
-	// 리뷰 눌렀을때 상세보기
-	@RequestMapping("/storeReviewDetails.do")
-	public void storeReviewDetail(BoardVO vo, Model model) {
-		
-		System.out.println("storeReviewDetails.do 도착");
-		vo.setBoardType(2);
-		model.addAttribute("board",boardService.boardView(vo));
+		return result;
 	}
 	
 	// 수정할 페이지보여주기
+	@ResponseBody
 	@RequestMapping("/storeReviewDetailsmodify.do")
 	public void storeReviewDetailsmodify(BoardVO vo, Model model) {
+		System.out.println("리뷰수정 controller 도착");
 		vo.setBoardType(2);
 		model.addAttribute("board",boardService.boardView(vo));
 		
 	}
 	
 	// 수정하기
+	@ResponseBody
 	@RequestMapping("/storeReviewDetailsmodifyEnd.do")
-	public String storeReviewDetailsmodifyEnd(BoardVO vo, HttpServletRequest request) {
-		
+	public int storeReviewDetailsmodifyEnd(BoardVO vo, HttpServletRequest request) {
+		System.out.println("리뷰수정완료 controller 도착");
 		int result;
 		vo.setBoardType(2);
 		System.out.println(vo.getTitle()+"***************");
+		System.out.println(vo.getS_brand_name()+"***************");
+		System.out.println(vo.getB_content()+"***************");
+		System.out.println(vo.getB_no()+"***************");
 		result = boardService.updateBoard(vo);
 		
 		if(result==0) {
 			System.out.println("에러");
-			return "index/error";
+			return result;
 		}
-		return "redirect:../store/storeReviewDetails.do?b_no="+vo.getB_no();
+		return result;
 		
 	}
 	

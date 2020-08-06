@@ -39,7 +39,7 @@ map.put("동남아", "east");
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
+<link rel="stylesheet" href="/Food/resources/css/store.css">
 
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
@@ -59,33 +59,14 @@ map.put("동남아", "east");
 	<!-- ##### Header Area Start ##### -->
 
 	<!-- ##### Breadcrumb Area Start ##### -->
-	<div class="breadcrumb-area">
-		<!-- Top Breadcrumb Area -->
-		<div
-			class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center"
-			style="background-image: url(img/bg-img/24.jpg);">
-			<h2>SHOP DETAILS</h2>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb">
-							
-						</ol>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<!-- ##### Breadcrumb Area End ##### -->
 
 	<!-- ##### Single Product Details Area Start ##### -->
 	<section class="single_product_details_area mb-50">
 		<div class="produts-details--content mb-50">
 			<div class="container">
-				<div class="row justify-content-between">
+				<div class="row justify-content-between" style="margin-top: 45px; ">
 
 					<div class="col-12 col-md-6 col-lg-5">
 						<div class="single_product_thumb">
@@ -141,6 +122,121 @@ map.put("동남아", "east");
 							</div>
 						</div>
 					</div>
+					<!-- <a href="#layer2" class="btn-example">딤처리 팝업레이어 1</a> -->
+
+
+
+<div class="dim-layer">
+    <div class="dimBg"></div>
+    <div id="layer2" class="pop-layer">
+        <div class="pop-container" >
+            
+            <div class="pop-imgArea" style=" float:left; width: 700px;">
+            <div style="position: relative;
+    				width: 100%;
+    				height: 100%;
+    				text-align: center;
+    				background: #222;">
+            <div style="width: 100%;height: auto; padding-top: 50px;padding-bottom: 50px;">
+            	<ul>
+            		<li>
+            			<img class="d-block w-100" style="    position: relative;
+    						top: 50%;
+						    width: auto;
+						    max-width: 100%;
+						    max-height: 100%;" 
+					src="/Food/resources/storemenu/ame/인더버거_더블치즈버거.jpg" alt="1">
+            	
+	            	</li>
+             	</ul>
+            	
+            	
+            </div>
+            </div>
+            </div>
+            
+            <div class="pop-conts" style=" float:left;width: 350px;padding: 14px;">
+                <!--content //-->
+                <div class="xans-element- xans-board xans-board-product-4 xans-board-product xans-board-4 prdArea" 
+              		  style= "width: 100%;
+					    padding: 10px;
+					    border: 1px solid #e2e2e2;
+					   -moz-box-sizing: border-box;
+					    -webkit-box-sizing: border-box;
+					    box-sizing: border-box;
+					    border-radius: 4px;
+					    margin-bottom: 5%;
+					   ">
+                <div class="thumbnail">
+                	<a href="#" target="_blank"><img src="/Food/resources/store/<%=vo.getS_brand_name() %>.jpg" alt="" 
+                	style="max-width: 25%;"></a>
+                	<span class="description" style="text-align: center;">
+						<a id="reviewDetailBrandName" style="text-align: center;">가게명</a>
+					</span>
+                </div>
+				
+				</div>
+               	<div>
+               	<form action="" style="margin-top: auto;">
+               	<div >
+               	<div>
+               		<div style="padding: 10px;
+					    border: 1px solid #e2e2e2;
+					   -moz-box-sizing: border-box;
+					    -webkit-box-sizing: border-box;
+					    box-sizing: border-box;
+					    border-radius: 4px;">
+               			<span>별점</span></br>
+               			 
+               			<span id="reviewDetailName" >이름</span><span>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp</span>
+               			<span id="reviewDetailDate" >날짜</span><span>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp</span>
+               			<span id="reviewDetailCount">조회수</span>
+               		
+               		<div id="titleAndContent" style="position: relative;
+  						margin-top: 10px;
+    					padding-top: 15px;
+    					border-top: 1px dashed #e2e2e2;">
+               			<label>제목</label><br/>
+               			<input id="reviewDetailTitle" type="text" readonly="readonly" style="border: none;">
+               			<br/><label>내용</label><br/>
+				 		<textarea id="reviewDetailContent" readonly="readonly" style="width:100%; border: none;">내용</textarea>
+               		</div>
+               		
+               		<div id="btn" style="position: relative;
+  						margin-top: 10px;
+    					padding-top: 15px;
+    					border-top: 1px dashed #e2e2e2;	">
+               			<div id="btnArea" style="margin-left: 25%;">
+               			<a href="#none" id ="detailReviewDelete" style="background-color: #fff;border: 1px solid rgba(70,70,70,.25); color: #7d7d7d;">삭제</a>
+               			<a href="#none" id ="detailReviewModify">수정</a>
+               			</div>
+               		</div>
+               		</div>
+               	</div>
+               	
+               	
+               	
+               	</div>
+               	</form>
+               	</div>
+               
+               
+               
+               
+
+                <div class="btn-r">
+                    <a href="#" class="btn-layerClose"
+                     style="background-color: #fff;border: 1px solid rgba(70,70,70,.25); color: #7d7d7d;
+                     border-radius:10px; ">Close</a>
+                </div>
+                <!--// content-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 					<div class="col-12 col-md-6">
 						<div class="single_product_desc">
@@ -152,47 +248,12 @@ map.put("동남아", "east");
 
 
 							<div class="cart--area d-flex flex-wrap align-items-center">
-								<div>
-									<strong style="margin-right: 15px; font-size: 18px;">성인</strong>
-								</div>
+								
 								<!-- Add to Cart Form -->
-								<form class="cart clearfix d-flex align-items-center"
-									method="post">
-									<div class="quantity">
-										<span class="qty-minus"
-											onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i
-											class="fa fa-minus" aria-hidden="true"></i></span> <input
-											type="number" class="qty-text" id="qty" step="1" min="1"
-											max="12" name="quantity" value="1"> <span
-											class="qty-plus"
-											onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i
-											class="fa fa-plus" aria-hidden="true"></i></span>
-									</div>
-									<button type="submit" name="addtocart" value="5"
-										class="btn alazea-btn ml-15">Add to cart</button>
-								</form>
+								
 
 
-								<form class="cart clearfix d-flex align-items-center"
-									method="post" style="margin-top: 10px;">
-									<div>
-										<strong style="margin-right: 15px; font-size: 18px;">아동</strong>
-									</div>
-
-
-									<div class="quantity">
-										<span class="qty-minus"
-											onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i
-											class="fa fa-minus" aria-hidden="true"></i></span> <input
-											type="number" class="qty-text" id="qty" step="1" min="1"
-											max="12" name="quantity" value="1"> <span
-											class="qty-plus"
-											onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i
-											class="fa fa-plus" aria-hidden="true"></i></span>
-									</div>
-									<button type="submit" name="addtocart" value="5"
-										class="btn alazea-btn ml-15">Add to cart</button>
-								</form>
+								
 								<!-- Wishlist & Compare -->
 								<div
 									class="wishlist-compare d-flex flex-wrap align-items-center">
