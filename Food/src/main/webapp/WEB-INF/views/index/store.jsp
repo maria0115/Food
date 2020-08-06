@@ -87,19 +87,35 @@
         <div class="container">
             <div class="row">
                 <!-- Shop Sorting Data -->
-                <div class="col-12">
-                    <div class="shop-sorting-data d-flex flex-wrap align-items-center justify-content-between">
+                <div class="col-12" >
+                    <div class="shop-sorting-data d-flex flex-wrap align-items-center justify-content-between" 
+                    	style="padding-bottom: 10px;"		>
                         <!-- Shop Page Count -->
                         <div class="shop-page-count">
                             <p></p>
                         </div>
                         <!-- Search by Terms -->
                         <div class="search_by_terms" >
-							<form action="#" method="post" class="form-inline" style="width: 500px;">
+							<form action="#" method="post" class="form-inline" style="width: 500px; margin-right: -80px;">
 								<select class="custom-select widget-title" id="selectBox"
-									onchange="fnGetCtgSub(this.value);" style="width: 33%;">
+									onchange="fnGetCtgSub(this.value);" style="
+									position: relative;
+								    display: block;
+								    overflow: hidden;
+								    padding: 0 0 0 8px;
+								    height: 25px;
+								    border: 1px solid #ccc;
+								    border-radius: 0px;
+								    background-color: #fff;
+								    color: #444;
+								    text-decoration: none;
+								    white-space: nowrap;
+								    line-height: 24px;
+								    width: 80px;
+								    height: 31px;
+								    margin-right: 5px;	">
 									<!-- <option selected>한식</option> -->
-									<option value="all"></option>
+									<option value="all">전체</option>
 									<option value="한식">한식</option>
 									<option value="중식">중식</option>
 									<option value="양식">양식</option>
@@ -108,8 +124,28 @@
 									<option value="동남아">동남아</option>
 								</select> 
 								<input type="text" name="searchWard" id="listSearch"
-									placeholder="매장명을 입력해주세요" style="width: 40%; height: 38px;">
-								<input type="button" name="searchButton" id="searchButton" value="검색"> 
+									placeholder="매장명을 입력해주세요" 
+									style="width: 40%; height: 38px; 
+									    height: 31px;
+									    padding: 0 5px;
+									    color: #333333;
+									    border: 1px solid #d6d6d6;
+									    line-height: 31px;
+									    -webkit-box-sizing: border-box;
+									    -moz-box-sizing: border-box;
+									    box-sizing: border-box;
+									    margin-right: 5px;	">
+								<input type="button" name="searchButton" id="searchButton" value="검색" 
+								style="
+									display: inline-block;
+								    min-width: 100px;
+								    height: 31px;
+								    color: #ffffff;
+								    font-weight: bold;
+								    border: 1px solid #3e3d3c;
+								    background: #3e3d3c;
+								    text-align: center;
+								"> 
 							</form>
 						</div>
                     </div>

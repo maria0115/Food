@@ -374,10 +374,10 @@ $(function(){
 								<!-- Tabs -->
 								<ul class="nav nav-tabs" role="tablist" id="product-details-tab">
 									<li class="nav-item"><a href="#description"
-										class="nav-link active" data-toggle="tab" role="tab">Description</a>
+										class="nav-link active" data-toggle="tab" role="tab">Location</a>
 									</li>
 									<li class="nav-item"><a href="#addi-info" class="nav-link"
-										data-toggle="tab" role="tab">Additional Information</a></li>
+										data-toggle="tab" role="tab">Shop information</a></li>
 									<li class="nav-item"><a href="#reviews" class="nav-link"
 										data-toggle="tab" role="tab" id="reviewKing">Reviews <span
 											class="text-muted">(1)</span></a></li>

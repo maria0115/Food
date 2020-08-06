@@ -169,6 +169,5 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	]]>
 	</select> 
 	
-	
 
 </mapper>

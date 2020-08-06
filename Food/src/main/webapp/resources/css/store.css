@@ -115,10 +115,21 @@ a.btn-layerClose:hover {
 input:focus {outline:none;}
 textarea:focus {
 	outline:none; 
-	width:100%;
+	width:auto;
 		
 }
 
+#reviewDetailContent{
+	
+	width: 100%;
+	
+}
+
+#reviewDetailTitle{
+	
+	width: 100%;
+	
+}
 
 
 

@@ -411,6 +411,7 @@ function detailReviewModify() {
 				"s_brand_name" :$('#title').val(),		
 				"title": $('#reviewDetailTitle').val(),
 				"b_content" : $('#reviewDetailContent').val()
+				
 				},
 		dataType : 'json',
 		success : function(resultData){
