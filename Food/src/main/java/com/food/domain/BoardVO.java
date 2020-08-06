@@ -35,7 +35,7 @@ public class BoardVO {
     private String d_reason;
     private int q_replyno;
     
-
+ 
 
 	public int getQ_replyno() {
 		return q_replyno;

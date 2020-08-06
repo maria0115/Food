@@ -204,6 +204,8 @@ function divClick(){
 			$('#reviewDetailTitle').attr("readonly","readonly");
 			$('#reviewDetailContent').attr("readonly","readonly");
 			$('#detailModify').remove();
+			$('#reviewDetailTitle').attr("style" , "border : none");
+			$('#reviewDetailContent').attr("style" , "border : none");
 			
 		},
 		error:function(request,status,error){
@@ -312,8 +314,8 @@ $('#detailReviewModify').click(function(){
     
 	$('#reviewDetailTitle').removeAttr("readonly","readonly");
 	$('#reviewDetailContent').removeAttr("readonly","readonly");
-//	$('#reviewDetailTitle').Attr("border","1");
-//	$('#reviewDetailTitle').Attr("border","1");
+	$('#reviewDetailTitle').attr("style","border : revert");
+	$('#reviewDetailContent').attr("style","border : revert");
 	$("#detailReviewModify").css({"display" : "none"});
 	$div = $('<a href="#none" id ="detailModify">수정완료</a>');
 	$("#btnArea").append($div);
@@ -323,7 +325,7 @@ $('#detailReviewModify').click(function(){
 	$fileDivInputBtn = $('<input type="button" class="btn alazea-btn" id="reviewInsert" value="리뷰등록">');
 	$("#titleAndContent").append($fileDiv);
 	$("#reviewcol").append($fileDivInputFile);
-	$("#reviewcol").append($fileDivInputBtn);
+	
 
 	
 	

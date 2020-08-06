@@ -113,7 +113,11 @@ a.btn-layerClose:hover {
 
 	
 input:focus {outline:none;}
-textarea:focus {outline:none;}
+textarea:focus {
+	outline:none; 
+	width:100%;
+		
+}
 
 
 

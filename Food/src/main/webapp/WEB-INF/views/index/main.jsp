@@ -153,7 +153,7 @@
 
 												<a href="singup.do" class="memberInfo">회원가입 </a> <a
 													href="find_form.do" class="memberInfo">아이디 비밀번호 찾기 </a> <a
-													id="naver" href="/Food/loginview.do">네이버 아이디로 로그인</a>
+													id="naver" href="/Food/loginview.do">소셜 로그인</a>
 												<div class="closeBtn">X</div>
 
 											</div>

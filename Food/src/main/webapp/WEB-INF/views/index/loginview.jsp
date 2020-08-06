@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>LoginTest</title>
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <style type="text/css">
@@ -26,5 +27,17 @@
 				<h1 style="color:red" >↑↑click!!</h1>		
 </div>
 <br>
+
+<div style="background-color:#15a181; width: 100%; height: 50px;text-align: center; color: white; "><h3>카카오 아이디로 Login</h3></div>
+
+      <div style="text-align:center; padding-top: 20px;" > 
+      <a href="https://kauth.kakao.com/oauth/authorize?client_id=3241a5985286c01f380dfa804a5a8613&redirect_uri=http://localhost:8080/Food/kakaologin.do&response_type=code">
+            <img src="/Food/resources/img/kakao_login_large_wide.png"> 
+        </a>
+        	<h1 style="color:red;" >↑↑click!!</h1>		 
+        </div>
+        
+
+   
 </body>
 </html>
