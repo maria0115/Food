@@ -1,4 +1,4 @@
-package com.food.controller;
+package com.food.websocket;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashSet;

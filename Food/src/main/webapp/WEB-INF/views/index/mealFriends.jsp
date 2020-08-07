@@ -173,6 +173,7 @@
 		</table>
 		</form>
 		<input type="hidden" id="loginId" value="${sessionScope.user_id }">
+		<input type="button" value="test" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chat/${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">
 		</div>
 		<br/><br/><br/>
 
@@ -183,10 +184,100 @@
 	<%@ include file="footer.jsp" %>
 	<script src="/Food/resources/js/active.js"></script>
 	<script src="/Food/resources/js/jointimeck.js"></script>
-	<script src="/Food/resources/js/mainsocket.js"></script>
+	<script type="text/javascript">
+	var count = 0;
+	var URL = "ws://192.168.0.17:8080/Food/mealBoard/chat/"
+	var webSocket = new WebSocket(URL+${user_Info.m_id});
+	console.log(webSocket);
+	webSocket.onopen = function(e) {
+        console.log(e);
+        
+    }
+	webSocket.onclose = function(e) {
+    	if (e.type == "close") {
+        	console.log(e.type);
+        }
+    }
+	
+	webSocket.onmessage = function(e) {
+		console.log(e.data);
+		try{
+			data=JSON.parse(e.data);
+			if(data.cmd == 'request'){
+				if(data.user.includes(${user_Info.m_id})){
+					requestView(data.host,e.data);
+				}
+			}
+		} catch(e){}
+	}
+	function disConn() {
+        webSocket.close();
+    }
+	function requestChat(id){
+		my = ${user_Info.m_id};
+		if(my !="" && my==${user_Info.m_id}){
+			var data = new Object();
+			data.cmd = "request";
+			data.host = my;
+			data.user = new Array();
+			data.user.push(id);
+			data.json = JSON.stringify(data);
+			console.log(data.json);
+			webSocket.send(data.json);
+			
+			var form_ = $('<form>');
+			var input_ = $('<input>');
+			new_window();
+			form_.attr({'method':'post','action':'chatroom.do','target':'chatroom'+(--count)});
+			input_.attr({'type':'hidden','name':'chatHeader','value':data.json});
+			
+			form_.append(input_);
+			$('body').append(form_);
+			form_.submit();
+		}
+	}
+	function requestView(requestid,header){
+		var div_ = $('<div>');
+		var p_ = $('<p>');
+		var form_ = $('<form>');
+		var input_ = $('<input>');
+		var button_ = $('<button>');
+		var button1_ = $('<button>');
+		button_.html('수락');
+		button1_.html('거절');
+		form_.attr({'method':'post','action':'chatroom.do','target':'chatroom'+count});
+		button_.attr({'type':'submit','name':'accept'});
+		button1_.attr({'type':'button',"name":'reject'});
+		input_.attr({'type':'hidden','name':'chatHeader','value':header});
+		div_.append(p_);
+		div_.append(form_);
+		form_.append(input_);
+		form_.append(button_);
+		form_.append(button1_);
+		button_.click(function(){
+			form_.attr({'method':'post','action':'chatroom.do','target':'chatroom'+count});
+			new_window();
+			form_.submit();
+			$(this).parent().parent().remove();
+		});
+		button1_.click(function(){
+			$(this).parent().parent().remove();
+		});
+		
+		
+		div_.addClass("request_msg");
+		button_.addClass("btn btn-success");
+		button1_.addClass("btn btn-success");
+		p_.html(requestid+" 님께서 1:1 대화를 요청하셨습니다.");
+		$('body').append(div_);
+		
+	}
+	function new_window(){
+		console.log(window.open('', 'chatroom'+(count++), 'width=530, height=535,toolbar=no,menubar=no,location=no,status=no,fullscreen=no'));
+	}
 
-
-
+	</script>
+	
 
 
 </body>

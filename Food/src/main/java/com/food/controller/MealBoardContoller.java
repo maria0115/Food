@@ -1,9 +1,14 @@
 package com.food.controller;
 
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.food.domain.BoardVO;
 import com.food.service.FriendBoardService;
@@ -27,9 +33,9 @@ public class MealBoardContoller {
 	
 	
 	@Autowired
-	FriendBoardService friendBoardservice;
+	private FriendBoardService friendBoardservice;
 	@Autowired
-	boardService boardService;
+	private boardService boardService;
 	
 	
 	//페이지전환
@@ -145,7 +151,33 @@ public class MealBoardContoller {
 		return"/store/storemap";
 	}
 	
-	
+	@RequestMapping("/chatroom.do")
+	public ModelAndView mainPage( ModelAndView mo,
+							HttpServletRequest request,
+							@RequestParam(value = "chatHeader") String header) {
+		JSONParser jsonParser = new JSONParser();
+		JSONObject receive_header;
+		JSONArray jsonUserList = null;
+		String cmd="" , host="";
+		ArrayList userList = new ArrayList();
+		try {
+			receive_header = (JSONObject)jsonParser.parse(header);
+			cmd = (String)receive_header.get("cmd");
+			host = (String)receive_header.get("host");
+			jsonUserList = (JSONArray)receive_header.get("user");
+			if(jsonUserList!=null) {
+				jsonUserList.add(host);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		JSONObject users = new JSONObject();
+		users.put("users", jsonUserList);
+		System.out.println(users.toString());
+		mo.setViewName("chatroom");
+		mo.addObject("users",users);
+		return mo;
+	}
 	
 	
 

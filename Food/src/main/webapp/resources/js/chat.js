@@ -1,5 +1,5 @@
 
-	//port번호 받아오기
+	
 	$.fn.getUrlParameter = function(sParam) {
 	
 		var sPageURL = decodeURIComponent(window.location.search.substring(1)),

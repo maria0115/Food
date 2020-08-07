@@ -24,13 +24,12 @@
 <div id="container">
 	<main>
 	<div>
-	<input type="hidden" value='<%=m_id%>'
-	            id='chat_id' />
+	<input type="hidden" value='<%=m_id%>' id='chat_id' />
 	    
 	
 		<div id="header">
 		
-			<h3 style="text-align: center;"><%=f_title %></h3>
+			
 		</div>
 		<!-- 채팅메세지를 주고받는 부분 -->
 		<div id="chat">
