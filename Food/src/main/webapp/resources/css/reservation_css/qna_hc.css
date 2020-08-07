@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.title {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #dbdbdb;
+    background: #f7f7f7; 
+}
+#contact-title {
+	background: #f7f7f7;
+	padding: 0 0 0 2%;
+    margin: 0;
+}
+#contact-writer{
+	padding: 0 0 0 2%;
+    margin: 0;
+}
+.writer{
+    padding: 0;
+    margin: 0;
+	overflow: hidden;
+    border-bottom: 1px solid #dbdbdb;
+}
+#date1{
+    padding: 10px 2% 0 0;
+    margin: 0;
+}
+#viewcount{
+    padding: 10px 2% 0 0;
+    margin: 0;
+}
+.view_answer_info{
+	margin: 0 0 0 10px;
+    padding: 5px 0 10px 5px;
+    border-bottom: 1px dotted #dbdbdb;
+}
+.view_comment {
+    padding: 0 0 0 0;
+    border-bottom: 1px solid #dbdbdb;
+    background: #ffffff;

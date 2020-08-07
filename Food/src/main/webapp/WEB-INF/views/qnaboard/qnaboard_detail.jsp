@@ -16,67 +16,16 @@
 <!-- Favicon -->
 <link rel="icon" href="resources/img/core-img/favicon.ico">
 
-<!-- Core Stylesheet -->
-<!-- <link rel="stylesheet" href="resources/css/style.css"> -->
-<!-- <link rel="stylesheet" href="resources/css/style1.css"> -->
-<!-- <link rel="stylesheet" href="resources/css/main1.css"> -->
-<!-- <link rel="stylesheet" href="resources/css/normalize1.css"> -->
-<!-- <link rel="stylesheet" href="resources/css/bootstrap1.min.css"> -->
 
 <!-- 부트스트랩 -->
-<link
-	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
-	rel="stylesheet">
-<script
-	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<link href="resources/css/reservation_css/qna_hc.css" rel="stylesheet">
+<script	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
 <jsp:include page="../index/header.jsp">
 	<jsp:param value='' name='folder' />
 </jsp:include>
-
-<style type="text/css">
-.title {
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    border-top: 1px solid #999999;
-    border-bottom: 1px solid #dbdbdb;
-    background: #f7f7f7; 
-}
-#contact-title {
-	background: #f7f7f7;
-	padding: 0 0 0 2%;
-    margin: 0;
-}
-#contact-writer{
-	padding: 0 0 0 2%;
-    margin: 0;
-}
-.writer{
-    padding: 0;
-    margin: 0;
-	overflow: hidden;
-    border-bottom: 1px solid #dbdbdb;
-}
-#date1{
-    padding: 10px 2% 0 0;
-    margin: 0;
-}
-#viewcount{
-    padding: 10px 2% 0 0;
-    margin: 0;
-}
-.view_answer_info{
-	margin: 0 0 0 10px;
-    padding: 5px 0 10px 5px;
-    border-bottom: 1px dotted #dbdbdb;
-}
-.view_comment {
-    padding: 0 0 0 0;
-    border-bottom: 1px solid #dbdbdb;
-    background: #ffffff;
-</style>
 
 </head>
 
@@ -166,7 +115,6 @@
 				<c:set var="id" value="admin1234" />
 				<c:if test="${sessionScope.user_id eq id}">
 				
-<!-- 				<input type='button' value='저장' id="save1" style="float:right;font-size:small" class="btn btn-outline-secondary"> -->
 				<input type='button' value='수정' id="modify1" style="float:right;font-size:small" title="" class="btn btn-outline-secondary">
   				<input type='button' value='삭제' id="delete1" style="float:right;font-size:small" title="" class="btn btn-outline-secondary">
   					</c:if>
@@ -190,7 +138,7 @@
     	</div>
 			<c:if test="${sessionScope.user_id eq 'admin1234'}">
 	        	<textarea style="color:black;margin-top:40px" class="form-control" id="replytext" cols="30" rows="10" name="b_reply" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" ></textarea>
-	        	<button style="float:right;min-width:50px" id="replybtn" type="submit" class="btn alazea-btn">등록</button>
+	        	<button style="float:right;min-width:50px" id="replybtn" type="submit" class="btn btn-outline-success">등록</button>
         	</c:if>
     </div>
 </div>
@@ -198,34 +146,6 @@
 
 
 
-
-
-<!-- <script type="text/javascript"> -->
-<!-- // $("#replybtn").click(function(){ -->
-<!-- // // 	alert($('#replytext').val()+'답글') -->
-<!-- // // 	alert($('input[name=b_no]').val()) -->
-<!-- // 	$.ajax({ -->
-<!-- // 		type: 'post', -->
-<!-- // 		url: "insertReply.do", -->
-<!-- // 		data: "b_content="+$('#replytext').val()+"&f_cnt="+$('input[name=b_no]').val(), -->
-<!-- //         success : function(resultData){ -->
-<!-- // //         	alert("성공") -->
-<!-- // 			$("#replyappend").load(location.href+" #replyappend") -->
-<!-- //         } -->
-<!-- // 	}) -->
-<!-- // }) -->
-<!-- </script> -->
-
-
-
-<!-- <script type="text/javascript"> -->
-<!-- // $('#delete').click(function(){ -->
-<!-- // 	alert('aa') -->
-<!-- // 	var no = $('input[name=b_no]').val() -->
-<!-- // 	location.href="deleteqna?b_no="+no; -->
-<!-- // }) -->
-
-<!-- </script> -->
 
 
     <!-- ##### Footer Area Start ##### -->

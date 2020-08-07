@@ -2,14 +2,8 @@
 $("#modify").click(function(){
 	$("#contact-title").attr('readonly', false);
 	$("#message").attr('readonly', false);
-//	alert('수정 가능')
-	$("#contact-title").css('border','solid')
-	$("#message").css('border','solid')
-})
-
-// 저장 버튼
-$("#savebtn").click(function(){
-	alert("저장되었습니다")
+	$("#contact-title").css('border','2px solid')
+	$("#message").css('border','2px solid')
 })
 
 // 삭제 버튼
@@ -24,7 +18,7 @@ $('#delete').click(function(){
 // 댓글 수정 버튼
 $(document).on("click","#modify1",function(){
 	$(this).parent().next().next().children().children().attr('readonly', false);
-	$(this).parent().next().next().children().children().css('border','solid');
+	$(this).parent().next().next().children().children().css('border','2px solid');
 	$(this).attr('id','save1')
 	$(this).attr('value','저장')
 })
@@ -46,17 +40,19 @@ $(document).on("click","#save1",function(){
 
 // 댓글 등록 버튼
 $("#replybtn").click(function(){
-// 	alert($('#replytext').val()+'답글')
-// 	alert($('input[name=b_no]').val())
-	$.ajax({
-		type: 'post',
-		url: "insertReply.do",
-		data: "b_content="+$('#replytext').val()+"&f_cnt="+$('input[name=b_no]').val(),
-        success : function(resultData){
-			$("#replyappend").load(location.href+" #replyappend")
-			$('#replytext').val("")
-        }
-	})
+	if($('#replytext').val()==""){
+		alert('내용을 입력해주세요')
+	}else{
+		$.ajax({
+			type: 'post',
+			url: "insertReply.do",
+			data: "b_content="+$('#replytext').val()+"&f_cnt="+$('input[name=b_no]').val(),
+	        success : function(resultData){
+				$("#replyappend").load(location.href+" #replyappend")
+				$('#replytext').val("")
+	        }
+		})
+	}
 })
 
 // 댓글 삭제 버튼
@@ -71,11 +67,21 @@ $(document).on('click','#delete1',function(){
 			$("#replyappend").load(location.href+" #replyappend")
 	    }
 	})
-	
+})
+
+// insert 할때 값이 없으면 안넘어가게
+$('#savebtn').click(function(e){
+	if($('#contact-title').val()==""){
+		e.preventDefault()
+		alert('제목을 입력해주세요')
+	}else if($('#message').val()==""){
+		e.preventDefault()
+		alert('내용을 입력해주세요')
+	}else{
+		alert('저장되었습니다')
+	}
 	
 })
-	
-
 
 
 

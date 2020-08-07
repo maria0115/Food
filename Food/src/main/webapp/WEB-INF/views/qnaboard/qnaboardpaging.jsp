@@ -85,11 +85,9 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>QnA 게시판</h4>
+                            <h4 style='display:inline'>QnA 게시판</h4>
                             	<c:if test="${not empty sessionScope.user_id}">
-                            <div class="add-product">
-                                <a href="qnaboard_insertpage.do">글쓰기</a>
-                            </div>
+                                <a style='float:right;font-size:16px;color:#28a745;margin-bottom: 2%;' class="btn btn-outline-success" href="qnaboard_insertpage.do">글쓰기</a>
                             	</c:if>
 
                             <table>
