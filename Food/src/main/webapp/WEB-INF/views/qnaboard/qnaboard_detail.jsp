@@ -67,7 +67,15 @@
     padding: 10px 2% 0 0;
     margin: 0;
 }
-
+.view_answer_info{
+	margin: 0 0 0 10px;
+    padding: 5px 0 10px 5px;
+    border-bottom: 1px dotted #dbdbdb;
+}
+.view_comment {
+    padding: 0 0 0 0;
+    border-bottom: 1px solid #dbdbdb;
+    background: #ffffff;
 </style>
 
 </head>
@@ -114,8 +122,8 @@
                 <div class="col-12">
                     <div class="form-group title" style="color:black">
 <!--                 	<label style='font-weight: bold'>제목</label> -->
-                    <input style="color:black;border:none;display:inline;width: 50%;" type="text" class="form-control" id="contact-title" name="title" value="${list.title}" readonly>
-                    <span id='date1' style='float:right'>${list.b_date}</span>
+                    <input style="color:black;font-weight:bold;border:none;display:inline;width: 50%;" type="text" class="form-control" id="contact-title" name="title" value="${list.title}" readonly>
+                    <span id='date1' style='float:right;font-family:none'>${list.b_date}</span>
                     </div>
                 </div>
                 <div class="col-12">
@@ -127,67 +135,97 @@
                 </div>
                 <div class="col-12" style="padding-top: 45px;">
                     <div class="form-group" style="color:black">
-                	<label style="font-size: 30px;font-weight: bold">Question</label>
-                        <textarea style="color:black;height: 120px;" class="form-control" id="message" cols="30" rows="10" name="b_content" readonly>${list.b_content}</textarea>
+                	<label style="font-size: 30px;font-weight: bold;">Q.</label>
+                        <textarea style="color:black;height: 120px;border:none" class="form-control" id="message" cols="30" rows="10" name="b_content" readonly>${list.b_content}</textarea>
                     </div>
                 </div>
                 <div class="col-12">
-                    <button id="savebtn" type="submit" class="btn alazea-btn mt-15">SAVE</button>
+         		<c:if test="${sessionScope.user_id == list.userId}">
+            <button id="savebtn" type="submit" style='margin-top:23px;font-size:larger;font-weight:bold;width:100px' class="btn btn-outline-success">SAVE</button>
+		    <input type='button' value='수정' id="modify" style="float:right;margin-top:23px;font-size:small" data-toggle="tooltip" title="" class="btn btn-outline-secondary" data-original-title="Edit">
+		    <input type='button' value='삭제' id="delete" style="float:right;margin-top:23px;font-size:small" data-toggle="tooltip" title="" class="btn btn-outline-secondary" data-original-title="Trash">
+				</c:if>
                 </div>
             </div>
         </form>
-         		<c:if test="${sessionScope.user_id == list.userId}">
-		    <button id="modify" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-		    <button id="delete" style="float:right" data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-				</c:if>
 			<br><hr><br>
-    	<div class="form-group" style="color:black">
-    		<label style="font-size: 30px">Answer</label>
-    	
-							<c:forEach items="${listVO}" var="list">
-							<table>
-                                <tr>
-                                    <td class='qna_table' width="600px">${list.b_content}</td><hr>
-                                    <td class='qna_table' width="600px">${list.b_date}</td>
-                                </tr><br>
-                            </table>
-							</c:forEach>
+			
+		<!-- 댓글 리스트 -->
+    	<div id='replyappend' class="form-group" style="color:black">    	
+			<c:forEach items="${listVO}" var="list">
+			<input value='${list.q_replyno}' type='hidden'>
+			<label style="font-size: 30px;font-weight:bold">A.</label>
+			
+			<div class="view_answer_info">
+				<strong></strong>
+				<span class="view_info_idip">
+					<strong>관리자</strong>
+				</span>
+				<span class="view_info_day">
+				</span>
+				<c:set var="id" value="admin1234" />
+				<c:if test="${sessionScope.user_id eq id}">
+				
+<!-- 				<input type='button' value='저장' id="save1" style="float:right;font-size:small" class="btn btn-outline-secondary"> -->
+				<input type='button' value='수정' id="modify1" style="float:right;font-size:small" title="" class="btn btn-outline-secondary">
+  				<input type='button' value='삭제' id="delete1" style="float:right;font-size:small" title="" class="btn btn-outline-secondary">
+  					</c:if>
+			</div>
+					<span style='font-family: none;margin-left:15px'>${list.b_date}</span>
+			<div class="seem_cont">
+				<div style="margin:10px 0 10px 0">
+				<textarea style="color:black;height: 120px;border:none" class="form-control" id="message1" cols="30" rows="10" name="b_content" readonly>${list.b_content}</textarea>
+				 	
+				</div>
+			</div>
+			
+		<div class="board_view_comment">
 
-        	<textarea style="color:black;margin-top:40px" class="form-control" id="replytext" cols="30" rows="10" name="b_reply" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" ></textarea>
-        	<button style="float:right;min-width:50px" id="replybtn" type="submit" class="btn alazea-btn">등록</button>
+			<div class="view_comment js_comment_area" data-bdid="goodsqa" data-sno="296">
+
+			</div>
+
+		</div>
+			</c:forEach>
     	</div>
+			<c:if test="${sessionScope.user_id eq 'admin1234'}">
+	        	<textarea style="color:black;margin-top:40px" class="form-control" id="replytext" cols="30" rows="10" name="b_reply" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" ></textarea>
+	        	<button style="float:right;min-width:50px" id="replybtn" type="submit" class="btn alazea-btn">등록</button>
+        	</c:if>
     </div>
 </div>
 
 
-<script type="text/javascript">
-$("#replybtn").click(function(){
-	alert($('#replytext').val())
-	alert($('input[name=b_no]').val())
-	$.ajax({
-		type: 'post',
-		url: "insertReply.do",
-		data: "b_content="+$('#replytext').val()+"&f_cnt="+$('input[name=b_no]').val(),
-        success : function(resultData){
-        	alert("성공" )
-        
-        }
-
-
-		
-	})
-})
-</script>
 
 
 
-<script type="text/javascript">
-$('#delete').click(function(){
-	alert('aa')
-	var no = $('input[name=b_no]').val()
-	location.href="deleteqna?b_no="+no;
-})
-</script>
+
+<!-- <script type="text/javascript"> -->
+<!-- // $("#replybtn").click(function(){ -->
+<!-- // // 	alert($('#replytext').val()+'답글') -->
+<!-- // // 	alert($('input[name=b_no]').val()) -->
+<!-- // 	$.ajax({ -->
+<!-- // 		type: 'post', -->
+<!-- // 		url: "insertReply.do", -->
+<!-- // 		data: "b_content="+$('#replytext').val()+"&f_cnt="+$('input[name=b_no]').val(), -->
+<!-- //         success : function(resultData){ -->
+<!-- // //         	alert("성공") -->
+<!-- // 			$("#replyappend").load(location.href+" #replyappend") -->
+<!-- //         } -->
+<!-- // 	}) -->
+<!-- // }) -->
+<!-- </script> -->
+
+
+
+<!-- <script type="text/javascript"> -->
+<!-- // $('#delete').click(function(){ -->
+<!-- // 	alert('aa') -->
+<!-- // 	var no = $('input[name=b_no]').val() -->
+<!-- // 	location.href="deleteqna?b_no="+no; -->
+<!-- // }) -->
+
+<!-- </script> -->
 
 
     <!-- ##### Footer Area Start ##### -->

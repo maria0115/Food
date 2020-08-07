@@ -92,4 +92,16 @@ public class boardServiceImpl implements boardService {
 		return boardDAO.mealcancel(vo);
 	}
 
+	@Override
+	public void modifyReply(BoardVO vo) {
+		boardDAO.modifyReply(vo);
+		
+	}
+
+	@Override
+	public void deleteReply(BoardVO vo) {
+		boardDAO.deleteReply(vo);
+		
+	}
+
 }

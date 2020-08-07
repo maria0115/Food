@@ -34,6 +34,10 @@ public interface boardService {
 	public List<BoardVO> selectReview(BoardVO vo,PagingVO pvo,String searchType, String keyword);
 	
 	void insertReply(BoardVO vo);
+	
+	void modifyReply(BoardVO vo);
 
 	List<BoardVO> selectReply(BoardVO vo);
+
+	void deleteReply(BoardVO vo);
 }

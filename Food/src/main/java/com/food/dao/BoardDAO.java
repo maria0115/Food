@@ -36,4 +36,6 @@ public interface BoardDAO {
 	void insertReply(BoardVO vo);
 	
 	List<BoardVO> selectReply(BoardVO vo);
+	
+	void modifyReply(BoardVO vo);
 }

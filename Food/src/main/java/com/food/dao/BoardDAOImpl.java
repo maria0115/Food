@@ -117,8 +117,18 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public List<BoardVO> selectReply(BoardVO vo) {
 		System.out.println("selectReply DAO");
-		System.out.println("vo f_cnt:"+vo.getF_cnt());
 		return mybatis.selectList("boardDAO.selectReply",vo);
+	}
+
+	@Override
+	public void modifyReply(BoardVO vo) {
+		System.out.println("modifyReply DAO");
+		mybatis.update("boardDAO.modifyReply",vo);
+	}
+
+	public void deleteReply(BoardVO vo) {
+		System.out.println("deleteReply DAO");
+		mybatis.delete("boardDAO.deleteReply",vo);
 	}
 
 
