@@ -173,3 +173,7 @@ body{
 .mb-5{
 	margin-bottom: 1rem !important;
 }
+.h3, h3 {
+    font-size: 20px;
+    text-align: center;
+    }

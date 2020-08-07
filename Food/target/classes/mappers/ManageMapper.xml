@@ -158,7 +158,7 @@ insert into homepageview(visitCount,totalvisit,visitDay) values (1,( select tota
 
 </insert>
 <select id="mealDayCount" resultType="map">
-select to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') 요일, count(*) count 
+select to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') DAY, count(*) count 
     from board 
     where boardtype =3 group by  to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') 
     order by count desc

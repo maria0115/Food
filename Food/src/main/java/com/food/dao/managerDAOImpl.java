@@ -190,7 +190,7 @@ public class managerDAOImpl implements managerDAO{
 		@Override
 		public List<Map> mealDayCount() {
 			System.out.println("==>ManagerMapper mealDayCount() 호출");
-			return mybatis.selectOne("managerDAO.mealDayCount");
+			return mybatis.selectList("managerDAO.mealDayCount");
 		}
 
 

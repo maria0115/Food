@@ -105,7 +105,7 @@
                                 <h2>방문자 수</h2>
                                 
                             </div>
-                            <div id="visitCountContainer">
+                            <div id="visitCountContainer" style="text-align: center;">
                                 
                             </div>
                         </div>
@@ -125,11 +125,12 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="charts-single-pro mg-tb-30">
+                        <div class="charts-single-pro mg-tb-30 responsive-mg-b-0">
                             <div class="alert-title">
-                                <h2>카테고리별 일별 예약수</h2>
+                                <h2>밥친구 주간 이용자수</h2>
+<!--                                 <p>A bar chart provides a way of showing data values represented as Horizontal bars. It is sometimes used to show trend data, and the comparison of multiple data sets</p> -->
                             </div>
-                            <div id="categoryDayContainer">
+                            <div id="mealDayContainer">
                                 
                             </div>
                         </div>
@@ -157,6 +158,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="charts-single-pro mg-tb-30">
+                            <div class="alert-title">
+                                <h2>카테고리별 일별 예약수</h2>
+                            </div>
+                            <div id="categoryDayContainer">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                
             </div>
         </div>

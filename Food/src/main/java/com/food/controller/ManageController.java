@@ -581,7 +581,10 @@ public class ManageController {
 		Map result = new HashMap();
 		
 		List<Map> mealDayCount = managerService.mealDayCount();
-		
+		System.out.println(mealDayCount);
+		result.put("mealDayCount", mealDayCount);
+		result.put("mealDayCountSize", mealDayCount.size());
+		result.put("chartNum", 2);
 		return result;
 	}
 }

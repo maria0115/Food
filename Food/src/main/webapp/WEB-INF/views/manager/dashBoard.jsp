@@ -78,6 +78,11 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="/Food/resources/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="/Food/resources/js/charts/bar-chart.js"></script>
+    <script src="/Food/resources/js/charts/admin_chart.js"></script>
+    <script src="/Food/resources/js/charts/admin_pieChart.js"></script>
+
 <!-- Dashboard Core -->
 <link href="/Food/resources/css/dashboard.css" rel="stylesheet" />
 <!-- <script src="/Food/resources/js/dashboard/dashboard.js"></script> -->
@@ -161,7 +166,7 @@
 							9% <i class="icon-up"></i>
 						</div>
 						<div class="h1 m-0">7</div>
-						<div class="text-muted mb-5">페이지 뷰</div>
+						<div class="text-muted mb-5">방문자 수</div>
 						</a>
 					</div>
 				</div>
@@ -244,20 +249,22 @@
 											<ul class="nav nav-tabs">
 												<!-- data-load를 넣어서 이미 로드를 했는지 않했는지의 판단 값을 넣는다. -->
 												<!-- true면 이미 content영역에 load가 끝나서 더이상 load가 필요없다는 뜻이다. -->
-												<li class="active"><a href="#home1" data-toggle="tab"
+												<li class="active"><a href="#first" data-toggle="tab"
 													data-load="true">일별 예약</a></li>
 												<!-- false라면 data-url영역의 url주소로 데이터를 가져와서 tab-content에 표시한다. -->
-												<li><a href="#homepage" data-toggle="tab"
-													data-load="false" data-url="">페이지
-														뷰</a></li>
+												<li><a href="#second" data-toggle="tab"
+													data-load="false" data-url="">방문자 수</a></li>
 											</ul>
 											<!-- tab-content 영역이다. -->
 											<div class="tab-content">
-												<div class="tab-pane fade in active" id="home">
+												<div class="tab-pane fade in active" id="first">
 												<div id="dayReservContainer">
 												</div>
 												</div>
-												<div class="tab-pane fade" id="homepage"></div>
+												<div class="tab-pane fade" id="second">
+												<div id="visitCountContainer"  style="text-align: center;">
+												</div>
+												</div>
 											</div>
 										</div>
 
@@ -279,21 +286,23 @@
 					<div class="col-sm-6">
 						<div class="card">
 							<div class="card-header">
-								<h3 class="card-title">Chart title</h3>
+								<h3 class="card-title">밥친구 시간대별 이용자수</h3>
 							</div>
-							<div class="card-body">
-								<div id="chart-donut" style="height: 12rem;"></div>
-							</div>
+							<div id="mealTimeContainer">
+                                
+                            </div>
 						</div>
 						
 					</div>
 					<div class="col-sm-6">
 						<div class="card">
 							<div class="card-header">
-								<h3 class="card-title">Chart title</h3>
+								<h3 class="card-title">밥친구 주간 이용자수</h3>
 							</div>
 							<div class="card-body">
-								<div id="chart-pie" style="height: 12rem;"></div>
+								<div id="mealDayContainer">
+                                
+                            </div>
 							</div>
 						</div>
 						
@@ -390,9 +399,7 @@
 	<!-- main JS
 		============================================ -->
 	<script src="/Food/resources/js/main.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="/Food/resources/js/charts/bar-chart.js"></script>
-    <script src="/Food/resources/js/charts/admin_chart.js"></script>
+	
     
 </body>
 </html>

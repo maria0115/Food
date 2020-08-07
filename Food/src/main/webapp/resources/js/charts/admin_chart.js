@@ -76,9 +76,7 @@ var chartOptions=[{
 	}
 },{
 	maintainAspectRatio : false,
-	responsive: true,
-	hoverMode: 'index',
-	stacked: false,
+	responsive: false,
 	title:{
 		display:true,
 		text:'주간 방문자수'
@@ -175,7 +173,7 @@ function makecategoryChartAjax(){
 function makeVisitChart(){
 	var chartId= "visitCountChart";
 	$('#visitCountContainer').empty();
-	$('#visitCountContainer').append('<canvas class="charts" id="'+chartId+'" style="height:300px;"></canvas>');
+	$('#visitCountContainer').append('<canvas class="charts" id="'+chartId+'" style="height:300px; text-align:center; display:inline-block"></canvas>');
 
 	$.ajax({
 		url:"visitChart.do", 
