@@ -2,6 +2,7 @@ package com.food.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.food.domain.BlackListVO;
 import com.food.domain.BoardVO;
@@ -59,7 +60,37 @@ public interface ManagerService {
 	public int todayReview();
 
 
-	public HashMap membercount();
+	public List<Map> membercount();
+
+
+	public List<Integer> mealTime();
+
+
+	public List<Map> categoryDayCount();
+
+
+	public List<Map> memberYear();
+
+
+	public List<Map> topStore();
+
+
+	public void updateVisiter();
+
+
+	public List<Map> visitCount();
+
+
+	public void insertVisiter();
+
+
+	public String selectVisiter();
+
+
+	public List<Map> mealDayCount();
+
+
+	
 
 
 

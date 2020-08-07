@@ -3,7 +3,24 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d256eadcce9c22afd468b3f969eae576&libraries=services,clusterer,drawing"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script type="text/javascript">
+$(function(){
+	$.ajax({
+		url:"/Food/manager/visiter.do", 
+		type:"post", 
+		dataType:'json',
+		success:function(data){
+
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+});
+
+
+
 var latitude="";
 var longitude="";
 

@@ -93,4 +93,75 @@
 	select To_char(m_date,'YYYY-MM-DD') m_date,count(*) memberCount from member group by To_char(m_date,'YYYY-MM-DD') order by m_date
 </select>
 
+<select id="mealTime" resultType="int">
+<![CDATA[
+  	select count(substr(f_date,-2)) F_date from board where boardType=3 AND (substr(f_date,-2) >= '21' OR substr(f_date,-2)<='05')
+    union all
+    select count(substr(f_date,-2)) F_date from board where boardType=3 AND substr(f_date,-2) BETWEEN '06' AND '10'
+    union all
+    select count(substr(f_date,-2)) F_date from board where boardType=3 AND substr(f_date,-2) BETWEEN '11' AND '16'
+    union all
+    select count(substr(f_date,-2)) F_date from board where boardType=3 AND substr(f_date,-2) BETWEEN '17' AND '20'
+    order by f_date desc
+]]>
+</select>
+
+<select id="categoryDayCount" resultType="map">
+	select r_date,sum(양식) wFood, sum(일식) jFood, sum(중식) cFood, sum(한식) kFood, sum(분식) sFood, sum(동남아) asFood
+    from (select r_date ,
+                CASE WHEN s_category='양식' THEN count ELSE 0 END "양식",
+                CASE WHEN s_category='일식' THEN count ELSE 0 END "일식",
+                CASE WHEN s_category='중식' THEN count ELSE 0 END "중식",
+                CASE WHEN s_category='한식' THEN count ELSE 0 END "한식",
+                CASE WHEN s_category='분식' THEN count ELSE 0 END "분식",
+                CASE WHEN s_category='동남아' THEN count ELSE 0 END "동남아"                
+    from  (select s.s_category s_category,to_char(r.r_Date,'YYYY-MM-DD') r_date,count(*) count  from store s inner join reservation r ON s.s_brand_name = r.r_store_name 
+    group by s.s_category,to_char(r_Date,'YYYY-MM-DD') 
+    order by to_char(r.r_Date,'YYYY-MM-DD')))
+    group by r_date
+    order by r_date
+
+</select>
+
+<select id="memberYear" resultType="map">
+
+select year, count(*) as cnt
+from
+	(
+	select
+		concat((floor((to_char(sysdate, 'YYYY') - SUBSTR(m_birth,1,4)) / 10) * 10),'대') as year
+	from
+		member
+        where m_birth is not null
+	) o
+group by year
+order by year
+</select>
+
+<select id="topStore" resultType="map">
+select * from( select ROWNUM RN, A.* from (select r_store_name as store,count(r_number) count from reservation group by r_store_name order by count desc ) A) WHERE RN BETWEEN 1 AND 10
+</select>
+
+<update id="updateVisiter">
+  update homepageview set visitcount=visitcount+1, totalvisit=totalvisit+1 where visitDay =to_char(sysdate,'YYYY-MM-DD')
+</update>
+
+<select id="visitCount" resultType="map">
+	select VISITCOUNT,TOTALVISIT,to_char(visitday,'YYYY-MM-DD') visitDay from homepageview where visitday BETWEEN to_char(sysdate-7,'YYYY-MM-DD')AND to_char(sysdate,'YYYY-MM-DD') order by visitday
+</select>
+
+<select id="selectVisiter" resultType="string">
+select to_char(visitDay,'YYYY-MM-DD') visitDay from homepageview where to_char(visitDay,'YYYY-MM-DD') = to_char(sysdate,'YYYY-MM-DD')
+</select>
+<insert id="insertVisiter" >
+insert into homepageview(visitCount,totalvisit,visitDay) values (1,( select totalvisit from homepageview where visitday=to_char(sysdate-1,'YYYY-MM-DD'))+1,to_char(sysdate,'YYYY-MM-DD'))
+
+</insert>
+<select id="mealDayCount" resultType="map">
+select to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') 요일, count(*) count 
+    from board 
+    where boardtype =3 group by  to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') 
+    order by count desc
+
+</select>
 </mapper>

@@ -4,16 +4,6 @@
 	/*  1.  Bar Chart
 	/*----------------------------------------*/
  	var resultData;
- 	$.ajax({
-		url:"dayReservChart.do", //삭제 요청
-		type:"post",
-		data:{input_check : checkArr}, 
-		dataType:'json',
-		success:function(data){
-			resultData=data;
-		}
-		
-	});
  
  
 	var ctx = document.getElementById("barchart1");

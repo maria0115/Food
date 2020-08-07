@@ -3480,3 +3480,8 @@ div#sparklinehome canvas {
 	color: #fff;
 	width:auto;
 }
+.charts{
+	height: 300px;
+    display: block;
+    width: 356px;
+}

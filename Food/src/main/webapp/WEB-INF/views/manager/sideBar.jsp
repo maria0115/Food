@@ -65,6 +65,13 @@
 										<span class="mini-click-non">Board List</span></a></li>
 
 							</ul></li>
+						<li>
+							
+								<a title="Analytics" href="/Food/manager/chart.do"><i
+										class="fa fa-building sub-icon-mg" aria-hidden="true"></i> <span
+										class="mini-sub-pro">Store</span></a>
+
+						</li>
 					</ul>
 				</nav>
 			</div>

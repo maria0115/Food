@@ -1,9 +1,12 @@
 package com.food.controller;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -54,7 +57,9 @@ public class ManageController {
 	public String memberList(Model model,HttpServletRequest request,String searchClick,PagingVO pvo,@RequestParam(value="nowPage",required=false)String nowPage,@RequestParam(value="cntPerPage",required=false)String cntPerPage,@RequestParam(value="cntHirePage",required=false)String cntHirePage, String searchType, String keyword, MemberVO vo) {
 		int total;//페이징 처리할때 데이터의 총 갯수를 저장할 변수
 		String search = "";//검색을 했는지 여부를 확인할 변수 선언
-		System.out.println("member-list.do 들어옴");
+		System.out.println("member-list.do ~~~~~~~~~~~~~~");
+
+
 
 		if(searchType!=null) {
 			if(searchType.equals("Id")==true) {
@@ -182,11 +187,7 @@ public class ManageController {
 
 			//모델에 "paing" pvo 추가
 			model.addAttribute("paging", pvo);
-			System.out.println("CntPerPage:"+pvo.getCntPerPage());
-			System.out.println("EndPage:"+pvo.getEndPage());
-			System.out.println("LastPage:"+pvo.getLastPage());
-			System.out.println("NowPage:"+pvo.getNowPage());
-			System.out.println("StartPage:"+pvo.getStartPage());
+			
 			//모델에 "memList" List 추가 , db에서 조건에 해당하는 상품 목록을 가지고 온다
 		
 		
@@ -480,27 +481,107 @@ public class ManageController {
 		return percent;
 	}
 	
+	@ResponseBody
 	@RequestMapping("dayReservChart.do")
-	public String barchart(Model model) {
+	public Map barchart() {
+		System.out.println("dayReservChart.do 들어옴");
 		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-		HashMap memberCount = new HashMap();
+		Map result = new HashMap();
+		List<Map> memberCount=managerService.membercount();
+
+		result.put("reduceMemberCount",memberCount);
+		result.put("reduceMemberCountSize",memberCount.size());
+		result.put("label","일별 회원가입 수");
+		result.put("chartNum",1);
+
 		
-		memberCount=managerService.membercount();
-		 Iterator mapIter = memberCount.keySet().iterator();
-		 
-	        while(mapIter.hasNext()){
-	 
-	            String key = (String) mapIter.next();
-	            String value = (String) memberCount.get( key );
-	 
-	            System.out.println(key+" : "+value);
-	 
-	        }
-		
-		
-		
-		return null;
+		return result;
 		
 	}
 	
+	@ResponseBody
+	@RequestMapping("mealTime.do")
+	public List<Integer> piechart(Model model){
+		
+		List<Integer> mealTime = managerService.mealTime();
+		return mealTime;	
+		}
+	
+	@ResponseBody
+	@RequestMapping("categoryDayChart.do")
+	public Map categoryChart() {
+		Map result = new HashMap();
+		List<Map> categoryCount=managerService.categoryDayCount();
+
+		result.put("reduceCategoryCount",categoryCount);
+		result.put("reduceCategoryCountSize", categoryCount.size());
+		result.put("chartNum",2);
+		return result;
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping("memberYearChart.do")
+	public Map memberYear() {
+		Map result = new HashMap();
+		List<Map> memberYear=managerService.memberYear();
+		
+		result.put("memberYear", memberYear);
+		result.put("memberYearSize",memberYear.size());
+		result.put("chartNum",1);
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping("topStore.do")
+	public Map topStore() {
+		Map result = new HashMap();
+		List<Map> topten = managerService.topStore();
+		
+		result.put("toptenStore", topten);
+		result.put("toptenStoreSize", topten.size());
+		result.put("chartNum",2);
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping("visiter.do")
+	public void visitCount() {
+		LocalDate onlyDate = LocalDate.now();
+		String visitDate=managerService.selectVisiter();
+		
+		if(visitDate==null) {
+		managerService.insertVisiter();
+		}else if(LocalDate.parse(visitDate).isEqual(onlyDate)==true) {
+			managerService.updateVisiter();
+		}
+
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping("visitChart.do")
+	public Map visitChart() {
+		Map result = new HashMap();
+		
+		
+		List<Map> visitCount = managerService.visitCount();
+		
+		result.put("visitCount", visitCount);
+		result.put("visitCountSize", visitCount.size());
+		result.put("chartNum",3);
+		
+		return result;
+		
+		
+	}
+	@ResponseBody
+	@RequestMapping("mealDay.do")
+	public Map mealDayChart() {
+		Map result = new HashMap();
+		
+		List<Map> mealDayCount = managerService.mealDayCount();
+		
+		return result;
+	}
 }

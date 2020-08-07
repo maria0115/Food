@@ -2,6 +2,7 @@ package com.food.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -110,8 +111,56 @@ public class ManagerServiceimpl implements ManagerService{
 	}
 
 	@Override
-	public HashMap membercount() {
+	public List<Map> membercount() {
 		return managerDAO.membercount();
+	}
+
+	@Override
+	public List<Integer> mealTime() {
+		
+		return managerDAO.mealTime();
+	}
+
+	@Override
+	public List<Map> categoryDayCount() {
+		return managerDAO.categoryDayCount();
+	}
+
+	@Override
+	public List<Map> memberYear() {
+		return managerDAO.memberYear();
+	}
+
+	@Override
+	public List<Map> topStore() {
+		return managerDAO.topStore();
+	}
+
+	@Override
+	public void updateVisiter() {
+		managerDAO.updateVisiter();
+	}
+
+	@Override
+	public List<Map> visitCount() {
+		return managerDAO.visitCount();
+	}
+
+	@Override
+	public void insertVisiter() {
+		managerDAO.insertVisiter();
+		
+	}
+
+	@Override
+	public String selectVisiter() {
+		return managerDAO.selectVisiter();
+		
+	}
+
+	@Override
+	public List<Map> mealDayCount() {
+		return managerDAO.mealDayCount();
 	}
 
 

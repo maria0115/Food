@@ -245,15 +245,18 @@
 												<!-- data-load를 넣어서 이미 로드를 했는지 않했는지의 판단 값을 넣는다. -->
 												<!-- true면 이미 content영역에 load가 끝나서 더이상 load가 필요없다는 뜻이다. -->
 												<li class="active"><a href="#home1" data-toggle="tab"
-													data-load="true">일간 예약</a></li>
+													data-load="true">일별 예약</a></li>
 												<!-- false라면 data-url영역의 url주소로 데이터를 가져와서 tab-content에 표시한다. -->
 												<li><a href="#homepage" data-toggle="tab"
-													data-load="false" data-url="https://nowonbun.tistory.com">페이지
+													data-load="false" data-url="">페이지
 														뷰</a></li>
 											</ul>
 											<!-- tab-content 영역이다. -->
 											<div class="tab-content">
-												<div class="tab-pane fade in active" id="home">Home 메뉴</div>
+												<div class="tab-pane fade in active" id="home">
+												<div id="dayReservContainer">
+												</div>
+												</div>
 												<div class="tab-pane fade" id="homepage"></div>
 											</div>
 										</div>
@@ -387,5 +390,9 @@
 	<!-- main JS
 		============================================ -->
 	<script src="/Food/resources/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="/Food/resources/js/charts/bar-chart.js"></script>
+    <script src="/Food/resources/js/charts/admin_chart.js"></script>
+    
 </body>
 </html>

@@ -2,16 +2,14 @@ package com.food.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.food.domain.BlackListVO;
-import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
-import com.food.domain.ReservationVO;
 
 @Repository("managerDAO")
 public class managerDAOImpl implements managerDAO{
@@ -135,13 +133,64 @@ public class managerDAOImpl implements managerDAO{
 		}
 
 		@Override
-		public HashMap membercount() {
+		public List<Map> membercount() {
 			System.out.println("==>ManagerMapper membercount() 호출");
-			HashMap map = new HashMap();
+			return mybatis.selectList("managerDAO.membercount");
+		}
+
+		@Override
+		public List<Integer> mealTime() {
+			System.out.println("==>ManagerMapper mealTime() 호출");
+			return mybatis.selectList("managerDAO.mealTime");
+		}
+
+		@Override
+		public List<Map> categoryDayCount() {
+			System.out.println("==>ManagerMapper categoryDayCount() 호출");
+			return mybatis.selectList("managerDAO.categoryDayCount");
+		}
+
+		@Override
+		public List<Map> memberYear() {
+			System.out.println("==>ManagerMapper memberYear() 호출");
+			return mybatis.selectList("managerDAO.memberYear");
+		}
+
+		@Override
+		public List<Map> topStore() {
+			System.out.println("==>ManagerMapper topStore() 호출");
+			return mybatis.selectList("managerDAO.topStore");
+		}
+
+		@Override
+		public void updateVisiter() {
+			System.out.println("==>ManagerMapper updateVisiter() 호출");
+			mybatis.selectOne("managerDAO.updateVisiter");
+		}
+
+		@Override
+		public List<Map> visitCount() {
+			System.out.println("==>ManagerMapper visitCount() 호출");
+			return mybatis.selectList("managerDAO.visitCount");
+		}
+
+		@Override
+		public void insertVisiter() {
+			System.out.println("==>ManagerMapper insertVisiter() 호출");
+			mybatis.selectOne("managerDAO.insertVisiter");
 			
-			map.put("list", mybatis.selectList("managerDAO.membercount"));
-			System.out.println(map);
-			return map;
+		}
+
+		@Override
+		public String selectVisiter() {
+			System.out.println("==>ManagerMapper selectVisiter() 호출");
+			return mybatis.selectOne("managerDAO.selectVisiter");
+		}
+
+		@Override
+		public List<Map> mealDayCount() {
+			System.out.println("==>ManagerMapper mealDayCount() 호출");
+			return mybatis.selectOne("managerDAO.mealDayCount");
 		}
 
 

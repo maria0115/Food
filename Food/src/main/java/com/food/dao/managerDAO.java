@@ -2,6 +2,7 @@ package com.food.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.food.domain.BlackListVO;
 import com.food.domain.BoardVO;
@@ -45,5 +46,23 @@ public interface managerDAO {
 
 		int todayReview();
 
-		HashMap membercount();
+		List<Map> membercount();
+
+		List<Integer> mealTime();
+
+		List<Map> categoryDayCount();
+
+		List<Map> memberYear();
+
+		List<Map> topStore();
+
+		void updateVisiter();
+
+		List<Map> visitCount();
+
+		void insertVisiter();
+
+		String selectVisiter();
+
+		List<Map> mealDayCount();
 }
