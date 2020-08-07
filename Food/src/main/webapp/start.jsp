@@ -17,6 +17,7 @@ var detailAddr="";
 		var coord = new kakao.maps.LatLng(latitude, longitude);
 		var callback = function(result, status) {
 		    if (status === kakao.maps.services.Status.OK) {
+			    
 		    	region = result[0].address.region_2depth_name;
 		    	location.href="main.do?latitude="+latitude+"&longitude="+longitude+"&region="+region;
 		    }

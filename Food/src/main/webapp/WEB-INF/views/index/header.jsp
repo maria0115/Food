@@ -89,6 +89,88 @@ if (folder == null || folder.equals(""))
 .wish {
 	-webkit-text-stroke-width: medium;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 100px;
+}
+
+.pop-layer .pop-container {
+  padding: 20px 25px;
+}
+
+.pop-layer p.ctxt {
+  color: #666;
+  line-height: 25px;
+}
+
+.pop-layer .btn-r {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding-top: 10px;
+  border-top: 1px solid #DDD;
+  text-align: right;
+}
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 410px;
+  height: auto;
+  background-color: #fff;
+  border: 5px solid #3571B5;
+  z-index: 10;
+}
+
+.dim-layer {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.dim-layer .dimBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.dim-layer .pop-layer {
+  display: block;
+}
+
+a.btn-layerClose {
+  display: inline-block;
+  height: 25px;
+  padding: 0 14px 0;
+  border: 1px solid #304a8a;
+  background-color: #3f5a9d;
+  font-size: 13px;
+  color: #fff;
+  line-height: 25px;
+}
+
+a.btn-layerClose:hover {
+  border: 1px solid #091940;
+  background-color: #1f326a;
+  color: #fff;
+}
+
 </style>
 
 
@@ -173,17 +255,41 @@ if (folder == null || folder.equals(""))
 														type="submit" />
 												</p>
 											</form>
+												<a href="find_form.do" class="memberInfo" style="text-align: center;">아이디 비밀번호 찾기 </a>
+											<div></div>
+												 <a id="naver" href="/Food/loginview.do">소셜 로그인</a>		   
+												<div class="closeBtn">X</div>
 
-											<a href="singup.do" class="memberInfo">회원가입 </a> <a
-												href="find_form.do" class="memberInfo">아이디 비밀번호 찾기 </a> <a
-												id="naver" href="/Food/loginview.do">소셜 로그인</a>
-											<div class="closeBtn">X</div>
+											</div>
 
 										</div>
-
 									</div>
-								</div>
-
+											
+										
+											<a href="#layer2" class="btn-example fa fa-user" style="display: revert;
+														    color: snow;
+														    font-size: x-large;margin-left: 10px;
+														    margin-top: 6px;
+														    margin-right: 10px;">Sign Up</a>
+															<div class="dim-layer">
+															    <div class="dimBg"></div>
+															    <div id="layer2" class="pop-layer">
+															        <div class="pop-container">
+															            <div class="pop-conts">
+															                <!--content //-->
+															                <p class="ctxt mb20">
+															                <a href="/Food/singup.do"><button class="btn btn-primary" style="height: 170px; width: 150px; margin-right: 40px;font-weight: bolder; font-size: x-large;">일반 회원</button></a>
+															                <a href="singup.do"><button class="btn btn-danger" style="height: 170px; width: 150px;font-weight: bolder; font-size: x-large">기업 회원</button></a>
+															                </p>
+															
+															                <div class="btn-r">
+															                    <a href="#" class="btn-layerClose">Close</a>
+															                </div>
+															                <!--// content-->
+															            </div>
+															        </div>
+															    </div>
+															</div>
 
 								<!--                         <ul id="navi"> -->
 								<!--                               <li> -->
@@ -293,7 +399,45 @@ if (folder == null || folder.equals(""))
 		src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
+	<script >
+	$('.btn-example').click(function(){
+        var $href = $(this).attr('href');
+        layer_popup($href);
+    });
+    function layer_popup(el){
 
+        var $el = $(el);        //레이어의 id를 $el 변수에 저장
+        var isDim = $el.prev().hasClass('dimBg');   //dimmed 레이어를 감지하기 위한 boolean 변수
+
+        isDim ? $('.dim-layer').fadeIn() : $el.fadeIn();
+
+        var $elWidth = ~~($el.outerWidth()),
+            $elHeight = ~~($el.outerHeight()),
+            docWidth = $(document).width(),
+            docHeight = $(document).height();
+
+        // 화면의 중앙에 레이어를 띄운다.
+        if ($elHeight < docHeight || $elWidth < docWidth) {
+            $el.css({
+                marginTop: -$elHeight /2,
+                marginLeft: -$elWidth/2
+            })
+        } else {
+            $el.css({top: 0, left: 0});
+        }
+
+        $el.find('a.btn-layerClose').click(function(){
+            isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+            return false;
+        });
+
+        $('.layer .dimBg').click(function(){
+            $('.dim-layer').fadeOut();
+            return false;
+        });
+
+    }
+	</script>
 
 	<!-- <script src="/Food/resources/js/storePaging.js"></script> -->
 
