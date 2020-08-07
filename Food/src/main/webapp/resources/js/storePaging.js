@@ -183,8 +183,9 @@ function drawWriterTable(data) {
 	div6End = '</div>';
 	div2End = '</div>';
 	div1End = '</div>';
+	
 	for (var i = 0; i < data.listVO2size; i++) {
-
+//		if(listVO2[i].check==1){
 		var listContent = div1 + div2 + div3 + imgA+ data.listVO2[i].s_brand_name +imgAtest+ imgSrc
 				+ data.listVO2[i].s_brand_name + imgSrcEnd + imgAend + div4
 				+ aHot + div4End + div6 + div6A + data.listVO2[i].s_brand_name
@@ -192,7 +193,7 @@ function drawWriterTable(data) {
 				+ div6Aend + div6End + div2End + div1End
 		
 		$('#storeTT').append(listContent);
-
+//		}
 	}
 	
 	

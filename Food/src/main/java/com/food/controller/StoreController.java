@@ -96,12 +96,14 @@ public class StoreController {
 	public String reviewInsert(BoardVO vo ,HttpServletRequest request) throws UnsupportedEncodingException {
 		System.out.println("리뷰인설트 controller 도착");
 		String name = request.getParameter("name");
+		String star = request.getParameter("v_star");
+		System.out.println(star);
 		System.out.println(name);
 		name = URLEncoder.encode(name,"UTF-8");
 		int result;
 		vo.setBoardType(2);
 		vo.setSeq("review_r_no");
-	
+		
 		result = boardService.insertBoard(vo);
 		
 		if(result==0) {

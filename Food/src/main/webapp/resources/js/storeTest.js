@@ -212,6 +212,11 @@ function divClick(elem){
 			$("#reviewDetailTitle").val(resultData.title)
 			$("#reviewDetailContent").val(resultData.b_content)
 			$("#boardNoHidden").val(resultData.b_no)
+			var aa = resultData.v_star
+			for(i=0;i<aa;i++ ){
+				$('#starTest').append($('<i class="fa fa-star" id="removeTest" aria-hidden="true" ></i>'));
+				
+			}
 			
 			$("#reviewcol").remove();
 			$("#detailReviewModify").css({"display" : "inline-block"});
@@ -220,18 +225,40 @@ function divClick(elem){
 			$('#detailModify').remove();
 			$('#reviewDetailTitle').attr("style" , "border : none");
 			$('#reviewDetailContent').attr("style" , "border : none");
-
+			
 			
 		},
 		error:function(request,status,error){
 			alert("divClick실패"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		
 		}
 		
 	});
 	
 	
 }
+//function close(){
+//	alert("close실행")
+//	
+//	$.ajax({
+//	
+//		success : function(resultData){ 
+//		var aa = resultData.v_star
+//		for(i=0;i<aa;i++ ){
+//			$('#starTest').remove();
+//			
+//			
+//		}
+//		
+//	
+//	}
+//	});
+//	
+//}
+
+
+
 function modifyre(){
 	var b_num = $('#checkLock').val()
 	
@@ -276,14 +303,20 @@ function modifyre(){
 
 
 
+
+
 $('.btn-example').click(function(){
+	
+	
 	var $href = $(this).attr('href');
 	layer_popup($href);
+	var aa = resultData.v_star
+	
 });
 
 
 // 테스트
-function layer_popup(el){
+function layer_popup(el,resultData){
 
     var $el = $(el);        //레이어의 id를 $el 변수에 저장
     var isDim = $el.prev().hasClass('dimBg');   //dimmed 레이어를 감지하기 위한 boolean 변수
@@ -305,9 +338,15 @@ function layer_popup(el){
         $el.css({top: 0, left: 0});
     }
 
-    $el.find('a.btn-layerClose').click(function(){
-        isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
-        return false;
+    $el.find('a.btn-layerClose').click(function(resultData){
+    	
+    	isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+    	$('#removeTest').remove();
+    	$('#removeTest').remove();
+    	$('#removeTest').remove();
+    	$('#removeTest').remove();
+    	$('#removeTest').remove();
+    	return false;
     });
 
     $('.layer .dimBg').click(function(){
