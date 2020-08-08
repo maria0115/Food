@@ -1,145 +1,129 @@
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  margin: 100px;
+	margin: 100px;
 }
 
 .pop-layer .pop-container {
-  padding: 0px 0px;
+	padding: 0px 0px;
 }
 
 .pop-layer p.ctxt {
-  color: #666;
-  line-height: 25px;
+	color: #666;
+	line-height: 25px;
 }
 
 .pop-layer .btn-r {
-  width: 100%;
-  margin: 10px 0 20px;
-  padding-top: 10px;
-  border-top: 1px solid #DDD;
-  text-align: right;
+	width: 100%;
+	margin: 10px 0 20px;
+	padding-top: 10px;
+	border-top: 1px solid #DDD;
+	text-align: right;
 }
 
 .pop-layer {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1050px;
-  height: auto;
-  background-color: #fff;
-  border: 0px solid #3571B5;
-  z-index: 10;
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1050px;
+	height: auto;
+	background-color: #fff;
+	border: 0px solid #3571B5;
+	z-index: 10;
 }
 
 .dim-layer {
-  display: none;
-  position: fixed;
-  _position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
+	display: none;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
 }
 
 .dim-layer .dimBg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 500%;
-  height: 500%;
-  background: #000;
-  opacity: .5;
-  filter: alpha(opacity=50);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 500%;
+	height: 500%;
+	background: #000;
+	opacity: .5;
+	filter: alpha(opacity = 50);
 }
 
 .dim-layer .pop-layer {
-  display: block;
+	display: block;
 }
 
 a.btn-layerClose {
-  display: inline-block;
-  height: 25px;
-  padding: 0 14px 0;
-  border: 1px solid #304a8a;
-  background-color: #3f5a9d;
-  font-size: 13px;
-  color: #fff;
-  line-height: 25px;
+	display: inline-block;
+	height: 25px;
+	padding: 0 14px 0;
+	border: 1px solid #304a8a;
+	background-color: #3f5a9d;
+	font-size: 13px;
+	color: #fff;
+	line-height: 25px;
 }
 
 a.btn-layerClose:hover {
-  border: 1px solid #091940;
-  background-color: #1f326a;
-  color: #fff;
+	border: 1px solid #091940;
+	background-color: #1f326a;
+	color: #fff;
 }
-
 
 #btn a {
-
-    width:65px;
-
-    background-color: #7d7d7d;
-
-    border: none;
-
-    color:#fff;
-
-    padding: 5px 0;
-
-    text-align: center;
-
-    text-decoration: none;
-
-    display: inline-block;
-
-    font-size: 15px;
-
-    margin: 4px;
-
-    cursor: pointer;
-	
-	border-radius:10px;
-
+	width: 65px;
+	background-color: #7d7d7d;
+	border: none;
+	color: #fff;
+	padding: 5px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px;
+	cursor: pointer;
+	border-radius: 10px;
 }
 
+input:focus {
+	outline: none;
+}
 
-
-
-	
-input:focus {outline:none;}
 textarea:focus {
-	outline:none; 
-	width:auto;
-		
+	outline: none;
+	width: auto;
 }
 
-#reviewDetailContent{
-	
+#reviewDetailContent {
 	width: 100%;
-	
 }
 
-#reviewDetailTitle{
-	
+#reviewDetailTitle {
 	width: 100%;
+}
+
+#reviewFileName {
+	height: 380px;
+}
+
+#reviewInsertFrm .row #reviewFileDiv #file{
+	
+	height :28px;
 	
 }
 
-
-
-
-
-
-
-
-
-
-
-
+.submit_a_review_area #reviewInsertFrm #reviewInsertArea #reviewInsert {
+	
+	width: 20px;
+	margin-top: 15px; 
+}
 

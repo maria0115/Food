@@ -29,7 +29,7 @@ map.put("동남아", "east");
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <script type="text/javascript">
-$fun
+
 </script>
 
 
@@ -51,11 +51,7 @@ $fun
 
 
 
-<script type="text/javascript">
-$(function(){
-	
-});
-</script>
+
 </head>
 
 
@@ -151,7 +147,7 @@ $(function(){
     						top: 50%;
 						    width: auto;
 						    max-width: 100%;
-						    max-height: 100%;" 
+						    max-height: 50%;" 
 					 alt=""
 					>
             	
@@ -203,7 +199,7 @@ $(function(){
                       
                                                    
 
-               			<input id="boardNoHidden" type="hidden" value="${board.b_no}">
+               			<input id="boardNoHidden" type="hidden" value="${board.b_no}"> 
                			<input type="hidden" id ="checkLock" value=""><br/>
                			<span id="reviewDetailName" >이름</span><span>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp</span>
                			<span id="reviewDetailDate" >날짜</span><span>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp</span>
@@ -450,13 +446,6 @@ $(function(){
 
 																		<script>
 
-							/* function clickTest(){
-								alert("aa")
-								location.href='storeReviewDetails.do?b_no=${board.b_no}';
-								//window.open('storeReviewDetails.do','ddd','width=780,height=843,left=500,top=100,location=no,status=no,scrollbars=yes')
-								
-								}
-                         */
 
                         </script>
 																	</form>
@@ -512,7 +501,7 @@ $(function(){
 
 
 
-
+										
 										<div class="submit_a_review_area mt-50">
 											<h4>Submit A Review</h4>
 											<form action="reviewInsert.do?name=${list.s_brand_name}"
@@ -563,28 +552,32 @@ $(function(){
 														<div class="form-group">
 															<label for="comments">내용</label>
 															<textarea class="form-control" id="comments"
-																name="b_content" rows="5" data-max-length="150"></textarea>
+																name="b_content" rows="5" data-max-length="150" style="width:48%;"></textarea>
 														</div>
 													</div>
-													<div class="col-12">
-
+													<div class="col-12 col-md-6" id="reviewFileDiv">
 														<!-- ************** name은 MultipartFile 프라퍼티임 -->
-														<input type="file" name="file" maxlength="60" size="40">
+														<label for="file">첨부사진</label>
+														<input type="file" name="file" id="file" maxlength="60" size="40">
+													</div>
+													<br/>
+																																					
+												</div>
+												<div id="reviewInsertArea">
 														<input type="button" class="btn alazea-btn"
 															id="reviewInsert" value="리뷰등록">
 													</div>
-												</div>
 											</form>
 										</div>
 									</div>
-
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				</div>
-				</div>
+				
 	</section>
 	<!-- ##### Single Product Details Area End ##### -->
 
