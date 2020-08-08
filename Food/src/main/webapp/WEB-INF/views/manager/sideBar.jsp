@@ -67,7 +67,7 @@
 							</ul></li>
 						<li>
 							
-								<a title="Analytics" href="/Food/manager/chart.do"><i
+								<a title="Analytics" href="/Food/manager/storemanager.do"><i
 										class="fa fa-building sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">Store</span></a>
 

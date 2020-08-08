@@ -23,8 +23,10 @@ import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
+import com.food.domain.StoreListVO;
 import com.food.service.BlackService;
 import com.food.service.ManagerService;
+import com.food.service.StoreService;
 import com.food.service.boardService;
 
 
@@ -45,6 +47,9 @@ public class ManageController {
 	
 	@Autowired
 	private boardService boardService;
+	
+	@Autowired
+	private StoreService storeService;
 	
 	@RequestMapping("/{step}.do")
 	public String page(@PathVariable String step) {
@@ -587,4 +592,23 @@ public class ManageController {
 		result.put("chartNum", 2);
 		return result;
 	}
+	
+	//매장 관리 
+	@RequestMapping("storemanager.do")
+	public Map  storemanager(StoreListVO vo,Model model){
+		System.out.println("매장관리 컨트롤러 ");
+		Map result = new HashMap();
+		
+		result.put("storelist", storeService.getStoreList(vo));
+		
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

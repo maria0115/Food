@@ -29,7 +29,7 @@
 	
 		<div id="header">
 		
-			
+		<input class="btn btn-info" type="button" id="joinBtn" value="밥친구확정" style="max-height: 35px; max-width: 100px;" >
 		</div>
 		<!-- 채팅메세지를 주고받는 부분 -->
 		<div id="chat">

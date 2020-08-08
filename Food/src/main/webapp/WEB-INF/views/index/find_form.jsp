@@ -20,7 +20,7 @@
 <body>
 	<div class="w3-content w3-container w3-margin-top">
 		<div class="w3-container w3-card-4">
-			<form action="findid.do" method="post">
+			<form action="/Food/findid.do" method="post">
 				<div class="w3-center w3-large w3-margin-top">
 					<h3>아이디 찾기</h3>
 				</div>
@@ -80,7 +80,7 @@
 			$.ajax({
 	            type : 'get',
 	            contentType :'application/x-www-form-urlencoded;charset=UTF-8',
-	            url: 'find-password.do?m_id='+$("#mail_id").val(),
+	            url: '/Food/find-password.do?m_id='+$("#mail_id").val(),
 	            dataType : "json",
 	            success : function(data) {
 	                //서버에서 json 데이터 response 후 목록 추가
