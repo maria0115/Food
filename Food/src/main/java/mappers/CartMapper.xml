@@ -17,7 +17,7 @@
 
 
 <select id="selectName" parameterType="wishlist" resultType="String">
-	select w_store_name from wishlist where w_store_name = #{s_brand_name}
+	select w_store_name from wishlist where w_store_name = #{s_brand_name} and m_id = #{m_id}
 </select>
 
 

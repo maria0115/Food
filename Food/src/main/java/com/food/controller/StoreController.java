@@ -10,6 +10,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,7 +61,7 @@ public class StoreController {
 	
 //	 상품 상세보기 
 	@RequestMapping("/storeDetails.do" )
-	public ModelAndView getSelectStore(StoreListVO vo,BoardVO vo2,HttpServletRequest request) {
+	public ModelAndView getSelectStore(StoreListVO vo,BoardVO vo2,HttpServletRequest request,HttpSession session) {
 		
 		
 		
@@ -74,6 +75,8 @@ public class StoreController {
 		List<BoardVO> listVO = storeService.reviewSelect(vo);
 //		System.out.println(listVO.get(0).getS_brand_name()+"//////////*************");
 		// 매장명 가져오는거 -------------
+		String m_id = (String) session.getAttribute("user_id");
+		vo.setM_id(m_id);
 		String s_name = cartService.selectName(vo);
 		System.out.println("s_name :"+s_name);
 		
