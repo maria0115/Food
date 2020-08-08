@@ -1,4 +1,5 @@
 <%@page import="com.food.domain.StoreListVO"%>
+<%@page import="com.food.domain.BoardVO"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.List"%>
 <%@page import="com.food.domain.ProductVO"%>
@@ -9,7 +10,6 @@
 <!DOCTYPE html>
 <%StoreListVO vo = (StoreListVO)request.getAttribute("list");
 String state = (String)request.getAttribute("state");
-
 HashMap map = new HashMap();
 map.put("한식", "kor");
 map.put("중식", "ch");
@@ -147,12 +147,13 @@ $(function(){
             <div style="width: 100%;height: auto; padding-top: 50px;padding-bottom: 50px;">
             	<ul>
             		<li>
-            			<img class="d-block w-100" style="    position: relative;
+            			<img id="reviewFileName" class="d-block w-100" style="    position: relative;
     						top: 50%;
 						    width: auto;
 						    max-width: 100%;
 						    max-height: 100%;" 
-					src="/Food/resources/storemenu/ame/인더버거_더블치즈버거.jpg" alt="1">
+					 alt=""
+					>
             	
 	            	</li>
              	</ul>
@@ -194,7 +195,7 @@ $(function(){
 					    box-sizing: border-box;
 					    border-radius: 4px;">
                			
-               			
+               			<!-- 별점  -->
                			<span id="starTest"> 
                			
                         </span>
@@ -203,7 +204,7 @@ $(function(){
                                                    
 
                			<input id="boardNoHidden" type="hidden" value="${board.b_no}">
-               			<input type="hidden" id ="checkLock" value="">
+               			<input type="hidden" id ="checkLock" value=""><br/>
                			<span id="reviewDetailName" >이름</span><span>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp</span>
                			<span id="reviewDetailDate" >날짜</span><span>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp</span>
                			<span id="reviewDetailCount">조회수</span>

@@ -119,10 +119,12 @@ function getWriterData(){
 
 function drawWriterTable(data){
 	console.log(data);
+	
 	$('#reviewContainer').empty();
 	var div1 = '<div class="comment-wrapper d-flex" style="padding: 25px 0;">';
     var div2 ='<div class="comment-author">';
-	var div3 =' <img src="img/bg-img/37.jpg" alt="">';
+	var div3Img =' <img src="/Food/resources/upload/';
+	var div3ImgEnd = '" alt=""/>'
 	var div4 ='</div>';
     var div5 ='<div class="comment-content" test="temp" onclick="divClick(this)">';
 	var div6 ='<div class="d-flex align-items-center justify-content-between">';
@@ -146,7 +148,7 @@ function drawWriterTable(data){
 		var listContent =
 			div1+
 			div2+
-			div3+
+			div3Img + data.listVO2[i].v_fileName + div3ImgEnd+
 			div4+
 			div5+
 			input+data.listVO2[i].b_no+input2+
@@ -212,6 +214,7 @@ function divClick(elem){
 			$("#reviewDetailTitle").val(resultData.title)
 			$("#reviewDetailContent").val(resultData.b_content)
 			$("#boardNoHidden").val(resultData.b_no)
+			$("#reviewFileName").attr('src',"/Food/resources/upload/"+resultData.v_fileName);
 			var aa = resultData.v_star
 			for(i=0;i<aa;i++ ){
 				$('#starTest').append($('<i class="fa fa-star" id="removeTest" aria-hidden="true" ></i>'));

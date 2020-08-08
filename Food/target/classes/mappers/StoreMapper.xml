@@ -115,7 +115,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	<![CDATA[
 	select *
 	from(
-		select ROWNUM AS RNUM , S_BRAND_NAME, TITLE, B_CONTENT, B_NO
+		select ROWNUM AS RNUM , S_BRAND_NAME, TITLE, B_CONTENT, B_NO,V_FILENAME
 		from BOARD
 		where BOARDTYPE = 2
 		and S_BRAND_NAME = #{s_brand_name}

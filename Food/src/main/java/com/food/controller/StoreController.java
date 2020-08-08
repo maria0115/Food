@@ -137,9 +137,15 @@ public class StoreController {
 		PaginationVO paginationVO = new PaginationVO(listVO2.size(),curPage);
 		map.put("startRow", paginationVO.getStartIndex()+1);
 		map.put("endRow", paginationVO.getStartIndex()+paginationVO.getPageSize());
-		
+				
 		// 내가 지정한 리스트 개수를 가져오기위해서 listVO2에  다시 넣어줌 
 		listVO2 = storeService.reviewPaging(map);
+		System.out.println("+++++++++++++++"+listVO2size);	
+		System.out.println("+++++++++++++++"+listVO2.size());
+		for (BoardVO i : listVO2) {
+			
+			System.out.println(i.getV_fileName());
+		}
 		System.out.println("+++++++++++++++"+listVO2size);	
 		System.out.println("+++++++++++++++"+listVO2.size());
 		result.put("listVO2",listVO2);
