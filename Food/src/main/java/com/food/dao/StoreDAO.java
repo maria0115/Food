@@ -28,6 +28,6 @@ public interface StoreDAO {
 
 	public List<StoreListVO> selectStorePaging(Map map);
 
-	
+	public int shopmember(StoreListVO svo);
 
 }

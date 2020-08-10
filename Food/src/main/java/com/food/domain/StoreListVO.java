@@ -1,11 +1,5 @@
 package com.food.domain;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-
-import org.springframework.web.multipart.MultipartFile;
-
 public class StoreListVO{
 	
 	private String s_brand_name;

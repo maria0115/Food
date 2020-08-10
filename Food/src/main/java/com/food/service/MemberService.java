@@ -27,6 +27,8 @@ public interface MemberService {
 	public void deleteMember(MemberVO vo);
 	//회원정보 수정하기
 	public void updateMember(MemberVO vo);
+	//기업회원 회원 가입 
+	public int shopmember(MemberVO vo);
 	
 	
 }

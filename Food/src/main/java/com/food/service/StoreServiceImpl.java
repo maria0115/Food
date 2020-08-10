@@ -70,6 +70,13 @@ public class StoreServiceImpl implements StoreService{
 		return storeDAO.selectStorePaging(map);
 	}
 
+
+	@Override
+	public int shopmember(StoreListVO svo) {
+		 return storeDAO.shopmember(svo); 
+		
+	}
+
 	
 
 

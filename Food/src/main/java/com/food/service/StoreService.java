@@ -26,7 +26,7 @@ public interface StoreService {
 	//가게리스트 페이징
 	List<StoreListVO> selectStorePaging(Map map);
 	
-	
+	public int shopmember(StoreListVO svo);
 	
 	
 	

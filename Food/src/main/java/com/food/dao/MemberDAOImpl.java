@@ -7,12 +7,11 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.food.domain.BlackListVO;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 
 @Repository("memberdao")
-public class MemberDAOImpl  implements MemberDAO{
+public class MemberDAOImpl  implements MemberDAO{ 
 	@Autowired
 	private SqlSessionTemplate mybatis;
 
@@ -83,6 +82,13 @@ public class MemberDAOImpl  implements MemberDAO{
 	@Override
 	public void deleteMember(MemberVO vo) {
 		mybatis.delete("memberDAO.deleteMember",vo);
+		
+	}
+
+
+	@Override
+	public int shopmember(MemberVO vo) {
+		return mybatis.insert("memberDAO.shopmember",vo);
 		
 	}
  

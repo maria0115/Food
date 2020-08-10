@@ -78,6 +78,11 @@ public class StoreDAOImpl implements StoreDAO{
 		
 		return mybatis.selectList("StoreDAO.selectStorePaging",map);
 	}
+	@Override
+	public int shopmember(StoreListVO svo) {
+		return mybatis.insert("StoreDAO.shopmember",svo);
+		
+	}
 	
 	
 

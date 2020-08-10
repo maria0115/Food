@@ -16,7 +16,15 @@ select m_id,m_email,m_pass from member where m_id = #{m_id}
     values (#{m_id}, 0, #{m_email})
  </insert>
 
+<insert id="shopmember" parameterType="member">
 
+insert into member(m_id,m_pass,m_name,m_date) values(#{m_id},#{m_pass},#{m_name},sysdate)
+</insert>
+
+<insert id="shopmember2" parameterType="product">
+insert into product(p_name_1,p_name_2,p_name_3,p_price_1,p_price_2,p_price_3,p_id,s_brand_name) values(#{p_name_1},#{p_name_2},#{p_name_3},#{p_price_1},#{p_price_2},#{p_price_3},sq_p_id.nextval,#{s_brand_name})
+
+</insert>
 
 
 <select id="search" parameterType="String" resultType="product">

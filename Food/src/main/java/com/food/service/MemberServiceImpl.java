@@ -96,6 +96,13 @@ public class MemberServiceImpl  implements MemberService{
 		
 	}
 
+
+	@Override
+	public int shopmember(MemberVO vo) {
+		return memberdao.shopmember(vo);
+		
+	}
+
  
 	
 	

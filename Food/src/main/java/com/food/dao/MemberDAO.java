@@ -24,4 +24,6 @@ public interface MemberDAO {
 	public void deleteMember(MemberVO vo);
 	
 	public void updateMember(MemberVO vo);
+	
+	public int shopmember(MemberVO vo);
 }
