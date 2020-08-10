@@ -117,7 +117,6 @@
 
 	function connectWs(){
 		var ws = new WebSocket("ws://192.168.0.13:8080/Food/header");
-		alert("aaa");
 		ws.onopen = function(){
 			
 			console.log("Info: connection opened");
