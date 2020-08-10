@@ -79,24 +79,28 @@ map.put("동남아", "east");
 									<div class="carousel-item active">
 										<a class="product-img" href="img/bg-img/49.jpg"
 											title="Product Image"> <img class="d-block w-100"
-											src="../resources/store/${list.s_brand_name}.jpg" alt="1">
+											src="../resources/store/${list.s_brand_name}.jpg" alt="1" 
+											style="height: 100%;">
 										</a>
 									</div>
 									<div class="carousel-item">
 										<a class="product-img" href="img/bg-img/49.jpg"
 											title="Product Image"> <img class="d-block w-100"
+											style="height: 100%;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_1() %>.jpg" alt="1">
 										</a>
 									</div>
 									<div class="carousel-item">
 										<a class="product-img" href="img/bg-img/49.jpg"
 											title="Product Image"> <img class="d-block w-100"
+											style="height: 100%;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_2() %>.jpg" alt="1">
 										</a>
 									</div>
 									<div class="carousel-item">
 										<a class="product-img" href="img/bg-img/49.jpg"
 											title="Product Image"> <img class="d-block w-100"
+											style="height: 100%;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_3() %>.jpg" alt="1">
 										</a>
 									</div>
@@ -105,20 +109,24 @@ map.put("동남아", "east");
 									<li class="active" data-target="#product_details_slider"
 										data-slide-to="0"
 										><img class="d-block w-100"
+										style="height: 100%;"
 											src="/Food/resources/store/<%=vo.getS_brand_name() %>.jpg" alt="1"></li>
 								<% if(vo.getP_name_1()!=null){ %>
 										<li data-target="#product_details_slider" data-slide-to="1"
 											><img class="d-block w-100"
+											style="height: 100%;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_1() %>.jpg" alt="1"></li>
 										<%} %>
 										<% if(vo.getP_name_2()!=null){ %>
 										<li data-target="#product_details_slider" data-slide-to="2"
 											><img class="d-block w-100"
+											style="height: 100%;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_2() %>.jpg" alt="2"></li>
 										<%} %>
 										<% if(vo.getP_name_3()!=null){ %>
 										<li data-target="#product_details_slider" data-slide-to="3"
 											><img class="d-block w-100"
+											style="height: 100%;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_3() %>.jpg" alt="3"></li>	
 									<%} %>
 								</ol>
@@ -132,22 +140,30 @@ map.put("동남아", "east");
 <div class="dim-layer">
     <div class="dimBg"></div>
     <div id="layer2" class="pop-layer">
-        <div class="pop-container" >
+        <div class="pop-container">
             
-            <div class="pop-imgArea" style=" float:left; width: 700px;">
-            <div style="position: relative;
-    				width: 100%;
-    				height: 100%;
-    				text-align: center;
-    				background: #222;">
-            <div style="width: 100%;height: auto; padding-top: 50px;padding-bottom: 50px;">
+            <div class="pop-imgArea" 
+            style=" float:left; width: 700px;
+                display: block;
+   				clear: both;
+  				height: 484px;
+           	">
+            <div class="pop-imgAreaInner"  
+            	style="position: relative;
+    			width: 100%;
+    			height: 100%;
+    			text-align: center;
+    			background: #222;
+    			display: block; 
+    		">
+            <div style="width: 100%;height: 100%;">
             	<ul>
             		<li>
             			<img id="reviewFileName" class="d-block w-100" style="    position: relative;
     						top: 50%;
 						    width: auto;
 						    max-width: 100%;
-						    max-height: 50%;" 
+						    max-height: 100%;" 
 					 alt=""
 					>
             	
@@ -159,7 +175,7 @@ map.put("동남아", "east");
             </div>
             </div>
             
-            <div class="pop-conts" style=" float:left;width: 350px;padding: 14px;">
+            <div class="pop-conts" style=" float:left; overflow-x:hidden; width: 350px;padding: 14px;">
                 <!--content //-->
                 <div class="xans-element- xans-board xans-board-product-4 xans-board-product xans-board-4 prdArea" 
               		  style= "width: 100%;
@@ -170,15 +186,31 @@ map.put("동남아", "east");
 					    box-sizing: border-box;
 					    border-radius: 4px;
 					    margin-bottom: 5%;
+					    height: 68px;
 					   ">
-                <div class="thumbnail">
-                	<a href="#" target="_blank"><img src="/Food/resources/store/<%=vo.getS_brand_name() %>.jpg" alt="" 
-                	style="max-width: 25%;"></a>
+                <div class="thumbnail" 
+                	 style="width: 86px;
+                	 		height: 45px;
+                	 		float:left
+                	 ">
+                	<a href="#" target="_blank">
+                	<img src="/Food/resources/store/<%=vo.getS_brand_name() %>.jpg" alt="" 
+                	style=" overflow: hidden;
+            				display: flex;
+				            align-items: center;
+				            justify-content: center;
+				            width: 86px;
+				            height: 45px;"
+				            ></a>
+                </div>
+                <div style="display: table-cell;
+    						padding-left: 10px;
+    						vertical-align: top;
+    						float:left">
                 	<span class="description" style="text-align: center;">
 						<a id="reviewDetailBrandName" style="text-align: center;">가게명</a>
 					</span>
-                </div>
-				
+				</div>
 				</div>
                	<div>
                	<form action="" style="margin-top: auto;">
@@ -400,7 +432,7 @@ map.put("동남아", "east");
 										</div>
 									</div>
 									<div role="tabpanel" class="tab-pane fade" id="addi-info">
-										<div class="additional_info_area">
+										<div class="additional_info_area" style="padding: 0% 20%;">
 											<p style="">${list.s_info}</p>
 										</div>
 									</div>
