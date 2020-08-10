@@ -165,7 +165,7 @@
 					<div id="div1">
 					<!-- input이 추가될 부분 -->
 					</div>
-					<input type='button' class='button1' value='삭제'>
+					<input type='button' class='button1 btn btn-white' value='삭제'>
 				</div>
 			</div>
 			<div class="row">

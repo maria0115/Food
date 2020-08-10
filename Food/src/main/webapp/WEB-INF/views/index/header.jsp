@@ -350,6 +350,7 @@ a.btn-layerClose:hover {
 											Menu</a></li>
 									<li><a href="/Food/index/mealFriends.do">밥친구 만들기</a></li>
 									<li><a href="/Food/index/store.do">매장 정보</a></li>
+									<li><a href="/Food/qnaboardList">Q & A</a></li>
 								</ul>
 
 

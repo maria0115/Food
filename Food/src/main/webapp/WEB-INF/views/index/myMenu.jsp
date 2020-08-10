@@ -178,14 +178,14 @@
                     <div class="portfolio-thumbnail bg-img" style='background-image: url(/Food/resources/store/${list.r_store_name}.jpg)'></div>
                 	
                     <!-- Portfolio Hover Text -->
-                    <div class="portfolio-hover-overlay">
+                    <div class="portfolio-hover-overlay" style="background-color: unset">
                     <div class="dialog__trigger" onclick="update_form(${list.r_number})" style="height:400px">
 <!--                         <a href="resources/img/bg-img/16.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1"> -->
                             <div class="port-hover-text" style="padding-top: 35%">
-                                <h3 class='aa'>${list.r_store_name}</h3>
-                                <h5>${list.r_menu}</h5>
-                                <h5>${list.time}</h5>
-                                <h5>${list.r_number}</h5>
+                                <h3 class='aa' style="background-color: snow">${list.r_store_name}</h3>
+<%--                                 <h5>${list.r_menu}</h5> --%>
+<%--                                 <h5>${list.time}</h5> --%>
+<%--                                 <h5>${list.r_number}</h5> --%>
                             </div>
 <!--                         </a> -->
                     </div>
