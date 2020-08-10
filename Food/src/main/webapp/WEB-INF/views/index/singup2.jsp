@@ -83,6 +83,11 @@
 	border-radius: 2px;
 	margin-bottom: 10px;
 }
+.shopmem{
+font-size: 20px;
+    display: grid;
+    font-weight: bold;
+}
 </style>
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -170,12 +175,19 @@
 			<!-- 휴대전화 -->
 			<strong>가게 상세 설명</strong> <input type="text" name="s_info"
 				style="width: 100%; height: 200px;" /><br>
-			<br> <strong>메뉴 이름</strong><br>
-			<strong>메뉴1</strong><input type="text" name="p_name_1"/><strong>메뉴2</strong><input name="p_name_2"
-				type="text" /><strong>메뉴3</strong><input type="text" name="p_name_3"/><br>
-			<br> <strong>메뉴 가격(위 순서대로 작성)</strong><br>
-			<strong>가격1</strong><input type="text" name="p_price_1"/><strong>가격2</strong><input name="p_price_2"
-				type="text" /><strong>가격3</strong><input type="text" name="p_price_3"/><br>
+			<br> 
+			<div class="shopmem">
+			<strong>대표 메뉴 이름</strong>
+			<strong>대표 메뉴1</strong><input type="text" name="p_name_1"/><strong>대표 메뉴2</strong><input name="p_name_2"
+				type="text" /><strong>대표 메뉴3</strong><input type="text" name="p_name_3"/>
+				</div>
+	
+				<br>
+				<div class="shopmem">
+		<strong>대표 메뉴 가격(위 순서대로 작성)</strong>
+			<strong>대표 메뉴 가격1</strong><input type="text" name="p_price_1"/><strong>대표 메뉴 가격2</strong><input name="p_price_2"
+				type="text" /><strong>대표 메뉴 가격3</strong><input type="text" name="p_price_3"/>
+				</div>
 			<br> <br>
 			<h1>*사진등록</h1>
 			<br> 
@@ -219,7 +231,7 @@
 					<ul class="clearfix">
 						<li>이용약관 동의(필수)</li>
 						<li class="checkBtn"><input type="checkbox" name="chk"
-							id="check_1"></li>
+							id="shopcheck_1"></li>
 					</ul> <textarea name="" id="">여러분을 환영합니다.
 오늘뭐먹지 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 오늘뭐먹지 서비스의 이용과 관련하여 오늘뭐먹지 서비스를 제공하는 1조 주식회사(이하 ‘오늘뭐먹지’)와 이를 이용하는 오늘뭐먹지 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 오늘뭐먹지 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
        </textarea>
@@ -228,7 +240,7 @@
 					<ul class="clearfix">
 						<li>개인정보 수집 및 이용에 대한 안내(필수)</li>
 						<li class="checkBtn"><input type="checkbox" name="chk"
-							id="check_2"></li>
+							id="shopcheck_2"></li>
 					</ul> <textarea name="" id="">여러분을 환영합니다.
 오늘뭐먹지 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 오늘뭐먹지 서비스의 이용과 관련하여 오늘뭐먹지 서비스를 제공하는 1조 주식회사(이하 ‘오늘뭐먹지’)와 이를 이용하는 오늘뭐먹지 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
        </textarea>
@@ -327,10 +339,10 @@
 							} else if ($("#addr2").val() == "") {
 								alert("주소를 입력해주세요");
 								return false;
-							} else if ($("#check_1").is(":checked") == false) {
+							} else if ($("#shopcheck_1").is(":checked") == false) {
 								alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
 								return false;
-							} else if ($("#check_2").is(":checked") == false) {
+							} else if ($("#shopcheck_2").is(":checked") == false) {
 								alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
 								return false;
 							} else {
