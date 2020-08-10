@@ -52,5 +52,8 @@ public interface StoreService {
 	
 	//승인대기 매장 승인처리 
 	int stateY(StoreListVO vo);
+	
+	//승인대기 승인거절
+	int stateN(StoreListVO vo);
 
 }

@@ -95,19 +95,22 @@
 		<div class="container-fluid" style="margin-top: 3%;">
 		<h3>매장 관리</h3>
 		<div>
-			<c:if test="${count > 0 }">
-			<a class="btn btn-danger" href="storestate.do">매장인증대기</a>
-			</c:if>
-			<c:if test="${count == 0 }">
-			<a class="btn btn-default" href="#">매장인증대기</a>
-			</c:if>
+			
 		</div>	
 		<div class="search-form" style="margin-top: 3%;">
 		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
 		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }"> 
 		<input type="hidden" id="searchClick" name="searchClick" value="Y">
-		<table style=" margin-left: 40%;">
+		<table >
 			<tr>
+			<td>
+			<c:if test="${count > 0 }">
+			<a class="btn btn-danger" href="storestate.do">매장인증대기</a>
+			</c:if>
+			<c:if test="${count == 0 }">
+				<a class="btn btn-default" href="#">매장인증대기</a>
+			</c:if>
+			</td>
 				<td>
 					<select class="form-control" id="s_category" name="s_category">
 						<option value="">전체</option>

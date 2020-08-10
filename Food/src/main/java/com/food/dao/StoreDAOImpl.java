@@ -157,6 +157,12 @@ public class StoreDAOImpl implements StoreDAO{
 			return mybatis.update("StoreDAO.stateY",vo);
 		}
 		
+		//승인대기 매장 승인 거절
+		public int stateN(StoreListVO vo) {
+			mybatis.delete("StoreDAO.deleteproduct",vo);
+			return mybatis.delete("StoreDAO.stateN",vo);
+		}
+		
 	
 
 	

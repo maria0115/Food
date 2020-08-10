@@ -729,7 +729,7 @@ public class ManageController {
 		
 		pvo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		
-		model.addAttribute("paging", vo); //페이징처리를 위한  가져온 값 넘기기 
+		model.addAttribute("paging", pvo); //페이징처리를 위한  가져온 값 넘기기 
 		model.addAttribute("list", storeService.stategetstore(pvo, s_category, keyword));
 		//모델에 "searchType" 검색타입 추가
 		model.addAttribute("s_category", s_category);
@@ -738,6 +738,8 @@ public class ManageController {
 		
 		return "manager/storestate";
 	}
+	
+	
 	
 	
 	

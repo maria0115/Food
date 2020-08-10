@@ -92,24 +92,18 @@
         
 		
 		<div class="container-fluid" style="margin-top: 3%;">
-		<h3>매장 관리</h3>
-		<div>
-			<c:if test="${count > 0 }">
-			<a class="btn btn-danger" href="storestate.do">매장인증대기</a>
-			</c:if>
-			<c:if test="${count == 0 }">
-			<a class="btn btn-default" href="#">매장인증대기</a>
-			</c:if>
-		</div>	
+		<h3>승인대기중 매장</h3>
+		<br/><br/><br/>
+		
 		<div class="wrapper">
 			<table class="table table-striped">
 				<tr>
-					<td>매장명</td>
-					<td>위치</td>
+					<td>승인대기 매장명</td>
 				</tr>
 				<c:forEach items="${list }" var="store">
+				<tr>
 					<td><a href="../store/storeDetails.do?s_brand_name=${store.s_brand_name}">${store.s_brand_name}</a></td>
-					<td>${store.s_address}</td>
+				</tr>
 				</c:forEach>
 			</table>
 		</div>

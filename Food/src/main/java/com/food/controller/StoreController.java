@@ -234,13 +234,28 @@ public class StoreController {
 	
 	@RequestMapping("/stateY.do")
 	public String stateY(StoreListVO vo) {
+		System.out.println("승인완료");
 		int result = storeService.stateY(vo);
 		
 		if(result == 0 ) {
 			return "../index/error";
 		}
-		return "../index/store";
+		return "redirect:../manager/storestate.do";
 	}
+	
+	@RequestMapping("/stateN.do")
+	public String stateN(StoreListVO vo) {
+		System.out.println("승인취소");
+		int result = storeService.stateN(vo);
+		
+		if(result == 0) {
+			return "../index/error";
+		}
+		
+		return "redirect:../manager/storestate.do";
+	}
+	
+	
 	
 	
 //	@ResponseBody

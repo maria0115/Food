@@ -25,10 +25,21 @@ public class StoreListVO{
 	private String rowNum;
 	private String nowPage;
 	private String m_id;
+	private String s_state;
 	
 	
 	
 	
+	
+	
+	
+	
+	public String getS_state() {
+		return s_state;
+	}
+	public void setS_state(String s_state) {
+		this.s_state = s_state;
+	}
 	public String getM_id() {
 		return m_id;
 	}

@@ -46,4 +46,7 @@ public interface StoreDAO {
 	public List<BoardVO> starAvg();
 	
 	public int stateY(StoreListVO vo);
+	
+	public int stateN(StoreListVO vo);
+	
 }

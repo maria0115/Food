@@ -10,7 +10,7 @@ insert into store(s_category,s_midpart,s_brand_name,s_info,s_tel,s_address) valu
 </insert>
 	
 	<select id="getStore"  parameterType="store" resultType="store">
-		select * FROM store 
+		select * FROM store where s_state = 'Y'
 	</select>
 	
 	<select id="selecStore"  parameterType="store" resultType="store">
@@ -38,7 +38,8 @@ insert into store(s_category,s_midpart,s_brand_name,s_info,s_tel,s_address) valu
 		   	   p.p_price_1    as p_price_1    , 
 		   	   p.p_price_2    as p_price_2    ,
 		   	   p.p_price_3    as p_price_3    , 
-		   	   p.p_price_3    as p_price_3
+		   	   p.p_price_3    as p_price_3,
+		   	   s.s_state as s_state
 		 FROM STORE   S, 
 		      PRODUCT P
 		WHERE S.S_BRAND_NAME = P.S_BRAND_NAME 
@@ -135,12 +136,12 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 		<choose>
 		<when test = "s_category != 'all' ">
 		
-		where S_CATEGORY = #{s_category} AND S_BRAND_NAME like '%'||#{searchWord}||'%'
+		where S_CATEGORY = #{s_category} AND S_BRAND_NAME like '%'||#{searchWord}||'%'  AND s_state = 'Y'
 		</when>
 		
 		<otherwise>
 
-		where S_BRAND_NAME like '%'||#{searchWord}||'%'
+		where S_BRAND_NAME like '%'||#{searchWord}||'%'  AND s_state = 'Y'
 
 		</otherwise>
 		
@@ -154,14 +155,14 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	select *
 	from(
 		select ROWNUM AS RNUM , S_BRAND_NAME, S_ADDRESS
-		from STORE
+		from STORE 
 		<choose>
 		<when test ="s_category != 'all'">
-		where S_CATEGORY = #{s_category} AND S_BRAND_NAME like '%'||#{searchWord}||'%'
+		where S_CATEGORY = #{s_category} AND S_BRAND_NAME like '%'||#{searchWord}||'%' AND s_state = 'Y'
 		</when>
 		<otherwise>
 
-		where S_BRAND_NAME like '%'||#{searchWord}||'%'
+		where S_BRAND_NAME like '%'||#{searchWord}||'%'  AND s_state = 'Y'
 
 		</otherwise>
 		
@@ -173,7 +174,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	</select>
 	
 	<select id="getTotal" resultType="int">
-	select count(*) from store	where state = 'Y'
+	select count(*) from store	where s_state = 'Y'
 	</select>
 	
 	<select id="getstore" resultType="store" parameterType="hashmap">
@@ -183,7 +184,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 				FROM (
 						select * from store
 						<where>
-						 state = 'Y'
+						 s_state = 'Y'
 							<if test='s_category!=null'>
                             AND s_category=#{s_category}
                             </if>
@@ -203,7 +204,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	<select id="searchCount" parameterType="hashmap" resultType="int">
 	select count(*) from store
 	<where>
-		 state = 'Y'
+		 s_state = 'Y'
 		<if test='s_category!=null'>
 			AND s_category=#{s_category}
 		</if>
@@ -235,7 +236,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	</select>
 	
 	<select id="stategetTotal" resultType="int">
-	select count(*) from store	where state = 'N'
+	select count(*) from store	where s_state = 'N'
 	</select>
 	
 	<select id="stategetstore" resultType="store" parameterType="hashmap">
@@ -245,7 +246,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 				FROM (
 						select * from store
 						<where>
-						 state = 'N'
+						 s_state = 'N'
 							<if test='s_category!=null'>
                             AND s_category=#{s_category}
                             </if>
@@ -265,7 +266,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	<select id="statesearchCount" parameterType="hashmap" resultType="int">
 	select count(*) from store
 	<where>
-		 state = 'N'
+		 s_state = 'N'
 		<if test='s_category!=null'>
 			AND s_category=#{s_category}
 		</if>
@@ -280,8 +281,15 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 
 	<!-- 승인대기매장 승인처리 -->
 	<update id="stateY" parameterType="store">
-	update store set state = 'Y' where s_brand_name = #{s_brand_name}
+	update store set s_state = 'Y' where s_brand_name = #{s_brand_name}
 	</update>
+	
+	<delete id="stateN" parameterType="store">
+	delete from store where s_brand_name = #{s_brand_name}
+	</delete>
+	<delete id="deleteproduct" parameterType="store">
+	delete from PRODUCT where s_brand_name = #{s_brand_name}
+	</delete>
 
 
 	

@@ -612,10 +612,10 @@ map.put("동남아", "east");
 				
 	</section>
 	<!-- ##### Single Product Details Area End ##### -->
-
 	<!-- ##### Related Product Area Start ##### -->
-	<c:if test="${list.state == 'N' }">
+	<c:if test="${list.s_state == 'N' }">
 	<a class="btn btn-info" href="stateY.do?s_brand_name=${list.s_brand_name }">승인완료</a>
+	<a class="btn btn-danger" href="stateN.do?s_brand_name=${list.s_brand_name }">승인거절</a>
 	</c:if>
 	<!-- ##### Related Product Area End ##### -->
 

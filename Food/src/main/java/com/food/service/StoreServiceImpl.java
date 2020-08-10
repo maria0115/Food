@@ -126,6 +126,10 @@ public class StoreServiceImpl implements StoreService{
 		
 		return storeDAO.stateY(vo);
 	}
+	
+	public int stateN(StoreListVO vo) {
+		return storeDAO.stateN(vo);
+	}
 
 	
 
