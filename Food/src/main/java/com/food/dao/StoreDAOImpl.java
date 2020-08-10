@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.food.domain.BoardVO;
+import com.food.domain.PagingVO;
 import com.food.domain.StoreListVO;
 
 
@@ -84,6 +85,33 @@ public class StoreDAOImpl implements StoreDAO{
 		
 	}
 	
+	//가게 총 갯수 
+	@Override
+	public int getTotal() {
+		System.out.println("===================>Mapper getTotal()호출");
+		return mybatis.selectOne("StoreDAO.getTotal");
+	}
+
+	@Override
+	public List<StoreListVO> getstore(PagingVO pvo, String s_category, String keyword) {
+		System.out.println("===================>Mapper getstore()호출");
+		HashMap map = new HashMap();
+		map.put("start", pvo.getStart());
+		map.put("end", pvo.getEnd());
+		map.put("s_category", s_category);
+		map.put("keyword", keyword);
+
+		return mybatis.selectList("StoreDAO.getstore", map);
+	}
+
+	@Override
+	public int searchCount(String s_category, String keyword) {
+		System.out.println("===================>Mapper searchCount()호출");
+		HashMap map = new HashMap();
+		map.put("s_category", s_category);
+		map.put("keyword", keyword);
+		return mybatis.selectOne("StoreDAO.searchCount", map);
+	}
 	
 
 	

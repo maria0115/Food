@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.food.dao.StoreDAO;
 import com.food.domain.BoardVO;
+import com.food.domain.PagingVO;
 import com.food.domain.StoreListVO;
 
 
@@ -75,6 +76,24 @@ public class StoreServiceImpl implements StoreService{
 	public int shopmember(StoreListVO svo) {
 		 return storeDAO.shopmember(svo); 
 		
+	}
+	
+	@Override
+	public int getTotal() {
+		
+		return storeDAO.getTotal();
+	}
+
+	@Override
+	public List<StoreListVO> getstore(PagingVO pvo, String s_category, String keyword) {
+		
+		return storeDAO.getstore(pvo,s_category,keyword);
+	}
+
+	@Override
+	public int searchCount(String s_category, String keyword) {
+		
+		return storeDAO.searchCount(s_category,keyword);
 	}
 
 	

@@ -79,6 +79,7 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="/Food/resources/js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body style="background: #f5f5f5;">
 <jsp:include page="sideBar.jsp">
@@ -88,15 +89,52 @@
 		<jsp:include page="wrapper.jsp">
 			<jsp:param value='' name='' />
 		</jsp:include>	
-            <div class="container-fluid" style="margin-top: 3%;">
-            <h3>매장 관리</h3>
-                    <div class="wrapper"> 
-                     <div class="grid">
-					</div>
-                   
-                 </div>
-            </div>
+        
+        
+		
+		<div class="container-fluid" style="margin-top: 3%;">
+		<h3>매장 관리</h3>
+		<div class="search-form" style="margin-top: 3%;">
+		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
+		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }"> 
+		<input type="hidden" id="searchClick" name="searchClick" value="Y">
+		<table style=" margin-left: 40%;">
+			<tr>
+				<td>
+					<select class="form-control" id="s_category" name="s_category">
+						<option value="한식">한식</option>
+						<option value="양식">양식</option>
+						<option value="일식">일식</option>
+						<option value="중식">중식</option>
+						<option value="분식">분식</option>
+						<option value="동남아">동남아</option>
+					</select>
+				</td>
+				<td>
+				<input class="form-control" type="text" name="keyword" id="keyword">
+				</td>
+				<td>
+				<button class="btn btn-default" id="searchBtn" >검색</button>
+				</td>
+			</tr>
+		</table>
+		</div>
+		
+		<div class="wrapper">
+			<div class="grid" id="grid">
+			
+			</div>
+		</div>
 	</div>
+        
+        
+        
+        
+	</div>
+	
+	
+		
+	
 	
 	
 	<div class="footer-copyright-area">
@@ -164,6 +202,7 @@
 		============================================ -->
 	<script src="/Food/resources/js/main.js"></script>
 	<script src="/Food/resources/js/storemanager.js"></script>
+	
 	
 	
 	

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.food.domain.BoardVO;
+import com.food.domain.PagingVO;
 import com.food.domain.StoreListVO;
 
 public interface StoreService {
@@ -28,6 +29,14 @@ public interface StoreService {
 	
 	public int shopmember(StoreListVO svo);
 	
+	//가게 총 갯수 
+	int getTotal();
+	
+	//검색결과로 리스트 뽑아오기 
+	List<StoreListVO> getstore(PagingVO pvo,String s_category, String keyword);
+	
+	//검색된 총 갯수 
+	int searchCount(String s_category, String keyword);
 	
 	
 	

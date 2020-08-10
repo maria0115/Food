@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.food.domain.BoardVO;
+import com.food.domain.PagingVO;
 import com.food.domain.StoreListVO;
 
 
@@ -30,4 +31,9 @@ public interface StoreDAO {
 
 	public int shopmember(StoreListVO svo);
 
+	public int getTotal();
+	
+	public List<StoreListVO> getstore(PagingVO pvo,String s_category, String keyword);
+		
+	public int searchCount(String s_category, String keyword);
 }
