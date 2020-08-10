@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 <title>Store Manager</title>
 
-<link rel="stylesheet" href="/Food/resources/css/storemanager.css">
 <link rel="shortcut icon" type="image/x-icon"
 	href="/Food/resources/img/favicon.ico">
 <!-- Google Fonts
@@ -102,7 +101,44 @@
 			<a class="btn btn-default" href="#">매장인증대기</a>
 			</c:if>
 		</div>	
-		<div class="search-form" style="margin-top: 3%;">
+		<div class="wrapper">
+			<table class="table table-striped">
+				<tr>
+					<td>매장명</td>
+					<td>위치</td>
+				</tr>
+				<c:forEach items="${list }" var="store">
+					<td><a href="../store/storeDetails.do?s_brand_name=${store.s_brand_name}">${store.s_brand_name}</a></td>
+					<td>${store.s_address}</td>
+				</c:forEach>
+			</table>
+		</div>
+	</div>
+        
+        
+        
+        
+	</div>
+		<div style="display: block; text-align: center;">		
+		<c:if test="${paging.startPage != 1 }">
+			<a href="../manager/storestate.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"">&lt;</a>
+		</c:if>
+		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+			<c:choose>
+				<c:when test="${p == paging.nowPage }">
+					<b>${p }</b>
+				</c:when>
+				<c:when test="${p != paging.nowPage }">
+					<a href="../manager/storestate.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${paging.endPage != paging.lastPage}">
+			<a href="../manager/storestate.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"">&gt;</a>
+		</c:if>
+        </div>
+        <div class="search-form" style="margin-top: 3%;">
+        <form action="storestate.do">
 		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
 		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }"> 
 		<input type="hidden" id="searchClick" name="searchClick" value="Y">
@@ -127,19 +163,12 @@
 				</td>
 			</tr>
 		</table>
+		</form>
 		</div>
 		
-		<div class="wrapper">
-			<div class="grid" id="grid">
-			
-			</div>
-		</div>
-	</div>
-        
-        
-        
-        
-	</div>
+
+
+
 	
 	
 		
@@ -210,7 +239,6 @@
 	<!-- main JS
 		============================================ -->
 	<script src="/Food/resources/js/main.js"></script>
-	<script src="/Food/resources/js/storemanager.js"></script>
 	
 	
 	

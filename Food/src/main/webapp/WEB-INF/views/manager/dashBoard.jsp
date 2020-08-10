@@ -224,7 +224,7 @@
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
-					<a href="/Food/manager/member-list.do" style="text-decoration: none !important; color: #495057;">
+					<a href="/Food/manager/storemanager.do" style="text-decoration: none !important; color: #495057;">
 						<div class="text-right" style="height:22px;">
 						</div>
 						<div class="h1 m-0">${thisMonth }</div>

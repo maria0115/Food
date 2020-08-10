@@ -38,6 +38,15 @@ public interface StoreService {
 	//검색된 총 갯수 
 	int searchCount(String s_category, String keyword);
 	
+	//승인대기가게 총 갯수 
+	int stategetTotal();
+
+	// 검색결과로 승인대기 리스트 뽑아오기
+	List<StoreListVO> stategetstore(PagingVO pvo, String s_category, String keyword);
+
+	// 검색된 승인대기 총 갯수
+	int statesearchCount(String s_category, String keyword);
+	
 	//리뷰평점순
 	List<BoardVO> starAvg();
 	

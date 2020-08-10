@@ -593,6 +593,13 @@ public class ManageController {
 		return result;
 	}
 	
+	@RequestMapping("storemanager.do")
+	public String storestate(Model model) {
+		
+		model.addAttribute("count",storeService.stategetTotal());
+		return "manager/storemanager";
+	}
+	
 	//매장 관리 
 	@ResponseBody
 	@RequestMapping("storemanagerlist.do")
@@ -602,6 +609,7 @@ public class ManageController {
 			String s_category, String keyword, String searchClick) {
 		String category = "";//검색을 했는지 여부를 확인할 변수 선언
 		int total;
+		System.out.println("넘겨받은 페이지값 ======>"+nowPage);
 		
 		if(s_category!=null) {
 			if(s_category.equals("한식")==true) {
@@ -618,7 +626,6 @@ public class ManageController {
 				s_category="동남아";
 			}
 		}
-		System.out.println("검색으로 받은 카테고리는?=====>"+s_category);
 		category = s_category; //검색할때 선택한 검색타입을 받아온다
 		allCount = storeService.getTotal();
 		
@@ -652,19 +659,87 @@ public class ManageController {
 						+ "";
 			}
 			
-			
+		System.out.println("if문 이후에 "
+				+ " 페이지값 ======>"+nowPage);
 		Map result = new HashMap();
 		pvo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		result.put("list",storeService.getstore(pvo, s_category, keyword));
-	
+		
 		return result;
 	}
 	
 	
-	
-	
-	
+	//승인대기 매장 목록 보여주기
+	@RequestMapping("/storestate.do")
+	public String storestate(Model model,PagingVO pvo ,StoreListVO vo, HttpServletRequest request
+			, @RequestParam(value="nowPage", required=false)String nowPage
+			, @RequestParam(value="cntPerPage", required=false)String cntPerPage,
+			String s_category, String keyword, String searchClick) {
+		String category = "";//검색을 했는지 여부를 확인할 변수 선언
+		int total;
+		
+		if(s_category!=null) {
+			if(s_category.equals("한식")==true) {
+				s_category="한식";
+			}else if(s_category.equals("일식")==true) {
+				s_category="일식";
+			}else if(s_category.equals("중식")==true) {
+				s_category="중식";
+			}else if(s_category.equals("양식")==true) {
+				s_category="양식";
+			}else if(s_category.equals("분식")==true) {
+				s_category="분식";
+			}else if(s_category.equals("동남아")==true) {
+				s_category="동남아";
+			}
+		}
+		category = s_category; //검색할때 선택한 검색타입을 받아온다
+		allCount = storeService.stategetTotal();
+		
+		if(category==null || category.equals("")) {//검색을 하지 않았을 경우
+				
+				total=allCount; //total에 데이터의 총 갯수를 저장
+				curCount=allCount; //검색을 하지 않았기 때문에 현재 검색한 데이터의 갯수를 저장하는 curCount 변수에 데이터의 총 갯수를 저장
+				s_category =null;  //mapper에서 오류를 방지하기위헤 searchType에 null값을 저장
+				keyword=null;	   //mapper에서 오류를 방지하기위헤 keyword에 null값을 저장
+			}else{//검색을 했을 경우
+				
+				//검색한 데이터의 갯수를 curCount에 저장
+				curCount = storeService.statesearchCount(s_category, keyword);
+				
+				//검색버튼을 클릭했을 경우 페이지를 1페이지부터 보여준다
+				if(searchClick.equals("Y")==true) {
+					nowPage="1";
+				}
+				
+				//총 갯수에 현재 검색한 데이터의 갯수를 저장
+				total=curCount;
+			}
+			
+		if (nowPage == null && cntPerPage == null) {
+				nowPage = "1";
+				cntPerPage = "12";
+			} else if (nowPage == null) {
+				nowPage = "1";
+			} else if (cntPerPage == null) { 
+				cntPerPage = "12"
+						+ "";
+			}
+			
+		
+		pvo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		
+		model.addAttribute("paging", vo); //페이징처리를 위한  가져온 값 넘기기 
+		model.addAttribute("list", storeService.stategetstore(pvo, s_category, keyword));
+		//모델에 "searchType" 검색타입 추가
+		model.addAttribute("s_category", s_category);
+		//모델에 "keyword" 검색키워드 추가
+		model.addAttribute("keyword", keyword);
+		
+		return "manager/storestate";
+	}
 	
 	
 	
 }
+	

@@ -113,13 +113,42 @@ public class StoreDAOImpl implements StoreDAO{
 		return mybatis.selectOne("StoreDAO.searchCount", map);
 	}
 	
-	//리뷰평균 가져오기
+	//승인대기 총 갯수
 	@Override
-	public List<BoardVO> starAvg() {
-		// TODO Auto-generated method stub
-		return mybatis.selectList("StoreDAO.starAvg");
+	public int stategetTotal() {
+		System.out.println("===================>Mapper stategetTotal()호출");
+		return mybatis.selectOne("StoreDAO.stategetTotal");
 	}
 	
+	//승인대기 리스트
+	@Override
+	public List<StoreListVO> stategetstore(PagingVO pvo, String s_category, String keyword) {
+		System.out.println("===================>Mapper stategetstore()호출");
+		HashMap map = new HashMap();
+		map.put("start", pvo.getStart());
+		map.put("end", pvo.getEnd());
+		map.put("s_category", s_category);
+		map.put("keyword", keyword);
+
+		return mybatis.selectList("StoreDAO.stategetstore", map);
+	}
+	
+	//승인대기 검색 결과
+	@Override
+	public int statesearchCount(String s_category, String keyword) {
+		System.out.println("===================>Mapper statesearchCount()호출");
+		HashMap map = new HashMap();
+		map.put("s_category", s_category);
+		map.put("keyword", keyword);
+		return mybatis.selectOne("StoreDAO.statesearchCount", map);
+	}
+	
+	//리뷰평균 가져오기
+		@Override
+		public List<BoardVO> starAvg() {
+			// TODO Auto-generated method stub
+			return mybatis.selectList("StoreDAO.starAvg");
+		}
 
 	
 }

@@ -173,7 +173,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	</select>
 	
 	<select id="getTotal" resultType="int">
-	select count(*) from store	
+	select count(*) from store	where state = 'Y'
 	</select>
 	
 	<select id="getstore" resultType="store" parameterType="hashmap">
@@ -183,8 +183,9 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 				FROM (
 						select * from store
 						<where>
+						 state = 'Y'
 							<if test='s_category!=null'>
-                            s_category=#{s_category}
+                            AND s_category=#{s_category}
                             </if>
                             <if test='s_category!=null &amp;&amp; keyword!=null'>
                             AND
@@ -202,8 +203,9 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	<select id="searchCount" parameterType="hashmap" resultType="int">
 	select count(*) from store
 	<where>
+		 state = 'Y'
 		<if test='s_category!=null'>
-			s_category=#{s_category}
+			AND s_category=#{s_category}
 		</if>
 		<if test='s_category!=null &amp;&amp; keyword!=null'>
 			AND
@@ -230,6 +232,50 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 				)
 		WHERE cnt BETWEEN 1 AND 10 AND review_count > 10
 	
+	</select>
+	
+	<select id="stategetTotal" resultType="int">
+	select count(*) from store	where state = 'N'
+	</select>
+	
+	<select id="stategetstore" resultType="store" parameterType="hashmap">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						select * from store
+						<where>
+						 state = 'N'
+							<if test='s_category!=null'>
+                            AND s_category=#{s_category}
+                            </if>
+                            <if test='s_category!=null &amp;&amp; keyword!=null'>
+                            AND
+                            </if>
+                            <if test='keyword!=null'>
+                            s_brand_name like '%'||#{keyword}||'%'
+                            </if>
+						</where>
+						ORDER BY ROWNUM DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="statesearchCount" parameterType="hashmap" resultType="int">
+	select count(*) from store
+	<where>
+		 state = 'N'
+		<if test='s_category!=null'>
+			AND s_category=#{s_category}
+		</if>
+		<if test='s_category!=null &amp;&amp; keyword!=null'>
+			AND
+		</if>
+		<if test='keyword!=null'>
+			s_brand_name like '%'||#{keyword}||'%'
+		</if>
+	</where>
 	</select>
 
 

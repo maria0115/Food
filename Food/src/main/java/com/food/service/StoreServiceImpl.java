@@ -103,6 +103,24 @@ public class StoreServiceImpl implements StoreService{
 		return storeDAO.starAvg();
 	}
 
+	@Override
+	public int stategetTotal() {
+		
+		return storeDAO.stategetTotal();
+	}
+
+	@Override
+	public List<StoreListVO> stategetstore(PagingVO pvo, String s_category, String keyword) {
+		
+		return storeDAO.stategetstore(pvo,s_category,keyword);
+	}
+
+	@Override
+	public int statesearchCount(String s_category, String keyword) {
+		
+		return storeDAO.statesearchCount(s_category,keyword);
+	}
+
 	
 
 

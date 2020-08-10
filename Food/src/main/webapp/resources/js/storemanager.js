@@ -1,45 +1,231 @@
 $(function(){
-	
-
-	
-	$.ajax({
-		type : 'post',
-		async:true,
-		url : 'storemanagerlist.do',
-		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-		data : {"s_category" : $('#title').val(),
-				"keyword" : $("#keyword").val(),
-				},
-		dataType : 'json',
-		success : function(resultData){
-			alert("성공");
-			var size = resultData.list.length;
-			alert(size);
-			for(var i=0 ;i<size ; i++ ){
-				$("#grid").append(
-						"<div class='grid-cell'>"+
-						"<a href='../store/storeDetails.do?"+resultData.list[i].s_brand_name+"'>"+
-						"<img id='storeimg' src='/Food/resources/store/"+resultData.list[i].s_brand_name+".jpg' >"+
-						"</a>"+
-						"<a href='../store/storeDetails.do?"+resultData.list[i].s_brand_name+"'>"+
-						resultData.list[i].s_brand_name+"</a>"+
-						"</div>"
-						)
-						
-			if(i == size) {
-            $(window).bind("scroll",infinityScrollFunction);
-        }
-				console.log(resultData.list[i].s_brand_name);
-			}
+	var count = 2;
+	 let isEnd = false;
+	    
+	    $(function(){
+	    	
+	        $(window).scroll(function(){
+	            let $window = $(this);
+	            let scrollTop = $window.scrollTop();
+	            let windowHeight = $window.height();
+	            let documentHeight = $(document).height();
+	            
+	            console.log("documentHeight:" + documentHeight + " | scrollTop:" + scrollTop + " | windowHeight: " + windowHeight );
+	            
+	            // scrollbar의 thumb가 바닥 전 30px까지 도달 하면 리스트를 가져온다.
+	            if( scrollTop + windowHeight + 30 > documentHeight ){
+	                fetchList();
+	                count++;
+	            }
+	        })
+	        $.ajax({
+	    		type : 'post',
+	    		async:true,
+	    		url : 'storemanagerlist.do',
+	    		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+	    		dataType : 'json',
+	    		success : function(resultData){
+	    			var size = resultData.list.length;
+	    			for(var i=0 ;i<size ; i++ ){
+	    				$("#grid").append(
+	    						"<div class='grid-cell'>"+
+	    						"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+	    						"<img id='storeimg' src='/Food/resources/store/"+resultData.list[i].s_brand_name+".jpg' >"+
+	    						"</a>"+
+	    						"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+	    						resultData.list[i].s_brand_name+"</a>"+
+	    						"</div>"
+	    						)
+	    						
+	    				console.log(resultData.list[i].s_brand_name);
+	    				
+	                    if( size < 5 ){
+	                        isEnd = true;
+	                    }
+	    			}
+	    			
+	    		},
+	    		error:function(request,status,error){
+	    			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	    		}
+	    		
+	    	});
+	    })
+	    
+	    let fetchList = function(){
+	        if(isEnd == true){
+	            return;
+	        }
+	        $.ajax({
+	    		type : 'post',
+	    		async:true,
+	    		url : 'storemanagerlist.do',
+	    		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+	    		data : {"s_category" : $("#s_category").val(),
+					"keyword" : $("#keyword").val(),
+					"searchClick" : 'N',
+					"nowPage" : count,
+					"cntPerPage" : 12
+					},
+	    		dataType : 'json',
+	    		success : function(resultData){
+	    			var size = resultData.list.length;
+	    			for(var i=0 ;i<size ; i++ ){
+	    				$("#grid").append(
+	    						"<div class='grid-cell'>"+
+	    						"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+	    						"<img id='storeimg' src='/Food/resources/store/"+resultData.list[i].s_brand_name+".jpg' >"+
+	    						"</a>"+
+	    						"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+	    						resultData.list[i].s_brand_name+"</a>"+
+	    						"</div>"
+	    						)
+	    						
+	    				console.log(resultData.list[i].s_brand_name);
+	    				
+	                    if( size < 5 ){
+	                        isEnd = true;
+	                    }
+	    			}
+	    			
+	    		},
+	    		error:function(request,status,error){
+	    			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	    		}
+	    		
+	    	});
+	    }
+	 
+	$("#keyword").keyup(function(e) {
+		var code = e.which;
+		if (code == 13)
+			e.preventDefault();
+		if (code == 13) {
 			
-		},
-		error:function(request,status,error){
-			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			var count = 2;
+			$(window).scroll(function(){
+	            let $window = $(this);
+	            let scrollTop = $window.scrollTop();
+	            let windowHeight = $window.height();
+	            let documentHeight = $(document).height();
+	            
+	            console.log("documentHeight:" + documentHeight + " | scrollTop:" + scrollTop + " | windowHeight: " + windowHeight );
+	            
+	            // scrollbar의 thumb가 바닥 전 30px까지 도달 하면 리스트를 가져온다.
+	            if( scrollTop + windowHeight + 30 > documentHeight ){
+	                fetchList();
+	                count++;
+	            }
+	        })
+	        
+	        $("#grid").empty();
+			$.ajax({
+				type : 'post',
+				async:true,
+				url : 'storemanagerlist.do',
+				contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+				data : {"s_category" : $('#s_category').val(),
+					"keyword" : $("#keyword").val(),
+					"searchClick" : $("#searchClick").val(),
+					"nowPage" : count,
+					"cntPerPage" : 12
+					},
+				dataType : 'json',
+				success : function(resultData){
+					var size = resultData.list.length;
+					for(var i=0 ;i<size ; i++ ){
+						
+						$("#grid").append(
+								"<div class='grid-cell'>"+
+								"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+								"<img id='storeimg' src='/Food/resources/store/"+resultData.list[i].s_brand_name+".jpg' >"+
+								"</a>"+
+								"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+								resultData.list[i].s_brand_name+"</a>"+
+								"</div>"
+								)
+								
+					if(i == size) {
+		            $(window).bind("scroll",infinityScrollFunction());
+					}
+						console.log(resultData.list[i].s_brand_name);
+					}
+					
+				},
+				error:function(request,status,error){
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				}
+				
+			});
+			
+			
 		}
 		
+		let fetchList = function(){
+	        if(isEnd == true){
+	            return;
+	        }
+	        $.ajax({
+	    		type : 'post',
+	    		async:true,
+	    		url : 'storemanagerlist.do',
+	    		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+	    		data : {"s_category" : $('#s_category').val(),
+					"keyword" : $("#keyword").val(),
+					"searchClick" : "",
+					"nowPage" : count,
+					"cntPerPage" : 12
+					},
+	    		dataType : 'json',
+	    		success : function(resultData){
+	    			var size = resultData.list.length;
+	    			for(var i=0 ;i<size ; i++ ){
+	    				$("#grid").append(
+	    						"<div class='grid-cell'>"+
+	    						"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+	    						"<img id='storeimg' src='/Food/resources/store/"+resultData.list[i].s_brand_name+".jpg' >"+
+	    						"</a>"+
+	    						"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+	    						resultData.list[i].s_brand_name+"</a>"+
+	    						"</div>"
+	    						)
+	    						
+	    				console.log(resultData.list[i].s_brand_name);
+	    				
+	                    if( size < 5 ){
+	                        isEnd = true;
+	                    }
+	    			}
+	    			
+	    		},
+	    		error:function(request,status,error){
+	    			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	    		}
+	    		
+	    	});
+	    }
+		
+		
 	});
-	
+	    
+	    
 	$("#searchBtn").click(function(){
+		var count = 2;
+		$(window).scroll(function(){
+            let $window = $(this);
+            let scrollTop = $window.scrollTop();
+            let windowHeight = $window.height();
+            let documentHeight = $(document).height();
+            
+            console.log("documentHeight:" + documentHeight + " | scrollTop:" + scrollTop + " | windowHeight: " + windowHeight );
+            
+            // scrollbar의 thumb가 바닥 전 30px까지 도달 하면 리스트를 가져온다.
+            if( scrollTop + windowHeight + 30 > documentHeight ){
+                fetchList();
+                count++;
+            }
+        })
+		
 		$("#grid").empty();
 		$.ajax({
 			type : 'post',
@@ -47,22 +233,22 @@ $(function(){
 			url : 'storemanagerlist.do',
 			contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 			data : {"s_category" : $('#s_category').val(),
-					"keyword" : $("#keyword").val(),
-					"searchClick" : $("#searchClick").val()
-					},
+				"keyword" : $("#keyword").val(),
+				"searchClick" : $("#searchClick").val(),
+				"nowPage" : count,
+				"cntPerPage" : 12
+				},
 			dataType : 'json',
 			success : function(resultData){
-				alert("성공");
 				var size = resultData.list.length;
-				alert(size);
 				for(var i=0 ;i<size ; i++ ){
 					
 					$("#grid").append(
 							"<div class='grid-cell'>"+
-							"<a href='../store/storeDetails.do?"+resultData.list[i].s_brand_name+"'>"+
+							"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
 							"<img id='storeimg' src='/Food/resources/store/"+resultData.list[i].s_brand_name+".jpg' >"+
 							"</a>"+
-							"<a href='../store/storeDetails.do?"+resultData.list[i].s_brand_name+"'>"+
+							"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
 							resultData.list[i].s_brand_name+"</a>"+
 							"</div>"
 							)
@@ -80,67 +266,52 @@ $(function(){
 			
 		});
 		
+		let fetchList = function(){
+	        if(isEnd == true){
+	            return;
+	        }
+	        $.ajax({
+	    		type : 'post',
+	    		async:true,
+	    		url : 'storemanagerlist.do',
+	    		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
+	    		data : {"s_category" : $('#s_category').val(),
+					"keyword" : $("#keyword").val(),
+					"searchClick" : "",
+					"nowPage" : count,
+					"cntPerPage" : 12
+					},
+	    		dataType : 'json',
+	    		success : function(resultData){
+	    			var size = resultData.list.length;
+	    			for(var i=0 ;i<size ; i++ ){
+	    				$("#grid").append(
+	    						"<div class='grid-cell'>"+
+	    						"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+	    						"<img id='storeimg' src='/Food/resources/store/"+resultData.list[i].s_brand_name+".jpg' >"+
+	    						"</a>"+
+	    						"<a href='../store/storeDetails.do?s_brand_name="+resultData.list[i].s_brand_name+"'>"+
+	    						resultData.list[i].s_brand_name+"</a>"+
+	    						"</div>"
+	    						)
+	    						
+	    				console.log(resultData.list[i].s_brand_name);
+	    				
+	                    if( size < 5 ){
+	                        isEnd = true;
+	                    }
+	    			}
+	    			
+	    		},
+	    		error:function(request,status,error){
+	    			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	    		}
+	    		
+	    	});
+	    }
+		
+		
 	});
-	
-	
-	function infinityScrollFunction() {
-
-        //현재문서의 높이를 구함.
-        var documentHeight  = $(document).height();
-        console.log("documentHeight : " + documentHeight);
-        
-        //scrollTop() 메서드는 선택된 요소의 세로 스크롤 위치를 설정하거나 반환    
-        //스크롤바가 맨 위쪽에 있을때 , 위치는 0
-        console.log("window의 scrollTop() : " + $(window).scrollTop()); 
-        //height() 메서드는 브라우저 창의 높이를 설정하거나 반환
-        console.log("window의 height() : " + $(window).height());
-        
-        //세로 스크롤위치 max값과 창의 높이를 더하면 현재문서의 높이를 구할수있음.
-        //세로 스크롤위치 값이 max이면 문서의 끝에 도달했다는 의미
-        var scrollHeight = $(window).scrollTop()+$(window).height();         
-        console.log("scrollHeight : " + scrollHeight);
-            
-        if(scrollHeight == documentHeight) { //문서의 맨끝에 도달했을때 내용 추가 
-        	var count = 2;
-        	$.ajax({
-    			type : 'post',
-    			async:true,
-    			url : 'storemanagerlist.do',
-    			contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-    			data : {"s_category" : $('#s_category').val(),
-    					"keyword" : $("#keyword").val(),
-    					"searchClick" : $("#searchClick").val(),
-    					"nowpage" : count
-    					},
-    			dataType : 'json',
-    			success : function(resultData){
-    				alert("성공");
-    				var size = resultData.list.length;
-    				alert(size);
-    				for(var i=0 ;i<size ; i++ ){
-    					
-    					$("#grid").append(
-    							"<div class='grid-cell'>"+
-    							"<a href='../store/storeDetails.do?"+resultData.list[i].s_brand_name+"'>"+
-    							"<img id='storeimg' src='/Food/resources/store/"+resultData.list[i].s_brand_name+".jpg' >"+
-    							"</a>"+
-    							"<a href='../store/storeDetails.do?"+resultData.list[i].s_brand_name+"'>"+
-    							resultData.list[i].s_brand_name+"</a>"+
-    							"</div>"
-    							)
-    							
-    					console.log(resultData.list[i].s_brand_name);
-    				}
-    				
-    			},
-    			error:function(request,status,error){
-    				console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-    			}
-    			
-    		});
-        }
-    }
-	
 	
 	
 });

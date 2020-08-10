@@ -36,6 +36,12 @@ public interface StoreDAO {
 	public List<StoreListVO> getstore(PagingVO pvo,String s_category, String keyword);
 		
 	public int searchCount(String s_category, String keyword);
+	
+	public int stategetTotal();
+	
+	public List<StoreListVO> stategetstore(PagingVO pvo,String s_category, String keyword);
+		
+	public int statesearchCount(String s_category, String keyword);
 
 	public List<BoardVO> starAvg();
 }
