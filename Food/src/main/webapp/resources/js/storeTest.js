@@ -418,7 +418,7 @@ $('#detailReviewModify').click(function(){
 	$("#btnArea").append($div);
 	
 	$fileDiv = $('<div class="col-12" id="reviewcol"> </div>');
-	$fileDivInputFile=$('<input type="file" name="file" maxlength="60" size="40">');
+	$fileDivInputFile=$('<input type="file" name="file" id="ttttt" maxlength="60" size="40">');
 	$fileDivInputBtn = $('<input type="button" class="btn alazea-btn" id="reviewInsert" value="리뷰등록">');
 	$("#titleAndContent").append($fileDiv);
 	$("#reviewcol").append($fileDivInputFile);
@@ -452,8 +452,8 @@ function detailReviewModify() {
 				"b_no" : $("#boardNoHidden").val(),
 				"s_brand_name" :$('#title').val(),		
 				"title": $('#reviewDetailTitle').val(),
-				"b_content" : $('#reviewDetailContent').val()
-				
+				"b_content" : $('#reviewDetailContent').val(),
+				"v_fileName" : $('#ttttt').val()
 				},
 		dataType : 'json',
 		success : function(resultData){

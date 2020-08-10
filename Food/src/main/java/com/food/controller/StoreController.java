@@ -222,6 +222,8 @@ public class StoreController {
 		System.out.println(vo.getS_brand_name()+"***************");
 		System.out.println(vo.getB_content()+"***************");
 		System.out.println(vo.getB_no()+"***************");
+		System.out.println(vo.getV_fileName()+"***************");
+		
 		result = boardService.updateBoard(vo);
 		
 		if(result==0) {
