@@ -177,14 +177,15 @@
 			<strong>가격1</strong><input type="text" name="p_price_1"/><strong>가격2</strong><input name="p_price_2"
 				type="text" /><strong>가격3</strong><input type="text" name="p_price_3"/><br>
 			<br> <br>
-			
-			<input id="upload" type="button" value="사진등록"> 	
+			<h1>*사진등록</h1>
+			<br> 
+			<div style="display: flex;">
+				<input id="upload" type="button" class="btn btn-white" style="width: 50%; font-size: 20px; font-weight: bolder;" value="매장등록"> 	     <br>
+				<input id="upload2" type="button" class="btn btn-dark" style="width: 50%; font-size: 20px; font-weight: bolder;" value="메뉴등록"> 	  
+             </div>    
+                              <br>
                         
-                        <br>
-                        
-                    
-            
-		
+
 			<label>가게주소</label>
 			<div class="form-group">
 				<input class="sing" style="width: 40%; display: inline;"
@@ -339,22 +340,7 @@
 
 		//취소버튼 클릭시
 
-		//이메일 중복체크 
-		$("#email").blur(function() {
-							$.ajax({
-										url : 'checkEmail.do',
-										contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-										data : "m_email=" + $("#email").val(),
-										success : function(resultData) {
-											$("#email_check2").html(resultData);
-
-										}
-									});
-							if ($("#email").val() == "") {
-								$("#email_check2").html("이메일 작성하세요.");
-							}
-						});
-
+	
 		//아이디 중복체크 
 		$("#shopid").blur(function() {
 								$.ajax({
@@ -362,7 +348,7 @@
 										async : true,
 										url : 'checkId.do',
 										contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-										data : "m_id=" + $("#id").val(),
+										data : "m_id=" + $("#shopid").val(),
 										success : function(resultData) {
 											$("#shopid_check2").html(resultData);
 
@@ -505,16 +491,30 @@
 		}
 
 
+		function popup(){
+            var url = "upload.do";
+            var name = "popup test";
+            var option = "width = 450, height = 450, top = 100, left = 400, location = no"
+			
+	       window.open(url, name, option);
+        }
+
+		function popup2(){
+            var url = "upload2.do";
+            var name = "popup test";
+            var option = "width = 450, height = 450, top = 100, left = 400, location = no"
+			
+	       window.open(url, name, option);
+        }
+		
+		
 		$("#upload").click(function(){
 				popup();
-
-			function popup(){
-	            var url = "upload.do";
-	            var name = "popup test";
-	            var option = "width = 500, height = 500, top = 100, left = 200, location = no"
-	            window.open(url, name, option);
-	        }
 			});
+
+		$("#upload2").click(function(){
+			 popup2();
+		});
 		
 	</script>
 

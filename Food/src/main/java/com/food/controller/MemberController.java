@@ -68,7 +68,7 @@ public class MemberController {
 		System.out.println("요청이옴");
 		String fileTag = "file"; 
 		// 업로드 파일이 저장될 경로
-		String filePath = "C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\js\\test\\";
+		String filePath = "C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\store\\";
 	
 		MultipartFile file = mtf.getFile(fileTag); String fileName = file.getOriginalFilename(); 
 		// 파일 전송 
@@ -77,21 +77,34 @@ public class MemberController {
 			}  catch(Exception e) { 
 				System.out.println("업로드 오류");
 			}  
-		return "redirect:/";
+		return "index/upload";
 	}
 	
 	@RequestMapping(value = "/fileupload2.do" , method = RequestMethod.POST) 
-	public String upload(MultipartHttpServletRequest mtf) { 
+	public String upload(MultipartHttpServletRequest mtf,@RequestParam(value="s_category")String s_category) { 
 		// 파일 태그 
-		
+		String category = "";
 		List<MultipartFile> fileList = mtf.getFiles("file");
 		// 업로드 파일이 저장될 경로
-		String filePath = "C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\upload";
+		if(s_category.equals("한식")) {
+			category="kor";
+		}else if(s_category.equals("일식")) {
+			category="jap";
+		}else if(s_category.equals("양식")) {
+			category="ame";
+		}else if(s_category.equals("증식")) {
+			category="ch";
+		}else if(s_category.equals("분식")) {
+			category="school";
+		}else if(s_category.equals("동남아")) {
+			category="east";
+		}
+		String filePath = "C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\storemenu\\";
 	
 		for(MultipartFile mf : fileList ) {
 			String originFileName = mf.getOriginalFilename();
 			long fileSize = mf.getSize();
-			String safeFile = filePath + System.currentTimeMillis()+originFileName;
+			String safeFile = filePath +category+"\\"+ originFileName;
 		try {
 			try {
 				mf.transferTo(new File(safeFile));
@@ -103,7 +116,7 @@ public class MemberController {
 			e.printStackTrace();
 		}
 	}
-		return "redirect:/";
+		return "index/upload2";
 	}
 		// 파일 전송 
 		
@@ -113,7 +126,7 @@ public class MemberController {
 	
 
 	@RequestMapping("/shopmember.do")
-	public void shopmember(MemberVO mvo, StoreListVO svo, ProductVO pvo) {
+	public String shopmember(MemberVO mvo, StoreListVO svo, ProductVO pvo) {
 
 		System.out.println("여기옴");
 		memberService.shopmember(mvo);
@@ -121,7 +134,8 @@ public class MemberController {
 		storeService.shopmember(svo);
 
 		productService.shopmember(pvo);
-
+		
+		return "redirect:start.jsp";
 	}
 
 	@ResponseBody

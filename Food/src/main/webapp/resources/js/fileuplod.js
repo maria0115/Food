@@ -43,7 +43,7 @@
                      img.classList.add("obj");
                      img.file = file;
                      img.style.width = '400px'; 
-                     img.style.height = '400px';
+                     img.style.height = '270px';
                      preview.appendChild(img);
                      if (window.FileReader) { // FireFox, Chrome, Opera 확인.
                         var reader = new FileReader();
