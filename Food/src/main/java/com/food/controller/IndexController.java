@@ -47,8 +47,9 @@ public class IndexController {
 	
 	//Header에서 Store List 클릭했을때
 	@RequestMapping("/store.do")
-	public void getStoreList(StoreListVO vo, String category, Model model) {
+	public void getStoreList(StoreListVO vo, BoardVO b_vo, String category, Model model) {
 		
+		model.addAttribute("starAvg",storeService.starAvg());
 		model.addAttribute("map",friendBoardservice.test());
 	
 	}

@@ -76,7 +76,7 @@ map.put("동남아", "east");
 							<div id="product_details_slider" class="carousel slide"
 								data-ride="carousel">
 								<div class="carousel-inner">
-									<div class="carousel-item active">
+									<div class="carousel-item active" >
 										<a class="product-img" href="img/bg-img/49.jpg"
 											title="Product Image"> <img class="d-block w-100"
 											src="../resources/store/${list.s_brand_name}.jpg" alt="1" 

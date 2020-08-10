@@ -96,6 +96,13 @@ public class StoreServiceImpl implements StoreService{
 		return storeDAO.searchCount(s_category,keyword);
 	}
 
+	//리뷰평점가져오기
+	@Override
+	public List<BoardVO> starAvg() {
+		
+		return storeDAO.starAvg();
+	}
+
 	
 
 

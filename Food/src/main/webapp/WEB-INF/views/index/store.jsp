@@ -220,58 +220,26 @@
                             <div class="widget-desc">
 
                                 <!-- Single Best Seller Products -->
+                               <c:forEach items="${starAvg}" var="starAvg">
                                 <div class="single-best-seller-product d-flex align-items-center">
                                     <div class="product-thumbnail">
-                                        <a href="shop-details.html"><img src="../resources/store/ame/또바기피자.jpg" alt=""></a>
+                                        <a href="shop-details.html"><img src="../resources/store/${starAvg.s_brand_name }.jpg" alt=""></a>
                                     </div>
                                     <div class="product-info">
-                                        <a href="shop-details.html"></a>
-                                        <p>$10.99</p>
+                                        <a href="../store/storeDetails.do?s_brand_name=${starAvg.s_brand_name}">${starAvg.s_brand_name}</a>
                                         <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i><span>${starAvg.star_avg}</span>
+                                            
+                                            <c:if test="${starAvg.review_count >10}">
+                                            <span>(10+)</span>
+                                            </c:if>
                                         </div>
+                                       
+                                        
                                     </div>
                                 </div>
-
+								</c:forEach>
                                 <!-- Single Best Seller Products -->
-                                <div class="single-best-seller-product d-flex align-items-center">
-                                    <div class="product-thumbnail">
-                                        <a href="shop-details.html"><img src="./resources/img/bg-img/5.jpg" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="shop-details.html">Tulip Flower</a>
-                                        <p>$11.99</p>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Best Seller Products -->
-                                <div class="single-best-seller-product d-flex align-items-center">
-                                    <div class="product-thumbnail">
-                                        <a href="shop-details.html"><img src="../resources/store/ame/경성함바그 현대시티아울렛 가산점.jpg" alt=""></a>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="shop-details.html">Recuerdos Plant</a>
-                                        <p>$9.99</p>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
                                 
                             </div>
                     </div>

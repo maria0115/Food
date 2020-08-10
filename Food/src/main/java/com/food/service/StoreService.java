@@ -38,6 +38,8 @@ public interface StoreService {
 	//검색된 총 갯수 
 	int searchCount(String s_category, String keyword);
 	
+	//리뷰평점순
+	List<BoardVO> starAvg();
 	
 	
 

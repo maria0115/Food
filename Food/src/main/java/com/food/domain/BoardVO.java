@@ -34,8 +34,25 @@ public class BoardVO {
     private String s_brand_name;
     private String d_reason;
     private int q_replyno;
-    
+    private String star_avg; // 리뷰평점평균
+    private int review_count; // 리뷰수
  
+
+	public int getReview_count() {
+		return review_count;
+	}
+
+	public void setReview_count(int review_count) {
+		this.review_count = review_count;
+	}
+
+	public String getStar_avg() {
+		return star_avg;
+	}
+
+	public void setStar_avg(String star_avg) {
+		this.star_avg = star_avg;
+	}
 
 	public int getQ_replyno() {
 		return q_replyno;
