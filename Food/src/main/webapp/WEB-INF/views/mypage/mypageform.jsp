@@ -20,132 +20,8 @@
 	<!-- Core Stylesheet -->
 	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
-    
-  		
-<style>
-    .box{
-    width: auto;
-    height: 200px;
-    padding: 20px;
-    border: slategray;
-    margin: 10 10 10 10;
-    font-family: inherit;
-    font-size: x-large;
-    border-style: double;
-    text-align: center;
-    color: black;
-    -webkit-text-stroke-width: medium;
-        
-    }   
-    
+    <link rel="stylesheet" href="/Food/resources/css/mypageform.css">
  
-    .jsjs{
-    	padding: 30px;
-    text-align: center;
-    /* font-family: serif; */
-    font-size: -webkit-xxx-large;
-    text-transform: uppercase;
-}
-
-    } 
-    
-html {
-  box-sizing: border-box;
-  
-}
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-.grid-wrapper {
-    /* Prevents odd margin behaviour */
-    // overflow: hidden;
-    padding: 0.1px 0;
-}
-
-.grid {
-  /* forces equal cell heights */
-  display: flex;
-  flex-wrap: wrap;
-
-  /* creates gaps */
-  padding: 20px 0 0 20px;
-
-    /* pulls grid cells hard against edges */
-    margin: -20px;
-}
-
-.grid-cell {
-  /* sets column count */
-  width: calc(100% / 1); /* 1 columns */
-
-  /* creates gaps */
-  border: 0 solid transparent;
-  border-width: 0 20px 20px 0;
-    
-  /* prevents background bleed */
-  background-clip: padding-box;
-
-  /* forces inner to take up full grid cell height */
-  display: flex;
-}
-
-@media (min-width: 400px){
-    .grid-cell {
-    width: calc(100% / 2); /* 2 columns */
-    }
-}
-
-@media (min-width: 600px){
-    .grid-cell {
-    width: calc(100% / 5); /* 3 columns */
-    }
-}
-
-.grid-cell-inner {
-    width: 100%;
-}
-
-.cen{
- 	text-align: center;
-    padding-top: 23px;
-    font-size: 28px;
-}
-
-/************************************\
-  Prettiness only below this point
-\************************************/
-
-.grid-cell-inner {
-    box-shadow: 0 0 10px 3px blue;
-}
-
-.grid-cell {
-    /* So that we can see the grid cells */
- /*    box-shadow: inset 0 0 0 3px #0119; */
-    height: 150px;
-    margin-bottom: 100px;
-    -webkit-text-stroke-width: medium;
-   justify-content: center
-}
-
-.grid-wrapper {
-    /* So that we can see the edges of the grid */
-    // border: 3px solid green;
-}
-
-.grid-wrapper {
-    max-width: 500px;
-    margin: 30px auto;
-}
-
-html {
-  margin: auto;
-}
-</style>    	
-
-	 
-	 
 </head>
 
 <body>
@@ -156,7 +32,7 @@ html {
 
     <!-- ##### Portfolio Area End ##### -->
 	
-	<c:if test="${not empty sessionScope.user_id}">
+	<c:if test="${not empty sessionScope.user_id && sessionScope.grade==1}">
    		<div class ="container">		
 		<h1 class="jsjs"> my page </h1>
 			<div class ="box">
@@ -177,11 +53,27 @@ html {
   </div>
   
 </div>	
-
-
-		
-    	
 	</c:if>
+	
+	<c:if test="${not empty sessionScope.user_id && sessionScope.grade==2 }">
+   		<div class ="container">		
+		<h1 class="jsjs"> my Store </h1>
+		<div>
+		<%@ include file="../index/calendar.jsp" %>
+		</div>
+		<div class="grid-wrapper">
+</div>
+  <div class="grid2">
+    <div class="grid-cell2"><a href="mypage.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>회원 정보</a></div>
+    <div class="grid-cell2"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>나의 글목록</a></div>
+    <div class="grid-cell2"><a href="foodcalorie.do" class="cen"><span style="color: lightcoral;">CALORIE?</span><br/>칼로리 체크</a></div>
+    <div class="grid-cell2"><a href="selectCart.do?m_id=${user_Info.M_ID}" class="cen"><span style="color: steelblue;">MY WISH</span><br/>찜 목록보기</a></div>
+  </div>
+  
+</div>	
+	</c:if>
+	
+	
 	
 	<c:if test="${empty sessionScope.user_id}">
 	<div class="container">

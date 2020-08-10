@@ -42,7 +42,7 @@ insert into product(p_name_1,p_name_2,p_name_3,p_price_1,p_price_2,p_price_3,p_i
 		
 		SELECT m.m_id m_id, m.m_name m_name, m.m_pass m_pass, m.m_tel m_tel, m.m_birth m_birth, m.m_area m_area,
     	m.m_most m_most, m.m_email m_email, m.m_post m_post, m.m_date m_date, b.b_num b_num, b.b_id b_id, b.s_start s_start, 
-   		TO_CHAR(trunc(b.s_end),'yyyy-MM-DD') s_end, b.reason reason, b.s_state s_state
+   		TO_CHAR(trunc(b.s_end),'yyyy-MM-DD') s_end, b.reason reason, b.s_state s_state , m.grade grade
    		FROM member m left outer join blacklist b on m.m_id=b.b_id
 		WHERE m.m_id = #{m_id}
 		<if test="m_pass!=null">

@@ -226,7 +226,7 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 				FROM (
 						select b.s_brand_name as s_brand_name ,s.s_address as s_address ,count(*) as review_count,round(avg(v_star),1) as star_avg
                         from  BOARD b, store s 
-                        where b.s_brand_name = s.s_brand_name 
+                        where b.s_brand_name = s.s_brand_name and s_state = 'Y'
                         group by b.s_brand_name, s.s_address
                         order by star_avg desc
 						) A
