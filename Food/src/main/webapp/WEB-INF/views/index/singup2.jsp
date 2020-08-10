@@ -163,30 +163,30 @@ font-size: 20px;
 					<option value="일식">일식</option>
 					<option value="동남아">동남아</option>
 			</select>
-			</span> <strong>&nbsp;&nbsp;&nbsp;*&nbsp;중분류</strong>&nbsp;&nbsp;&nbsp;<input 
+			</span> <strong>&nbsp;&nbsp;&nbsp;*&nbsp;중분류</strong>&nbsp;&nbsp;&nbsp;<input  class="shopmenu"
 				style="max-width: 100%; height: 50px; border: 2px ridge black;"
 				type="text" name="s_midpart" placeholder=" ex)국수,육류,찌개" required>
-			<strong>&nbsp;&nbsp;&nbsp;*&nbsp;매장 이름</strong>&nbsp;&nbsp;&nbsp;<input
+			<strong>&nbsp;&nbsp;&nbsp;*&nbsp;매장 이름</strong>&nbsp;&nbsp;&nbsp;<input class="shopmenu"
 				style="max-width: 100%; height: 50px; border: 2px ridge black;"
 				type="text" name="s_brand_name" placeholder="상호명을 입력하세요." required>
 			<br>
 			<br>
 
 			<!-- 휴대전화 -->
-			<strong>가게 상세 설명</strong> <input type="text" name="s_info"
+			<strong>가게 상세 설명</strong> <input type="text" name="s_info" class="shopmenu"
 				style="width: 100%; height: 200px;" /><br>
 			<br> 
 			<div class="shopmem">
 			<strong>대표 메뉴 이름</strong>
-			<strong>대표 메뉴1</strong><input type="text" name="p_name_1"/><strong>대표 메뉴2</strong><input name="p_name_2"
-				type="text" /><strong>대표 메뉴3</strong><input type="text" name="p_name_3"/>
+			<strong>대표 메뉴1</strong><input class="shopmenu" type="text" name="p_name_1"/><strong>대표 메뉴2</strong><input class="shopmenu" name="p_name_2"
+				type="text"  /><strong>대표 메뉴3</strong><input type="text" name="p_name_3" class="shopmenu"/>
 				</div>
 	
 				<br>
 				<div class="shopmem">
 		<strong>대표 메뉴 가격(위 순서대로 작성)</strong>
-			<strong>대표 메뉴 가격1</strong><input type="text" name="p_price_1"/><strong>대표 메뉴 가격2</strong><input name="p_price_2"
-				type="text" /><strong>대표 메뉴 가격3</strong><input type="text" name="p_price_3"/>
+			<strong>대표 메뉴 가격1</strong><input type="text" name="p_price_1" class="shopmenu"/><strong>대표 메뉴 가격2</strong><input name="p_price_2" class="shopmenu"
+				type="text" /><strong>대표 메뉴 가격3</strong><input type="text" name="p_price_3" class="shopmenu"/>
 				</div>
 			<br> <br>
 			<h1>*사진등록</h1>
@@ -316,15 +316,17 @@ font-size: 20px;
 							var pwd1 = $("#shoppass").val();
 							var pwd2 = $("#shoppass2").val();
 							var idcheck = $("#id_check2").html();
-		
+							var menu =$(".shopmenu").val();
 							
 
 							if (!id.test($("#shopid").val())) {
 								alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
 								return false;
-							}
-
-							 else if (idcheck == "중복된 아이디입니다") {
+							} 
+							else if ($(".shopmenu").val() == "") {
+								alert("내용을 전부 입력해주세요.");
+								return false;
+							} else if (idcheck == "중복된 아이디입니다") {
 								alert("중복된 아이디입니다. 아이디를 확인하여주세요")
 								return false;
 							} else if (pwd1 != pwd2) {
