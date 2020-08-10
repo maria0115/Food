@@ -84,9 +84,8 @@
 <script src="/Food/resources/js/vendor/modernizr-2.8.3.min.js"></script>
 <script type="text/javascript">
 $(function(){
-
+	
 	$('#add').click(function(){
-			
 		var queryString = $('form[name=frm]').serialize();
 		alert(queryString);
 		$.ajax({
