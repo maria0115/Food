@@ -95,36 +95,77 @@
         <hr>
   			
   		</div>
+  		<div class='well'>
+  			<input type="text" id="msg" value="1212" class="form-control"/>
+  			<button id="btnSend"class="btn btn-primary">Send Message</button>
+  		</div>
   	</div>	
+  	
   </footer>
 	<!-- ##### Footer Area End ##### -->
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<!-- <script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	
 	Popper js
 	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
 	Bootstrap js
 	<script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
 	All Plugins js
 	<script src="/Food/resources/js/plugins/plugins.js"></script>
-	Active js-->
+	Active js
 	<script src="/Food/resources/js/active.js"></script>
 <!-- 	지섭  -->
+
 	<script src="/Food/resources/js/sub.js"></script>
+	
 
 	<script type="text/javascript">
 
+	$(function(){
+	var user_id = "${sessionScope.user_id}";
+
+	
+	$('#btnSend').click(function(evt){
+		alert("bbb");
+		evt.preventDefault();
+		if(socket.readyState !==1) return;
+
+		let msg = $('input#msg').val();
+		socket.send(msg); 
+
+		});
+		if(user_id!=""){
+			alert(user_id);
+		connectWs();
+		}
+		});
+	</script>
+	
+	<script type="text/javascript">		
+	var socket = null;
 	function connectWs(){
-		var ws = new WebSocket("ws://192.168.0.13:8080/Food/header");
+		
+		var ws = new WebSocket("ws://localhost:8080/Food/footer");
+		socket = ws;
 		ws.onopen = function(){
 			
 			console.log("Info: connection opened");
 			setTimeout(function(){connect();},1000);
 			
 			}
-		}
-		connectWs();
+		ws.onmessage = function(event){
+				console.log(event.data +'\n');
+			}
+	
+		ws.onclose = function(event){
+			console.log('Info:connection closed.');
+			//setTimeout(function(){connect();},1000);
+			};
+		ws.onerror = function(err){console.log('Error:',err);};
+	};
+			
 	</script>
 
 

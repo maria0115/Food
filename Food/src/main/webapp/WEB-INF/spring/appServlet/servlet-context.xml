@@ -38,10 +38,10 @@
 	<beans:bean id="echoHandler" class="com.food.handler.ReplyHandler" />
  
 	<websocket:handlers allowed-origins="*"> 
-      <websocket:mapping handler="echoHandler" path="/header"/>
+      <websocket:mapping handler="echoHandler" path="/footer"/>
       <websocket:handshake-interceptors>
          <beans:bean 
-         class="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor"/>
+         class="com.food.interceptor.HandshakeInterceptor"/>
       </websocket:handshake-interceptors>
       
    </websocket:handlers>
