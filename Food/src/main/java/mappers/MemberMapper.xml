@@ -18,7 +18,7 @@ select m_id,m_email,m_pass from member where m_id = #{m_id}
 
 <insert id="shopmember" parameterType="member">
 
-insert into member(m_id,m_pass,m_name,m_date) values(#{m_id},#{m_pass},#{m_name},sysdate)
+insert into member(m_id,m_pass,m_name,m_date,grade) values(#{m_id},#{m_pass},#{m_name},sysdate,#{grade})
 </insert>
 
 <insert id="shopmember2" parameterType="product">
@@ -63,8 +63,8 @@ insert into product(p_name_1,p_name_2,p_name_3,p_price_1,p_price_2,p_price_3,p_i
 </select>
 
 <insert id="insertMember" parameterType="member">
-insert into member(m_id,m_name,m_pass,m_tel,m_birth,m_area,m_most,m_email,m_post,m_date) 
-values(#{m_id},#{m_name},#{m_pass},#{m_tel},#{m_birth},#{m_area},#{m_most},#{m_email},#{m_post},sysdate)
+insert into member(m_id,m_name,m_pass,m_tel,m_birth,m_area,m_most,m_email,m_post,m_date,grade) 
+values(#{m_id},#{m_name},#{m_pass},#{m_tel},#{m_birth},#{m_area},#{m_most},#{m_email},#{m_post},sysdate,#{grade})
 </insert>
 
 

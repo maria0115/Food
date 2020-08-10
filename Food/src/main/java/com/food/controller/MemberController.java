@@ -129,6 +129,7 @@ public class MemberController {
 	public String shopmember(MemberVO mvo, StoreListVO svo, ProductVO pvo) {
 
 		System.out.println("여기옴");
+		mvo.setGrade(2);
 		memberService.shopmember(mvo);
 
 		storeService.shopmember(svo);
@@ -157,7 +158,9 @@ public class MemberController {
 				session.setAttribute("user_name", new_vo.get("M_NAME"));
 				session.setAttribute("user_id", new_vo.get("M_ID"));
 				session.setAttribute("user_Info", new_vo);
+				session.setAttribute("grade", new_vo.get("GRADE"));
 				session.setAttribute("wish", wish);
+			
 
 			}
 
@@ -171,6 +174,7 @@ public class MemberController {
 
 	@RequestMapping("singupMember.do")
 	public String insertMember(MemberVO vo) {
+		vo.setGrade(1);
 		memberService.insertMember(vo);
 		return "redirect:/singup.do";
 	}

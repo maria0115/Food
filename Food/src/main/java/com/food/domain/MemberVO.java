@@ -11,7 +11,14 @@ public class MemberVO {
 	private	String	m_email ;
 	private String m_post;
 	private String m_date;
+	private int grade;
 
+	public int getGrade() {
+		return grade;
+	}
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
 	public String getM_date() {
 		return m_date;
 	}

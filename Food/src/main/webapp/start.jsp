@@ -22,6 +22,7 @@ $(function(){
 
 
 var latitude="";
+
 var longitude="";
 
 var detailAddr="";
