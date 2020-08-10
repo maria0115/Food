@@ -1,0 +1,2668 @@
+﻿
+        
+.nexainput.nexaleftalign
+{
+  text-align:left;
+}
+.nexainput.nexarightalign
+{
+  text-align:right;
+}
+.nexainput.nexacenteralign
+{
+  text-align:center;
+}
+
+.nexacontentsbox.nexaleftalign
+{
+  text-align:left;
+}
+.nexacontentsbox.nexarightalign
+{
+  text-align:right;
+}
+.nexacontentsbox.nexacenteralign
+{
+  text-align:center;
+}
+.celltreeline
+{
+  border : 1px dotted #999999;
+}
+.Edit, .MaskEdit, .TextArea, .EditControl, .MaskEditControl, .TextAreaControl
+{
+  cursor:text;
+}
+.Button .nexacontentsbox, .ButtonControl .nexacontentsbox
+{
+  text-align:center;
+}
+
+.FileDownload  .nexacontentsbox, .FileDownloadControl .nexacontentsbox
+{
+  text-align:center;
+}
+
+.IconTextControl .nexacontentsbox, .IconControl .nexacontentsbox
+{
+  text-align:center;
+}
+
+.DatePickerDayItemControl .nexacontentsbox, .DatePickerWeekItemControl .nexacontentsbox, .TitleBarButtonControl .nexacontentsbox
+{
+  text-align:center;
+}
+
+.MainFrame, .VScrollBarControl, .HScrollBarControl
+{
+  cursor:default;
+}
+
+.Sketch .nexacontentsbox
+{
+   text-align:center;
+}
+
+.nexainput
+{
+  cursor:inherit;
+}
+
+.Form
+{
+	font : 10pt "NanumGothic";
+	color : #000000;
+}
+.ChildFrame
+{
+	background : #ffffff;
+	border : 1px solid #e0e0e0;
+}
+.FrameSet
+{
+	background : #ffffff;
+	border : 1px solid #e0e0e0;
+}
+.TileFrameSet
+{
+	background : #ffffff;
+	border : 1px solid #e0e0e0;
+}
+.HFrameSet
+{
+	background : #ffffff;
+	border : 1px solid #e0e0e0;
+}
+.VFrameSet
+{
+	background : #ffffff;
+	border : 1px solid #e0e0e0;
+}
+.MainFrame
+{
+	background : #ffffff;
+	border : 2px solid #1565c0;
+	border-radius : 5px;
+}
+.TitleBarControl
+{
+	background : #1565c0;
+	border-radius : 2px 2px 0px 0px / 2px 2px 0px 0px;
+}
+.TitleBarControl .titleicon
+{
+	color : #ffffff;
+	font : bold 14pt "NanumGothic";
+}
+.TitleBarControl .titleicon .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.TitleBarControl .minbutton
+{
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .minbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.TitleBarControl .maxbutton
+{
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .maxbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.TitleBarControl .normalbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.TitleBarControl .closebutton
+{
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .closebutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.StatusBarControl
+{
+	background : #f6f6f6;
+	border : 1px solid #e0e0e0;
+	border-radius : 0px 0px 3px 3px / 0px 0px 3px 3px;
+}
+.StatusBarControl .statustext .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.StatusBarControl .resizegrip .nexacontentsbox
+{
+	vertical-align : bottom;
+	text-align : center;
+}
+.StatusBarControl .progressbar
+{
+	background : #90caf9;
+	border : 5px solid transparent;
+	color : #000000;
+}
+.StatusBarControl .progressbar .progressbaritem
+{
+	background : #1565c0;
+}
+.StatusBarControl .progressbar .progressbaritem .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.StatusBarControl .progressbar .progressbartext
+{
+	font : bold 8pt "NanumGothic";
+	color : #ffffff;
+}
+.StatusBarControl .progressbar .progressbartext .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.Static
+{
+	font : 14pt "NanumGothic";
+	color : #333333;
+}
+.Static .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.StaticControl
+{
+	font : 14pt "NanumGothic";
+	color : #333333;
+}
+.StaticControl .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.Button
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.Button .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Edit
+{
+	background : #ffffff;
+	border : 0px none, 0px none, 1px solid #c0c0c0, 0px none;
+	padding : 0px 3px 0px 3px;
+}
+.Edit .nexainput
+{
+	text-align : left;
+}
+.Edit .nexacontentsbox
+{
+	text-align : left;
+}
+.MaskEdit
+{
+	background : #ffffff;
+	border : 0px none, 0px none, 1px solid #c0c0c0, 0px none;
+	padding : 0px 3px 0px 3px;
+}
+.TextArea
+{
+	background : #ffffff;
+	border : 1px solid #bdbdbd;
+	border-radius : 2px;
+	padding : 3px 3px 3px 3px;
+}
+.TextArea .nexatextarea
+{
+	text-align : left;
+}
+.TextArea .nexacontentsbox
+{
+	text-align : left;
+}
+.TextAreaControl
+{
+	background : #ffffff;
+	border : 1px solid #bdbdbd;
+	border-radius : 2px;
+	padding : 3px 3px 3px 3px;
+}
+.TextAreaControl .nexatextarea
+{
+	text-align : left;
+}
+.TextAreaControl .nexacontentsbox
+{
+	text-align : left;
+}
+.Spin
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.Spin .spinedit
+{
+	padding : 0px 3px 0px 3px;
+}
+.Spin .spinedit .nexainput
+{
+	text-align : right;
+}
+.Spin .spinedit .nexacontentsbox
+{
+	text-align : right;
+}
+.Spin .spinupbutton
+{
+	background : #f6f6f6;
+}
+.Spin .spinupbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Spin .spindownbutton
+{
+	background : #f6f6f6;
+}
+.Spin .spindownbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Tab
+{
+	background : #ffffff;
+}
+.Tab .tabpageTab
+{
+	background : #ffffff;
+	border : 1px solid #cccccc;
+}
+.Tab .tabbuttonitemTab
+{
+	background : #f2f2f2;
+	border : 1px solid #cccccc;
+	font : bold 14pt "NanumGothic";
+	color : #1f1f1f;
+}
+.Tab .tabbuttonitemTab .extrabutton .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.Tab .nextbuttonTab
+{
+	background : #f2f2f2;
+	border : 1px solid #cccccc;
+}
+.Tab .nextbuttonTab .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Tab .prevbuttonTab
+{
+	background : #f2f2f2;
+	border : 1px solid #cccccc;
+}
+.Tab .prevbuttonTab .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.CheckBox
+{
+	color : #232323;
+}
+.CheckBox .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.CheckBoxControl
+{
+	color : #232323;
+}
+.CheckBoxControl .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.Radio .radioitem
+{
+	color : #232323;
+}
+.Radio .radioitem .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.Calendar
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.CalendarControl
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.Calendar .calendaredit
+{
+	border : 0px none;
+	color : #232323;
+	padding : 0px 3px 0px 3px;
+}
+.Calendar .calendaredit .nexainput
+{
+	text-align : left;
+}
+.Calendar .calendaredit .nexacontentsbox
+{
+	text-align : left;
+}
+.CalendarControl .calendaredit
+{
+	border : 0px none;
+	color : #232323;
+	padding : 0px 3px 0px 3px;
+}
+.CalendarControl .calendaredit .nexainput
+{
+	text-align : left;
+}
+.CalendarControl .calendaredit .nexacontentsbox
+{
+	text-align : left;
+}
+.Calendar .dropbutton
+{
+	background : #f2f2f2;
+}
+.Calendar .dropbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.CalendarControl .dropbutton
+{
+	background : #f2f2f2;
+}
+.CalendarControl .dropbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Calendar .calendarspinupbutton
+{
+	background : #f6f6f6;
+}
+.Calendar .calendarspinupbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.CalendarControl .calendarspinupbutton
+{
+	background : #f6f6f6;
+}
+.CalendarControl .calendarspinupbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Calendar .calendarspindownbutton
+{
+	background : #f6f6f6;
+}
+.Calendar .calendarspindownbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.CalendarControl .calendarspindownbutton
+{
+	background : #f6f6f6;
+}
+.CalendarControl .calendarspindownbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl
+{
+	background : #ffffff;
+	border : 1px solid #e5e5e5;
+	border-radius : 2px;
+	color : #000000;
+}
+.DatePickerControl .head
+{
+	background : #1565c0;
+	font : bold 14pt "NanumGothic";
+	color : #ffffff;
+	border-radius : 2px 2px 0px 0px / 2px 2px 0px 0px;
+}
+.DatePickerControl .head .monthstatic
+{
+	font : bold 14pt "NanumGothic";
+	color : #ffffff;
+}
+.DatePickerControl .head .monthstatic .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl .head .yearstatic
+{
+	font : bold 14pt "NanumGothic";
+	color : #ffffff;
+}
+.DatePickerControl .head .yearstatic .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl .head .nextbutton
+{
+	background : #1565c0;
+}
+.DatePickerControl .head .nextbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl .head .prevbutton
+{
+	background : #1565c0;
+}
+.DatePickerControl .head .prevbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl .head .yearspin
+{
+	background : #ffffff;
+	border : 1px solid #cccccc;
+}
+.DatePickerControl .head .monthspin
+{
+	background : #ffffff;
+	border : 1px solid #cccccc;
+}
+.DatePickerControl .head .yearspin .spinedit
+{
+	font : 12pt "NanumGothic";
+	color : #333333;
+	padding : 0px 3px 0px 3px;
+}
+.DatePickerControl .head .yearspin .spinedit .nexainput
+{
+	text-align : right;
+}
+.DatePickerControl .head .yearspin .spinedit .nexacontentsbox
+{
+	text-align : right;
+}
+.DatePickerControl .head .monthspin .spinedit
+{
+	font : 12pt "NanumGothic";
+	color : #333333;
+	padding : 0px 3px 0px 3px;
+}
+.DatePickerControl .head .monthspin .spinedit .nexainput
+{
+	text-align : right;
+}
+.DatePickerControl .head .monthspin .spinedit .nexacontentsbox
+{
+	text-align : right;
+}
+.DatePickerControl .head .yearspin .spinupbutton
+{
+	background : #f6f6f6;
+}
+.DatePickerControl .head .yearspin .spinupbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl .head .monthspin .spinupbutton
+{
+	background : #f6f6f6;
+}
+.DatePickerControl .head .monthspin .spinupbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl .head .yearspin .spindownbutton
+{
+	background : #f6f6f6;
+}
+.DatePickerControl .head .yearspin .spindownbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl .head .monthspin .spindownbutton
+{
+	background : #f6f6f6;
+}
+.DatePickerControl .head .monthspin .spindownbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl .body
+{
+	background : #ffffff;
+	font : bold 14pt "NanumGothic";
+	color : #878787;
+	border-radius : 0px 0px 2px 2px / 0px 0px 2px 2px;
+}
+.DatePickerControl .body .weekitem
+{
+	font : 8pt "NanumGothic";
+	color : #878787;
+}
+.DatePickerControl .body .weekitem .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.DatePickerControl .body .dayitem
+{
+	background : #ffffff;
+	font : 8pt "NanumGothic";
+	color : #313131;
+	border : 0px solid #0078d6;
+}
+.DatePickerControl .body .dayitem .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.VScrollBarControl
+{
+	background : #f2f2f2;
+}
+.VScrollBarControl .incbutton
+{
+	background : #f2f2f2;
+	border : 3px solid #f2f2f2;
+}
+.VScrollBarControl .incbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.VScrollBarControl .decbutton
+{
+	background : #f2f2f2;
+	border : 3px solid #f2f2f2;
+}
+.VScrollBarControl .decbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.VScrollBarControl .trackbar
+{
+	background : #cccccc;
+	border : 0px none, 3px solid transparent, 0px none, 3px solid transparent;
+}
+.VScrollBarControl .trackbar .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.HScrollBarControl
+{
+	background : #f2f2f2;
+}
+.HScrollBarControl .incbutton
+{
+	background : #f2f2f2;
+	border : 3px solid #f2f2f2;
+}
+.HScrollBarControl .incbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.HScrollBarControl .decbutton
+{
+	background : #f2f2f2;
+	border : 3px solid #f2f2f2;
+}
+.HScrollBarControl .decbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.HScrollBarControl .trackbar
+{
+	background : #cccccc;
+	border : 3px solid transparent, 0px none, 3px solid transparent, 0px none;
+}
+.HScrollBarControl .trackbar .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.VScrollIndicatorControl .trackbar
+{
+	background : #e4e4e4;
+	border : 2px solid transparent;
+}
+.VScrollIndicatorControl .trackbar .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.HScrollIndicatorControl .trackbar
+{
+	background : #e4e4e4;
+	border : 2px solid transparent;
+}
+.HScrollIndicatorControl .trackbar .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Combo
+{
+	background : #ffffff;
+	border : 1px solid #999999;
+	border-radius : 2px;
+}
+.ComboControl
+{
+	background : #ffffff;
+	border : 1px solid #999999;
+	border-radius : 2px;
+}
+.Combo .comboedit
+{
+	color : #000000;
+	padding : 0px 0px 0px 3px;
+}
+.Combo .comboedit .nexainput
+{
+	text-align : left;
+}
+.Combo .comboedit .nexacontentsbox
+{
+	text-align : left;
+}
+.ComboControl .comboedit
+{
+	color : #000000;
+	padding : 0px 0px 0px 3px;
+}
+.ComboControl .comboedit .nexainput
+{
+	text-align : left;
+}
+.ComboControl .comboedit .nexacontentsbox
+{
+	text-align : left;
+}
+.Combo .dropbutton
+{
+	background : #f2f2f2;
+}
+.Combo .dropbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.ComboControl .dropbutton
+{
+	background : #f2f2f2;
+}
+.ComboControl .dropbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.ListBox
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+}
+.ListBoxControl
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+}
+.ListBox .listboxitem
+{
+	font : 12pt "NanumGothic";
+	color : #2f2f2f;
+}
+.ListBox .listboxitem .nexacontentsbox
+{
+	text-align : left;
+}
+.ListBoxControl .listboxitem
+{
+	font : 12pt "NanumGothic";
+	color : #2f2f2f;
+}
+.ListBoxControl .listboxitem .nexacontentsbox
+{
+	text-align : left;
+}
+.StepControl .stepitem .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.Menu
+{
+	background : #ffffff;
+	border : 1px solid #cccccc;
+}
+.Menu .menuitem
+{
+	color : #000000;
+}
+.Menu .menuitem .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Menu .nextbutton
+{
+	background : #f2f2f2;
+}
+.Menu .nextbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Menu .prevbutton
+{
+	background : #f2f2f2;
+}
+.Menu .prevbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.PopupMenu
+{
+	background : #ffffff;
+	border : 1px solid #ebebeb;
+}
+.PopupMenuControl
+{
+	background : #ffffff;
+	border : 1px solid #ebebeb;
+}
+.PopupMenu .prevbutton
+{
+	background : #f2f2f2;
+}
+.PopupMenu .prevbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.PopupMenuControl .prevbutton
+{
+	background : #f2f2f2;
+}
+.PopupMenuControl .prevbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.PopupMenu .nextbutton
+{
+	background : #f2f2f2;
+}
+.PopupMenu .nextbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.PopupMenuControl .nextbutton
+{
+	background : #f2f2f2;
+}
+.PopupMenuControl .nextbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.PopupMenu .popupmenuitem .popupmenuitemcheckbox .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemcheckbox .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.PopupMenu .popupmenuitem .popupmenuitemtext
+{
+	color : #252525;
+}
+.PopupMenu .popupmenuitem .popupmenuitemtext .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemtext
+{
+	color : #252525;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemtext .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.PopupMenu .popupmenuitem .popupmenuitemhotkeytext
+{
+	color : #7a7a7a;
+}
+.PopupMenu .popupmenuitem .popupmenuitemhotkeytext .nexacontentsbox
+{
+	text-align : right;
+	vertical-align : middle;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemhotkeytext
+{
+	color : #7a7a7a;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemhotkeytext .nexacontentsbox
+{
+	text-align : right;
+	vertical-align : middle;
+}
+.PopupMenu .popupmenuitem .popupmenuitemexpandimage .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemexpandimage .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.ProgressBar
+{
+	background : #90caf9;
+}
+.ProgressBarControl
+{
+	background : #90caf9;
+}
+.ProgressBar .progressbaritem
+{
+	background : #1565c0;
+}
+.ProgressBar .progressbaritem .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.ProgressBarControl .progressbaritem
+{
+	background : #1565c0;
+}
+.ProgressBarControl .progressbaritem .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.ProgressBar .progressbartext
+{
+	font : bold 8pt "NanumGothic";
+	color : #ffffff;
+}
+.ProgressBar .progressbartext .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.ProgressBarControl .progressbartext
+{
+	font : bold 8pt "NanumGothic";
+	color : #ffffff;
+}
+.ProgressBarControl .progressbartext .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.ImageViewer
+{
+	background : #ffffff;
+	border : 1px solid #e0e0e0;
+}
+.ImageViewer .imagetext
+{
+	font : 16pt "NanumGothic";
+	color : #212121;
+}
+.ImageViewer .imagetext .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Div
+{
+	background : #ffffff;
+	border : 1px solid #e0e0e0;
+	font : 16pt "NanumGothic";
+	color : #212121;
+}
+.PopupDiv
+{
+	background : #ffffff;
+	border : 1px solid #e0e0e0;
+	font : 16pt "NanumGothic";
+	color : #212121;
+}
+.GroupBox .groupboxcontents
+{
+	background : #ffffff;
+	border : 1px solid #cccccc;
+}
+.GroupBox .groupboxcontents .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.GroupBox .groupboxtitle
+{
+	background : #ffffff;
+	border : 1px solid #cccccc;
+	border-radius : 20px;
+	color : #212121;
+}
+.GroupBox .groupboxtitle .nexacontentsbox
+{
+	text-align : left;
+	vertical-align : middle;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	font : 11pt "NanumGothic";
+	color : #202020;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit .nexainput
+{
+	text-align : left;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit .nexacontentsbox
+{
+	text-align : left;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton
+{
+	background : #1565c0;
+	font : 12pt "NanumGothic";
+	color : #ffffff;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.FileDownload
+{
+	background : #1565c0;
+	font : 12pt "NanumGothic";
+	color : #ffffff;
+}
+.FileDownload .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .head
+{
+	background : #f5f5f5;
+	border : 1px solid #d7d7d7;
+}
+.Grid .head .row .cell
+{
+	background : #f5f5f5;
+	border : 1px solid #e0e0e0;
+	color : #242424;
+}
+.Grid .head .row .cell .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .head .row .cell .cellbutton
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.Grid .head .row .cell .cellbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .summary .row .cell
+{
+	background : #f7d09d;
+	border : 1px solid #e5e5e5;
+	color : #000000;
+}
+.Grid .summary .row .cell .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body
+{
+	background : #ffffff;
+}
+.Grid .body .row .cell
+{
+	background : #ffffff;
+	border : 1px solid #f5f5f5;
+	color : #000000;
+}
+.Grid .body .row .cell .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body .row .cell.oddcell
+{
+	background : #f5f5f5;
+}
+.Grid .body .row .cell .subcell
+{
+	background : #ffffff;
+	border : 1px solid #f5f5f5;
+	color : #000000;
+}
+.Grid .body .row .cell .subcell .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body .row .cell .subcell.oddcell
+{
+	background : #f5f5f5;
+}
+.Grid .body .row .cell .cellbutton
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.Grid .body .row .cell .cellbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body .row .cell .cellexpandbutton
+{
+	font : 10pt "NanumGothic";
+	background : #f2f2f2;
+}
+.Grid .body .row .cell .cellexpandbutton .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body .row .cell .celledit
+{
+	border : 0px none, 0px none, 1px solid #c0c0c0, 0px none;
+}
+.Grid .body .row .cell .celledit .nexainput
+{
+	text-align : left;
+}
+.Grid .body .row .cell .celledit .nexacontentsbox
+{
+	text-align : left;
+}
+.Grid .body .row .cell .cellmaskedit
+{
+	border : 1px solid #999999;
+	color : #000000;
+	padding : 0px 3px 0px 3px;
+}
+.Grid .body .row .cell .cellmaskedit .nexainput
+{
+	text-align : right;
+}
+.Grid .body .row .cell .cellmaskedit .nexacontentsbox
+{
+	text-align : right;
+}
+.Grid .body .row .cell .celltextarea
+{
+	background : #ffffff;
+	border : 1px solid #bdbdbd;
+	border-radius : 2px;
+	padding : 3px 3px 3px 3px;
+}
+.Grid .body .row .cell .celltextarea .nexatextarea
+{
+	text-align : left;
+}
+.Grid .body .row .cell .celltextarea .nexacontentsbox
+{
+	text-align : left;
+}
+.Grid .body .row .cell .celltreeline
+{
+	border : 1px dotted #c7c7c7;
+}
+.Grid .body .selection
+{
+	border : 2px solid #1565c0;
+}
+.Plugin
+{
+	border : 1px solid #e0e0e0;
+}
+.PluginControl
+{
+	border : 1px solid #e0e0e0;
+}
+.WebBrowser
+{
+	border : 1px solid #e0e0e0;
+}
+.WebBrowserControl
+{
+	border : 1px solid #e0e0e0;
+}
+.Sketch
+{
+	background : #ffffff;
+	border : 1px solid #e0e0e0;
+}
+.ListView
+{
+	border : 1px solid #cccccc;
+	background : #ebecee;
+	color : #000000;
+}
+.ListView .body
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListView .detail
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #f9f9f9;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListViewBandControl.popupListViewdetail
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #f9f9f9;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListView .body .cell
+{
+	border : 1px solid #f5f5f5;
+}
+.ListView .detail .cell
+{
+	border : 1px solid #f5f5f5;
+}
+.ListViewBandControl.popupListViewdetail .cell
+{
+	border : 1px solid #f5f5f5;
+}
+.ListView .body .expandbar
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.ListView .body .expandbar .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.ListViewCellControl .celledit
+{
+	border : 0px none, 0px none, 1px solid #c0c0c0, 0px none;
+}
+.ListViewCellControl .celledit .nexainput
+{
+	text-align : left;
+}
+.ListViewCellControl .celledit .nexacontentsbox
+{
+	text-align : left;
+}
+.ListViewCellControl .cellmaskedit
+{
+	border : 1px solid #999999;
+	color : #000000;
+	padding : 0px 3px 0px 3px;
+}
+.ListViewCellControl .cellmaskedit .nexainput
+{
+	text-align : right;
+}
+.ListViewCellControl .cellmaskedit .nexacontentsbox
+{
+	text-align : right;
+}
+.ListViewCellControl .celltextarea
+{
+	background : #ffffff;
+	border : 1px solid #bdbdbd;
+	border-radius : 2px;
+	padding : 3px 3px 3px 3px;
+}
+.ListViewCellControl .celltextarea .nexatextarea
+{
+	text-align : left;
+}
+.ListViewCellControl .celltextarea .nexacontentsbox
+{
+	text-align : left;
+}
+.MainFrame[status=deactivate]
+{
+	border : 2px solid #64b5f6;
+}
+.TitleBarControl[status=deactivate]
+{
+	background : #64b5f6;
+}
+.TitleBarControl .minbutton[status=mouseover]
+{
+	background : #64b5f6;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .maxbutton[status=mouseover]
+{
+	background : #64b5f6;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .normalbutton[status=mouseover]
+{
+	background : #64b5f6;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .closebutton[status=mouseover]
+{
+	background : #de3641;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.Button[status=mouseover]
+{
+	border : 1px solid #9f9f9f;
+}
+.Edit[status=focused]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.Edit[status=mouseover]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.MaskEdit[status=focused]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.MaskEdit[status=mouseover]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.Edit[status=readonly]
+{
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.TextArea[status=mouseover]
+{
+	border : 1px solid #1565c0;
+}
+.TextAreaControl[status=mouseover]
+{
+	border : 1px solid #1565c0;
+}
+.TextArea[status=readonly]
+{
+	background : #fafafa;
+	border : 1px solid #c0c0c0;
+	color : #333333;
+}
+.TextAreaControl[status=readonly]
+{
+	background : #fafafa;
+	border : 1px solid #c0c0c0;
+	color : #333333;
+}
+.Spin[status=readonly]
+{
+	background : #fafafa;
+}
+.Spin[status=mouseover]
+{
+	border : 1px solid #136cc8;
+}
+.Spin .spinupbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.Spin .spindownbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.Tab .tabbuttonitemTab[status=focused]
+{
+	background : #ffffff;
+	border : 1px solid #cccccc, 1px solid #cccccc, 1px solid #ffffff, 1px solid #cccccc;
+	color : #212121;
+}
+.Tab .tabbuttonitemTab[status=mouseover]
+{
+	background : #e0effa;
+	border : 1px solid #4ca0e2;
+}
+.Tab .nextbuttonTab[status=mouseover]
+{
+	background : #cccccc;
+}
+.Tab .nextbuttonTab[status=focused]
+{
+	background : #cccccc;
+}
+.Tab .prevbuttonTab[status=mouseover]
+{
+	background : #cccccc;
+}
+.Tab .prevbuttonTab[status=focused]
+{
+	background : #cccccc;
+}
+.Calendar .dropbutton[status=mouseover]
+{
+	background : #cccccc;
+}
+.CalendarControl .dropbutton[status=mouseover]
+{
+	background : #cccccc;
+}
+.Calendar .calendarspinupbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.CalendarControl .calendarspinupbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.Calendar .calendarspindownbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.CalendarControl .calendarspindownbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.DatePickerControl .head .yearspin .spinedit[status=mouseover]
+{
+	font : 12pt "NanumGothic";
+	color : #333333;
+	padding : 0px 3px 0px 3px;
+}
+.DatePickerControl .head .yearspin .spinedit[status=mouseover] .nexainput
+{
+	text-align : right;
+}
+.DatePickerControl .head .yearspin .spinedit[status=mouseover] .nexacontentsbox
+{
+	text-align : right;
+}
+.DatePickerControl .head .monthspin .spinedit[status=mouseover]
+{
+	font : 12pt "NanumGothic";
+	color : #333333;
+	padding : 0px 3px 0px 3px;
+}
+.DatePickerControl .head .monthspin .spinedit[status=mouseover] .nexainput
+{
+	text-align : right;
+}
+.DatePickerControl .head .monthspin .spinedit[status=mouseover] .nexacontentsbox
+{
+	text-align : right;
+}
+.DatePickerControl .head .yearspin .spinupbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.DatePickerControl .head .monthspin .spinupbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.DatePickerControl .head .yearspin .spindownbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.DatePickerControl .head .monthspin .spindownbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+.DatePickerControl .body .dayitem[status=mouseover]
+{
+	background : #e0effa;
+	border : 1px solid #0b7ed7;
+	border-radius : 15px;
+}
+.DatePickerControl .body .dayitem[status=mouseover] .nexacontentsbox
+{
+	text-align : center;
+}
+.VScrollBarControl .incbutton[status=mouseover]
+{
+	background : #cccccc;
+}
+.VScrollBarControl .decbutton[status=mouseover]
+{
+	background : #cccccc;
+}
+.VScrollBarControl .trackbar[status=mouseover]
+{
+	background : #999999;
+}
+.HScrollBarControl .incbutton[status=mouseover]
+{
+	background : #cccccc;
+}
+.HScrollBarControl .decbutton[status=mouseover]
+{
+	background : #cccccc;
+}
+.HScrollBarControl .trackbar[status=mouseover]
+{
+	background : #999999;
+}
+.VScrollIndicatorControl .trackbar[status=mouseover]
+{
+	background : #999999;
+}
+.HScrollIndicatorControl .trackbar[status=mouseover]
+{
+	background : #999999;
+}
+.Combo[status=readonly]
+{
+	background : #fafafa;
+	border : 1px solid #c0c0c0;
+}
+.ComboControl[status=readonly]
+{
+	background : #fafafa;
+	border : 1px solid #c0c0c0;
+}
+.Combo[status=mouseover]
+{
+	border : 1px solid #136cc8;
+}
+.ComboControl[status=mouseover]
+{
+	border : 1px solid #136cc8;
+}
+.Combo .dropbutton[status=mouseover]
+{
+	background : #ebebeb;
+}
+.ComboControl .dropbutton[status=mouseover]
+{
+	background : #ebebeb;
+}
+.ListBox .listboxitem[status=mouseover]
+{
+	background : #ebebeb;
+}
+.ListBoxControl .listboxitem[status=mouseover]
+{
+	background : #ebebeb;
+}
+.Menu .menuitem[status=mouseover]
+{
+	background : #cce4f7;
+}
+.PopupMenu .popupmenuitem[status=mouseover]
+{
+	background : #ebebeb;
+}
+.PopupMenuControl .popupmenuitem[status=mouseover]
+{
+	background : #ebebeb;
+}
+.ImageViewer[status=mouseover]
+{
+	background : #ffffff;
+	border : 1px solid #90caf9;
+}
+.Div[status=mouseover]
+{
+	background : #ffffff;
+	border : 1px solid #90caf9;
+}
+.PopupDiv[status=mouseover]
+{
+	background : #ffffff;
+	border : 1px solid #90caf9;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton[status=mouseover]
+{
+	background : #1565c0;
+	font : 12pt "NanumGothic";
+	color : #ffffff;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton[status=mouseover] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.FileDownload[status=focused]
+{
+	background : #1565c0;
+	font : 12pt "NanumGothic";
+	color : #ffffff;
+}
+.FileDownload[status=focused] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.FileDownload[status=mouseover]
+{
+	box-shadow : 0px 0px 3px #1976d2;
+}
+.Grid .head .row .cell .cellbutton[status=focused]
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.Grid .head .row .cell .cellbutton[status=focused] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .head .row .cell .cellbutton[status=mouseover]
+{
+	border : 1px solid #9f9f9f;
+}
+.Grid .body .row .cell[status=mouseover]
+{
+	background : #ebebeb;
+}
+.Grid .body .row .cell .subcell[status=mouseover]
+{
+	background : #ebebeb;
+}
+.Grid .body .row .cell .cellbutton[status=focused]
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.Grid .body .row .cell .cellbutton[status=focused] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body .row .cell .cellbutton[status=mouseover]
+{
+	border : 1px solid #9f9f9f;
+}
+.Grid .body .row .cell .cellexpandbutton[status=focused]
+{
+	font : 10pt "NanumGothic";
+	background : #f2f2f2;
+}
+.Grid .body .row .cell .cellexpandbutton[status=focused] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body .row .cell .cellexpandbutton[status=mouseover]
+{
+	background : #4ca0e2;
+}
+.Grid .body .row .cell .celledit[status=focused]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.Grid .body .row .cell .cellmaskedit[status=focused]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.Grid .body .row .cell .celltextarea[status=focused]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.Grid .body .row .cell .celledit[status=readonly]
+{
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.Grid .body .row .cell .cellmaskedit[status=readonly]
+{
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.Grid .body .row .cell .celltextarea[status=readonly]
+{
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.Grid .body .row .cell .celledit[status=mouseover]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.Grid .body .row .cell .cellmaskedit[status=mouseover]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.Grid .body .row .cell .celltextarea[status=mouseover]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.ListView[status=readonly]
+{
+	border : 1px solid #cccccc;
+	background : #ebecee;
+	color : #000000;
+}
+.ListView[status=mouseover]
+{
+	border : 1px solid #cccccc;
+	background : #ebecee;
+	color : #000000;
+}
+.ListView[status=focused]
+{
+	border : 1px solid #cccccc;
+	background : #ebecee;
+	color : #000000;
+}
+.ListView .body[status=readonly]
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListView .detail[status=readonly]
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListViewBandControl.popupListViewdetail[status=readonly]
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListView .body[status=focused]
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListView .detail[status=focused]
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListViewBandControl.popupListViewdetail[status=focused]
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListView .body[status=mouseover]
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListView .detail[status=mouseover]
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListViewBandControl.popupListViewdetail[status=mouseover]
+{
+	border : 0px none, 0px none, 1px solid #dbdee2, 0px none;
+	background : #ffffff;
+	font : normal 10pt/normal "NanumGothic";
+}
+.ListView .body .cell[status=readonly]
+{
+	border : 1px solid #f5f5f5;
+}
+.ListView .detail .cell[status=readonly]
+{
+	border : 1px solid #f5f5f5;
+}
+.ListViewBandControl.popupListViewdetail .cell[status=readonly]
+{
+	border : 1px solid #f5f5f5;
+}
+.ListView .body .cell[status=focused]
+{
+	border : 1px solid #f5f5f5;
+}
+.ListView .detail .cell[status=focused]
+{
+	border : 1px solid #f5f5f5;
+}
+.ListViewBandControl.popupListViewdetail .cell[status=focused]
+{
+	border : 1px solid #f5f5f5;
+}
+.ListView .body .cell[status=mouseover]
+{
+	border : 1px solid #ebebeb;
+}
+.ListView .detail .cell[status=mouseover]
+{
+	border : 1px solid #ebebeb;
+}
+.ListViewBandControl.popupListViewdetail .cell[status=mouseover]
+{
+	border : 1px solid #ebebeb;
+}
+.ListView .body .expandbar[status=mouseover]
+{
+	border : 1px solid #9f9f9f;
+}
+.ListViewCellControl .cellbutton[status=focused]
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.ListViewCellControl .cellbutton[status=focused] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.ListViewCellControl .cellbutton[status=mouseover]
+{
+	border : 1px solid #9f9f9f;
+}
+.ListViewCellControl .celledit[status=focused]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.ListViewCellControl .cellmaskedit[status=focused]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.ListViewCellControl .celltextarea[status=focused]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.ListViewCellControl .celledit[status=readonly]
+{
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.ListViewCellControl .cellmaskedit[status=readonly]
+{
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.ListViewCellControl .celltextarea[status=readonly]
+{
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.ListViewCellControl .celledit[status=mouseover]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.ListViewCellControl .cellmaskedit[status=mouseover]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.ListViewCellControl .celltextarea[status=mouseover]
+{
+	border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+.TitleBarControl .minbutton[userstatus=pushed]
+{
+	background : #2196f3;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .maxbutton[userstatus=pushed]
+{
+	background : #2196f3;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .normalbutton[userstatus=pushed]
+{
+	background : #2196f3;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .closebutton[userstatus=pushed]
+{
+	background : #b13138;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.Button[userstatus=pushed]
+{
+	background : #bdbdbd;
+	border : 1px solid #666666;
+}
+.Edit[userstatus=nulltext]
+{
+	color : #9a9a9a;
+}
+.EditControl[userstatus=nulltext]
+{
+	color : #9a9a9a;
+}
+.MaskEdit[userstatus=nulltext]
+{
+	color : #9a9a9a;
+}
+.MaskEditControl[userstatus=nulltext]
+{
+	color : #9a9a9a;
+}
+.TextArea[userstatus=nulltext]
+{
+	color : #9a9a9a;
+}
+.TextAreaControl[userstatus=nulltext]
+{
+	color : #9a9a9a;
+}
+.Calendar[userstatus=invalidtext]
+{
+	color : #9a9a9a;
+}
+.CalendarControl[userstatus=invalidtext]
+{
+	color : #9a9a9a;
+}
+.MaskEdit[userstatus=invalidtext]
+{
+	color : #9a9a9a;
+}
+.MaskEditControl[userstatus=invalidtext]
+{
+	color : #9a9a9a;
+}
+.Spin[userstatus=invalidtext]
+{
+	color : #9a9a9a;
+}
+.SpinControl[userstatus=invalidtext]
+{
+	color : #9a9a9a;
+}
+.Spin .spinupbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.Spin .spindownbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.Tab .tabbuttonitemTab[userstatus=selected]
+{
+	background : #ffffff;
+	border : 1px solid #cccccc, 1px solid #cccccc, 1px solid #ffffff, 1px solid #cccccc;
+	color : #212121;
+}
+.Tab .nextbuttonTab[userstatus=pushed]
+{
+	background : #606060;
+	border : 1px solid #606060;
+}
+.Tab .prevbuttonTab[userstatus=pushed]
+{
+	background : #606060;
+	border : 1px solid #606060;
+}
+.Calendar .dropbutton[userstatus=pushed]
+{
+	background : #606060;
+}
+.CalendarControl .dropbutton[userstatus=pushed]
+{
+	background : #606060;
+}
+.Calendar .calendarspinupbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.CalendarControl .calendarspinupbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.Calendar .calendarspindownbutton[userstatus=pushed]
+{
+	background : #999999;
+}
+.CalendarControl .calendarspindownbutton[userstatus=pushed]
+{
+	background : #999999;
+}
+.DatePickerControl .head .prevbutton[userstatus=pushed]
+{
+	background : #64b5f6;
+}
+.DatePickerControl .head .nextbutton[userstatus=pushed]
+{
+	background : #64b5f6;
+}
+.DatePickerControl .head .yearspin .spinupbutton[userstatus=pushed]
+{
+	background : #999999;
+}
+.DatePickerControl .head .monthspin .spinupbutton[userstatus=pushed]
+{
+	background : #999999;
+}
+.DatePickerControl .head .yearspin .spindownbutton[userstatus=pushed]
+{
+	background : #999999;
+}
+.DatePickerControl .head .monthspin .spindownbutton[userstatus=pushed]
+{
+	background : #999999;
+}
+.DatePickerControl .body .dayitem[userstatus=selected]
+{
+	background : #0078d6;
+	border : 1px solid #0078d6;
+	border-radius : 15px;
+	font : bold 8pt "NanumGothic";
+	color : #ffffff;
+}
+.DatePickerControl .body .dayitem[userstatus=today]
+{
+	background : #e0effa;
+	border : 1px solid #0078d6;
+}
+.DatePickerControl .body .dayitem[userstatus=trailingday]
+{
+	color : #999999;
+}
+.VScrollBarControl .incbutton[userstatus=pushed]
+{
+	background : #606060;
+}
+.VScrollBarControl .decbutton[userstatus=pushed]
+{
+	background : #606060;
+}
+.VScrollBarControl .trackbar[userstatus=pushed]
+{
+	background : #606060;
+}
+.HScrollBarControl .incbutton[userstatus=pushed]
+{
+	background : #606060;
+}
+.HScrollBarControl .decbutton[userstatus=pushed]
+{
+	background : #606060;
+}
+.HScrollBarControl .trackbar[userstatus=pushed]
+{
+	background : #606060;
+}
+.VScrollIndicatorControl .trackbar[userstatus=pushed]
+{
+	background : #606060;
+}
+.HScrollIndicatorControl .trackbar[userstatus=pushed]
+{
+	background : #606060;
+}
+.ListBox .listboxitem[userstatus=selected]
+{
+	background : #c0c0c0;
+}
+.ListBoxControl .listboxitem[userstatus=selected]
+{
+	background : #c0c0c0;
+}
+.Menu .nextbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.Menu .prevbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.Menu .menuitem[userstatus=selected]
+{
+	background : #99c9ef;
+}
+.PopupMenu .prevbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.PopupMenuControl .prevbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.PopupMenu .nextbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.PopupMenuControl .nextbutton[userstatus=pushed]
+{
+	background : #666666;
+}
+.PopupMenu .popupmenuitem[userstatus=selected]
+{
+	background : #c0c0c0;
+}
+.PopupMenuControl .popupmenuitem[userstatus=selected]
+{
+	background : #c0c0c0;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton[userstatus=pushed]
+{
+	background : #64b5f6;
+}
+.FileDownload[userstatus=pushed]
+{
+	background : #64b5f6;
+}
+.Grid .head .row .cell[userstatus=selected]
+{
+	background : #f5f5f5;
+	border : 1px solid #e0e0e0;
+	color : #242424;
+}
+.Grid .head .row .cell[userstatus=selected] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .head .row .cell .cellbutton[userstatus=selected]
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.Grid .head .row .cell .cellbutton[userstatus=selected] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .head .row .cell .cellbutton[userstatus=pushed]
+{
+	background : #bdbdbd;
+	border : 1px solid #666666;
+}
+.Grid .body .row .cell[userstatus=selected]
+{
+	background : #cce4f7;
+}
+.Grid .body .row .cell .subcell[userstatus=selected]
+{
+	background : #cce4f7;
+}
+.Grid .body .row .cell .subcell[userstatus=blinked]
+{
+	background : #1565c0;
+	color : #ffffff;
+}
+.Grid .body .row .cell .cellbutton[userstatus=selected]
+{
+	background : #ffffff;
+	border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+.Grid .body .row .cell .cellbutton[userstatus=selected] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body .row .cell .cellbutton[userstatus=pushed]
+{
+	background : #bdbdbd;
+	border : 1px solid #666666;
+}
+.Grid .body .row .cell .cellexpandbutton[userstatus=selected]
+{
+	font : 10pt "NanumGothic";
+	background : #f2f2f2;
+}
+.Grid .body .row .cell .cellexpandbutton[userstatus=selected] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body .row .cell .cellexpandbutton[userstatus=pushed]
+{
+	background : #4ca0e2;
+}
+.Grid .body .row .cell[userstatus=blinked]
+{
+	background : #1565c0;
+	color : #ffffff;
+}
+.ListView .body[userstatus=selected]
+{
+	background : #cce4f7;
+}
+.ListView .detail[userstatus=selected]
+{
+	background : #c7dff1;
+}
+.ListViewBandControl.popupListViewdetail[userstatus=selected]
+{
+	background : #c7dff1;
+}
+.ListViewCellControl .cellbutton[userstatus=pushed]
+{
+	background : #bdbdbd;
+	border : 1px solid #666666;
+}
+.TitleBarControl .minbutton[status=disabled]
+{
+	background : #64b5f6;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .maxbutton[status=disabled]
+{
+	background : #64b5f6;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .normalbutton[status=disabled]
+{
+	background : #64b5f6;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.TitleBarControl .closebutton[status=disabled]
+{
+	background : #64b5f6;
+	border : 1px solid transparent;
+	border-radius : 50px;
+}
+.Static[status=disabled]
+{
+	color : #9a9a9a;
+}
+.StaticControl[status=disabled]
+{
+	color : #9a9a9a;
+}
+.Button[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+}
+.Edit[status=disabled]
+{
+	color : #9a9a9a;
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.MaskEdit[status=disabled]
+{
+	color : #9a9a9a;
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.TextArea[status=disabled]
+{
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+	color : #999999;
+}
+.TextAreaControl[status=disabled]
+{
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+	color : #999999;
+}
+.Spin[status=disabled]
+{
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+}
+.Spin .spinedit[status=disabled]
+{
+	color : #9a9a9a;
+}
+.Spin .spinupbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.Spin .spindownbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.Tab .tabbuttonitemTab[status=disabled]
+{
+	background : #f2f2f2;
+	border : 1px solid #e5e5e5;
+	color : #999999;
+}
+.Tab .nextbuttonTab[status=disabled]
+{
+	background : #f2f2f2;
+	border : 1px solid #e5e5e5;
+}
+.Tab .prevbuttonTab[status=disabled]
+{
+	background : #f2f2f2;
+	border : 1px solid #e5e5e5;
+}
+.CheckBox[status=disabled]
+{
+	color : #9a9a9a;
+}
+.CheckBoxControl[status=disabled]
+{
+	color : #9a9a9a;
+}
+.Radio .radioitem[status=disabled]
+{
+	color : #9c9c9c;
+}
+.Calendar .calendaredit[status=disabled]
+{
+	color : #9a9a9a;
+}
+.CalendarControl .calendaredit[status=disabled]
+{
+	color : #9a9a9a;
+}
+.Calendar .dropbutton[status=disabled]
+{
+	background : #f2f2f2;
+	border : 1px solid #e5e5e5;
+}
+.CalendarControl .dropbutton[status=disabled]
+{
+	background : #f2f2f2;
+	border : 1px solid #e5e5e5;
+}
+.Calendar .calendarspinupbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.CalendarControl .calendarspinupbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.Calendar .calendarspindownbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.CalendarControl .calendarspindownbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.DatePickerControl .head[status=disabled]
+{
+	background : #cccccc;
+}
+.DatePickerControl .head .nextbutton[status=disabled]
+{
+	background : #cccccc;
+}
+.DatePickerControl .head .prevbutton[status=disabled]
+{
+	background : #cccccc;
+}
+.DatePickerControl .head .yearspin[status=disabled]
+{
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+}
+.DatePickerControl .head .monthspin[status=disabled]
+{
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+}
+.DatePickerControl .head .yearspin .spinedit[status=disabled]
+{
+	color : #9a9a9a;
+}
+.DatePickerControl .head .monthspin .spinedit[status=disabled]
+{
+	color : #9a9a9a;
+}
+.DatePickerControl .body .dayitem[status=disabled]
+{
+	color : #cccccc;
+}
+.Combo[status=disabled]
+{
+	color : #919191;
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+}
+.ComboControl[status=disabled]
+{
+	color : #919191;
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+}
+.Combo .comboedit[status=disabled]
+{
+	color : #cccccc;
+}
+.ComboControl .comboedit[status=disabled]
+{
+	color : #cccccc;
+}
+.Combo .dropbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.ComboControl .dropbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.ListBox[status=disabled]
+{
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+	color : #9d9d9d;
+}
+.ListBoxControl[status=disabled]
+{
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+	color : #9d9d9d;
+}
+.ListBox .listboxitem[status=disabled]
+{
+	background : #f6f6f6;
+	color : #969696;
+}
+.ListBoxControl .listboxitem[status=disabled]
+{
+	background : #f6f6f6;
+	color : #969696;
+}
+.Menu .nextbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.Menu .prevbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.PopupMenu .prevbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.PopupMenuControl .prevbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.PopupMenu .nextbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.PopupMenuControl .nextbutton[status=disabled]
+{
+	background : #ebebeb;
+}
+.ProgressBar[status=disabled]
+{
+	background : #cacaca;
+}
+.ProgressBarControl[status=disabled]
+{
+	background : #cacaca;
+}
+.ProgressBar .progressbaritem[status=disabled]
+{
+	background : #b7b7b7;
+}
+.ProgressBarControl .progressbaritem[status=disabled]
+{
+	background : #b7b7b7;
+}
+.ImageViewer[status=disabled]
+{
+	background : #f2f2f2;
+	border : 1px solid #e0e0e0;
+}
+.ImageViewer .imagetext[status=disabled]
+{
+	color : #999999;
+}
+.Div[status=disabled]
+{
+	background : #f2f2f2;
+	border : 1px solid #e0e0e0;
+	color : #999999;
+}
+.PopupDiv[status=disabled]
+{
+	background : #f2f2f2;
+	border : 1px solid #e0e0e0;
+	color : #999999;
+}
+.GroupBox .groupboxcontents[status=disabled]
+{
+	border : 1px solid #f2f2f2;
+}
+.GroupBox .groupboxtitle[status=disabled]
+{
+	color : #9f9f9f;
+	border : 1px solid #f2f2f2;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit[status=disabled]
+{
+	background : #ebebeb;
+	border : 1px solid #cccccc;
+	color : #959595;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton[status=disabled]
+{
+	background : #eeeeee;
+	border : 1px solid #cccccc;
+	color : #939393;
+}
+.FileDownload[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+}
+.Grid .head .row .cell .cellbutton[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+}
+.Grid .body .row .cell .subcell[status=disabled]
+{
+	background : #ffffff;
+	border : 1px solid #f5f5f5;
+	color : #000000;
+}
+.Grid .body .row .cell .subcell[status=disabled] .nexacontentsbox
+{
+	text-align : center;
+	vertical-align : middle;
+}
+.Grid .body .row .cell .subcell.oddcell[status=disabled]
+{
+	background : #f5f5f5;
+}
+.Grid .body .row .cell .cellbutton[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+}
+.Grid .body .row .cell .cellexpandbutton[status=disabled]
+{
+	opacity : 0.40;
+}
+.Grid .body .row .cell .celledit[status=disabled]
+{
+	color : #9a9a9a;
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.Grid .body .row .cell .cellmaskedit[status=disabled]
+{
+	color : #9a9a9a;
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.Grid .body .row .cell .celltextarea[status=disabled]
+{
+	color : #9a9a9a;
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.Sketch[status=disabled]
+{
+	background : #f2f2f2;
+	color : #9a9a9a;
+}
+.ListView[status=disabled]
+{
+	background : #666666;
+}
+.ListView .body[status=disabled]
+{
+	color : #999999;
+}
+.ListView .detail[status=disabled]
+{
+	color : #999999;
+}
+.ListViewBandControl.popupListViewdetail[status=disabled]
+{
+	color : #999999;
+}
+.ListView .body .cell[status=disabled]
+{
+	border : 1px solid #f5f5f5;
+}
+.ListView .detail .cell[status=disabled]
+{
+	border : 1px solid #f5f5f5;
+}
+.ListViewBandControl.popupListViewdetail .cell[status=disabled]
+{
+	border : 1px solid #f5f5f5;
+}
+.ListView .body .expandbar[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+	opacity : 0.50;
+}
+.ListViewCellControl .cellbutton[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+}
+.ListViewCellControl .celledit[status=disabled]
+{
+	color : #9a9a9a;
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.ListViewCellControl .cellmaskedit[status=disabled]
+{
+	color : #9a9a9a;
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.ListViewCellControl .celltextarea[status=disabled]
+{
+	color : #9a9a9a;
+	border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+.CheckBox[status=disabled][userstatus=selected]
+{
+	color : #9a9a9a;
+}
+.CheckBoxControl[status=disabled][userstatus=selected]
+{
+	color : #9a9a9a;
+}
+.Radio .radioitem[status=disabled][userstatus=selected]
+{
+	color : #9c9c9c;
+}
+.ListBox .listboxitem[status=disabled][userstatus=selected]
+{
+	background : #f6f6f6;
+}
+.ListBoxControl .listboxitem[status=disabled][userstatus=selected]
+{
+	background : #f6f6f6;
+}

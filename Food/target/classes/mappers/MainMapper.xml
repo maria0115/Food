@@ -34,4 +34,20 @@ where rownum<=4)c inner join product p
 on c.S_BRAND_NAME=p.S_BRAND_NAME
 ]]>
 </select>
+
+<select id="nexalist" resultType="board">
+		select boardType,b_no,userid,title,b_content,b_date from board where boardtype=2 or boardtype=3 or boardtype=4 or boardtype=5 order by b_no
+</select>
+
+<select id="nexalistsearch" resultType="board" parameterType="hashMap">
+		select boardType,b_no,userid,title,b_content,b_date 
+		from board 
+		where (boardtype=2 or boardtype=3 or boardtype=4 or boardtype=5) and ${searchType} LIKE '%'||#{keyword}||'%'
+		order by b_no
+</select>
+<delete id="nexadel" parameterType="String">
+delete
+from board
+where b_no=#{value}
+</delete>
 </mapper>
