@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 import com.food.domain.ReservationVO;
@@ -44,6 +45,33 @@ public class MainDAOImpl implements MainDAO{
 	public List<ProductVO> randomlist(String category) {
 
 		return mybatis.selectList("mainDao.randomlist",category);
+	}
+
+	@Override
+	public List<BoardVO> nexalist() {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("mainDao.nexalist");
+	}
+
+	@Override
+	public List<BoardVO> nexalistsearch(String searchType,String keyword) {
+		// TODO Auto-generated method stub
+		HashMap map = new HashMap();
+
+		map.put("searchType", searchType);
+		map.put("keyword", keyword);
+		
+		System.out.println(map.get("keyword"));
+		
+
+		
+		return mybatis.selectList("mainDao.nexalistsearch",map);
+	}
+
+	@Override
+	public void nexadel(String b_no) {
+		mybatis.delete("mainDao.nexadel",b_no);
+		
 	}
 
 }

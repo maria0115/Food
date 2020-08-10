@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.dao.MainDAO;
+import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 import com.food.domain.ReservationVO;
@@ -38,6 +39,24 @@ public class MainServiceImpl implements MainService{
 	public List<ProductVO> randomlist(String category) {
 		
 		return dao.randomlist(category);
+	}
+	
+	@Override
+	public List<BoardVO> nexalist() {
+		
+		return dao.nexalist();
+	}
+
+	@Override
+	public List<BoardVO> nexalistsearch(String searchType,String keyword) {
+		// TODO Auto-generated method stub
+		return dao.nexalistsearch(searchType,keyword);
+	}
+
+	@Override
+	public void nexadel(String b_no) {
+		dao.nexadel(b_no);
+		
 	}
 
 }
