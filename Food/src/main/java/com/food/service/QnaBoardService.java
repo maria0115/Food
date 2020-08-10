@@ -22,6 +22,8 @@ public interface QnaBoardService {
 	public void modifyQna(QnaBoardVO vo);
 
 	public void deleteQna(QnaBoardVO vo);
+
+	public int searchCount(String searchType, String keyword);
 	
 	
 }

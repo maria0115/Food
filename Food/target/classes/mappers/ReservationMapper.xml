@@ -18,7 +18,7 @@ select #{r_menu_count} as r_menu_count,#{r_menu} as r_menu,#{m_id},#{r_note} fro
 </insert>
 
 <!-- 페이징 처리 후 게시글 조회 -->
-<select id="selectBoard" resultType="reservation">
+<select id="selectBoard" parameterType="hashmap" resultType="reservation">
 	SELECT * 
 		FROM (
 			SELECT ROWNUM RN, A.* 
@@ -30,10 +30,20 @@ select #{r_menu_count} as r_menu_count,#{r_menu} as r_menu,#{m_id},#{r_note} fro
         ).GETSTRINGVAL()
        , 2) r_menu
   FROM reservation WHERE m_id=#{m_id}
+  <if test='searchType!=null &amp;&amp; keyword!=null'>AND ${searchType} like '%'||#{keyword}||'%'</if>
  GROUP BY r_number,m_id,R_DATE,r_visit_date,r_store_name,R_PEOPLE_COUNT,R_NOTE,r_date_hour,r_date_minute
  order by r_visit_date desc ) A
 				)
 	WHERE RN BETWEEN #{start} AND #{end}
+</select>
+ 
+ <!-- 검색된 게시글 숫자 -->
+<select id="searchCount" parameterType="hashmap" resultType="int">
+	SELECT COUNT(*) FROM reservation
+	<where>
+	m_id=#{m_id}
+		<if test='searchType!=null &amp;&amp; keyword!=null'>AND ${searchType} like '%'||#{keyword}||'%'</if>
+	</where>
 </select>
  
  <select id="detailReserv" parameterType="reservation" resultType="reservation">

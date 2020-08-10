@@ -124,41 +124,89 @@
                             
 
                             
-    <div style="display: block; text-align: center;">		
-		<c:if test="${paging.startPage != 1 }">
-			<a href="/Food/qnaboardList?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
-		</c:if>
-		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
-			<c:choose>
-				<c:when test="${p == paging.nowPage }">
-					<b>${p }</b>
-				</c:when>
-				<c:when test="${p != paging.nowPage }">
-					<a href="/Food/qnaboardList?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
-				</c:when>
-			</c:choose>
-		</c:forEach>
-		<c:if test="${paging.endPage != paging.lastPage}">
-			<a href="/Food/qnaboardList?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
-		</c:if>
-	</div>
-                            <form action="#" method="post" class="form-inline" style="width: 500px;">
-								<select class="custom-select widget-title" id="selectBox" onchange="fnGetCtgSub(this.value);" style="width: 33%;">
-									<!-- <option selected>한식</option> -->
-									<option value="all"></option>
-									<option value="한식">한식</option>
-									<option value="중식">중식</option>
-									<option value="양식">양식</option>
-									<option value="일식">일식</option>
-									<option value="분식">분식</option>
-									<option value="동남아">동남아</option>
-								</select> 
-								<input type="text" name="searchWard" id="listSearch" placeholder="매장명을 입력해주세요" style="width: 40%; height: 38px;">
-								<input type="button" name="searchButton" id="searchButton" value="검색"> 
-							</form>
+<!--     <div style="display: block; text-align: center;">		 -->
+<%-- 		<c:if test="${paging.startPage != 1 }"> --%>
+<%-- 			<a href="/Food/qnaboardList?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a> --%>
+<%-- 		</c:if> --%>
+<%-- 		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p"> --%>
+<%-- 			<c:choose> --%>
+<%-- 				<c:when test="${p == paging.nowPage }"> --%>
+<%-- 					<b>${p }</b> --%>
+<%-- 				</c:when> --%>
+<%-- 				<c:when test="${p != paging.nowPage }"> --%>
+<%-- 					<a href="/Food/qnaboardList?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a> --%>
+<%-- 				</c:when> --%>
+<%-- 			</c:choose> --%>
+<%-- 		</c:forEach> --%>
+<%-- 		<c:if test="${paging.endPage != paging.lastPage}"> --%>
+<%-- 			<a href="/Food/qnaboardList?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a> --%>
+<%-- 		</c:if> --%>
+<!-- 	</div> -->
+	
+<div class='pagediv'>
+<ul class="pagination">
+	<li class="page-item"><a class="page-link"
+			href="/Food/qnaboardList?nowPage=${paging.startPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+		style="font-size: 20px;">Start</a></li>
+	<c:if test="${paging.nowPage != 1 }">
+		<li class="page-item"><a class="page-link"
+			href="/Food/qnaboardList?nowPage=${paging.nowPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+			style="font-size: 20px;">Previous</a></li>
+	</c:if>
+	<c:forEach begin="${paging.startPage }"
+		end="${paging.endPage }" var="p">
+		<c:choose>
+			<c:when test="${p == paging.nowPage }">
+				<li class="page-item"><a class="page-link" href="#"
+					style="font-size: 30px;">${p }</a></li>
+			</c:when>
+			<c:when test="${p != paging.nowPage }">
+				<li class="page-item"><a class="page-link"
+					href="/Food/qnaboardList?nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+					style="font-size: 20px;">${p }</a></li>
+			</c:when>
+		</c:choose>
+	</c:forEach>
+	<c:if test="${paging.nowPage != paging.lastPage}">
+		<li class="page-item"><a class="page-link"
+			href="/Food/qnaboardList?nowPage=${paging.nowPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+			style="font-size: 20px;">Next</a></li>
+	</c:if>
+	<li class="page-item"><a class="page-link"
+		href="/Food/qnaboardList?nowPage=${paging.lastPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+		style="font-size: 20px;">End</a></li>
+
+</ul>
+</div>
+	
                             
-                            
-                        </div>
+</div>
+                        
+                        
+        <form action="qnaboardList">
+		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
+		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }"> 
+		<input type="hidden" id="searchClick" name="searchClick" value="Y">
+		<table style=" margin-left: 40%;">
+			<tr>
+				<td>
+					<select class="form-control" id="searchType" name="searchType">
+						<option value="title">제목</option>
+						<option value="userId">작성자</option>
+						<option value="b_content">내용</option>
+					</select>
+				</td>
+				<td>
+				<input class="form-control" type="text" name="keyword" id="keyword">
+				</td>
+				<td>
+				<button class="btn btn-default" id="mealsearchBtn" type="submit">검색</button>
+				</td>
+			</tr>
+		</table>
+		</form>
+                        
+                        
                     </div>
                 </div>
             </div>

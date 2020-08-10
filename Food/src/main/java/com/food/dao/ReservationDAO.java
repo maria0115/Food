@@ -16,9 +16,11 @@ public interface ReservationDAO {
 
 	public int countReserv(PagingVO vo);
 
-	public List<ReservationVO> selectBoard(PagingVO vo);
+	public List<ReservationVO> selectBoard(PagingVO vo,String searchType,String keyword);
 
 	public void deleteReservation(ReservationVO vo);
 
 	public List<ReservationVO> selectReservation(PagingVO vo);
+
+	public int searchCount(String m_id,String searchType, String keyword);
 }

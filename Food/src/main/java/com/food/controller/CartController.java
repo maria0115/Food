@@ -37,9 +37,10 @@ public class CartController {
 	
 	// 찜 목록 보기
 	@RequestMapping("selectCart.do")
-	public ModelAndView selectCart(WishlistVO vo,@RequestParam("m_id") String m_id) {
+	public ModelAndView selectCart(WishlistVO vo,HttpSession session) {
 		System.out.println("selectCart controller");
-		System.out.println("m_id :"+m_id);
+//		System.out.println("m_id :"+m_id);
+		String m_id = (String) session.getAttribute("user_id");
 		vo.setM_id(m_id);
 		List<WishlistVO> list = CartService.selectCart(vo);
 		

@@ -1,5 +1,6 @@
 package com.food.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -59,6 +60,16 @@ public class QnaBoardDAOImpl implements QnaBoardDAO {
 	public void deleteQna(QnaBoardVO vo) {
 		System.out.println("deleteQna 다오");
 		mybatis.delete("qnaboardDAO.qnaDelete",vo);
+	}
+
+	@Override
+	public int searchCount(String searchType, String keyword) {
+		System.out.println("searchCount 다오");
+		HashMap map = new HashMap();
+		map.put("searchType", searchType);
+		map.put("keyword",keyword);
+		
+		return mybatis.selectOne("qnaboardDAO.searchCount",map);
 	}
 	
 	

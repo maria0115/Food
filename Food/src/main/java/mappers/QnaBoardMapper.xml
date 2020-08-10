@@ -31,6 +31,15 @@
 	WHERE RN BETWEEN #{start} AND #{end}
 </select>
 
+<!-- 검색된 게시글 숫자 -->
+<select id="searchCount" parameterType="hashmap" resultType="int">
+	SELECT COUNT(*) FROM board
+	<where>
+	boardType=4
+		<if test='searchType!=null &amp;&amp; keyword!=null'>AND ${searchType} like '%'||#{keyword}||'%'</if>
+	</where>
+</select>
+
 <select id="detailBoard" parameterType="qnaboard" resultType="qnaboard">
 	SELECT * FROM QNABOARD WHERE q_no = #{q_no}
 </select>

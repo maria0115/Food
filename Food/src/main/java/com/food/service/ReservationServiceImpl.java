@@ -41,8 +41,8 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
-	public List<ReservationVO> selectBoard(PagingVO vo) {
-		return reservdao.selectBoard(vo);
+	public List<ReservationVO> selectBoard(PagingVO vo,String searchType,String keyword) {
+		return reservdao.selectBoard(vo,searchType,keyword);
 	}
 
 	@Override
@@ -55,6 +55,12 @@ public class ReservationServiceImpl implements ReservationService {
 	public List<ReservationVO> selectReservation(PagingVO vo){
 		 
 		return reservdao.selectReservation(vo); 
+	}
+
+	@Override
+	public int searchCount(String m_id,String searchType, String keyword) {
+		
+		return reservdao.searchCount(m_id,searchType,keyword);
 	}
 
 

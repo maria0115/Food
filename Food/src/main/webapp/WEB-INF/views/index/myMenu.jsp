@@ -200,28 +200,90 @@ $('.portfolio-thumbnail:last').css('background-image','url(/Food/resources/store
 				</c:forEach>
             </div>
             
-    <div style="display: block; text-align: center;">		
-		<c:if test="${paging.startPage != 1 }">
-			<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
-		</c:if>
-		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
-			<c:choose>
-				<c:when test="${p == paging.nowPage }">
-					<b>${p }</b>
-				</c:when>
-				<c:when test="${p != paging.nowPage }">
-					<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
-				</c:when>
-			</c:choose>
-		</c:forEach>
-		<c:if test="${paging.endPage != paging.lastPage}">
-			<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
-		</c:if>
-	</div>
+<!--     <div style="display: block; text-align: center;">		 -->
+<%-- 		<c:if test="${paging.startPage != 1 }"> --%>
+<%-- 			<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a> --%>
+<%-- 		</c:if> --%>
+<%-- 		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p"> --%>
+<%-- 			<c:choose> --%>
+<%-- 				<c:when test="${p == paging.nowPage }"> --%>
+<%-- 					<b>${p }</b> --%>
+<%-- 				</c:when> --%>
+<%-- 				<c:when test="${p != paging.nowPage }"> --%>
+<%-- 					<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a> --%>
+<%-- 				</c:when> --%>
+<%-- 			</c:choose> --%>
+<%-- 		</c:forEach> --%>
+<%-- 		<c:if test="${paging.endPage != paging.lastPage}"> --%>
+<%-- 			<a href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a> --%>
+<%-- 		</c:if> --%>
+<!-- 	</div> -->
+	
+	
+<div class='pagediv'>
+<ul class="pagination">
+	<li class="page-item"><a class="page-link"
+			href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.startPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+		style="font-size: 20px;">Start</a></li>
+	<c:if test="${paging.nowPage != 1 }">
+		<li class="page-item"><a class="page-link"
+			href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.nowPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+			style="font-size: 20px;">Previous</a></li>
+	</c:if>
+	<c:forEach begin="${paging.startPage }"
+		end="${paging.endPage }" var="p">
+		<c:choose>
+			<c:when test="${p == paging.nowPage }">
+				<li class="page-item"><a class="page-link" href="#"
+					style="font-size: 30px;">${p }</a></li>
+			</c:when>
+			<c:when test="${p != paging.nowPage }">
+				<li class="page-item"><a class="page-link"
+					href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+					style="font-size: 20px;">${p }</a></li>
+			</c:when>
+		</c:choose>
+	</c:forEach>
+	<c:if test="${paging.nowPage != paging.lastPage}">
+		<li class="page-item"><a class="page-link"
+			href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.nowPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+			style="font-size: 20px;">Next</a></li>
+	</c:if>
+	<li class="page-item"><a class="page-link"
+		href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.lastPage }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
+		style="font-size: 20px;">End</a></li>
+
+</ul>
+</div>
+
+
         </div>
         
         
-        
+
+
+        <form action="myMenu.do">
+		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
+		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }"> 
+		<input type="hidden" id="searchClick" name="searchClick" value="Y">
+		<table style=" margin-left: 40%;">
+			<tr>
+				<td>
+					<select class="form-control" id="searchType" name="searchType">
+						<option value="r_store_name">매장</option>
+						<option value="r_menu">메뉴</option>
+						<option value="r_visit_date">날짜</option>
+					</select>
+				</td>
+				<td>
+				<input class="form-control" type="text" name="keyword" id="keyword">
+				</td>
+				<td>
+				<button class="btn btn-default" id="mealsearchBtn" type="submit">검색</button>
+				</td>
+			</tr>
+		</table>
+		</form>
         
         
     </section>

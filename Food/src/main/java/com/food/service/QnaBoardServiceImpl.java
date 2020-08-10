@@ -54,6 +54,12 @@ public class QnaBoardServiceImpl implements QnaBoardService{
 		System.out.println("deleteQna 서비스");
 		qnaboarddao.deleteQna(vo);
 	}
+
+	@Override
+	public int searchCount(String searchType, String keyword) {
+		System.out.println("searchCount 서비스");
+		return qnaboarddao.searchCount(searchType, keyword);
+	}
 	
 	
 	

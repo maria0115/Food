@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +28,8 @@ import com.food.service.boardService;
 
 @Controller
 public class ReservationController {
-
+	int curCount=0;
+	int allCount;
 	@Autowired
 	private ReservationService ReservationService;
 	
@@ -120,14 +122,62 @@ public class ReservationController {
 	public String pagingReservation(PagingVO vo,ReservationVO rvo, Model model
 			, @RequestParam(value="nowPage", required=false)String nowPage
 			, @RequestParam(value="cntPerPage", required=false)String cntPerPage
-			, HttpServletRequest httpServletRequest) {
+			, HttpServletRequest httpServletRequest
+			, String searchType, String keyword, String searchClick
+			, HttpSession session) {
+		
+		String search = "";//검색을 했는지 여부를 확인할 변수 선언
+		int total;
+		
+		String m_id = (String) session.getAttribute("user_id");
+		System.out.println("session m_id :"+m_id);
 		System.out.println("pagingReservation 컨트롤러");
-		System.out.println("m_id1"+vo.getM_id());
-		String m_id = httpServletRequest.getParameter("m_id");
+		System.out.println("m_id1 :"+vo.getM_id());
+//		String m_id = httpServletRequest.getParameter("m_id");
 		System.out.println("m_id : " + m_id);
 		vo.setM_id(m_id);
-		int total = ReservationService.countReserv(vo);
-		System.out.println("페이지수 :"+total);
+		
+		if(searchType!=null) {
+			if(searchType.equals("r_store_name")==true) {
+				searchType="r_store_name";
+			}else if(searchType.equals("r_menu")==true) {
+				searchType="r_menu";
+			}else if(searchType.equals("r_visit_date")==true) {
+				searchType="r_visit_date";
+			}
+		}
+		
+		search = searchType; //검색할때 선택한 검색타입을 받아온다
+		// 검색을 안했을 경우
+		allCount = ReservationService.countReserv(vo);
+		System.out.println("검색 안했을때 : "+allCount);
+		
+		if(search==null || search.equals("")) {//검색을 하지 않았을 경우
+			System.out.println("검색 안하면 들어오는 if");
+			total=allCount; //total에 데이터의 총 갯수를 저장
+			curCount=allCount; //검색을 하지 않았기 때문에 현재 검색한 데이터의 갯수를 저장하는 curCount 변수에 데이터의 총 갯수를 저장
+			searchType =null;  //mapper에서 오류를 방지하기위헤 searchType에 null값을 저장
+			keyword=null;	   //mapper에서 오류를 방지하기위헤 keyword에 null값을 저장
+		}else{//검색을 했을 경우
+			System.out.println("검색 하면 들어오는 else");
+			//검색한 데이터의 갯수를 curCount에 저장
+			System.out.println(searchType);
+			System.out.println(keyword);
+			curCount =ReservationService.searchCount(m_id,searchType,keyword);
+			System.out.println("검색 했을때 : "+curCount);
+			//검색버튼을 클릭했을 경우 페이지를 1페이지부터 보여준다
+			if(searchClick.equals("Y")==true) {
+				nowPage="1";
+			}
+			
+			//총 갯수에 현재 검색한 데이터의 갯수를 저장
+			total=curCount;
+		}
+		
+		
+		
+		
+
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
 			cntPerPage = "8";
@@ -140,7 +190,12 @@ public class ReservationController {
 		vo.setM_id(m_id);
 		System.out.println("vo m_id"+vo.getM_id());
 		model.addAttribute("paging", vo);
-		model.addAttribute("list", ReservationService.selectBoard(vo));
+		model.addAttribute("list", ReservationService.selectBoard(vo,searchType,keyword));
+		//모델에 "searchType" 검색타입 추가
+		model.addAttribute("searchType", searchType);
+		//모델에 "keyword" 검색키워드 추가
+		model.addAttribute("keyword", keyword);
+		
 		return "index/myMenu";
 	}
 	
