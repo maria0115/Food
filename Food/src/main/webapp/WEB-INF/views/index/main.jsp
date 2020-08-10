@@ -254,8 +254,8 @@ a.btn-layerClose:hover {
 															            <div class="pop-conts">
 															                <!--content //-->
 															                <p class="ctxt mb20">
-															                <a href="singup.do"><button class="btn btn-primary" style="height: 170px; width: 150px; margin-right: 40px;font-weight: bolder; font-size: x-large;">일반 회원</button></a>
-															                <a href="singup.do"><button class="btn btn-danger" style="height: 170px; width: 150px;font-weight: bolder; font-size: x-large">기업 회원</button></a>
+															             	<a href="/Food/singup.do"><button class="btn btn-primary" style="height: 170px; width: 150px; margin-right: 40px;font-weight: bolder; font-size: x-large;">일반 회원</button></a>
+															                <a href="/Food/singup2.do"><button class="btn btn-danger" style="height: 170px; width: 150px;font-weight: bolder; font-size: x-large">기업 회원</button></a>
 															                </p>
 															
 															                <div class="btn-r">

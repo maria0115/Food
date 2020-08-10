@@ -4,7 +4,10 @@
 <mapper namespace="StoreDAO">
 
 
+<insert id="shopmember" parameterType="store">
+insert into store(s_category,s_midpart,s_brand_name,s_info,s_tel,s_address) values(#{s_category},#{s_midpart},#{s_brand_name},#{s_info},#{s_tel},#{s_address})
 
+</insert>
 	
 	<select id="getStore"  parameterType="store" resultType="store">
 		select * FROM store 
