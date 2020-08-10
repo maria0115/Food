@@ -121,6 +121,12 @@ public class StoreServiceImpl implements StoreService{
 		return storeDAO.statesearchCount(s_category,keyword);
 	}
 
+	@Override
+	public int stateY(StoreListVO vo) {
+		
+		return storeDAO.stateY(vo);
+	}
+
 	
 
 

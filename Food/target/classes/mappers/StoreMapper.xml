@@ -278,6 +278,10 @@ WHERE EXP.SEQ >= ( (TO_NUMBER(#{nowPage})-1)* TO_NUMBER(5))+1
 	</where>
 	</select>
 
+	<!-- 승인대기매장 승인처리 -->
+	<update id="stateY" parameterType="store">
+	update store set state = 'Y' where s_brand_name = #{s_brand_name}
+	</update>
 
 
 	

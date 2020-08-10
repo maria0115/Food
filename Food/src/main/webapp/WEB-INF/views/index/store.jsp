@@ -96,7 +96,8 @@
                         </div>
                         <!-- Search by Terms -->
                         <div class="search_by_terms" >
-							<form action="#" method="post" class="form-inline" style="width: 500px; margin-right: -80px;">
+							<form action="#" method="post" class="form-inline" onSubmit="return false;" 
+								style="width: 500px; margin-right: -80px;">
 								<select class="custom-select widget-title" id="selectBox"
 									onchange="fnGetCtgSub(this.value);" style="
 									position: relative;
@@ -124,7 +125,8 @@
 									<option value="동남아">동남아</option>
 								</select> 
 								<input type="text" name="searchWard" id="listSearch"
-									placeholder="매장명을 입력해주세요" 
+									placeholder="매장명을 입력해주세요"
+									
 									style="width: 40%; height: 38px; 
 									    height: 31px;
 									    padding: 0 5px;
@@ -135,7 +137,8 @@
 									    -moz-box-sizing: border-box;
 									    box-sizing: border-box;
 									    margin-right: 5px;	">
-								<input type="button" name="searchButton" id="searchButton" value="검색" 
+								<input type="button" name="searchButton" id="searchButton"  value="검색" 
+								
 								style="
 									display: inline-block;
 								    min-width: 100px;
@@ -146,6 +149,7 @@
 								    background: #3e3d3c;
 								    text-align: center;
 								"> 
+								
 							</form>
 						</div>
                     </div>

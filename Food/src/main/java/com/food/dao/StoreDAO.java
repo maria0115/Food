@@ -44,4 +44,6 @@ public interface StoreDAO {
 	public int statesearchCount(String s_category, String keyword);
 
 	public List<BoardVO> starAvg();
+	
+	public int stateY(StoreListVO vo);
 }

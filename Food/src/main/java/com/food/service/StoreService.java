@@ -50,6 +50,7 @@ public interface StoreService {
 	//리뷰평점순
 	List<BoardVO> starAvg();
 	
-	
+	//승인대기 매장 승인처리 
+	int stateY(StoreListVO vo);
 
 }

@@ -42,6 +42,7 @@ var defaultOpts = {
 $(function() {
 	category="all";
 	getWriterData(category);
+	//셀렉트박스 바꿨을때
 	$('#selectBox').change(changeselectBox=function(){
 		category = $(this).val();
 		
@@ -49,27 +50,28 @@ $(function() {
 	});
 	
 	
+
+	//검색버튼에서 엔터키 눌렸을때
+	$("#listSearch").keypress(function(e) {
+		if (e.which == 13) {
+			getWriterData(category);
+		}
+	});
+	// 검색버튼 클릭했을때
 	$("#searchButton").on("click", function(e) {
-						
-//		searchWard = searchButton();
 		getWriterData(category);
 		
 	})
 	
-	/*// 눌렀을때 실행되는거
-	$("#storeListPaging").on("click", function(e) {
-
-		
-	})
-*/
 	
-
-	// getWriterData();
-//	$('#listSearch').on('keyup', getWriterData);
-	// $('#pagination-demo').on('click', getWriterDataInPaging);
 	$(document).on("click", ".btn-primary", updateBtnEvent);
 	$(document).on("click", ".btn-warning", deleteBtnEvent);
 });
+//셀렉박스클릭시 텍스트박스 초기화
+$("#selectBox").click(function(){
+	$("#listSearch").val("");
+});
+
 
 function updateBtnEvent() {
 	console.log($(this).parent().prev().prev().text());
@@ -89,7 +91,7 @@ function getWriterDataInPaging(category) {
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {
-			"searchWord" : $('#listSearch').val(),
+			"searchWord" : $('#listSearch').val(), // 검색텍스트박스 value 값가져와서 넘기기
 			"s_category" : category,
 			"s_brand_name" : $('#title').val(),
 			"s_address" : $('#addrs').val(),
@@ -110,15 +112,17 @@ function getWriterDataInPaging(category) {
 	});
 }
 
+
 function getWriterData(category) {
 
+	
 	$.ajax({
 		type : 'post',
 		async : true,
 		url : 'storelist.do',
 		contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
 		data : {
-			"searchWord" : $('#listSearch').val(),
+			"searchWord" : $('#listSearch').val(), // 검색텍스트박스 value 값가져와서 넘기기
 			"s_category" : category,
 			"s_brand_name" : $('#title').val(),
 			"s_address" : $('#addrs').val(),
@@ -128,10 +132,10 @@ function getWriterData(category) {
 
 		success : function(resultData) {
 
+			console.log(resultData);
 			drawWriterTable(resultData);
 			var totalPages = resultData.pagination.pageCnt;
-			/*var currentPage = $('#pagination-demo').twbsPagination(
-					'getCurrentPage');*/
+			
 
 			var currentPage =1; 
 			$('#pagination-demo').twbsPagination('destroy');
@@ -151,6 +155,7 @@ function getWriterData(category) {
 	});
 }
 
+// 데이터받아서 새로그려주기
 function drawWriterTable(data) {
 	console.log("그리기" + data);
 	
@@ -185,7 +190,7 @@ function drawWriterTable(data) {
 	div1End = '</div>';
 	
 	for (var i = 0; i < data.listVO2size; i++) {
-//		if(listVO2[i].check==1){
+
 		var listContent = div1 + div2 + div3 + imgA+ data.listVO2[i].s_brand_name +imgAtest+ imgSrc
 				+ data.listVO2[i].s_brand_name + imgSrcEnd + imgAend + div4
 				+ aHot + div4End + div6 + div6A + data.listVO2[i].s_brand_name
@@ -193,7 +198,7 @@ function drawWriterTable(data) {
 				+ div6Aend + div6End + div2End + div1End
 		
 		$('#storeTT').append(listContent);
-//		}
+
 	}
 	
 	
@@ -206,9 +211,10 @@ function searchButton(){
 	return searchText;
 	
 }
-// 셀렉박스클릭시 텍스트박스 초기화
-$("#selectBox").click(function(){
-	$("#listSearch").val("");
-});
+
+
+
+
+
 
 

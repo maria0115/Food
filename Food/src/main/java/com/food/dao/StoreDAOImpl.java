@@ -149,6 +149,15 @@ public class StoreDAOImpl implements StoreDAO{
 			// TODO Auto-generated method stub
 			return mybatis.selectList("StoreDAO.starAvg");
 		}
+		
+		//승인대기 매장 승인처리 
+		@Override
+		public int stateY(StoreListVO vo) {
+			
+			return mybatis.update("StoreDAO.stateY",vo);
+		}
+		
+	
 
 	
 }

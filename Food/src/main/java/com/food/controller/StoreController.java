@@ -232,6 +232,16 @@ public class StoreController {
 		
 	}
 	
+	@RequestMapping("/stateY.do")
+	public String stateY(StoreListVO vo) {
+		int result = storeService.stateY(vo);
+		
+		if(result == 0 ) {
+			return "../index/error";
+		}
+		return "../index/store";
+	}
+	
 	
 //	@ResponseBody
 //	@RequestMapping(value = "store.do" , produces = "application/json; charset=utf-8")
