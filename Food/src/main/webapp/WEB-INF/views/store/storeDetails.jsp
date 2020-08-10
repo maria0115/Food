@@ -310,6 +310,7 @@ map.put("동남아", "east");
 											class="arrow_left-right_alt"></i></a>
 									</c:if>
 								</div>
+								
 
 
 								<!-- 						 찜하기 기능----------------------------------------------------------- -->
@@ -384,25 +385,26 @@ map.put("동남아", "east");
 										<span>주소 :</span> <span id='addrs'>${list.s_address } </span>
 									</p>
 									<p></p>
-									
-									
-									<c:if test="${not empty sessionScope.user_id}">
+								</div>
+
 								<!-- 예약 버튼 -->
 								<button id="reserv" name="addtocart" value="5"
 									class="btn alazea-btn ml-15">예약</button>
-									</c:if>
-									
-								</div>
 
 								<script>
                         $('#reserv').click(function(){
 //                            location.href='../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}'
-                           window.open('../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}&m_id=${sessionScope.user_id}','ddd','width=600,height=700,left=700,top=100,location=no,status=no,scrollbars=yes')
+                           window.open('../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}&m_id=${sessionScope.user_id}','ddd','width=780,height=843,left=500,top=100,location=no,status=no,scrollbars=yes')
 
                            })
 //                         }
                                 </script>
-
+								<c:if test="${list.s_state == 'N' }">
+								<div style="margin: 0 auto;">
+								<a class="btn btn-info" href="stateY.do?s_brand_name=${list.s_brand_name }">승인완료</a>
+								<a class="btn btn-danger" href="stateN.do?s_brand_name=${list.s_brand_name }">승인거절</a>
+								</div>
+								</c:if>
 
 							</div>
 						</div>
@@ -617,10 +619,7 @@ map.put("동남아", "east");
 	</section>
 	<!-- ##### Single Product Details Area End ##### -->
 	<!-- ##### Related Product Area Start ##### -->
-	<c:if test="${list.s_state == 'N' }">
-	<a class="btn btn-info" href="stateY.do?s_brand_name=${list.s_brand_name }">승인완료</a>
-	<a class="btn btn-danger" href="stateN.do?s_brand_name=${list.s_brand_name }">승인거절</a>
-	</c:if>
+	
 	<!-- ##### Related Product Area End ##### -->
 
 	<!-- ##### Footer Area Start ##### -->
