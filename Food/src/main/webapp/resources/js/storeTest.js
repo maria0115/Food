@@ -376,7 +376,7 @@ $('#detailReviewDelete').click(function(){
 
 // 리뷰 디테일에서 삭제버튼 눌렸을때 
 function detailReviewDelete() {
-	alert("dd")
+	
 	
 	
 	$.ajax({
@@ -417,36 +417,73 @@ $('#detailReviewModify').click(function(){
 	$div = $('<a href="#none" id ="detailModify">수정완료</a>');
 	$("#btnArea").append($div);
 	
+	var startForm = '<form id="file_Form" method="post" enctype="multipart/form-data" action="detailReviewModifyFile.do"> ';
+	var divStart = '<div class="col-12" id="reviewcol">';
+	var inputFile = '<input type="file" name="file" id="file" maxlength="60" size="40">';
+	var divEnd ='</div>';
+	var formEnd = '</form>' 
+		
+	var fileUpdate =
+		startForm +
+		divStart +
+		inputFile +
+		divEnd +
+		formEnd
 	
-	$fileForm = $('<form id="FILE_FORM" method="post" enctype="multipart/form-data" action=""> </form>');
-	$fileDiv = $('<div class="col-12" id="reviewcol"> </div>');
-	$fileDivInputFile=$('<input type="file" name="file" id="file" maxlength="60" size="40">');
-	$fileDivInputBtn = $('<input type="button" class="btn alazea-btn" id="reviewInsert" value="리뷰등록">');
-	$('#reviewcol').append($fileForm);
-	$("#titleAndContent").append($fileDiv);
-	$("#reviewcol").append($fileDivInputFile);
+	
+//	$fileDivInputFile=$('<input type="file" name="file" id="file" maxlength="60" size="40">');
+//	$fileDivInputBtn = $('<input type="button" class="btn alazea-btn" id="reviewInsert" value="리뷰등록">');
+//	$('#file_Form').append($fileDiv);
+	$("#titleAndContent").append(fileUpdate);
+//	$("#reviewcol").append($fileDivInputFile);
 	
 
 	
 	
 	
 	$('#detailModify').click(function(){
-		alert("dd")
-		detailReviewModify();
 		
+		detailReviewModify();
+		detailReviewModifyFile();
 	});
 
 
 });
+
+//파일수정 업로드
+function detailReviewModifyFile(){
+	    alert("ddd")
+         $.ajax({
+            type : 'post',
+            async : false,
+            url : '/Food/detailReviewModifyFile.do',
+            contentType : false,
+            data : formData,
+            dataType : "json",
+            processData : false,
+           
+            
+            
+            success : function(data) {
+                alert("파일 업로드 성공.");
+            },
+            error : function(error) {
+                alert("파일 업로드에 실패하였습니다.");
+               
+            }
+        });      
+}
+
 
 
 
 //리뷰 디테일에서 수정완료 눌렸을때 
 function detailReviewModify() {
 	alert("수정완료 스크립트");
-
-	
+	var size = document.getElementById("file").files[0].size;
+	alert(size);
 	$.ajax({
+		
 		type : 'post',
 		async:true,
 		url : 'storeReviewDetailsmodifyEnd.do',
@@ -456,18 +493,22 @@ function detailReviewModify() {
 				"s_brand_name" :$('#title').val(),		
 				"title": $('#reviewDetailTitle').val(),
 				"b_content" : $('#reviewDetailContent').val(),
-				"v_fileName" : $('#file').val()
+				"v_fileName" : $('#file').val(),
+				"v_fileSize" : size
+				
 				},
 		dataType : 'json',
 		success : function(resultData){
+			
 			fileeee=$('#file').val();
 			alert(fileeee);
+
 			$('.dim-layer').fadeOut();
 			getWriterData();
-			alert($("#boardNoHidden").val());
+			
 	
 
-			alert("다시보기");
+			
 			modifyre();
 			
 		},

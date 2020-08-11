@@ -39,7 +39,8 @@ insert into store(s_category,s_midpart,s_brand_name,s_info,s_tel,s_address) valu
 		   	   p.p_price_2    as p_price_2    ,
 		   	   p.p_price_3    as p_price_3    , 
 		   	   p.p_price_3    as p_price_3,
-		   	   s.s_state as s_state
+		   	   s.s_state as s_state,
+		   	   s.r_master as r_master
 		 FROM STORE   S, 
 		      PRODUCT P
 		WHERE S.S_BRAND_NAME = P.S_BRAND_NAME 

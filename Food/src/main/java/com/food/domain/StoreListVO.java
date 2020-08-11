@@ -7,8 +7,6 @@ public class StoreListVO{
 	private String s_tel;
 	private String s_midpart;
 	private String s_category;
-	private String s_latitude;
-	private String s_longitude;
 	private String s_info;
 	private int r_id;
 	private int p_id;
@@ -26,6 +24,7 @@ public class StoreListVO{
 	private String nowPage;
 	private String m_id;
 	private String s_state;
+	private String r_master;
 	
 	
 	
@@ -34,6 +33,12 @@ public class StoreListVO{
 	
 	
 	
+	public String getR_master() {
+		return r_master;
+	}
+	public void setR_master(String r_master) {
+		this.r_master = r_master;
+	}
 	public String getS_state() {
 		return s_state;
 	}
@@ -76,19 +81,7 @@ public class StoreListVO{
 	public void setS_category(String s_category) {
 		this.s_category = s_category;
 	}
-	public String getS_latitude() {
-		return s_latitude;
-	}
-	public void setS_latitude(String s_latitude) {
-		this.s_latitude = s_latitude;
-	}
-	public String getS_longitude() {
-		return s_longitude;
-	}
-	public void setS_longitude(String s_longitude) {
-		this.s_longitude = s_longitude;
-	}
-	
+		
 	public String getS_info() {
 		return s_info;
 	}

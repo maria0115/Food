@@ -2,6 +2,7 @@ package com.food.controller;
 
 
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -17,8 +18,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -52,11 +55,11 @@ public class StoreController {
 	
 	
 	
-	@RequestMapping("/{step}.do")
-	public String page(@PathVariable String step) {
-		System.out.println("여기로");
-		return "/store/" + step;
-	}
+//	@RequestMapping("/{step}.do")
+//	public String page(@PathVariable String step) {
+//		System.out.println("여기로");
+//		return "/store/" + step;
+//	}
 	
 	
 	
@@ -215,16 +218,31 @@ public class StoreController {
 	// 수정하기
 	@ResponseBody
 	@RequestMapping("/storeReviewDetailsmodifyEnd.do")
-	public int storeReviewDetailsmodifyEnd(BoardVO vo, HttpServletRequest request,MultipartHttpServletRequest mtf) {
+	public int storeReviewDetailsmodifyEnd(BoardVO vo, HttpServletRequest request) {
 		System.out.println("리뷰수정완료 controller 도착");
-		String abcd = vo.getV_fileName();
-		System.out.println(abcd+"+++123456");
+		String file2 = vo.getV_fileName();
+		System.out.println(file2+"파일명");
+		long fileSize2= vo.getV_fileSize();
+		System.out.println(fileSize2+"파일크기");
+//		String fileTag = file2; 
+//		// 업로드 파일이 저장될 경로
+//		String filePath = "C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\store\\"+file2;
+//		
+//		MultipartFile file = mtf.getFile(fileTag); String fileName = file.getOriginalFilename(); 
+//		// 파일 전송 
+//		try{
+//			file.transferTo(new File(filePath + fileName)); 
+//		}  catch(Exception e) { 
+//			System.out.println("업로드 오류");
+//		}  
+
 		int result;
 		vo.setBoardType(2);
 		System.out.println(vo.getTitle()+"***************");
 		System.out.println(vo.getS_brand_name()+"***************");
 		System.out.println(vo.getB_content()+"***************");
 		System.out.println(vo.getB_no()+"***************");
+		
 		
 		
 		
@@ -237,6 +255,31 @@ public class StoreController {
 		return result;
 		
 	}
+	
+	
+	// 리뷰 파일 수정
+	@ResponseBody
+	@RequestMapping(value = "/detailReviewModifyFile.do", method = RequestMethod.POST ) 
+	public String upload2(MultipartHttpServletRequest mtf) { 
+		// 파일 태그 
+		System.out.println("업데이트파일 컨트롤러옴");
+		String fileTag = "file"; 
+		// 업로드 파일이 저장될 경로
+		String filePath = "C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\upload\\";
+	
+		MultipartFile file = mtf.getFile(fileTag); String fileName = file.getOriginalFilename(); 
+		// 파일 전송 
+		try{
+			file.transferTo(new File(filePath + fileName)); 
+			}  catch(Exception e) { 
+				System.out.println("업로드 오류");
+			}  
+		return "index/upload";
+	}
+	
+	
+	
+	
 	
 	@RequestMapping("/stateY.do")
 	public String stateY(StoreListVO vo) {
