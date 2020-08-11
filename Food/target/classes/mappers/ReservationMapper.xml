@@ -88,9 +88,9 @@ select #{r_menu_count} as r_menu_count,#{r_menu} as r_menu,#{m_id},#{r_note} fro
  
  
  <select id="getreser" parameterType="String" resultType="reservation">
- 	select DISTINCT to_char(to_date(r.r_visit_date),'YYYY-MM-DD') r_visit_date,m.m_name m_id, r.r_date_hour||':'||r.r_date_minute r_date_hour ,r. R_PEOPLE_COUNT-1 r_people_count
-	from RESERVATION r , member m
-	where m.m_id=r.m_id AND r.r_master = #{r_master}
+ 	select DISTINCT to_char(to_date(r.r_visit_date),'YYYY-MM-DD') r_visit_date,m.m_name m_id, r.r_date_hour||':'||r.r_date_minute r_date_hour ,r. R_PEOPLE_COUNT-1 R_PEOPLE_COUNT
+from RESERVATION r , member m , store s
+where m.m_id=r.m_id AND s.s_brand_name = r.r_store_name AND s.r_master = #{r_master}
  </select>
  
  
