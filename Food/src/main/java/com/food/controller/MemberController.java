@@ -131,7 +131,7 @@ public class MemberController {
 		System.out.println("여기옴");
 		mvo.setGrade(2);
 		memberService.shopmember(mvo);
-
+		svo.setR_master(mvo.getM_id());
 		storeService.shopmember(svo);
 
 		productService.shopmember(pvo);
