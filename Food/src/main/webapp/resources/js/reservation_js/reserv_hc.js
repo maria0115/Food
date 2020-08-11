@@ -21,7 +21,7 @@
 		var r_menu = $("input[name='r_menu']");
 		var r_menu_count = $("input[name='r_menu_count']");
 	
-		if($('#checkin_date').val()=="" || $('#r_date_hour option:selected').text()=='선택' || $('#r_date_minute option:selected').text()=='선택'|| r_menu.length == 0){
+		if($('#r_visit_date').val()=="" || $('#r_date_hour option:selected').text()=='선택' || $('#r_date_minute option:selected').text()=='선택'|| r_menu.length == 0){
 			alert('날짜가 입력되지 않았습니다.');
 			e.preventDefault();
 		}else{

@@ -63,6 +63,12 @@ public class ReservationServiceImpl implements ReservationService {
 		return reservdao.searchCount(m_id,searchType,keyword);
 	}
 
+	@Override
+	public List<ReservationVO> getreser(String r_master) {
+		
+		return reservdao.getreser(r_master);
+	}
+
 
 	
 	

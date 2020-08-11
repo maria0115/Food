@@ -17,8 +17,16 @@ public class ReservationVO {
 	String time;			// 예약한 시간 ( yy/mm/dd hh:m1 )
 	String type;
 	int r_state;
+	String r_master; //매장 점주 
 	
 	
+	
+	public String getR_master() {
+		return r_master;
+	}
+	public void setR_master(String r_master) {
+		this.r_master = r_master;
+	}
 	public int getR_state() {
 		return r_state;
 	}

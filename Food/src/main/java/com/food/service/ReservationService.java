@@ -23,4 +23,6 @@ public interface ReservationService {
 	public List<ReservationVO> selectReservation(PagingVO vo);
 
 	public int searchCount(String m_id,String searchType, String keyword);
+	
+	public List<ReservationVO> getreser(String r_master);
 }

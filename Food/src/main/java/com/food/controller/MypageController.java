@@ -1,6 +1,8 @@
 package com.food.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,11 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
+import com.food.domain.ReservationVO;
 import com.food.service.MemberService;
 import com.food.service.ReservationService;
 import com.food.service.boardService;
@@ -120,6 +125,20 @@ public class MypageController {
 			
 			return "mypage/myreservation";
 		}
+		
+		
+		@RequestMapping(value="/calendar.do",method = RequestMethod.POST)
+		@ResponseBody
+		public Map calendar(@RequestParam(value="r_master")String r_master) {
+			System.out.println("캘린더 컨트롤러 들어옴 ");
+			Map map = new HashMap();
+			List<ReservationVO> list = ReservationService.getreser(r_master);
+			map.put("list", list);
+			
+			return map;
+		}
+		
+		
 	
 		
 }

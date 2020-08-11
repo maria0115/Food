@@ -21,6 +21,8 @@
 	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
     <link rel="stylesheet" href="/Food/resources/css/mypageform.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/Food/resources/js/calendar.js"></script>
  
 </head>
 
@@ -58,14 +60,16 @@
 	<c:if test="${not empty sessionScope.user_id && sessionScope.grade==2 }">
    		<div class ="container">		
 		<h1 class="jsjs"> my Store </h1>
+		<input type="hidden" id="userid" value="${sessionScope.user_id }">
+		<input type="hidden" id="grade" value="${sessionScope.grade }">
 		<div>
-		<%@ include file="../index/calendar.jsp" %>
+		<jsp:include page="../index/calendar.jsp" />
 		</div>
 		<div class="grid-wrapper">
 </div>
   <div class="grid2">
-    <div class="grid-cell2"><a href="mypage.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>회원 정보</a></div>
-    <div class="grid-cell2"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>나의 글목록</a></div>
+    <div class="grid-cell2"><a href="calendar.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>매장정보</a></div>
+    <div class="grid-cell2"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>리뷰목록</a></div>
     <div class="grid-cell2"><a href="foodcalorie.do" class="cen"><span style="color: lightcoral;">CALORIE?</span><br/>칼로리 체크</a></div>
     <div class="grid-cell2"><a href="selectCart.do?m_id=${user_Info.M_ID}" class="cen"><span style="color: steelblue;">MY WISH</span><br/>찜 목록보기</a></div>
   </div>
@@ -77,6 +81,7 @@
 	
 	<c:if test="${empty sessionScope.user_id}">
 	<div class="container">
+	
 	<div id="nomember">현재 네이버 아이디로 이용중 입니다.
 	네이버 아이디로 로그인시 오늘뭐먹지 MY Page 서비스를 이용하실수 없습니다.
 	회원가입후 MY Page 서비스 이용가능 합니다.감사합니다.<br><button  onclick="history.go(-1);" class="btn btn-danger">되돌아가기</button> 
@@ -95,6 +100,7 @@
 
     <!-- ##### All Javascript Files ##### -->
     <script src="/Food/resources/js/mymenu.js"></script>
+    
     <!-- jQuery-2.2.4 js -->
 <!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->
 <!--     Popper js -->

@@ -106,7 +106,7 @@
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<!-- 	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
 	
 
 	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>

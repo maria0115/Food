@@ -56,7 +56,7 @@
 			<div class="row">
 				<div class="col-md-6 form-group">
 					<label class="text-black font-weight-bold" for="checkin_date">Visit Date</label>
-					<input type="text" id="checkin_date" class="form-control" name="r_visit_date">
+					<input type="date" class="form-control"  name="r_visit_date" id="r_visit_date" placeholder="날짜를 선택해주세요">
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="adults" class="font-weight-bold text-black">People Count</label>
@@ -195,7 +195,6 @@
 	
 	
 	<script src="resources/js/reservation_js/aos.js"></script>
-	<script src="resources/js/reservation_js/bootstrap-datepickersogo.js"></script>
 	<script src="resources/js/reservation_js/bootstrap.min.js"></script>
 	<script src="resources/js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="resources/js/reservation_js/jquery.fancybox.min.js"></script>

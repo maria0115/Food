@@ -89,6 +89,12 @@ public class ReservationDAOImpl implements ReservationDAO {
 		return mybatis.selectOne("reservationDAO.searchCount",map);
 	}
 
+	@Override
+	public List<ReservationVO> getreser(String r_master) {
+		
+		return mybatis.selectList("reservationDAO.getreser",r_master);
+	}
+
 	
 	
 	
