@@ -28,10 +28,10 @@
 
 	
 	<script>
-	function selChange() {
-		var sel = document.getElementById('cntPerPage').value;
-		location.href="boardList?nowPage=${paging.nowPage}&cntPerPage="+sel;
-	}
+// 	function selChange() {
+// 		var sel = document.getElementById('cntPerPage').value;
+// 		location.href="boardList?nowPage=${paging.nowPage}&cntPerPage="+sel;
+// 	}
 </script>
 </head>
 
@@ -46,12 +46,17 @@
         </div>
     </div>
     
+    
+    
+    <div class='container'>
+    
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">
         <!-- Top Breadcrumb Area -->
         
 
         <div class="container">
+        
             <div class="row">
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
@@ -71,73 +76,72 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <!-- Section Heading -->
                     <div class="section-heading text-center">
-                        <h2>OUR PORTFOLIO</h2>
-                        <p>We devote all of our experience and efforts for creation</p>
+                        <h2>MY MENU</h2>
+                        <p>내가 예약했던 매장목록을 보고싶으신가요?</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="alazea-portfolio-filter">
-                        <div class="portfolio-filter">
-                            <button class="btn active" data-filter="*">All</button>
-                            <button class="btn" data-filter=".design">Coffee Design</button>
-                            <button class="btn" data-filter=".garden">Garden</button>
-                            <button class="btn" data-filter=".home-design">Home Design</button>
-                            <button class="btn" data-filter=".office-design">Office Design</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--             <div class="row"> -->
+<!--                 <div class="col-12"> -->
+<!--                     <div class="alazea-portfolio-filter"> -->
+<!--                         <div class="portfolio-filter"> -->
+<!--                             <button class="btn active" data-filter="*">All</button> -->
+<!--                             <button class="btn" data-filter=".design">Coffee Design</button> -->
+<!--                             <button class="btn" data-filter=".garden">Garden</button> -->
+<!--                             <button class="btn" data-filter=".home-design">Home Design</button> -->
+<!--                             <button class="btn" data-filter=".office-design">Office Design</button> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
 
 			
 			
-			<script>
-			function update_form(r_number){
-				  $.ajax({
-				    url: "myMenuDetail.do",
-				    type: "get",
-				    cache: false,
-				    dataType: "json",
-				    data: "r_number=" + r_number,
-				    success: function(data){
-				  $('.i_store_name').val(data.r_store_name);
-			      $('.i_visit_date').val(data.time);  
-			      $('.i_pplcount').val(data.r_people_count);          
-			      $('.i_menu').val(data.r_menu);
-			      $('.i_note').val(data.r_note);
-			      $('.r_cancel').val(data.r_number);
-					if(data.r_state == 0){
-// 						alert("취소 불가")
-						$(".r_cancel").attr("disabled",true)
-					}else{
-						$(".r_cancel").attr("disabled",false)
-					}
-			    },
-				    error: function (request, status, error){    
-				        var msg = "ERROR : " + request.status + "<br>"
-				      msg +=  + "내용 : " + request.responseText + "<br>" + error;
-				      console.log(msg);              
-				    }
+<!-- 			<script> -->
+<!-- // 			function update_form(r_number){ -->
+<!-- // 				  $.ajax({ -->
+<!-- // 				    url: "myMenuDetail.do", -->
+<!-- // 				    type: "get", -->
+<!-- // 				    cache: false, -->
+<!-- // 				    dataType: "json", -->
+<!-- // 				    data: "r_number=" + r_number, -->
+<!-- // 				    success: function(data){ -->
+<!-- // 				  $('.i_store_name').val(data.r_store_name); -->
+<!-- // 			      $('.i_visit_date').val(data.time);   -->
+<!-- // 			      $('.i_pplcount').val(data.r_people_count);           -->
+<!-- // 			      $('.i_menu').val(data.r_menu); -->
+<!-- // 			      $('.i_note').val(data.r_note); -->
+<!-- // 			      $('.r_cancel').val(data.r_number); -->
+<!-- // 					if(data.r_state == 0){ -->
+<!-- // // 						alert("취소 불가") -->
+<!-- // 						$(".r_cancel").attr("disabled",true) -->
+<!-- // 					}else{ -->
+<!-- // 						$(".r_cancel").attr("disabled",false) -->
+<!-- // 					} -->
+<!-- // 			    }, -->
+<!-- // 				    error: function (request, status, error){     -->
+<!-- // 				        var msg = "ERROR : " + request.status + "<br>" -->
+<!-- // 				      msg +=  + "내용 : " + request.responseText + "<br>" + error; -->
+<!-- // 				      console.log(msg);               -->
+<!-- // 				    } -->
 
-				  });
-				}
-			</script>
-			<script>
-			$(function(){
-				$(".r_cancel").click(function(){
-					var cancel = $(".r_cancel").val()
-					alert(cancel)
-					location.href="reservDelete.do?r_number="+cancel+"&m_id=${sessionScope.user_id}"
-				})
-			})
+<!-- // 				  }); -->
+<!-- // 				} -->
+<!-- 			</script> -->
+<!-- 			<script> -->
+<!-- // 			$(function(){ -->
+<!-- // 				$(".r_cancel").click(function(){ -->
+<!-- // 					var cancel = $(".r_cancel").val() -->
+<!-- // 					alert(cancel) -->
+<!-- // 					location.href="reservDelete.do?r_number="+cancel+"&m_id=${sessionScope.user_id}" -->
+<!-- // 				}) -->
+<!-- // 			}) -->
 
-			</script>
+<!-- 			</script> -->
 
 <c:if test="${empty sessionScope.user_id}">
 <div class="row alazea-portfolio" style="position: relative; height: 340px;">
@@ -288,7 +292,7 @@ $('.portfolio-thumbnail:last').css('background-image','url(/Food/resources/store
         
     </section>
     <!-- ##### Portfolio Area End ##### -->
-
+</div>
     
 
     <!-- ##### Footer Area Start ##### -->
@@ -298,6 +302,7 @@ $('.portfolio-thumbnail:last').css('background-image','url(/Food/resources/store
     <!-- ##### All Javascript Files ##### -->
     <script src="/Food/resources/js/mymenu.js"></script>
     <script src="/Food/resources/js/active.js"></script>
+    <script src="/Food/resources/js/reservation_js/mymenu_hc.js"></script>
     <!-- jQuery-2.2.4 js -->
 <!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->
 <!--     Popper js -->

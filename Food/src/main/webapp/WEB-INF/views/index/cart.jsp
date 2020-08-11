@@ -78,40 +78,7 @@
                                 </tr>
                             </thead>
                             
-                            	<script type="text/javascript">
-                                $(document).on("click",".cart_menu",function(){
- 									var no = $(this).parent().children().eq(0).text()
-// 									게시글을 누르면 해당 매장으로 상세페이지 이동
- 									location.href="/Food/store/storeDetails.do?s_brand_name="+no
- 									
-                                });
-                              	
-                                 $(document).on("click",".trash",function(){
-  									alert("trash1")
-  									var no = $(this).parent().children().eq(0).text()
-									
-									
-  	  							$.ajax({
-								    url: "deleteCart.do",
-								    type: "post",
-								    cache: false,
-								    data: "w_store_name="+no,
-								    success: function(){
-									    alert("success")
-								    },
-								    
-								    error: function (request, status, error){        
-								        var msg = "ERROR : " + request.status + "<br>"
-								      msg +=  + "내용 : " + request.responseText + "<br>" + error;
-								      console.log(msg);              
-								    }
-								  });
 
-  									$(this).parent().remove()
-  									
-
-                                 });
-                                 </script>
                             
                             <c:forEach items="${list}" var="list">
                                 <tr style="padding:0% 0%; font-weight:400">
@@ -128,55 +95,7 @@
             </div>
             	<button  onclick="history.go(-1);" class="btn btn-default" >돌아가기</button> 	
 
-<!--             <div class="row"> -->
 
-<!--                 Coupon Discount -->
-<!--                 <div class="col-12 col-lg-6"> -->
-<!--                     <div class="coupon-discount mt-70"> -->
-<!--                         <h5>COUPON DISCOUNT</h5> -->
-<!--                         <p>Coupons can be applied in the cart prior to checkout. Add an eligible item from the booth of the seller that created the coupon code to your cart. Click the green "Apply code" button to add the coupon to your order. The order total will update to indicate the savings specific to the coupon code entered.</p> -->
-<!--                         <form action="#" method="post"> -->
-<!--                             <input type="text" name="coupon-code" placeholder="Enter your coupon code"> -->
-<!--                             <button type="submit">APPLY COUPON</button> -->
-<!--                         </form> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-                <!-- Cart Totals -->
-<!--                 <div class="col-12 col-lg-6"> -->
-<!--                     <div class="cart-totals-area mt-70"> -->
-<!--                         <h5 class="title--">Cart Total</h5> -->
-<!--                         <div class="subtotal d-flex justify-content-between"> -->
-<!--                             <h5>Subtotal</h5> -->
-<!--                             <h5>$9.99</h5> -->
-<!--                         </div> -->
-<!--                         <div class="shipping d-flex justify-content-between"> -->
-<!--                             <h5>Shipping</h5> -->
-<!--                             <div class="shipping-address"> -->
-<!--                                 <form action="#" method="post"> -->
-<!--                                     <select class="custom-select"> -->
-<!--                                       <option selected>Country</option> -->
-<!--                                       <option value="1">USA</option> -->
-<!--                                       <option value="2">Latvia</option> -->
-<!--                                       <option value="3">Japan</option> -->
-<!--                                       <option value="4">Bangladesh</option> -->
-<!--                                     </select> -->
-<!--                                     <input type="text" name="shipping-text" id="shipping-text" placeholder="State"> -->
-<!--                                     <input type="text" name="shipping-zip" id="shipping-zip" placeholder="ZIP"> -->
-<!--                                     <button type="submit">Update Total</button> -->
-<!--                                 </form> -->
-<!--                             </div> -->
-<!--                         </div> -->
-<!--                         <div class="total d-flex justify-content-between"> -->
-<!--                             <h5>Total</h5> -->
-<!--                             <h5>$9.99</h5> -->
-<!--                         </div> -->
-<!--                         <div class="checkout-btn"> -->
-<!--                             <a href="#" class="btn alazea-btn w-100">PROCEED TO CHECKOUT</a> -->
-<!--                         </div> -->
-<!--                     </div> -->
-<!--                 </div> -->
-<!--             </div> -->
 
         </div>
     </div>
@@ -197,6 +116,7 @@
     <script src="resources/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="resources/js/active.js"></script>
+    <script src="resources/js/reservation_js/cart_hc.js"></script>
 </body>
 
 </html>
