@@ -11,7 +11,9 @@
 <!-- Title -->
 <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
 
-
+<!-- 달력을 위한 CSS -->
+<link href='/Food/resources/css/fullcalendar.css' rel='stylesheet' />
+<link href='/Food/resources/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 <!-- Favicon -->
 <link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
 <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
@@ -107,8 +109,13 @@
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
 <!-- 	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+	<!-- 달력을 위한 JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+	<script src='/Food/resources/js/jquery.min.js'></script>
+	<script src='/Food/resources/js/moment.min.js'></script>
+	<script src='/Food/resources/js/fullcalendar.min.js'></script>
+	<script src="/Food/resources/js/ko.js"></script>
+	<script src="/Food/resources/js/calendar.js"></script>
 	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
 
 	<script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
@@ -119,7 +126,7 @@
 
 	<script src="/Food/resources/js/active.js"></script>
 <!-- 	지섭  -->
-
+	
 	
 	
 

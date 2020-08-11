@@ -21,8 +21,7 @@
 	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
     <link rel="stylesheet" href="/Food/resources/css/mypageform.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/Food/resources/js/calendar.js"></script>
+    
  
 </head>
 

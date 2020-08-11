@@ -3,7 +3,6 @@ $(function(){
 	var userid = $("#userid").val();
 	var grade = $("#grade").val();
 	
-	alert(userid+""+grade);
 	
 	$(document).ready(function(){
 		
