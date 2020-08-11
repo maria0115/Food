@@ -110,8 +110,8 @@
 	<!-- jQuery-2.2.4 js -->
 <!-- 	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
 	<!-- 달력을 위한 JS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src='/Food/resources/js/jquery.min.js'></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src='/Food/resources/js/jquery.min.js'></script> -->
 	<script src='/Food/resources/js/moment.min.js'></script>
 	<script src='/Food/resources/js/fullcalendar.min.js'></script>
 	<script src="/Food/resources/js/ko.js"></script>
