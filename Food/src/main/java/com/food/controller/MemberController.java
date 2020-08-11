@@ -86,25 +86,27 @@ public class MemberController {
 		String category = "";
 		List<MultipartFile> fileList = mtf.getFiles("file");
 		// 업로드 파일이 저장될 경로
+		
 		if(s_category.equals("한식")) {
 			category="kor";
 		}else if(s_category.equals("일식")) {
 			category="jap";
 		}else if(s_category.equals("양식")) {
 			category="ame";
-		}else if(s_category.equals("증식")) {
+		}else if(s_category.equals("중식")) {
 			category="ch";
 		}else if(s_category.equals("분식")) {
 			category="school";
 		}else if(s_category.equals("동남아")) {
 			category="east";
 		}
+		System.out.println(s_category);
 		String filePath = "C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\storemenu\\";
 	
 		for(MultipartFile mf : fileList ) {
 			String originFileName = mf.getOriginalFilename();
 			long fileSize = mf.getSize();
-			String safeFile = filePath +category+"\\"+ originFileName;
+			String safeFile = filePath + category + "\\" + originFileName;
 		try {
 			try {
 				mf.transferTo(new File(safeFile));
