@@ -424,7 +424,6 @@ a.btn-layerClose:hover {
 	<script src="resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
 
-	<script src="/Food/resources/js/sub.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
 	<script >
 	$('.btn-example').click(function(){
