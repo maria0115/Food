@@ -20,66 +20,85 @@
 	<!-- Core Stylesheet -->
 	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
-    <link rel="stylesheet" href="/Food/resources/css/mypageform.css">
-    
- 
-</head>
-
-<body>
- <jsp:include page="../index/header.jsp">
+  
+  			 <jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
 			</jsp:include>
 	
 
+	 
+	 
+</head>
+
+<body>
     <!-- ##### Portfolio Area End ##### -->
 	
-	<c:if test="${not empty sessionScope.user_id && sessionScope.grade==1}">
-   		<div class ="container">		
-		<h1 class="jsjs"> my page </h1>
-			<div class ="box">
-			환영합니다.${user_Info.M_ID}님<br> 
-			저희 홈페이지를 방문해 주셔서 감사합니다.<br>
-			회원님의 가입일은 ${user_Info.M_DATE} 입니다.
-			
-			</div>
-		<div class="grid-wrapper">
-</div>
+	<c:if test="${not empty sessionScope.user_id}">
 
-  <div class="grid">
-    <div class="grid-cell"><a href="mypage.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>회원 정보</a></div>
-    <div class="grid-cell"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>나의 글목록</a></div>
-    <div class="grid-cell"><a href="foodcalorie.do" class="cen"><span style="color: lightcoral;">CALORIE?</span><br/>칼로리 체크</a></div>
-    <div class="grid-cell"><a href="selectCart.do?m_id=${user_Info.M_ID}" class="cen"><span style="color: steelblue;">MY WISH</span><br/>찜 목록보기</a></div>
-   	<div class="grid-cell"><a href="myreservation.do" class="cen"><span style="color: crimson;">MY RESERVATION</span><br/>예약 리스트</a></div>
-  </div>
-  
-</div>	
-	</c:if>
-	
-	<c:if test="${not empty sessionScope.user_id && sessionScope.grade==2 }">
-   		<div class ="container">		
-		<h1 class="jsjs"> my Store </h1>
-		<input type="hidden" id="userid" value="${sessionScope.user_id }">
-		<input type="hidden" id="grade" value="${sessionScope.grade }">
-		<div>
-		<jsp:include page="../index/calendar.jsp" />
+    		
+
+	<!-- Preloader -->
+	<div class="preloader d-flex align-items-center justify-content-center">
+		<div class="preloader-circle"></div>
+		<div class="preloader-img">
+			<img src="img/core-img/leaf.png" alt="">
 		</div>
-		<div class="grid-wrapper">
-</div>
-  <div class="grid2">
-    <div class="grid-cell2"><a href="shopmodify.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>매장정보</a></div>
-    <div class="grid-cell2"><a href="myreview.do?s_brand_name=${user_Info.S_BRAND_NAME }" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>리뷰목록</a></div>
-    <div class="grid-cell2"><a href="foodcalorie.do" class="cen"><span style="color: lightcoral;">CALORIE?</span><br/>칼로리 체크</a></div>
-  </div>
-  
-</div>	
+	</div>
+
+
+	<!-- 게시판 목록 보여주기 시작  -->
+
+	<div class="container">
+		<br />
+		<br />
+
+		<h1 style="font-family: fantasy;">MY Review</h1>
+		<br />
+
+		<div >
+			<table class="table table-hover" >
+				<tr style="font-size: 14px;">
+					<th></th>
+					<th style="width: 25%;">제목</th>
+					<th style="width: 25%;">내용</th>
+					<th>작성자</th>
+					<th>등록일</th>
+				
+				</tr>
+				
+				<c:forEach items="${list}" var="board">
+				<!-- 프라퍼티이름 변경 -->
+				<tr style="font-size: 16px;">
+					<td><a href="/Food/store/storeDetails.do?s_brand_name=${board.s_brand_name }">${board.b_no}</a></td>
+					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
+					<td><a href="/Food/store/storeDetails.do?s_brand_name=${board.s_brand_name }">${board.title}</a></td>
+					<td><a href="/Food/store/storeDetails.do?s_brand_name=${board.s_brand_name }">${board.b_content}</a></td>
+					<td>${board.userId}</td>
+					<td>${board.b_date}</td>
+				
+				
+					
+				</tr>
+			</c:forEach>
+
+			</table>
+			<button  onclick="history.go(-1);" class="btn btn-default" >돌아가기</button> 	
+		</div>
+		
+
+</div>    
 	</c:if>
+
+
+	<!-- 게시판 목록 보여주기 끝  -->
 	
-	
+			
+				
+				
+
 	
 	<c:if test="${empty sessionScope.user_id}">
 	<div class="container">
-	
 	<div id="nomember">현재 네이버 아이디로 이용중 입니다.
 	네이버 아이디로 로그인시 오늘뭐먹지 MY Page 서비스를 이용하실수 없습니다.
 	회원가입후 MY Page 서비스 이용가능 합니다.감사합니다.<br><button  onclick="history.go(-1);" class="btn btn-danger">되돌아가기</button> 
@@ -98,7 +117,6 @@
 
     <!-- ##### All Javascript Files ##### -->
     <script src="/Food/resources/js/mymenu.js"></script>
-    
     <!-- jQuery-2.2.4 js -->
 <!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->
 <!--     Popper js -->

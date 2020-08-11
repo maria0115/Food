@@ -160,6 +160,7 @@ public class MemberController {
 				session.setAttribute("user_Info", new_vo);
 				session.setAttribute("grade", new_vo.get("GRADE"));
 				session.setAttribute("wish", wish);
+				
 			
 
 			}
@@ -410,6 +411,22 @@ public class MemberController {
 		session.removeAttribute("user_id");
 		session.removeAttribute("user_Info");
 
+	}
+	
+	//매장점주 정보 수정하기 
+	@RequestMapping("/shopmodify.do")
+	public String shopmodify(MemberVO mvo, StoreListVO svo, ProductVO pvo) {
+		
+		return"mypage/shopmodify";
+	}
+	
+	//매장점주 리뷰목록 
+	@RequestMapping("/myreview.do")
+	public String myreview(MemberVO vo, Model model) {
+		System.out.println(vo.getS_brand_name());
+		model.addAttribute("list",memberService.myreview(vo));
+		
+		return "mypage/myreview";
 	}
 
 }

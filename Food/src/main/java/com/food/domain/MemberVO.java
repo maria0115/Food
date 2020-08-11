@@ -12,7 +12,17 @@ public class MemberVO {
 	private String m_post;
 	private String m_date;
 	private int grade;
-
+	private String s_brand_name;
+	
+	
+	
+	
+	public String getS_brand_name() {
+		return s_brand_name;
+	}
+	public void setS_brand_name(String s_brand_name) {
+		this.s_brand_name = s_brand_name;
+	}
 	public int getGrade() {
 		return grade;
 	}

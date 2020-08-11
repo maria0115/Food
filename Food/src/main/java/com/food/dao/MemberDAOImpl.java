@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 
@@ -90,6 +91,13 @@ public class MemberDAOImpl  implements MemberDAO{
 	public int shopmember(MemberVO vo) {
 		return mybatis.insert("memberDAO.shopmember",vo);
 		
+	}
+
+
+	@Override
+	public List<BoardVO> myreview(MemberVO vo) {
+		
+		return mybatis.selectList("memberDAO.myreview",vo);
 	}
  
 	

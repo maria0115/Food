@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.dao.MemberDAO;
+import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 
@@ -101,6 +102,13 @@ public class MemberServiceImpl  implements MemberService{
 	public int shopmember(MemberVO vo) {
 		return memberdao.shopmember(vo);
 		
+	}
+
+
+	@Override
+	public List<BoardVO> myreview(MemberVO vo) {
+		
+		return memberdao.myreview(vo);
 	}
 
  

@@ -3,6 +3,7 @@ package com.food.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 
@@ -26,4 +27,6 @@ public interface MemberDAO {
 	public void updateMember(MemberVO vo);
 	
 	public int shopmember(MemberVO vo);
+	
+	public List<BoardVO> myreview(MemberVO vo);
 }
