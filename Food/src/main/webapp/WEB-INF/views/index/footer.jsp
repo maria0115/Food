@@ -120,7 +120,7 @@
 
 	<script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
 	
-	<script src="/Food/resources/js/sub.js"></script>
+	
 	
 	<script src="/Food/resources/js/plugins/plugins.js"></script>
 

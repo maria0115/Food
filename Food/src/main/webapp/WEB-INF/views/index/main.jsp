@@ -506,6 +506,7 @@ a.btn-layerClose:hover {
 
     }
 	</script>
+		<script src="/Food/resources/js/sub.js"></script>
 	<!-- 지섭 -->
 
 

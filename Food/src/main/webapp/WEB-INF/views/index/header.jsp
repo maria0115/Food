@@ -440,6 +440,7 @@ a.btn-layerClose:hover {
 		src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
+	<script src="/Food/resources/js/sub.js"></script>
 	<script >
 	$('.btn-example').click(function(){
         var $href = $(this).attr('href');
