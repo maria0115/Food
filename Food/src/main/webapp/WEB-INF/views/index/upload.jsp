@@ -31,13 +31,13 @@ FONT-SIZE: X-LARGE;
 		
 		
    <form action="/Food/fileupload.do" method="post" enctype="multipart/form-data" >
-    <input type="file" name="file" id="profile_pt" class="test" onchange="previewImage(this,'View_area')" > <br>        
+    <input type="file" name="file" id="profile_pt" class="test" onchange="previewImage(this,'View_area')" > <br><button id="imgup" type="submit" >매장 사진 등록</button>             
     
                         
                      <div id='View_area'
                         style='position: relative; width: 400px; height: 270px; color: black; border: 1px solid black; dispaly: inline;'>
                      </div>
-       <button id="imgup" type="submit" >매장 사진 등록</button>     
+       
               
    </form>         
    
