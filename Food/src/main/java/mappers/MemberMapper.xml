@@ -90,8 +90,24 @@ delete from member where m_id =#{m_id}
 
 </delete>
 
-<select id="myreview" parameterType="member" resultType="board">
-	select * from board where boardtype=2 AND s_brand_name=#{s_brand_name}
+<select id="myreview" parameterType="hashmap" resultType="board">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						select * from board
+						<where>
+							boardType=2
+							AND s_brand_name=#{s_brand_name}
+						</where>
+						ORDER BY b_date DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+</select>
+
+<select id="countBoard" parameterType="member" resultType="int">
+	select count(*) from board where boardtype=2 AND s_brand_name=#{s_brand_name}
 </select>
 
 

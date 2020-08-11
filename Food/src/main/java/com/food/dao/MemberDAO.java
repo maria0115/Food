@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
+import com.food.domain.PagingVO;
 import com.food.domain.ProductVO;
 
 public interface MemberDAO {
@@ -28,5 +29,7 @@ public interface MemberDAO {
 	
 	public int shopmember(MemberVO vo);
 	
-	public List<BoardVO> myreview(MemberVO vo);
+	public List<BoardVO> myreview(MemberVO vo,PagingVO pvo);
+	
+	public int countBoard(MemberVO vo);
 }

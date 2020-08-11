@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
+import com.food.domain.PagingVO;
 import com.food.domain.ProductVO;
 
 public interface MemberService {
@@ -31,7 +32,9 @@ public interface MemberService {
 	//기업회원 회원 가입 
 	public int shopmember(MemberVO vo);
 	//매장별 리뷰가져오기
-	public List<BoardVO> myreview(MemberVO vo);
+	public List<BoardVO> myreview(MemberVO vo,PagingVO pvo);
+	//매장별 리뷰갯수
+	public int countBoard(MemberVO vo);
 	
 	
 }

@@ -34,7 +34,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
+import com.food.domain.PagingVO;
 import com.food.domain.ProductVO;
 import com.food.domain.StoreListVO;
 import com.food.domain.WishlistVO;
@@ -47,6 +49,9 @@ import com.google.gson.GsonBuilder;
 
 @Controller
 public class MemberController {
+	
+	int curCount=0; //리스트에서 현재 검색된 데이터 숫자를 저장할 변수 선언
+	int allCount; //리스트에서 모든 데이터의 숫자를 저장한 변수 선언
 	@Autowired
 	private MemberService memberService;
 
@@ -422,9 +427,28 @@ public class MemberController {
 	
 	//매장점주 리뷰목록 
 	@RequestMapping("/myreview.do")
-	public String myreview(MemberVO vo, Model model) {
-		System.out.println(vo.getS_brand_name());
-		model.addAttribute("list",memberService.myreview(vo));
+	public String myreview(Model model,PagingVO pvo ,MemberVO vo, HttpServletRequest request
+			, @RequestParam(value="nowPage", required=false)String nowPage
+			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
+		
+		
+		
+		
+		
+		if (nowPage == null && cntPerPage == null) {
+			nowPage = "1";
+			cntPerPage = "5";
+		} else if (nowPage == null) {
+			nowPage = "1";
+		} else if (cntPerPage == null) { 
+			cntPerPage = "5"
+					+ "";
+		}
+		
+		int total = memberService.countBoard(vo);
+		pvo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		model.addAttribute("paging", pvo); //페이징처리를 위한  가져온 값 넘기기 
+		model.addAttribute("list",memberService.myreview(vo,pvo));
 		
 		return "mypage/myreview";
 	}

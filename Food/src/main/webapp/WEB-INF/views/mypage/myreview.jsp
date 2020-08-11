@@ -16,15 +16,21 @@
 
     <!-- Favicon -->
 	<link rel="icon" href="resources/img/core-img/favicon.ico">
-	<link rel="stylesheet" href="/Food/resources/css/mypage.css">
 	<!-- Core Stylesheet -->
 	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
+    <link href="/Food/resources/css/reservation_css/qna_hc.css" rel="stylesheet">
   
   			 <jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
 			</jsp:include>
-	
+<style type="text/css">
+hr {
+
+   height: 0.7em;
+  background-color: rightgray;
+}
+</style>	
 
 	 
 	 
@@ -55,35 +61,56 @@
 		<h1 style="font-family: fantasy;">MY Review</h1>
 		<br />
 
-		<div >
-			<table class="table table-hover" >
-				<tr style="font-size: 14px;">
-					<th></th>
-					<th style="width: 25%;">제목</th>
-					<th style="width: 25%;">내용</th>
-					<th>작성자</th>
-					<th>등록일</th>
-				
-				</tr>
-				
-				<c:forEach items="${list}" var="board">
-				<!-- 프라퍼티이름 변경 -->
-				<tr style="font-size: 16px;">
-					<td><a href="/Food/store/storeDetails.do?s_brand_name=${board.s_brand_name }">${board.b_no}</a></td>
-					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
-					<td><a href="/Food/store/storeDetails.do?s_brand_name=${board.s_brand_name }">${board.title}</a></td>
-					<td><a href="/Food/store/storeDetails.do?s_brand_name=${board.s_brand_name }">${board.b_content}</a></td>
-					<td>${board.userId}</td>
-					<td>${board.b_date}</td>
-				
-				
-					
-				</tr>
+	
+			<c:forEach items="${list}" var="board">
+				<div class="row" style="border: lightgrey solid 0.3px; border-radius: 15px  19px;" >
+                <div style="width: 100%;">
+                    <div class="form-group title" style="color:black;border-top-right-radius: 72px 62px;border-bottom-left-radius: 5px 124px;border-top-left-radius: 72px 62px;">
+                 	<label style='font-weight: bold'>&nbsp;&nbsp;&nbsp;&nbsp;제목&nbsp;:&nbsp;</label> 
+                    <input style="color:black;font-weight:bold;border:none;display:inline;width: 50%;" type="text"  id="contact-title" name="title" value="${board.title}" readonly>
+                    </div>
+                </div>
+                <div style="width: 100%">
+                    <div class="form-group writer" style="color:black">
+                 	<label style='font-weight: bold'>&nbsp;&nbsp;&nbsp;&nbsp;작성자&nbsp;:&nbsp;</label> 
+                        <input style="color:black;border:none;display:inline;width: 40%;" type="text"  id="contact-writer" name="userId" value="${board.userId}" readonly>
+						<span id='viewcount' style='float:right'>조회수&nbsp;:&nbsp;${board.viewCount}</span>
+                    </div>
+                </div>
+                <div style="padding-top: 45px;width: 100%;">
+                    <div class="form-group" style="color:black">
+                        <span style="margin-left: 1%;">${board.b_content}</span>
+                    </div>
+                </div>
+             	</div>
+             	<p></p>
 			</c:forEach>
-
-			</table>
+			
+			<!-- 페이징 -->
+		<div style="display: block; text-align: center;">		
+		<c:if test="${paging.startPage != 1 }">
+			<a href="/Food/myreview.do?s_brand_name=${user_Info.S_BRAND_NAME }&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+		</c:if>
+		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+			<c:choose>
+				<c:when test="${p == paging.nowPage }">
+					<b>${p }</b>
+				</c:when>
+				<c:when test="${p != paging.nowPage }">
+					<a href="/Food/myreview.do?s_brand_name=${user_Info.S_BRAND_NAME }&nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${paging.endPage != paging.lastPage}">
+			<a href="/Food/myreview.do?s_brand_name=${user_Info.S_BRAND_NAME }&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+		</c:if>
+		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
+		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }">
+        </div>
+			
+		
 			<button  onclick="history.go(-1);" class="btn btn-default" >돌아가기</button> 	
-		</div>
+	
 		
 
 </div>    

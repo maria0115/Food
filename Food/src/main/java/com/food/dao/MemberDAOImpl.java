@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
+import com.food.domain.PagingVO;
 import com.food.domain.ProductVO;
 
 @Repository("memberdao")
@@ -95,9 +96,20 @@ public class MemberDAOImpl  implements MemberDAO{
 
 
 	@Override
-	public List<BoardVO> myreview(MemberVO vo) {
+	public List<BoardVO> myreview(MemberVO vo,PagingVO pvo) {
+		HashMap map = new HashMap();
+		map.put("s_brand_name", vo.getS_brand_name());
+		map.put("start", pvo.getStart());
+		map.put("end", pvo.getEnd());
 		
-		return mybatis.selectList("memberDAO.myreview",vo);
+		return mybatis.selectList("memberDAO.myreview",map);
+	}
+
+
+	@Override
+	public int countBoard(MemberVO vo) {
+		
+		return mybatis.selectOne("memberDAO.countBoard",vo);
 	}
  
 	

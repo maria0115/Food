@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.food.dao.MemberDAO;
 import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
+import com.food.domain.PagingVO;
 import com.food.domain.ProductVO;
 
 @Service("memberService")
@@ -106,9 +107,16 @@ public class MemberServiceImpl  implements MemberService{
 
 
 	@Override
-	public List<BoardVO> myreview(MemberVO vo) {
+	public List<BoardVO> myreview(MemberVO vo,PagingVO pvo) {
 		
-		return memberdao.myreview(vo);
+		return memberdao.myreview(vo,pvo);
+	}
+
+
+	@Override
+	public int countBoard(MemberVO vo) {
+		
+		return memberdao.countBoard(vo);
 	}
 
  
