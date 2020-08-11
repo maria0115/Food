@@ -14,10 +14,10 @@
 
 <!-- Favicon -->
 <link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
-
+<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 <link rel="stylesheet" href="/Food/resources/css/myfooter.css">
 <!-- Core Stylesheet -->
-
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <!-- 부트스트랩 -->
 <link
@@ -106,7 +106,8 @@
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	
 
 	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
 
@@ -114,13 +115,13 @@
 
 	<script src="/Food/resources/js/plugins/plugins.js"></script>
 
-
+	<script src="/Food/resources/js/active.js"></script>
 <!-- 	지섭  -->
-		<script src="/Food/resources/js/active.js"></script>
+
 	<script src="/Food/resources/js/sub.js"></script>
 	
 
-		<script type="text/javascript">
+	<script type="text/javascript">
 
 	$(function(){
 	var user_id = "${sessionScope.user_id}";
@@ -155,7 +156,26 @@
 			
 			}
 		ws.onmessage = function(event){
-				console.log(event.data +'\n');
+			var data = event.data;
+			console.log("ReceivMessage : " + data + "\n");
+			$.ajax({
+				url : '/Food/manager/countAlarm.do',
+				type : 'POST',
+				dataType: 'text',
+				success : function(data) {
+					if(data == '0'){
+					}else{
+						toastr.options.escapeHtml = true;
+						toastr.options.closeButton = true;
+						toastr.options.newestOnTop = false;
+						toastr.options.progressBar = true;
+						toastr.info('예제', '명월일지', {timeOut: 5000});
+					}
+				},
+				error : function(err){
+					alert('err');
+				}
+		   	});
 			}
 	
 		ws.onclose = function(event){
@@ -164,9 +184,13 @@
 			};
 		ws.onerror = function(err){console.log('Error:',err);};
 	};
+	$("#example").on("click", function(){
+	
+		});
 			
 	</script>
-	
+
+
 
 
 
