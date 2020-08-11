@@ -47,51 +47,51 @@
 						</thead>
 						<tbody>
 							<tr >
-								<td >User_id</td>
+								<td >User id</td>
 								<td >${member.m_id}</td>
-								<td rowspan="2" >1위</td>
-								<td rowspan="2" >${member.m_most}</td>
+								
 							
 							</tr>
 
 							<tr >
-								<td >User_name</td>
+								<td >User name</td>
 								<td >${member.m_name}</td>
 								
 								
 							</tr>
 
 							<tr >
-								<td >User_Email</td>
+								<td >User Email</td>
 								<td >${member.m_email}</td>
-								<td rowspan="2" >2위</td>
-								<td rowspan="2" >${member.m_most}</td>
+								
 								
 							
 							
 							</tr>
   
 							<tr >
-								<td >User_PhoneNumber</td>
+								<td >User PhoneNumber</td>
 								<td >${member.m_tel}</td>
 								
 								
 							</tr>
 
 							<tr class="row100">
-								<td >User_BirthDay</td>
+								<td >User BirthDay</td>
 								<td >${member.m_birth}</td>
-								<td rowspan="2">3위</td>
-								<td rowspan="2" >${member.m_most}</td>
+								
 								
 							</tr>
 
 							<tr class="row100">
-								<td >User_Address</td>
+								<td >User Address</td>
 								<td >${member.m_area}</td>
 								
 								
 							</tr>
+							<tr class="row100">
+							   <td  >Favorite Food</td>
+								<td >${member.m_most}</td>
 							<tr >
 								<td colspan="4" ><a href="membermodify.do" class="modifybtn"><button class ="btn btn-dark">수정하기</button></a></td>
 							</tr>
