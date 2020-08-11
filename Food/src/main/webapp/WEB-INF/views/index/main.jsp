@@ -8,11 +8,17 @@
 <html lang="en">
 <% HashMap map = (HashMap)request.getAttribute("map"); %>
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>3D Restaurant Menu Concept</title>
+        <meta name="description" content="A responsive folded flyer-like restaurant menu with some 3D" />
+        <meta name="keywords" content="css3, perspective, 3d, jquery, transform3d, responsive, template, restaurant, menu, leaflet, folded, flyer, concept" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="/Food/resources/main/css/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:300,500|Arvo:700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
@@ -362,39 +368,181 @@ a.btn-layerClose:hover {
 
 	<!-- ##### Hero Area Start ##### -->
 	<!-- 	<section class="hero-area"> --> 
-		<div class="slide-img bg-img"
-       style='background-image: url(/Food/resources/img/mainmenu/<%=map.get("menu")%>.jpg)'>
-		<!-- Single Hero Post -->
-		<div class="single-hero-post2 bg-overlay">
+	  <div class="container">
+		
+			<!-- Codrops top bar -->
+          
+			<header>
+			
+				
+				
+				<div class="support-note"><!-- let's check browser support with modernizr -->
+					<span class="no-cssanimations">CSS animations are not supported in your browser</span>
+					<span class="no-csstransforms">CSS transforms are not supported in your browser</span>
+					<span class="no-csstransforms3d">CSS 3D transforms are not supported in your browser</span>
+					<span class="no-csstransitions">CSS transitions are not supported in your browser</span>
+					<span class="note-ie">Sorry, only modern browsers.</span>
+				</div>
+				
+			</header>
+			
+			<section class="main">
 
-			<div
-				style="text-align: center; height: 50%; line-height: 50%; transform: translateY(100%); text-shadow: black; position: absolute; width: 100%;">
-				<a style="color:black; font-size: 5vw;font-weight: 900;">현재 <%= map.get("address")%>의
-					날씨는 <%=map.get("reondo")%>도 <%=map.get("nalsi")%>입니다
-				</a>
-				<p>
-					<a href="/Food/todayMenu.do" style="font-size: 8vw;font-weight: 900;">오늘은 <%=map.get("category")%> 어떠세요?
-					</a>
-				</p>
-				<p>
-				<a style="color:black; font-size: 2vw;font-weight: 900;">202006 요일별 직장인 방문 음식점 업종 TOP5 - </a>
-					<a href="https://kdx.kr/data/view?product_id=4322" style="font-size: 3vw;color:white;">KDX한국데이터거래소</a>
-				</p>
-				<p>
-				<a style="color:black; font-size: 2vw;font-weight: 900;">날씨 </a>
-					<a style="color:black; font-size: 3vw;font-weight: 900;">openweathermap</a>
-				</p>
+				<div id="rm-container" class="rm-container">
 
-			</div>
-			<!-- 			<a href="" style="font-size: 10vw;">현재 의 날씨는 도 입니다^^</a> -->
-			<!-- 			<p> -->
-			<!-- 			<a href="" style="font-size: 15vw;">오늘은 의  어떠세요? 먹고 싶다면 눌러주세요</a> -->
-			<!-- 			</p> -->
-			<!-- 			</div> -->
+					<div class="rm-wrapper">
 
-			<!-- Post Image -->
-		</div>
-	</div>
+						<div class="rm-cover">
+
+							<div class="rm-front">
+								<div class="rm-content">
+
+									<div class="rm-logo"  style='background-image: url(/Food/resources/img/mainmenu/<%=map.get("menu")%>.jpg)'></div>
+									<h2>1조 레스토랑</h2>
+									<h3>Packing &amp; meal</h3>
+
+									<a href="#" class="rm-button-open">오늘 뭐 먹지?</a>
+									<div class="rm-info">
+										<p>
+										<strong>현재 <%= map.get("address")%>입니다.<br> 날씨는 <%=map.get("reondo")%><%=map.get("nalsi")%></strong><br>
+										<strong>오늘은 <%=map.get("category")%> 어떠세요?</strong><br>
+										<strong>202006<br> 요일별 직장인 방문 음식점 업종 TOP5</strong> <br>
+										<a href="https://kdx.kr/data/view?product_id=4322">KDX한국데이터거래소</a><br>
+										날씨<br><strong>OPENWEATHERMAP</strong>
+										</p>
+									</div>
+
+								</div><!-- /rm-content -->
+							</div><!-- /rm-front -->
+
+							<div class="rm-back">
+								<div class="rm-content">
+									<h4>Appetizers</h4>
+									<dl>
+										<dt>Bella's Artichokes</dt>
+										<dd>Roasted artichokes with chipotle aioli and cream cheese</dd>
+
+										<dt>Bruschetta Blue Delight</dt>
+										<dd>Blue cheese and citrus bruschetta</dd>
+
+										<dt>Pomme Dulse</dt>
+										<dd>Baked potatoes with crisped dulse</dd>
+
+										<dt><a href="http://herbivoracious.com/2011/11/crostini-with-young-pecorino-grilled-figs-and-arugula-mint-pesto-recipe.html" class="rm-viewdetails" data-thumb="images/1.jpg">Green Love Crostini</a></dt>
+										<dd>Crostini with young pecorino, grilled figs and arugula &amp; mint pesto</dd>
+										
+										<dt>Focaccia di Carciofi</dt>
+										<dd>Artichoke focaccia with fresh thyme</dd>
+									</dl>
+
+									<h4>Salads &amp; More</h4>
+									<dl>
+										<dt>Green Delight</dt>
+										<dd>Watercress, frisee and avocado salad</dd>
+
+										<dt><a href="http://herbivoracious.com/2010/02/thai-tofu-salad-recipe.html" class="rm-viewdetails" data-thumb="images/13.jpg">Gourmet Yam Taohu</a></dt>
+										<dd>Thai tofu salad yam taohu</dd>
+
+										<dt>Panini Deluxe</dt>
+										<dd>Buffalo mozzarella basil panini</dd>
+									</dl>
+								</div><!-- /rm-content -->
+								<div class="rm-overlay"></div>
+
+							</div><!-- /rm-back -->
+
+						</div><!-- /rm-cover -->
+
+						<div class="rm-middle">
+							<div class="rm-inner">
+								<div class="rm-content">
+									<h4>Main Courses</h4>
+									<dl>
+										<dt><a href="http://herbivoracious.com/2009/03/panfried-gnocchi-with-arugula-recipe.html" class="rm-viewdetails" data-thumb="images/11.jpg">Crispy Gnocchi with Arugula</a></dt>
+										<dd>Pan-fried potato gnocchi with arugula salad</dd>
+
+										<dt>Sea Palm Spicy Peanut Curry</dt>
+										<dd>Tender sea palm noodles, seasoned vegetables, spicy peanut curry and tempeh fenel croquettes</dd>
+
+										<dt><a href="http://herbivoracious.com/2012/09/caviar-lentil-salad-with-arugula-crispy-shallots-and-roasted-garlic-recipe.html" class="rm-viewdetails" data-thumb="images/8.jpg">Lentil Caviar &amp; Arugula</a></dt>
+										<dd>Black lentil curry with arugula salad, caramelized shallots and roasted garlic</dd>
+
+										<dt>Tamari-Maple Glazed Tofu</dt>
+										<dd>Wasabi emulsion, sesame seeds and scallions</dd>
+
+										<dt>Maple Barbeque Tofu</dt>
+										<dd>Grilled marinated tofu, maple barbeque sauce, tahini slaw, grilled seasonal vegetables and mashed potatoes</dd>
+																													
+										<dt><a href="http://herbivoracious.com/2012/07/king-oyster-mushroom-with-roasted-cherries-and-sage-no-that-isnt-meat-recipe-and-thought-process.html" class="rm-viewdetails" data-thumb="images/4.jpg">Luxur Oyster</a></dt>
+										<dd>King oyster mushroom with roasted cherries and sage</dd>
+										
+										<dt><a href="http://herbivoracious.com/2012/09/rigatoni-with-roasted-cauliflower-and-spicy-tomato-sauce-recipe.html" class="rm-viewdetails" data-thumb="images/3.jpg">Rigatoni di Cavolfiore</a></dt>
+										<dd>Rigatoni with roasted cauliflower and spicy tomato sauce</dd>
+										
+										<dt><a href="http://herbivoracious.com/2012/06/saffron-chickpea-stew-with-grilled-porcini-mushroom-recipe.html" class="rm-viewdetails" data-thumb="images/14.jpg">Saffron Chana Secret</a></dt>
+										<dd>Saffron chickpea stew with grilled porcini mushrooms</dd>
+									</dl>
+								</div><!-- /rm-content -->
+								<div class="rm-overlay"></div>
+							</div><!-- /rm-inner -->
+						</div><!-- /rm-middle -->
+
+						<div class="rm-right">
+
+							<div class="rm-front">
+								
+							</div>
+
+							<div class="rm-back">
+								<span class="rm-close">Close</span>
+								<div class="rm-content">
+									<h4>Desserts</h4>
+									<dl>
+										<dt><a href="http://herbivoracious.com/2012/08/crepes-with-roasted-french-plums-yogurt-and-honey.html" class="rm-viewdetails" data-thumb="images/5.jpg">French Plum Crepes</a></dt>
+										<dd>Crepes with roasted french plums, yogurt &amp; honey</dd>
+										
+										<dt><a href="http://herbivoracious.com/2012/05/butterscotch-pudding-with-bittersweet-ganache-and-caramelize-white-chocolate-crunchies-recipe.html" class="rm-viewdetails" data-thumb="images/6.jpg">Butterscotch Pudding</a></dt>
+										<dd>Butterscotch pudding with bittersweet ganache and caramelize white chocolate crispies</dd>
+										
+										<dt><a href="http://herbivoracious.com/2009/12/gateaux-de-crepes-recipe.html" class="rm-viewdetails" data-thumb="images/12.jpg">Chocolate Gâteau de Crêpes</a></dt>
+										<dd>Gâteau de crêpes with chocolate pastry cream and dulce de leche</dd>
+										
+										<dt><a href="http://herbivoracious.com/2009/05/dutch-baby-with-sauteed-apples-giant-ovenbaked-pancakes-recipe.html" class="rm-viewdetails" data-thumb="images/10.jpg">Dutch Baby With Sauteed Apples</a></dt>
+										<dd>Dutch ginat oven-baked pancakes with sauteed apples</dd>
+										
+										<dt><a href="http://herbivoracious.com/2008/08/blueberry-napol.html" class="rm-viewdetails" data-thumb="images/7.jpg">Blueberry Napoleon</a></dt>
+										<dd>Blueberry Napoleon with crème fraîche and raspberry powder</dd>
+										
+										<dt><a href="http://herbivoracious.com/2008/09/rings-of-saturn.html" class="rm-viewdetails" data-thumb="images/2.jpg">Rings of Saturn</a></dt>
+										<dd>Saturn peach on challah french toast</dd>
+										
+										<dt><a href="http://herbivoracious.com/2008/04/recipe-atayef.html" class="rm-viewdetails" data-thumb="images/9.jpg">Classic Atayef</a></dt>
+										<dd>Syrian ricotta-filled dessert pancakes</dd>
+									</dl>
+									<div class="rm-order">
+										<p><strong>Would you like us to cater your event?</strong> Call us &amp; we'll help you find a venue and organize the event: <strong>626.511.1170</strong></p>
+									</div>
+								</div><!-- /rm-content -->
+							</div><!-- /rm-back -->
+
+						</div><!-- /rm-right -->
+					</div><!-- /rm-wrapper -->
+
+				</div><!-- /rm-container -->
+
+			</section>
+			
+        </div>
+		<!-- jQuery if needed -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="/Food/resources/main/js/menu.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				Menu.init();
+			
+			});
+		</script>
 
 
 	<!-- 	</section> -->

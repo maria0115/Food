@@ -84,9 +84,20 @@
 	margin-bottom: 10px;
 }
 .shopmem{
-font-size: 20px;
-    display: grid;
-    font-weight: bold;
+display: flex;
+
+}
+.happytime{
+     display: grid;
+    font-size: xx-large;
+    font-family: cursive;
+    font-family: cursive;
+    font-weight: bolder;
+}
+.happytime label{
+color:darkred;
+margin-left: 5px;
+margin-right: 5px;
 }
 </style>
 <link rel="stylesheet"
@@ -126,7 +137,7 @@ font-size: 20px;
 					</nav>
 				</div>
 			</div>
-		</div>
+		
 	</div>
 
 	<div class="container">
@@ -172,18 +183,41 @@ font-size: 20px;
 			<strong>가게 상세 설명</strong> <input type="text" name="s_info" class="shopmenu"
 				style="width: 100%; height: 200px;" /><br>
 			<br> 
-			<div class="shopmem">
-			<strong>대표 메뉴 이름</strong>
-			<strong>대표 메뉴1</strong><input class="shopmenu" type="text" name="p_name_1"/><strong>대표 메뉴2</strong><input class="shopmenu" name="p_name_2"
-				type="text"  /><strong>대표 메뉴3</strong><input type="text" name="p_name_3" class="shopmenu"/>
-				</div>
+	   
+	       <table class="happytime">
+	       		<tr>
+	       			<td>
+	       				<label>대표 메뉴1</label>
+	       			 <input type="text" name="p_name_1" class="shopclass"/>
+	       			</td>
+	       			<td>
+	       				<label>가격</label>
+	       				<input type="text" name="p_price_1" class="shopmenu"/>
+	       			</td>
+	       		</tr>
+	       		<tr>
+	       			<td>
+	       				<label>대표 메뉴2</label>
+	       				<input class="shopmenu" type="text" name="p_name_2"/>
+	       			</td>
+	       			<td>
+	       				<label>가격</label>
+	       				<input type="text" name="p_price_2" class="shopmenu"/>
+	       			</td>
+	       		</tr>
+	       		<tr>
+	       			<td>
+	       				<label>대표 메뉴3</label>
+	       				<input class="shopmenu" type="text" name="p_name_3"/>
+	       			</td>
+	       			<td>
+	       				<label>가격</label>
+	       				<input type="text" name="p_price_3" class="shopmenu"/>
+	       			</td>
+	       		</tr>
+	       </table>
 	
-				<br>
-				<div class="shopmem">
-		<strong>대표 메뉴 가격(위 순서대로 작성)</strong>
-			<strong>대표 메뉴 가격1</strong><input type="text" name="p_price_1" class="shopmenu"/><strong>대표 메뉴 가격2</strong><input name="p_price_2" class="shopmenu"
-				type="text" /><strong>대표 메뉴 가격3</strong><input type="text" name="p_price_3" class="shopmenu"/>
-				</div>
+		
 			<br> <br>
 			<h1>*사진등록</h1>
 			<br> 
@@ -220,8 +254,9 @@ font-size: 20px;
 			</div>
 		</form> 
 		</div> 
-	
+</div>
 
+ 
 
 
 
