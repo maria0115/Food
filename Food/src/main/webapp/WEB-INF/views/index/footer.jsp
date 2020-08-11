@@ -106,22 +106,21 @@
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-	
-	Popper js
-	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
-	Bootstrap js
-	<script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
-	All Plugins js
-	<script src="/Food/resources/js/plugins/plugins.js"></script>
-	Active js
-	<script src="/Food/resources/js/active.js"></script>
-<!-- 	지섭  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
+
+	<script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
+
+	<script src="/Food/resources/js/plugins/plugins.js"></script>
+
+
+<!-- 	지섭  -->
+		<script src="/Food/resources/js/active.js"></script>
 	<script src="/Food/resources/js/sub.js"></script>
 	
 
-	<script type="text/javascript">
+		<script type="text/javascript">
 
 	$(function(){
 	var user_id = "${sessionScope.user_id}";
@@ -167,6 +166,7 @@
 	};
 			
 	</script>
+	
 
 
 

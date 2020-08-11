@@ -39,6 +39,8 @@
 	rel="stylesheet">
 <script
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	
+	
 
 <style>
 .menu a {
@@ -421,7 +423,6 @@ a.btn-layerClose:hover {
 	<!-- All Plugins js -->
 	<script src="resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
-	<script src="resources/js/active.js"></script>
 
 	<script src="/Food/resources/js/sub.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
