@@ -572,6 +572,7 @@ map.put("동남아", "east");
 														<div class="form-group">
 															<label for="name">가게명</label> <input type="text"
 																class="form-control" id="name" name="s_brand_name"
+																readonly="readonly"
 																placeholder="Nazrul" value="${list.s_brand_name}">
 														</div>
 														<div class="form-group">
@@ -610,6 +611,8 @@ map.put("동남아", "east");
 													</div>
 											</form>
 										</div>
+										
+										
 									</div>
 									</div>
 								</div>

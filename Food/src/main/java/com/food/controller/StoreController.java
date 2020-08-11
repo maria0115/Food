@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.food.domain.BoardVO;
@@ -214,15 +215,18 @@ public class StoreController {
 	// 수정하기
 	@ResponseBody
 	@RequestMapping("/storeReviewDetailsmodifyEnd.do")
-	public int storeReviewDetailsmodifyEnd(BoardVO vo, HttpServletRequest request) {
+	public int storeReviewDetailsmodifyEnd(BoardVO vo, HttpServletRequest request,MultipartHttpServletRequest mtf) {
 		System.out.println("리뷰수정완료 controller 도착");
+		String abcd = vo.getV_fileName();
+		System.out.println(abcd+"+++123456");
 		int result;
 		vo.setBoardType(2);
 		System.out.println(vo.getTitle()+"***************");
 		System.out.println(vo.getS_brand_name()+"***************");
 		System.out.println(vo.getB_content()+"***************");
 		System.out.println(vo.getB_no()+"***************");
-		System.out.println(vo.getV_fileName()+"***************");
+		
+		
 		
 		result = boardService.updateBoard(vo);
 		

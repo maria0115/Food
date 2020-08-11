@@ -317,7 +317,6 @@
     <!-- ##### Footer Area End ##### -->
 
 <script src="/Food/resources/js/storePaging.js"></script>
-<script src="/Food/resources/js/storeCheckBox.js"></script>
 <script src="/Food/resources/js/active.js"></script>
 
 </body>
