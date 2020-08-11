@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,11 +54,11 @@ public class StoreController {
 	
 	
 	
-//	@RequestMapping("/{step}.do")
-//	public String page(@PathVariable String step) {
-//		System.out.println("여기로");
-//		return "/store/" + step;
-//	}
+	@RequestMapping("/{step}.do")
+	public String page(@PathVariable String step) {
+		System.out.println("여기로");
+		return "/store/" + step;
+	}
 	
 	
 	
@@ -218,23 +217,13 @@ public class StoreController {
 	// 수정하기
 	@ResponseBody
 	@RequestMapping("/storeReviewDetailsmodifyEnd.do")
-	public int storeReviewDetailsmodifyEnd(BoardVO vo, HttpServletRequest request) {
+	public int storeReviewDetailsmodifyEnd(BoardVO vo, HttpServletRequest request){
 		System.out.println("리뷰수정완료 controller 도착");
 		String file2 = vo.getV_fileName();
 		System.out.println(file2+"파일명");
 		long fileSize2= vo.getV_fileSize();
 		System.out.println(fileSize2+"파일크기");
-//		String fileTag = file2; 
-//		// 업로드 파일이 저장될 경로
-//		String filePath = "C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\store\\"+file2;
-//		
-//		MultipartFile file = mtf.getFile(fileTag); String fileName = file.getOriginalFilename(); 
-//		// 파일 전송 
-//		try{
-//			file.transferTo(new File(filePath + fileName)); 
-//		}  catch(Exception e) { 
-//			System.out.println("업로드 오류");
-//		}  
+		
 
 		int result;
 		vo.setBoardType(2);
