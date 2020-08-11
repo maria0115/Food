@@ -116,7 +116,7 @@
   				<input type='button' value='삭제' id="delete1" style="float:right;font-size:small" title="" class="btn btn-outline-secondary">
   					</c:if>
 			</div>
-					<span style='font-family: none;margin-left:15px'>${list.b_date}</span>
+					<span style='font-family: none;margin-left:15px' id="replyTime">${list.b_date}</span>
 			<div class="seem_cont">
 				<div style="margin:10px 0 10px 0">
 				<textarea style="color:black;height: 120px;border:none" class="form-control" id="message1" cols="30" rows="10" name="b_content" readonly>${list.b_content}</textarea>
@@ -150,6 +150,7 @@
     <!-- ##### Footer Area End ##### -->
 <script src="resources/js/reservation_js/qna_hc.js"></script>
 <script src="/Food/resources/js/active.js"></script>
+<script src="/Food/resources/js/alarmData/qaData.js"></script>
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
 <!--     <script src="resources/js/jquery/jquery-2.2.4.min.js"></script> -->

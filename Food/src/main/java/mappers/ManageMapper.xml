@@ -164,4 +164,9 @@ select to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') DAY, count(*) co
     order by count desc
 
 </select>
+
+<insert id="insertQaAlarm">
+	insert into Alarm(qaAlarm_Id,qaAlarm_Content,qaAlarm_replyTime,qaAlarm_bno) values (#{qaAlarm_Id},#{qaAlarm_Content},#{qaAlarm_replyTime},#{qaAlarm_bno})
+</insert>
+
 </mapper>

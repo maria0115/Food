@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 import com.food.dao.managerDAOImpl;
+import com.food.domain.AlarmVO;
 import com.food.domain.BlackListVO;
 import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
@@ -161,6 +162,12 @@ public class ManagerServiceimpl implements ManagerService{
 	@Override
 	public List<Map> mealDayCount() {
 		return managerDAO.mealDayCount();
+	}
+
+	@Override
+	public void insertQaAlarm(AlarmVO vo) {
+		managerDAO.insertQaAlarm(vo);
+		
 	}
 
 

@@ -8,6 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.food.domain.AlarmVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 
@@ -191,6 +192,13 @@ public class managerDAOImpl implements managerDAO{
 		public List<Map> mealDayCount() {
 			System.out.println("==>ManagerMapper mealDayCount() 호출");
 			return mybatis.selectList("managerDAO.mealDayCount");
+		}
+
+		@Override
+		public void insertQaAlarm(AlarmVO vo) {
+			System.out.println("==>ManagerMapper insertQaAlarm() 호출");
+			mybatis.insert("managerDAO.insertQaAlarm");
+			
 		}
 
 

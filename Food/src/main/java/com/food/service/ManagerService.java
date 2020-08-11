@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.food.domain.AlarmVO;
 import com.food.domain.BlackListVO;
 import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
@@ -88,6 +89,9 @@ public interface ManagerService {
 
 
 	public List<Map> mealDayCount();
+
+
+	public void insertQaAlarm(AlarmVO vo);
 
 
 	

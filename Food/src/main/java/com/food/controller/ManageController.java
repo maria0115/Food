@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.food.domain.AlarmVO;
 import com.food.domain.BlackListVO;
 import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
@@ -739,6 +740,18 @@ public class ManageController {
 		return "manager/storestate";
 	}
 	
+	@ResponseBody
+	@RequestMapping("/saveQaAlarm.do")
+	public String saveQaAlarm(AlarmVO vo) {
+		
+		String nTime = LocalDateTime.now().toString();
+		System.out.println("nTime:"+nTime);
+		vo.setQaAlarm_replyTime(nTime);
+		System.out.println("id:"+vo.getQaAlarm_Id());
+		System.out.println("context:"+vo.getQaAlarm_Content());
+		managerService.insertQaAlarm(vo);
+		return nTime;
+	}
 	
 	
 	
