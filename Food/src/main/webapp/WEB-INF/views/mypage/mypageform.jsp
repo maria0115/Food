@@ -70,7 +70,6 @@
     <div class="grid-cell2"><a href="calendar.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>매장정보</a></div>
     <div class="grid-cell2"><a href="mywrite.do" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>리뷰목록</a></div>
     <div class="grid-cell2"><a href="foodcalorie.do" class="cen"><span style="color: lightcoral;">CALORIE?</span><br/>칼로리 체크</a></div>
-    <div class="grid-cell2"><a href="selectCart.do?m_id=${user_Info.M_ID}" class="cen"><span style="color: steelblue;">MY WISH</span><br/>찜 목록보기</a></div>
   </div>
   
 </div>	

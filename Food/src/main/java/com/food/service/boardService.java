@@ -40,4 +40,8 @@ public interface boardService {
 	List<BoardVO> selectReply(BoardVO vo);
 
 	void deleteReply(BoardVO vo);
+	
+	//밥친구 게시판 전체 글 가져오기
+	List<BoardVO> selectmeal(BoardVO vo);
+	
 }

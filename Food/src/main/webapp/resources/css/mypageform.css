@@ -193,7 +193,7 @@ html {
 
 @media (min-width: 600px){
     .grid-cell2 {
-    width: calc(100% / 4); /* 3 columns */
+    width: calc(100% / 3); /* 3 columns */
     }
 }
 

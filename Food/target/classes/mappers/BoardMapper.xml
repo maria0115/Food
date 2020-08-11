@@ -120,4 +120,10 @@ where boardtype=5 and Q_REPLYNO=#{q_replyno}
 delete from board where q_replyno=#{q_replyno} and boardtype=5
 </delete>
 
+<select id="selectmeal" parameterType="board" resultType="board">
+select * from board where boardType=#{boardType}
+</select>
+
+
+
 </mapper>

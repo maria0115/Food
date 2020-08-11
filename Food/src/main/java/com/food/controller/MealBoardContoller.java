@@ -138,46 +138,8 @@ public class MealBoardContoller {
 		return result;
 	}
 	
-	//길찾기 test
-	@RequestMapping("storemap.do")
-	public String storemap(HttpSession session, Model model) {
-		String userx = (String)session.getAttribute("longitude");
-		String usery = (String)session.getAttribute("latitude");
-		
-		
-		model.addAttribute("userx",userx);
-		model.addAttribute("usery",usery);
-		
-		return"/store/storemap";
-	}
 	
-	@RequestMapping("/chatroom.do")
-	public ModelAndView mainPage( ModelAndView mo,
-							HttpServletRequest request,
-							@RequestParam(value = "chatHeader") String header) {
-		JSONParser jsonParser = new JSONParser();
-		JSONObject receive_header;
-		JSONArray jsonUserList = null;
-		String cmd="" , host="";
-		ArrayList userList = new ArrayList();
-		try {
-			receive_header = (JSONObject)jsonParser.parse(header);
-			cmd = (String)receive_header.get("cmd");
-			host = (String)receive_header.get("host");
-			jsonUserList = (JSONArray)receive_header.get("user");
-			if(jsonUserList!=null) {
-				jsonUserList.add(host);
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		JSONObject users = new JSONObject();
-		users.put("users", jsonUserList);
-		System.out.println(users.toString());
-		mo.setViewName("chatroom");
-		mo.addObject("users",users);
-		return mo;
-	}
+	
 	
 	
 

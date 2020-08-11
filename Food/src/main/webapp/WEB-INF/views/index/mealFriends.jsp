@@ -71,7 +71,7 @@
 		
 		<div class="shop-widget best-seller mb-50">
         <div id="map" style="width: 100%; height: 400px;">
-			<c:forEach items="${friendlist}" var="board">
+			<c:forEach items="${list}" var="board">
 			<input type="hidden" name="name" value="${board.title}">
 			<input type="hidden" name="addr" value="${board.f_addr1 }">
 			<input type="hidden" id="b_no" name="b_no" value="${board.b_no }">
@@ -125,7 +125,7 @@
 		<!-- 페이징 -->
 		<div style="display: block; text-align: center;">		
 		<c:if test="${paging.startPage != 1 }">
-			<a href="../index/mealFriends.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"">&lt;</a>
+			<a href="../index/mealFriends.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N">&lt;</a>
 		</c:if>
 		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
 			<c:choose>
@@ -133,12 +133,12 @@
 					<b>${p }</b>
 				</c:when>
 				<c:when test="${p != paging.nowPage }">
-					<a href="../index/mealFriends.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+					<a href="../index/mealFriends.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"">${p }</a>
 				</c:when>
 			</c:choose>
 		</c:forEach>
 		<c:if test="${paging.endPage != paging.lastPage}">
-			<a href="../index/mealFriends.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"">&gt;</a>
+			<a href="../index/mealFriends.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N">&gt;</a>
 		</c:if>
         </div>
         <!-- 페이지에 접속했을때 로그인을 하지 않았을경우 글등록 버튼 안보여주기 -->
@@ -172,8 +172,6 @@
 			</tr>
 		</table>
 		</form>
-		<input type="hidden" id="loginId" value="${sessionScope.user_id }">
-		<input type="button" value="test" onclick="window.open('http://192.168.0.17:8080/Food/mealBoard/chat/${sessionScope.user_id }','_blank','width=502,height=720,left=500,top=100,location=no,status=no');">
 		</div>
 		<br/><br/><br/>
 

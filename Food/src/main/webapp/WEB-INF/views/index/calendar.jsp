@@ -20,6 +20,7 @@
 		padding: 0;
 		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
 		font-size: 14px;
+		
 	}
 
 	#calendar {
@@ -32,11 +33,14 @@
 	
 		color: white;
 		display: grid;
+		font-size: 17px;
+		
 	}
 	
 	.fc-more{
 	
 		color: black;
+		font-size: 20px;
 	}
 	
 

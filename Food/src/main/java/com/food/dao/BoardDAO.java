@@ -38,4 +38,7 @@ public interface BoardDAO {
 	List<BoardVO> selectReply(BoardVO vo);
 	
 	void modifyReply(BoardVO vo);
+	
+	//밥친구 게시판 전체글
+	public List<BoardVO> selectmeal(BoardVO vo);
 }

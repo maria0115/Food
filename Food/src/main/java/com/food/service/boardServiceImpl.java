@@ -104,4 +104,11 @@ public class boardServiceImpl implements boardService {
 		
 	}
 
+	//밥친구 게시판 전체글 
+	@Override
+	public List<BoardVO> selectmeal(BoardVO vo) {
+		
+		return boardDAO.selectmeal(vo);
+	}
+
 }

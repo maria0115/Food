@@ -157,16 +157,17 @@ public class IndexController {
 		
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
-			cntPerPage = "10";
+			cntPerPage = "5";
 		} else if (nowPage == null) {
 			nowPage = "1";
 		} else if (cntPerPage == null) { 
-			cntPerPage = "10"
+			cntPerPage = "5"
 					+ "";
 		}
 		
 		
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		model.addAttribute("list",boardService.selectmeal(bvo));
 		model.addAttribute("paging", vo); //페이징처리를 위한  가져온 값 넘기기 
 		model.addAttribute("friendlist", boardService.selectBoard(bvo, vo, searchType, keyword));
 		//모델에 "searchType" 검색타입 추가

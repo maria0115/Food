@@ -131,5 +131,11 @@ public class BoardDAOImpl implements BoardDAO {
 		mybatis.delete("boardDAO.deleteReply",vo);
 	}
 
+	@Override
+	public List<BoardVO> selectmeal(BoardVO vo) {
+		System.out.println("selectmeal DAO");
+		return mybatis.selectList("boardDAO.selectmeal",vo);
+	}
+
 
 }
