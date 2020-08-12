@@ -215,11 +215,8 @@ a.rm-button-open:hover {
 }
 
 .rm-content dl dd {
-	font-size: 17px;
 	font-weight: 900;
-	padding: 4px 5px 15px;
-	line-height: 15px;
-	color: #333;
+	color: black;
 }
 
 .rm-order p{
