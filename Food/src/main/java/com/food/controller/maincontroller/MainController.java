@@ -187,6 +187,12 @@ public class MainController {
 	
 		if(what.equals("main")) {
 			mv.addObject("map",map);
+			mv.addObject("kor",);
+			mv.addObject("eng",);
+			mv.addObject("jap",);
+			mv.addObject("min",);
+			mv.addObject("east",);
+			mv.addObject("ch",);
 		}
 		
 		
