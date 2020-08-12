@@ -86,6 +86,7 @@
 
 body {
   margin: 100px;
+  font-family: js5;
 }
 
 .pop-layer .pop-container {

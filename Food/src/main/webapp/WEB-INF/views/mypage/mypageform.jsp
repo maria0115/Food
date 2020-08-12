@@ -21,7 +21,9 @@
 	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
     <link rel="stylesheet" href="/Food/resources/css/mypageform.css">
-    
+<style type="text/css">
+
+</style>   
  
 </head>
 
