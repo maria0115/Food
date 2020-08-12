@@ -268,10 +268,11 @@ a.rm-viewdetails:before{
 }
 
 .rm-modal .rm-thumb {
-	width: 100px;
-	height: 100px;
+	width: 170px;
+	height: 130px;
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: contain;
 	float: left;
 	margin: 0 20px 0 0;
 	box-shadow: 
