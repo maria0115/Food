@@ -419,8 +419,9 @@ a.btn-layerClose:hover {
 								<div class="rm-content">
 									<h4>korea food</h4>
 									<dl>
-										
-										<dt><a href="singup.do" class="rm-viewdetails" data-thumb="/Food/resources/store/${kor.s_brand_name}.jpg">한식 카테고리 1위 예약매장!</a></dt>
+										 
+										<dt ><a href="/Food/store/storeDetails.do?s_brand_name=${kor.s_brand_name}" style="color: darkred;" class="rm-viewdetails" data-thumb="/Food/resources/store/${kor.s_brand_name}.jpg">한식 카테고리 1위 예약매장!</a></dt>
+										<dt>Store name</dt>
 										<dd> ${kor.s_brand_name}</dd>
 
 										<dt>menu&amp;Food prices</dt>
@@ -434,7 +435,8 @@ a.btn-layerClose:hover {
 									<h4>Western food</h4>
 									<dl>
 						
-										<dt><a  href="singup.do" class="rm-viewdetails" data-thumb="/Food/resources/store/${eng.s_brand_name}.jpg">양식 카테고리 1위 예약매장!</a></dt>
+										<dt><a href="/Food/store/storeDetails.do?s_brand_name=${eng.s_brand_name}" style="color: darkred;" class="rm-viewdetails" data-thumb="/Food/resources/store/${eng.s_brand_name}.jpg">양식 카테고리 1위 예약매장!</a></dt>
+										<dt>Store name</dt>
 										<dd> ${eng.s_brand_name}</dd>
 
 										<dt>menu&amp;Food prices</dt>
@@ -458,7 +460,8 @@ a.btn-layerClose:hover {
 									<h4>Chinese food</h4>
 									<dl>
 										
-										<dt><a href="singup.do" class="rm-viewdetails" data-thumb="/Food/resources/store/${ch.s_brand_name}.jpg">중식 카테고리 1위 예약매장!</a></dt>
+										<dt><a href="/Food/store/storeDetails.do?s_brand_name=${ch.s_brand_name}" style="color: darkred;" class="rm-viewdetails" data-thumb="/Food/resources/store/${ch.s_brand_name}.jpg">중식 카테고리 1위 예약매장!</a></dt>
+										<dt>Store name</dt>
 										<dd> ${ch.s_brand_name}</dd>
 
 										<dt>menu&amp;Food prices</dt>
@@ -472,7 +475,8 @@ a.btn-layerClose:hover {
 										<h4>Japanese food</h4>
 									<dl>
 										
-										<dt><a href="singup.do" class="rm-viewdetails" data-thumb="/Food/resources/store/${jap.s_brand_name}.jpg">일식 카테고리 1위 예약매장!</a></dt>
+										<dt><a href="/Food/store/storeDetails.do?s_brand_name=${jap.s_brand_name}" style="color: darkred;" class="rm-viewdetails" data-thumb="/Food/resources/store/${jap.s_brand_name}.jpg">일식 카테고리 1위 예약매장!</a></dt>
+										<dt>Store name</dt>
 										<dd> ${jap.s_brand_name}</dd>
 
 										<dt>menu&amp;Food prices</dt>
@@ -500,7 +504,8 @@ a.btn-layerClose:hover {
 									<h4>flour based food</h4>
 									<dl>
 										
-										<dt><a href="singup.do" class="rm-viewdetails" data-thumb="/Food/resources/store/${min.s_brand_name}.jpg">분식 카테고리 1위 예약매장!</a></dt>
+										<dt><a href="/Food/store/storeDetails.do?s_brand_name=${min.s_brand_name}" style="color: darkred;" class="rm-viewdetails" data-thumb="/Food/resources/store/${min.s_brand_name}.jpg">분식 카테고리 1위 예약매장!</a></dt>
+										<dt>Store name</dt>
 										<dd> ${min.s_brand_name}</dd>
 
 										<dt>menu&amp;Food prices</dt>
@@ -514,7 +519,8 @@ a.btn-layerClose:hover {
 									<h4>Southeast Asian food</h4>
 									<dl>
 										
-										<dt><a href="singup.do"  class="rm-viewdetails" data-thumb="/Food/resources/store/${east.s_brand_name}.jpg">동남아 카테고리 1위 예약매장!</a></dt>
+										<dt><a href="/Food/store/storeDetails.do?s_brand_name=${east.s_brand_name}"  style="color: darkred;" class="rm-viewdetails" data-thumb="/Food/resources/store/${east.s_brand_name}.jpg">동남아 카테고리 1위 예약매장!</a></dt>
+										<dt>Store name</dt>
 										<dd> ${east.s_brand_name}</dd>
 
 										<dt>menu&amp;Food prices</dt>

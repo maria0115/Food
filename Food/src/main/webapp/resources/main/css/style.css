@@ -12,6 +12,9 @@
   font-style: normal;
 }
 
+
+
+
 .rm-container {
 	width: 33%;
 	height: 700px;
@@ -203,6 +206,7 @@ a.rm-button-open:hover {
 .rm-content dl dd{
 	display: block;
 	margin: 0;
+	color: blueviolet;
 }
 
 .rm-content dl dt {
@@ -211,7 +215,8 @@ a.rm-button-open:hover {
 }
 
 .rm-content dl dd {
-	font-size: 13px;
+	font-size: 17px;
+	font-weight: 900;
 	padding: 4px 5px 15px;
 	line-height: 15px;
 	color: #333;
@@ -290,8 +295,9 @@ a.rm-viewdetails:before{
 
 a.rm-viewdetails,
 .rm-modal a {
-	color: #e6b741;
-	font-weight: 500;
+	font-weight: bolder;
+    font-size: 17px;
+    font-family: unset;
 }
 
 .rm-modal a {
