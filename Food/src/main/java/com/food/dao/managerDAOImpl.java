@@ -207,6 +207,12 @@ public class managerDAOImpl implements managerDAO{
 			return mybatis.selectOne("managerDAO.countAlarm",receiveId);
 		}
 
+		@Override
+		public List<AlarmVO> selectAlarm(String id) {
+			System.out.println("==>ManagerMapper countAlarm() 호출");
+			return mybatis.selectOne("managerDAO.countAlarm",id);
+		}
+
 
 		
 

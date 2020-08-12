@@ -59,7 +59,12 @@ if (folder == null || folder.equals(""))
 <script type="text/javascript"
 	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js"
 	charset="utf-8"></script>
-	<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+<!-- <script type="text/javascript" -->
+<!-- 	src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<!-- 	<script src='/Food/resources/js/jquery.min.js'></script> -->
+
 <style type="text/css">
 .qna_table {
 	cursor: pointer;
@@ -262,12 +267,13 @@ a.btn-layerClose:hover {
 									<a href="" id="logout"><button class="logout">Log-Out</button></a>
 									<a href="/Food/mypageform.do" id="mypage" class="fa fa-user">My
 										Page</a>
-									<a id="noti"> <i class="fa fa-lg fa-bell" id="notibell">
-
-									</i>
-									</a>
-									<span class="notification-badge badge badge-danger"
-										id="countAlarm"></span>
+									
+										<i class="fa fa-lg fa-bell" id="notibell">
+										<a id="noti">
+										</a>
+										</i>
+									
+									<span class="notification-badge badge badge-danger" id="countAlarm"></span>
 									
 									<span class="wish"> <a
 										href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i
@@ -433,6 +439,7 @@ a.btn-layerClose:hover {
 	<!-- jQuery-2.2.4 js -->
 	
 	<!-- Popper js -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="/Food/resources/js/bootstrap/popper.min.js"></script>
 	<!-- Bootstrap js -->
 	<script src="/Food/resources/js/bootstrap/bootstrap.min.js"></script>
@@ -445,6 +452,7 @@ a.btn-layerClose:hover {
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
 	<script src="/Food/resources/js/sub.js"></script>
+	
 	<script >
 	$('.btn-example').click(function(){
         var $href = $(this).attr('href');

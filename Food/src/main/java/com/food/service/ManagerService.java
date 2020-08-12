@@ -97,6 +97,9 @@ public interface ManagerService {
 	public int countAlarm(String receiveId);
 
 
+	public List<AlarmVO> selectAlarm(String id);
+
+
 	
 
 

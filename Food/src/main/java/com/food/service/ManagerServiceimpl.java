@@ -176,6 +176,11 @@ public class ManagerServiceimpl implements ManagerService{
 	
 	}
 
+	@Override
+	public List<AlarmVO> selectAlarm(String id) {
+		return managerDAO.selectAlarm(id);
+	}
+
 
 	
 	
