@@ -260,7 +260,7 @@ a.btn-layerClose:hover {
 									<span class="login-font">${sessionScope.user_name}
 										Welcome.</span>
 									<a href="" id="logout"><button class="logout">Log-Out</button></a>
-								<i class="fa fa-user" style="font-size:20px; color:black;"></i><a href="mypageform.do" id="mypage"  >MyPage</a>
+								<i class="fa fa-user" style="font-size:20px; color:black;"></i><a href="/Food/mypageform.do" id="mypage"  >MyPage</a>
 									
 										<i class="fa fa-lg fa-bell" id="notibell">
 										<a id="noti">
