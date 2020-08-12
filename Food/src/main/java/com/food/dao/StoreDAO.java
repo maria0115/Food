@@ -49,4 +49,28 @@ public interface StoreDAO {
 	
 	public int stateN(StoreListVO vo);
 	
+	public StoreListVO getkor();
+	
+	public StoreListVO geteng();
+	
+	public StoreListVO getjap();
+	 
+	public StoreListVO getmin();
+	
+	public StoreListVO geteast();
+	
+	public StoreListVO getch();
+	
+	public StoreListVO getkor();
+	
+	public StoreListVO geteng();
+	
+	public StoreListVO getjap();
+	 
+	public StoreListVO getmin();
+	
+	public StoreListVO geteast();
+	
+	public StoreListVO getch();
+	
 }

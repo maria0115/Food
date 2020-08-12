@@ -1,0 +1,19 @@
+diff a/Food/src/main/java/com/food/service/StoreService.java b/Food/src/main/java/com/food/service/StoreService.java	(rejected hunks)
+@@ -55,17 +55,5 @@
+ 	
+ 	//승인대기 승인거절
+ 	int stateN(StoreListVO vo);
+-	
+-	StoreListVO getkor();
+-	
+-	StoreListVO geteng();
+-	
+-	StoreListVO getjap();
+-	
+-	StoreListVO getmin();
+-	
+-	StoreListVO geteast();
+-	
+-	StoreListVO getch();
+ 
+ }
