@@ -19,6 +19,7 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
 <script src="/Food/resources/js/friendMap.js"></script>
+<script src="/Food/resources/js/alarmData/mealFriendsData.js"></script>
 
 </head>
 
@@ -43,7 +44,7 @@
 			<table class="table table-bordered">
 				<tr>
 					<td width="100">글번호</td>
-					<td align="left">${board.b_no }</td>
+					<td id="mfAlarm_bno" align="left">${board.b_no }</td>
 				</tr>
 				<tr>
 					<td width="100">등록일</td>
@@ -76,7 +77,7 @@
 				</tr>
 				<tr>
 					<td width="100">작성자</td>
-					<td align="left">${board.userId }</td>
+					<td id="contact-writer" align="left">${board.userId }</td>
 				</tr>
 				<tr>
 					<td width="100">제목</td>

@@ -5,11 +5,18 @@ public class AlarmVO {
     private String Alarm_replyTime;
     private int qaAlarm_bno;
     private String a_state;
+    private String mfAlarm_bno;
    
     
     
 
-   public String getAlarm_replyTime() {
+   public String getMfAlarm_bno() {
+		return mfAlarm_bno;
+	}
+	public void setMfAlarm_bno(String mfAlarm_bno) {
+		this.mfAlarm_bno = mfAlarm_bno;
+	}
+public String getAlarm_replyTime() {
       return Alarm_replyTime;
    }
    public void setAlarm_replyTime(String alarm_replyTime) {

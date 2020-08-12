@@ -44,11 +44,11 @@ public class ReplyHandler extends TextWebSocketHandler {
             String[] strs = payloadMessage.split(",");
             System.out.println("strs[3]:"+strs[3]);
             if(strs != null && strs.length == 4) {
-               String cmd = strs[0];
-               String receiveNum = strs[1]; 
-               String receiveDate = strs[2];
+               String cmd = strs[0]; //알람 보내는 곳 타입
+               String receiveNum = strs[1]; //알람 보낸 글 번호
+               String receiveDate = strs[2]; //알람 보낸 시간
                
-               String receiveId = strs[3];
+               String receiveId = strs[3]; //알람 받는 유저
                
                
                //작성자가 로그인 해서 있다면
