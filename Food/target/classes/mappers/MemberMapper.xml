@@ -220,6 +220,22 @@ select o.category,o.store s_brand_name ,o.count,d.p_name_1 p_name_1,d.p_name_2 p
 	select * from member where m_id=#{m_id}
 </select>
 
+<update id="updatestore" parameterType="store">
+   update store set s_brand_name=#{s_brand_name}, s_address=#{s_address}, s_category=#{s_category}, s_midpart=#{s_midpart},
+   s_info=#{s_info} where r_master=#{r_master}
+   </update>
+
+
+<update id="updateproduct" parameterType="product">
+	update product set p_name_1=#{p_name_1},p_name_2=#{p_name_2},p_name_3=#{p_name_3},
+	p_price_1=#{p_price_1},p_price_2=#{p_price_2},p_price_3=#{p_price_3} where s_brand_name=#{s_brand_name}
+</update>
+
+<update id="updateshopMember" parameterType="member">
+	update member set m_pass=#{m_pass},m_name=#{m_name} where m_id=#{m_id}
+</update>
+
+
 
 
 

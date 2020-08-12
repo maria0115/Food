@@ -36,7 +36,8 @@ public interface MemberDAO {
 	
 	public MemberVO getshopuser(MemberVO vo);
 	
-//	//점주 매장 정보 수정
-//	public int updatestore(StoreListVO vo);
-//	public int updateproduct(ProductVO vo); 
+	//점주 매장 정보 수정
+	public int updatestore(StoreListVO vo);
+	public int updateproduct(ProductVO vo);
+	public int updateshopMember(MemberVO vo);
 }

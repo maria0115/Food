@@ -121,18 +121,25 @@ public class MemberDAOImpl  implements MemberDAO{
 	}
 
 
-//	@Override
-//	public int updatestore(StoreListVO vo) {
-//		
-//		return mybatis.update("memberDAO.updatestore",vo);
-//	}
-//
-//
-//	@Override
-//	public int updateproduct(ProductVO vo) {
-//		
-//		return mybatis.update("memberDAO.updateproduct",vo);
-//	}
+	@Override
+	public int updatestore(StoreListVO vo) {
+		
+		return mybatis.update("memberDAO.updatestore",vo);
+	}
+
+
+	@Override
+	public int updateproduct(ProductVO vo) {
+		
+		return mybatis.update("memberDAO.updateproduct",vo);
+	}
+
+
+	@Override
+	public int updateshopMember(MemberVO vo) {
+		
+		return mybatis.update("memberDAO.updateshopMember",vo);
+	}
  
 	
 }
