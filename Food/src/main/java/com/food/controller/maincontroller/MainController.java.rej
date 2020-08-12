@@ -1,0 +1,14 @@
+diff a/Food/src/main/java/com/food/controller/maincontroller/MainController.java b/Food/src/main/java/com/food/controller/maincontroller/MainController.java	(rejected hunks)
+@@ -187,12 +187,6 @@
+ 	
+ 		if(what.equals("main")) {
+ 			mv.addObject("map",map);
+-			mv.addObject("kor",storeService.getkor());
+-			mv.addObject("eng",storeService.geteng());
+-			mv.addObject("jap",storeService.getjap());
+-			mv.addObject("min",storeService.getmin());
+-			mv.addObject("east",storeService.geteast());
+-			mv.addObject("ch",storeService.getch());
+ 		}
+ 		
+ 		
