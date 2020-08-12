@@ -20,6 +20,7 @@
 		<typeAlias alias="product"  type="com.food.domain.ProductVO"/>	
 		<typeAlias alias="board"  type="com.food.domain.BoardVO"/>	
 		<typeAlias alias="wishlist"  type="com.food.domain.WishlistVO"/>
+		<typeAlias alias="alarm"  type="com.food.domain.AlarmVO"/>
 	</typeAliases>
 	
 
