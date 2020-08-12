@@ -90,9 +90,8 @@ display: flex;
 .happytime{
      display: grid;
     font-size: xx-large;
-    font-family: cursive;
-    font-family: cursive;
     font-weight: bolder;
+    font-family: monospace;
 }
 .happytime label{
 color:darkred;
@@ -105,7 +104,6 @@ margin-right: 5px;
 <jsp:include page="../index/header.jsp">
 	<jsp:param value='' name='folder' />
 </jsp:include>
-<%-- 	<c:if test="${ empty sessionScope.ID }"> --%>
 </head>
 
 <body>
@@ -132,7 +130,7 @@ margin-right: 5px;
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="#"><i
 									class="fa fa-home"></i> Home</a></li>
-							<li class="breadcrumb-item active" aria-current="page">매장회원가입</li>
+							<li class="breadcrumb-item active" aria-current="page">매장회원정보</li>
 						</ol>
 					</nav>
 				</div>
@@ -141,11 +139,11 @@ margin-right: 5px;
 	</div>
 
 	<div class="container">
-		<form action="/Food/shopmodify.do" method="post">
+		<form action="/Food/shopinfomodify.do" method="post">
 			<!-- 아이디 -->
 
 			<label>아이디</label> <input type="text" class="sing" id="shopid"
-				name="m_id"  readonly="readonly">
+				name="m_id" value="${user.m_id }" readonly="readonly">
 			
 
 			<label>비밀번호</label> <input type="password" class="sing"
@@ -158,68 +156,110 @@ margin-right: 5px;
 				required>
 			<div class="check_font" id="shoppass2_check"></div>
 
-			<!-- 이름 -->
-			<label>이름</label> <input type="text" class="sing" id="shopname"
-				name="m_name" readonly="readonly">
-				 <strong>*&nbsp;카테고리</strong>
-			<span class="box"> <select name="s_category">
-					<option value="한식">한식</option>
-					<option value="양식">양식</option>
-					<option value="중식">중식</option>
-					<option value="분식">분식</option>
-					<option value="일식">일식</option>
-					<option value="동남아">동남아</option>
-			</select>
-			</span> <strong>&nbsp;&nbsp;&nbsp;*&nbsp;중분류</strong>&nbsp;&nbsp;&nbsp;<input  class="shopmenu"
-				style="max-width: 100%; height: 50px; border: 2px ridge black;"
-				type="text" name="s_midpart" placeholder=" ex)국수,육류,찌개" required>
-			<strong>&nbsp;&nbsp;&nbsp;*&nbsp;매장 이름</strong>&nbsp;&nbsp;&nbsp;<input class="shopmenu"
-				style="max-width: 100%; height: 50px; border: 2px ridge black;"
-				type="text" name="s_brand_name" placeholder="상호명을 입력하세요." required>
-			<br>
-			<br>
-
+			
+			<p></p>
 			<!-- 휴대전화 -->
-			<strong>가게 상세 설명</strong> <input type="text" name="s_info" class="shopmenu"
-				style="width: 100%; height: 200px;" /><br>
-			<br> 
-	   
-	       <table class="happytime">
-	       		<tr>
-	       			<td>
-	       				<label>대표 메뉴1</label>
-	       			 <input type="text" name="p_name_1" class="shopclass"/>
-	       			</td>
-	       			<td>
-	       				<label>가격</label>
-	       				<input type="text" name="p_price_1" class="shopmenu"/>
-	       			</td>
-	       		</tr>
-	       		<tr>
-	       			<td>
-	       				<label>대표 메뉴2</label>
-	       				<input class="shopmenu" type="text" name="p_name_2"/>
-	       			</td>
-	       			<td>
-	       				<label>가격</label>
-	       				<input type="text" name="p_price_2" class="shopmenu"/>
-	       			</td>
-	       		</tr>
-	       		<tr>
-	       			<td>
-	       				<label>대표 메뉴3</label>
-	       				<input class="shopmenu" type="text" name="p_name_3"/>
-	       			</td>
-	       			<td>
-	       				<label>가격</label>
-	       				<input type="text" name="p_price_3" class="shopmenu"/>
-	       			</td>
-	       		</tr>
-	       </table>
-	
+			<div id="storeInfo">
+			<h2 style="display: inline;">우리 매장 정보</h2><p></p>
+			<table class="table table" id="storeinfotable">
+				<tr>
+					<td style="width: 20%;">
+						<label>매장이름</label>
+					</td>
+					<td>
+						<input class="form-control" name="s_brand_name" type="text" value="${store.s_brand_name }">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>매장 주소</label>
+						<input style="float: right; margin-top: 6px;" type="checkbox" id="modifyck">
+						<label style="float: right;">주소변경</label>
+					</td>
+					<td id="addrarea">
+						<input id="addr" class="form-control" name="s_address" type="text" value="${store.s_address }" readonly="readonly">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>카테고리</label>
+					</td>
+					<td>
+						<span id="category">${store.s_category }</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>중분류</label>
+					</td>
+					<td>
+						<input class="form-control" name="s_midpart" type="text" value="${store.s_midpart }">
+					</td>
+				</tr>
+				<tr>
+					<td ><label>매장소개</label></td>
+					<td >
+						<textarea class="form-control" rows="10" cols="300" name="s_info">${store.s_info }</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;">우리매장메뉴</td>
+				</tr>
+				<tr>
+					<td>
+					<label>대표메뉴1</label>
+					</td>
+					<td>
+						<input class="form-control" type="text" name="p_name_1" value="${store.p_name_1 }">
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<label>대표메뉴 가격1</label>
+					</td>
+					<td>
+						<input class="form-control" type="text" name="p_price_1" value="${store.p_price_1 }">
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<label>대표메뉴2</label>
+					</td>
+					<td>
+						<input class="form-control" type="text" name="p_name_2" value="${store.p_name_2 }">
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<label>대표메뉴 가격2</label>
+					</td>
+					<td>
+						<input class="form-control" type="text" name="p_price_2" value="${store.p_price_2 }">
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<label>대표메뉴3</label>
+					</td>
+					<td>
+						<input class="form-control" type="text" name="p_name_3" value="${store.p_name_3 }">
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<label>대표메뉴 가격3</label>
+					</td>
+					<td>
+						<input class="form-control" type="text" name="p_price_3" value="${store.p_price_3 }" >
+					</td>
+				</tr>
+			</table>
+			
+			
+			</div>
 		
 			<br> <br>
-			<h1>*사진등록</h1>
+			<h1>*사진수정</h1>
 			<br> 
 			<div style="display: flex;">
 				<input id="upload" type="button" class="btn btn-white" style="width: 50%; font-size: 20px; font-weight: bolder;" value="매장등록"> 	     <br>
@@ -227,25 +267,7 @@ margin-right: 5px;
              </div>    
                               <br>
                         
-
-			<label>가게주소</label>
-			<div class="form-group">
-				<input class="sing" style="width: 40%; display: inline;"
-					placeholder="우편번호" id="shopaddr1" type="text" name="m_post"
-					readonly="readonly">
-				<button type="button" class="btn btn-default"
-					onclick="execPostCode();">
-					<i class="fa fa-search"></i> 우편번호 찾기
-				</button>
-			</div>
-			<div class="form-group">
-				<input class="sing" style="top: 5px;" placeholder="도로명 주소"
-					name="s_address" id="shopaddr2" type="text" readonly="readonly" />
-			</div>
-			<div class="form-group">
-				<input class="sing" placeholder="상세주소" id="detailaddr" type="text" />
-			</div>
-
+			
 
 
 			<div class="move">
@@ -276,6 +298,7 @@ margin-right: 5px;
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 	<script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
+	
 	<!-- Popper js -->
 	<script src="resources/js/bootstrap/popper.min.js"></script>
 	<!-- Bootstrap js -->
@@ -284,9 +307,10 @@ margin-right: 5px;
 	<script src="resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
 	<script src="resources/js/active.js"></script>
+	
 
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-     
+    <script src="/Food/resources/js/shopmodify.js"></script>
 
     
 	<script type="text/javascript">

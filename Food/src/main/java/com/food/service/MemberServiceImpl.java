@@ -119,6 +119,13 @@ public class MemberServiceImpl  implements MemberService{
 		return memberdao.countBoard(vo);
 	}
 
+
+	@Override
+	public MemberVO getshopuser(MemberVO vo) {
+		
+		return memberdao.getshopuser(vo);
+	}
+
  
 	
 	
