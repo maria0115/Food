@@ -420,8 +420,10 @@ public class MemberController {
 	
 	//매장점주 정보 수정하기 
 	@RequestMapping("/shopmodify.do")
-	public String shopmodify(MemberVO mvo, StoreListVO svo, ProductVO pvo) {
+	public String shopmodify(MemberVO mvo,StoreListVO svo, Model model) {
 		
+		model.addAttribute("store",storeService.storeDetail(svo));
+		model.addAttribute("user",memberService.getshopuser(mvo));
 		return"mypage/shopmodify";
 	}
 	
@@ -430,10 +432,6 @@ public class MemberController {
 	public String myreview(Model model,PagingVO pvo ,MemberVO vo, HttpServletRequest request
 			, @RequestParam(value="nowPage", required=false)String nowPage
 			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
-		
-		
-		
-		
 		
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
@@ -451,6 +449,21 @@ public class MemberController {
 		model.addAttribute("list",memberService.myreview(vo,pvo));
 		
 		return "mypage/myreview";
+	}
+	
+	//매장정보 수정하기 
+	@RequestMapping("/shopinfomodify.do")
+	public String shopinfomodify(Model model, MemberVO mvo, StoreListVO svo,
+			ProductVO pvo) {
+		
+		mvo.setGrade(2);
+		memberService.updateMember(mvo);
+		svo.setR_master(mvo.getM_id());
+		storeService.updateStore(svo);
+
+		productService.updateproduct(pvo);
+		
+		return "";
 	}
 
 }

@@ -111,6 +111,13 @@ public class MemberDAOImpl  implements MemberDAO{
 		
 		return mybatis.selectOne("memberDAO.countBoard",vo);
 	}
+
+
+	@Override
+	public MemberVO getshopuser(MemberVO vo) {
+		
+		return mybatis.selectOne("memberDAO.getshopuser",vo);
+	}
  
 	
 }

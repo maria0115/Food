@@ -35,6 +35,9 @@ public interface MemberService {
 	public List<BoardVO> myreview(MemberVO vo,PagingVO pvo);
 	//매장별 리뷰갯수
 	public int countBoard(MemberVO vo);
+	//점주 정보가져오기 
+	public MemberVO getshopuser(MemberVO vo);
+	
 	
 	
 }

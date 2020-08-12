@@ -67,7 +67,7 @@
 		<div class="grid-wrapper">
 </div>
   <div class="grid2">
-    <div class="grid-cell2"><a href="shopmodify.do" class="cen"><span style="color: crimson;">MY INFO</span><br/>매장정보</a></div>
+    <div class="grid-cell2"><a href="shopmodify.do?s_brand_name=${user_Info.S_BRAND_NAME }&m_id=${sessionScope.user_id}" class="cen"><span style="color: crimson;">MY INFO</span><br/>매장정보</a></div>
     <div class="grid-cell2"><a href="myreview.do?s_brand_name=${user_Info.S_BRAND_NAME }" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>리뷰목록</a></div>
     <div class="grid-cell2"><a href="foodcalorie.do" class="cen"><span style="color: lightcoral;">CALORIE?</span><br/>칼로리 체크</a></div>
   </div>

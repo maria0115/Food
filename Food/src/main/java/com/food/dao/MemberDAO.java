@@ -32,4 +32,6 @@ public interface MemberDAO {
 	public List<BoardVO> myreview(MemberVO vo,PagingVO pvo);
 	
 	public int countBoard(MemberVO vo);
+	
+	public MemberVO getshopuser(MemberVO vo);
 }
