@@ -18,8 +18,8 @@
 	body {
 		margin: 40px 10px;
 		padding: 0;
-		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-		font-size: 14px;
+		font-family: js5;
+		font-size: 20px;
 		
 	}
 
@@ -33,7 +33,7 @@
 	
 		color: white;
 		display: grid;
-		font-size: 17px;
+		font-size: 25px;
 		
 	}
 	

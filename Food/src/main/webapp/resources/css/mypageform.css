@@ -4,8 +4,8 @@
     padding: 20px;
     border: slategray;
     margin: 10 10 10 10;
-    font-family: inherit;
-    font-size: x-large;
+    font-family: js4;
+	font-size: 30px;
     border-style: double;
     text-align: center;
     color: black;
@@ -15,10 +15,11 @@
     
  
     .jsjs{
+    font-family: js5;
+	font-size: 60px;
     	padding: 30px;
     text-align: center;
     /* font-family: serif; */
-    font-size: -webkit-xxx-large;
     text-transform: uppercase;
 }
 
@@ -48,6 +49,9 @@ html {
 
     /* pulls grid cells hard against edges */
     margin: -20px;
+    font-family: js5;
+	font-size: 30px;
+    
 }
 
 .grid-cell {
@@ -118,29 +122,6 @@ html {
   margin: auto;
 }
 
-.box{
-    width: auto;
-    height: 200px;
-    padding: 20px;
-    border: slategray;
-    margin: 10 10 10 10;
-    font-family: inherit;
-    font-size: x-large;
-    border-style: double;
-    text-align: center;
-    color: black;
-    -webkit-text-stroke-width: medium;
-        
-    }   
-    
- 
-    .jsjs{
-    	padding: 30px;
-    text-align: center;
-    /* font-family: serif; */
-    font-size: -webkit-xxx-large;
-    text-transform: uppercase;
-}
 
     } 
     
