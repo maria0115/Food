@@ -86,27 +86,27 @@ overflow-y: scroll;
 										<a class="product-img" href="img/bg-img/49.jpg"
 											title="Product Image"> <img class="d-block w-100"
 											src="../resources/store/${list.s_brand_name}.jpg" alt="1" 
-											style="height: 100%;">
+											style="height: 450px;">
 										</a>
 									</div>
 									<div class="carousel-item">
 										<a class="product-img" href="img/bg-img/49.jpg"
 											title="Product Image"> <img class="d-block w-100"
-											style="height: 100%;"
+											style="height: 450px;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_1() %>.jpg" alt="1">
 										</a>
 									</div>
 									<div class="carousel-item">
 										<a class="product-img" href="img/bg-img/49.jpg"
 											title="Product Image"> <img class="d-block w-100"
-											style="height: 100%;"
+											style="height: 450px;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_2() %>.jpg" alt="1">
 										</a>
 									</div>
 									<div class="carousel-item">
 										<a class="product-img" href="img/bg-img/49.jpg"
 											title="Product Image"> <img class="d-block w-100"
-											style="height: 100%;"
+											style="height: 450px;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_3() %>.jpg" alt="1">
 										</a>
 									</div>
@@ -369,7 +369,7 @@ overflow-y: scroll;
 								<!-- 						---------------------------------------------------------------------------- -->
 
 
-
+								
 								<div class="products--meta">
 									<p>
 										<span>메뉴:</span> <span>${list.p_name_1 }<br />
@@ -406,7 +406,7 @@ overflow-y: scroll;
 								<script>
                         $('#reserv').click(function(){
 //                            location.href='../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}'
-                            window.open('../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}&m_id=${sessionScope.user_id}','ddd','width=600,height=700,left=700,top=100,location=no,status=no,scrollbars=yes')
+                            window.open('../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}&m_id=${sessionScope.user_id}&r_master=${list.r_master }','ddd','width=600,height=700,left=700,top=100,location=no,status=no,scrollbars=yes')
 
                            })
 //                         }
@@ -553,14 +553,14 @@ overflow-y: scroll;
 
 										
 										<div class="submit_a_review_area mt-50">
-											<h4>Submit A Review</h4>
+											<h4>리뷰 쓰기</h4>
 											<form action="reviewInsert.do?name=${list.s_brand_name}"
 												method="post" enctype="multipart/form-data"
 												id="reviewInsertFrm">
 												<div class="row">
 													<div class="col-12">
 														<div class="form-group d-flex align-items-center">
-															<span class="mr-15">Your Ratings:</span>
+															<span class="mr-15">별점:</span>
 													<div class="stars">
                                                         <input type="radio" name="v_star" class="star-1" id="star-1" value="1">
                                                         <label class="star-1" for="star-1">1</label>
@@ -603,13 +603,15 @@ overflow-y: scroll;
 														<div class="form-group">
 															<label for="comments">내용</label>
 															<textarea class="form-control" id="comments"
-																name="b_content" rows="5" data-max-length="150" style="width:48%;"></textarea>
+																name="b_content" rows="5" data-max-length="150" style="width:99%;"></textarea>
 														</div>
 													</div>
-													<div class="col-12 col-md-6" id="reviewFileDiv">
+													<div class="col-12 col-md-12" id="reviewFileDiv">
 														<!-- ************** name은 MultipartFile 프라퍼티임 -->
+														
 														<label for="file">첨부사진</label>
 														<input type="file" name="file" id="file" maxlength="60" size="40">
+														<input class="upload-name" value="파일선택" disabled="disabled" >
 													</div>
 													<br/>
 																																					

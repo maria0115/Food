@@ -32,6 +32,7 @@
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
+<link rel="stylesheet" href="/Food/resources/css/store.css">
 <script
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
@@ -220,14 +221,16 @@
 						<!-- Shop Widget -->
                         <!-- Shop Widget -->
                         <div class="shop-widget best-seller mb-50">
-                            <h4 class="widget-title">BEST FOOD</h4>
+                            <h4 class="widget-title">REVIEW BEST STORE 3</h4>
                             <div class="widget-desc">
 
                                 <!-- Single Best Seller Products -->
                                <c:forEach items="${starAvg}" var="starAvg">
                                 <div class="single-best-seller-product d-flex align-items-center">
                                     <div class="product-thumbnail">
-                                        <a href="shop-details.html"><img src="../resources/store/${starAvg.s_brand_name }.jpg" alt=""></a>
+                                        <a href="shop-details.html">
+                                        <img class="starAvgImg" src="../resources/store/${starAvg.s_brand_name }.jpg" alt="">
+                                        </a>
                                     </div>
                                     <div class="product-info">
                                         <a href="../store/storeDetails.do?s_brand_name=${starAvg.s_brand_name}">${starAvg.s_brand_name}</a>

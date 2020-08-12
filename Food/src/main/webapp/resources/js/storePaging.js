@@ -141,7 +141,11 @@ function getWriterData(category) {
 			$('#pagination-demo').twbsPagination('destroy');
 			$('#pagination-demo').twbsPagination($.extend({}, defaultOpts, {
 				startPage : currentPage,
-				totalPages : totalPages
+				totalPages : totalPages,
+				first : "<<",
+				prev : "<",
+				next : ">",
+				last : ">>"
 			}));
 
 		},
