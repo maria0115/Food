@@ -1,5 +1,6 @@
 package com.food.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -47,17 +48,5 @@ public interface StoreDAO {
 	public int stateY(StoreListVO vo);
 	
 	public int stateN(StoreListVO vo);
-	
-	public StoreListVO getkor();
-	
-	public StoreListVO geteng();
-	
-	public StoreListVO getjap();
-	 
-	public StoreListVO getmin();
-	
-	public StoreListVO geteast();
-	
-	public StoreListVO getch();
 	
 }

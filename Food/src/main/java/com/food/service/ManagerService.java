@@ -97,8 +97,6 @@ public interface ManagerService {
 	public int countAlarm(String receiveId);
 
 
-
-
 	
 
 

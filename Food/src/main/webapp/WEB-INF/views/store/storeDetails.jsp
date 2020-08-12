@@ -28,9 +28,6 @@ map.put("동남아", "east");
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<script type="text/javascript">
-
-</script>
 
 
 
@@ -49,7 +46,16 @@ map.put("동남아", "east");
 <script src="/Food/resources/js/storeMap.js"></script>
 
 
-
+<!-- <style>
+.pop-conts {
+margin: 30px auto;
+height: 150px;
+background: #ccc;
+overflow-x: hidden;
+overflow-y: scroll;
+-webkit-overflow-scrolling: touch;
+}
+</style> -->
 
 
 </head>
@@ -142,11 +148,12 @@ map.put("동남아", "east");
     <div id="layer2" class="pop-layer">
         <div class="pop-container">
             
-            <div class="pop-imgArea" 
-            style=" float:left; width: 700px;
-                display: block;
-   				clear: both;
-  				height: 484px;
+            <div class="pop-imgArea"
+            	id="pop-divArea" 
+	            style=" float:left; width: 700px;
+	                display: block;
+	   				clear: both;
+	  				height: 484px;
            	">
             <div class="pop-imgAreaInner"  
             	style="position: relative;
@@ -175,8 +182,13 @@ map.put("동남아", "east");
             </div>
             </div>
             
-            <div class="pop-conts" style=" float:left; overflow-x:hidden; width: 350px;padding: 14px;">
+            <div class="pop-conts" id="scroller1"
+            	style=" float:left; overflow-x:hidden; 
+            			width: 350px;padding: 14px;
+            			height: 460px; "
+            			>
                 <!--content //-->
+            
                 <div class="xans-element- xans-board xans-board-product-4 xans-board-product xans-board-4 prdArea" 
               		  style= "width: 100%;
 					    padding: 10px;
@@ -213,7 +225,7 @@ map.put("동남아", "east");
 				</div>
 				</div>
                	<div>
-               	<form action="" style="margin-top: auto;">
+               	<form id="formScroll" action="" style="margin-top: auto;">
                	<div >
                	<div>
                		<div style="padding: 10px;
@@ -222,10 +234,7 @@ map.put("동남아", "east");
 					    -webkit-box-sizing: border-box;
 					    box-sizing: border-box;
 					    border-radius: 4px;">
-               			
-               			<!-- 별점  -->
                			<span id="starTest"> 
-               			
                         </span>
                			
                       
@@ -631,7 +640,10 @@ map.put("동남아", "east");
 	<!-- ##### Footer Area Start ##### -->
 	<%@ include file="../index/footer.jsp"%>
 	<!-- ##### Footer Area End ##### -->
-
+		<!-- <script>
+		new iScroll('scroller1', { hScrollbar: false, vScrollbar: false, hScroll: false ,height: 460px;});
+		</script> -->
+	
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/store.js"></script>
 </body>

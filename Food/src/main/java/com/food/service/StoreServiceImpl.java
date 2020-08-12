@@ -131,42 +131,6 @@ public class StoreServiceImpl implements StoreService{
 		return storeDAO.stateN(vo);
 	}
 
-	@Override
-	public StoreListVO getkor() {
-		// TODO Auto-generated method stub
-		return storeDAO.getkor();
-	}
-
-	@Override
-	public StoreListVO geteng() {
-		// TODO Auto-generated method stub
-		return storeDAO.geteng();
-	}
-
-	@Override
-	public StoreListVO getjap() { 
-		// TODO Auto-generated method stub
-		return storeDAO.getjap();
-	}
-
-	@Override
-	public StoreListVO getmin() {
-		// TODO Auto-generated method stub
-		return storeDAO.getmin();
-	}
-
-	@Override
-	public StoreListVO geteast() {
-		// TODO Auto-generated method stub 
-		return storeDAO.geteast();
-	}
-
-	@Override
-	public StoreListVO getch() {
-		// TODO Auto-generated method stub
-		return storeDAO.getch();
-	}
-
 	
 
 
