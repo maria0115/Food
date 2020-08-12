@@ -97,10 +97,6 @@
         <hr>
   			
   		</div>
-  		<div class='well'>
-  			<input type="text" id="msg" value="1212" class="form-control"/>
-  			<button id="btnSend"class="btn btn-primary">Send Message</button>
-  		</div>
   	</div>	
   	
   </footer>
@@ -211,8 +207,11 @@
                senderId = strs[4];
                if("reply"==cmd){
                   
-                  reply = senderId + "님이 " +"Q&A게시판 "+receiveNum+"번 게시글에 댓글을 남겼습니다."
+                  reply = senderId + "님이 Q&A게시판 "+receiveNum+"번 게시글에 댓글을 남겼습니다";
                   }
+               else if("mfChat"==cmd){
+            	   reply = senderId + "님이 밥친구만들기 "+receiveNum+"번 글 채팅방에 입장하셨습니다";
+                   }
             }
          
    
@@ -233,7 +232,13 @@
          toastr.options.extendedTimeOut = 0;
          toastr.options.timeOut = 0;
 
-         toastr.options.onclick=function(){location.href='/Food/detail?b_no='+receiveNum};
+         toastr.options.onclick=function(){
+             if("reply"==cmd){
+             location.href='/Food/detail?b_no='+receiveNum;
+             }else if("mfChat"==cmd){
+            	 window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?&userId='+receiveId,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
+                 }
+             };
          toastr.info('알림', reply);
          
       };
@@ -243,9 +248,7 @@
          };
       ws.onerror = function(err){console.log('Error:',err);};
    };
-   $("#example").on("click", function(){
-   
-      });
+
          
    </script>
 
