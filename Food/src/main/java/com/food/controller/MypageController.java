@@ -138,6 +138,28 @@ public class MypageController {
 			return map;
 		}
 		
+		@RequestMapping("/reservation.do")
+		public String reservation(ReservationVO vo, Model model) {
+				ReservationVO vo2 =  ReservationService.reservationDetail(vo);
+				String menu = vo2.getR_menu();
+				String count = vo2.getR_menu_count();
+				System.out.println(vo2.getR_menu());
+				System.out.println(vo2.getR_menu_count());
+				String[] menulist = menu.split("/");
+				String[] countlist = count.split("/");
+				String result = "";
+				for(int i=0; i<menulist.length; i++) {
+					String temp = menulist[i]+"     "+countlist[i]+"개"+"\n";
+					result += temp;
+				};
+				
+				
+				vo2.setR_menu(result);
+				model.addAttribute("user",vo2);
+			
+			return "mypage/reservation";
+		}
+		
 		
 	
 		
