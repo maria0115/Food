@@ -128,18 +128,18 @@ public class MemberServiceImpl  implements MemberService{
 	}
 
 
-	@Override
-	public int updatestore(StoreListVO vo) {
-		
-		return memberdao.updatestore(vo);
-	}
-
-
-	@Override
-	public int updateproduct(ProductVO vo) {
-		// TODO Auto-generated method stub
-		return memberdao.updateproduct(vo);
-	}
+//	@Override
+//	public int updatestore(StoreListVO vo) {
+//		
+//		return memberdao.updatestore(vo);
+//	}
+//
+//
+//	@Override
+//	public int updateproduct(ProductVO vo) {
+//		// TODO Auto-generated method stub
+//		return memberdao.updateproduct(vo);
+//	}
 
  
 	

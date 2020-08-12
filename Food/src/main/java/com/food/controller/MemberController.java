@@ -459,8 +459,8 @@ public class MemberController {
 		mvo.setGrade(2);
 		memberService.updateMember(mvo);
 		svo.setR_master(mvo.getM_id());
-		memberService.updatestore(svo);
-		memberService.updateproduct(pvo);
+//		memberService.updatestore(svo);
+//		memberService.updateproduct(pvo);
 		
 		return "redirect:mypage/shopmodify.do?s_brand_name="+svo.getS_brand_name()+"&m_id="+mvo.getM_id();
 	}
