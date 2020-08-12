@@ -118,6 +118,7 @@ public class Sender extends Thread {
 		bos.flush();
 		fis.close();
 	}
+	
 
 	public String receiveData(int buffer_size) throws IOException {
 		byte[] tmp = new byte[buffer_size];

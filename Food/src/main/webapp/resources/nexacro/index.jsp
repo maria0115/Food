@@ -90,10 +90,14 @@
     <script src="./nexacro17lib/component/DeviceAPI/TCPClientSocket.js"></script>
 	
     <script src="./environment.xml.js"></script>
-     
+     <!-- Dashboard Core -->
+<link href="/Food/resources/css/dashboard.css" rel="stylesheet" />
 	<title></title>
+
 </head>
-<body style="margin:0;border:none;-ms-touch-action:none;" onload="oninitframework()">
+
+<body style="margin:10; border:none;-ms-touch-action:;" onload="oninitframework()">
+
 	<script>
 		function oninitframework()
 		{
@@ -114,5 +118,6 @@
 			
 		}
 	</script>
+
 </body>
 </html>
