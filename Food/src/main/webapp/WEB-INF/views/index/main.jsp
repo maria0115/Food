@@ -404,7 +404,7 @@ a.btn-layerClose:hover {
 								<div class="rm-content">
 
 									<div class="rm-logo"  style='background-image: url(/Food/resources/img/mainmenu/<%=map.get("menu")%>.jpg)'></div>
-									<h2>1조 레스토랑</h2>
+									<h2>Today menu</h2>
 									<h3>Packing &amp; meal</h3>
 
 									<a href="#" class="rm-button-open">오늘 뭐 먹지?</a>
