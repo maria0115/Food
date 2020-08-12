@@ -183,9 +183,11 @@ margin-right: 5px;
 				<tr>
 					<td>
 						<label>카테고리</label>
+						<input style="float: right; margin-top: 6px;" type="checkbox" id="modifyck1">
+						<label style="float: right;">카테고리변경</label>
 					</td>
-					<td>
-						<span id="category">${store.s_category }</span>
+					<td id="categoryarea">
+						<input id="category" class="form-control" name="s_category" value="${store.s_category }" readonly="readonly">
 					</td>
 				</tr>
 				<tr>
@@ -262,8 +264,8 @@ margin-right: 5px;
 			<h1>*사진수정</h1>
 			<br> 
 			<div style="display: flex;">
-				<input id="upload" type="button" class="btn btn-white" style="width: 50%; font-size: 20px; font-weight: bolder;" value="매장등록"> 	     <br>
-				<input id="upload2" type="button" class="btn btn-dark" style="width: 50%; font-size: 20px; font-weight: bolder;" value="메뉴등록"> 	  
+				<input id="upload" type="button" class="btn btn-white" style="width: 50%; font-size: 20px; font-weight: bolder;" value="매장사진변경하기"> 	     <br>
+				<input id="upload2" type="button" class="btn btn-dark" style="width: 50%; font-size: 20px; font-weight: bolder;" value="메뉴사진변경등록"> 	  
              </div>    
                               <br>
                         
@@ -328,87 +330,20 @@ margin-right: 5px;
 							var menu =$(".shopmenu").val();
 							
 
-							if (!id.test($("#shopid").val())) {
-								alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
-								return false;
-							} 
-							else if ($(".shopmenu").val() == "") {
-								alert("내용을 전부 입력해주세요.");
-								return false;
-							} else if (idcheck == "중복된 아이디입니다") {
-								alert("중복된 아이디입니다. 아이디를 확인하여주세요")
-								return false;
-							} else if (pwd1 != pwd2) {
+							if (pwd1 != pwd2) {
 								alert("비밀번호가 일치하지 않습니다.")
 								return false;
 							} else if (!pass.test($("#shoppass").val())) {
 								alert("비밀번호를 확인해주세요 영문자 혹은 0-9 8자리~16자리 이여야 합니다.");
 								return false;
-							} else if (!name.test($("#shopname").val())) {
-								alert("이름을 확인해주세요");
-								return false;
-							} else if ($("#addr2").val() == "") {
-								alert("주소를 입력해주세요");
-								return false;
-							} else if ($("#shopcheck_1").is(":checked") == false) {
-								alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
-								return false;
-							} else if ($("#shopcheck_2").is(":checked") == false) {
-								alert("필수약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
-								return false;
 							} else {
-								alert("회원가입 완료 가입을 축하드립니다!");
+								alert("매장 정보 수정이 완료되었습니다.");
 							}
 						});
 
 		//취소버튼 클릭시
 
 	
-		//아이디 중복체크 
-		$("#shopid").blur(function() {
-								$.ajax({
-										type : 'post',
-										async : true,
-										url : 'checkId.do',
-										contentType : 'application/x-www-form-urlencoded;charset=UTF-8',
-										data : "m_id=" + $("#shopid").val(),
-										success : function(resultData) {
-											$("#shopid_check2").html(resultData);
-
-										}
-
-									});
-
-							if ($("#shopid").val() == "")
-								$("#shopid_check2").html("아이디를 작성하세요.");
-						});
-
-		$('#shopname').focusout(function() {
-
-			var name = $("#shopname").val();
-			var name2 = /^[가-힣]+$/;
-			if (name2.test(name) === false) {
-				$("#shopname_check").html("이름은 한글만 가능합니다.");
-				namecheck = false;
-			} else {
-				$("#shopname_check").html("유효한 이름 입니다.");
-				namecheck = true;
-			}
-		});
-
-		$('#shopid').focusout(function() {
-
-			var id = $("#shopid").val();
-			var id2 = /^[a-z]+[a-z0-9]{5,19}$/g;
-			if (id2.test(id) === false) {
-				$("#shopid_check").html("영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
-				idcheck = false;
-			} else {
-				$("#shopid_check").html("아이디 입력 결과");
-				idcheck = true;
-			}
-		});
-
 		$('#shoppass').focusout(function() {
 
 			var pwd1 = $("#shoppass").val();
@@ -452,18 +387,6 @@ margin-right: 5px;
 			}
 		});
 
-		// 최상단 체크박스 클릭
-		$("#chk").click(function() {
-			// 클릭되었으면
-			if ($("#chk").prop("checked")) {
-				// input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
-				$("li>input[name=chk]").prop("checked", true);
-				// 클릭이 안되있으면
-			} else {
-				// input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
-				$("input[name=chk]").prop("checked", false);
-			}
-		});
 
 		function execPostCode() {
 			new daum.Postcode({

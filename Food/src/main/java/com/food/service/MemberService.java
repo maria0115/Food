@@ -39,9 +39,9 @@ public interface MemberService {
 	//점주 정보가져오기 
 	public MemberVO getshopuser(MemberVO vo);
 	//점주 매장 정보 수정
-//	public int updatestore(StoreListVO vo);
-//	public int updateproduct(ProductVO vo); 
-	
+	public int updatestore(StoreListVO vo);
+	public int updateproduct(ProductVO vo); 
+	public int updateshopMember(MemberVO vo);
 	
 	
 }

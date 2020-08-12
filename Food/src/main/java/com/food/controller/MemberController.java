@@ -420,8 +420,11 @@ public class MemberController {
 	
 	//매장점주 정보 수정하기 
 	@RequestMapping("/shopmodify.do")
-	public String shopmodify(MemberVO mvo,StoreListVO svo, Model model) {
-		
+	public String shopmodify(MemberVO mvo,StoreListVO svo, Model model,
+			@RequestParam("s_brand_name")String name,
+			@RequestParam("m_id")String id) {
+		svo.setS_brand_name(name);
+		mvo.setM_id(id);
 		model.addAttribute("store",storeService.storeDetail(svo));
 		model.addAttribute("user",memberService.getshopuser(mvo));
 		return"mypage/shopmodify";
@@ -457,12 +460,20 @@ public class MemberController {
 			ProductVO pvo) {
 		
 		mvo.setGrade(2);
-		memberService.updateMember(mvo);
+		mvo.setM_name(svo.getS_brand_name());
+		memberService.updateshopMember(mvo);
 		svo.setR_master(mvo.getM_id());
-//		memberService.updatestore(svo);
-//		memberService.updateproduct(pvo);
+		memberService.updatestore(svo);
+		memberService.updateproduct(pvo);
 		
-		return "redirect:mypage/shopmodify.do?s_brand_name="+svo.getS_brand_name()+"&m_id="+mvo.getM_id();
+		return "redirect:mypageform.do";
+	}
+	
+	//매장 정보보여주기
+	@RequestMapping("/shopinfo.do")
+	public String shopinfo(Model model, StoreListVO vo) {
+		model.addAttribute("store",storeService.storeDetail(vo));
+		return"mypage/shopinfo";
 	}
 
 }
