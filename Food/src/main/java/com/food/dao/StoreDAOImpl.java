@@ -162,6 +162,36 @@ public class StoreDAOImpl implements StoreDAO{
 			mybatis.delete("StoreDAO.deleteproduct",vo);
 			return mybatis.delete("StoreDAO.stateN",vo);
 		}
+		@Override
+		public StoreListVO getkor() {
+			// TODO Auto-generated method stub
+			return mybatis.selectOne("memberDAO.getkor");
+		}
+		@Override
+		public StoreListVO geteng() {
+			// TODO Auto-generated method stub
+			return mybatis.selectOne("memberDAO.geteng");
+		}
+		@Override
+		public StoreListVO getjap() {
+			// TODO Auto-generated method stub
+			return mybatis.selectOne("memberDAO.getjap");
+		}
+		@Override
+		public StoreListVO getmin() {
+			// TODO Auto-generated method stub
+			return mybatis.selectOne("memberDAO.getmin");
+		}
+		@Override
+		public StoreListVO geteast() {
+			// TODO Auto-generated method stub
+			return mybatis.selectOne("memberDAO.geteast");
+		}
+		@Override
+		public StoreListVO getch() {
+			// TODO Auto-generated method stub
+			return mybatis.selectOne("memberDAO.getch");
+		}
 		
 	
 

@@ -55,5 +55,17 @@ public interface StoreService {
 	
 	//승인대기 승인거절
 	int stateN(StoreListVO vo);
+	
+	StoreListVO getkor();
+	
+	StoreListVO geteng();
+	
+	StoreListVO getjap();
+	
+	StoreListVO getmin();
+	
+	StoreListVO geteast();
+	
+	StoreListVO getch();
 
 }

@@ -419,25 +419,31 @@ a.btn-layerClose:hover {
 								<div class="rm-content">
 									<h4>korea food</h4>
 									<dl>
-									
-
-										<dt><a href="http://herbivoracious.com/2011/11/crostini-with-young-pecorino-grilled-figs-and-arugula-mint-pesto-recipe.html" class="rm-viewdetails" data-thumb="images/1.jpg">Green Love Crostini</a></dt>
-										<dd>Crostini with young pecorino, grilled figs and arugula &amp; mint pesto</dd>
 										
-										<dt>Focaccia di Carciofi</dt>
-										<dd>Artichoke focaccia with fresh thyme</dd>
-									</dl>
+										<dt><a href="http://herbivoracious.com/2009/03/panfried-gnocchi-with-arugula-recipe.html" class="rm-viewdetails" data-thumb="images/11.jpg">카테고리별 1위 예약매장!</a></dt>
+										<dd> ${kor.s_brand_name}</dd>
 
+										<dt>menu&amp;Food prices</dt>
+										<dd>${kor.p_name_1} ${kor.p_price_1}<br> ${kor.p_name_2}  ${kor.p_price_2}<br> ${kor.p_name_3}  ${kor.p_price_3}</dd>
+
+										<dt class="rm-viewdetails" >Store location</dt>
+										<dd>${kor.s_address}</dd>
+
+										
+									</dl>
 									<h4>Western food</h4>
 									<dl>
-										<dt>Green Delight</dt>
-										<dd>Watercress, frisee and avocado salad</dd>
+										
+										<dt><a href="http://herbivoracious.com/2009/03/panfried-gnocchi-with-arugula-recipe.html" class="rm-viewdetails" data-thumb="images/11.jpg">카테고리별 1위 예약매장!</a></dt>
+										<dd> ${eng.s_brand_name}</dd>
 
-										<dt><a href="http://herbivoracious.com/2010/02/thai-tofu-salad-recipe.html" class="rm-viewdetails" data-thumb="images/13.jpg">Gourmet Yam Taohu</a></dt>
-										<dd>Thai tofu salad yam taohu</dd>
+										<dt>menu&amp;Food prices</dt>
+										<dd>${eng.p_name_1} ${eng.p_price_1}<br> ${eng.p_name_2}  ${eng.p_price_2}<br> ${eng.p_name_3}  ${eng.p_price_3}</dd>
 
-										<dt>Panini Deluxe</dt>
-										<dd>Buffalo mozzarella basil panini</dd>
+										<dt class="rm-viewdetails" >Store location</dt>
+										<dd>${eng.s_address}</dd>
+
+										
 									</dl>
 								</div><!-- /rm-content -->
 								<div class="rm-overlay"></div>
@@ -451,27 +457,31 @@ a.btn-layerClose:hover {
 								<div class="rm-content">
 									<h4>Chinese food</h4>
 									<dl>
-										<dt><a href="http://herbivoracious.com/2009/03/panfried-gnocchi-with-arugula-recipe.html" class="rm-viewdetails" data-thumb="images/11.jpg">Crispy Gnocchi with Arugula</a></dt>
-										<dd>Pan-fried potato gnocchi with arugula salad</dd>
+										
+										<dt><a href="http://herbivoracious.com/2009/03/panfried-gnocchi-with-arugula-recipe.html" class="rm-viewdetails" data-thumb="images/11.jpg">카테고리별 1위 예약매장!</a></dt>
+										<dd> ${ch.s_brand_name}</dd>
 
-										<dt>Sea Palm Spicy Peanut Curry</dt>
-										<dd>Tender sea palm noodles, seasoned vegetables, spicy peanut curry and tempeh fenel croquettes</dd>
+										<dt>menu&amp;Food prices</dt>
+										<dd>${ch.p_name_1} ${ch.p_price_1}<br> ${ch.p_name_2}  ${ch.p_price_2}<br> ${ch.p_name_3}  ${ch.p_price_3}</dd>
 
-										<dt><a href="http://herbivoracious.com/2012/09/caviar-lentil-salad-with-arugula-crispy-shallots-and-roasted-garlic-recipe.html" class="rm-viewdetails" data-thumb="images/8.jpg">Lentil Caviar &amp; Arugula</a></dt>
-										<dd>Black lentil curry with arugula salad, caramelized shallots and roasted garlic</dd>
+										<dt class="rm-viewdetails" >Store location</dt>
+										<dd>${ch.s_address}</dd>
 
 										
 									</dl>
 										<h4>Japanese food</h4>
 									<dl>
-										<dt>Green Delight</dt>
-										<dd>Watercress, frisee and avocado salad</dd>
+										
+										<dt><a href="http://herbivoracious.com/2009/03/panfried-gnocchi-with-arugula-recipe.html" class="rm-viewdetails" data-thumb="images/11.jpg">카테고리별 1위 예약매장!</a></dt>
+										<dd> ${jap.s_brand_name}</dd>
 
-										<dt><a href="http://herbivoracious.com/2010/02/thai-tofu-salad-recipe.html" class="rm-viewdetails" data-thumb="images/13.jpg">Gourmet Yam Taohu</a></dt>
-										<dd>Thai tofu salad yam taohu</dd>
+										<dt>menu&amp;Food prices</dt>
+										<dd>${jap.p_name_1} ${jap.p_price_1}<br> ${jap.p_name_2}  ${jap.p_price_2}<br> ${jap.p_name_3}  ${jap.p_price_3}</dd>
 
-										<dt>Panini Deluxe</dt>
-										<dd>Buffalo mozzarella basil panini</dd>
+										<dt class="rm-viewdetails" >Store location</dt>
+										<dd>${jap.s_address}</dd>
+
+										
 									</dl>
 								</div><!-- /rm-content -->
 								<div class="rm-overlay"></div>
@@ -489,28 +499,29 @@ a.btn-layerClose:hover {
 								<div class="rm-content">
 									<h4>flour based food</h4>
 									<dl>
-										<dt><a href="http://herbivoracious.com/2012/08/crepes-with-roasted-french-plums-yogurt-and-honey.html" class="rm-viewdetails" data-thumb="images/5.jpg">French Plum Crepes</a></dt>
-										<dd>Crepes with roasted french plums, yogurt &amp; honey</dd>
 										
-										
-										<dt><a href="http://herbivoracious.com/2009/12/gateaux-de-crepes-recipe.html" class="rm-viewdetails" data-thumb="images/12.jpg">Chocolate Gâteau de Crêpes</a></dt>
-										<dd>Gâteau de crêpes with chocolate pastry cream and dulce de leche</dd>
-										
-										<dt><a href="http://herbivoracious.com/2009/05/dutch-baby-with-sauteed-apples-giant-ovenbaked-pancakes-recipe.html" class="rm-viewdetails" data-thumb="images/10.jpg">Dutch Baby With Sauteed Apples</a></dt>
-										<dd>Dutch ginat oven-baked pancakes with sauteed apples</dd>
-										
+										<dt><a href="http://herbivoracious.com/2009/03/panfried-gnocchi-with-arugula-recipe.html" class="rm-viewdetails" data-thumb="images/11.jpg">카테고리별 1위 예약매장!</a></dt>
+										<dd> ${min.s_brand_name}</dd>
+
+										<dt>menu&amp;Food prices</dt>
+										<dd>${min.p_name_1} ${min.p_price_1}<br> ${min.p_name_2}  ${min.p_price_2}<br> ${min.p_name_3}  ${min.p_price_3}</dd>
+
+										<dt class="rm-viewdetails" >Store location</dt>
+										<dd>${min.s_address}</dd>
+
 										
 									</dl>
 									<h4>Southeast Asian food</h4>
 									<dl>
-										<dt><a href="http://herbivoracious.com/2009/03/panfried-gnocchi-with-arugula-recipe.html" class="rm-viewdetails" data-thumb="images/11.jpg">Crispy Gnocchi with Arugula</a></dt>
-										<dd>Pan-fried potato gnocchi with arugula salad</dd>
+										
+										<dt><a href="http://herbivoracious.com/2009/03/panfried-gnocchi-with-arugula-recipe.html" class="rm-viewdetails" data-thumb="images/11.jpg">카테고리별 1위 예약매장!</a></dt>
+										<dd> ${east.s_brand_name}</dd>
 
-										<dt>Sea Palm Spicy Peanut Curry</dt>
-										<dd>Tender sea palm noodles, seasoned vegetables, spicy peanut curry and tempeh fenel croquettes</dd>
+										<dt>menu&amp;Food prices</dt>
+										<dd>${east.p_name_1} ${east.p_price_1}<br> ${east.p_name_2}  ${east.p_price_2}<br> ${east.p_name_3}  ${east.p_price_3}</dd>
 
-										<dt><a href="http://herbivoracious.com/2012/09/caviar-lentil-salad-with-arugula-crispy-shallots-and-roasted-garlic-recipe.html" class="rm-viewdetails" data-thumb="images/8.jpg">Lentil Caviar &amp; Arugula</a></dt>
-										<dd>Black lentil curry with arugula salad, caramelized shallots and roasted garlic</dd>
+										<dt class="rm-viewdetails" >Store location</dt>
+										<dd>${east.s_address}</dd>
 
 										
 									</dl>

@@ -34,6 +34,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.food.controller.maincontroller.*;
 import com.food.service.MainService;
+import com.food.service.StoreService;
 
 
 @Controller
@@ -42,6 +43,8 @@ public class MainController {
 	@Autowired
 	private MainService service;
 
+	@Autowired
+	StoreService storeService;
 	//	@RequestMapping("{step}.do")
 	//	public String start(@PathVariable String step) {
 	//		return step;
@@ -187,12 +190,12 @@ public class MainController {
 	
 		if(what.equals("main")) {
 			mv.addObject("map",map);
-			mv.addObject("kor",);
-			mv.addObject("eng",);
-			mv.addObject("jap",);
-			mv.addObject("min",);
-			mv.addObject("east",);
-			mv.addObject("ch",);
+			mv.addObject("kor",storeService.getkor());
+			mv.addObject("eng",storeService.geteng());
+			mv.addObject("jap",storeService.getjap());
+			mv.addObject("min",storeService.getmin());
+			mv.addObject("east",storeService.geteast());
+			mv.addObject("ch",storeService.getch());
 		}
 		
 		

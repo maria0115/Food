@@ -113,4 +113,110 @@ delete from member where m_id =#{m_id}
 
 
 
+
+<select id="getkor"  resultType="store">
+ <![CDATA[
+SELECT * 
+      FROM (
+         SELECT ROWNUM cnt, A.* 
+            FROM (
+select o.category,o.store s_brand_name ,o.count,d.p_name_1 p_name_1,d.p_name_2 p_name_2, d.p_name_3 p_name_3, d.p_price_1 p_price_1, d.p_price_2 p_price_2,d.p_price_3 p_price_3,s.s_address s_address
+    from product d,store s,(select category,store,max(count) count from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category,store) o 
+    inner join (select category,max(count) maxcount from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category) p
+    On o.category = p.category
+    where o.category = p.category AND o.count = p.maxcount AND o.category='한식' AND o.store = d.s_brand_name AND o.store=s.s_brand_name order by category) A
+            )
+      WHERE cnt=1
+      ]]>
+</select>
+	
+
+
+<select id="geteng" resultType="store">
+<![CDATA[
+	SELECT * 
+      FROM (
+         SELECT ROWNUM cnt, A.* 
+            FROM (
+select o.category,o.store s_brand_name ,o.count,d.p_name_1 p_name_1,d.p_name_2 p_name_2, d.p_name_3 p_name_3, d.p_price_1 p_price_1, d.p_price_2 p_price_2,d.p_price_3 p_price_3,s.s_address s_address
+    from product d,store s,(select category,store,max(count) count from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category,store) o 
+    inner join (select category,max(count) maxcount from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category) p
+    On o.category = p.category
+    where o.category = p.category AND o.count = p.maxcount AND o.category='양식' AND o.store = d.s_brand_name AND o.store=s.s_brand_name order by category) A
+            )
+      WHERE cnt=1
+      ]]>
+</select>
+
+
+<select id="getjap" resultType="store">
+<![CDATA[
+SELECT * 
+      FROM (
+         SELECT ROWNUM cnt, A.* 
+            FROM (
+select o.category,o.store s_brand_name ,o.count,d.p_name_1 p_name_1,d.p_name_2 p_name_2, d.p_name_3 p_name_3, d.p_price_1 p_price_1, d.p_price_2 p_price_2,d.p_price_3 p_price_3,s.s_address s_address
+    from product d,store s,(select category,store,max(count) count from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category,store) o 
+    inner join (select category,max(count) maxcount from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category) p
+    On o.category = p.category
+    where o.category = p.category AND o.count = p.maxcount AND o.category='일식' AND o.store = d.s_brand_name AND o.store=s.s_brand_name order by category) A
+            )
+      WHERE cnt=1
+      ]]>
+</select>
+
+
+<select id="getmin" resultType="store">
+<![CDATA[
+SELECT * 
+      FROM (
+         SELECT ROWNUM cnt, A.* 
+            FROM (
+select o.category,o.store s_brand_name ,o.count,d.p_name_1 p_name_1,d.p_name_2 p_name_2, d.p_name_3 p_name_3, d.p_price_1 p_price_1, d.p_price_2 p_price_2,d.p_price_3 p_price_3,s.s_address s_address
+    from product d,store s,(select category,store,max(count) count from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category,store) o 
+    inner join (select category,max(count) maxcount from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category) p
+    On o.category = p.category
+    where o.category = p.category AND o.count = p.maxcount AND o.category='분식' AND o.store = d.s_brand_name AND o.store=s.s_brand_name order by category) A
+            )
+      WHERE cnt=1
+      ]]>
+</select>
+
+
+<select id="geteast" resultType="store">
+<![CDATA[
+SELECT * 
+      FROM (
+         SELECT ROWNUM cnt, A.* 
+            FROM (
+select o.category,o.store s_brand_name ,o.count,d.p_name_1 p_name_1,d.p_name_2 p_name_2, d.p_name_3 p_name_3, d.p_price_1 p_price_1, d.p_price_2 p_price_2,d.p_price_3 p_price_3,s.s_address s_address
+    from product d,store s,(select category,store,max(count) count from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category,store) o 
+    inner join (select category,max(count) maxcount from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category) p
+    On o.category = p.category
+    where o.category = p.category AND o.count = p.maxcount AND o.category='동남아' AND o.store = d.s_brand_name AND o.store=s.s_brand_name order by category) A
+            )
+      WHERE cnt=1
+      ]]>
+</select>
+
+
+<select id="getch" resultType="store">
+<![CDATA[
+SELECT * 
+      FROM (
+         SELECT ROWNUM cnt, A.* 
+            FROM (
+select o.category,o.store s_brand_name ,o.count,d.p_name_1 p_name_1,d.p_name_2 p_name_2, d.p_name_3 p_name_3, d.p_price_1 p_price_1, d.p_price_2 p_price_2,d.p_price_3 p_price_3,s.s_address s_address
+    from product d,store s,(select category,store,max(count) count from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category,store) o 
+    inner join (select category,max(count) maxcount from (  select s.s_category category, s.s_address s_address, r.r_store_name store , count(*) count from reservation r inner join store s On r.r_store_name = s.s_brand_name group by s.s_category, r.r_store_name, s.s_address) group by category) p
+    On o.category = p.category
+    where o.category = p.category AND o.count = p.maxcount AND o.category='중식' AND o.store = d.s_brand_name AND o.store=s.s_brand_name order by category) A
+            )
+      WHERE cnt=1
+      ]]>
+</select>
+
+
+
+
 </mapper>
