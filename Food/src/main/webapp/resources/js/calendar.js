@@ -37,6 +37,7 @@ $(function(){
 					}
 					
 					data.start = resultData.list[i].r_visit_date+"T"+resultData.list[i].r_date_hour;
+					data.url = "reservation.do?r_number="+resultData.list[i].r_number;
 					event[i]=data;
 				}
 				setreser(event);
@@ -59,6 +60,7 @@ $(function(){
 			var data = new Object();
 			data.title=event[i].title
 			data.start=event[i].start
+			data.url = event[i].url
 			list[i] = data;
 		});	
 			$('#calendar').fullCalendar({
@@ -71,6 +73,13 @@ $(function(){
 				editable: true,
 				eventLimit: true,
 				events : list,
+				eventClick:function(event) {
+	                if(event.url) {
+	                    window.open(event.url,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
+	                    return false;
+	                }
+	            }
+
 			});
 		
 		

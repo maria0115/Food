@@ -49,6 +49,12 @@
 <body>
 
 	<div id='calendar'></div>
+	
+	
+<script type="text/javascript">
 
+
+
+</script>
 </body>
 </html>

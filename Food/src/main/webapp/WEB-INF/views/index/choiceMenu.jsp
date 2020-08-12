@@ -61,7 +61,9 @@ $('.menudetail').click(function(event){
             
 
         <div class="container">
-        <h2 style="margin-left: 28%;">나와 취향 비슷한 다른사람들의 메뉴</h2>
+        <h2 style="margin-left: 18%;
+    font-family: js;
+    font-size: xxx-large;">나와 음식 취향이 비슷한 사람들의 메뉴</h2>
             <div class="row">
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
@@ -83,8 +85,8 @@ $('.menudetail').click(function(event){
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading text-center">
-                        <h2>Other Menu's</h2>
-                        <p>나와 취향 비슷한 다른사람들은 어떤 음식을 예약했는지 궁금하신가요?</p>
+                        <h2 style="font-family: js">Other Menu's</h2>
+                        <p style="font-family: js5;font-size: xxx-large;color: slateblue; ">나의 취향과 비슷한 사람들은 어떤 음식을 예약했는지 궁금하신가요?</p>
                     </div>
                 </div>
             </div>
