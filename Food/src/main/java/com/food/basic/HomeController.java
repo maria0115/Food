@@ -70,6 +70,7 @@ public class HomeController {
 		public String nexalist() {
 			
 			return "redirect:/resources/nexacro/index.jsp";
+//			return "/manager/index";
 		}
 		
 	

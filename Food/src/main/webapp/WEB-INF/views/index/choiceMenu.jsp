@@ -14,6 +14,19 @@ map.put("분식", "school");
 map.put("동남아", "east");
 %>
 <html lang="en">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+$(function(){
+$('.menudetail').click(function(event){
+	event.stopPropagation();
+
+	var brandname = $(this).find('.brandname').val();
+	$(location).attr('href', '../store/storeDetails.do?s_brand_name='+brandname)
+	
+})
+	
+})
+</script>
 
 <head>
     <meta charset="UTF-8">
@@ -102,19 +115,23 @@ map.put("동남아", "east");
             		vo = list.get(i);
             		
             	%>
-
+            	<div class="menudetail">
                 <!-- Single Portfolio Area -->
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design <%=map.get(vo.getType()) %>">
                     <!-- Portfolio Thumbnail -->
+                    
                     <div class="portfolio-thumbnail bg-img" style="background-image: url(/Food/resources/storemenu/<%=map.get(vo.getType()) %>/<%=vo.getR_store_name() %>_<%=vo.getR_menu() %>.jpg);"></div>
                     <!-- Portfolio Hover Text -->
                     <div class="portfolio-hover-overlay">
+                    
                         <a href="/Food/resources/storemenu/<%=map.get(vo.getType()) %>/<%=vo.getR_store_name() %>_<%=vo.getR_menu() %>.jpg" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1">
                             <div class="port-hover-text">
                                 <h3><%=vo.getR_menu() %></h3>
-                                <h5><%=vo.getR_store_name() %></h5>
+                                <h5 ><%=vo.getR_store_name() %></h5>
+                                <input value='<%=vo.getR_store_name() %>' type="hidden" class='brandname'>
                             </div>
                         </a>
+                    </div>
                     </div>
                 </div>
                 <%}}else{ %>
