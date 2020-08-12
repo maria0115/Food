@@ -344,8 +344,11 @@ a.btn-layerClose:hover {
 						
 									<!--                         <ul id="navi"> -->
 									<!--                               <li> -->
-									<a href="/Food/manager/dashBoard.do" id="manageLabel1"
-										class="fa fa-user"><br />Manage</a>
+									<div>	 <!--                               <li> -->
+								<i class="fa fa-user" style="font-size: 20px; color:black; margin-right: 10px; margin-left: 10px;" ></i><a href="/Food/manager/dashBoard.do" id="loginLabel"
+										>Manage</a>
+										</div>
+
 								<!--                                </li> -->
 
 							</c:if>
