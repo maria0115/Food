@@ -10,7 +10,6 @@ import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 import com.food.domain.ReservationVO;
-import com.food.domain.WishlistVO;
 
 @Service("MainService")
 public class MainServiceImpl implements MainService{
@@ -58,24 +57,6 @@ public class MainServiceImpl implements MainService{
 	public void nexadel(String b_no) {
 		dao.nexadel(b_no);
 		
-	}
-
-	@Override
-	public List<WishlistVO> todaywish(WishlistVO vo) {
-		// TODO Auto-generated method stub
-		return dao.todaywish(vo);
-	}
-
-	@Override
-	public List<WishlistVO> todaywishmem(String user_id) {
-		// TODO Auto-generated method stub
-		return dao.todaywishmem(user_id);
-	}
-
-	@Override
-	public void deltodaywish(WishlistVO wvo) {
-		// TODO Auto-generated method stub
-		 dao.deltodaywish(wvo);
 	}
 
 }

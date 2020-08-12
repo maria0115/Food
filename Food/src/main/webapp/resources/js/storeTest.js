@@ -42,7 +42,7 @@ $(function(){
 	})
 	
 	
-	//getWriterData();
+//	getWriterData();
 	$('#listSearch').on('keyup', getWriterData);
 //	$('#pagination-demo').on('click', getWriterDataInPaging);
 	$(document).on("click",".btn-primary", updateBtnEvent);
@@ -96,8 +96,6 @@ function getWriterData(){
 				},
 		dataType : 'json',
 		success : function(resultData){
-			
-			
 			drawWriterTable(resultData);
 			var totalPages = resultData.pagination.pageCnt;
 			var currentPage = $('#pagination-demo').twbsPagination('getCurrentPage');
@@ -128,12 +126,12 @@ function drawWriterTable(data){
 	var div4 ='</div>';
     var div5 ='<div class="comment-content" test="temp" onclick="divClick(this)">';
 	var div6 ='<div class="d-flex align-items-center justify-content-between">';
-	var h51 = '<h5 id="reviewName">';
+	var h51 = '<h6 id="reviewName">';
 	var titleA ='<a href="storeReviewDetails.do?b_no=';
 	var titleAend = '">';
 	var aEnd = '</a>';
-	var h52 = '</h5>';
-	var span = '<span class="comment-date">';
+	var h52 = '</h6>';
+	var span = '<span class="comment-date" id="reviewsDateId">';
 	var span2 = '</span>';
 	var input ='<input type="hidden" name="b_num" value="';
 	var input2 = '">';
@@ -153,10 +151,10 @@ function drawWriterTable(data){
 			div5+
 			input+data.listVO2[i].b_no+input2+
 			div6+
-			h51+
-			titleA+data.listVO2[i].b_no+titleAend +data.listVO2[i].title+aEnd +
+			h51+data.listVO2[i].title+
+//			titleA+data.listVO2[i].b_no+titleAend +data.listVO2[i].title+aEnd +
 			h52+
-			span+data.listVO2[i].b_date+span2+
+			span+ data.listVO2[i].b_date +span2+
 			
 			div7+
 			p1+data.listVO2[i].title+p2+
@@ -261,7 +259,7 @@ function divClick(elem){
 //}
 
 
-
+//수정완료후 다시 화면보이기
 function modifyre(){
 	var b_num = $('#checkLock').val()
 	
@@ -284,7 +282,8 @@ function modifyre(){
 			$("#reviewDetailTitle").val(resultData.title)
 			$("#reviewDetailContent").val(resultData.b_content)
 			$("#boardNoHidden").val(resultData.b_no)
-			$("#reviewFileName").val(resultData.v_fileName)
+			$("#reviewFileName").attr('src',"/Food/resources/upload/"+resultData.v_fileName);
+			$("#reviewFileName").css({"height" : "484px"});
 			
 			$("#reviewcol").remove();
 			$("#detailReviewModify").css({"display" : "inline-block"});
@@ -337,6 +336,7 @@ function layer_popup(el,resultData){
         $el.css({
             marginTop: -$elHeight /2,
             marginLeft: -$elWidth/2
+            
         })
     } else {
         $el.css({top: 0, left: 0});
@@ -350,6 +350,8 @@ function layer_popup(el,resultData){
     	$('#removeTest').remove();
     	$('#removeTest').remove();
     	$('#removeTest').remove();
+    	$("#reviewFileName").css({"height" : "484px"});
+    	$('#reviewDetailName').empty();
     	return false;
     });
 
@@ -409,6 +411,7 @@ function detailReviewDelete() {
 
 //수정버튼 눌렀을때
 $('#detailReviewModify').click(function(){
+	
     
 	$('#reviewDetailTitle').removeAttr("readonly","readonly");
 	$('#reviewDetailContent').removeAttr("readonly","readonly");
@@ -499,6 +502,7 @@ function detailReviewModify() {
 				"s_brand_name" :$('#title').val(),		
 				"title": $('#reviewDetailTitle').val(),
 				"b_content" : $('#reviewDetailContent').val(),
+				"b_date" : $('#reviewDetailDate').val(),
 				"v_fileName" : fileNameLast,
 				"v_fileSize" : size,
 				
@@ -506,6 +510,8 @@ function detailReviewModify() {
 				},
 		dataType : 'json',
 		success : function(resultData){
+//			$("#reviewFileName").remove();
+			
 			uploadFile();
 			$('.dim-layer').fadeOut();
 			getWriterData();

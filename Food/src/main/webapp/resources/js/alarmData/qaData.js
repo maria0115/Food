@@ -2,7 +2,6 @@
 
 
 $('#replybtn').click(function(){
-
 	$.ajax({
 		type:'get',
 		url : "/Food/manager/saveQaAlarm.do?Alarm_Id="+$('#contact-writer').val()+"&qaAlarm_bno="+$('input[name=b_no]').val(),

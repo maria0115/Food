@@ -108,9 +108,10 @@
 
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<!-- 달력을 위한 JS -->
 
+	<!-- 달력을 위한 JS -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src='/Food/resources/js/jquery.min.js'></script> -->
 	<script src='/Food/resources/js/moment.min.js'></script>
 	<script src='/Food/resources/js/fullcalendar.min.js'></script>
 	<script src="/Food/resources/js/ko.js"></script>
@@ -130,121 +131,123 @@
 	
 
 	<script type="text/javascript">
-	var count=null;
+   var count=null;
 
-	
+   
 
-	
-	function countAlarm(user_id){
-		$.ajax({
-			url : '/Food/manager/countAlarm.do?receiveId='+user_id,
-			type : 'POST',
-			contentType: "application/json; charset=utf-8",
-			dataType: 'text',
-			success : function(resultData) {
-				count=resultData;
-				if(resultData == '0'){
-					$('#countAlarm').attr("display","none");
-					$('#notibell').css("color", "white");
-				    
+   
+   function countAlarm(user_id){
+      $.ajax({
+         url : '/Food/manager/countAlarm.do?receiveId='+user_id,
+         type : 'POST',
+         contentType: "application/json; charset=utf-8",
+         dataType: 'text',
+         success : function(resultData) {
+            count=resultData;
+            console.log(resultData);
+            if(resultData == '0'){
+               $('#countAlarm').attr("display","none");
+               $('#notibell').css("color", "white");
+                
 
-				}else{
-					$('#countAlarm').text(resultData);
-					$('#notibell').css("color", "yellow");
-				}
-			},
-			error : function(err){
-				alert('err');
-			}
-	   	});
+            }else{
+               
+               $('#countAlarm').text(resultData);
+               $('#notibell').css("color", "yellow");
+            }
+         },
+         error : function(err){
+            alert('err');
+         }
+         });
 
-		}
-	
-	$(function(){
-	var user_id = "${sessionScope.user_id}";
-	
+      }
+   
+   $(function(){
+   var user_id = "${sessionScope.user_id}";
+   
 
 
-		if(user_id!=""){
-		connectWs();
-		countAlarm(user_id);
-		}
-		});
-	</script>
-	
-	<script type="text/javascript">		
-	var socket = null;
-	
-	function connectWs(){
-		
-		var ws = new WebSocket("ws://localhost:8080/Food/footer");
-		socket = ws;
-		ws.onopen = function(){
-			
-			console.log("Info: connection opened");
-			//setTimeout(function(){connectWs();},1000);
-			
-			}
-		ws.onmessage = function(event){
-			var data = event.data;
-			var reply;
-			var cmd;
-			var receiveNum;
-			var receiveDate;
-			var receiveId;
-			var senderId;
-			
-			
-				var strs = new Array();
-				strs = data.split(",");
+      if(user_id!=""){
+      connectWs();
+      countAlarm(user_id);
+      }
+      });
+   </script>
+   
+   <script type="text/javascript">      
+   var socket = null;
+   
+   function connectWs(){
+      
+      var ws = new WebSocket("ws://localhost:8080/Food/footer");
+      socket = ws;
+      ws.onopen = function(){
+         
+         console.log("Info: connection opened");
+         //setTimeout(function(){connectWs();},1000);
+         
+         }
+      ws.onmessage = function(event){
+         var data = event.data;
+         var reply;
+         var cmd;
+         var receiveNum;
+         var receiveDate;
+         var receiveId;
+         var senderId;
+         
+         
+            var strs = new Array();
+            strs = data.split(",");
 
-				alert("strs[0]:"+strs[0]);
-				alert("strs[4]:"+strs[4]);
-				if(strs != null && strs.length ==5) {
-					cmd = strs[0];
-					receiveNum = strs[1]; 
-					receiveDate = strs[2];
-					receiveId = strs[3];
-					senderId = strs[4];
-					if("reply"==cmd){
-						
-						reply = senderId + "님이 " +"Q&A게시판 "+receiveNum+"번 게시글에 댓글을 남겼습니다."
-						}
-				}
-			
-	
-			
-			console.log("ReceivMessage : " + reply + "\n");
+            alert("strs[0]:"+strs[0]);
+            alert("strs[4]:"+strs[4]);
+            if(strs != null && strs.length ==5) {
+               cmd = strs[0];
+               receiveNum = strs[1]; 
+               receiveDate = strs[2];
+               receiveId = strs[3];
+               senderId = strs[4];
+               if("reply"==cmd){
+                  
+                  reply = senderId + "님이 " +"Q&A게시판 "+receiveNum+"번 게시글에 댓글을 남겼습니다."
+                  }
+            }
+         
+   
+         
+         console.log("ReceivMessage : " + reply + "\n");
 
-			countAlarm(receiveId);
-			
+         countAlarm(receiveId);
+         
 
-		
+      
 
-				
-		   
-			toastr.options.escapeHtml = true;
-			toastr.options.closeButton = true;
-			toastr.options.newestOnTop = false;
-			toastr.options.progressBar = true;
-			toastr.options.extendedTimeOut = 0;
-			toastr.options.timeOut = 0;
+            
+         
+         toastr.options.escapeHtml = true;
+         toastr.options.closeButton = true;
+         toastr.options.newestOnTop = false;
+         toastr.options.progressBar = true;
+         toastr.options.extendedTimeOut = 0;
+         toastr.options.timeOut = 0;
 
-			toastr.options.onclick=function(){location.href='/Food/detail?b_no='+receiveNum};
-			toastr.info('알림', reply);
-			
-		};
-		ws.onclose = function(event){
-			console.log('Info:connection closed.');
-			//setTimeout(function(){connect();},1000);
-			};
-		ws.onerror = function(err){console.log('Error:',err);};
-	};
-	$("#example").on("click", function(){
-	
-		});
-			
-	</script>
+         toastr.options.onclick=function(){location.href='/Food/detail?b_no='+receiveNum};
+         toastr.info('알림', reply);
+         
+      };
+      ws.onclose = function(event){
+         console.log('Info:connection closed.');
+         //setTimeout(function(){connect();},1000);
+         };
+      ws.onerror = function(err){console.log('Error:',err);};
+   };
+   $("#example").on("click", function(){
+   
+      });
+         
+   </script>
 
 
 

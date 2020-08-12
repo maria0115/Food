@@ -87,7 +87,7 @@
 
             obj = new Static("st_title","10","5","193","30",null,null,null,null,null,null,this);
             obj.set_taborder("0");
-            obj.set_text("BoardList");
+            obj.set_text("Employees");
             obj.getSetter("leftbase").set("");
             obj.getSetter("topbase").set("");
             obj.getSetter("bottombase").set("");
@@ -476,11 +476,6 @@
 
         };
 
-        this.st_title_onclick = function(obj,e)
-        {
-        	location.href="/Food/manager/dashBoard.do"
-        };
-
         });
         
         // Regist UI Components Event
@@ -492,7 +487,6 @@
             this.div_search.form.rdo_boardtype.addEventHandler("onitemchanged",this.div_search_rdo_boardtype_onitemchanged,this);
             this.div_search.form.Static04.addEventHandler("onclick",this.div_search_Static04_onclick,this);
             this.div_search.form.SearchType.addEventHandler("onitemchanged",this.div_search_Combo00_onitemchanged,this);
-            this.st_title.addEventHandler("onclick",this.st_title_onclick,this);
             this.btn_del.addEventHandler("onclick",this.btn_del_onclick,this);
             this.board.addEventHandler("onheadclick",this.grd_list_onheadclick,this);
             this.div_detail.form.title.addEventHandler("canchange",this.div_detail_edt_name_canchange,this);

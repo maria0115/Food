@@ -56,7 +56,7 @@ var detailAddr="";
 <head>
 <meta charset="UTF-8">
 
-<title>오늘 뭐 먹지</title>
+<title>Insert title here</title>
 
 </head>
 

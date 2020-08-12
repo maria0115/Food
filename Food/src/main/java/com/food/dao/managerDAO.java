@@ -69,6 +69,5 @@ public interface managerDAO {
 
 		void insertQaAlarm(AlarmVO vo);
 
-
 		int countAlarm(String receiveId);
 }

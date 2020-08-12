@@ -5,6 +5,7 @@
 
 body {
 	margin: 100px;
+	overflow: auto;
 }
 
 .pop-layer .pop-container {
@@ -127,3 +128,31 @@ textarea:focus {
 	margin-top: 15px; 
 }
 
+#popScroll {
+	
+	height: 100%;
+	overflow: hidden;
+	
+}
+
+
+#scroller1 {
+	-ms-overflow-style: none;
+}
+
+#scroller1::-webkit-scrollbar {
+	display: none;
+}
+
+/* .pop-conts {
+margin: 30px auto;
+height: 150px;
+background: #ccc;
+overflow-x: hidden;
+overflow-y: scroll;
+-webkit-overflow-scrolling: touch;
+}
+
+
+
+ */

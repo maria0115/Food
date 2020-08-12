@@ -50,18 +50,4 @@ delete
 from board
 where b_no=#{value}
 </delete>
-<insert id="todaywish" parameterType="wishlist">
-INSERT INTO WISHLIST (W_STORE_NAME, M_ID)
-VALUES (#{w_store_name},#{m_id})
-</insert>
-<select id="todaywishmemeberlist" resultType="wishlist">
-select * from WISHLIST
-</select>
-<select id="todaywishmem" parameterType="String" resultType="wishlist">
-select * from WISHLIST where M_ID = #{value}
-</select>
-<delete id="deltodaywish" parameterType="wishlist" >
-delete from WISHLIST
-where W_STORE_NAME=#{w_store_name} and M_ID=#{m_id}
-</delete>
 </mapper>
