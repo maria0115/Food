@@ -49,6 +49,8 @@
 	
 
 <style>
+
+
 .menu a {
 	cursor: pointer;
 }
@@ -209,7 +211,12 @@ a.btn-layerClose:hover {
 										<a href="" id="logout"><button class="logout">Log-Out</button></a>
 										<a href="mypageform.do" id="mypage" class="fa fa-user">My
 											Page</a>
-											<a><img src="/Food/resources/img/bell.jpg"></a>					
+											<i class="fa fa-lg fa-bell" id="notibell">
+										<a id="noti">
+										</a>
+										</i>
+									
+									<span class="notification-badge badge badge-danger" id="countAlarm"></span>				
 								<span class="cart">
 									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
 									aria-hidden="true"></i> <span style="font-size: 17px; color: red; font-weight: bold;" >Wish<span
@@ -222,7 +229,7 @@ a.btn-layerClose:hover {
 									<!-- Login -->
 									<div class="login-header">
 										<div class="login">
-											<a href="#" id="loginLabel" class="fa fa-user">Login</a>
+											<i class="fa fa-user" style="font-size: 20px; color:snow; margin-right: 10px;"></i><a href="#" id="loginLabel" >Login</a>
 											<div class="loginbox" style="z-index: 2;">
 												<form action="login.do" method="post" id="frm" name="frm">
 													<p>
@@ -250,11 +257,10 @@ a.btn-layerClose:hover {
 									</div>
 											
 										
-											<a href="#layer2" class="btn-example fa fa-user" style="display: revert;
+											<a href="#layer2"  style="display: revert;
 														    color: snow;
 														    font-size: x-large;margin-left: 10px;
-														    margin-top: 6px;
-														    margin-right: 10px;">Sign Up</a>
+														    font-family:js2;" class="btn-example" ><i class="fa fa-user" style="font-size: 20px; color:snow;"></i>Sign Up</a>
 															<div class="dim-layer">
 															    <div class="dimBg"></div>
 															    <div id="layer2" class="pop-layer">

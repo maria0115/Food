@@ -99,8 +99,8 @@ if (folder == null || folder.equals(""))
 
 <!-- Core Stylesheet -->
 
-<link rel="stylesheet" href="/Food/resources/css/style.css">
-<link rel="stylesheet" href="/Food/resources/css/js.css">
+<link rel="stylesheet" href="/Food/resources/css/style3.css">
+<link rel="stylesheet" href="/Food/resources/css/js3.css">
 <!-- 부트스트랩 -->
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
@@ -224,10 +224,9 @@ a.btn-layerClose:hover {
 <body>
 	<!-- Preloader -->
 
-	<div class="single-hero-post bg-overlay">
+	<div class="single-hero-post bg-overlay" style="background-color: white;">
 		<!-- Post Image -->
-		<img style="max-width: 100%; background-size: contain;"
-			src="/Food/resources/img/header.jpg" alt="">
+		
 	</div>
 
 	<div class="preloader d-flex align-items-center justify-content-center">

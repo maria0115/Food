@@ -16,8 +16,39 @@ Version: - v1.0
 @import url(/Food/resources/css/magnific-popup.css);
 @import url(/Food/resources/css/font-awesome.min.css);
 @import url(/Food/resources/css/elegant-icon.css);
-/* :: 3.0 Base CSS */
+@font-face {
+	font-family: js;
+	src: url('/Food/resources/fonts/BlackHanSans-Regular.ttf');
+}
 
+@font-face {
+	font-family: js2;
+	src: url('/Food/resources/fonts/Chewy-Regular.ttf');
+}
+
+@font-face {
+	font-family: js3;
+	src: url('/Food/resources/fonts/FredokaOne-Regular.ttf');
+}
+
+@font-face {
+	font-family: js4;
+	src: url('/Food/resources/fonts/NanumPenScript-Regular.ttf');
+}
+
+@font-face {
+	font-family: js5;
+	src: url('/Food/resources/fonts/NanumPenScript-Regular2.ttf');
+	font-weight: bold;
+	font-size: 100px;
+}
+
+@font-face {
+	font-family: js6;
+	font-size: 40px;
+	src: url('/Food/resources/fonts/KirangHaerang-Regular.ttf');
+}
+/* :: 3.0 Base CSS */
 .sidepanel .closebtn {
      position: absolute;
      top: 5;
@@ -383,7 +414,7 @@ img {
   background-position: center center;
   background-size: cover; }
   .bg-overlay::after {
-    background-color: rgba(17, 17, 17, 0.2);
+   
     position: absolute;
     z-index: -1;
     top: 0;
@@ -550,10 +581,11 @@ img {
         .header-area .alazea-main-menu .classy-navbar {
           height: 70px; } }
     .header-area .alazea-main-menu .classynav ul li a {
+    font-family:js5;
       padding: 0 20px;
     font-weight: bolder;
     text-transform: capitalize;
-    font-size: 25px;
+    font-size: 37px;
     color: snow; }
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .header-area .alazea-main-menu .classynav ul li a {
