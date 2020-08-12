@@ -9,6 +9,7 @@ import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ProductVO;
+import com.food.domain.StoreListVO;
 
 public interface MemberService {
 	//비밀번호찾기
@@ -37,6 +38,9 @@ public interface MemberService {
 	public int countBoard(MemberVO vo);
 	//점주 정보가져오기 
 	public MemberVO getshopuser(MemberVO vo);
+	//점주 매장 정보 수정
+	public int updatestore(StoreListVO vo);
+	public int updateproduct(ProductVO vo); 
 	
 	
 	

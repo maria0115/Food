@@ -7,6 +7,7 @@ import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ProductVO;
+import com.food.domain.StoreListVO;
 
 public interface MemberDAO {
 	public String find_id(String m_email);
@@ -34,4 +35,8 @@ public interface MemberDAO {
 	public int countBoard(MemberVO vo);
 	
 	public MemberVO getshopuser(MemberVO vo);
+	
+	//점주 매장 정보 수정
+	public int updatestore(StoreListVO vo);
+	public int updateproduct(ProductVO vo); 
 }

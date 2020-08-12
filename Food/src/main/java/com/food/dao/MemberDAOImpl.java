@@ -11,6 +11,7 @@ import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ProductVO;
+import com.food.domain.StoreListVO;
 
 @Repository("memberdao")
 public class MemberDAOImpl  implements MemberDAO{ 
@@ -117,6 +118,20 @@ public class MemberDAOImpl  implements MemberDAO{
 	public MemberVO getshopuser(MemberVO vo) {
 		
 		return mybatis.selectOne("memberDAO.getshopuser",vo);
+	}
+
+
+	@Override
+	public int updatestore(StoreListVO vo) {
+		
+		return mybatis.update("memberDAO.updatestore",vo);
+	}
+
+
+	@Override
+	public int updateproduct(ProductVO vo) {
+		
+		return mybatis.update("memberDAO.updateproduct",vo);
 	}
  
 	

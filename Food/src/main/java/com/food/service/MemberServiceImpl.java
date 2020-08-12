@@ -14,6 +14,7 @@ import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ProductVO;
+import com.food.domain.StoreListVO;
 
 @Service("memberService")
 public class MemberServiceImpl  implements MemberService{
@@ -124,6 +125,20 @@ public class MemberServiceImpl  implements MemberService{
 	public MemberVO getshopuser(MemberVO vo) {
 		
 		return memberdao.getshopuser(vo);
+	}
+
+
+	@Override
+	public int updatestore(StoreListVO vo) {
+		
+		return memberdao.updatestore(vo);
+	}
+
+
+	@Override
+	public int updateproduct(ProductVO vo) {
+		// TODO Auto-generated method stub
+		return memberdao.updateproduct(vo);
 	}
 
  
