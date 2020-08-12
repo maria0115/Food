@@ -11,6 +11,7 @@ import com.food.domain.BoardVO;
 import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 import com.food.domain.ReservationVO;
+import com.food.domain.WishlistVO;
 
 @Service("MainDAO")
 public class MainDAOImpl implements MainDAO{
@@ -72,6 +73,25 @@ public class MainDAOImpl implements MainDAO{
 	public void nexadel(String b_no) {
 		mybatis.delete("mainDao.nexadel",b_no);
 		
+	}
+
+	@Override
+	public List<WishlistVO> todaywish(WishlistVO vo) {
+		mybatis.insert("mainDao.todaywish",vo);
+		
+		return mybatis.selectList("mainDao.todaywishmemeberlist");
+	}
+
+	@Override
+	public List<WishlistVO> todaywishmem(String user_id) {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("mainDao.todaywishmem",user_id);
+	}
+
+	@Override
+	public void deltodaywish(WishlistVO wvo) {
+		// TODO Auto-generated method stub
+		mybatis.delete("mainDao.deltodaywish", wvo);
 	}
 
 }
