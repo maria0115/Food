@@ -81,10 +81,11 @@ $(function(){
 
 <style type="text/css">
 #bestfo {
-	font-size: 23px;
-	color: darkblue;
-	padding-top: 23px;
-	border-bottom-style: double;
+	font-family: js4;
+    font-size: xx-large;
+    color: black;
+    padding-top: 23px;
+    border-bottom-style: double;
 }
 </style>
 <!-- Core Stylesheet -->
@@ -137,7 +138,7 @@ $(function(){
 				<div class="col-12">
 					<!-- Section Heading -->
 					<div class="section-heading text-center">
-						<h2 style="font-family: cursive;">오늘의 추천 메뉴</h2>
+						<h2 style="font-family: js;">오늘의 추천 메뉴</h2>
 						<p id="bestfo">오늘의 날씨와 지역별 직장인들의 월별 요일별 가장많이 먹은 카테고리 중 주문 수가
 							가장 많은 top 4입니다</p>
 					</div>
@@ -164,7 +165,7 @@ $(function(){
 						<!-- Product Image -->
 						<div class="product-img">
 							<a href="shop-details.do"><img class='productimg'
-								style="background-size: contain; width: 270px; height: 270px;"
+								style="background-size: contain; width: 270px; height: 270px; border-radius: 70px;"
 								src="/Food/resources/storemenu/<%=map.get(vo.getType()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_1() %>.jpg"
 								alt=""></a>
 							<!-- Product Tag -->
