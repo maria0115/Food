@@ -42,7 +42,7 @@ $('.menudetail').click(function(event){
 <link rel="icon" href="resources/img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="resources/css/style3.css">
 
 
 <jsp:include page="header.jsp">

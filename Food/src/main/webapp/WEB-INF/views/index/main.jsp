@@ -194,8 +194,7 @@ a.btn-layerClose:hover {
 							<!-- Top Header Content -->
 							<div class="top-header-meta">
 									<!--로고 이미지 들어올곳  -->
-								<a href="/Food/main.do" class="nav-brand"><img
-							src="/Food/resources/img/logo.png" alt="" class="logo">
+								<a href="/Food/main.do" class="nav-brand" style="    font-family: js; font-size: 50px; color: snow;">오늘 뭐 먹지?
 						</a>
 							</div>
 

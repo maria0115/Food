@@ -17,7 +17,38 @@ Version: - v1.0
 @import url(/Food/resources/css/font-awesome.min.css);
 @import url(/Food/resources/css/elegant-icon.css);
 /* :: 3.0 Base CSS */
+@font-face {
+	font-family: js;
+	src: url('/Food/resources/fonts/BlackHanSans-Regular.ttf');
+}
 
+@font-face {
+	font-family: js2;
+	src: url('/Food/resources/fonts/Chewy-Regular.ttf');
+}
+
+@font-face {
+	font-family: js3;
+	src: url('/Food/resources/fonts/FredokaOne-Regular.ttf');
+}
+
+@font-face {
+	font-family: js4;
+	src: url('/Food/resources/fonts/NanumPenScript-Regular.ttf');
+}
+
+@font-face {
+	font-family: js5;
+	src: url('/Food/resources/fonts/NanumPenScript-Regular2.ttf');
+	font-weight: bold;
+	font-size: 100px;
+}
+
+@font-face {
+	font-family: js6;
+	font-size: 40px;
+	src: url('/Food/resources/fonts/KirangHaerang-Regular.ttf');
+}
 .sidepanel .closebtn {
      position: absolute;
      top: 5;
@@ -554,6 +585,7 @@ img {
     font-weight: bolder;
     text-transform: capitalize;
     font-size: 25px;
+    font-family: js5;
     color: black; }
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .header-area .alazea-main-menu .classynav ul li a {

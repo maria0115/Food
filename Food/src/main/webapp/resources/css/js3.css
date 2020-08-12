@@ -93,8 +93,9 @@
 
 #loginLabel {
 	display: revert;
-	color: snow;
+    color: black;
     font-size: x-large;
+    font-family: js2;
 } 
 
 .access{

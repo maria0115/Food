@@ -249,10 +249,9 @@ a.btn-layerClose:hover {
 						<!-- Top Header Content -->
 						<div class="top-header-meta">
 							<!--로고 이미지 들어올곳  -->
-							<a href="/Food/main.do" class="nav-brand"><img
-								src="/Food/resources/img/logo.png" alt="" class="logo"> </a>
-						</div>
-
+							<a href="/Food/main.do" class="nav-brand" style="    font-family: js; font-size: 50px; color: black;">오늘 뭐 먹지?
+						</a>
+				</div>
 						<!-- Top Header Content -->
 						<div class="top-header-meta d-flex">
 							<!-- Language Dropdown -->
@@ -286,11 +285,11 @@ a.btn-layerClose:hover {
 							</div>
 							<c:if test="${empty sessionScope.user_id }">
 								<!-- Login -->
-								<div class="login-header">
-									<div class="login">
-										<a href="#" id="loginLabel" class="fa fa-user">Login</a>
-										<div class="loginbox" style="z-index: 2;">
-											<form method="post" id="frm" name="frm">
+								<div class="login-header"> 
+										<div class="login">
+											<i class="fa fa-user" style="font-size: 20px; color:black; margin-right: 10px;"></i><a href="#" id="loginLabel" >Login</a>
+											<div class="loginbox" style="z-index: 2;">
+												<form action="login.do" method="post" id="frm" name="frm">
 												<p>
 													<label for="logid">ID</label>&nbsp&nbsp <input type="text"
 														name="m_id" id="logid" placeholder="ID" />
@@ -316,11 +315,12 @@ a.btn-layerClose:hover {
 									</div>
 											
 										
-											<a href="#layer2" class="btn-example fa fa-user" style="display: revert;
-														    color: snow;
+										<a href="#layer2"  style="display: revert;
+														    color: black;
 														    font-size: x-large;margin-left: 10px;
-														    margin-top: 6px;
-														    margin-right: 10px;">Sign Up</a>
+														    font-family:js2;" class="btn-example" ><i
+									class="fa fa-user"
+									style="font-size: 20px; color: black; margin-right: 10px;"></i>Sign Up</a>
 															<div class="dim-layer">
 															    <div class="dimBg"></div>
 															    <div id="layer2" class="pop-layer">
@@ -328,7 +328,7 @@ a.btn-layerClose:hover {
 															            <div class="pop-conts">
 															                <!--content //-->
 															                <p class="ctxt mb20">
-															                <a href="/Food/singup.do"><button class="btn btn-primary" style="height: 170px; width: 150px; margin-right: 40px;font-weight: bolder; font-size: x-large;">일반 회원</button></a>
+															             	<a href="/Food/singup.do"><button class="btn btn-primary" style="height: 170px; width: 150px; margin-right: 40px;font-weight: bolder; font-size: x-large;">일반 회원</button></a>
 															                <a href="/Food/singup2.do"><button class="btn btn-danger" style="height: 170px; width: 150px;font-weight: bolder; font-size: x-large">기업 회원</button></a>
 															                </p>
 															
@@ -340,11 +340,12 @@ a.btn-layerClose:hover {
 															        </div>
 															    </div>
 															</div>
-
-								<!--                         <ul id="navi"> -->
-								<!--                               <li> -->
-								<a href="/Food/manager/dashBoard.do" id="manageLabel1"
-									class="fa fa-user"><br />Manage</a>
+						      			                 
+						
+									<!--                         <ul id="navi"> -->
+									<!--                               <li> -->
+									<a href="/Food/manager/dashBoard.do" id="manageLabel1"
+										class="fa fa-user"><br />Manage</a>
 								<!--                                </li> -->
 
 							</c:if>
@@ -389,18 +390,18 @@ a.btn-layerClose:hover {
 							</div>
 
 							<!-- Navbar Start -->
-							<div class="classynav">
+							<div class="classynav" >
 
-								<ul>
-									<li><a href="/Food/todayMenu.do" id="today">오늘의 메뉴</a></li>
-									<li><a
+								<ul >
+									<li><a href="/Food/todayMenu.do" id="today" style="font-size: 37px;">오늘의 메뉴</a></li>
+									<li ><a 
 										href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}"
-										id="mymenu" style="padding: 0 24px;">My Menu</a></li>
-									<li><a href="/Food/index/choiceMenu.do" id="choice">Other's
+										id="mymenu" style="padding: 0 24px; font-size: 37px;" >My Menu</a></li>
+									<li><a href="/Food/index/choiceMenu.do" id="choice" style="font-size: 37px;">Other's
 											Menu</a></li>
-									<li><a href="/Food/index/mealFriends.do">밥친구 만들기</a></li>
-									<li><a href="/Food/index/store.do">매장 정보</a></li>
-									<li><a href="/Food/qnaboardList">Q & A</a></li>
+									<li><a href="/Food/index/mealFriends.do" style="font-size: 37px;">밥친구 만들기</a></li>
+									<li><a href="/Food/index/store.do" style="font-size: 37px;">매장 정보</a></li>
+									<li><a href="/Food/qnaboardList" style="font-size: 37px;">Q & A</a></li>
 								</ul>
 
 
