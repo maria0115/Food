@@ -92,17 +92,16 @@
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						
 			
-			
+	
 			
 			
 			
 						<hr>
 						<div style='position:absolute;left:45%'>
-						<input id='keyword' type='text' placeholder="키워드를 입력해주세요">
-						<button onclick='location.href="wordCloudbtn.do?keyword="+$("#keyword").val()'>입력</button>
-<!-- 						<button onclick='alert("dd")'>입력</button> -->
+						<input class="form-control" id='keyword' type='text' placeholder="키워드를 입력해주세요">
+						<button class="btn btn-default" onclick='location.href="wordCloudbtn.do?keyword="+$("#keyword").val()'>입력</button>
 						</div>
-						<hr><br>
+						<hr><br><br><br>
 						<img src="/Food/resources/img/bg.jpg" style="width:500px; height:500px;"/>
 						
 						

@@ -42,9 +42,12 @@ public class ReservationController {
 	// 예약 상세 페이지 예약 취소 버튼
 	@RequestMapping(value = "index/reservDelete.do")
 	public String reservDelete(ReservationVO vo, @RequestParam(value="r_number")String temp_number
-			, @RequestParam(value="m_id")String m_id) {
+//			, @RequestParam(value="m_id")String m_id
+			, HttpSession session) {
 		System.out.println("reservDelete 컨트롤러 도착");
-		System.out.println("m_id : "+m_id);
+//		System.out.println("m_id : "+m_id);
+		String m_id = (String) session.getAttribute("user_id");
+		System.out.println(m_id);
 		int r_number = Integer.parseInt(temp_number);
 		vo.setR_number(r_number);
 		vo.setM_id(m_id);

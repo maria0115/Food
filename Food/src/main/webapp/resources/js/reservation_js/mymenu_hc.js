@@ -34,7 +34,7 @@ $('.r_cancel').val(data.r_number);
 $(".r_cancel").click(function(){
 	var cancel = $(".r_cancel").val()
 	alert(cancel)
-	location.href="reservDelete.do?r_number="+cancel+"&m_id=${sessionScope.user_id}"
+	location.href="reservDelete.do?r_number="+cancel
 })
 
 

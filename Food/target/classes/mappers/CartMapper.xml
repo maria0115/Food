@@ -8,7 +8,11 @@
 </insert>
 
 <select id="selectCart" parameterType="wishlist" resultType="wishlist">
-	select * from wishlist where m_id = #{m_id}
+<!-- 	select * from wishlist where m_id = #{m_id} -->
+	
+	select w.w_store_name,s.s_address w_address,s.s_midpart w_midpart,w.m_id
+	from store s, wishlist w 
+	where s.s_brand_name = w.w_store_name and m_id = #{m_id}
 </select>
 
 <delete id="deleteCart" parameterType="wishlist">

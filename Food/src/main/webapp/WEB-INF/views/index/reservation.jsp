@@ -171,8 +171,7 @@
 			<div class="row">
 				<div class="col-md-6 form-group">
 					<input id='btn_reserv' type="submit" value="Reserve Now"
-						class="btn btn-primary text-white py-3 px-5 font-weight-bold"
-						onclick="alert('예약되었습니다')">
+						class="btn btn-primary text-white py-3 px-5 font-weight-bold">
 				</div>
 			</div>
 		</form>

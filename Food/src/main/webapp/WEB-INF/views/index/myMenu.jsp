@@ -101,47 +101,47 @@
 
 			
 			
-<!-- 			<script> -->
-<!-- // 			function update_form(r_number){ -->
-<!-- // 				  $.ajax({ -->
-<!-- // 				    url: "myMenuDetail.do", -->
-<!-- // 				    type: "get", -->
-<!-- // 				    cache: false, -->
-<!-- // 				    dataType: "json", -->
-<!-- // 				    data: "r_number=" + r_number, -->
-<!-- // 				    success: function(data){ -->
-<!-- // 				  $('.i_store_name').val(data.r_store_name); -->
-<!-- // 			      $('.i_visit_date').val(data.time);   -->
-<!-- // 			      $('.i_pplcount').val(data.r_people_count);           -->
-<!-- // 			      $('.i_menu').val(data.r_menu); -->
-<!-- // 			      $('.i_note').val(data.r_note); -->
-<!-- // 			      $('.r_cancel').val(data.r_number); -->
-<!-- // 					if(data.r_state == 0){ -->
-<!-- // // 						alert("취소 불가") -->
-<!-- // 						$(".r_cancel").attr("disabled",true) -->
-<!-- // 					}else{ -->
-<!-- // 						$(".r_cancel").attr("disabled",false) -->
-<!-- // 					} -->
-<!-- // 			    }, -->
-<!-- // 				    error: function (request, status, error){     -->
-<!-- // 				        var msg = "ERROR : " + request.status + "<br>" -->
-<!-- // 				      msg +=  + "내용 : " + request.responseText + "<br>" + error; -->
-<!-- // 				      console.log(msg);               -->
-<!-- // 				    } -->
+			<script>
+//  			function update_form(r_number){ 
+//  				  $.ajax({ 
+//  				    url: "myMenuDetail.do", 
+//  				    type: "get", 
+//  				    cache: false, 
+//  				    dataType: "json", 
+//  				    data: "r_number=" + r_number, 
+//  				    success: function(data){ 
+//  				  $('.i_store_name').val(data.r_store_name); 
+//  			      $('.i_visit_date').val(data.time);   
+//  			      $('.i_pplcount').val(data.r_people_count);           
+//  			      $('.i_menu').val(data.r_menu); 
+//  			      $('.i_note').val(data.r_note); 
+//  			      $('.r_cancel').val(data.r_number); 
+//  					if(data.r_state == 0){ -->
+//  						alert("취소 불가") -->
+//  						$(".r_cancel").attr("disabled",true) 
+//  					}else{ -->
+//  						$(".r_cancel").attr("disabled",false) 
+//  					} 
+//  			    }, 
+//  				    error: function (request, status, error){     
+//  				        var msg = "ERROR : " + request.status + "<br>" 
+//  				      msg +=  + "내용 : " + request.responseText + "<br>" + error; 
+//  				      console.log(msg);               
+//  				    } 
 
-<!-- // 				  }); -->
-<!-- // 				} -->
-<!-- 			</script> -->
-<!-- 			<script> -->
-<!-- // 			$(function(){ -->
-<!-- // 				$(".r_cancel").click(function(){ -->
-<!-- // 					var cancel = $(".r_cancel").val() -->
-<!-- // 					alert(cancel) -->
-<!-- // 					location.href="reservDelete.do?r_number="+cancel+"&m_id=${sessionScope.user_id}" -->
-<!-- // 				}) -->
-<!-- // 			}) -->
+//  				  }); 
+//  				} 
+  			</script>
+			<script>
+//  			$(function(){ 
+//  				$(".r_cancel").click(function(){ 
+//  					var cancel = $(".r_cancel").val() 
+//  					alert(cancel) -->
+//  					location.href="reservDelete.do?r_number="+cancel+"&m_id=${sessionScope.user_id}" 
+ 				
+ 			
 
-<!-- 			</script> -->
+ 			</script>
 
 <c:if test="${empty sessionScope.user_id}">
 <div class="row alazea-portfolio" style="position: relative; height: 340px;">
