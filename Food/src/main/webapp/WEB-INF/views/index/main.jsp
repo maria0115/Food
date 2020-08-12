@@ -260,7 +260,7 @@ a.btn-layerClose:hover {
 											<a href="#layer2"  style="display: revert;
 														    color: snow;
 														    font-size: x-large;margin-left: 10px;
-														    font-family:js2;" class="btn-example" ><i class="fa fa-user" style="font-size: 20px; color:snow;"></i>Sign Up</a>
+														    font-family:js2;" class="btn-example" ><i class="fa fa-user" style="font-size: 20px; color:snow; margin-right: 10px;"></i>Sign Up</a>
 															<div class="dim-layer">
 															    <div class="dimBg"></div>
 															    <div id="layer2" class="pop-layer">
