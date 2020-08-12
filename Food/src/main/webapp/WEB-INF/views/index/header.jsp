@@ -14,6 +14,15 @@ if (folder == null || folder.equals(""))
 <!DOCTYPE html>
 <html lang="en">
 
+  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-adjusted.min.css">
+  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-additions.min.css">
+  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-site.min.css">
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/Food/resources/js/v3/bootstrap.min.js"></script>
+  <script src="/Food/resources/js/v3/notification_header.js"></script>
+
 <head>
 <script>
   (function() {
@@ -262,10 +271,16 @@ a.btn-layerClose:hover {
 									<a href="" id="logout"><button class="logout">Log-Out</button></a>
 								<i class="fa fa-user" style="font-size:20px; color:black;"></i><a href="/Food/mypageform.do" id="mypage"  >MyPage</a>
 									
-										<i class="fa fa-lg fa-bell" id="notibell">
-										<a id="noti">
-										</a>
-										</i>
+									<button id="noti" class='btn btn-link nav-item-iconic drawer-pf-trigger-icon drawer-pf-trigger dropdown'
+										style="
+									    background-color: transparent !important;
+									    background-image: none !important;
+									    border-color: transparent;
+									    border: none;
+									    color: #FFFFFF;
+									">
+									<i class="fa fa-lg fa-bell" id="notibell" style="color: yellow;"></i>
+									</button>
 									
 									<span class="notification-badge badge badge-danger" id="countAlarm"></span>
 									
@@ -431,6 +446,190 @@ a.btn-layerClose:hover {
 				</div>
 			</div>
 		</div>
+		
+		
+		
+		
+		
+		
+		<!-- 		********************** header 알림버튼 ********************* -->
+ <nav class="navbar navbar-default navbar-pf" role="navigation" style='display: contents'>
+<!--     <ul class="nav navbar-nav navbar-utility"> -->
+<!--       <li class="drawer-pf-trigger dropdown"> -->
+        <button class="btn btn-link nav-item-iconic drawer-pf-trigger-icon drawer-pf-trigger dropdown">
+          <span class="fa fa-bell dropdown-title" title="Notifications"></span>
+        </button>
+<!--       </li> -->
+
+<!--     </ul> -->
+    
+    
+    
+    
+    
+<!--     *************** 여기서 부터 ********************* -->
+<div class="drawer-pf hide drawer-pf-notifications-non-clickable" style='right:215px;top:37%;height:300%'>
+  <div class="drawer-pf-title">
+    <a class="drawer-pf-toggle-expand fa fa-angle-double-left hidden-xs"></a>
+    <a  class="drawer-pf-close pficon pficon-close"></a>
+    <h3 class="text-center">Notifications Drawer</h3>
+  </div>
+  <div class="panel-group" id="notification-drawer-accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading" data-component="collapse-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#notification-drawer-accordion" href="#fixedCollapseOne">
+            Notification Tab 1
+          </a>
+        </h4>
+        <span class="panel-counter">5 New Events</span>
+      </div>
+      <div id="fixedCollapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
+        
+        
+        
+<!--         	목록 한개 -->
+          <div class="drawer-pf-notification unread">
+  
+  <div class="dropdown pull-right dropdown-kebab-pf">
+  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight11" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="fa fa-ellipsis-v"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight11">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another Action</a></li>
+    <li><a href="#">Something Else Here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated Link</a></li>
+  </ul>
+</div>
+
+  <span class="pficon pficon-info pull-left"></span>
+  <div class="drawer-pf-notification-content">
+    <span class="drawer-pf-notification-message">A New Event! Huzzah! Bold!</span>
+    <div class="drawer-pf-notification-info">
+      <span class="date">3/31/16</span>
+      <span class="time">12:12:44 PM</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="drawer-pf-notification unread">
+  
+  <div class="dropdown pull-right dropdown-kebab-pf">
+  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight21" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="fa fa-ellipsis-v"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight21">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another Action</a></li>
+    <li><a href="#">Something Else Here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated Link</a></li>
+  </ul>
+</div>
+
+  <span class="pficon pficon-ok pull-left"></span>
+  <div class="drawer-pf-notification-content">
+    <span class="drawer-pf-notification-message">Another Event Notification</span>
+    <div class="drawer-pf-notification-info">
+      <span class="date">3/31/16</span>
+      <span class="time">12:12:44 PM</span>
+    </div>
+  </div>
+</div>
+<div class="drawer-pf-notification">
+  
+  <div class="dropdown pull-right dropdown-kebab-pf">
+  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight31" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="fa fa-ellipsis-v"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight31">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another Action</a></li>
+    <li><a href="#">Something Else Here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated Link</a></li>
+  </ul>
+</div>
+
+  <span class="pficon pficon-warning-triangle-o pull-left"></span>
+  <div class="drawer-pf-notification-content">
+    <span class="drawer-pf-notification-message">Another Event Notification that is really long to see how it reacts on smaller screens sizes.</span>
+    <div class="drawer-pf-notification-info">
+      <span class="date">3/31/16</span>
+      <span class="time">12:12:44 PM</span>
+    </div>
+  </div>
+</div>
+<div class="drawer-pf-notification">
+  
+  <div class="dropdown pull-right dropdown-kebab-pf">
+  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight41" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="fa fa-ellipsis-v"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight41">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another Action</a></li>
+    <li><a href="#">Something Else Here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated Link</a></li>
+  </ul>
+</div>
+
+  <span class="pficon pficon-error-circle-o pull-left"></span>
+  <div class="drawer-pf-notification-content">
+    <span class="drawer-pf-notification-message">Another Event Notification</span>
+    <div class="drawer-pf-notification-info">
+      <span class="date">3/31/16</span>
+      <span class="time">12:12:44 PM</span>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="blank-slate-pf hidden">
+          <div class="blank-slate-pf-icon">
+            <span class="pficon-info"></span>
+          </div>
+          <h1>There are no notifications to display.</h1>
+        </div>
+        <div class="drawer-pf-action">
+          <div class="drawer-pf-action-link" data-toggle="mark-all-read">
+            <button class="btn btn-link">Mark All Read</button>
+          </div>
+          <div class="drawer-pf-action-link" data-toggle="clear-all">
+            <button class="btn btn-link">
+              <span class="pficon pficon-close"></span>
+              Clear All
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+
+
+
+
+</nav>
+<!-- 		******************************************************** -->
+		
+		
+		
+		
+		
+		
 	</header>
 	<!-- ##### Header Area End ##### -->
 
