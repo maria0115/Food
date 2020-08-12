@@ -68,4 +68,7 @@ public interface managerDAO {
 		List<Map> mealDayCount();
 
 		void insertQaAlarm(AlarmVO vo);
+
+
+		int countAlarm(String receiveId);
 }

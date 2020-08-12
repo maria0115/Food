@@ -94,6 +94,11 @@ public interface ManagerService {
 	public void insertQaAlarm(AlarmVO vo);
 
 
+	public int countAlarm(String receiveId);
+
+
+
+
 	
 
 

@@ -61,6 +61,8 @@ if (folder == null || folder.equals(""))
 	charset="utf-8"></script>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<!-- 	<script src='/Food/resources/js/jquery.min.js'></script> -->
 
 <style type="text/css">
 .qna_table {
@@ -264,7 +266,13 @@ a.btn-layerClose:hover {
 									<a href="" id="logout"><button class="logout">Log-Out</button></a>
 									<a href="/Food/mypageform.do" id="mypage" class="fa fa-user">My
 										Page</a>
-									<a><img src="/Food/resources/img/bell.jpg"></a>
+									<a id="noti">
+									<i class="fa fa-lg fa-bell" id="notibell">
+										
+									</i>
+									</a>
+									<span class="notification-badge badge badge-danger" id="countAlarm"></span>
+									<div id="alarmCountSpan"></div>
 									<span class="wish"> <a
 										href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i
 											style="font-size: 17px; color: red;" class="fa fa-heart-o"

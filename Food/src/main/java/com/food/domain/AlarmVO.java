@@ -1,31 +1,34 @@
 package com.food.domain;
 
 public class AlarmVO {
-	 private String qaAlarm_Id;
-	 private String qaAlarm_Content;
-	 private String qaAlarm_replyTime;
+	 private String Alarm_Id;
+	
+	 private String Alarm_replyTime;
 	 private int qaAlarm_bno;
+	 private String a_state;
 	
 	 
 	 
-	public String getQaAlarm_Id() {
-		return qaAlarm_Id;
+
+	public String getAlarm_replyTime() {
+		return Alarm_replyTime;
 	}
-	public void setQaAlarm_Id(String qaAlarm_Id) {
-		this.qaAlarm_Id = qaAlarm_Id;
+	public void setAlarm_replyTime(String alarm_replyTime) {
+		Alarm_replyTime = alarm_replyTime;
 	}
-	public String getQaAlarm_Content() {
-		return qaAlarm_Content;
+	public String getAlarm_Id() {
+		return Alarm_Id;
 	}
-	public void setQaAlarm_Content(String qaAlarm_Content) {
-		this.qaAlarm_Content = qaAlarm_Content;
+	public void setAlarm_Id(String alarm_Id) {
+		Alarm_Id = alarm_Id;
 	}
-	public String getQaAlarm_replyTime() {
-		return qaAlarm_replyTime;
+	public String getA_state() {
+		return a_state;
 	}
-	public void setQaAlarm_replyTime(String qaAlarm_replyTime) {
-		this.qaAlarm_replyTime = qaAlarm_replyTime;
+	public void setA_state(String a_state) {
+		this.a_state = a_state;
 	}
+
 	public int getQaAlarm_bno() {
 		return qaAlarm_bno;
 	}

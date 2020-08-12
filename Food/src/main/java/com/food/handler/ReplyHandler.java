@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpSession;
+import javax.tools.DocumentationTool.Location;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,28 +42,38 @@ public class ReplyHandler extends TextWebSocketHandler {
 	        System.out.println("서버에 도착한 메시지:"+payloadMessage);
 	        if(StringUtils.isNotEmpty(payloadMessage)) {
 				String[] strs = payloadMessage.split(",");
-				if(strs != null && strs.length == 5) {
+				System.out.println("strs[3]:"+strs[3]);
+				if(strs != null && strs.length == 4) {
 					String cmd = strs[0];
 					String receiveNum = strs[1]; 
 					String receiveDate = strs[2];
-					String recieveContent = strs[3];
-					String receiveId = strs[4];
+					
+					String receiveId = strs[3];
+					
 					
 					//작성자가 로그인 해서 있다면
 					WebSocketSession boardWriterSession = userSessionsMap.get(receiveId);
 					
-					if("reply".equals(cmd) && boardWriterSession != null) {
-						TextMessage tmpMsg = new TextMessage(id + "님이 " + 
-											"<a type='external' href='/Food/detail?b_no="+receiveNum+"'>" + receiveNum + "</a> 번 게시글에 댓글을 남겼습니다.");
-						boardWriterSession.sendMessage(tmpMsg);
+//					if("reply".equals(cmd) && boardWriterSession != null) {
+//						TextMessage tmpMsg = new TextMessage(id + "님이 " + 
+//											"Q&A게시판 "+receiveNum+"번"+" 게시글에 댓글을 남겼습니다.");
+//						boardWriterSession.sendMessage(tmpMsg);
+//					
+//					}
 					
+					//받는 사람이 로그인 중일때
+					if(boardWriterSession != null) {
+						TextMessage tmpMsg = new TextMessage(payloadMessage+","+id);
+						boardWriterSession.sendMessage(tmpMsg);
 					}
+				
 	        }
 	        }
 	        
 		
 	}
-
+	
+	
 
 	//연결 해제될때
 	@Override

@@ -170,6 +170,14 @@ public class ManagerServiceimpl implements ManagerService{
 		
 	}
 
+	@Override
+	public int countAlarm(String receiveId) {
+		
+		return managerDAO.countAlarm(receiveId);
+	}
+
+
+
 
 	
 	

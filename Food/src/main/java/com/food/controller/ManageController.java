@@ -745,34 +745,40 @@ public class ManageController {
 	public String saveQaAlarm(AlarmVO vo) {
 		
 		String nTime = LocalDateTime.now().toString();
-		System.out.println("nTime:"+nTime);
-		vo.setQaAlarm_replyTime(nTime);
-		System.out.println("id:"+vo.getQaAlarm_Id());
-		System.out.println("context:"+vo.getQaAlarm_Content());
+		vo.setAlarm_replyTime(nTime);
 		managerService.insertQaAlarm(vo);
 		return nTime;
 	}
 	
+	
+	@ResponseBody
+	@RequestMapping("/countAlarm.do")
+	public int countAlarm(@RequestParam("receiveId") String receiveId) {
+		
+		System.out.println("여기로 들어옴");
+		int result = managerService.countAlarm(receiveId);
+		return result;
+	}
+	
+	
 	// ***************** WordCloud 페이지 *******************************
 	// 이거는 사이드바에서 누르면 그냥 넘겨주는 겁니다 스텝타게 하고 지우시면 됩니다.*********
-	@RequestMapping("/wordCloud.do")
-	public void wordcloud() {
-		System.out.println("워드클라우드 컨트롤러");
+		@RequestMapping("/wordCloud.do")
+		public void wordcloud() {
+			System.out.println("워드클라우드 컨트롤러");
+			
+			return;
+		}
+	// ****************************************************************
 		
-		return;
-	}
-	// ****************************************************************
-	
 	// ************** WordCloud 버튼누르면 밸류값 넘어가는거임!!! **************
-	@RequestMapping("/wordCloudbtn.do")
-	public void wordcloudbtn(@RequestParam(value="keyword") String keyword) {
-		System.out.println("워드클라우드 버튼 컨트롤러");
-		System.out.println(keyword);
-	}
+		@RequestMapping("/wordCloudbtn.do")
+		public void wordcloudbtn(@RequestParam(value="keyword") String keyword) {
+			System.out.println("워드클라우드 버튼 컨트롤러");
+			System.out.println(keyword);
+		}
 	// ****************************************************************
-	
-	
-	
+		
 	
 }
 	

@@ -165,8 +165,10 @@ select to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') DAY, count(*) co
 
 </select>
 
-<insert id="insertQaAlarm">
-	insert into Alarm(qaAlarm_Id,qaAlarm_Content,qaAlarm_replyTime,qaAlarm_bno) values (#{qaAlarm_Id},#{qaAlarm_Content},#{qaAlarm_replyTime},#{qaAlarm_bno})
+<insert id="insertQaAlarm" parameterType="alarm">
+	insert into Alarm(Alarm_Id,Alarm_replyTime,qaAlarm_bno) values (#{Alarm_Id},sysdate,#{qaAlarm_bno})
 </insert>
-
+<select id="countAlarm" resultType="int">
+	select count(*) count from alarm where Alarm_Id = #{Alarm_Id} AND a_state = 'N'
+</select>
 </mapper>

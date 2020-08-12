@@ -197,8 +197,14 @@ public class managerDAOImpl implements managerDAO{
 		@Override
 		public void insertQaAlarm(AlarmVO vo) {
 			System.out.println("==>ManagerMapper insertQaAlarm() 호출");
-			mybatis.insert("managerDAO.insertQaAlarm");
+			mybatis.insert("managerDAO.insertQaAlarm",vo);
 			
+		}
+
+		@Override
+		public int countAlarm(String receiveId) {
+			System.out.println("==>ManagerMapper countAlarm() 호출");
+			return mybatis.selectOne("managerDAO.countAlarm",receiveId);
 		}
 
 
