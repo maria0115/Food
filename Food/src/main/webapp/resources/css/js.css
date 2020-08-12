@@ -4,12 +4,13 @@
 
 
 #naver{
-	-webkit-text-stroke-width: medium;
-   margin-left: 25px;
-    position: unset;
-    padding-top: 10px;
+	margin-left: 25px;
+    /* position: unset; */
+    /* padding-top: 0px; */
     color: snow;
-   
+    font-family: js4;
+    font-size: 20px;
+}
 }
 
 
@@ -20,24 +21,22 @@
 .logout {
 	border: 2px solid aliceblue;
     background-color: rgba(0, 0, 0, 0);
-    color: aliceblue;
+    color: snow;
     padding: 2px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 90px;
     cursor: pointer;
     font-size: large;
-    font-family: revert;
+    font-family: js3;
+    margin-right: 10px;
 
 }
 
 
 .login-font {
-	font-size: large;
-	color: white;
-	font-family: initial;
-	padding: 10px;
+	font-size: xx-large;
+    color: snow;
+    font-family: js5;
+    padding: 10px;
 }
 
 #btn_submit {
@@ -45,9 +44,9 @@
     background-repeat: round;
     width: 65px;
     cursor: pointer;
-    margin-top: px;
     padding-top: 7px;
     border: 5px ridge gold;
+    border-radius: 80px / 100px;
 }
 
 #navi {
@@ -84,10 +83,11 @@
 
 #mypage{
 	display: revert;
-    margin-left:10px;
-    font-size: 17px;
-    color: gold;
-    margin-right:10px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: floralwhite;
+    margin-right: 10px;
+    font-family: js3;
 } 
 
 
@@ -148,15 +148,18 @@
 	width: 54%;
 	padding: 3px;
 	margin: 0px;
+	border-radius: 90px / 100px;
 }
 
 .loginbox label {
-	width: 24px;
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	color: white;
-	font-weight: bold;
+	width: 25px;
+    display: inline-block;
+    margin: 0;
+    /* padding: 0; */
+    color: white;
+    /* font-weight: bold; */
+    font-family: js2;
+    font-size: larger;
 }
 
 .loginBtn {
@@ -166,9 +169,10 @@
 }
 
 .loginbox .memberInfo {
-	margin-top: 13px;
-	
-	color: snow;
+	margin-top: auto;
+    color: snow;
+    font-size: 20px;
+    font-family: js5;
 }
 
 a.memberInfo {

@@ -192,9 +192,9 @@ a.btn-layerClose:hover {
 						<div
 							class="top-header-content d-flex align-items-center justify-content-between">
 							<!-- Top Header Content -->
-							<div class="top-header-meta">
+							<div class="top-header-meta" >
 									<!--로고 이미지 들어올곳  -->
-								<a href="/Food/main.do" class="nav-brand" style="    font-family: js; font-size: 50px; color: snow;">오늘 뭐 먹지?
+								<a href="/Food/main.do" class="nav-brand" style="font-family: js; font-size: 50px; color: snow;">오늘 뭐 먹지?
 						</a>
 							</div>
 
@@ -208,8 +208,7 @@ a.btn-layerClose:hover {
 										<span class="login-font">${sessionScope.user_name}
 											Welcome.</span>
 										<a href="" id="logout"><button class="logout">Log-Out</button></a>
-										<a href="mypageform.do" id="mypage" class="fa fa-user">My
-											Page</a>
+										<i class="fa fa-user" style="font-size:20px; color:snow;"></i><a href="mypageform.do" id="mypage"  >MyPage</a>
 											<i class="fa fa-lg fa-bell" id="notibell">
 										<a id="noti">
 										</a>
@@ -218,7 +217,7 @@ a.btn-layerClose:hover {
 									<span class="notification-badge badge badge-danger" id="countAlarm"></span>				
 								<span class="cart">
 									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
-									aria-hidden="true"></i> <span style="font-size: 17px; color: red; font-weight: bold;" >Wish<span
+									aria-hidden="true"></i> <span style="font-size: 20px; color: snow; font-family: js2;" >Wish<span
 										>(${wish})</span></span></a>
 								</span>
 							

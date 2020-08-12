@@ -56,9 +56,7 @@ if (folder == null || folder.equals(""))
     "pluginKey": "82a91101-4061-4a1b-b124-49afdb3d0949"
   });
 </script>
-<script type="text/javascript"
-	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js"
-	charset="utf-8"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
 	
 <!-- <script type="text/javascript" -->
 <!-- 	src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
@@ -86,7 +84,7 @@ if (folder == null || folder.equals(""))
 	$(document).ready(function() {
 		if(${result}!=null){
 			var name = ${result}.response.name;
-	
+		alert(name);
 		$(".login-header").css("display","none");
 		$(".access").html("<span class='login-font'>"+name+" Welcome.</span><a href='' id='naverlogout' ><button class='logout'>Log-Out</button></a><a href='/Food/mypage.do' id='mypage' class='fa fa-user' >My Page</a>");
 		}
@@ -263,8 +261,7 @@ a.btn-layerClose:hover {
 									<span class="login-font">${sessionScope.user_name}
 										Welcome.</span>
 									<a href="" id="logout"><button class="logout">Log-Out</button></a>
-									<a href="/Food/mypageform.do" id="mypage" class="fa fa-user">My
-										Page</a>
+								<i class="fa fa-user" style="font-size:20px; color:black;"></i><a href="mypageform.do" id="mypage"  >MyPage</a>
 									
 										<i class="fa fa-lg fa-bell" id="notibell">
 										<a id="noti">
