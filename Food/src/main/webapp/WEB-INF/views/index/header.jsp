@@ -84,7 +84,6 @@ if (folder == null || folder.equals(""))
 	$(document).ready(function() {
 		if(${result}!=null){
 			var name = ${result}.response.name;
-		alert(name);
 		$(".login-header").css("display","none");
 		$(".access").html("<span class='login-font'>"+name+" Welcome.</span><a href='' id='naverlogout' ><button class='logout'>Log-Out</button></a><a href='/Food/mypage.do' id='mypage' class='fa fa-user' >My Page</a>");
 		}
