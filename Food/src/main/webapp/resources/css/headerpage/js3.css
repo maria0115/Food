@@ -39,7 +39,7 @@
     padding: 10px;
 }
 #btn_submit {
-	background-image: url(../img/login/loginBtn.jpg);
+	background-image: url(../../img/login/loginBtn.jpg);
     background-repeat: round;
     width: 65px;
     cursor: pointer;
