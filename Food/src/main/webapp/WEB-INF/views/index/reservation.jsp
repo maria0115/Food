@@ -35,12 +35,11 @@
 <body>
 
 
-
+	
 	<!-- ### 예약 팝업 창 start ### -->
-	<input type="hidden" id="r_master" value="<%= request.getParameter("r_master") %>">
 	<div class="col-md-7 aos-init aos-animate" data-aos="fade-up"
 		data-aos-delay="100" style='margin: auto'>
-
+		<input type="hidden" id="r_master" value="<%= request.getParameter("r_master") %>">
 		<form id='frm10' action="reservInsert.do" method="post" class="bg-white p-md-5 p-4 mb-5 border">
 			<div class="row">
 				<div class="col-md-12 form-group">
@@ -204,7 +203,7 @@
 	<script src="resources/js/reservation_js/owl.carousel.min.js"></script>
 	<script src="resources/js/reservation_js/popper.min.js"></script>
 	<script src="resources/js/reservation_js/reserv_hc.js"></script>
-	
+<!-- 	<script src="resources/js/alarmData/reservAlarm.js"></script> -->
 	
 
 </body>

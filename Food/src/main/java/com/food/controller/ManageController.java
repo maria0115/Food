@@ -1,5 +1,6 @@
 package com.food.controller;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.socket.TextMessage;
+import org.springframework.web.socket.WebSocketSession;
 
 import com.food.domain.AlarmVO;
 import com.food.domain.BlackListVO;
@@ -26,6 +29,7 @@ import com.food.domain.MemberVO;
 import com.food.domain.PagingVO;
 import com.food.domain.ReservationVO;
 import com.food.domain.StoreListVO;
+import com.food.handler.ReplyHandler;
 import com.food.service.BlackService;
 import com.food.service.ManagerService;
 import com.food.service.StoreService;
@@ -747,8 +751,24 @@ public class ManageController {
 		
 		String nTime = LocalDateTime.now().toString();
 		vo.setAlarm_replyTime(nTime);
+		System.out.println("rAlarm_rtime:"+vo.getrAlarm_rtime());
 		managerService.insertQaAlarm(vo);
+		
+		
+		Map<String, WebSocketSession> userSessionsMap = ReplyHandler.userSessionsMap;
+		
+		TextMessage socketMsg = new TextMessage("reserv,"+vo.getrAlarm_rtime()+","+nTime+","+vo.getAlarm_Id());
+		try {
+			userSessionsMap.get(vo.getAlarm_Id()).sendMessage(socketMsg);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
 		return nTime;
+		
+		
+		
 	}
 	
 	

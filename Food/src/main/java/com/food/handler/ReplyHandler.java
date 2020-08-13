@@ -19,7 +19,8 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 
 public class ReplyHandler extends TextWebSocketHandler {
-   Map<String, WebSocketSession> userSessionsMap = new HashMap<String, WebSocketSession>();
+	
+   public static Map<String, WebSocketSession> userSessionsMap = new HashMap<String, WebSocketSession>();
    String id;
       
    //서버에 접속이 성공 했을때
@@ -53,13 +54,6 @@ public class ReplyHandler extends TextWebSocketHandler {
                
                //작성자가 로그인 해서 있다면
                WebSocketSession boardWriterSession = userSessionsMap.get(receiveId);
-               
-//               if("reply".equals(cmd) && boardWriterSession != null) {
-//                  TextMessage tmpMsg = new TextMessage(id + "님이 " + 
-//                                 "Q&A게시판 "+receiveNum+"번"+" 게시글에 댓글을 남겼습니다.");
-//                  boardWriterSession.sendMessage(tmpMsg);
-//               
-//               }
                
                //받는 사람이 로그인 중일때
                if(boardWriterSession != null) {

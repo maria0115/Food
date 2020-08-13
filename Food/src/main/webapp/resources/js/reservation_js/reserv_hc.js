@@ -53,22 +53,53 @@ $("#btn_reserv").on('click',function(e){
 	
 	var r_menu = $("input[name='r_menu']");
 	var r_menu_count = $("input[name='r_menu_count']");
-
+	alert("reserv_hc");
 	if($('#r_visit_date').val()=="" || $('#r_date_hour option:selected').text()=='선택' || $('#r_date_minute option:selected').text()=='선택'|| r_menu.length == 0){
 		alert('입력되지 않은 항목이 있습니다');
 		e.preventDefault();
 	}else{
 		$.ajax({
 	        type:'post',
+	        async: false,
 	        url : 'reservInsert.do',
 	        dataType: 'json',
 	        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
 	        success : function(resultData){
    				if(resultData > 0){
    					alert('예약되었습니다')
-					close();
+					
 	   			}
         	}
+		});
+		
+		var r_master = $('#r_master').val();
+		var r_time = $('#r_visit_date').val()+"일"+$('#r_date_hour').val()+":"+$('#r_date_minute').val();// 방문날짜
+		alert(r_time);
+		$.ajax({
+			type:'get',
+			
+			
+			url : "/Food/manager/saveQaAlarm.do?Alarm_Id="+r_master+"&rAlarm_rtime="+r_time,
+			contentType: "application/json; charset=utf-8",
+			dataType : 'text',
+			success : function(data){
+				alert(data);
+				if(socket){
+					let socketMsg = "reserv,"+r_time+","+data+","+r_master;
+					console.log("msgmsg : " + socketMsg);
+					socket.send(socketMsg);
+					alert("성공");
+					
+					
+					close();
+				}
+				
+			},
+			error:function(err){
+				console.log(err);
+			}
+			
+			
 		});
 	}
 })

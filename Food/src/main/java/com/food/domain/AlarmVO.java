@@ -6,11 +6,17 @@ public class AlarmVO {
     private int qaAlarm_bno;
     private String a_state;
     private String mfAlarm_bno;
-   
+    private String rAlarm_rtime;
     
     
 
-   public String getMfAlarm_bno() {
+   public String getrAlarm_rtime() {
+		return rAlarm_rtime;
+	}
+	public void setrAlarm_rtime(String rAlarm_rtime) {
+		this.rAlarm_rtime = rAlarm_rtime;
+	}
+public String getMfAlarm_bno() {
 		return mfAlarm_bno;
 	}
 	public void setMfAlarm_bno(String mfAlarm_bno) {

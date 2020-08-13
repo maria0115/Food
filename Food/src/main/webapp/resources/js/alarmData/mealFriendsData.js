@@ -15,7 +15,6 @@ $('.mary').on('click',function(){
 		contentType: "application/json; charset=utf-8",
 		dataType : 'text',
 		success : function(data){
-			alert(data);
 			if(socket){
 				let socketMsg = "mfChat,"+b_no+","+data+","+writer;
 				console.log("msgmsg : " + socketMsg);

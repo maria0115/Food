@@ -176,7 +176,7 @@
    
    function connectWs(){
       
-      var ws = new WebSocket("wss://115.91.88.227:60000/Food/footer");
+      var ws = new WebSocket("ws://localhost:8080/Food/footer");
       socket = ws;
       ws.onopen = function(){
          
@@ -211,9 +211,10 @@
                   }
                else if("mfChat"==cmd){
             	   reply = senderId + "님이 밥친구만들기 "+receiveNum+"번 글 채팅방에 입장하셨습니다";
-            	   else if("reserv"==cmd){
-            		   reply = senderId + "님이 "+receiveNum+"번 글 채팅방에 입장하셨습니다";
-            	   }
+                   }
+               else if("reserv"==cmd){
+					reply = senderId+"님이 "+receiveNum+"에 예약하셨습니다";
+                   }
             }
          
    
@@ -238,11 +239,9 @@
              if("reply"==cmd){
              location.href='/Food/detail?b_no='+receiveNum;
              }else if("mfChat"==cmd){
-            	 window.open('https://115.91.88.227:60000/Food/mealBoard/chatBox.do?&userId='+receiveId,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
+            	 window.open('https://192.168.0.17:8080/Food/mealBoard/chatBox.do?&userId='+receiveId,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
                  }
-             else if(){
-                 }
-         };
+             };
          toastr.info('알림', reply);
          
       };
