@@ -23,8 +23,8 @@ if (folder == null || folder.equals(""))
   
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <!--  <script src="/Food/resources/js/v3/bootstrap.min.js"></script>
-  <script src="/Food/resources/js/v3/notification_header.js"></script> -->
+   <script src="/Food/resources/js/v3/bootstrap.min.js"></script>
+  <script src="/Food/resources/js/v3/notification_header.js"></script> 
 
 <head>
 <script>
