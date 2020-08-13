@@ -14,16 +14,17 @@ if (folder == null || folder.equals(""))
 <!DOCTYPE html>
 <html lang="en">
 
-  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-adjusted.min.css">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+ <!--  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-adjusted.min.css"> 
   <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-additions.min.css">
-  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-site.min.css">
+  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-site.min.css">  -->
   <link rel="stylesheet" href="/Food/resources/css/headerpage/style3.css">
   <link rel="stylesheet" href="/Food/resources/css/headerpage/js3.css">
   
-
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/Food/resources/js/v3/bootstrap.min.js"></script>
-  <script src="/Food/resources/js/v3/notification_header.js"></script>
+ <!--  <script src="/Food/resources/js/v3/bootstrap.min.js"></script>
+  <script src="/Food/resources/js/v3/notification_header.js"></script> -->
 
 <head>
 <script>
@@ -109,11 +110,7 @@ if (folder == null || folder.equals(""))
 
 
 <!-- 부트스트랩 -->
-<link
-	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
-	rel="stylesheet">
-<script
-	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 
 
 <style>
