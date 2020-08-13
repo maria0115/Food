@@ -61,7 +61,7 @@
 		var $div = $('<input class="btn btn-danger cancel" style="max-height: 30px;" type="button"  value="취소하기"/>');
 		
 		$("#header").append($div);
-		
+		test();
 	} 
 	
     //참가하기 버튼을 눌렀을때 
@@ -102,11 +102,10 @@
 		});
 	
 	function test(){
+		$(".cancel").off('click');
 		$(".cancel").on('click',function(){
 			var joinid = $("#f_userId").val()
 			var userid = $("#chat_id").val()
-			
-			var joinuserId = joinid.replace(userid,"");
 			
 		    $.ajax({
 		    	type:'post',
@@ -119,10 +118,11 @@
 		    		"&b_no="+ $("#b_no").val(),
 		    	//dataType:"text",
 		        success : function(resultData){
-		        	alert("밥친구가 취소되었습니다.");
+		        	alert(resultData);
 		        	//넘겨받은 결과값이 0이 아니라면 
 		        	if(resultData != 0){
 		        		//취소하기 버튼 숨기고
+		        		alert("밥친구가 취소되었습니다.");
 		        		$(".cancel").css("display", "none");
 		        		$("#f_userId").remove()
 		       		//참가하기 버튼 띄워주기
@@ -130,6 +130,7 @@
 		        		$("#header").append($div);
 		        		var $div1 = $("<input type='hidden' value='"+joinuserId+"' id='f_userId' />");
 		        		$("#chatheader").append($div1);
+		        		
 		       		
 		        	}
 		            	
