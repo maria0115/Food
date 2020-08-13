@@ -12,7 +12,10 @@ $('.mary').on('click',function(){
 
 	console.log('?title='+$(this).parent().parent().children().find('a').eq(1).text()+'&userId='+$('#sessionId').val()+'&f_userId='+$(this).parent().parent().children().eq(4).find('input[type=hidden][name=joinId]').val()+"&b_no="+b_no);
 	window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?title='+$(this).parent().parent().children().find('a').eq(1).text()+'&userId='+$('#sessionId').val()+'&f_userId='+$(this).parent().parent().children().eq(4).find('input[type=hidden][name=joinId]').val()+"&b_no="+b_no,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
- 
+
+
+	window.open('http://192.168.0.17:8080/Food/mealBoard/chatBox.do?title='+$(this).parent().parent().children().find('a').eq(1).text()+'&userId='+$('#sessionId').val(),'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
+
 	
 	
 	$.ajax({
@@ -32,6 +35,6 @@ $('.mary').on('click',function(){
 			console.log(err);	
 		}
 		
-		
+		 
 	});
 });
