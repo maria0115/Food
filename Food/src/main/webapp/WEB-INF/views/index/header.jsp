@@ -21,10 +21,7 @@ if (folder == null || folder.equals(""))
   <link rel="stylesheet" href="/Food/resources/css/headerpage/style3.css">
   <link rel="stylesheet" href="/Food/resources/css/headerpage/js3.css">
   
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="/Food/resources/js/v3/bootstrap.min.js"></script>
-  <script src="/Food/resources/js/v3/notification_header.js"></script> 
+
 
 <head>
 <script>
@@ -276,9 +273,9 @@ a.btn-layerClose:hover {
 									    background-image: none !important;
 									    border-color: transparent;
 									    border: none;
-									    color: #FFFFFF;
+/* 									    color: #FFFFFF; */
 									">
-									<i class="fa fa-lg fa-bell" id="notibell" style="color: yellow;"></i>
+									<i class="fa fa-3x fa-bell" id="notibell" style="color: gold;"></i>
 									</button>
 									
 									<span class="notification-badge badge badge-danger" id="countAlarm"></span>
@@ -453,18 +450,7 @@ a.btn-layerClose:hover {
 		
 		<!-- 		********************** header 알림버튼 ********************* -->
  <nav class="navbar navbar-default navbar-pf" role="navigation" style='display: contents'>
-<!--     <ul class="nav navbar-nav navbar-utility"> -->
-<!--       <li class="drawer-pf-trigger dropdown"> -->
-        <button class="btn btn-link nav-item-iconic drawer-pf-trigger-icon drawer-pf-trigger dropdown">
-          <span class="fa fa-bell dropdown-title" title="Notifications"></span>
-        </button>
-<!--       </li> -->
 
-<!--     </ul> -->
-    
-    
-    
-    
     
 <!--     *************** 여기서 부터 ********************* -->
 <div class="drawer-pf hide drawer-pf-notifications-non-clickable" style='right:215px;top:37%;height:300%'>
@@ -649,7 +635,10 @@ a.btn-layerClose:hover {
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/search.js"></script>
 	<script src="/Food/resources/js/sub.js"></script>
-	
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<!--   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+   	<script src="/Food/resources/js/v3/bootstrap.min.js"></script>
+ 	<script src="/Food/resources/js/v3/notification_header.js"></script> 
 
 	<script >
 	$('.btn-example').click(function(){
