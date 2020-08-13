@@ -15,9 +15,9 @@ if (folder == null || folder.equals(""))
 <html lang="en">
 
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
- <!--  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-adjusted.min.css"> 
+  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-adjusted.min.css"> 
   <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-additions.min.css">
-  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-site.min.css">  -->
+ <!--  <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-site.min.css">  -->
   <link rel="stylesheet" href="/Food/resources/css/headerpage/style3.css">
   <link rel="stylesheet" href="/Food/resources/css/headerpage/js3.css">
   
