@@ -16,9 +16,7 @@
 			//참가중 문구 지우기
 			$("#join").remove();
 		}
-	} else {
-		
-	}
+	} 
 	
 	//참가하기 버튼을 눌렀을때 
 	$("#joinBtn").click(function(){

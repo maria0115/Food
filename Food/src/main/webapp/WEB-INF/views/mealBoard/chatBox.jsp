@@ -10,6 +10,8 @@
 <%
 	String f_title = request.getParameter("title");
 	String m_id = request.getParameter("userId");
+	String f_userId = request.getParameter("f_userId");
+	String b_no = request.getParameter("b_no");
 
 %>
 
@@ -23,13 +25,16 @@
 	    
 <div id="container">
 	<main>
-	<div>
+	<div id="chatheader">
 	<input type="hidden" value='<%=m_id%>' id='chat_id' />
-	    
+	<input type="hidden" value='<%=f_title%>' id='f_title' />
+	<input type="hidden" value='<%=f_userId%>' id="f_userId" />
+	<input type="hidden" value='<%=b_no%>' id='b_no' />
 	
-		<div id="header">
+		<div id="header" style="text-align: center;font-family: js; font-size: 20px;">
+		<label><%=f_title %></label>
+		<input class="btn btn-info" type="button" id="joinBtn" value="밥친구확정" style="max-height: 30px;" >
 		
-		<input class="btn btn-info" type="button" id="joinBtn" value="밥친구확정" style="max-height: 35px; max-width: 100px;" >
 		</div>
 		<!-- 채팅메세지를 주고받는 부분 -->
 		<div id="chat">
@@ -44,7 +49,5 @@
 <script src="/Food/resources/js/jquery/jquery-2.2.4.min.js"></script>
 <!-- 채팅기능을 위한 script -->
 <script src="/Food/resources/js/chat.js"></script> 
-
-
 </body>
 </html>

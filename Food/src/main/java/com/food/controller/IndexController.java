@@ -116,7 +116,7 @@ public class IndexController {
 			, @RequestParam(value="nowPage", required=false)String nowPage
 			, @RequestParam(value="cntPerPage", required=false)String cntPerPage,
 			String searchType, String keyword, String searchClick) {
-		
+		bvo.setBoardType(3);
 		String search = "";//검색을 했는지 여부를 확인할 변수 선언
 		int total;
 		
@@ -165,7 +165,7 @@ public class IndexController {
 					+ "";
 		}
 		
-		bvo.setBoardType(3);
+		
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		model.addAttribute("list",boardService.selectmeal(bvo));
 		model.addAttribute("paging", vo); //페이징처리를 위한  가져온 값 넘기기 
