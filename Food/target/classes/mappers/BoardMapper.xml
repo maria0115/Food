@@ -121,7 +121,7 @@ delete from board where q_replyno=#{q_replyno} and boardtype=5
 </delete>
 
 <select id="selectmeal" parameterType="board" resultType="board">
-select * from board where boardType=#{boardType}
+select b_no,f_addr1,concat('20',replace(to_char(to_date(SUBSTR(f_date,1,10),'YYYY-MM-DD')),'/','')) f_date,title from board where boardtype=3 AND concat('20',replace(to_char(to_date(SUBSTR(f_date,1,10),'YYYY-MM-DD')),'/','')) > replace(to_char(sysdate,'YYYY-MM-DD'),'-','')
 </select>
 
 
