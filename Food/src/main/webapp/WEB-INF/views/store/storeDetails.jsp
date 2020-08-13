@@ -294,7 +294,7 @@ overflow-y: scroll;
 
 
 					<div class="col-12 col-md-6">
-						<div class="single_product_desc">
+						<div class="single_product_desc" id="detailCss">
 							<h4 class="title">${list.s_brand_name}</h4>
 							<h4></h4>
 							<div class="short_overview">
@@ -585,15 +585,16 @@ overflow-y: scroll;
 																placeholder="Nazrul" value="${list.s_brand_name}">
 														</div>
 														<div class="form-group">
+															<label for="name">작성자</label> <input type="text"
+																class="form-control" id="name" name="userId" value="${user_name}"
+																placeholder="작성자" readonly="readonly">
+														</div>
+														<div class="form-group">
 															<label for="name">제목</label> <input type="text"
 																class="form-control" id="name" name="title"
 																placeholder="제목">
 														</div>
-														<div class="form-group">
-															<label for="name">작성자</label> <input type="text"
-																class="form-control" id="name" name="userId"
-																placeholder="작성자">
-														</div>
+														
 													</div>
 
 

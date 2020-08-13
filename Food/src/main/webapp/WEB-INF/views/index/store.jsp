@@ -64,22 +64,24 @@
        
 
         <div class="container">
-            <div class="breadcrumb-area">
-       
+			<div class="breadcrumb-area">
 
-            <div class="row">
-                <div class="col-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/Food/main.do"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">매장정보</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-    </div>
 
-        </div>
+				<div class="row">
+					<div class="col-12">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="/Food/main.do"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">매장정보</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<h2 style="TEXT-ALIGN: CENTER; FONT-SIZE: xxx-large;">STORE LIST</h2>
+
+		</div>
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
 <!--  -->
@@ -115,7 +117,8 @@
 								    line-height: 24px;
 								    width: 80px;
 								    height: 31px;
-								    margin-right: 5px;	">
+								    margin-right: 5px;	
+								    border-radius: 10px; ">
 									<!-- <option selected>한식</option> -->
 									<option value="all">전체</option>
 									<option value="한식">한식</option>
@@ -137,7 +140,8 @@
 									    -webkit-box-sizing: border-box;
 									    -moz-box-sizing: border-box;
 									    box-sizing: border-box;
-									    margin-right: 5px;	">
+									    margin-right: 5px;	
+									    border-radius: 10px;">
 								<input type="button" name="searchButton" id="searchButton"  value="검색" 
 								
 								style="
@@ -149,6 +153,7 @@
 								    border: 1px solid #3e3d3c;
 								    background: #3e3d3c;
 								    text-align: center;
+								    border-radius: 30px;
 								"> 
 								
 							</form>
@@ -221,7 +226,7 @@
 						<!-- Shop Widget -->
                         <!-- Shop Widget -->
                         <div class="shop-widget best-seller mb-50">
-                            <h4 class="widget-title">REVIEW BEST STORE 3</h4>
+                            <h4 class="widget-title">BEST REVIEW STORE 3</h4>
                             <div class="widget-desc">
 
                                 <!-- Single Best Seller Products -->
