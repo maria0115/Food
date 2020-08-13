@@ -746,7 +746,7 @@ public class ManageController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/saveQaAlarm.do")
+	@RequestMapping("/saveQaAlarm.do") 
 	public String saveQaAlarm(AlarmVO vo,HttpSession session) {
 		System.out.println("saveQaAlarm.do 들어옴");
 		String nTime = LocalDateTime.now().toString();
