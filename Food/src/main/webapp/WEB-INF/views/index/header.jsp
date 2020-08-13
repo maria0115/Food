@@ -17,6 +17,8 @@ if (folder == null || folder.equals(""))
   <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-adjusted.min.css">
   <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-additions.min.css">
   <link rel="stylesheet" href="/Food/resources/css/v3/patternfly-site.min.css">
+  <link rel="stylesheet" href="/Food/resources/css/headerpage/style3.css">
+  <link rel="stylesheet" href="/Food/resources/css/headerpage/js3.css">
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -105,8 +107,7 @@ if (folder == null || folder.equals(""))
 
 <!-- Core Stylesheet -->
 
-<link rel="stylesheet" href="/Food/resources/css/style3.css">
-<link rel="stylesheet" href="/Food/resources/css/js3.css">
+
 <!-- 부트스트랩 -->
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
@@ -147,6 +148,7 @@ if (folder == null || folder.equals(""))
 
 body {
   margin: 100px;
+  
 }
 
 .pop-layer .pop-container {

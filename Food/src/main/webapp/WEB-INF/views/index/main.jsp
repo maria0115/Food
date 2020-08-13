@@ -86,7 +86,7 @@
 
 body {
   margin: 100px;
-  font-family: js5;
+
 }
 
 .pop-layer .pop-container {
@@ -627,8 +627,9 @@ a.btn-layerClose:hover {
 	<!-- All Plugins js -->
 	<script src="resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
+		<script src="/Food/resources/js/search.js"></script>
 <script src="/Food/resources/js/active.js"></script>	
-	<script src="/Food/resources/js/search.js"></script>
+
 	<script >
 	$('.btn-example').click(function(){
         var $href = $(this).attr('href');

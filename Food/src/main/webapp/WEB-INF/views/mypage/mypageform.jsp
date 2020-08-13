@@ -18,7 +18,6 @@
 	<link rel="icon" href="resources/img/core-img/favicon.ico">
 	<link rel="stylesheet" href="/Food/resources/css/mypage.css">
 	<!-- Core Stylesheet -->
-	<link rel="stylesheet" href="/Food/resources/css/style.css">
     <link rel="stylesheet" href="/Food/resources/css/mymenu.css">
     <link rel="stylesheet" href="/Food/resources/css/mypageform.css">
 <style type="text/css">
