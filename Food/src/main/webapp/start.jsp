@@ -53,10 +53,11 @@ var detailAddr="";
 		
 	
 </script>
+
 <head>
 <meta charset="UTF-8">
 
-<title>Insert title here</title>
+<title>오늘 뭐 먹지</title>
 
 </head>
 

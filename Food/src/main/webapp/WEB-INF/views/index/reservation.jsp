@@ -37,6 +37,7 @@
 
 
 	<!-- ### 예약 팝업 창 start ### -->
+	<input type="hidden" id="r_master" value="<%= request.getParameter("r_master") %>">
 	<div class="col-md-7 aos-init aos-animate" data-aos="fade-up"
 		data-aos-delay="100" style='margin: auto'>
 
