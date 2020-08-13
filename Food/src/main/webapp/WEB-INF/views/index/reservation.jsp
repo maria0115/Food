@@ -15,7 +15,7 @@
 <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
 
 <!-- Favicon -->
-<link rel="icon" href="resources/img/core-img/favicon.ico">
+<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
 
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="resources/css/reservation_css/aos.css">

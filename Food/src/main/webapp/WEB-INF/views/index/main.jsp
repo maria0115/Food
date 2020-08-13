@@ -33,7 +33,7 @@
 
 
 <!-- Favicon -->
-<link rel="icon" href="resources/img/core-img/favicon.ico">
+<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
 
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="resources/css/style.css">
@@ -178,7 +178,7 @@ a.btn-layerClose:hover {
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
 		<div class="preloader-img">
-			<img src="img/core-img/leaf.png" alt="">
+			<img src="/Food/resources/img/core-img/fri.jpg" alt="">
 		</div>
 	</div>
 
