@@ -138,7 +138,7 @@ public class MypageController {
 			return map;
 		}
 		
-		@RequestMapping("/reservation.do")
+		@RequestMapping("mypage/reservation.do")
 		public String reservation(ReservationVO vo, Model model) {
 				ReservationVO vo2 =  ReservationService.reservationDetail(vo);
 				String menu = vo2.getR_menu();

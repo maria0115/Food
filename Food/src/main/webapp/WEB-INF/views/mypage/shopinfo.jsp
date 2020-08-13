@@ -29,75 +29,16 @@
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 <style>
-.box select {
-	background-color: indianred;
-	color: white;
-	padding: 12px;
-	width: 250px;
-	border: none;
-	font-size: 20px;
-	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-	-webkit-appearance: button;
-	appearance: button;
-	outline: none;
-	border-radius: 80px/100px;
+
+label{
+	font-family: js;
+    font-size: 25px;
+}
+span{
+	font-family: js;
+    font-size: 25px;
 }
 
-.box::before {
-	content: "\f13a";
-	font-family: FontAwesome;
-	top: 0;
-	right: 0;
-	width: 20%;
-	height: 100%;
-	text-align: center;
-	font-size: 28px;
-	line-height: 45px;
-	color: rgba(255, 255, 255, 0.5);
-	background-color: rgba(255, 255, 255, 0.1);
-	pointer-events: none;
-}
-
-.box:hover::before {
-	color: rgba(255, 255, 255, 0.6);
-	background-color: rgba(255, 255, 255, 0.2);
-}
-
-.box select option {
-	padding: 30px;
-}
-
-#preview img {
-	width: 100px;
-	height: 100px;
-}
-
-#preview p {
-	text-overflow: ellipsis;
-	overflow: hidden;
-}
-
-.preview-box {
-	border: 1px solid;
-	padding: 5px;
-	border-radius: 2px;
-	margin-bottom: 10px;
-}
-.shopmem{
-display: flex;
-
-}
-.happytime{
-     display: grid;
-    font-size: xx-large;
-    font-weight: bolder;
-    font-family: monospace;
-}
-.happytime label{
-color:darkred;
-margin-left: 5px;
-margin-right: 5px;
-}
 </style>
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -122,11 +63,15 @@ margin-right: 5px;
 	<div class="breadcrumb-area">
 		<!-- Top Breadcrumb Area -->
 		<div class="container">
-		<h1>우리 매장 정보</h1><br/>
+		<h1 style="font-family: js;">우리 매장 정보</h1><br/>
 		<div id="storeInfo">
 			<table class="table table" id="storeinfotable">
 				<tr>
-					<td colspan="3" ><h4 style="text-align: center;">${store.s_brand_name }</h4></td>
+					<td colspan="3" style="text-align: center;" >
+						<label style="font-size: 35px;!important" >
+						<a href="store/storeDetails.do?s_brand_name=${store.s_brand_name }">${store.s_brand_name }</a>
+						</label>
+					</td>
 				</tr>
 				<tr>
 					<td style="width: 10%;">

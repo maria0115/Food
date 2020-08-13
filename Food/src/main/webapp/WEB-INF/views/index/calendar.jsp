@@ -30,8 +30,9 @@
 	}
 	
 	.fc-content{
-	
-		color: white;
+		
+		background-color:white;
+		color: black;
 		display: grid;
 		font-size: 25px;
 		

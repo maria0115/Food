@@ -37,7 +37,7 @@ $(function(){
 					}
 					
 					data.start = resultData.list[i].r_visit_date+"T"+resultData.list[i].r_date_hour;
-					data.url = "reservation.do?r_number="+resultData.list[i].r_number;
+					data.url = "mypage/reservation.do?r_number="+resultData.list[i].r_number;
 					event[i]=data;
 				}
 				setreser(event);
