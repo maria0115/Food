@@ -127,6 +127,7 @@ public class MealBoardContoller {
 		System.out.println("취소버튼 컨트롤러 확인");
 		System.out.println(f_userId);
 		System.out.println(userId);
+		System.out.println(b_no);
 		f_userId = f_userId.replace(userId,"");
 		System.out.println(f_userId);
 		vo.setBoardType(3);
