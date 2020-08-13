@@ -168,6 +168,7 @@ a.rm-button-open,
 .rm-content h4 {
 	margin: 0 0 20px 0;
 	font-size: 16px;
+	font-family:js;
 	padding-bottom: 10px;
 	color: #323b4c;
 	border-bottom: 4px double #323b4c;
@@ -193,9 +194,9 @@ a.rm-button-open:hover {
 }
 
 .rm-info p {
-	line-height: 20px;
+	line-height: 30px;
     font-size: larger;
-    font-family: -webkit-pictograph;
+    font-family: js3;
     text-align: -webkit-auto;
     color: currentcolor;
 }
