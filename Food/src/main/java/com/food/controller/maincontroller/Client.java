@@ -2,6 +2,8 @@ package com.food.controller.maincontroller;
 
 import java.net.Socket;
 
+import com.sun.mail.iap.ByteArray;
+
 
 public class Client {
 	Socket socket = null;
@@ -17,6 +19,17 @@ public class Client {
 	String ip;
 	String filesize;
 	String search;
+	String resultimage;
+	String resize;
+	
+
+	public String getResize() {
+		return resize;
+	}
+
+	public String getResultimage() {
+		return resultimage;
+	}
 
 	public Client(String resultweather,String resulttemp,String region,String most,String search,String fileName,String what) {
 		this.resultweather = resultweather;
@@ -37,6 +50,8 @@ public class Client {
 			Sender.start();
 			Sender.join();
 			result = Sender.getResult();
+			resultimage = Sender.getResultimage();
+			resize = Sender.getResize();
 			ip = Sender.getIp();
 			filesize = Sender.getFilesize();
 			
