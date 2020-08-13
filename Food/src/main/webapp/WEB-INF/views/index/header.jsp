@@ -101,7 +101,7 @@ if (folder == null || folder.equals(""))
 
 
 <!-- Favicon -->
-<link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
+<link rel="icon" href="/Food/resources/css/headerpage/fri.jpg">
 
 <!-- Core Stylesheet -->
 
@@ -234,7 +234,7 @@ a.btn-layerClose:hover {
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
 		<div class="preloader-img">
-			<img src="/Food/resources/img/core-img/leaf.png" alt="">
+			<img src="/Food/resources/css/headerpage/fri.jpg" alt="">
 		</div>
 	</div>
 
