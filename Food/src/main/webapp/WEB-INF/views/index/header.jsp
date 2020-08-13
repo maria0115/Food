@@ -287,7 +287,7 @@ a.btn-layerClose:hover {
 										href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i
 											style="font-size: 17px; color: red;" class="fa fa-heart-o"
 											aria-hidden="true"></i> <span
-											style="font-size: 17px; color: red;">Wish <span>(${wish})</span></span></a>
+											style="font-size: 17px; color: red; font-family: js7;">Wish <span>(${wish})</span></span></a>
 
 
 									</span>

@@ -93,7 +93,8 @@
 							   <td  >Favorite Food</td>
 								<td >${member.m_most}</td>
 							<tr >
-								<td colspan="4" ><a href="membermodify.do" class="modifybtn"><button class ="btn btn-dark">수정하기</button></a></td>
+								<td colspan="4" ><a href="membermodify.do" class="modifybtn"><button class ="btn btn-dark" style="height: 100px;
+    font-size:xx-large;">수정하기</button></a></td>
 							</tr>
 					
 					
@@ -102,7 +103,8 @@
 							</table> 
 							</form>
 				</div>
-				<button  onclick="history.go(-1);" class="btn btn-default">돌아가기</button> 	
+				<button  onclick="history.go(-1);" class="btn btn-default" style="height: 100px;
+    font-size:xx-large;">돌아가기</button> 	
 			</div>
 			
 				

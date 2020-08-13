@@ -93,7 +93,8 @@
                     </div>
                 </div>
             </div>
-            	<button  onclick="history.go(-1);" class="btn btn-default" >돌아가기</button> 	
+            	<button  onclick="history.go(-1);" class="btn btn-default" style="height: 100px;
+    font-size:xx-large;">돌아가기</button>
 
 
 

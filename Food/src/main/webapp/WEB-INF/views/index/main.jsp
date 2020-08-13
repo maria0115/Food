@@ -218,7 +218,7 @@ a.btn-layerClose:hover {
 									<span class="notification-badge badge badge-danger" id="countAlarm"></span>				
 								<span class="cart">
 									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
-									aria-hidden="true"></i> <span style="font-size: 20px; color: snow; font-family: js2;" >Wish<span
+									aria-hidden="true"></i> <span style="font-size: 20px; color: snow; font-family: js7;" >Wish<span
 										>(${wish})</span></span></a>
 								</span>
 							

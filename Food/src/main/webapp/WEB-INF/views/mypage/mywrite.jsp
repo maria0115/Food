@@ -84,7 +84,8 @@
 			</c:forEach>
 
 			</table>
-			<button  onclick="history.go(-1);" class="btn btn-default" >돌아가기</button> 	
+			<button  onclick="history.go(-1);" class="btn btn-default" style="height: 100px;
+    font-size:xx-large;">돌아가기</button>
 		</div>
 		
 
@@ -103,8 +104,8 @@
 	<div class="container">
 	<div id="nomember">현재 네이버 아이디로 이용중 입니다.
 	네이버 아이디로 로그인시 오늘뭐먹지 MY Page 서비스를 이용하실수 없습니다.
-	회원가입후 MY Page 서비스 이용가능 합니다.감사합니다.<br><button  onclick="history.go(-1);" class="btn btn-danger">되돌아가기</button> 
-
+	회원가입후 MY Page 서비스 이용가능 합니다.감사합니다.<br><button  onclick="history.go(-1);" class="btn btn-default" style="height: 100px;
+    font-size:xx-large;">돌아가기</button>
 	</div>
 	</div>
 

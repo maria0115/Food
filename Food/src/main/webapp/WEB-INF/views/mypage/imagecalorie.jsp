@@ -194,8 +194,11 @@ function LoadImg(value) {
 					</div>
 				</div>
 			</div>
+			<button  onclick="history.go(-1);" class="btn btn-dark" style="height: 100px;
+    font-size:xx-large;">돌아가기</button>
 		</div>
-	</div>
+	</div> 
+	
 	<!-- ##### Contact Area Info End ##### -->
 
 	<%@ include file="../index/footer.jsp" %>

@@ -1,11 +1,9 @@
 .box{
-    width: auto;
-    height: 200px;
-    padding: 20px;
+  width: auto;
     border: slategray;
     margin: 10 10 10 10;
-    font-family: js4;
-	font-size: 30px;
+    font-family: js2;
+    font-size: 2.5em;
     border-style: double;
     text-align: center;
     color: black;
@@ -49,8 +47,8 @@ html {
 
     /* pulls grid cells hard against edges */
     margin: -20px;
-    font-family: js5;
-	font-size: 30px;
+    font-family: js9;
+	font-size: 35px;
     
 }
 
