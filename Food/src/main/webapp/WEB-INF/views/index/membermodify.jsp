@@ -62,7 +62,7 @@
    <div class="preloader d-flex align-items-center justify-content-center">
       <div class="preloader-circle"></div>
       <div class="preloader-img">
-         <img src="/Food/resources/img/core-img/fri.jpg" alt="">
+         <img src="img/core-img/leaf.png" alt="">
       </div>
    </div>
 

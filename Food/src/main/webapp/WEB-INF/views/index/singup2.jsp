@@ -16,7 +16,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Favicon -->
-<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
+<link rel="icon" href="img/core-img/favicon.ico">
 <link rel="stylesheet" href="resources/css/singup.css">
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="resources/css/style.css">
