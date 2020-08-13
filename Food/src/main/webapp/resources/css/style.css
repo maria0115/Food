@@ -48,6 +48,22 @@ Version: - v1.0
 	font-size: 40px;
 	src: url('/Food/resources/fonts/KirangHaerang-Regular.ttf');
 }
+
+@font-face {
+	font-family: js7;
+	font-size: 40px;
+	src: url('/Food/resources/fonts/Chilanka-Regular.ttf');
+}
+@font-face {
+	font-family: js8;
+	font-size: 40px;
+	src: url('/Food/resources/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+	font-family: js9;
+	font-size: 40px;
+	src: url('/Food/resources/fonts/PlayfairDisplay-VariableFont_wght.ttf');
+}
 /* :: 3.0 Base CSS */
 .sidepanel .closebtn {
      position: absolute;
@@ -581,12 +597,13 @@ img {
         .header-area .alazea-main-menu .classy-navbar {
           height: 70px; } }
     .header-area .alazea-main-menu .classynav ul li a {
-    font-family:js5;
-      padding: 0 20px;
+   font-family: js8;
+    padding: 0 20px;
     font-weight: bolder;
     text-transform: capitalize;
-    font-size: 37px;
-    color: snow; }
+    font-size: 24px;
+    color: snow;
+     }
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .header-area .alazea-main-menu .classynav ul li a {
           font-size: 18px;
