@@ -1,12 +1,10 @@
-$("#socketBtn").on('click',function(){
-		
+$("#btn_reserv").on('click',function(){
 		var r_master = $('#r_master').val();
 		var r_time = $('#r_visit_date').val()+"일"+$('#r_date_hour').val()+":"+$('#r_date_minute').val();// 방문날짜
 		alert(r_time);
 		$.ajax({
 			type:'get',
-			async: false,			
-			url : "/Food/manager/saveQaAlarm.do?rAlarm_rtime="+r_time+"&Alarm_Id="+r_master,
+			url : "/Food/manager/saveQaAlarm.do?Alarm_Id="+r_master+"&rAlarm_rtime="+r_time,
 			contentType: "application/json; charset=utf-8",
 			dataType : 'text',
 			success : function(data){

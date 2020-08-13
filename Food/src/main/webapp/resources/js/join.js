@@ -6,8 +6,7 @@
 	
 	//참여하기를 누른사용자중에 로그인한유저의 아이디가 있다면 
 	if(joinid.match(id)){ 
-		$("#joinBtn").css("display", "none");
-		var $div = $('<input class="btn btn-danger" type="button" id="cancel" value="취소하기"/>');
+		var $div = $('<span id="join">참가중</span>');
 		
 		$("#joincnt").append($div);
 		

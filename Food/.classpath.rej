@@ -1,0 +1,11 @@
+diff a/Food/.classpath b/Food/.classpath	(rejected hunks)
+@@ -53,7 +53,7 @@
+ 			<attribute name="m2e-apt" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
+-	<classpathentry kind="lib" path="C:/Users/Canon/Documents/Food/Food/src/main/webapp/WEB-INF/lib/commons-logging-1.1.jar"/>
+-	<classpathentry kind="lib" path="C:/Users/Canon/Documents/Food/Food/src/main/webapp/WEB-INF/lib/nexacro17-xapi-1.0.jar"/>
++	<classpathentry kind="lib" path="D:/Ryu/Food/Food/src/main/webapp/WEB-INF/lib/commons-logging-1.1.jar"/>
++	<classpathentry kind="lib" path="D:/Ryu/Food/Food/src/main/webapp/WEB-INF/lib/nexacro17-xapi-1.0.jar"/>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>

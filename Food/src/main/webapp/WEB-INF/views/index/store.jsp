@@ -64,22 +64,24 @@
        
 
         <div class="container">
-            <div class="breadcrumb-area">
-       
+			<div class="breadcrumb-area">
 
-            <div class="row">
-                <div class="col-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/Food/main.do"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">매장정보</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-    </div>
 
-        </div>
+				<div class="row">
+					<div class="col-12">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="/Food/main.do"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">매장정보</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<h2 style="TEXT-ALIGN: CENTER; FONT-SIZE: xxx-large;">STORE LIST</h2>
+
+		</div>
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
 <!--  -->

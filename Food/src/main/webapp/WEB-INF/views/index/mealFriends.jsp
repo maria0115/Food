@@ -63,6 +63,8 @@
                             <li class="breadcrumb-item active" aria-current="page">밥친구 만들기</li>
                         </ol>
                     </nav>
+                    
+                    <h2 style="text-align: center; font-size: xxx-large;">Eating with friends</h2>
                 </div>
             </div>
     </div>

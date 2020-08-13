@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
+import com.sun.mail.iap.ByteArray;
+
 public class Sender extends Thread {
 	private Socket socket;
 

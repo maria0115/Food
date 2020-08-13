@@ -294,7 +294,7 @@ overflow-y: scroll;
 
 
 					<div class="col-12 col-md-6">
-						<div class="single_product_desc">
+						<div class="single_product_desc" id="detailCss">
 							<h4 class="title">${list.s_brand_name}</h4>
 							<h4></h4>
 							<div class="short_overview">

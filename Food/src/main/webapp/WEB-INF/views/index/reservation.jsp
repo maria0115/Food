@@ -170,8 +170,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6 form-group">
-					<input type="button" id="socketBtn" style="display:none;">
-					<input id='btn_reserv' type="button" value="Reserve Now"
+					<input id='btn_reserv' type="submit" value="Reserve Now"
 						class="btn btn-primary text-white py-3 px-5 font-weight-bold">
 				</div>
 			</div>

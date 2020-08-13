@@ -289,6 +289,30 @@ overflow-y: scroll;
 	
 }
 
+#detailCss p{ 
+	font-size: 21px;
+	font-family: js5;
+	
+	
+}
+
+body p{
+	font-size: 25px;
+	font-family: js5
+}
+body .shop-widget{
+	font-size: 25px;
+	font-family: js5
+	
+}
+.carousel-inner{
+	border-radius: 10%;	
+
+}
+.d-block{
+	border-radius: 20%;	
+	
+}
 
 
 
