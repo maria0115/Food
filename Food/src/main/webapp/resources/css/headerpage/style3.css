@@ -49,6 +49,21 @@ Version: - v1.0
 	font-size: 40px;
 	src: url('/Food/resources/fonts/KirangHaerang-Regular.ttf');
 }
+@font-face {
+	font-family: js7;
+	font-size: 40px;
+	src: url('/Food/resources/fonts/Chilanka-Regular.ttf');
+}
+@font-face {
+	font-family: js8;
+	font-size: 40px;
+	src: url('/Food/resources/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+	font-family: js9;
+	font-size: 40px;
+	src: url('/Food/resources/fonts/PlayfairDisplay-VariableFont_wght.ttf');
+}
 .sidepanel .closebtn {
      position: absolute;
      top: 5;
@@ -1839,9 +1854,9 @@ img {
    font-weight: 500;
     background-color: transparent;
     padding: 0 20px;
-    font-family: js6;
+    font-family: js5;
     font-size: xxx-large;
-    color: peru;
+    color: brown;
      }
     @media only screen and (max-width: 767px) {
       .alazea-portfolio-filter .btn {

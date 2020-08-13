@@ -85,8 +85,8 @@ $('.menudetail').click(function(event){
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading text-center">
-                        <h2 style="font-family: js">Other Menu's</h2>
-                        <p style="font-family: js5;font-size: xxx-large;color: slateblue; ">나의 취향과 비슷한 사람들은 어떤 음식을 예약했는지 궁금하신가요?</p>
+                        <h2 style="font-family: js3">Other Menu's</h2>
+                        <p style="font-family: js5; font-size: xxx-large;color: darkgray; ">나의 취향과 비슷한 사람들은 어떤 음식을 예약했는지 궁금하신가요?</p>
                     </div>
                 </div>
             </div>
