@@ -6,25 +6,18 @@
 <html class="no-js" lang="en">
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script type="text/javascript">
-var q;
 $(function(){
 
 $('#wordcloud').click(function(){
 	var keyword = $('#keyword').val();
-	if(q){
-		clearInterval(q);
-	}
+	
 
 		$.ajax({
 			url: "wordCloudbtn.do",
 			type: "post",
 			data: "keyword="+keyword,
 			success:function(d){
-				
-				q=setInterval(function(){
-					$('#wordimg').attr('src','/Food/resources/wordcloud/WordCloud.jpg');
-				},2000);
-				
+				$('#wordimg').attr('src','/Food/resources/wordcloud/WordCloud.jpg');
 
 				
 				},

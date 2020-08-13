@@ -193,11 +193,14 @@
          var receiveId;
          var senderId;
          
-         
+       
             var strs = new Array();
             strs = data.split(",");
 
             alert("strs[0]:"+strs[0]);
+            alert("strs[1]:"+strs[1]);
+            alert("strs[2]:"+strs[2]);
+            alert("strs[3]:"+strs[3]);
             alert("strs[4]:"+strs[4]);
             if(strs != null && strs.length ==5) {
                cmd = strs[0];
@@ -241,6 +244,11 @@
              }else if("mfChat"==cmd){
             	 window.open('https://192.168.0.17:8080/Food/mealBoard/chatBox.do?&userId='+receiveId,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
                  }
+             else if("reserv"==cmd){
+            	 location.href='/Food/mypageform.do';
+                 }
+
+             
              };
          toastr.info('알림', reply);
          

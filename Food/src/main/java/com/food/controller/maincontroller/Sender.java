@@ -9,8 +9,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
-import com.sun.mail.iap.ByteArray;
-
 public class Sender extends Thread {
 	private Socket socket;
 
@@ -27,8 +25,7 @@ public class Sender extends Thread {
 	private String region;
 	private String result;
 	private String filesize;
-	private String resultimage;
-	private String resize;
+	
 
 	private String most;
 	private String search;
@@ -36,15 +33,6 @@ public class Sender extends Thread {
 	private String what;
 	private String ip;
 	
-	public String getResize() {
-		return resize;
-	}
-
-	public String getResultimage() {
-		return resultimage;
-	}
-
-
 	private int fileSize;
 	
 	public Sender(Socket socket, String resultweather,String resulttemp,String region,String most,String search,String filestr,String what) {
@@ -154,13 +142,6 @@ public class Sender extends Thread {
 		return new String(tmp, 0, zz);
 	}
 	
-	public String receiveimage(int buffer_size) throws IOException {
-		byte[] tmp = new byte[buffer_size];
-		int zz = bis.read(tmp); //7
-		System.out.println("server : "+new String(tmp, 0, zz));
-		return new String(tmp, 0, zz);
-	}
-	
 //	public int receive() throws IOException {
 //		int receive = bis.read(); //7
 //		System.out.println("server : "+receive);
@@ -230,14 +211,10 @@ public class Sender extends Thread {
 				sendSearch(search);
 				receiveData(500);
 				sendWhat("reReady");
-				this.resize = receiveData(1024);
-				sendWhat("filereReady");
-				receiveData(1024);
-				sendWhat("filesizeok");
 				this.filesize = receiveData(1024);
-				sendWhat("fileok");
+				sendWhat("filereReady");
 				System.out.println(Integer.parseInt(this.filesize));
-				this.resultimage = receiveimage(Integer.parseInt(this.filesize));
+				this.result = receiveData(Integer.parseInt(this.filesize));
 			}
 
 

@@ -537,13 +537,22 @@ function detailReviewModify() {
 
 
 $("#file").on('change',function(){
+	if(window.FileReader){ // modern browser
+		var filename = $(this)[0].files[0].name;
+	} 
+    else {  // old IE
+    	var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+    	}
+
+    	
 	
+	$(this).siblings('.upload-name').val(fileName);
 
 	
 	
 	
-	  var fileName = $("#file").val();
-	  $(".upload-name").val(fileName);
+//	  var fileName = $("#file").val();
+//	  $(".upload-name").val(fileName);
 	});
 
 

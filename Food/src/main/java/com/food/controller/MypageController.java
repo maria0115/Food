@@ -143,6 +143,8 @@ public class MypageController {
 				ReservationVO vo2 =  ReservationService.reservationDetail(vo);
 				String menu = vo2.getR_menu();
 				String count = vo2.getR_menu_count();
+				System.out.println(vo2.getR_menu());
+				System.out.println(vo2.getR_menu_count());
 				String[] menulist = menu.split("/");
 				String[] countlist = count.split("/");
 				String result = "";

@@ -64,7 +64,10 @@
 					<input type="hidden" id="joinid" name="f_userId" value="${board.f_userId}">
 					<input type="hidden" id="id" name="f_userId" value="${sessionScope.user_id }">
 					<input type="hidden" id="b_no" name="b_no" value="${board.b_no }">
-					
+					<!-- 참여인원이 확정인원보다 크면 참가하기 버튼 보여주기 -->
+					<c:if test="${board.f_membercnt > board.f_cnt}">
+					<input class="btn btn-info" type="button" id="joinBtn" value="참가하기" >
+					</c:if>
 					<!-- 참여인원이 확정인원보다 같거나 작으면 마감되었습니다 보여주기  -->
 					<c:if test="${board.f_membercnt <= board.f_cnt}">
 					<span id="end">마감되었습니다.</span>

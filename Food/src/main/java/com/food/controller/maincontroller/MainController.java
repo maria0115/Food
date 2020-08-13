@@ -13,7 +13,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.Base64;
 import java.util.Base64.Encoder;
 import java.util.HashMap;
@@ -289,44 +288,24 @@ public class MainController {
 			String resultweather="",resulttemp="",region="",most="",fileName="";
 			String what="wordcloud";
 			Client client = new Client(resultweather,resulttemp,region,most,search,fileName,what);
-			String result = client.getResultimage();
+			String result = client.getResult();
 			String filesize = client.getFilesize();
-			String resize = client.getResize();
 
 			System.out.println("result :"+result);
-//			
-			byte[] decodedImg = Base64.getDecoder().decode(result);//.getBytes(StandardCharsets.UTF_8)
+			
+			byte[] decodedImg = Base64.getDecoder().decode(result.getBytes(StandardCharsets.UTF_8));
 			System.out.println("성공");
 			try {
 
 				Path destinationFile = Paths.get("C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\wordcloud\\", "WordCloud.jpg");
-				String size = "";
-
-			    File mFile = new File("C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\wordcloud\\WordCloud.jpg");
-			   
-			    System.out.println(filesize+":"+mFile.length());
-			    System.out.println(resize+","+result.length());
-//			    
-			    
-				while(true) {
-					
-				Files.write(destinationFile, decodedImg);
-				
-				 if (mFile.exists() )
-				    {
-				        long lFileSize = mFile.length();
-				        
-				        
-				        if(lFileSize== Integer.parseInt(resize)) {
-							break;
-						}
-
-				    }
-				
-				
-				}
-				System.out.println("끝남");
-//				Thread.sleep(1000);
+//				while(true) {
+//					
+//				Files.write(destinationFile, decodedImg);
+//				int v = decodedImg.length;
+//				if(v*100==filesize) {
+//					
+//				}
+//				}
 
 			    }catch(Exception e) {
 			        System.out.println(e.getStackTrace()+e.getMessage());

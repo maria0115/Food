@@ -294,7 +294,7 @@ overflow-y: scroll;
 
 
 					<div class="col-12 col-md-6">
-						<div class="single_product_desc" id="detailCss">
+						<div class="single_product_desc">
 							<h4 class="title">${list.s_brand_name}</h4>
 							<h4></h4>
 							<div class="short_overview">
@@ -344,7 +344,8 @@ overflow-y: scroll;
 										type: "post",
 										cache: false,
 										dataType: "json",
-										data: "w_store_name="+$('.title').text()
+										data: "w_store_name="+$('.title').text()+"&w_midpart="
+										+$('#midpart').text()+"&w_address="+$('#addrs').text()+"&m_id="+$('#m_id').text()
 									});
 								
 								}else{
@@ -584,16 +585,15 @@ overflow-y: scroll;
 																placeholder="Nazrul" value="${list.s_brand_name}">
 														</div>
 														<div class="form-group">
-															<label for="name">작성자</label> <input type="text"
-																class="form-control" id="name" name="userId" value="${user_name}"
-																placeholder="작성자" readonly="readonly">
-														</div>
-														<div class="form-group">
 															<label for="name">제목</label> <input type="text"
 																class="form-control" id="name" name="title"
 																placeholder="제목">
 														</div>
-														
+														<div class="form-group">
+															<label for="name">작성자</label> <input type="text"
+																class="form-control" id="name" name="userId"
+																placeholder="작성자">
+														</div>
 													</div>
 
 

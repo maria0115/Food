@@ -101,20 +101,6 @@ public class ReservationController {
 		System.out.println("visit_date :"+list.getR_visit_date());
 		System.out.println("time :"+list.getTime());
 		
-		String menu = list.getR_menu();
-		String count = list.getR_menu_count();
-		String[] menulist = menu.split("/");
-		String[] countlist = count.split("/");
-		String result = "";
-		for(int i=0; i<menulist.length; i++) {
-			String temp = menulist[i]+"   "+countlist[i]+"개";
-			result += temp;
-			
-			if(i!=menulist.length-1) {
-				String dot = ",   ";
-				result+=dot;
-			}
-		};
 		SimpleDateFormat format1 = new SimpleDateFormat ( "yy/MM/dd HH:mm");
 		Calendar time = Calendar.getInstance();
 		// 시스템 현재 시간
@@ -125,14 +111,12 @@ public class ReservationController {
 	        System.out.println("예약 취소 못해");
 	        // 반환을 0으로 ajax에서 0일 경우 버튼 삭제
 	        list.setR_state(0);
-	        list.setR_menu(result);
-	        
 	    } else {
 	        System.out.println("예약 취소 가능");
 	        // 반환을 1로 
 	        list.setR_state(1);
-	        list.setR_menu(result);
 	    }
+		
 		return list;
 	}
 	

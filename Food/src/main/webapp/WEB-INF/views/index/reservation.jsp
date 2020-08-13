@@ -170,7 +170,8 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6 form-group">
-					<input id='btn_reserv' type="submit" value="Reserve Now"
+					<input type="button" id="socketBtn" style="display:none;">
+					<input id='btn_reserv' type="button" value="Reserve Now"
 						class="btn btn-primary text-white py-3 px-5 font-weight-bold">
 				</div>
 			</div>
@@ -203,7 +204,7 @@
 	<script src="resources/js/reservation_js/owl.carousel.min.js"></script>
 	<script src="resources/js/reservation_js/popper.min.js"></script>
 	<script src="resources/js/reservation_js/reserv_hc.js"></script>
-<!-- 	<script src="resources/js/alarmData/reservAlarm.js"></script> -->
+	<script src="resources/js/alarmData/reservAlarm.js"></script>
 	
 
 </body>
