@@ -329,7 +329,7 @@ a.btn-layerClose:hover {
 										<a href="#layer2"  style="display: revert;
 														    color: black;
 														    font-size: x-large;margin-left: 10px;
-														    font-family:js2;" class="btn-example" ><i
+														    font-family:js8;" class="btn-example" ><i
 									class="fa fa-user"
 									style="font-size: 20px; color: black; margin-right: 10px;"></i>Sign Up</a>
 															<div class="dim-layer">
