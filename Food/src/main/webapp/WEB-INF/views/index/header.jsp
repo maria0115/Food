@@ -101,7 +101,7 @@ if (folder == null || folder.equals(""))
 
 
 <!-- Favicon -->
-<link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
+<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
 
 <!-- Core Stylesheet -->
 
