@@ -344,8 +344,7 @@ overflow-y: scroll;
 										type: "post",
 										cache: false,
 										dataType: "json",
-										data: "w_store_name="+$('.title').text()+"&w_midpart="
-										+$('#midpart').text()+"&w_address="+$('#addrs').text()+"&m_id="+$('#m_id').text()
+										data: "w_store_name="+$('.title').text()
 									});
 								
 								}else{
