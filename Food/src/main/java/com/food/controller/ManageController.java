@@ -747,21 +747,23 @@ public class ManageController {
 	
 	@ResponseBody
 	@RequestMapping("/saveQaAlarm.do")
-	public String saveQaAlarm(AlarmVO vo) {
-		
+	public String saveQaAlarm(AlarmVO vo,HttpSession session) {
+		System.out.println("saveQaAlarm.do 들어옴");
 		String nTime = LocalDateTime.now().toString();
 		vo.setAlarm_replyTime(nTime);
 		System.out.println("rAlarm_rtime:"+vo.getrAlarm_rtime());
+	
 		managerService.insertQaAlarm(vo);
 		
 		
 		Map<String, WebSocketSession> userSessionsMap = ReplyHandler.userSessionsMap;
 		
-		TextMessage socketMsg = new TextMessage("reserv,"+vo.getrAlarm_rtime()+","+nTime+","+vo.getAlarm_Id());
+		TextMessage socketMsg = new TextMessage("reserv,"+vo.getrAlarm_rtime()+","+nTime+","+vo.getAlarm_Id()+","+(String)session.getAttribute("user_id"));
 		try {
 			userSessionsMap.get(vo.getAlarm_Id()).sendMessage(socketMsg);
+			
 		} catch (IOException e) {
-			e.printStackTrace();
+			
 		}
 		
 		
