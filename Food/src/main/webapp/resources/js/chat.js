@@ -103,7 +103,6 @@
 		$(".cancel").on('click',function(){
 			var joinid = $("#f_userId").val()
 			var userid = $("#chat_id").val()
-			alert(joinid);
 			
 		    $.ajax({
 		    	type:'post',
@@ -112,7 +111,7 @@
 		        url : 'cancel.do',
 		        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
 		        data :
-		    		"f_userId=" + joinid+"&userId="+$("#chat_id").val()+
+		    		"f_userId=" + $("#f_userId").val()+"&userId="+$("#chat_id").val()+
 		    		"&b_no="+ $("#b_no").val(),
 		    	//dataType:"text",
 		        success : function(resultData){
@@ -126,7 +125,8 @@
 		       		//참가하기 버튼 띄워주기
 		        		var $div = $('<input class="btn btn-info" style="max-height: 30px;" type="button" id="joinBtn" value="참가하기" >');
 		        		$("#header").append($div);
-		        		
+		        		var $div1 = $("<input type='hidden' value='"+joinuserId+"' id='f_userId' />");
+		        		$("#chatheader").append($div1);
 		        		
 		       		
 		        	}
