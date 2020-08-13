@@ -2,6 +2,8 @@ package com.food.controller.maincontroller;
 
 import java.net.Socket;
 
+import com.sun.mail.iap.ByteArray;
+
 
 public class Client {
 	Socket socket = null;

@@ -21,10 +21,7 @@ if (folder == null || folder.equals(""))
   <link rel="stylesheet" href="/Food/resources/css/headerpage/style3.css">
   <link rel="stylesheet" href="/Food/resources/css/headerpage/js3.css">
   
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="/Food/resources/js/v3/bootstrap.min.js"></script>
-  <script src="/Food/resources/js/v3/notification_header.js"></script> 
+
 
 <head>
 <script>

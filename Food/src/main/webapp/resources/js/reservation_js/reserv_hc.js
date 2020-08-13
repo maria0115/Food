@@ -49,7 +49,7 @@ $(".button1").click(function(){
 })
 
 // 빈 항목 제어 및 전송
-$("#btn_reserv").click(function(e){
+$("#btn_reserv").on('click',function(e){
 	
 	var r_menu = $("input[name='r_menu']");
 	var r_menu_count = $("input[name='r_menu_count']");

@@ -7,3 +7,61 @@
 .label .left {background: url("https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
 .label .center {background: url(https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;color:black;}
 .label .right {background: url("https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+
+#b_tr > td{
+	
+	font-family: js4;
+	font-size: 25px;
+}
+
+#b_date{
+	
+	font-size: 25px;
+}
+
+#chatbtn{
+	
+	
+	font-size: 21px;
+	color: black;
+	font-weight: 1px;
+}
+
+#balckbtn{
+	font-family: js4;
+	font-size: 21px;
+	color: white;
+	font-weight: 1px;
+}
+
+
+#writebtn{
+	font-family: js4;
+	font-size: 21px;
+	color: black;
+	font-weight: 1px;
+}
+
+
+#mealsearchBtn{
+	font-family: js4;
+	font-size: 21px;
+	color: black;
+	font-weight: 1px;
+}
+
+#searchType{
+	font-family: js4;
+	height: 41px;
+	font-size: 20px;
+}
+
+#keyword{
+	
+	height: 41px;
+}
+
+
+
+
+

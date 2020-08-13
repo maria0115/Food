@@ -10,6 +10,8 @@
 <%
 	String f_title = request.getParameter("title");
 	String m_id = request.getParameter("userId");
+	String f_userId = request.getParameter("f_userId");
+	String b_no = request.getParameter("b_no");
 
 %>
 

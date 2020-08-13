@@ -28,7 +28,10 @@ public class CartController {
 		System.out.println("가게명 :"+vo.getW_store_name());
 		System.out.println("주소 :"+vo.getW_address());
 		System.out.println("중분류 :"+vo.getW_midpart());
+		vo.setM_id((String) session.getAttribute("user_id"));
 		System.out.println("m_id :"+vo.getM_id());
+		
+		
 		mvo.setM_id(vo.getM_id());
 		CartService.insertCart(vo);
 		int wish = CartService.selectCount(mvo); 

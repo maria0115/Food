@@ -193,14 +193,11 @@
          var receiveId;
          var senderId;
          
-       
+         
             var strs = new Array();
             strs = data.split(",");
 
             alert("strs[0]:"+strs[0]);
-            alert("strs[1]:"+strs[1]);
-            alert("strs[2]:"+strs[2]);
-            alert("strs[3]:"+strs[3]);
             alert("strs[4]:"+strs[4]);
             if(strs != null && strs.length ==5) {
                cmd = strs[0];
