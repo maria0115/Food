@@ -289,6 +289,7 @@ public class MainController {
 			String what="wordcloud";
 			Client client = new Client(resultweather,resulttemp,region,most,search,fileName,what);
 			String result = client.getResult();
+			String filesize = client.getFilesize();
 
 			System.out.println("result :"+result);
 			
@@ -297,7 +298,14 @@ public class MainController {
 			try {
 
 				Path destinationFile = Paths.get("C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\wordcloud\\", "WordCloud.jpg");
-				Files.write(destinationFile, decodedImg);
+//				while(true) {
+//					
+//				Files.write(destinationFile, decodedImg);
+//				int v = decodedImg.length;
+//				if(v*100==filesize) {
+//					
+//				}
+//				}
 
 			    }catch(Exception e) {
 			        System.out.println(e.getStackTrace()+e.getMessage());
