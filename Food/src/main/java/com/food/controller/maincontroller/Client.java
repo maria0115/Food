@@ -15,12 +15,14 @@ public class Client {
 	String what;
 	String result;
 	String ip;
+	String search;
 
-	public Client(String resultweather,String resulttemp,String region,String most,String fileName,String what) {
+	public Client(String resultweather,String resulttemp,String region,String most,String search,String fileName,String what) {
 		this.resultweather = resultweather;
 		this.resulttemp = resulttemp;
 		this.region = region;
 		this.most = most;
+		this.search = search;
 		this.fileName = fileName;
 		this.what = what;
 		
@@ -30,7 +32,7 @@ public class Client {
 			System.out.println("서버에 연결되었습니다."); //2
 			System.out.println(serverIp + " : " + serverPort);
 
-			Sender Sender = new Sender(socket, resultweather,resulttemp,region,most,fileName,what);	//2
+			Sender Sender = new Sender(socket, resultweather,resulttemp,region,most,search,fileName,what);	//2
 			Sender.start();
 			Sender.join();
 			result = Sender.getResult();

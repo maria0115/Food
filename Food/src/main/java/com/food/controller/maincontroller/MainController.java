@@ -1,18 +1,30 @@
 package com.food.controller.maincontroller;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Base64;
+import java.util.Base64.Encoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.bind.DatatypeConverter;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -22,6 +34,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -63,7 +76,7 @@ public class MainController {
 		BufferedReader bufferedReader = null;
 		String resultSet = null;
 		String resultweather ="";
-		String resulttemp="";
+		String resulttemp="",search="";
 		HashMap map = new HashMap();
 		if(what.equals("main"))
 		{
@@ -127,7 +140,7 @@ public class MainController {
 			}
 
 			String most="",fileName="";
-			Client client = new Client(resultweather,resulttemp,region,most,fileName,what);	//1
+			Client client = new Client(resultweather,resulttemp,region,most,search,fileName,what);	//1
 			String result = client.getResult();
 			String ip = client.getIp();
 			ServletOutputStream out;
@@ -212,9 +225,9 @@ public class MainController {
 		
 		System.err.println(fileNames.toString());
 		String fileName = handlerFile.getFileFullPath();
-		String resultweather="",resulttemp="",region="",most="";
+		String resultweather="",resulttemp="",region="",most="",search="";
 		String what="image";
-		Client client = new Client(resultweather,resulttemp,region,most,fileName,what);
+		Client client = new Client(resultweather,resulttemp,region,most,search,fileName,what);
 		String result = client.getResult();
 
 		System.out.println("result :"+result);
@@ -254,8 +267,52 @@ public class MainController {
 //		
 //	
 //	}
+	
+	// ***************** WordCloud 페이지 *******************************
+		// 이거는 사이드바에서 누르면 그냥 넘겨주는 겁니다 스텝타게 하고 지우시면 됩니다.*********
+		@RequestMapping("/manager/wordCloud.do")
+		public void wordcloud() {
+			System.out.println("워드클라우드 컨트롤러");
+			
+			return;
+		}
+		// ****************************************************************
+		
+		// ************** WordCloud 버튼누르면 밸류값 넘어가는거임!!! **************
+		@ResponseBody
+		@RequestMapping("/manager/wordCloudbtn.do")
+		public void wordcloudbtn(@RequestParam(value="keyword") String keyword) throws IOException {
+			System.out.println("워드클라우드 버튼 컨트롤러");
+			System.out.println(keyword);
+			String search = keyword;
+			String resultweather="",resulttemp="",region="",most="",fileName="";
+			String what="wordcloud";
+			Client client = new Client(resultweather,resulttemp,region,most,search,fileName,what);
+			String result = client.getResult();
+
+			System.out.println("result :"+result);
+			
+			byte[] decodedImg = Base64.getDecoder().decode(result.getBytes(StandardCharsets.UTF_8));
+			System.out.println("성공");
+			try {
+
+				Path destinationFile = Paths.get("C:\\Users\\Canon\\Documents\\Food\\Food\\src\\main\\webapp\\resources\\wordcloud\\", "WordCloud.jpg");
+				Files.write(destinationFile, decodedImg);
+
+			    }catch(Exception e) {
+			        System.out.println(e.getStackTrace()+e.getMessage());
+			    }
+			}
+			
 
 
 
-
+			
 }
+		// ****************************************************************
+		
+
+
+
+
+

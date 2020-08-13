@@ -296,7 +296,7 @@
 
         		var id = "search";
 
-        		var url ="http://localhost:8080/Food/nexasearch?boardType_val="+boardType_val;
+        		var url ="https://192.168.0.10:8443/Food/nexasearch?boardType_val="+boardType_val;
         		var reqDs = "";
         		var respDs = "ds_board=ar";
         		var args = "";
@@ -337,7 +337,7 @@
         	var id = "del_b_no";
               //var url = "strURL::deptAdd;
          	 //
-        	 var url ="http://localhost:8080/Food/del_b_no?b_no="+b_no_val;
+        	 var url ="https://192.168.0.10:8443/Food/del_b_no?b_no="+b_no_val;
               var reqDs = "";
               var respDs = "ds_board=ar";
               var args = "";
@@ -456,7 +456,7 @@
         	var id = "searchtype";
               //var url = "strURL::deptAdd;
          	 //
-        	 var url ="http://localhost:8080/Food/hello?searchType="+searchType_val+"&keyword="+keyword_val;
+        	 var url ="https://192.168.0.10:8443/Food/hello?searchType="+searchType_val+"&keyword="+keyword_val;
               var reqDs = "";
               var respDs = "ds_board=ar";
               var args = "";

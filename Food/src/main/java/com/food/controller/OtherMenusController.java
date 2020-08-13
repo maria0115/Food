@@ -1,8 +1,13 @@
 package com.food.controller;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.TreeSet;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +28,7 @@ import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 import com.food.domain.ReservationVO;
 import com.food.domain.WishlistVO;
+import com.food.service.FriendBoardService;
 import com.food.service.MainService;
 import com.nexacro17.xapi.data.DataSet;
 import com.nexacro17.xapi.data.DataTypes;
@@ -51,9 +57,9 @@ public class OtherMenusController {
 			System.out.println("********************"+result.getM_most());
 			String most = result.getM_id();
 			String resultweather="";
-			String resulttemp="",fileName="",region="";
+			String resulttemp="",fileName="",region="",search="";
 
-			Client client = new Client(resultweather,resulttemp,region,most,fileName,what);	//1
+			Client client = new Client(resultweather,resulttemp,region,most,search,fileName,what);	//1
 			String resultmost = client.getResult();
 			ServletOutputStream out;
 			System.out.println("result :"+resultmost);
@@ -153,6 +159,9 @@ public class OtherMenusController {
 		String user_id = (String)session.getAttribute("user_id");
 		List<ProductVO> list = service.randomlist(category);
 		
+		if(list==null) {
+			System.out.println("투데이없다 큰일");
+		}
 
 		List<WishlistVO> wish = service.todaywishmem(user_id);
 		

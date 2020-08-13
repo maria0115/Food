@@ -24,20 +24,25 @@ public class Sender extends Thread {
 	private String resulttemp;
 	private String region;
 	private String result;
+	private String filesize;
+	
+
 	private String most;
+	private String search;
 	private String filename;
 	private String what;
 	private String ip;
 	
 	private int fileSize;
 	
-	public Sender(Socket socket, String resultweather,String resulttemp,String region,String most,String filestr,String what) {
+	public Sender(Socket socket, String resultweather,String resulttemp,String region,String most,String search,String filestr,String what) {
 		//socket 열어줌
 		this.socket = socket;
 		this.resultweather = resultweather;
 		this.resulttemp = resulttemp;
 		this.region = region;
 		this.most = most;
+		this.search = search;
 		this.what = what;
 		this.filename = filestr;
 		try {
@@ -101,6 +106,16 @@ public class Sender extends Thread {
 		return true;
 	}
 	
+	public boolean sendSearch(String search) throws IOException {
+//		File imageFile = new File(hello);
+//		fileSize = (int) imageFile.length() * 100;
+//		fis = new FileInputStream(imageFile);
+		bos.write(search.getBytes());
+		bos.flush(); //4
+		System.out.println("sendsearch 잘보내짐");
+		return true;
+	}
+	
 	public boolean sendFileSize(String fileName) throws IOException {
 		File imageFile = new File(fileName);
 		fileSize = (int) imageFile.length() * 100;
@@ -141,6 +156,11 @@ public class Sender extends Thread {
 		return ip;
 	}
 	
+	public String getFilesize() {
+		return filesize;
+	}
+
+	
 	public void close() {
 		try {
 		bos.close();
@@ -178,10 +198,23 @@ public class Sender extends Thread {
 			}
 			else if(what.equals("image")) {
 				sendWhat(what);
+				receiveData(500);
 				sendFileSize(filename);	//1
 				receiveData(100);//4
 				sendImage(fileSize);	//5
 				this.result = receiveData(1000);
+			}
+			else if(what.equals("wordcloud")) {
+				
+				sendWhat(what);
+				receiveData(500);
+				sendSearch(search);
+				receiveData(500);
+				sendWhat("reReady");
+				this.filesize = receiveData(1024);
+				sendWhat("filereReady");
+				System.out.println(Integer.parseInt(this.filesize));
+				this.result = receiveData(Integer.parseInt(this.filesize));
 			}
 
 

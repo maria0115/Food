@@ -777,24 +777,7 @@ public class ManageController {
 		return result;
 	}
 	
-	// ***************** WordCloud 페이지 *******************************
-	// 이거는 사이드바에서 누르면 그냥 넘겨주는 겁니다 스텝타게 하고 지우시면 됩니다.*********
-		@RequestMapping("/wordCloud.do")
-		public void wordcloud() {
-			System.out.println("워드클라우드 컨트롤러");
-			
-			return;
-		}
-	// ****************************************************************
-		
-	// ************** WordCloud 버튼누르면 밸류값 넘어가는거임!!! **************
-		@RequestMapping("/wordCloudbtn.do")
-		public void wordcloudbtn(@RequestParam(value="keyword") String keyword) {
-			System.out.println("워드클라우드 버튼 컨트롤러");
-			System.out.println(keyword);
-		}
-	// ****************************************************************
-		
+
 	
 }
 	

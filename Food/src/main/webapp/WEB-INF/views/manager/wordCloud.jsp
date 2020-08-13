@@ -4,7 +4,33 @@
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+$(function(){
 
+$('#wordcloud').click(function(){
+	var keyword = $('#keyword').val();
+	
+
+		$.ajax({
+			url: "wordCloudbtn.do",
+			type: "post",
+			data: "keyword="+keyword,
+			success:function(d){
+				$('#wordimg').attr('src','/Food/resources/wordcloud/WordCloud.jpg');
+
+				
+				},
+			error:function(er){
+				alert("error");
+				}
+		});
+
+	
+})
+	
+})
+</script>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -99,10 +125,10 @@
 						<hr>
 						<div style='position:absolute;left:45%'>
 						<input class="form-control" id='keyword' type='text' placeholder="키워드를 입력해주세요">
-						<button class="btn btn-default" onclick='location.href="wordCloudbtn.do?keyword="+$("#keyword").val()'>입력</button>
+						<button id = "wordcloud" class="btn btn-default">입력</button>
 						</div>
 						<hr><br><br><br>
-						<img src="/Food/resources/img/bg.jpg" style="width:500px; height:500px;"/>
+						<img id="wordimg" src="/Food/resources/img/bg.jpg" style="width:500px; height:500px;"/>
 						
 						
 						
