@@ -31,7 +31,7 @@
 	//alert(portnum);
 
 	//해당아는 url로 접속을하면 websocket으로 통로를 따로 열어준다.
-	var webSocket = new WebSocket('ws://115.91.88.227:60000/Food/mealBoard/chatBox.do');
+	var webSocket = new WebSocket('wss://115.91.88.227:60000/Food/mealBoard/chatBox.do');
     var inputMessage = document.getElementById('messagearea');
     
     
