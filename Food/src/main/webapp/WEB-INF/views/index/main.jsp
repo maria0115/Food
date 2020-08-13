@@ -406,7 +406,7 @@ a.btn-layerClose:hover {
 									<h2>Today menu</h2>
 									<h3>Packing &amp; meal</h3>
 
-									<a href="#" class="rm-button-open" style="font-family: js4; font-size: 35px;">오늘 뭐 먹지?</a>
+									<a href="#" class="rm-button-open" style="font-family:auto; font-size: 35px;">오늘 뭐 먹지?</a>
 									<div class="rm-info">
 										<p>
 										<strong>현재 <%= map.get("address")%>입니다.<br> 날씨는 <%=map.get("reondo")%><%=map.get("nalsi")%></strong><br>
@@ -548,7 +548,7 @@ a.btn-layerClose:hover {
 			
         </div>
 		<!-- jQuery if needed -->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="/Food/resources/main/js/menu.js"></script>
 		<script type="text/javascript">
 			$(function() {
