@@ -13,8 +13,7 @@
 
 <!-- Title -->
 <title>회원 가입</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!-- Favicon -->
 <link rel="icon" href="img/core-img/favicon.ico">
 <link rel="stylesheet" href="resources/css/singup.css">
@@ -247,7 +246,8 @@
 	<script src="resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
 	<script src="resources/js/active.js"></script>
-
+	<script src="/Food/resources/js/sub.js"></script>
+	
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 	<script>
 	//좋아하는 음식 검색하기   
