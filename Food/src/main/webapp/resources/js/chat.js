@@ -25,12 +25,8 @@
 	};
 	
 	var userId = $.fn.getUrlParameter('userId');
-	var title = $.fn.getUrlParameter('title');
-	var joinuser = $.fn.getUrlParameter('f_userId');
-	var b_no = $.fn.getUrlParameter('b_no');
+
 	
-	var joinid = $("#f_userId").val();
-	var id = $("#chat_id").val();
 
 	//해당아는 url로 접속을하면 websocket으로 통로를 따로 열어준다.
 	var webSocket = new WebSocket('wss://115.91.88.227:60000/Food/mealBoard/chatBox.do');
@@ -54,6 +50,7 @@
 		//메세지 전송했기때문에 메세지 입력창 초기화 
 		$('#messagearea').val('')
 	});
+<<<<<<< HEAD
     
     //참여하기를 누른사용자중에 로그인한유저의 아이디가 있다면 
     if(joinid.match(id)){ 
@@ -145,6 +142,8 @@
 		});
 	}
 	
+=======
+>>>>>>> 3e9b9a54ac58846fb2216674d529e47cb399549c
 	
     
     //메세지를 보내기위한 함수
@@ -225,8 +224,6 @@
         	sendMessage();
         } 
     });
-    
-    
         
     //     채팅이 많아져 스크롤바가 넘어가더라도 자동적으로 스크롤바가 내려가게함
     window.setInterval(function() {
