@@ -412,7 +412,7 @@ a.btn-layerClose:hover {
 										<strong>현재 <%= map.get("address")%>입니다.<br> 날씨는 <%=map.get("reondo")%><%=map.get("nalsi")%></strong><br>
 										<strong>오늘은 <%=map.get("category")%> 어떠세요?</strong><br>
 										<strong>202006<br> 요일별 직장인 방문 음식점 업종 TOP5</strong> <br>
-										<a href="https://kdx.kr/data/view?product_id=4322" style="font-size: 17px; color:red;">KDX한국데이터거래소</a><br>
+										<a href="https://kdx.kr/data/view?product_id=4322" style="font-size: 24px;color: red;font-family: js;">KDX한국데이터거래소</a><br>
 										날씨<br><strong>OPENWEATHERMAP</strong>
 										</p>
 									</div>
