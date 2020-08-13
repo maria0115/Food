@@ -14,7 +14,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Favicon -->
-<link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
+<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
 <link rel="stylesheet" href="/Food/resources/css/marker.css">
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="/Food/resources/css/style.css">
@@ -52,7 +52,7 @@
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-circle"></div>
         <div class="preloader-img">
-            <img src="img/core-img/leaf.png" alt="">
+            <img src="/Food/resources/img/core-img/fri.jpg" alt="">
         </div>
     </div>
     
