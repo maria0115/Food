@@ -196,9 +196,9 @@ function drawWriterTable(data) {
 	for (var i = 0; i < data.listVO2size; i++) {
 
 		var listContent = div1 + div2 + div3 + imgA+ data.listVO2[i].s_brand_name +imgAtest+ imgSrc
-				+ data.listVO2[i].s_brand_name + imgSrcEnd + imgAend + 
+				+ data.listVO2[i].s_brand_name + imgSrcEnd + imgAend 
 			
-				div4+ aHot + div4End 
+				
 				
 				+ div6 + div6A + data.listVO2[i].s_brand_name
 				+ div6A2 + pTag + data.listVO2[i].s_brand_name + pTagEnd
