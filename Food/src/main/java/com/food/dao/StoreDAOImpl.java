@@ -146,7 +146,7 @@ public class StoreDAOImpl implements StoreDAO{
 	//리뷰평균 가져오기
 		@Override
 		public List<BoardVO> starAvg() {
-			// TODO Auto-generated method stub
+
 			return mybatis.selectList("StoreDAO.starAvg");
 		}
 		

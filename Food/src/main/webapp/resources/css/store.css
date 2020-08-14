@@ -313,6 +313,13 @@ body .shop-widget{
 	border-radius: 20%;	
 	
 }
+.carousel-item{
+	border-radius: 20%;	
+	
+}
+#reviewFileName {
+	border-radius: 0%;
+}
 
 
 
