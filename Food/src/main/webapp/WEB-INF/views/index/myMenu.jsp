@@ -42,7 +42,7 @@
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-circle"></div>
         <div class="preloader-img">
-            <img src="img/core-img/leaf.png" alt="">
+            <img src="/Food/resources/img/core-img/fri.jpg" alt="">
         </div>
     </div>
     
@@ -276,7 +276,6 @@ $('.portfolio-thumbnail:last').css('background-image','url(/Food/resources/store
 					<select style='width: 80px;height: 36px;font-size: 18px;' class="form-control" id="searchType" name="searchType">
 						<option value="r_store_name">매장</option>
 						<option value="r_menu">메뉴</option>
-						<option value="r_visit_date">날짜</option>
 					</select>
 				</td>
 				<td>
