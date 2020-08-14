@@ -5,12 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="resources/css/style.css">
 <style type="text/css">
+
+body{
+font-family: js5;
+}
+
 button{
     font-size: larger;
-    background-color: coral;
+    background-color: blueviolet;
     font-weight: bolder;
     border-radius: 70px/100px;
+    color: white;
 }
 select{
 FONT-SIZE: X-LARGE;
@@ -31,13 +38,13 @@ FONT-SIZE: X-LARGE;
 		
 		
    <form action="/Food/fileupload.do" method="post" enctype="multipart/form-data" >
-    <input type="file" name="file" id="profile_pt" class="test" onchange="previewImage(this,'View_area')" > <br><button id="imgup" type="submit" >매장 사진 등록</button>             
+    <input type="file" name="file" id="profile_pt" class="test" onchange="previewImage(this,'View_area')" >          
     
                         
                      <div id='View_area'
                         style='position: relative; width: 400px; height: 270px; color: black; border: 1px solid black; dispaly: inline;'>
                      </div>
-       
+ <button id="imgup" type="submit" >매장 사진 등록</button>    
               
    </form>         
    

@@ -5,12 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="resources/css/style.css">
 <style type="text/css">
+
+body{
+font-family: js5;
+}
 button{
     font-size: larger;
-    background-color: coral;
+    background-color: blueviolet;
     font-weight: bolder;
     border-radius: 70px/100px;
+    color: white;
 }
 select{
 FONT-SIZE: X-LARGE;
@@ -36,7 +42,7 @@ FONT-SIZE: X-LARGE;
 					<option value="분식">분식</option>
 					<option value="일식">일식</option>
 					<option value="동남아">동남아</option>
-		</select>
+		</select><br>
    <input type="file" name="file" id="profile_pt1" class="test" onchange="previewImage(this,'View_area')" >메뉴1
     <input type="file" name="file" id="profile_pt2" class="test" onchange="previewImage(this,'View_area')" >메뉴2
     <input type="file" name="file" id="profile_pt3" class="test" onchange="previewImage(this,'View_area')" >메뉴3

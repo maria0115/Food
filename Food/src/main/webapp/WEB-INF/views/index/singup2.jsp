@@ -19,7 +19,7 @@
 <link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
 <link rel="stylesheet" href="resources/css/singup.css">
 <!-- Core Stylesheet -->
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="/Food/resources/css/style.css">
 <!-- <link rel="stylesheet" href="resources/css/js.css"> -->
 <!-- 부트스트랩 -->
 <link
@@ -29,6 +29,13 @@
 	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 <style>
+
+#sin{
+font-family: js;
+    font-size: large;
+    font-weight: 100;
+}
+
 .box select {
 	background-color: indianred;
 	color: white;
@@ -101,7 +108,7 @@ font-size: 20px;
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
 		<div class="preloader-img">
-			<img src="img/core-img/leaf.png" alt="">
+			<img src="/Food/resources/img/core-img/fri.jpg" alt="">
 		</div>
 	</div>
 
@@ -130,7 +137,7 @@ font-size: 20px;
 	</div>
 
 	<div class="container">
-		<form action="/Food/shopmember.do" method="post">
+		<form action="/Food/shopmember.do" method="post" id="sin">
 			<!-- 아이디 -->
 
 			<label>아이디</label> <input type="text" class="sing" id="shopid"
@@ -204,7 +211,7 @@ font-size: 20px;
 					placeholder="우편번호" id="shopaddr1" type="text" name="m_post"
 					readonly="readonly">
 				<button type="button" class="btn btn-default"
-					onclick="execPostCode();">
+					onclick="execPostCode();"  style="font-size:30px;">
 					<i class="fa fa-search"></i> 우편번호 찾기
 				</button>
 			</div>
@@ -264,9 +271,9 @@ font-size: 20px;
 				</li> 
 			</ul>
 			<p></p>
-			<div class="move">
-				<input class="btn btn-danger" type="submit" value="가입하기" id="shopsubmit">
-				<button id="cancle_btn" class="btn btn-default">취소하기</button>
+			<div class="move" >
+				<input  class="btn btn-danger" type="submit" value="가입하기" id="shopsubmit" style="font-size:50px;">
+				<button id="cancle_btn" class="btn btn-default" style="font-size:50px;">취소하기</button>
 			</div>
 		</form> 
 		</div> 
@@ -278,6 +285,7 @@ font-size: 20px;
 	<p></p>
 
 	<!-- Search Form -->
+</body>
 
 
 	<!-- ##### Hero Area Start ##### -->
@@ -537,6 +545,5 @@ font-size: 20px;
 
 
 
-</body>
 
 </html>
