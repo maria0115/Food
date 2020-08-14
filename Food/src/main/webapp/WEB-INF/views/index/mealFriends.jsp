@@ -21,7 +21,7 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62"></script>
 <script src="/Food/resources/js/mealboardMap.js"></script>
-
+<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
 </head>
 
 <body>
