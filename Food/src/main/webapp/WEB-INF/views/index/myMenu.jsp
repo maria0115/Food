@@ -232,7 +232,7 @@ $('.portfolio-thumbnail:last').css('background-image','url(/Food/resources/store
 	<c:if test="${paging.nowPage != 1 }">
 		<li class="page-item"><a class="page-link"
 			href="/Food/index/myMenu.do?m_id=${sessionScope.user_id}&nowPage=${paging.nowPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"
-			style="font-size: 20px;">Previous</a></li>
+			style="font-size: 20px;">Prev</a></li>
 	</c:if>
 	<c:forEach begin="${paging.startPage }"
 		end="${paging.endPage }" var="p">
@@ -266,24 +266,24 @@ $('.portfolio-thumbnail:last').css('background-image','url(/Food/resources/store
         
 
 
-        <form action="myMenu.do">
+        <form style='margin-right: 18%;margin-bottom: 3%;' action="myMenu.do">
 		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
 		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }"> 
 		<input type="hidden" id="searchClick" name="searchClick" value="Y">
 		<table style=" margin-left: 40%;">
 			<tr>
 				<td>
-					<select class="form-control" id="searchType" name="searchType">
+					<select style='width: 80px;height: 36px;font-size: 18px;' class="form-control" id="searchType" name="searchType">
 						<option value="r_store_name">매장</option>
 						<option value="r_menu">메뉴</option>
 						<option value="r_visit_date">날짜</option>
 					</select>
 				</td>
 				<td>
-				<input class="form-control" type="text" name="keyword" id="keyword">
+				<input style='height: 36px;width: 230px;font-size: 18px;' class="form-control" type="text" name="keyword" id="keyword">
 				</td>
 				<td>
-				<button class="btn btn-default" id="mealsearchBtn" type="submit">검색</button>
+				<button style='height: 36px;width: 67px;font-size: 18px;' class="btn btn-default" id="mealsearchBtn" type="submit">검색</button>
 				</td>
 			</tr>
 		</table>

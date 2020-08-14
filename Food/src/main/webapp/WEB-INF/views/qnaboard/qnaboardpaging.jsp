@@ -38,18 +38,18 @@
 </script>
 
 
-
 <jsp:include page="../index/header.jsp">
 	<jsp:param value='' name='folder' />
 </jsp:include>
-</head>
 
+
+</head>
 <body>
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-circle"></div>
         <div class="preloader-img">
-            <img src="img/core-img/leaf.png" alt="">
+            <img src="/Food/resources/img/core-img/fri.jpg" alt="">
         </div>
     </div>
     
@@ -109,10 +109,10 @@
                                 
                                 <c:forEach items="${listVO}" var="list">
                                 <tr>
-                                    <td class='qna_table'>${list.b_no}</td>
-                                    <td class='qna_table' width="600px">${list.title}</td>
-                                    <td class='qna_table'>${list.userId}</td>
-                                    <td class='qna_table'>${list.b_date}</td>
+                                    <td style='font-size: 18px' class='qna_table'>${list.b_no}</td>
+                                    <td style='font-size: 18px' class='qna_table' width="600px">${list.title}</td>
+                                    <td style='font-size: 18px' class='qna_table'>${list.userId}</td>
+                                    <td style='font-size: 18px' class='qna_table'>${list.b_date}</td>
                                 </tr>
                                 </c:forEach>
                                 </tbody>

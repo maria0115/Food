@@ -158,11 +158,11 @@
 			<div class="row mb-4">
 				<div class="col-md-12 form-group">
 					<label class="text-black font-weight-bold" for="message">Notes</label>
-					<textarea id="r_note" name="r_note" class="form-control"
+					<textarea id="r_note" name="r_note" class="form-control" placeholder='문의사항을 남겨주세요'
 						cols="30" rows="3"></textarea>
 					<!-- 메뉴 선택하면 추가되는 부분 -->
 					<label style="font-weight:bold;color:black">선택한 메뉴</label>
-					<div id="div1">
+					<div id="div1" style='border:1px solid lightgrey'>
 					<!-- input이 추가될 부분 -->
 					</div>
 					<input type='button' class='button1 btn btn-white' value='삭제'>

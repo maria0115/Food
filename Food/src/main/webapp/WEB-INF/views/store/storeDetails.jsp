@@ -405,7 +405,7 @@ overflow-y: scroll;
 								<script>
                         $('#reserv').click(function(){
 //                            location.href='../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}'
-                            window.open('../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}&m_id=${sessionScope.user_id}&r_master=${list.r_master }','ddd','width=600,height=700,left=700,top=100,location=no,status=no,scrollbars=yes')
+                            window.open('../reservation.do?r_store_name=${list.s_brand_name}&menu1=${list.p_name_1}&menu2=${list.p_name_2}&menu3=${list.p_name_3}&m_id=${sessionScope.user_id}&r_master=${list.r_master }','ddd','width=450,height=700,left=700,top=100,location=no,status=no,scrollbars=yes')
 
                            })
 //                         }

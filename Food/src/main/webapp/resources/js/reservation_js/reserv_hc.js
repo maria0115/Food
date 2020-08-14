@@ -5,7 +5,7 @@ $("#r_menu_count").change(function(){
 //	for(var i=0;i<$(".input1").length+1;i++){
 //		if($('.input1').val() != $("#r_menu option:selected").val()){
 			
-		var addlabel = "<label>메뉴 :</label><input class='input1' style='border:none;width:170px' name='r_menu' readonly><label>수량 :</label><input class='input2' style='border:none;width:40px' name='r_menu_count' readonly><hr>"
+	var addlabel = "<label style='margin-left:10px'>메뉴 :</label><input class='input1' style='border:none;width:170px;margin: 10px 0px 10px 10px;' name='r_menu' readonly><br><label style='margin-left:10px'>수량 :</label><input class='input2' style='border:none;width:40px' name='r_menu_count' readonly><hr style='margin:0px 0px'>"
 		$("#div1").append(addlabel)
 	
 			var sel_menu = $("#r_menu option:selected").val()
