@@ -21,14 +21,13 @@ map.put("동남아", "east");
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script type="text/javascript">
 $(function(){
+	$('.imgstore').click(function(){
+		event.stopPropagation();
+		})
 	
 	$('.wishlist-btn').click(function(event){
 		event.stopPropagation();
 		var id = $('#id').val();
-		
-// 		alert(id);
-		
-// 			if(!(typeof id === typeof undefined)){
 	if(id!="null"){
 		var i = $(this).find('i').attr('class');
 		var ii = $(this).find('i');
@@ -40,16 +39,11 @@ $(function(){
 					data: "w_store_name="+brand+"&m_id="+id,
 					success:function(d){
 						if(i=="icon_heart"){
-							alert("hi2");
 							ii.attr('class','icon_heart_alt');
-
 							}
 						else if(i=="icon_heart_alt"){
-							alert("hi");
 							ii.attr('class','icon_heart');
-
 						}
-						
 						},
 					error:function(er){
 						alert("error");
@@ -61,6 +55,7 @@ $(function(){
 				}
 
 		});
+	
 
 	
 })
@@ -154,17 +149,14 @@ $(function(){
             		vo = list.get(i);
             		hot++;
             		WishlistVO wvo = new WishlistVO();
-            		
-            			
             	%>
-
 				<!-- Single Product Area -->
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="single-product-area mb-50 wow fadeInUp"
 						data-wow-delay="100ms">
 						<!-- Product Image -->
 						<div class="product-img">
-							<a href="shop-details.do"><img class='productimg'
+							<a class="imgstore" href="store/storeDetails.do?s_brand_name=<%=vo.getS_brand_name()%>"><img class='productimg'
 								style="background-size: contain; width: 270px; height: 270px; border-radius: 70px;"
 								src="/Food/resources/storemenu/<%=map.get(vo.getType()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_1() %>.jpg"
 								alt=""></a>
@@ -176,23 +168,22 @@ $(function(){
 							<div class="product-meta d-flex">
 								<a class="wishlist-btn"> <%
 							 	if (id != null) {
-							 	if (wish1 != null) {
-							 		for (int j = 0; j < wish1.size(); j++) {
-							 	wvo = wish1.get(j);
-							 	if (wvo.getW_store_name().equals(vo.getS_brand_name())) {
-							 		hea = "<i class='icon_heart'></i>";
-							 		break;
-							 	} else {
-							 		hea = "<i class='icon_heart_alt'></i>";
-							 	}
-							 		}
-							 	}
-							 	else {
-							 		hea = "<i class='icon_heart_alt'></i>";
-							 	}
-							 } else {
-							 	hea = "<i class='icon_heart_alt'></i>";
-							 }%><%=hea%><input type="hidden" class="brand"
+								 	if (wish1 != null) {
+								 		for (int j = 0; j < wish1.size(); j++) {
+								 		wvo = wish1.get(j);
+										 	if (wvo.getW_store_name().equals(vo.getS_brand_name())) {
+										 		hea = "<i class='icon_heart'></i>";
+										 		break;
+										 	} else {
+										 		hea = "<i class='icon_heart_alt'></i>";
+										 	}
+								 		}
+								 	}else {
+								 		hea = "<i class='icon_heart_alt'></i>";
+								 	}
+							 				} else {
+													 	hea = "<i class='icon_heart_alt'></i>";
+													 }%><%=hea%><input type="hidden" class="brand"
 									value=<%=vo.getS_brand_name()%>>
 								</a>
 							</div>
