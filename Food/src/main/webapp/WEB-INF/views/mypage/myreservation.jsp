@@ -79,7 +79,7 @@
                             </thead>
                       
                             <c:forEach items="${result}" var="result">
-                                <tr style="padding:0% 0%; font-weight:400">
+                                <tr style="padding:0% 0%;  font-family: js; font-size: xx-large;">
                                     <td class="cart_menu" style="padding:1% 0%; font-weight:400">${result.r_store_name}</td>
                                     <td class="cart_menu" style="padding:1% 0%; font-weight:400">${result.r_menu}</td>
                                     <td class="cart_menu" style="padding:1% 0%; font-weight:400">${result.r_visit_date} </td>
@@ -146,8 +146,8 @@
 <!--                     </div> -->
 <!--                 </div> -->
 <!--             </div> -->
- <a href="mypageform.do"><button  onclick="history.go(-1);" class="btn btn-default" style="height: 100px;
-    font-size:xx-large;">돌아가기</button></a> 	
+ <a href="mypageform.do"><button  onclick="history.go(-1);" class="btn btn-default" style="height: 50px;
+    font-size:large;">돌아가기</button></a> 	
 
         </div>
                                      <div style="display: block; text-align: center;">		

@@ -103,7 +103,7 @@
 							</table> 
 							</form>
 				</div>
-				<button  onclick="history.go(-1);" class="btn btn-default" style="height: 100px;
+				<button  onclick="history.go(-1);" class="btn btn-default" style="height: 100px; width:1090px;
     font-size:xx-large;">돌아가기</button> 	
 			</div>
 			

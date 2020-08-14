@@ -56,21 +56,21 @@
 		<br />
 
 		<div >
-			<table class="table table-hover" >
-				<tr style="font-size: 14px;">
-					<th></th>
-					<th style="width: 25%;">제목</th>
-					<th style="width: 25%;">위치</th>
-					<th>작성자</th>
-					<th>등록일</th>
-					<th style="width: 6%;">조회수</th>
-				    <th style="width: 6%;">게시판 분류</th>
+			<table class="table table-hover" style="font-family: js4; ">
+				<tr style="font-size: 20px;">
+					<th style="width: 10%;">글번호</th>
+					<th style="width: 15%;">제목</th>
+					<th style="width: 15%;">위치</th>
+					<th style="width: 10%;">작성자</th>
+					<th style="width: 20%;">등록일</th>
+					<th style="width: 10%;">조회수</th>
+				    <th style="width: 20%;">게시판 분류</th>
 				
 				</tr>
 				
 				<c:forEach items="${boardlist}" var="board">
 				<!-- 프라퍼티이름 변경 -->
-				<tr style="font-size: 16px;">
+				<tr style="font-size: xx-large;">
 					<td><a href="/Food/mealBoard/mealboardView.do?b_no=${board.b_no }">${board.b_no}</a></td>
 					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
 					<td><a href="/Food/mealBoard/mealboardView.do?b_no=${board.b_no }">${board.title}</a></td>
@@ -95,7 +95,7 @@
 			</c:forEach>
 
 			</table>
-			<button  onclick="history.go(-1);" class="btn btn-default" style="height: 100px;
+			<button  onclick="history.go(-1);" class="btn btn-default" style="height: 50px;
     font-size:xx-large;">돌아가기</button>
 		</div>
 		
@@ -115,8 +115,8 @@
 	<div class="container">
 	<div id="nomember">현재 네이버 아이디로 이용중 입니다.
 	네이버 아이디로 로그인시 오늘뭐먹지 MY Page 서비스를 이용하실수 없습니다.
-	회원가입후 MY Page 서비스 이용가능 합니다.감사합니다.<br><button  onclick="history.go(-1);" class="btn btn-default" style="height: 100px;
-    font-size:xx-large;">돌아가기</button>
+	회원가입후 MY Page 서비스 이용가능 합니다.감사합니다.<br><button  onclick="history.go(-1);" class="btn btn-default" style="height: 50px;
+    font-size:large;">돌아가기</button>
 	</div>
 	</div>
 
