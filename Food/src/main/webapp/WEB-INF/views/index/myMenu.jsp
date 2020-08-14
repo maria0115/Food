@@ -159,11 +159,11 @@
 			<p class="dialog__content" style="color:black">Lorem ipsum dolor sit amet,
 				consectetur adipisicing elit. Impedit necessitatibus illo
 				deleniti doloremque culpa volupta.</p>
-			<label class="label_name">매장</label><input style="color:black" class="input_name i_store_name" disabled><hr>
-			<label class="label_name">날짜</label><input style="color:black" class="input_name i_visit_date" disabled><hr>
-			<label class="label_name">인원</label><input style="color:black" class="input_name i_pplcount" disabled><hr>
-			<label class="label_name">메뉴</label><input style="color:black" class="input_name i_menu" disabled><hr>
-			<label class="label_name">문의</label><input style="color:black" class="input_name i_note" disabled><hr>
+			<label class="label_name">매장</label><input style="color:black;width: -webkit-fill-available;" class="input_name i_store_name" disabled><hr>
+			<label class="label_name">날짜</label><input style="color:black;width: -webkit-fill-available;" class="input_name i_visit_date" disabled><hr>
+			<label class="label_name">인원</label><input style="color:black;width: -webkit-fill-available;" class="input_name i_pplcount" disabled><hr>
+			<label class="label_name">메뉴</label><input style="color:black;width: -webkit-fill-available;" class="input_name i_menu" disabled><hr>
+			<label class="label_name">문의</label><input style="color:black;width: -webkit-fill-available;" class="input_name i_note" disabled><hr>
 
 			<button class="r_cancel" value="">예약 취소</button>
 		</div>
