@@ -64,6 +64,7 @@
 					<th>작성자</th>
 					<th>등록일</th>
 					<th style="width: 6%;">조회수</th>
+				    <th style="width: 6%;">게시판 형식</th>
 				
 				</tr>
 				
@@ -77,7 +78,7 @@
 					<td>${board.userId}</td>
 					<td>${board.b_date}</td>
 					<td style="text-align: center;">${board.viewCount}</td>
-				
+					<td style="text-align: center;">${board.}</td>
 				
 					
 				</tr>
