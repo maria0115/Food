@@ -130,12 +130,13 @@ $('#wordcloud').click(function(){
 			
 			
 						<hr>
-						<div style='position:absolute;left:45%'>
-						<input class="form-control" id='keyword' type='text' placeholder="키워드를 입력해주세요">
+<!-- 						<div style='position:absolute;left:45%'> -->
+						<input style='display: inline;margin-left: 31%;width: 31%;'
+							 class="form-control" id='keyword' type='text' placeholder="키워드를 입력해주세요">
 						<button id = "wordcloud" class="btn btn-default">입력</button>
-						</div>
-						<hr><br><br><br>
-						<img id="wordimg" src="/Food/resources/img/bg.jpg" style="width:500px; height:500px;"/>
+<!-- 						</div> -->
+						<hr><br>
+						<img id="wordimg" src="/Food/resources/img/bg.jpg" style="width:500px; height:500px;margin-left: 34%;"/>
 						
 						
 						
