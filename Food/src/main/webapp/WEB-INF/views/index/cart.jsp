@@ -41,10 +41,7 @@
     	<jsp:include page="header.jsp">
 			<jsp:param value='' name='folder' />
 		</jsp:include>
-        <!-- Top Breadcrumb Area -->
-        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(resources/img/bg-img/24.jpg);">
-            <h2>My Wish</h2>
-        </div>
+
 
         <div class="container">
             <div class="row">
