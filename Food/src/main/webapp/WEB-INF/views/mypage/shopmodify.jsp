@@ -98,6 +98,29 @@ color:darkred;
 margin-left: 5px;
 margin-right: 5px;
 }
+
+#shopsubmit{
+
+	font-family: js4;
+	font-size: 30px;
+	color: white;
+	font-weight: 1px;
+}
+
+#cancle_btn{
+
+	font-family: js4;
+	font-size: 30px;
+	color: black;
+	font-weight: 1px;
+}
+.form-control{
+
+	font-size: 30px !important;
+	color: black !important;
+}
+
+
 </style>
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -139,7 +162,7 @@ margin-right: 5px;
 	</div>
 
 	<div class="container">
-		<form action="/Food/shopinfomodify.do" method="post">
+		<form action="/Food/shopinfomodify.do" method="post" style="font-family: js4;font-size: 25px;">
 			<!-- 아이디 -->
 
 			<label>아이디</label> <input type="text" class="sing" id="shopid"
@@ -160,7 +183,7 @@ margin-right: 5px;
 			<p></p>
 			<!-- 휴대전화 -->
 			<div id="storeInfo">
-			<h2 style="display: inline;">우리 매장 정보</h2><p></p>
+			<h2 style="display: inline; color: black;">우리 매장 정보</h2><p></p>
 			<table class="table table" id="storeinfotable">
 				<tr>
 					<td style="width: 20%;">
@@ -205,7 +228,7 @@ margin-right: 5px;
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" style="text-align: center;">우리매장메뉴</td>
+					<td colspan="2" style="text-align: center; color: black !important;">우리매장메뉴</td>
 				</tr>
 				<tr>
 					<td>
@@ -264,8 +287,8 @@ margin-right: 5px;
 			<h1>*사진수정</h1>
 			<br> 
 			<div style="display: flex;">
-				<input id="upload" type="button" class="btn btn-white" style="width: 50%; font-size: 20px; font-weight: bolder;" value="매장사진변경하기"> 	     <br>
-				<input id="upload2" type="button" class="btn btn-dark" style="width: 50%; font-size: 20px; font-weight: bolder;" value="메뉴사진변경등록"> 	  
+				<input id="upload" type="button" class="btn btn-white" style="width: 50%; font-size: 35px; font-weight: bolder;" value="매장사진변경하기"> 	     <br>
+				<input id="upload2" type="button" class="btn btn-dark" style="width: 50%; font-size: 35px; font-weight: bolder;" value="메뉴사진변경등록"> 	  
              </div>    
                               <br>
                         

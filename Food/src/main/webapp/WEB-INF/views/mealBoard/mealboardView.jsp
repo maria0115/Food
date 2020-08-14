@@ -16,6 +16,39 @@
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
+<style type="text/css">
+
+#noticeDiv{
+
+	font-family: js4;
+	font-size: 25px;
+	color: black;
+}
+
+#returnBtn{
+
+	font-family: js4;
+	font-size: 21px;
+	color:white;
+	font-weight: 1px;
+}
+#modifyBtn{
+
+	font-family: js4;
+	font-size: 21px;
+	color:white;
+	font-weight: 1px;
+}
+
+#deleteBtn{
+
+	font-family: js4;
+	font-size: 21px;
+	color:white;
+	font-weight: 1px;
+}
+
+</style>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb313e4cbac02a6fbeb66ff237d66b62&libraries=services"></script>
 <script src="/Food/resources/js/friendMap.js"></script>
@@ -35,8 +68,28 @@
 	<div class="container">
 		<br />
 		<br />
+		
+		<div class="breadcrumb-area">
+       
 
-		<h1>Happy Meal With Friends</h1>
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Food/main.do"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item "><a href="/Food/index/mealFriends.do">밥친구 만들기</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">${board.title }</li>
+                        </ol>
+                    </nav>
+                    
+                    <h2 style="text-align: center; font-size: xxx-large;">Eating with friends</h2>
+                </div>
+            </div>
+    </div>
+		
+		
+
+		<h1 style="font-family: js;">${board.title }</h1>
 		<br />
 
 		<div id="noticeDiv">
@@ -54,8 +107,12 @@
 					<td align="left">${board.viewCount }</td>
 				</tr>
 				<tr>
-					<td width="100">참여인원</td>
+					<td width="100">참여가능인원</td>
 					<td align="left" >${board.f_membercnt}</td>
+				</tr>
+				<tr>
+					<td width="100">참여확정인원</td>
+					<td align="left">${board.f_cnt }</td>
 				</tr>
 				<tr>
 					<td width="100">참여여부</td>
@@ -74,10 +131,6 @@
 				<tr>
 					<td width="100">작성자</td>
 					<td align="left">${board.userId }</td>
-				</tr>
-				<tr>
-					<td width="100">제목</td>
-					<td align="left">${board.title }</td>
 				</tr>
 				<tr>
 					<td width="100">약속날짜</td>
@@ -112,12 +165,12 @@
 		<div style="display: block; text-align: center;"></div>
 		<!-- 로그인된 아이디가 글작성한 유저일경우에만 수정 삭제 버튼 보여주기  -->
 		<c:if test="${sessionScope.user_id == board.userId}">
-		<button class="btn btn-default" onclick="location.href='mealFriendsmodify.do?b_no=${board.b_no  }'" >글수정</button>
-		<button class="btn btn-default" onclick="location.href='friendsdelete.do?b_no=${board.b_no  }'" >글삭제</button>
+		<button class="btn btn-info" onclick="location.href='mealFriendsmodify.do?b_no=${board.b_no  }'" id="modifyBtn">글수정</button>
+		<button class="btn btn-danger" onclick="location.href='friendsdelete.do?b_no=${board.b_no  }'" id="deleteBtn" >글삭제</button>
 		</c:if >
-		<button class="btn btn-default" onclick="location.href='../index/mealFriends.do'" >글목록</button>
+		<button class="btn btn-success" onclick="location.href='../index/mealFriends.do'" id="returnBtn">글목록으로돌아가기</button>
 		</div>
-
+		<br/><br/>
 
 
 	<!-- 게시판 목록 보여주기 끝  -->

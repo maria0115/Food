@@ -30,6 +30,21 @@ hr {
    height: 0.7em;
   background-color: rightgray;
 }
+
+#review{
+
+	font-family: js4;
+	font-size: 25px;
+}
+
+#returnBtn{
+
+	font-family: js4;
+	font-size: 21px;
+	color:black;
+	font-weight: 1px;
+}
+
 </style>	
 
 	 
@@ -63,6 +78,7 @@ hr {
 
 	
 			<c:forEach items="${list}" var="board">
+			<div id="review">
 				<div class="row" style="border: lightgrey solid 0.3px; border-radius: 15px  19px;" >
                 <div style="width: 100%;">
                     <div class="form-group title" style="color:black;border-top-right-radius: 72px 62px;border-bottom-left-radius: 5px 124px;border-top-left-radius: 72px 62px;">
@@ -84,10 +100,11 @@ hr {
                 </div>
              	</div>
              	<p></p>
+             </div>
 			</c:forEach>
 			
 			<!-- 페이징 -->
-		<div style="display: block; text-align: center;">		
+		<div style="display: block; text-align: center; font-family: js; font-size: 25px;">		
 		<c:if test="${paging.startPage != 1 }">
 			<a href="/Food/myreview.do?s_brand_name=${user_Info.S_BRAND_NAME }&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
 		</c:if>
@@ -109,7 +126,7 @@ hr {
         </div>
 			
 		
-			<button  onclick="history.go(-1);" class="btn btn-default" >돌아가기</button> 	
+			<button  onclick="history.go(-1);" class="btn btn-default" id="returnBtn" >돌아가기</button> 	
 	
 		
 
