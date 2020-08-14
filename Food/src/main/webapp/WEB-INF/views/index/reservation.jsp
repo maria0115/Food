@@ -15,7 +15,7 @@
 <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
 
 <!-- Favicon -->
-<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
+<link rel="icon" href="resources/img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="resources/css/reservation_css/aos.css">
@@ -40,7 +40,7 @@
 	<div class="col-md-7 aos-init aos-animate" data-aos="fade-up"
 		data-aos-delay="100" style='margin: auto'>
 		<input type="hidden" id="r_master" value="<%= request.getParameter("r_master") %>">
-		<form id='frm10' action="reservInsert.do" method="post" class="bg-white p-md-5 p-4 mb-5 border">
+		<form id='frm10' action="" method="post" class="bg-white p-md-5 p-4 mb-5 border">
 			<div class="row">
 				<div class="col-md-12 form-group">
 					<label class="text-black font-weight-bold" for="id">ID</label>
@@ -170,7 +170,8 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6 form-group">
-					<input id='btn_reserv' type="submit" value="Reserve Now"
+					<input type="button" id="socketBtn" style="display:none;">
+					<input id='btn_reserv' type="button" value="Reserve Now"
 						class="btn btn-primary text-white py-3 px-5 font-weight-bold">
 				</div>
 			</div>

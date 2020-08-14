@@ -49,8 +49,9 @@ $(".button1").click(function(){
 })
 
 // 빈 항목 제어 및 전송
-$("#btn_reserv").on('click',function(e){
+$("#btn_reserv").click(function(e){
 	
+	var formData = $('#frm10').serialize();
 	var r_menu = $("input[name='r_menu']");
 	var r_menu_count = $("input[name='r_menu_count']");
 	alert("reserv_hc");
@@ -58,9 +59,11 @@ $("#btn_reserv").on('click',function(e){
 		alert('입력되지 않은 항목이 있습니다');
 		e.preventDefault();
 	}else{
+		
 		$.ajax({
 	        type:'post',
 	        async:false,
+	        data:formData,
 	        url : 'reservInsert.do',
 	        dataType: 'json',
 	        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
@@ -72,7 +75,8 @@ $("#btn_reserv").on('click',function(e){
 	   			}
         	}
 		});
-		$('#frm10').submit();
+		
 	}
 	
+	close();
 });
