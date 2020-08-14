@@ -62,6 +62,7 @@ public class ReservationController {
 	public int reservInsert(ReservationVO vo) {
 		System.out.println("reservInsert 컨트롤러 도착");
 		System.out.println("id:"+vo.getM_id());
+		System.out.println("ppl count:"+vo.getR_people_count());
 		System.out.println("visit date:"+vo.getR_visit_date());
 		System.out.println("menu:"+vo.getR_menu());
 		System.out.println("count:"+vo.getR_menu_count());

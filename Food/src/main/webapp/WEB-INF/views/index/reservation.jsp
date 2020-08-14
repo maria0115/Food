@@ -28,7 +28,11 @@
 <link rel="stylesheet" href="resources/css/reservation_css/style.css">
 
 
-
+<style type="text/css">
+.form-control{
+color:black !important;
+}
+</style>
 
 </head>
 
@@ -64,14 +68,20 @@
 						<div class="icon">
 							<span class="ion-ios-arrow-down"></span>
 						</div>
-						<select name="r_people_count" id="adults" class="form-control">
-							<option value=1>1</option>
-							<option value=2>2</option>
-							<option value=3>3</option>
-							<option value=4>4</option>
-							<option value=5>5</option>
-							<option value=6>6</option>
-						</select>
+						
+						<input class="form-control" id='ppl_minus' style='width: 25%;display: inline;padding: 0px;' type='button' value='-'>
+						<input class="form-control" name="r_people_count" id='ppl_count' style='width: 47%;padding: 0px;display: inline;text-align: center;'  value='0'>
+						<input class="form-control" id='ppl_plus' style='width: 25%;display: inline;padding: 0px;' type='button' value='+'>
+						
+						
+<!-- 						<select name="r_people_count" id="adults" class="form-control"> -->
+<!-- 							<option value=1>1</option> -->
+<!-- 							<option value=2>2</option> -->
+<!-- 							<option value=3>3</option> -->
+<!-- 							<option value=4>4</option> -->
+<!-- 							<option value=5>5</option> -->
+<!-- 							<option value=6>6</option> -->
+<!-- 						</select> -->
 					</div>
 				</div>
 			</div>
@@ -96,17 +106,38 @@
 						<div class="icon">
 							<span class="ion-ios-arrow-down"></span>
 						</div>
-						<select name="" id="r_menu_count" class="form-control">
-							<option id="default" disabled="disabled" selected>수량</option>
-							<option value=1>1</option>
-							<option value=2>2</option>
-							<option value=3>3</option>
-							<option value=4>4</option>
-							<option value=5>5</option>
-							<option value=6>6</option>
-						</select>
+						
+						
+						<input class="form-control" id='menucount_minus' style='width: 25%;display: inline;padding: 0px;' type='button' value='-'>
+						<input class="form-control" name="r_menucount" id='r_menu_count' style='width: 47%;padding: 0px;display: inline;text-align: center;' value='0'>
+						<input class="form-control" id='menucount_plus' style='width: 25%;display: inline;padding: 0px;' type='button' value='+'>
+						
+						
+<!-- 						<select name="" id="r_menu_count" class="form-control"> -->
+<!-- 							<option id="default" disabled="disabled" selected>수량</option> -->
+<!-- 							<option value=1>1</option> -->
+<!-- 							<option value=2>2</option> -->
+<!-- 							<option value=3>3</option> -->
+<!-- 							<option value=4>4</option> -->
+<!-- 							<option value=5>5</option> -->
+<!-- 							<option value=6>6</option> -->
+<!-- 						</select> -->
+					</div>
+					
+				</div>
+				
+				
+				<div class="col-md-6 form-group">
+					<div class="field-icon-wrap">
+						<div class="icon">
+							<span class="ion-ios-arrow-down"></span>
+						</div>
+					
+						<input id='menu_append' class="form-control" type='button' value='추가'>
+					
 					</div>
 				</div>
+				
 			</div>
 			
 			<!-- 시간 설정 -->

@@ -165,7 +165,7 @@
 			<label class="label_name">메뉴</label><input style="color:black;width: -webkit-fill-available;" class="input_name i_menu" disabled><hr>
 			<label class="label_name">문의</label><input style="color:black;width: -webkit-fill-available;" class="input_name i_note" disabled><hr>
 
-			<button class="r_cancel" value="">예약 취소</button>
+			<button class="r_cancel" style='color:black' value="">예약 취소</button>
 		</div>
 <!-- 		###################################################### -->
 
