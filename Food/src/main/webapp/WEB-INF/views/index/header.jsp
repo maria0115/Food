@@ -417,7 +417,7 @@ a.btn-layerClose:hover {
 
 								<!-- Search Icon -->
 								<div id="searchIcon">
-									<i class="fa fa-search" aria-hidden="true"></i>
+									<i class="fa fa-search" aria-hidden="true" style="color: darkgreen"></i>
 								</div>
 
 							</div>
