@@ -114,18 +114,18 @@
 
  			
  			   
-                <label>	<span style="color: green; font-weight: bold;">이메일 인증 (이메일을 인증 받아야 다음 단계로 넘어갈 수 있습니다.)</span></label> <input type="text" class="sing" name="m_email"
+                <label>	<span style="color: green; font-weight: bold; font-size:15px;">이메일 인증 (이메일을 인증 받아야 다음 단계로 넘어갈 수 있습니다.)</span></label> <input type="text" class="sing" name="m_email"
 				id="email" placeholder="E-mail" required>
 				<div class="check_font" id="email_check"></div>
 				<div class="check_font" id="email_check2"></div>          
-			    <input type="button"  id="emailsend" class ="btn btn-warning" value="이메일 인증받기 (이메일 보내기)"/>
+			    <input type="button"  id="emailsend" class ="btn btn-warning" value="이메일 인증받기 (이메일 보내기)" style="font-size:15px;"/>
  				<p>
  				</p>
         	
-            <label> <span style="color: green; font-weight: bold;">입력한 이메일로 받은 인증번호를 입력하세요. (인증번호가 맞아야 다음 단계로 넘어가실 수 있습니다.)</span></label> <input type="number"  id="checkmail"
-                       class="sing"  placeholder="  인증번호를 입력하세요. "/>
+            <label> <span style="color: green; font-weight: bold; font-size:15px;">입력한 이메일로 받은 인증번호를 입력하세요. (인증번호가 맞아야 다음 단계로 넘어가실 수 있습니다.)</span></label> <input type="number"  id="checkmail"
+                       class="sing"  placeholder="  인증번호를 입력하세요."/>
                 				             
- 				<input  type ="button" id ="emailsubmit"  class ="btn btn-primary" value ="인증번호 확인 "><br>
+ 				<input  type ="button" id ="emailsubmit"  class ="btn btn-primary" style="font-size:15px;" value ="인증번호 확인 "><br>
  
         	<p></p>
 					
@@ -142,7 +142,7 @@
 					placeholder="우편번호"  id="addr1" type="text"  name="m_post"
 					readonly="readonly">
 				<button type="button" class="btn btn-default"
-					onclick="execPostCode();">
+					onclick="execPostCode(); "style="font-size:15px;">
 					<i class="fa fa-search"></i> 우편번호 찾기
 				</button>
 			</div>
@@ -160,7 +160,7 @@
 
 			<div id="mostfood">
 				<input type="text" id="testInput" placeholder="자동완성" />
-				<input type="button" class="btn btn-info" id="m_most" value="추가">
+				<input type="button" class="btn btn-info" id="m_most" value="추가" style="font-size:20px;">
 			</div>
 
 			
@@ -215,11 +215,10 @@
 			</ul>
 			<p></p>
 		<div class="move">
-		<input class ="btn btn-danger" type="submit" value="가입하기"  id="submit">	<button id="cancle_btn" class ="btn btn-default">취소하기</button>
+		<input class ="btn btn-danger" type="submit" value="가입하기" style="font-size:15px;" id="submit">	<button style="font-size:15px;" id="cancle_btn" class ="btn btn-default">취소하기</button>
 		</div>	
 		</form>
 	</div>
-
 
 
 	<p></p>
