@@ -3,8 +3,10 @@ package com.food.controller;
 
 
 import java.io.File;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,11 +25,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.socket.TextMessage;
+import org.springframework.web.socket.WebSocketSession;
 
+import com.food.domain.AlarmVO;
 import com.food.domain.BoardVO;
 import com.food.domain.PaginationVO;
 import com.food.domain.StoreListVO;
+import com.food.handler.ReplyHandler;
 import com.food.service.CartService;
+import com.food.service.ManagerService;
 import com.food.service.StoreService;
 import com.food.service.boardService;
 
@@ -45,7 +52,8 @@ public class StoreController {
 	@Autowired
 	CartService cartService;
 	
-	
+	@Autowired
+	private ManagerService managerService;
 	
 	
 	
@@ -271,9 +279,25 @@ public class StoreController {
 	
 	
 	@RequestMapping("/stateY.do")
-	public String stateY(StoreListVO vo) {
+	public String stateY(StoreListVO vo,AlarmVO avo) {
 		System.out.println("승인완료");
 		int result = storeService.stateY(vo);
+
+		String nTime = LocalDateTime.now().toString();
+		
+		
+		managerService.insertQaAlarm(avo);
+		if(avo.getAlarm_Id()!=null) {
+			Map<String, WebSocketSession> userSessionsMap = ReplyHandler.userSessionsMap;
+
+			TextMessage socketMsg = new TextMessage("stateY, ,"+nTime+","+avo.getAlarm_Id()+","+avo.getAlarm_storename()+", ");
+			try {
+				userSessionsMap.get(avo.getAlarm_Id()).sendMessage(socketMsg);
+
+			} catch (IOException e) {
+
+			}
+		}
 		
 		if(result == 0 ) {
 			return "../index/error";
@@ -282,9 +306,12 @@ public class StoreController {
 	}
 	
 	@RequestMapping("/stateN.do")
-	public String stateN(StoreListVO vo) {
+	public String stateN(StoreListVO vo,AlarmVO avo) {
 		System.out.println("승인취소");
 		int result = storeService.stateN(vo);
+		
+		
+		
 		
 		if(result == 0) {
 			return "../index/error";

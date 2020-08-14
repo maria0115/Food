@@ -7,10 +7,16 @@ public class AlarmVO {
     private String a_state;
     private String mfAlarm_bno;
     private String rAlarm_rtime;
-    
+    private String Alarm_storename;
     
 
-   public String getrAlarm_rtime() {
+   public String getAlarm_storename() {
+		return Alarm_storename;
+	}
+	public void setAlarm_storename(String alarm_storename) {
+		Alarm_storename = alarm_storename;
+	}
+public String getrAlarm_rtime() {
 		return rAlarm_rtime;
 	}
 	public void setrAlarm_rtime(String rAlarm_rtime) {

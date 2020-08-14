@@ -750,7 +750,7 @@ public class ManageController {
 	public String saveQaAlarm(AlarmVO vo,HttpSession session) {
 		System.out.println("saveQaAlarm.do 들어옴");
 		String nTime = LocalDateTime.now().toString();
-		vo.setAlarm_replyTime(nTime);
+	
 		System.out.println("rAlarm_rtime:"+vo.getrAlarm_rtime());
 		String rtime = vo.getrAlarm_rtime();
 		System.out.println("rtime"+rtime);

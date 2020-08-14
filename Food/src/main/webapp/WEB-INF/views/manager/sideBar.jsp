@@ -75,7 +75,7 @@
 						<li>
 							
 								<a title="WordCloud" href="/Food/manager/wordCloud.do"><i
-										class="fa fa-building sub-icon-mg" aria-hidden="true"></i> <span
+										class="fa fa-cloud sub-icon-mg" aria-hidden="true"></i> <span
 										class="mini-sub-pro">WordCloud</span></a>
 
 						</li>

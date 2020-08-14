@@ -198,13 +198,18 @@
             strs = data.split(",");
 
             alert("strs[0]:"+strs[0]);
+            alert("strs[1]:"+strs[1]);
+            alert("strs[2]:"+strs[2]);
+            alert("strs[3]:"+strs[3]);
             alert("strs[4]:"+strs[4]);
-            if(strs != null && strs.length ==5) {
+            alert("strs[5]:"+strs[5]);
+            if(strs != null && strs.length ==6) {
                cmd = strs[0];
                receiveNum = strs[1]; 
                receiveDate = strs[2];
                receiveId = strs[3];
-               senderId = strs[4];
+               receiveStorename=strs[4];
+               senderId = strs[5];
                if("reply"==cmd){
                   
                   reply = senderId + "님이 Q&A게시판 "+receiveNum+"번 게시글에 댓글을 남겼습니다";
@@ -215,6 +220,11 @@
                else if("reserv"==cmd){
 					reply = senderId+"님이 "+receiveNum+"에 예약하셨습니다";
                    }
+               else if("stateY"==cmd){
+					reply = "관리자님이 "+receiveStorename+"의 승인요청을 승인했습니다";
+
+                   }
+
             }
          
    
