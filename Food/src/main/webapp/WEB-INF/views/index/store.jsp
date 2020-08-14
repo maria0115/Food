@@ -109,7 +109,7 @@
 								    padding: 0 0 0 8px;
 								    height: 25px;
 								    border: 1px solid #ccc;
-								    border-radius: 0px;
+								    border-radius: 20px;
 								    background-color: #fff;
 								    color: #444;
 								    text-decoration: none;
@@ -139,7 +139,8 @@
 									    -webkit-box-sizing: border-box;
 									    -moz-box-sizing: border-box;
 									    box-sizing: border-box;
-									    margin-right: 5px;	">
+									    margin-right: 5px;	
+									    border-radius: 20px; ">
 								<input type="button" name="searchButton" id="searchButton"  value="검색" 
 								
 								style="
@@ -151,6 +152,7 @@
 								    border: 1px solid #3e3d3c;
 								    background: #3e3d3c;
 								    text-align: center;
+								    border-radius: 20px;
 								"> 
 								
 							</form>
