@@ -412,7 +412,7 @@ overflow-y: scroll;
                                 </script>
 								<c:if test="${list.s_state == 'N' }">
 								<div style="margin: 0 auto;">
-								<a class="btn btn-info" href="stateY.do?s_brand_name=${list.s_brand_name }">승인완료</a>
+								<a class="btn btn-info" href="stateY.do?s_brand_name=${list.s_brand_name }&Alarm_Id=${list.r_master }&Alarm_storename=${list.s_brand_name}">승인완료</a>
 								<a class="btn btn-danger" href="stateN.do?s_brand_name=${list.s_brand_name }">승인거절</a>
 								</div>
 								</c:if>
