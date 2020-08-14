@@ -4,7 +4,7 @@
 <mapper namespace="wishlistDAO">
 
 <insert id="insertCart" parameterType="wishlist">
-	insert into wishlist values(#{w_store_name},#{m_id})
+	insert into wishlist values(#{w_store_name},#{w_address},#{w_midpart},#{m_id})
 </insert>
 
 <select id="selectCart" parameterType="wishlist" resultType="wishlist">

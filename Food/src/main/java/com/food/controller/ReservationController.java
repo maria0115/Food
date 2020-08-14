@@ -101,20 +101,6 @@ public class ReservationController {
 		System.out.println("visit_date :"+list.getR_visit_date());
 		System.out.println("time :"+list.getTime());
 		
-		String menu = list.getR_menu();
-		String count = list.getR_menu_count();
-		String[] menulist = menu.split("/");
-		String[] countlist = count.split("/");
-		String result = "";
-		for(int i=0; i<menulist.length; i++) {
-			String temp = menulist[i]+"   "+countlist[i]+"개";
-			result += temp;
-			
-			if(i!=menulist.length-1) {
-				String dot = ",   ";
-				result+=dot;
-			}
-		};
 		SimpleDateFormat format1 = new SimpleDateFormat ( "yy/MM/dd HH:mm");
 		Calendar time = Calendar.getInstance();
 		// 시스템 현재 시간
