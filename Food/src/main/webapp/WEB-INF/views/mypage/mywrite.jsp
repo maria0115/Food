@@ -64,7 +64,7 @@
 					<th>작성자</th>
 					<th>등록일</th>
 					<th style="width: 6%;">조회수</th>
-				    <th style="width: 6%;">게시판 형식</th>
+				    <th style="width: 6%;">게시판 분류</th>
 				
 				</tr>
 				
@@ -78,7 +78,17 @@
 					<td>${board.userId}</td>
 					<td>${board.b_date}</td>
 					<td style="text-align: center;">${board.viewCount}</td>
-					<td style="text-align: center;">${board.}</td>
+					
+					<c:if test="${board.boardType==1}">
+					<td style="text-align: center;">신고게시판</td></c:if>
+					<c:if test="${board.boardType==2}">
+					<td style="text-align: center;">리뷰</td></c:if>
+					<c:if test="${board.boardType==3}">
+					<td style="text-align: center;">밥친구</td></c:if>
+					<c:if test="${board.boardType==4}">
+					<td style="text-align: center;">Q&A</td></c:if>
+					<c:if test="${board.boardType==5}">
+					<td style="text-align: center;">Q&A댓글</td></c:if>
 				
 					
 				</tr>
