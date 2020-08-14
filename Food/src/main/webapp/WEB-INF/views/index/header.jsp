@@ -275,7 +275,7 @@ a.btn-layerClose:hover {
 									    border: none;
 									    color: #FFFFFF;
 									">
-									<i class="fa fa-lg fa-bell" id="notibell" style="color: gold;"></i>
+									<i class="fa fa-3x fa-bell" id="notibell" style="color: gold;"></i>
 									</button>
 									
 									<span class="notification-badge badge badge-danger" id="countAlarm"></span>
