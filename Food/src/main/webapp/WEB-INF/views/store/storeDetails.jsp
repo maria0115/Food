@@ -311,12 +311,11 @@ overflow-y: scroll;
 								
 								<!-- Wishlist & Compare -->
 								<div
-									class="wishlist-compare d-flex flex-wrap align-items-center">
+									class="wishlist-compare d-flex flex-wrap align-items-center"									" >
 									<c:if test="${not empty sessionScope.user_id}">
 										<a href="#" class="wishlist-btn ml-15" onclick=""><i
 											class="icon_heart_alt"></i></a>
-										<a href="#" class="compare-btn ml-15"><i
-											class="arrow_left-right_alt"></i></a>
+										
 									</c:if>
 								</div>
 								
@@ -332,6 +331,7 @@ overflow-y: scroll;
 // 								alert('zz')
 								$('.wishlist-btn').css("background-color","lightpink")
 								$('.wishlist-btn').removeAttr('onclick')
+								$('.wishlist-btn').css("border-radius","50%")
 							}
 							$('.wishlist-btn').click(function(){
 								if(this.hasAttribute("onclick")){
@@ -397,7 +397,7 @@ overflow-y: scroll;
 									<c:if test="${not empty sessionScope.user_id}">
 								<!-- 예약 버튼 -->
 								<button id="reserv" name="addtocart" value="5"
-									class="btn alazea-btn ml-15">예약</button>
+									class="btn alazea-btn ml-15" style="border-radius: 20px;">예약</button>
 									</c:if>
 									
 								</div>
@@ -435,7 +435,7 @@ overflow-y: scroll;
 										data-toggle="tab" role="tab">Shop information</a></li>
 									<li class="nav-item"><a href="#reviews" class="nav-link"
 										data-toggle="tab" role="tab" id="reviewKing">Reviews <span
-											class="text-muted">(1)</span></a></li>
+											class="text-muted"></span></a></li>
 								</ul>
 								<!-- Tab Content -->
 								<div class="tab-content">
@@ -644,9 +644,9 @@ overflow-y: scroll;
 		<!-- <script>
 		new iScroll('scroller1', { hScrollbar: false, vScrollbar: false, hScroll: false ,height: 460px;});
 		</script> -->
-	
 	<script src="/Food/resources/js/storeTest.js"></script>
 	<script src="/Food/resources/js/store.js"></script>
+	
 </body>
 
 </html>
