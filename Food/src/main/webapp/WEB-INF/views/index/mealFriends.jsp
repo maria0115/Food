@@ -98,7 +98,7 @@
 				
 				<c:forEach items="${friendlist}" var="board">
 				<!-- 프라퍼티이름 변경 -->
-				<tr style="font-size: 16px;">
+				<tr id="b_tr" style="font-size: 16px;">
 					<td><a  id="mfAlarm_bno" class="mealck" href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.b_no}</a></td>
 					<!-- 글 상세보기를 위해서 a태그로 경로 연결해주기 -->
 					<td><a class="mealck" href="../mealBoard/mealboardView.do?b_no=${board.b_no }">${board.title}</a></td>
@@ -111,7 +111,7 @@
 					<td>
 					<!-- 참여인원이 확정 인원보다 클때만 채팅방 참여하기 버튼 보여주기 -->
 					<c:if test="${board.f_membercnt >  board.f_cnt && sessionScope.user_id!= null}">
-					<button id="chatbtn" class="btn btn-primary mary" >입장하기</button>
+					<button id="chatbtn" class="btn btn-default mary" >입장하기</button>
 					</c:if>
 					<!-- 참여인원과 확정인원이 같을때 입장마감으로 바꿔주기 -->
 					<c:if test="${board.f_membercnt == board.f_cnt && sessionScope.user_id!= null }">
@@ -145,8 +145,8 @@
         </div>
         <!-- 페이지에 접속했을때 로그인을 하지 않았을경우 글등록 버튼 안보여주기 -->
         <c:if test="${sessionScope.user_id!= null }">
-		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" >글등록</button>
-		<button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');">신고하기</button>
+		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" id="writebtn" >글등록</button>
+		<button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');" id="balckbtn">신고하기</button>
 		</c:if>
 	</div>
 	
