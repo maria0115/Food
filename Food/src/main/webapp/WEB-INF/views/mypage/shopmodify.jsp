@@ -120,6 +120,14 @@ margin-right: 5px;
 	color: black !important;
 }
 
+#returnBtn{
+
+	font-family: js4;
+	font-size: 30px;
+	color:black;
+	font-weight: 1px;
+}
+
 
 </style>
 <link rel="stylesheet"
@@ -133,7 +141,7 @@ margin-right: 5px;
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
 		<div class="preloader-img">
-			<img src="/Food/resources/img/core-img/leaf.png" alt="">
+			<img src="/Food/resources/img/core-img/fri.jpg" alt="">
 		</div>
 	</div>
 
@@ -297,7 +305,7 @@ margin-right: 5px;
 
 			<div class="move">
 				<input class="btn btn-info" type="submit" value="수정하기" id="shopsubmit">
-				<button id="cancle_btn" class="btn btn-default">취소하기</button>
+				<button  onclick="history.go(-1);" class="btn btn-default" id="returnBtn" >돌아가기</button> 	
 			</div>
 		</form> 
 		</div> 

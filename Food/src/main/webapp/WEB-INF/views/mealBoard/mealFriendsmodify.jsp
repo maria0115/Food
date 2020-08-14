@@ -13,6 +13,17 @@
 <!-- 부트스트랩 -->
 
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<style type="text/css">
+#returnBtn{
+
+	font-family: js4;
+	font-size: 21px;
+	color:black;
+	font-weight: 1px;
+}
+
+</style>
+
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
@@ -29,7 +40,13 @@
 			<jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
 			</jsp:include>
-	
+			
+	<div class="preloader d-flex align-items-center justify-content-center">
+		<div class="preloader-circle"></div>
+		<div class="preloader-img">
+			<img src="/Food/resources/img/core-img/fri.jpg" alt="">
+		</div>
+	</div>
 	
 
 
@@ -125,6 +142,7 @@
 		</form>
 		<button class="btn btn-default" id='modifyBtn' onclick="modifyfriend();">수정하기</button>
 		<button class="btn btn-default" onclick="location.href='../index/mealFriends.do'" >글목록</button>
+		<button  onclick="history.go(-1);" class="btn btn-default" id="returnBtn" >돌아가기</button> 	
 	</div>
 
 

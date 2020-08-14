@@ -39,6 +39,13 @@ span{
     font-size: 25px;
 }
 
+#returnBtn{
+
+	font-family: js4;
+	font-size: 21px;
+	color:black;
+	font-weight: 1px;
+}
 </style>
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -51,12 +58,29 @@ span{
 	<div class="preloader d-flex align-items-center justify-content-center">
 		<div class="preloader-circle"></div>
 		<div class="preloader-img">
-			<img src="/Food/resources/img/core-img/leaf.png" alt="">
+			<img src="/Food/resources/img/core-img/fri.jpg" alt="">
 		</div>
 	</div>
 
 	<!-- ##### Header Area Start ##### -->
+	<div class="container"></div>
+	<div class="breadcrumb-area">
+       
 
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Food/main.do"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item "><a href="/Food/mypageform.do">My Page</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">우리매장정보</li>
+                        </ol>
+                    </nav>
+                    
+                    <h2 style="text-align: center; font-size: xxx-large;">Eating with friends</h2>
+                </div>
+            </div>
+    </div>
 	<!-- ##### Header Area End ##### -->
 
 	<!-- ##### Breadcrumb Area Start ##### -->
@@ -74,10 +98,7 @@ span{
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 10%;">
-						
-					</td>
-					<td>
+					<td style="width: 20%;">
 						<label>카테고리</label>
 						<span>${store.s_category }</span>
 					</td>
@@ -104,7 +125,7 @@ span{
 				</tr>
 			</table>
 			</div>
-			<button  onclick="history.go(-1);" class="btn btn-default" >돌아가기</button> 	
+			<button  onclick="history.go(-1);" class="btn btn-default" id="returnBtn" >돌아가기</button> 	
 		</div>
 		
 </div>

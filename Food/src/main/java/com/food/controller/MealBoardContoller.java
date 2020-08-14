@@ -132,7 +132,10 @@ public class MealBoardContoller {
 		vo.setBoardType(3);
 		vo.setF_userId(f_userId);
 		vo.setB_no(b_no);
-		result = boardService.mealcancel(vo);
+		if(vo.getF_cnt()!= 0) {
+			result = boardService.mealcancel(vo);
+		}
+		
 		
 		
 		return result;

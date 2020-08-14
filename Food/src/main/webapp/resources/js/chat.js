@@ -24,7 +24,13 @@
 	
 	};
 	
-	var userId = $.fn.getUrlParameter('userId');
+    var title = $.fn.getUrlParameter('title');
+    var joinuser = $.fn.getUrlParameter('f_userId');
+    var b_no = $.fn.getUrlParameter('b_no');
+    var userId = $.fn.getUrlParameter('userId');
+    var f_cnt = $.fn.getUrlParameter('f_cnt');
+    var joinid = $("#f_userId").val();
+    var id = $("#chat_id").val();
 
 	
 
@@ -112,10 +118,9 @@
 		        contentType :'application/x-www-form-urlencoded;charset=UTF-8',
 		        data :
 		    		"f_userId=" + $("#f_userId").val()+"&userId="+$("#chat_id").val()+
-		    		"&b_no="+ $("#b_no").val(),
+		    		"&b_no="+ $("#b_no").val()+"&f_cnt="+$("#f_cnt").val(),
 		    	//dataType:"text",
 		        success : function(resultData){
-		        	alert(resultData);
 		        	//넘겨받은 결과값이 0이 아니라면 
 		        	if(resultData != 0){
 		        		//취소하기 버튼 숨기고
@@ -123,12 +128,11 @@
 		        		$(".cancel").css("display", "none");
 		        		$("#f_userId").remove()
 		       		//참가하기 버튼 띄워주기
-		        		var $div = $('<input class="btn btn-info" style="max-height: 30px;" type="button" id="joinBtn" value="참가하기" >');
+		        		var $div = $('<input class="btn btn-info" style="max-height: 30px;" type="button" id="joinBtn" value="밥친구확정" >');
 		        		$("#header").append($div);
-		        		var $div1 = $("<input type='hidden' value='"+joinuserId+"' id='f_userId' />");
-		        		$("#chatheader").append($div1);
-		        		
-		       		
+		
+		        	}else{
+		        		alert("밥친구가 아닙니다.");
 		        	}
 		            	
 		            	

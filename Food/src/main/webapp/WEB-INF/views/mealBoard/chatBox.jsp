@@ -12,6 +12,7 @@
 	String m_id = request.getParameter("userId");
 	String f_userId = request.getParameter("f_userId");
 	String b_no = request.getParameter("b_no");
+	String f_cnt = request.getParameter("f_cnt");
 
 %>
 
@@ -24,14 +25,17 @@
 
 	    
 <div id="container">
+<input type="hidden" value='<%=m_id%>' id='chat_id' />
+	    <input type="hidden" value='<%=f_title%>' id='f_title' />
+	    <input type="hidden" value='<%=f_userId%>' id="f_userId" />
+	    <input type="hidden" value='<%=b_no%>' id='b_no' />
+	    <input type="hidden" value='<%=f_cnt%>' id='f_cnt' />
 	<main>
-	<div>
-	<input type="hidden" value='<%=m_id%>' id='chat_id' />
+	    <div id="chatheader">
 	    
-	
-		<div id="header">
-		
-		<input class="btn btn-info" type="button" id="joinBtn" value="밥친구확정" style="max-height: 35px; max-width: 100px;" >
+        <div id="header" style="text-align: center;font-family: js; font-size: 20px;">
+        <label><%=f_title %></label>
+        <input class="btn btn-info join" type="button" id="joinBtn" value="밥친구확정" style="max-height: 30px;" >
 		</div>
 		<!-- 채팅메세지를 주고받는 부분 -->
 		<div id="chat">

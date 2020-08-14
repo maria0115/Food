@@ -109,6 +109,10 @@
 					<td style="text-align: center;"><span class="membercnt">${board.f_membercnt}</span></td>
 					<td style="text-align: center;"><span class="joincnt">${board.f_cnt }</span></td>
 					<td>
+					<!-- 참여인원이 확정 인원보다 클때만 채팅방 참여하기 버튼 보여주기 -->
+                    <c:if test="${board.f_membercnt >  board.f_cnt && sessionScope.user_id!= null}">
+                    <button id="chatbtn" class="btn btn-default mary" >입장하기</button>
+                    </c:if>
 					<!-- 참여인원과 확정인원이 같을때 입장마감으로 바꿔주기 -->
 					<c:if test="${board.f_membercnt == board.f_cnt && sessionScope.user_id!= null }">
 					<span style="text-align: center;">입장마감</span>
