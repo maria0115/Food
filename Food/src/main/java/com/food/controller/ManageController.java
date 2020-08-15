@@ -1,9 +1,11 @@
 package com.food.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -747,39 +749,83 @@ public class ManageController {
 	
 	@ResponseBody
 	@RequestMapping("/saveQaAlarm.do") 
-	public String saveQaAlarm(AlarmVO vo,HttpSession session) {
+	public void saveQaAlarm(AlarmVO vo,HttpSession session,@RequestParam("msg") String msg) {
 		System.out.println("saveQaAlarm.do 들어옴");
-		String nTime = LocalDateTime.now().toString();
-	
+		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
+		Date time = new Date();
+
+		String nTime = format1.format(time);
+		System.out.println(nTime);
+		String cmd = null;
+		String receiveNum = null;
+		String receiveId = null;
+		String receiveStorename=null;
+		String senderId = null;
+		String saveMsg = null;
+		String receiveDate=null;
 		System.out.println("rAlarm_rtime:"+vo.getrAlarm_rtime());
-		String rtime = vo.getrAlarm_rtime();
-		System.out.println("rtime"+rtime);
+		
+		
+		
+		String[] strs = msg.split(",");
+		
+		System.out.println(msg);
+		for(int i=0;strs.length>i;i++) {
+			System.out.println(i+"번"+strs[i]);
+		}
+		if(strs !=null && strs.length==4) {
+			 cmd =strs[0];
+			 receiveId = strs[1];
+			 receiveNum = strs[2];
+			 receiveStorename =strs[3];
+			 receiveDate = nTime;
+			 senderId=(String)session.getAttribute("user_id");
+			 
+			 if(cmd.equals("reply")) {
+				 vo.setQaAlarm_bno(Integer.parseInt(receiveNum));
+				 System.out.println("1245125125125215");
+				 saveMsg = cmd+","+receiveNum+","+senderId+"님이 Q&A게시판 "+receiveNum+"번 게시글에 댓글을 남겼습니다";
+			 }else if(cmd.equals("mfChat")) {
+				 vo.setMfAlarm_bno(receiveNum);
+				 saveMsg = cmd+","+receiveId+","+senderId + "님이 밥친구만들기 "+receiveNum+"번 글 채팅방에 입장하셨습니다";
+			 }else if(cmd.equals("reserv")) {
+				 vo.setrAlarm_rtime(receiveNum);
+				 saveMsg = cmd+","+senderId+"님이 "+receiveNum+"에 예약하셨습니다";
+			 }else if(cmd.equals("stateY")) {
+				 vo.setAlarm_storename(receiveStorename);
+				 saveMsg=cmd+","+"관리자님이 "+receiveStorename+"의 승인요청을 승인했습니다";
+			 }
+			 
+			 
+		}
+		System.out.println(cmd);
+		System.out.println(receiveId);
+		System.out.println(receiveNum);
+		
+		vo.setAlarm_Id(receiveId);
+		vo.setAlarm_replyTime(nTime);
+		vo.setAlarm_msg(saveMsg);
 		managerService.insertQaAlarm(vo);
 		
-		if(vo.getrAlarm_rtime()!=null) {
 		Map<String, WebSocketSession> userSessionsMap = ReplyHandler.userSessionsMap;
 		
-		TextMessage socketMsg = new TextMessage("reserv,"+vo.getrAlarm_rtime()+","+nTime+","+vo.getAlarm_Id()+","+(String)session.getAttribute("user_id"));
+		TextMessage socketMsg = new TextMessage(saveMsg);
 		try {
 			userSessionsMap.get(vo.getAlarm_Id()).sendMessage(socketMsg);
 			
 		} catch (IOException e) {
 			
 		}
-		}
-		
-		return nTime;
-		
-		
-		
 	}
+		
+
 	
 	
 	@ResponseBody
 	@RequestMapping("/countAlarm.do")
 	public int countAlarm(@RequestParam("receiveId") String receiveId) {
 		
-		System.out.println("여기로 들어옴");
+		System.out.println("countAlarm 들어옴");
 		int result = managerService.countAlarm(receiveId);
 		return result;
 	}
@@ -800,7 +846,7 @@ public class ManageController {
 		return result;
 	}
 	
-
+	
 	
 }
 	

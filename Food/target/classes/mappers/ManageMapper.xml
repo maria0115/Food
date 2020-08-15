@@ -166,7 +166,7 @@ select to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') DAY, count(*) co
 </select>
 
 <insert id="insertQaAlarm" parameterType="alarm">
-	insert into Alarm(Alarm_Id,Alarm_replyTime,qaAlarm_bno,mfAlarm_bno,rAlarm_rtime,Alarm_storename) values (#{Alarm_Id},sysdate,#{qaAlarm_bno},#{mfAlarm_bno},#{rAlarm_rtime},#{Alarm_storename})
+	insert into Alarm(Alarm_Id,Alarm_replyTime,qaAlarm_bno,mfAlarm_bno,rAlarm_rtime,Alarm_storename,Alarm_msg) values (#{Alarm_Id},to_date(#{Alarm_replyTime},'YYYY-MM-DD HH24:MI:SS'),#{qaAlarm_bno},#{mfAlarm_bno},#{rAlarm_rtime},#{Alarm_storename},#{Alarm_msg})
 </insert>
 
 <select id="countAlarm" resultType="int">
@@ -176,4 +176,9 @@ select to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') DAY, count(*) co
 <select id="selectAlarm" parameterType="string" resultType="alarm">
 	select alarm_id,to_char(alarm_replytime,'yyyy-MM-DD HH24:MI:SS') alarm_replytime,qaalarm_bno,mfAlarm_bno,a_state,Alarm_storename from alarm where alarm_id = #{id}
 </select>
+
+<update id="updateMsg" parameterType="string">
+	
+
+</update>
 </mapper>

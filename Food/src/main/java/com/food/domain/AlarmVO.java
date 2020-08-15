@@ -8,9 +8,19 @@ public class AlarmVO {
     private String mfAlarm_bno;
     private String rAlarm_rtime;
     private String Alarm_storename;
+    private String Alarm_msg;
     
 
-   public String getAlarm_storename() {
+    
+    
+    
+   public String getAlarm_msg() {
+		return Alarm_msg;
+	}
+	public void setAlarm_msg(String alarm_msg) {
+		Alarm_msg = alarm_msg;
+	}
+public String getAlarm_storename() {
 		return Alarm_storename;
 	}
 	public void setAlarm_storename(String alarm_storename) {

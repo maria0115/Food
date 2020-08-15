@@ -57,7 +57,7 @@ public class ReplyHandler extends TextWebSocketHandler {
                
                //받는 사람이 로그인 중일때
                if(boardWriterSession != null) {
-                  TextMessage tmpMsg = new TextMessage(payloadMessage+","+id);
+                  TextMessage tmpMsg = new TextMessage(payloadMessage);
                   boardWriterSession.sendMessage(tmpMsg);
                }
             

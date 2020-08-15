@@ -72,4 +72,6 @@ public interface managerDAO {
 		int countAlarm(String receiveId);
 
 		List<AlarmVO> selectAlarm(String id);
+
+		void updateMsg(String msg);
 }

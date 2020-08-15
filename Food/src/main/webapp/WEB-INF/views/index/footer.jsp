@@ -165,6 +165,7 @@
 
 
       if(user_id!=""){
+
       connectWs();
       countAlarm(user_id);
       }
@@ -175,7 +176,7 @@
    var socket = null;
    
    function connectWs(){
-      
+     
       var ws = new WebSocket("ws://localhost:8080/Food/footer");
       socket = ws;
       ws.onopen = function(){
@@ -185,56 +186,27 @@
          
          }
       ws.onmessage = function(event){
+    	  var user_id = "${sessionScope.user_id}";
          var data = event.data;
-         var reply;
-         var cmd;
-         var receiveNum;
-         var receiveDate;
-         var receiveId;
-         var senderId;
-         
-         
-            var strs = new Array();
-            strs = data.split(",");
 
-            alert("strs[0]:"+strs[0]);
-            alert("strs[1]:"+strs[1]);
-            alert("strs[2]:"+strs[2]);
-            alert("strs[3]:"+strs[3]);
-            alert("strs[4]:"+strs[4]);
-            alert("strs[5]:"+strs[5]);
-            if(strs != null && strs.length ==6) {
-               cmd = strs[0];
-               receiveNum = strs[1]; 
-               receiveDate = strs[2];
-               receiveId = strs[3];
-               receiveStorename=strs[4];
-               senderId = strs[5];
-               if("reply"==cmd){
-                  
-                  reply = senderId + "님이 Q&A게시판 "+receiveNum+"번 게시글에 댓글을 남겼습니다";
-                  }
-               else if("mfChat"==cmd){
-            	   reply = senderId + "님이 밥친구만들기 "+receiveNum+"번 글 채팅방에 입장하셨습니다";
-                   }
-               else if("reserv"==cmd){
-					reply = senderId+"님이 "+receiveNum+"에 예약하셨습니다";
-                   }
-               else if("stateY"==cmd){
-					reply = "관리자님이 "+receiveStorename+"의 승인요청을 승인했습니다";
+ 		 var strs = new Array();
 
-                   }
+ 		alert(data);
+ 		 strs=data.split(",");
 
-            }
+ 		 cmd = strs[0];
+ 		 receive = strs[1];
+ 		reply = strs[2];
+            
          
    
          
          console.log("ReceivMessage : " + reply + "\n");
 
-         countAlarm(receiveId);
+         countAlarm(user_id);
          
 
-      
+      	alert("cmd"+cmd);
 
             
          
@@ -247,15 +219,13 @@
 
          toastr.options.onclick=function(){
              if("reply"==cmd){
-             location.href='/Food/detail?b_no='+receiveNum;
+             location.href='/Food/detail?b_no='+receive;
              }else if("mfChat"==cmd){
-            	 window.open('https://192.168.0.17:8080/Food/mealBoard/chatBox.do?&userId='+receiveId,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
+            	 window.open('https://192.168.0.17:8080/Food/mealBoard/chatBox.do?&userId='+receive,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
                  }
              else if("reserv"==cmd){
             	 location.href='/Food/mypageform.do';
                  }
-
-             
              };
          toastr.info('알림', reply);
          

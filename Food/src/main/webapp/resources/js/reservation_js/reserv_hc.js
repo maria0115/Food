@@ -76,8 +76,7 @@ $("#btn_reserv").click(function(e){
 		});
 		
 	}
-	
-	close();
+
 });
 
 
