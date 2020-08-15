@@ -5,7 +5,7 @@
     
 <!DOCTYPE html>
 <html lang="en">
-
+<title>STORE LIST</title>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">

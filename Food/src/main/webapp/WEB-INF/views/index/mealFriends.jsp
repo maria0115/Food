@@ -12,7 +12,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="/Food/resources/css/style.css">
 <link rel="stylesheet" href="/Food/resources/css/marker.css">
-
+<title>Eating with friends</title>
 <!-- 부트스트랩 -->
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"

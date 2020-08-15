@@ -4,6 +4,7 @@
 <html lang="en">
 
 <head>
+<title>QnA 게시판</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>MyPage</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/Food/resources/css/style3.css" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >

@@ -22,6 +22,7 @@ map.put("동남아", "east");
 <html lang="en">
 
 <head>
+<title>storeDetails</title>
 <meta charset="UTF-8">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

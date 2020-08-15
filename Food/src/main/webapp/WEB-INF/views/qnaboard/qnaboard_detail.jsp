@@ -7,6 +7,7 @@
 <html lang="en">
 
 <head>
+<title>QnA</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Favicon -->
-<link rel="icon" href="resources/img/core-img/favicon.ico">
+
 
 
 <!-- 부트스트랩 -->
@@ -31,13 +32,6 @@
 
 <body>
     <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-circle"></div>
-        <div class="preloader-img">
-            <img src="img/core-img/leaf.png" alt="">
-        </div>
-    </div>
-    
 
     <!-- ##### Breadcrumb Area Start ##### -->
     <div class="breadcrumb-area">

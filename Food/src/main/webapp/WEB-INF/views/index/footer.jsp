@@ -9,7 +9,7 @@
   
  
 <!-- Title -->
-<title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+
 
 <!-- 달력을 위한 CSS -->
 <link href='/Food/resources/css/fullcalendar.css' rel='stylesheet' />
