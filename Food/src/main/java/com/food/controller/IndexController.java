@@ -116,10 +116,10 @@ public class IndexController {
 			, @RequestParam(value="nowPage", required=false)String nowPage
 			, @RequestParam(value="cntPerPage", required=false)String cntPerPage,
 			String searchType, String keyword, String searchClick) {
+		//밥친구 게시판 글 번호 3
 		bvo.setBoardType(3);
 		String search = "";//검색을 했는지 여부를 확인할 변수 선언
 		int total;
-		
 		
 		if(searchType!=null) {
 			if(searchType.equals("title")==true) {
@@ -131,9 +131,8 @@ public class IndexController {
 			}
 		}
 		
-		
 		search = searchType; //검색할때 선택한 검색타입을 받아온다
-		allCount = boardService.countBoard(bvo);
+		allCount = boardService.countBoard(bvo); //게시판에 존재하는 총 게시물 갯수 구하기 
 		
 		if(search==null || search.equals("")) {//검색을 하지 않았을 경우
 			
@@ -167,9 +166,9 @@ public class IndexController {
 		
 		bvo.setBoardType(3);
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
-		model.addAttribute("list",boardService.selectmeal(bvo));
+		model.addAttribute("list",boardService.selectmeal(bvo)); //전체게시글을 마커로 찍어주기 위한 값
 		model.addAttribute("paging", vo); //페이징처리를 위한  가져온 값 넘기기 
-		model.addAttribute("friendlist", boardService.selectBoard(bvo, vo, searchType, keyword));
+		model.addAttribute("friendlist", boardService.selectBoard(bvo, vo, searchType, keyword)); 
 		//모델에 "searchType" 검색타입 추가
 		model.addAttribute("searchType", searchType);
 		//모델에 "keyword" 검색키워드 추가

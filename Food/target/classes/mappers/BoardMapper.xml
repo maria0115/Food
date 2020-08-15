@@ -33,14 +33,14 @@
 <!-- 게시글 등록 -->
 <insert id="insertBoard" parameterType="board">
       Insert Into board values(#{boardType},${seq}.nextval,#{title},#{userId},#{b_content},sysdate,#{viewCount},#{f_addr1},#{f_addr2},#{f_membercnt},
-      #{f_date},friend_f_port.nextval,#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize},#{f_cnt},#{d_fileName},#{d_fileSize},#{f_userId},#{s_brand_name},#{d_reason},qna_reply_seq.nextval)
+      #{f_date},#{f_joincnt},#{d_suspect},sysdate,#{r_visit_date},#{r_ppl_cnt},#{r_menu},#{v_star},#{v_fileName},#{v_fileSize},#{f_cnt},#{d_fileName},#{d_fileSize},#{f_userId},#{s_brand_name},#{d_reason},qna_reply_seq.nextval)
 
 </insert>
 
 <!-- 게시글 수정 -->
 <update id="updateBoard" parameterType="board">
       Update board set boardType=#{boardType},b_no=#{b_no},title=#{title},userId=#{userId},b_content=#{b_content},
-      f_addr1=#{f_addr1},f_addr2=#{f_addr2},f_membercnt=#{f_membercnt},f_date=#{f_date},f_port=#{f_port},f_joincnt=#{f_joincnt},
+      f_addr1=#{f_addr1},f_addr2=#{f_addr2},f_membercnt=#{f_membercnt},f_date=#{f_date},f_joincnt=#{f_joincnt},
       d_suspect=#{d_suspect},r_date=#{r_date},r_visit_date=#{r_visit_date},r_ppl_cnt=#{r_ppl_cnt},r_menu=#{r_menu},v_fileName=#{v_fileName},v_fileSize=#{v_fileSize},f_cnt=#{f_cnt},
       d_fileName=#{d_fileName},d_fileSize=#{d_fileSize},f_userId=#{f_userId},s_brand_name=#{s_brand_name},d_reason=#{d_reason},b_date=sysdate
 	  WHERE boardType=#{boardType} AND b_no=#{b_no}

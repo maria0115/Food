@@ -9,26 +9,17 @@ mapOption = {
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 // 주소-좌표 변환 객체를 생성합니다
 
-
 var size = $("input[name='name']").length;
 var name = new Array();
 var addr = new Array();
 var positions = new Array();
 var b_no = new Array();
 
-
-
-	
-
 for(i=0;i<size;i++){
 	name[i]=$("input[name='name']").eq(i).attr("value");
 	addr[i]=$("input[name='addr']").eq(i).attr("value");
 	b_no[i]=$("input[name='b_no']").eq(i).attr("value");
 }
-
-
-
-
 	//주소로 좌표를 검색합니다
 	name.forEach(function(v,i){
 		var marker = {};
@@ -69,8 +60,5 @@ for(i=0;i<size;i++){
 		    };
 		});
 	});
-	
-	
-	
 	
 }

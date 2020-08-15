@@ -80,7 +80,7 @@
 			<input type="hidden" name="f_date" value="${board.f_date }">
 			</c:forEach>
 		</div>
-    </div>
+    	</div>
 
 		<div >
 			<table class="table table-striped" >
@@ -120,14 +120,15 @@
 					</td>
 					
 				</tr>
-			</c:forEach>
+				</c:forEach>
 
 			</table>
 		<input type="hidden" id= "sessionId" value="${sessionScope.user_id}">
 		<!-- 페이징 -->
 		<div style="display: block; text-align: center; font-family: js; font-size: 25px;">		
 		<c:if test="${paging.startPage != 1 }">
-			<a href="../index/mealFriends.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N">&lt;</a>
+			<a href="../index/mealFriends.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}
+			&keyword=${keyword}&searchClick=N">&lt;</a>
 		</c:if>
 		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
 			<c:choose>
@@ -135,28 +136,32 @@
 					<b>${p }</b>
 				</c:when>
 				<c:when test="${p != paging.nowPage }">
-					<a href="../index/mealFriends.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N"">${p }</a>
+					<a href="../index/mealFriends.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}
+					&keyword=${keyword}&searchClick=N">${p }</a>
 				</c:when>
 			</c:choose>
 		</c:forEach>
 		<c:if test="${paging.endPage != paging.lastPage}">
-			<a href="../index/mealFriends.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}&keyword=${keyword}&searchClick=N">&gt;</a>
+			<a href="../index/mealFriends.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}&searchType=${searchType}
+			&keyword=${keyword}&searchClick=N">&gt;</a>
 		</c:if>
         </div>
-        <!-- 페이지에 접속했을때 로그인을 하지 않았을경우 글등록 버튼 안보여주기 -->
+        <!-- 페이지에 접속했을때 로그인을 하지 않았을경우 글등록 ,신고하기 버튼 안보여주기 -->
         <c:if test="${sessionScope.user_id!= null }">
 		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" id="writebtn" >글등록</button>
-		<button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');" id="balckbtn">신고하기</button>
+		<button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');"
+			 id="balckbtn">신고하기</button>
 		</c:if>
-	</div>
-	
-	</div>
+		</div>
+		</div>
+		
+		
 		<div class="search-form">
 		<form action="mealFriends.do">
 		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
 		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }"> 
 		<input type="hidden" id="searchClick" name="searchClick" value="Y">
-		<table style=" margin-left: 40%;">
+		<table style=" margin-left: 45%;">
 			<tr>
 				<td>
 					<select class="form-control" id="searchType" name="searchType">
