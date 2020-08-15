@@ -229,7 +229,7 @@ a.btn-layerClose:hover {
 									<div class="login-header">
 										<div class="login">
 											<i class="fa fa-user" style="font-size: 20px; color:snow; margin-right: 10px;"></i><a href="#" id="loginLabel" >Login</a>
-											<div class="loginbox" style="z-index: 2;">
+											<div class="loginbox" style="z-index: 2; border-radius: 15%;">
 												<form action="login.do" method="post" id="frm" name="frm">
 													<p>
 														<label for="logid">ID</label>&nbsp&nbsp <input type="text"

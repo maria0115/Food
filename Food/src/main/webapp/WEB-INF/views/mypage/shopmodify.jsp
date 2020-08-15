@@ -16,7 +16,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Favicon -->
-<link rel="icon" href="img/core-img/favicon.ico">
+<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
 <link rel="stylesheet" href="/Food/resources/css/singup.css">
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="/Food/resources/css/style.css">
@@ -305,7 +305,7 @@ margin-right: 5px;
 
 			<div class="move">
 				<input class="btn btn-info" type="submit" value="수정하기" id="shopsubmit">
-				<button  onclick="history.go(-1);" class="btn btn-default" id="returnBtn" >돌아가기</button> 	
+				<button  onclick="history.go(-1);" class="btn btn-default" style="font-size: larger;" >돌아가기</button> 	
 			</div>
 		</form> 
 		</div> 

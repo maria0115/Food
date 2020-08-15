@@ -122,7 +122,7 @@ $('.menudetail').click(function(event){
                 <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design <%=map.get(vo.getType()) %>">
                     <!-- Portfolio Thumbnail -->
                     
-                    <div class="portfolio-thumbnail bg-img" style="background-image: url(/Food/resources/storemenu/<%=map.get(vo.getType()) %>/<%=vo.getR_store_name() %>_<%=vo.getR_menu() %>.jpg);"></div>
+                    <div class="portfolio-thumbnail bg-img" style="background-image: url('/Food/resources/storemenu/<%=map.get(vo.getType()) %>/<%=vo.getR_store_name() %>_<%=vo.getR_menu() %>.jpg');"></div>
                     <!-- Portfolio Hover Text -->
                     <div class="portfolio-hover-overlay">
                     
