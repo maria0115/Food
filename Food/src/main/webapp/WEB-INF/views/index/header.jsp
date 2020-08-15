@@ -640,7 +640,34 @@ a.btn-layerClose:hover {
 <!--    <script src="/Food/resources/js/v3/bootstrap.min.js"></script> -->
  	<script src="/Food/resources/js/v3/notification_header.js"></script> 
 	
+	
+	<script type="text/javascript">
+$("#loginLabel").click(function(e) {
 
+	e.preventDefault();
+
+	if ($('.loginbox').css('display') == 'none') {
+		$('.loginbox').slideDown();
+		$('.classy-navbar-toggler').css('display','none');
+	} else {
+		$('.loginbox').slideUp();
+	    setTimeout(function() {
+			$('.classy-navbar-toggler').css('display','block');
+			}, 500);
+		
+		
+		
+	}
+});
+
+// 닫힘버튼
+$(".closeBtn").click(function(e) {
+
+	$('.loginbox').slideUp();
+
+});
+
+</script>
 	<script >
 	$('.btn-example').click(function(){
         var $href = $(this).attr('href');

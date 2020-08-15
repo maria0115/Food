@@ -670,6 +670,33 @@ a.btn-layerClose:hover {
     "pluginKey": "82a91101-4061-4a1b-b124-49afdb3d0949"
   });
 </script>
+<script type="text/javascript">
+$("#loginLabel").click(function(e) {
+
+	e.preventDefault();
+
+	if ($('.loginbox').css('display') == 'none') {
+		$('.loginbox').slideDown();
+		$('.classy-navbar-toggler').css('display','none');
+	} else {
+		$('.loginbox').slideUp();
+	    setTimeout(function() {
+			$('.classy-navbar-toggler').css('display','block');
+			}, 500);
+		
+		
+		
+	}
+});
+
+// 닫힘버튼
+$(".closeBtn").click(function(e) {
+
+	$('.loginbox').slideUp();
+
+});
+
+</script>
 		<script src="/Food/resources/js/sub.js"></script>
 	<!-- 지섭 -->
 
