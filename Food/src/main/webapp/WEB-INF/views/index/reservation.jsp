@@ -176,9 +176,11 @@ color:black !important;
 						<select name="r_date_minute" id="r_date_minute" class="form-control">
 							<option id="" disabled="disabled" selected>선택</option>
 							<option value=00>00 분</option>
-							<option value=15>15 분</option>
-							<option value=30>30 분</option>
-							<option value=45>45 분</option>
+							<option value=00>10 분</option>
+							<option value=00>20 분</option>
+							<option value=15>30 분</option>
+							<option value=30>40 분</option>
+							<option value=45>50 분</option>
 						</select>
 					</div>
 				</div>
