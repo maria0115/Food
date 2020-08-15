@@ -5,6 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>검색페이지</title>
+<style type="text/css">
+table{
+
+	font-family: js;
+	font-size: 20px !important;
+	
+}
+
+
+</style>
+
 </head>
 
 	<jsp:include page="header.jsp">
@@ -25,7 +36,7 @@
 
 	<div class="container">
 		<br/><br/>
-		<h3 style="font-family: sans-serif;"><span style="font-weight: bolder;">${word}</span> 으로 검색하신 결과입니다.</h3>
+		<h1 style="font-family: sans-serif;"><span style="font-weight: bolder; ">${word}</span> 으로 검색하신 결과입니다.</h1>
 	</div>
 	<div class="container">
 	
@@ -33,9 +44,9 @@
 			<tr>
 				<td>
 				<form action="/Food/index/searchmap.do" style="display: flex;">
-				<input style="width: 25%" class="form-control" type="text" id="keyword" name="keyword" placeholder="검색하실 단어를 입력해주세요 ">
+				<input style="width: 25%; height: 44px !important;font-size: 20px !important; " class="form-control" type="text" id="keyword" name="keyword" placeholder="검색하실 단어를 입력해주세요 ">
 				<input type="hidden" id="word" value="${word}">
-				<button class="btn btn-default">검색</button>
+				<button class="btn btn-info" style="font-size: 20px !important;">검색</button>
 				<span style="margin-top: 1%;">다른 맛집 검색해보기</span>
 				</form>
 				</td>

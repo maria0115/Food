@@ -3,9 +3,6 @@ $(function(){
 	$("#keyword").keyup(function(e){ 
         var code = e.which; 
         if(code==13)e.preventDefault();
-        if($("#keyword").val() == "undefined" || $("#keyword").val() == null || $("#keyword").val() == ""){
-        	alert("검색하실 단어를 입력해주세요.");
-        }
         if(code==13 && inputarea.val() != ""){
         $("#searchfrm").submit();
         } 
