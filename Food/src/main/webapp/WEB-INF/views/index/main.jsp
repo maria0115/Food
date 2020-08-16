@@ -204,26 +204,48 @@ a.btn-layerClose:hover {
 								<!-- Language Dropdown -->
 								
 								<!-- Login -->
-								<div class="access" >
-									<c:if test="${not empty sessionScope.user_id}">
-										<span class="login-font">${sessionScope.user_name}
-											Welcome.</span>
-										<a href="" id="logout"><button class="logout">Log-Out</button></a>
-										<i class="fa fa-user" style="font-size:20px; color:snow;"></i><a href="mypageform.do" id="mypage"  >MyPage</a>
-											<i class="fa fa-lg fa-bell" id="notibell">
-										<a id="noti">
-										</a>
-										</i>
+							<div class="access">
+								<c:if test= "${not empty sessionScope.user_id && sessionScope.user_id != 'admin1234' }">
+									<span class="login-font">${sessionScope.user_name}
+										Welcome.</span>
+									<a href="" id="logout"><button class="logout">Log-Out</button></a>
+								<i class="fa fa-user" style="font-size:20px; color:black;"></i><a href="/Food/mypageform.do" id="mypage"  >MyPage</a>
 									
-									<span class="notification-badge badge badge-danger" id="countAlarm"></span>				
-								<span class="cart">
-									<a href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i style="font-size: 17px; color:red;"  class="fa fa-heart-o"
-									aria-hidden="true"></i> <span style="font-size: 20px; color: snow; font-family: js7;" >Wish<span
-										>(${wish})</span></span></a>
-								</span>
-							
-									</c:if>
+									<button id="noti" class='btn btn-link nav-item-iconic drawer-pf-trigger-icon drawer-pf-trigger dropdown'
+										style="
+									    background-color: transparent !important;
+									    background-image: none !important;
+									    border-color: transparent;
+									    border: none;
+ 									    color: #FFFFFF;
+									">
+									<i class="fa fa-2x fa-bell" id="notibell" style="color: yellow;"></i>
+									</button>
+									
+									<span class="notification-badge badge badge-danger" id="countAlarm"></span>
+									
+									<span class="wish"> <a
+										href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i
+											style="font-size: 17px; color: red;" class="fa fa-heart-o"
+											aria-hidden="true"></i> <span
+											style="font-size: 17px; color: red; font-family: js7;">Wish <span>(${wish})</span></span></a>
+
+
+									</span>
+									
+									
+								</c:if>
+								
+								
+								<c:if test="${sessionScope.user_id eq 'admin1234'}">
+								<div>	 <!--                               <li> -->
+									<span class="login-font">${sessionScope.user_name} Welcome.</span>
+								<i class="fa fa-user" style="font-size: 20px; color:gold;border:1px; margin-right: 10px; margin-left: 10px;" ></i><a href="/Food/manager/dashBoard.do" id="loginLabel">Manage</a>
+								<a href="" id="logout"><button class="logout">Log-Out</button></a>
 								</div>
+								</c:if>
+								
+							</div>
 								<c:if test="${empty sessionScope.user_id }">
 									<!-- Login -->
 									<div class="login-header">
@@ -282,10 +304,7 @@ a.btn-layerClose:hover {
 						      			                 
 						
 									<!--                         <ul id="navi"> -->
-								<div>	 <!--                               <li> -->
-								<i class="fa fa-user" style="font-size: 20px; color:snow; margin-right: 10px; margin-left: 10px;" ></i><a href="/Food/manager/dashBoard.do" id="loginLabel"
-										>Manage</a>
-										</div>
+
 
 
 									<!--                           </ul> -->
