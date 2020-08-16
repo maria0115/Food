@@ -248,136 +248,133 @@ a.btn-layerClose:hover {
 
 		<!-- ***** Top Header Area ***** -->
 
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div
-						class="top-header-content d-flex align-items-center justify-content-between">
-						<!-- Top Header Content -->
-						<div class="top-header-meta">
-							<!--로고 이미지 들어올곳  -->
-							<a href="/Food/main.do" class="nav-brand"
-								style="font-family: js; font-size: 50px; color: black;">오늘 뭐
-								먹지? </a>
-						</div>
-						<!-- Top Header Content -->
-						<div class="top-header-meta d-flex">
-							<!-- Language Dropdown -->
+	<!-- ***** Top Header Area ***** -->
+		
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div
+							class="top-header-content d-flex align-items-center justify-content-between">
+							<!-- Top Header Content -->
+							<div class="top-header-meta" >
+									<!--로고 이미지 들어올곳  -->
+								<a href="/Food/main.do" class="nav-brand" style="font-family: js; font-size: 50px; color: black;">오늘 뭐 먹지?
+						</a>
+							</div>
 
-
-
+							<!-- Top Header Content -->
+							<div class="top-header-meta d-flex">
+								<!-- Language Dropdown -->
+								
+								<!-- Login -->
 							<div class="access">
-								<c:if test="${not empty sessionScope.user_id}">
+								<c:if test= "${not empty sessionScope.user_id && sessionScope.user_id != 'admin1234' }">
 									<span class="login-font">${sessionScope.user_name}
 										Welcome.</span>
 									<a href="" id="logout"><button class="logout">Log-Out</button></a>
-									<i class="fa fa-user" style="font-size: 20px; color: black;"></i>
-									<a href="/Food/mypageform.do" id="mypage">MyPage</a>
-
-									<button id="noti"
-										class='btn btn-link nav-item-iconic drawer-pf-trigger-icon drawer-pf-trigger dropdown'
-										style="background-color: transparent !important; background-image: none !important; border-color: transparent; border: none; color: #FFFFFF;">
-										<i class="fa fa-3x fa-bell" id="notibell" style="color: gold;"></i>
+								<i class="fa fa-user" style="font-size:20px; color:black;"></i><a href="/Food/mypageform.do" id="mypage"  >MyPage</a>
+									
+									<button id="noti" class='btn btn-link nav-item-iconic drawer-pf-trigger-icon drawer-pf-trigger dropdown'
+										style="
+									    background-color: transparent !important;
+									    background-image: none !important;
+									    border-color: transparent;
+									    border: none;
+ 									    color: #FFFFFF;
+									">
+									<i class="fa fa-2x fa-bell" id="notibell" style="color: yellow;"></i>
 									</button>
-
-									<span class="notification-badge badge badge-danger"
-										id="countAlarm"></span>
-
+									
+									<span class="notification-badge badge badge-danger" id="countAlarm"></span>
+									
 									<span class="wish"> <a
 										href="/Food/selectCart.do?m_id=${sessionScope.user_id}"><i
 											style="font-size: 17px; color: red;" class="fa fa-heart-o"
 											aria-hidden="true"></i> <span
-											style="font-size: 17px; color: red; font-family: js7;">Wish
-												<span>(${wish})</span>
-										</span></a>
+											style="font-size: 17px; color: red; font-family: js7;">Wish <span>(${wish})</span></span></a>
 
 
 									</span>
+									
+									
 								</c:if>
+								
+								
+								<c:if test="${sessionScope.user_id eq 'admin1234'}">
+								<div>	 <!--                               <li> -->
+									<span class="login-font">${sessionScope.user_name} Welcome.</span>
+								<i class="fa fa-user" style="font-size: 20px; color:gold;border:1px; margin-right: 10px; margin-left: 10px;" ></i> <a href="/Food/manager/dashBoard.do" style="font-size: 20px; font-family: js8;">Manage</a>
+								<a href="" id="logout"><button class="logout">Log-Out</button></a>
+								</div>
+								</c:if>
+								
 							</div>
-							<c:if test="${empty sessionScope.user_id }">
-								<!-- Login -->
-								<div class="login-header">
-									<div class="login">
-										<i class="fa fa-user"
-											style="font-size: 20px; color: black; margin-right: 10px;"></i><a
-											href="#" id="loginLabel">Login</a>
-										<div class="loginbox" style="z-index: 2;">
-											<form action="login.do" method="post" id="frm" name="frm">
-												<p>
-													<label for="logid">ID</label>&nbsp&nbsp <input type="text"
-														name="m_id" id="logid" placeholder="ID" />
-												</p>
-												<p>
-													<label for="logpw">PW</label>&nbsp&nbsp <input
-														type="password" name="m_pass" id="logpw"
-														placeholder="PassWord" />
-												</p>
-												<p>
-													<input class="loginBtn" id="btn_submit" value=""
-														type="submit" />
-												</p>
-											</form>
-											<a href="find_form.do" class="memberInfo"
-												style="text-align: center;">아이디 비밀번호 찾기 </a>
+								<c:if test="${empty sessionScope.user_id }">
+									<!-- Login -->
+									<div class="login-header">
+										<div class="login">
+											<i class="fa fa-user" style="font-size: 20px; color:black; margin-right: 10px;"></i><a href="#" id="loginLabel" >Login</a>
+											<div class="loginbox" style="z-index: 2; border-radius: 15%;">
+												<form action="login.do" method="post" id="frm" name="frm">
+													<p>
+														<label for="logid">ID</label>&nbsp&nbsp <input type="text"
+															name="m_id" id="logid" placeholder="ID" />
+													</p>
+													<p>
+														<label for="logpw">PW</label>&nbsp&nbsp <input
+															type="password" name="m_pass" id="logpw"
+															placeholder="PassWord" />
+													</p>
+													<p>
+														<input class="loginBtn" id="btn_submit" value=""
+															type="submit" />
+													</p>
+												</form>
+												<a href="find_form.do" class="memberInfo" style="text-align: center;">아이디 비밀번호 찾기 </a>
 											<div></div>
-											<a id="naver" href="/Food/loginview.do">소셜 로그인</a>
-											<div class="closeBtn">X</div>
+												 <a id="naver" href="/Food/loginview.do">소셜 로그인</a>		   
+												<div class="closeBtn">X</div>
 
-										</div>
-
-									</div>
-								</div>
-
-
-								<a href="#layer2"
-									style="display: revert; color: black; font-size: x-large; margin-left: 10px; font-family: js8;"
-									class="btn-example"><i class="fa fa-user"
-									style="font-size: 20px; color: black; margin-right: 10px;"></i>Sign
-									Up</a>
-								<div class="dim-layer">
-									<div class="dimBg"></div>
-									<div id="layer2" class="pop-layer">
-										<div class="pop-container">
-											<div class="pop-conts">
-												<!--content //-->
-												<p class="ctxt mb20">
-													<a href="/Food/singup.do"><button
-															class="btn btn-primary"
-															style="height: 170px; font-family: js5; width: 150px; margin-right: 40px; font-weight: bolder; font-size: xx-large;">일반
-															회원</button></a> <a href="/Food/singup2.do"><button
-															class="btn btn-danger"
-															style="height: 170px; font-family: js5; width: 150px; font-weight: bolder; font-size: xx-large;">기업
-															회원</button></a>
-												</p>
-
-												<div class="btn-r">
-													<a href="#" class="btn-layerClose">Close</a>
-												</div>
-												<!--// content-->
 											</div>
+
 										</div>
 									</div>
-								</div>
+
+											<a href="#layer2"  style="display: revert;
+														    color: black;
+														    font-size: x-large;margin-left: 10px;
+														    font-family:js8;" class="btn-example" ><i class="fa fa-user" style="font-size: 20px; color:black; margin-right: 10px;"></i>Sign Up</a>
+															<div class="dim-layer">
+															    <div class="dimBg"></div>
+															    <div id="layer2" class="pop-layer">
+															        <div class="pop-container">
+															            <div class="pop-conts">
+															                <!--content //-->
+															                <p class="ctxt mb20">
+															             	<a href="/Food/singup.do"><button class="btn btn-primary" style="height: 170px;font-family: js5;width: 150px;margin-right: 40px;font-weight: bolder;font-size: xx-large;">일반 회원</button></a>
+															                <a href="/Food/singup2.do"><button class="btn btn-danger"style="height: 170px;font-family: js5;width: 150px;font-weight: bolder;font-size: xx-large;">기업 회원</button></a>
+															                </p>
+															
+															                <div class="btn-r">
+															                    <a href="#" class="btn-layerClose">Close</a>
+															                </div>
+															                <!--// content-->
+															            </div>
+															        </div>
+															    </div>
+															</div>
+						      			                 
+						
+									<!--                         <ul id="navi"> -->
 
 
-								<!--                         <ul id="navi"> -->
-								<!--                               <li> -->
-								<div>
-									<!--                               <li> -->
-									<i class="fa fa-user"
-										style="font-size: 20px; color: black; margin-right: 10px; margin-left: 10px;"></i><a
-										href="/Food/manager/dashBoard.do" id="loginLabel">Manage</a>
-								</div>
 
-								<!--                                </li> -->
+									<!--                           </ul> -->
+					
+								<!-- Cart -->
+							
+								</c:if>
 
-							</c:if>
-
-
-
-
-							<!-- Cart -->
 
 						</div>
 					</div>
