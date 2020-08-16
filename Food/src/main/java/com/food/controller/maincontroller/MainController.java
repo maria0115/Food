@@ -66,7 +66,11 @@ public class MainController {
 		session.setAttribute("longitude", longitude);
 		session.setAttribute("latitude", latitude);
 		session.setAttribute("region", region);
-		}else {
+		}else if((longitude!=null)&&(latitude!=null)) {
+			longitude = (String)session.getAttribute("longitude");
+			latitude = (String)session.getAttribute("latitude");
+		}
+		else {
 			longitude = (String)session.getAttribute("longitude");
 			latitude = (String)session.getAttribute("latitude");
 			region = (String)session.getAttribute("region");
