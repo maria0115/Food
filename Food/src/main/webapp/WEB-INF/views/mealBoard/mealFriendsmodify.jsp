@@ -11,8 +11,11 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- 부트스트랩 -->
+<title>Eating with friends</title>
+
 
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
 <style type="text/css">
 #returnBtn{
 
@@ -21,6 +24,26 @@
 	color:black;
 	font-weight: 1px;
 }
+
+#modifyfrm{
+
+	font-family: js4;
+	font-size: 25px;
+	color:black;
+	font-weight: 1px;
+
+}
+
+#modifyBtn{
+
+	font-family: js4;
+	font-size: 25px;
+	color:black;
+	font-weight: 1px;
+}
+
+
+
 
 </style>
 
@@ -55,7 +78,7 @@
 	<div class="container">
 		<br /> <br />
 
-		<h1>Happy Meal With Friends</h1>
+		<h1>Eating with friends</h1>
 		<br />
 
 		<form action="../mealBoard/friendmodify.do" method="get"
@@ -65,27 +88,27 @@
 
 				<tr>
 					<td width="100%">제목</td>
-					<td align="left"><input size="120%" type="text"
+					<td align="left"><input size="80%" type="text"
 						name="title" value="${board.title }"/>
 					<input type="hidden" name="b_no" value="${board.b_no }">
 						</td>
 				</tr>
 				<tr>
 					<td width="100%">글쓴이</td>
-					<td align="left"><input size="120%" type="text" name="userId"
+					<td align="left"><input size="80%" type="text" name="userId"
 						value="${board.userId }" readonly="readonly"/></td>
 				</tr>
 
 				<tr>
 					<td width="100%">내용</td>
-					<td align="left"><textarea rows=5 cols=120
+					<td align="left"><textarea rows=5 cols=80
 							name="b_content">${board.b_content }</textarea></td>
 				</tr>
 				<tr>
 					<td width="100%">약속날짜</td>
 					<td align="left" style="display: flex;">
 					<input type="date" style="width: 20%; " name="f_date" id="f_date" placeholder="날짜를 선택해주세요">
-					<select name="f_date" id="f_date" class="form-control" style="width: 35%">
+					<select name="f_date" id="f_date" class="form-control" style="width: 35%;font-size: 21px !important;height: 47px;">
 						<option id="" disabled="disabled" selected>시간을 선택해주세요</option>
 							<option value="01">오전 1 시</option>
 							<option value="02">오전 2 시</option>
@@ -141,8 +164,7 @@
 			</table>
 		</form>
 		<button class="btn btn-default" id='modifyBtn' onclick="modifyfriend();">수정하기</button>
-		<button class="btn btn-default" onclick="location.href='../index/mealFriends.do'" >글목록</button>
-		<button  onclick="history.go(-1);" class="btn btn-default" id="returnBtn" >돌아가기</button> 	
+		<button class="btn btn-default" id="returnBtn" onclick="location.href='../index/mealFriends.do'" >글목록</button>
 	</div>
 
 

@@ -64,11 +64,13 @@ span{
 	</div>
 
 	<!-- ##### Header Area Start ##### -->
-	<div class="container"></div>
-	<div class="breadcrumb-area">
-       
 
-            <div class="row">
+	<!-- ##### Header Area End ##### -->
+
+	<!-- ##### Breadcrumb Area Start ##### -->
+	<div class="breadcrumb-area">
+		<div class="container">
+		<div class="row">
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -81,13 +83,7 @@ span{
                     <h2 style="text-align: center; font-size: xxx-large;">Eating with friends</h2>
                 </div>
             </div>
-    </div>
-	<!-- ##### Header Area End ##### -->
-
-	<!-- ##### Breadcrumb Area Start ##### -->
-	<div class="breadcrumb-area">
-		<!-- Top Breadcrumb Area -->
-		<div class="container">
+		
 		<h1 style="font-family: js;">우리 매장 정보</h1><br/>
 		<div id="storeInfo">
 			<table class="table table" id="storeinfotable">

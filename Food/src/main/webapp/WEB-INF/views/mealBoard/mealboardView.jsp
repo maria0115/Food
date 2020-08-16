@@ -16,6 +16,8 @@
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
+<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
+<title>Eating with friends</title>
 <style type="text/css">
 
 #noticeDiv{
@@ -47,6 +49,7 @@
 	color:white;
 	font-weight: 1px;
 }
+
 
 </style>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>

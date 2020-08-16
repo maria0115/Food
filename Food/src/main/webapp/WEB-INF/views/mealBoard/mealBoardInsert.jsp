@@ -9,17 +9,52 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
-<title></title>
+<title>Eating with friends</title>
 
 
 
 <!-- 부트스트랩 -->
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<style type="text/css">
 
+#mealfrm{
+
+	font-family: js4;
+	font-size: 25px;
+	color: black;
+
+}
+
+tr{
+
+	width: 20%;
+}
+
+#insertBtn{
+
+	font-family: js4;
+	font-size: 25px;
+	color: black;
+}
+
+
+#returnBtn{
+	
+	font-family: js4;
+	font-size: 25px;
+	color:black;
+	font-weight: 1px;
+	
+}
+
+
+
+</style>
 
 
 
@@ -30,23 +65,6 @@
  window.history.forward();
  function noBack(){window.history.forward();}
 </script>
-
-<!-- <style>
-.menu a {
-	cursor: pointer;
-}
-
-.menu .hide {
-	display: none;
-}
-</style> -->
-
-	<!-- ##### Hero Area Start ##### -->
-	
-	
-
-
-
 
 </head>
 
@@ -71,7 +89,7 @@
 	<div class="container">
 		<br /> <br />
 
-		<h1>Happy Meal With Friends</h1>
+		<h1>Eating with friends</h1>
 		<br />
 
 		<form action="../mealBoard/friendsave.do" method="get"
@@ -80,27 +98,27 @@
 
 
 				<tr>
-					<td width="100%">제목</td>
-					<td align="left"><input size="120%" type="text"
+					<td style="width: 20%;">제목</td>
+					<td align="left"><input size="80%" type="text"
 						name="title" /></td>
 				</tr>
 				<tr>
-					<td width="100%">글쓴이</td>
-					<td align="left"><input size="120%" type="text" name="userId"
+					<td >글쓴이</td>
+					<td align="left"><input size="80%" type="text" name="userId"
 						value="${sessionScope.user_id}" readonly="readonly" /></td>
 				</tr>
 
 				<tr>
-					<td width="100%">내용</td>
-					<td align="left"><textarea rows=5 cols=120
+					<td >내용</td>
+					<td align="left"><textarea rows=5 cols=80
 							name="b_content"></textarea></td>
 				</tr>
 				<tr>
-					<td width="100%">약속날짜</td>
+					<td >약속날짜</td>
 					<td align="left" style="display: flex;">
 					<input type="date" style="width: 20%; " name="f_date" id="f_date" placeholder="날짜를 선택해주세요">
-					<select name="f_date" id="f_date" class="form-control" style="width: 35%">
-						<option id="" disabled="disabled" selected>시간을 선택해주세요</option>
+					<select name="f_date" id="f_date" class="form-control" style="width: 35%;font-size: 21px !important;height: 47px;">
+						<option id="f_time" disabled="disabled" selected>시간을 선택해주세요</option>
 							<option value="01">오전 1 시</option>
 							<option value="02">오전 2 시</option>
 							<option value="03">오전 3 시</option>
@@ -129,7 +147,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td width="100%">위치</td>
+					<td >위치</td>
 					<td align="left">
 					<input type="text" id="sample4_postcode" name = 'postcode' placeholder="우편번호" readonly>
 					<input type="button" name='search' id='search1' value="우편번호 찾기" onclick="execDaumPostcode();"><br>
@@ -140,14 +158,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td width="100%">참여인원</td>
+					<td>참여인원</td>
 					<td>
 						<select id="f_membercnt" name="f_membercnt" style="width: 50%">
-							<option value=0 >0</option>
 							<option value=1 >1</option>
 							<option value=2 >2</option>
 							<option value=3 >3</option>
 							<option value=4 >4</option>
+							<option value=5 >5</option>
 						</select>
 					</td>
 				</tr>
@@ -155,6 +173,7 @@
 			</table>
 		</form>
 		<button class="btn btn-default" id='insertBtn' onclick="insertfriend();" >글등록</button>
+		<button  onclick="history.go(-1);" class="btn btn-default" id="returnBtn" >돌아가기</button> 	
 	</div>
 	
 
