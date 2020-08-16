@@ -781,6 +781,10 @@ public class ManageController {
 			 receiveDate = nTime;
 			 senderId=(String)session.getAttribute("user_id");
 			 
+			 if(receiveId.equals(senderId)) {
+				 
+				 return;
+			 }
 			 if(cmd.equals("reply")) {
 				 vo.setQaAlarm_bno(Integer.parseInt(receiveNum));
 				 System.out.println("1245125125125215");

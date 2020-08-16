@@ -499,8 +499,11 @@ a.btn-layerClose:hover {
 						<c:forEach items="${selectAlarm}" var="alarm">
 						<c:if test="${alarm.a_state eq 'N'}">
 						<div class="drawer-pf-notification unread">
+						<span class="drawer-pf-notification-message">
 						
-						</div>
+						
+						</span>
+												</div>
 						</c:if>
 						
 						</c:forEach>

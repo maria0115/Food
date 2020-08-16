@@ -191,7 +191,7 @@
 
  		 var strs = new Array();
 
- 		alert(data);
+
  		 strs=data.split(",");
 
  		 cmd = strs[0];
@@ -207,8 +207,6 @@
 
          
 
-      	alert("cmd:"+cmd);
-		alert("reply:"+reply);
             
          
          toastr.options.escapeHtml = true;
