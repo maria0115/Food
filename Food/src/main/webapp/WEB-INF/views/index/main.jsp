@@ -240,7 +240,7 @@ a.btn-layerClose:hover {
 								<c:if test="${sessionScope.user_id eq 'admin1234'}">
 								<div>	 <!--                               <li> -->
 									<span class="login-font">${sessionScope.user_name} Welcome.</span>
-								<i class="fa fa-user" style="font-size: 20px; color:gold;border:1px; margin-right: 10px; margin-left: 10px;" ></i><a href="/Food/manager/dashBoard.do" id="loginLabel">Manage</a>
+									<i class="fa fa-user" style="font-size: 20px; color:gold;border:1px; margin-right: 10px; margin-left: 10px;" ></i> <a href="/Food/manager/dashBoard.do" style="font-size: 20px; font-family: js8; color:white">Manage</a>
 								<a href="" id="logout"><button class="logout">Log-Out</button></a>
 								</div>
 								</c:if>
