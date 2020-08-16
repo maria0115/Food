@@ -7,7 +7,6 @@ $(document).on("click",".cart_menu",function(){
 });
 
  $(document).on("click",".trash",function(){
-	alert("trash1")
 	var no = $(this).parent().children().eq(0).text()
 	
 	
@@ -17,7 +16,6 @@ $.ajax({
     cache: false,
     data: "w_store_name="+no,
     success: function(){
-	    alert("success")
     },
     
     error: function (request, status, error){        

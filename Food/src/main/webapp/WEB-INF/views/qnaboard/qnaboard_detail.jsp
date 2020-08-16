@@ -44,7 +44,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">3</li>
+                            <li class="breadcrumb-item active" aria-current="page">QnA 게시판</li>
                         </ol>
                     </nav>
                 </div>
@@ -82,8 +82,8 @@
                 <div class="col-12">
          		<c:if test="${sessionScope.user_id == list.userId}">
             <button id="savebtn" type="submit" style='margin-top:23px;font-size:larger;font-weight:bold;width:100px' class="btn btn-outline-success">SAVE</button>
-		    <input type='button' value='수정' id="modify" style="float:right;margin-top:23px;font-size:small" data-toggle="tooltip" title="" class="btn btn-outline-secondary" data-original-title="Edit">
-		    <input type='button' value='삭제' id="delete" style="float:right;margin-top:23px;font-size:small" data-toggle="tooltip" title="" class="btn btn-outline-secondary" data-original-title="Trash">
+		    <input type='button' value='수정' id="modify" style="float:right;margin-top:23px;font-size:inherit" data-toggle="tooltip" title="" class="btn btn-outline-secondary" data-original-title="Edit">
+		    <input type='button' value='삭제' id="delete" style="float:right;margin-top:23px;font-size:inherit" data-toggle="tooltip" title="" class="btn btn-outline-secondary" data-original-title="Trash">
 				</c:if>
                 </div>
             </div>
@@ -106,8 +106,8 @@
 				<c:set var="id" value="admin1234" />
 				<c:if test="${sessionScope.user_id eq id}">
 				
-				<input type='button' value='수정' id="modify1" style="float:right;font-size:small" title="" class="btn btn-outline-secondary">
-  				<input type='button' value='삭제' id="delete1" style="float:right;font-size:small" title="" class="btn btn-outline-secondary">
+				<input type='button' value='수정' id="modify1" style="float:right;font-size:inherit" title="" class="btn btn-outline-secondary">
+  				<input type='button' value='삭제' id="delete1" style="float:right;font-size:inherit" title="" class="btn btn-outline-secondary">
   					</c:if>
 			</div>
 					<span style='font-family: none;margin-left:15px' id="replyTime">${list.b_date}</span>
@@ -129,7 +129,7 @@
     	</div>
 			<c:if test="${sessionScope.user_id eq 'admin1234'}">
 	        	<textarea style="color:black;margin-top:40px" class="form-control" id="replytext" cols="30" rows="10" name="b_reply" style="margin-top: 0px; margin-bottom: 15px; height: 246px;" ></textarea>
-	        	<button style="float:right;min-width:50px" id="replybtn" type="submit" class="btn btn-outline-success">등록</button>
+	        	<button style="float:right;min-width:50px;font-size: inherit" id="replybtn" type="submit" class="btn btn-outline-success">등록</button>
         	</c:if>
     </div>
 </div>

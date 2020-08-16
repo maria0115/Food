@@ -59,11 +59,11 @@ color:black !important;
 			</div>
 			<div class="row">
 				<div class="col-md-6 form-group">
-					<label class="text-black font-weight-bold" for="checkin_date">Visit Date</label>
+					<label class="text-black font-weight-bold" for="checkin_date">예약일</label>
 					<input type="date" class="form-control"  name="r_visit_date" id="r_visit_date" placeholder="날짜를 선택해주세요">
 				</div>
 				<div class="col-md-6 form-group">
-					<label for="adults" class="font-weight-bold text-black">People Count</label>
+					<label for="adults" class="font-weight-bold text-black">인원</label>
 					<div class="field-icon-wrap">
 						<div class="icon">
 							<span class="ion-ios-arrow-down"></span>
@@ -86,9 +86,57 @@ color:black !important;
 				</div>
 			</div>
 
+
+			
+			<!-- 시간 설정 -->
 			<div class="row">
 				<div class="col-md-6 form-group">
-					<label for="adults" class="font-weight-bold text-black">Menu</label>
+					<label for="" class="font-weight-bold text-black">시</label>
+					<div class="field-icon-wrap">
+						<div class="icon">
+							<span class="ion-ios-arrow-down"></span>
+						</div>
+						<select name="r_date_hour" id="r_date_hour" class="form-control">
+						<option id="" disabled="disabled" selected>선택</option>
+							<option value="09">오전 9 시</option>
+							<option value="10">오전 10 시</option>
+							<option value="11">오전 11 시</option>
+							<option value="12">오후 12 시</option>
+							<option value="13">오후 1 시</option>
+							<option value="14">오후 2 시</option>
+							<option value="15">오후 3 시</option>
+							<option value="16">오후 4 시</option>
+							<option value="17">오후 5 시</option>
+							<option value="18">오후 6 시</option>
+							<option value="19">오후 7 시</option>
+							<option value="20">오후 8 시</option>
+							<option value="21">오후 9 시</option>
+							<option value="22">오후 10 시</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6 form-group">
+					<label for="" class="font-weight-bold text-black">분</label>
+					<div class="field-icon-wrap">
+						<div class="icon">
+							<span class="ion-ios-arrow-down"></span>
+						</div>
+						<select name="r_date_minute" id="r_date_minute" class="form-control">
+							<option id="" disabled="disabled" selected>선택</option>
+							<option value=00>00 분</option>
+							<option value=00>10 분</option>
+							<option value=00>20 분</option>
+							<option value=15>30 분</option>
+							<option value=30>40 분</option>
+							<option value=45>50 분</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			
+						<div class="row">
+				<div class="col-md-6 form-group">
+					<label for="adults" class="font-weight-bold text-black">메뉴</label>
 					<div class="field-icon-wrap">
 						<div class="icon">
 							<span class="ion-ios-arrow-down"></span>
@@ -101,7 +149,7 @@ color:black !important;
 					</div>
 				</div>
 				<div class="col-md-6 form-group">
-					<label for="adults" class="font-weight-bold text-black">Menu Count</label>
+					<label for="adults" class="font-weight-bold text-black">수량</label>
 					<div class="field-icon-wrap">
 						<div class="icon">
 							<span class="ion-ios-arrow-down"></span>
@@ -140,57 +188,9 @@ color:black !important;
 				
 			</div>
 			
-			<!-- 시간 설정 -->
-			<div class="row">
-				<div class="col-md-6 form-group">
-					<label for="" class="font-weight-bold text-black">Hour</label>
-					<div class="field-icon-wrap">
-						<div class="icon">
-							<span class="ion-ios-arrow-down"></span>
-						</div>
-						<select name="r_date_hour" id="r_date_hour" class="form-control">
-						<option id="" disabled="disabled" selected>선택</option>
-							<option value="09">오전 9 시</option>
-							<option value="10">오전 10 시</option>
-							<option value="11">오전 11 시</option>
-							<option value="12">오후 12 시</option>
-							<option value="13">오후 1 시</option>
-							<option value="14">오후 2 시</option>
-							<option value="15">오후 3 시</option>
-							<option value="16">오후 4 시</option>
-							<option value="17">오후 5 시</option>
-							<option value="18">오후 6 시</option>
-							<option value="19">오후 7 시</option>
-							<option value="20">오후 8 시</option>
-							<option value="21">오후 9 시</option>
-							<option value="22">오후 10 시</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-md-6 form-group">
-					<label for="" class="font-weight-bold text-black">Minute</label>
-					<div class="field-icon-wrap">
-						<div class="icon">
-							<span class="ion-ios-arrow-down"></span>
-						</div>
-						<select name="r_date_minute" id="r_date_minute" class="form-control">
-							<option id="" disabled="disabled" selected>선택</option>
-							<option value=00>00 분</option>
-							<option value=00>10 분</option>
-							<option value=00>20 분</option>
-							<option value=15>30 분</option>
-							<option value=30>40 분</option>
-							<option value=45>50 분</option>
-						</select>
-					</div>
-				</div>
-			</div>
-			
-			
-			숫자가 초과될 경우 노트에 남겨주세요
 			<div class="row mb-4">
 				<div class="col-md-12 form-group">
-					<label class="text-black font-weight-bold" for="message">Notes</label>
+					<label class="text-black font-weight-bold" for="message">문의사항</label>
 					<textarea id="r_note" name="r_note" class="form-control" placeholder='문의사항을 남겨주세요'
 						cols="30" rows="3"></textarea>
 					<!-- 메뉴 선택하면 추가되는 부분 -->
@@ -204,7 +204,7 @@ color:black !important;
 			<div class="row">
 				<div class="col-md-6 form-group">
 					<input type="button" id="socketBtn" style="display:none;">
-					<input id='btn_reserv' type="button" value="Reserve Now"
+					<input id='btn_reserv' type="button" value="예약하기"
 						class="btn btn-primary text-white py-3 px-5 font-weight-bold">
 				</div>
 			</div>

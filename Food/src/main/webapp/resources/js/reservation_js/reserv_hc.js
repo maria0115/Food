@@ -1,6 +1,9 @@
 // 메뉴 수량 클릭시 리스트에 append
 $("#menu_append").click(function(){
 
+	if($('#r_menu_count').val()==0){
+	alert('수량을 입력해주세요')
+	}else{
 			
 	var addlabel = "<label style='margin-left:10px'>메뉴 :</label><input class='input1' style='border:none;width:170px;margin: 10px 0px 10px 10px;' name='r_menu' readonly><br><label style='margin-left:10px'>수량 :</label><input class='input2' style='border:none;width:40px;margin-left:10px' name='r_menu_count' readonly><hr style='margin:0px 0px'>"
 		$("#div1").append(addlabel)
@@ -11,16 +14,15 @@ $("#menu_append").click(function(){
 			$(".input2:last").val(sel_menucount)
 			
 			$('#r_menu_count').attr('value',0)
-			
+	}	
+})
 			
 	
-	$("#r_menu_count option:eq(0)").prop("selected", true);
 // 삭제버튼 누르면 목록 삭제
 $(".button1").click(function(){
 	$("#div1").children().remove()
 	
 	})
-})
 
 // 빈 항목 제어 및 전송
 $("#btn_reserv").click(function(e){

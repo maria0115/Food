@@ -33,8 +33,11 @@ $('.r_cancel').val(data.r_number);
 
 $(".r_cancel").click(function(){
 	var cancel = $(".r_cancel").val()
-	alert(cancel)
-	location.href="reservDelete.do?r_number="+cancel
+	var result = confirm('예약을 취소하시겠습니까?');
+	if(result){
+		location.href="reservDelete.do?r_number="+cancel
+	}
+	
 })
 
 
