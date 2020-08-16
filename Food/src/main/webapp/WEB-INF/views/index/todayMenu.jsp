@@ -31,7 +31,6 @@ $(function(){
 	if(id!="null"){
 		var i = $(this).find('i').attr('class');
 		var ii = $(this).find('i');
-
 				var brand = $(this).find('.brand').val();
 				$.ajax({
 					url: "todaywish.do",
@@ -42,18 +41,12 @@ $(function(){
 							ii.attr('class','icon_heart_alt');
 							}
 						else if(i=="icon_heart_alt"){
-							ii.attr('class','icon_heart');
-						}
+							ii.attr('class','icon_heart');}
 						},
 					error:function(er){
-						alert("error");
-						}
-				});
-				}
-			else{
-				alert("로그인 하시오");
-				}
-
+						alert("error");}
+				});}
+			else{alert("로그인 하시오");}
 		});
 	
 
@@ -69,7 +62,7 @@ $(function(){
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
-<title>TodayMenu</title>
+<title>Today menu</title>
 
 <!-- Favicon -->
 <link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
