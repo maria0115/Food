@@ -790,7 +790,7 @@ public class ManageController {
 				 saveMsg = cmd+","+receiveId+","+senderId + "님이 밥친구만들기 "+receiveNum+"번 글 채팅방에 입장하셨습니다";
 			 }else if(cmd.equals("reserv")) {
 				 vo.setrAlarm_rtime(receiveNum);
-				 saveMsg = cmd+","+senderId+"님이 "+receiveNum+"에 예약하셨습니다";
+				 saveMsg = cmd+","+"1,"+senderId+"님이 "+receiveNum+"에 예약하셨습니다";
 			 }else if(cmd.equals("stateY")) {
 				 vo.setAlarm_storename(receiveStorename);
 				 saveMsg=cmd+","+"관리자님이 "+receiveStorename+"의 승인요청을 승인했습니다";

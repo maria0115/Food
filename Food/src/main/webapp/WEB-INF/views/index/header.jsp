@@ -715,10 +715,33 @@ a.btn-layerClose:hover {
 
     }
 	</script>
+<script type="text/javascript">
+$("#loginLabel").click(function(e) {
 
-	<!-- <script src="/Food/resources/js/storePaging.js"></script> -->
+   e.preventDefault();
 
-	<!-- 지섭-->
+   if ($('.loginbox').css('display') == 'none') {
+      $('.loginbox').slideDown();
+      $('.classy-navbar-toggler').css('display','none');
+   } else {
+      $('.loginbox').slideUp();
+       setTimeout(function() {
+         $('.classy-navbar-toggler').css('display','block');
+         }, 500);
+      
+      
+      
+   }
+});
+
+// 닫힘버튼
+$(".closeBtn").click(function(e) {
+
+   $('.loginbox').slideUp();
+
+});
+
+</script>
 
 
 </body>

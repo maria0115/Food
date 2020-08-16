@@ -9,7 +9,7 @@
   
  
 <!-- Title -->
-
+<title>Alazea - Gardening &amp; Landscaping HTML Template</title>
 
 <!-- 달력을 위한 CSS -->
 <link href='/Food/resources/css/fullcalendar.css' rel='stylesheet' />
@@ -204,10 +204,11 @@
          console.log("ReceivMessage : " + reply + "\n");
 
          countAlarm(user_id);
+
          
 
-      	alert("cmd"+cmd);
-
+      	alert("cmd:"+cmd);
+		alert("reply:"+reply);
             
          
          toastr.options.escapeHtml = true;
@@ -221,7 +222,7 @@
              if("reply"==cmd){
              location.href='/Food/detail?b_no='+receive;
              }else if("mfChat"==cmd){
-            	 window.open('https://192.168.0.17:8080/Food/mealBoard/chatBox.do?&userId='+receive,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
+            	 window.open('https://192.168.0.17:8080/Food/mealBoard/chatBox.do?userId='+receive,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
                  }
              else if("reserv"==cmd){
             	 location.href='/Food/mypageform.do';
