@@ -484,134 +484,11 @@ a.btn-layerClose:hover {
 				</div>
 				<div class="panel-group" id="notification-drawer-accordion">
 					<div class="panel panel-default">
-						<div class="panel-heading" data-component="collapse-heading">
-							<h4 class="panel-title">
-								<a data-toggle="collapse"
-									data-parent="#notification-drawer-accordion"
-									href="#fixedCollapseOne"> Notification Tab 1 </a>
-							</h4>
-							<span class="panel-counter">5 New Events</span>
-						</div>
-						<div id="fixedCollapseOne" class="panel-collapse collapse in">
+						
+						<div id="fixedCollapseOne" class="panel-collapse in collapse show">
 							<div class="panel-body">
 
-
-						<c:forEach items="${selectAlarm}" var="alarm">
-						<c:if test="${alarm.a_state eq 'N'}">
-						<div class="drawer-pf-notification unread">
-						<span class="drawer-pf-notification-message">
-						
-						
-						</span>
-												</div>
-						</c:if>
-						
-						</c:forEach>
-								<!--         	목록 한개 -->
-								<div class="drawer-pf-notification unread">
-
-									<div class="dropdown pull-right dropdown-kebab-pf">
-
-									</div>
-
-									
-									<div class="drawer-pf-notification-content">
-										<span class="drawer-pf-notification-message"></span>
-										<div class="drawer-pf-notification-info">
-											<span class="date">3/31/16</span> <span class="time">12:12:44
-												PM</span>
-										</div>
-									</div>
-								</div>
-
-
-
-
-								<div class="drawer-pf-notification unread">
-
-									<div class="dropdown pull-right dropdown-kebab-pf">
-										<button class="btn btn-link dropdown-toggle" type="button"
-											id="dropdownKebabRight21" data-toggle="dropdown"
-											aria-haspopup="true" aria-expanded="true">
-											<span class="fa fa-ellipsis-v"></span>
-										</button>
-										<ul class="dropdown-menu dropdown-menu-right"
-											aria-labelledby="dropdownKebabRight21">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another Action</a></li>
-											<li><a href="#">Something Else Here</a></li>
-											<li role="separator" class="divider"></li>
-											<li><a href="#">Separated Link</a></li>
-										</ul>
-									</div>
-
-									<span class="pficon pficon-ok pull-left"></span>
-									<div class="drawer-pf-notification-content">
-										<span class="drawer-pf-notification-message">Another
-											Event Notification</span>
-										<div class="drawer-pf-notification-info">
-											<span class="date">3/31/16</span> <span class="time">12:12:44
-												PM</span>
-										</div>
-									</div>
-								</div>
-								<div class="drawer-pf-notification">
-
-									<div class="dropdown pull-right dropdown-kebab-pf">
-										<button class="btn btn-link dropdown-toggle" type="button"
-											id="dropdownKebabRight31" data-toggle="dropdown"
-											aria-haspopup="true" aria-expanded="true">
-											<span class="fa fa-ellipsis-v"></span>
-										</button>
-										<ul class="dropdown-menu dropdown-menu-right"
-											aria-labelledby="dropdownKebabRight31">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another Action</a></li>
-											<li><a href="#">Something Else Here</a></li>
-											<li role="separator" class="divider"></li>
-											<li><a href="#">Separated Link</a></li>
-										</ul>
-									</div>
-
-									<span class="pficon pficon-warning-triangle-o pull-left"></span>
-									<div class="drawer-pf-notification-content">
-										<span class="drawer-pf-notification-message">Another
-											Event Notification that is really long to see how it reacts
-											on smaller screens sizes.</span>
-										<div class="drawer-pf-notification-info">
-											<span class="date">3/31/16</span> <span class="time">12:12:44
-												PM</span>
-										</div>
-									</div>
-								</div>
-								<div class="drawer-pf-notification">
-
-									<div class="dropdown pull-right dropdown-kebab-pf">
-										<button class="btn btn-link dropdown-toggle" type="button"
-											id="dropdownKebabRight41" data-toggle="dropdown"
-											aria-haspopup="true" aria-expanded="true">
-											<span class="fa fa-ellipsis-v"></span>
-										</button>
-										<ul class="dropdown-menu dropdown-menu-right"
-											aria-labelledby="dropdownKebabRight41">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another Action</a></li>
-											<li><a href="#">Something Else Here</a></li>
-											<li role="separator" class="divider"></li>
-											<li><a href="#">Separated Link</a></li>
-										</ul>
-									</div>
-
-									<span class="pficon pficon-error-circle-o pull-left"></span>
-									<div class="drawer-pf-notification-content">
-										<span class="drawer-pf-notification-message">Another
-											Event Notification</span>
-										<div class="drawer-pf-notification-info">
-											<span class="date">3/31/16</span> <span class="time">12:12:44
-												PM</span>
-										</div>
-									</div>
-								</div>
+								
 
 							</div>
 							<div class="blank-slate-pf hidden">
@@ -676,7 +553,7 @@ a.btn-layerClose:hover {
 		src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	<!--   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 	<!--    <script src="/Food/resources/js/v3/bootstrap.min.js"></script> -->
-	<script src="/Food/resources/js/v3/notification_header.js"></script>
+	<script src="/Food/resources/js/v3/Alarm-active.js"></script>
 
 
 	<script>

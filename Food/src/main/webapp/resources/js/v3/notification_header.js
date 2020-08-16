@@ -8,6 +8,50 @@
       var $drawer = $('.drawer-pf');
 
       $(this).toggleClass('open');
+      
+      $.ajax({
+    	  url : '/Food/manager/selectAlarm.do',
+          type : 'POST',
+          contentType: "application/json; charset=utf-8",
+          dataType: 'json',
+          success : function(resultData) {
+        	  alert(resultData.selectAlarm[0].a_state);
+        	  for(var i=0; i<resultData.selectAlarmSize;i++){
+        		  if(resultData.selectAlarm[i].a_state=='N'){
+
+	        	  $('.panel-body').append(
+	        			 "<div class='drawer-pf-notification unread'>"+
+	        			 "<div class='drawer-pf-notification-content'>"+
+	        			 "<span class='drawer-pf-notification-message'>"+resultData.selectAlarm[i].Alarm_msg+"</span>"+
+	        			 "<div class='drawer-pf-notification-info'>"+
+	        			 "<span class='data'>"+resultData.selectAlarm[i].Alarm_replyTime+"</span>"+
+	        			 "</div>"+
+	        			 "</div>"+
+	        			 "</div>"
+	        	  )
+        		  }
+        		  else if(resultData.selectAlarm[i].a_state=='Y'){
+        			  
+        			  $('.panel-body').append(
+     	        			 "<div class='drawer-pf-notification'>"+
+     	        			 "<div class='drawer-pf-notification-content'>"+
+     	        			 "<span class='drawer-pf-notification-message'>"+resultData.selectAlarm[i].Alarm_msg+"</span>"+
+     	        			 "<div class='drawer-pf-notification-info'>"+
+     	        			 "<span class='data'>"+resultData.selectAlarm[i].Alarm_replyTime+"</span>"+
+     	        			 "</div>"+
+     	        			 "</div>"+
+     	        			 "</div>"
+     	        	  )
+        		  }
+        	  }
+          },
+          error : function(err){
+             alert('err');
+          }
+    	  
+    	  
+      })
+      
       if ($drawer.hasClass('hide')) {
         $drawer.removeClass('hide');
         setTimeout(function () {

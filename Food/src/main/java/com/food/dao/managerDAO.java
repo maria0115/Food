@@ -73,5 +73,9 @@ public interface managerDAO {
 
 		List<AlarmVO> selectAlarm(String id);
 
-		void updateMsg(String msg);
+		void updateAlarm(AlarmVO vo);
+
+		void deleteAlarm(String id);
+
+		void updateAlarmAll(String id);
 }

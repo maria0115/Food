@@ -174,11 +174,27 @@ select to_char(to_date(substr(f_Date,1,10),'YYYY-MM-DD'),'day') DAY, count(*) co
 </select>
 
 <select id="selectAlarm" parameterType="string" resultType="alarm">
-	select alarm_id,to_char(alarm_replytime,'yyyy-MM-DD HH24:MI:SS') alarm_replytime,qaalarm_bno,mfAlarm_bno,a_state,Alarm_storename,alarm_msg from alarm where alarm_id = #{id} order by alarm_replytime desc
+	select alarm_id,to_char(alarm_replytime,'yyyy-MM-DD AM HH:MI:SS') alarm_replytime,qaalarm_bno,mfAlarm_bno,a_state,Alarm_storename,alarm_msg from alarm where alarm_id = #{id} order by alarm_replytime desc
 </select>
 
-<update id="updateMsg" parameterType="string">
-	
+<update id="updateAlarm" parameterType="alarm">
+	update Alarm set A_STATE = 'Y' 
+	<where>
+	<if test="Alarm_Id!=null">
+	Alarm_id = #{Alarm_Id}
+	</if>
+	<if test="qaAlarm_bno!=0" >
+	QaAlarm_bno = #{qaAlarm_bno}
+	</if>
+	 and to_char(alarm_replytime,'yyyy-MM-DD AM HH:MI:SS')=#{Alarm_replyTime}
+	</where>
+</update>
 
+<delete id="deleteAlarm" parameterType="string">
+	delete from alarm where alarm_id=#{id}
+
+</delete>
+<update id="updateAlarmAll">
+	update alarm set A_STATE = 'Y' where alarm_id=#{id}
 </update>
 </mapper>

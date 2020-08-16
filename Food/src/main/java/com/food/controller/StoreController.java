@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -282,21 +284,30 @@ public class StoreController {
 	public String stateY(StoreListVO vo,AlarmVO avo) {
 		System.out.println("승인완료");
 		int result = storeService.stateY(vo);
+		String saveMsg = null;
+		String cmd="stateY";
+		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
+		Date time = new Date();
 
-		String nTime = LocalDateTime.now().toString();
+		String nTime = format1.format(time);
 		
-		
+		if(cmd.equals("stateY")) {
+			
+			 saveMsg=cmd+","+"1"+","+"관리자님이 "+avo.getAlarm_storename()+" 매장의 승인요청을 승인했습니다";
+			 avo.setAlarm_msg(saveMsg);
+			 
+		}
+		avo.setAlarm_replyTime(nTime);
 		managerService.insertQaAlarm(avo);
-		if(avo.getAlarm_Id()!=null) {
-			Map<String, WebSocketSession> userSessionsMap = ReplyHandler.userSessionsMap;
-
-			TextMessage socketMsg = new TextMessage("stateY, ,"+nTime+","+avo.getAlarm_Id()+","+avo.getAlarm_storename()+", ");
-			try {
-				userSessionsMap.get(avo.getAlarm_Id()).sendMessage(socketMsg);
-
-			} catch (IOException e) {
-
-			}
+		
+		Map<String, WebSocketSession> userSessionsMap = ReplyHandler.userSessionsMap;
+		
+		TextMessage socketMsg = new TextMessage(saveMsg);
+		try {
+			userSessionsMap.get(avo.getAlarm_Id()).sendMessage(socketMsg);
+			
+		} catch (IOException e) {
+			
 		}
 		
 		if(result == 0 ) {

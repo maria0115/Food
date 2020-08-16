@@ -186,6 +186,13 @@
          
          }
       ws.onmessage = function(event){
+    	  if($('.drawer-pf-trigger').hasClass("open")) {
+       
+    		  
+    	  }
+          
+
+
     	  var user_id = "${sessionScope.user_id}";
          var data = event.data;
 

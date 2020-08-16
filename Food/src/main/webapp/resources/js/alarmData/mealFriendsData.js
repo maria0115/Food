@@ -19,7 +19,7 @@ $('.mary').on('click',function(){
 		contentType: "application/json; charset=utf-8",
 		dataType : 'text',
 		success : function(data){
-			alert("성공");
+			
 			
 		},
 		error:function(err){
