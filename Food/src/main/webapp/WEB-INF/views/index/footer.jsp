@@ -182,7 +182,7 @@
    
    function connectWs(){
      
-      var ws = new WebSocket("wss://115.91.88.227:60000/Food/footer");
+      var ws = new WebSocket("https://115.91.88.227:60000/Food/footer");
       socket = ws;
       ws.onopen = function(){
          
