@@ -143,13 +143,18 @@
             console.log(resultData);
             if(resultData == '0'){
                $('#countAlarm').attr("display","none");
-               $('#notibell').css("color", "white");
-                
+               $('#notibell').css("color", "black");
+               $('#notibell').removeClass("fa-bell");
+               $('#notibell').addClass("fa-bell-o");
+               
 
             }else{
                
                $('#countAlarm').text(resultData);
-               $('#notibell').css("color", "yellow");
+               $('#notibell').css("color", "gold");
+               $('#notibell').removeClass("fa-bell-o");
+               $('#notibell').addClass("fa-bell");
+               
             }
          },
          error : function(err){
@@ -177,7 +182,7 @@
    
    function connectWs(){
      
-      var ws = new WebSocket("ws://localhost:8080/Food/footer");
+      var ws = new WebSocket("https://115.91.88.227:60000/Food/footer");
       socket = ws;
       ws.onopen = function(){
          
@@ -227,7 +232,7 @@
              if("reply"==cmd){
              location.href='/Food/detail?b_no='+receive;
              }else if("mfChat"==cmd){
-            	 window.open('https://192.168.0.17:8080/Food/mealBoard/chatBox.do?userId='+receive,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
+            	 window.open('wss://115.91.88.227:60000/Food/mealBoard/chatBox.do?userId='+receive,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
                  }
              else if("reserv"==cmd){
             	 location.href='/Food/mypageform.do';
