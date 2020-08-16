@@ -161,7 +161,7 @@ function drawWriterTable(data){
 			span+ data.listVO2[i].b_date +span2+
 			
 			div7+
-			p1+data.listVO2[i].title+p2+
+			p1+data.listVO2[i].b_content+p2+
 			div8+
 			div9
 			
