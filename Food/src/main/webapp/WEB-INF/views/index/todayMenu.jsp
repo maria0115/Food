@@ -127,7 +127,7 @@ $(function(){
 					<!-- Section Heading -->
 					<div class="section-heading text-center">
 						<h2 style="font-family: js;">오늘의 추천 메뉴</h2>
-						<p id="bestfo">오늘의 날씨와 지역별 직장인들의 월별 요일별 가장많이 먹은 카테고리 중 주문 수가
+						<p id="bestfo"><%=list.get(0).getType()%> 중 주문 수가
 							가장 많은 top 4입니다</p>
 					</div>
 				</div>

@@ -16,10 +16,10 @@
 <link href='/Food/resources/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 <!-- Favicon -->
 <link rel="icon" href="/Food/resources/img/core-img/favicon.ico">
-<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 <link rel="stylesheet" href="/Food/resources/css/myfooter.css">
 <!-- Core Stylesheet -->
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <!-- 부트스트랩 -->
 <link

@@ -66,7 +66,7 @@ img {
          <jsp:include page="../index/header.jsp"/>
          
                <div id="img7">
-                  <span style="font-size: xx-large;font-family: js6;color: black;">나의 가게 메뉴와 가장 연관성 있는 단어</span>
+                  <span style="font-size: xx-large;font-family: js;color: black;">나의 가게 메뉴와 가장 연관성 있는 단어</span>
                   <br>
                   <input id='keyword1' type='text' placeholder="키워드를 입력해주세요">
                   <button id = "wordcloud" class="btn btn-default" style="font-size: x-large; font-family: js;">입력</button>

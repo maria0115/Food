@@ -138,7 +138,7 @@
 		   	   if("reply"==cmd){
 		             location.href='/Food/detail?b_no='+receive;
 		             }else if("mfChat"==cmd){
-		            	 window.open('https://192.168.0.17:8080/Food/mealBoard/chatBox.do?userId='+receive,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
+		            	 window.open('https://115.91.88.227:60000/Food/mealBoard/chatBox.do?userId='+receive,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
 		                 }
 		             else if("reserv"==cmd){
 		            	 location.href='/Food/mypageform.do';
