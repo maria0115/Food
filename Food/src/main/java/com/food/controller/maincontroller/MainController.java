@@ -89,7 +89,7 @@ public class MainController {
 			
 			try {
 				//날씨 api의 주소값https:
-				String requestUrl = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&appid=37dbde539fcdc8cd3ebd105942639fc4";
+				String requestUrl = "https://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&appid=37dbde539fcdc8cd3ebd105942639fc4";
 				URL url = new URL(requestUrl);
 				// url을 열어 그 안에 내용 가지고 오기
 				URLConnection conn = url.openConnection();
