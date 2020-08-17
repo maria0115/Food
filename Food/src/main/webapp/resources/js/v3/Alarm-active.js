@@ -128,7 +128,6 @@
 		    	  url : '/Food/manager/updateAlarm.do?cmd='+cmd+'&Alarm_replyTime='+Alarm_replyTime+"&receive="+receive,
 		          type : 'POST',
 		          contentType: "application/json; charset=utf-8",
-		          dataType: 'json',
 		          success : function(resultData) {
 		        	  },		          
 		          error : function(err){
