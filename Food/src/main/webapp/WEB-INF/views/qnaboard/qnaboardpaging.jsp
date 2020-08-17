@@ -181,24 +181,24 @@
 </div>
                         
                         
-        <form action="qnaboardList">
+        <form style='margin-right: 18%;margin-bottom: 3%;' action="qnaboardList">
 		<input type="hidden" id="nowPage" name="nowPage" value="${paging.nowPage}"> 
 		<input type="hidden" id="cntPerPage" name="cntPerPage" value="${paging.cntPerPage }"> 
 		<input type="hidden" id="searchClick" name="searchClick" value="Y">
 		<table style=" margin-left: 40%;">
 			<tr>
 				<td>
-					<select class="form-control" id="searchType" name="searchType">
+					<select style='width: 80px;height: 36px;font-size: 18px;' class="form-control" id="searchType" name="searchType">
 						<option value="title">제목</option>
 						<option value="userId">작성자</option>
 						<option value="b_content">내용</option>
 					</select>
 				</td>
 				<td>
-				<input class="form-control" type="text" name="keyword" id="keyword">
+				<input style='height: 36px;width: 230px;font-size: 18px;' class="form-control" type="text" name="keyword" id="keyword">
 				</td>
 				<td>
-				<button class="btn btn-default" id="mealsearchBtn" type="submit">검색</button>
+				<button style='height: 36px;width: 67px;font-size: 18px;' class="btn btn-default" id="mealsearchBtn" type="submit">검색</button>
 				</td>
 			</tr>
 		</table>
