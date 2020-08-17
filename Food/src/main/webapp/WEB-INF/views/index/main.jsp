@@ -19,6 +19,8 @@
         <link rel="stylesheet" type="text/css" href="/Food/resources/main/css/style.css" />
 		<link href='http://fonts.googleapis.com/css?family=Raleway:300,500|Arvo:700' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+		<link rel="stylesheet" href="/Food/resources/css/v3/patternfly-adjusted.min.css">
+		<link rel="stylesheet" href="/Food/resources/css/v3/patternfly-additions.min.css">
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
@@ -181,6 +183,7 @@ a.btn-layerClose:hover {
 			<img src="/Food/resources/img/core-img/fri.jpg" alt="">
 		</div>
 	</div>
+	
 
 	<!-- ##### Header Area Start ##### -->
 	<header class="header-area">
@@ -317,7 +320,7 @@ a.btn-layerClose:hover {
 					</div>
 				</div>
 			</div>
-	
+		
 
 		<!-- ***** Navbar Area ***** -->
 		<div class="alazea-main-menu">
@@ -388,7 +391,68 @@ a.btn-layerClose:hover {
 				</div>
 			</div>
 		</div>
+		<!-- 		********************** header 알림버튼 ********************* -->
+		<nav class="navbar navbar-default navbar-pf" role="navigation"
+			style='display: contents'>
+
+
+			<!--     *************** 여기서 부터 ********************* -->
+			<div class="drawer-pf hide drawer-pf-notifications-non-clickable"
+				style='right: 215px; top: 37%; height: 300%'>
+				<div class="drawer-pf-title">
+					<a
+						class="drawer-pf-toggle-expand fa fa-angle-double-left hidden-xs"></a>
+					<a class="drawer-pf-close pficon pficon-close"></a>
+					<h3 class="text-center">Notifications Drawer</h3>
+				</div>
+				<div class="panel-group" id="notification-drawer-accordion">
+					<div class="panel panel-default">
+						
+						<div id="fixedCollapseOne" class="panel-collapse in collapse show">
+							<div class="panel-body">
+
+								
+
+							</div>
+							<div class="blank-slate-pf hidden">
+								<div class="blank-slate-pf-icon">
+									<span class="pficon-info"></span>
+								</div>
+								<h1>There are no notifications to display.</h1>
+							</div>
+							<div class="drawer-pf-action">
+								<div class="drawer-pf-action-link" data-toggle="mark-all-read">
+									<button class="btn btn-link">Mark All Read</button>
+								</div>
+								<div class="drawer-pf-action-link" data-toggle="clear-all">
+									<button class="btn btn-link">
+										<span class="pficon pficon-close"></span> Clear All
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+
+
+
+
+
+
+		</nav>
+		<!-- 		******************************************************** -->
+		
+		
+		
 	</header>
+
+
+
+
 
 	<!-- ##### Hero Area Start ##### -->
 	<!-- 	<section class="hero-area"> --> 
@@ -598,7 +662,8 @@ a.btn-layerClose:hover {
 <!-- End Channel Plugin -->
 	<!-- ##### All Javascript Files ##### -->
 	<!-- jQuery-2.2.4 js -->
-	<script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Popper js -->
 	<script src="resources/js/bootstrap/popper.min.js"></script>
 	<!-- Bootstrap js -->
@@ -607,7 +672,8 @@ a.btn-layerClose:hover {
 	<script src="resources/js/plugins/plugins.js"></script>
 	<!-- Active js -->
 		<script src="/Food/resources/js/search.js"></script>
-<script src="/Food/resources/js/active.js"></script>	
+<script src="/Food/resources/js/active.js"></script>
+<script src="/Food/resources/js/v3/Alarm-active.js"></script>	
 
 	<script >
 	$('.btn-example').click(function(){
