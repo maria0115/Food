@@ -12,7 +12,7 @@ $(function(){
 $('#wordcloud').click(function(){
    var keyword = $('#keyword1').val();
    
-   alert(keyword);
+//    alert(keyword);
    if(q){
       clearInterval(q);
    }

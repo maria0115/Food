@@ -307,8 +307,7 @@
           		let ret = (errMSG=="FAILED" || svcID != "search") ? "error" : "success";
           		if(ret=="error")
           			this.alert("[폼이름_fn_callback] "+ret + " : " + svcID + ", " + errCD + ", " + errMSG);
-          		else
-          			this.alert(ret);
+          			//this.alert(ret);
         			}
 
         };
@@ -348,8 +347,7 @@
           		let ret = (errMSG=="FAILED" || svcID != "del_b_no") ? "error" : "success";
           		if(ret=="error")
           			this.alert("[폼이름_fn_callback] "+ret + " : " + svcID + ", " + errCD + ", " + errMSG);
-          		else
-          			this.alert(ret);
+          			//this.alert(ret);
         			}
         };
 
@@ -467,8 +465,7 @@
           		let ret = (errMSG=="FAILED" || svcID != "searchtype") ? "error" : "success";
           		if(ret=="error")
           			this.alert("[폼이름_fn_callback] "+ret + " : " + svcID + ", " + errCD + ", " + errMSG);
-          		else
-          			this.alert(ret);
+          			//this.alert(ret);
         			}
         	}else{
         	alert("검색 type을 선택해주세요");
