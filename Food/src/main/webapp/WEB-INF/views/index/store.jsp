@@ -232,7 +232,7 @@
                                <c:forEach items="${starAvg}" var="starAvg">
                                 <div class="single-best-seller-product d-flex align-items-center">
                                     <div class="product-thumbnail">
-                                        <a href="shop-details.html">
+                                        <a href="#">
                                         <img class="starAvgImg" src="../resources/store/${starAvg.s_brand_name }.jpg" alt="">
                                         </a>
                                     </div>

@@ -514,9 +514,9 @@ function detailReviewModify() {
 		success : function(resultData){
 			
 			uploadFile();
-			$('.dim-layer').fadeOut();
+			
 			getWriterData();
-					
+			$('.dim-layer').fadeOut();		
 			modifyre();
 			
 		},
