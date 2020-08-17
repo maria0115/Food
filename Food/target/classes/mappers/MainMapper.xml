@@ -54,8 +54,8 @@ where b_no=#{value}
 INSERT INTO WISHLIST (W_STORE_NAME, M_ID)
 VALUES (#{w_store_name},#{m_id})
 </insert>
-<select id="todaywishmemeberlist" resultType="wishlist">
-select * from WISHLIST
+<select id="todaywishmemeberlist" resultType="wishlist" parameterType="wishlist">
+select * from WISHLIST where M_ID = #{m_id}
 </select>
 <select id="todaywishmem" parameterType="String" resultType="wishlist">
 select * from WISHLIST where M_ID = #{value}

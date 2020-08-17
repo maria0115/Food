@@ -177,7 +177,7 @@ $(function(){
 							 				} else {
 													 	hea = "<i class='icon_heart_alt'></i>";
 													 }%><%=hea%><input type="hidden" class="brand"
-									value=<%=vo.getS_brand_name()%>>
+									value="<%=vo.getS_brand_name()%>">
 								</a>
 							</div>
 						</div>

@@ -79,7 +79,7 @@ public class MainDAOImpl implements MainDAO{
 	public List<WishlistVO> todaywish(WishlistVO vo) {
 		mybatis.insert("mainDao.todaywish",vo);
 		
-		return mybatis.selectList("mainDao.todaywishmemeberlist");
+		return mybatis.selectList("mainDao.todaywishmemeberlist",vo);
 	}
 
 	@Override
