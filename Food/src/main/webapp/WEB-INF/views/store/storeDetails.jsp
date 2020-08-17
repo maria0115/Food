@@ -84,28 +84,28 @@ overflow-y: scroll;
 								data-ride="carousel">
 								<div class="carousel-inner">
 									<div class="carousel-item active" >
-										<a class="product-img" href="img/bg-img/49.jpg"
+										<a class="product-img" href="../resources/store/${list.s_brand_name}.jpg"
 											title="Product Image"> <img class="d-block w-100"
 											src="../resources/store/${list.s_brand_name}.jpg" alt="1" 
 											style="height: 450px;">
 										</a>
 									</div>
 									<div class="carousel-item">
-										<a class="product-img" href="img/bg-img/49.jpg"
+										<a class="product-img" href="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_1() %>.jpg" alt="1""
 											title="Product Image"> <img class="d-block w-100"
 											style="height: 450px;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_1() %>.jpg" alt="1">
 										</a>
 									</div>
 									<div class="carousel-item">
-										<a class="product-img" href="img/bg-img/49.jpg"
+										<a class="product-img" href="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_2() %>.jpg" alt="1""
 											title="Product Image"> <img class="d-block w-100"
 											style="height: 450px;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_2() %>.jpg" alt="1">
 										</a>
 									</div>
 									<div class="carousel-item">
-										<a class="product-img" href="img/bg-img/49.jpg"
+										<a class="product-img" href="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_3() %>.jpg" alt="1""
 											title="Product Image"> <img class="d-block w-100"
 											style="height: 450px;"
 											src="/Food/resources/storemenu/<%=map.get(vo.getS_category()) %>/<%=vo.getS_brand_name() %>_<%=vo.getP_name_3() %>.jpg" alt="1">

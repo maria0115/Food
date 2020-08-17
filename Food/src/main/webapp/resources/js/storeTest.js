@@ -186,7 +186,7 @@ function drawWriterTable(data){
 //리뷰목록 클릭했을때 리뷰 상세보기 레이어팝업 띄우기
 function divClick(elem){
 	
-	alert("시작:"+ $(this));	
+		
 	
 	//var b_no = elem.getAttribute('test')
 	//alert(b_no)
@@ -194,7 +194,7 @@ function divClick(elem){
 	
 	var childs = elem.childNodes;
 	var b_num = childs[0].getAttribute('value');
-	alert(b_num);
+	
 	$("#checkLock").val(b_num);
 	
 	$.ajax({
@@ -472,7 +472,6 @@ function uploadFile(){
                 data: formData,
                 type: 'POST',
                 success: function(result){
-                    alert("업로드 성공!!");
                 }
         });
 }
@@ -484,7 +483,6 @@ function uploadFile(){
 
 //리뷰 디테일에서 수정완료 눌렸을때 
 function detailReviewModify() {
-	alert("수정완료 스크립트");
 	var size = document.getElementById("file").files[0].size;
 	// 파일명가져오기
 	var fileName = $('#file').val();
@@ -514,7 +512,6 @@ function detailReviewModify() {
 				},
 		dataType : 'json',
 		success : function(resultData){
-//			$("#reviewFileName").remove();
 			
 			uploadFile();
 			$('.dim-layer').fadeOut();
