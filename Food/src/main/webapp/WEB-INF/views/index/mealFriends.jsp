@@ -149,8 +149,6 @@
         <!-- 페이지에 접속했을때 로그인을 하지 않았을경우 글등록 ,신고하기 버튼 안보여주기 -->
         <c:if test="${sessionScope.user_id!= null }">
 		<button class="btn btn-default" onclick="location.href='../mealBoard/mealBoardInsert.do'" id="writebtn" >글등록</button>
-		<button class="btn btn-danger" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');"
-			 id="balckbtn">신고하기</button>
 		</c:if>
 		</div>
 		</div>

@@ -62,9 +62,9 @@
     //참여하기를 누른사용자중에 로그인한유저의 아이디가 있다면 
     if(joinid.match(id)){ 
 		$("#joinBtn").css("display", "none");
-		var $div = $('<input class="btn btn-danger cancel" style="max-height: 30px;" type="button"  value="취소하기"/>');
+		var $div = $('<input class="btn btn-danger cancel" style="width: 40%" type="button"  value="취소하기"/>');
 		
-		$("#header").append($div);
+		$("#buttonarea").append($div);
 		test();
 	} 
 	
@@ -87,8 +87,8 @@
 	                		//참가하기 버튼 숨기고
 	                		$("#joinBtn").css("display", "none");
 	                		//취소하기버튼 띄워주기 
-	                		var $div = $('<input class="btn btn-danger cancel" style="max-height: 30px;" type="button"  value="취소하기">');
-	                		$("#header").append($div);
+	                		var $div = $('<button class="btn btn-danger cancel" style="width: 40%" type="button">취소하기</button>');
+	                		$("#buttonarea").append($div);
 	                		test();
 	                		
 	                	}else{
@@ -129,8 +129,8 @@
 		        		$(".cancel").css("display", "none");
 		        		$("#f_userId").remove()
 		       		//참가하기 버튼 띄워주기
-		        		var $div = $('<input class="btn btn-info" style="max-height: 30px;" type="button" id="joinBtn" value="밥친구확정" >');
-		        		$("#header").append($div);
+		        		var $div = $('<button class="btn btn-info" style="width: 40%" type="button" id="joinBtn">밥친구확정 </button>');
+		        		$("#buttonarea").append($div);
 		
 		        	}else{
 		        		alert("밥친구가 아닙니다.");

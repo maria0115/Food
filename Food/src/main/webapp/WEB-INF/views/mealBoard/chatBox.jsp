@@ -35,7 +35,13 @@
 	    
         <div id="header" style="text-align: center;font-family: js; font-size: 20px;">
         <label><%=f_title %></label>
-        <input class="btn btn-info join" type="button" id="joinBtn" value="밥친구확정" style="max-height: 30px;" >
+        <div id="buttonarea">
+        <button class="btn btn-danger" style="width: 40%" onclick="window.open('../manager/addDecla.do?boardType=3','_blank','width=1150 ,height=650');"
+			 id="balckbtn">신고하기</button>
+			 <button class="btn btn-info join" type="button" id="joinBtn" style="width: 40%" >
+			 밥친구확정
+			 </button>
+		</div>
 		</div>
 		<!-- 채팅메세지를 주고받는 부분 -->
 		<div id="chat">
@@ -43,6 +49,7 @@
 		<footer>
 			<input type="text" id="messagearea" placeholder="메세지를 입력해주세요">
 			<input style="height: 30%;" class="btn btn-primary" type="button" onkeyup="enterkey()" id="sendBtn" value="전송하기">
+			
 		</footer>
 		</div>
 	</main>
