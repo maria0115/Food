@@ -182,7 +182,7 @@
    
    function connectWs(){
      
-      var ws = new WebSocket("https://115.91.88.227:60000/Food/footer");
+      var ws = new WebSocket("wss://115.91.88.227:60000/Food/footer");
       socket = ws;
       ws.onopen = function(){
          
@@ -191,10 +191,7 @@
          
          }
       ws.onmessage = function(event){
-    	  if($('.drawer-pf-trigger').hasClass("open")) {
-       
-    		  
-    	  }
+    	 
           
 
 
@@ -219,7 +216,7 @@
 
          
 
-            
+         alert("!");
          
          toastr.options.escapeHtml = true;
          toastr.options.closeButton = true;
@@ -232,7 +229,7 @@
              if("reply"==cmd){
              location.href='/Food/detail?b_no='+receive;
              }else if("mfChat"==cmd){
-            	 window.open('wss://115.91.88.227:60000/Food/mealBoard/chatBox.do?userId='+receive,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
+            	 window.open('https://115.91.88.227:60000/Food/mealBoard/chatBox.do?userId='+receive,'_blank','width=502,height=720,left=500,top=100,location=no,status=no');
                  }
              else if("reserv"==cmd){
             	 location.href='/Food/mypageform.do';
