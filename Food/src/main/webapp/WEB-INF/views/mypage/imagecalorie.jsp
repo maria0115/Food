@@ -87,6 +87,13 @@ function LoadImg(value) {
  <jsp:include page="../index/header.jsp">
 				<jsp:param value='../' name='folder' />
 			</jsp:include>
+			<style type="text/css">
+			.contact-information p{
+			font-family: js;
+			font-size: 33px;
+			}
+			
+			</style>
 </head>
 <body>
 	<!-- Preloader -->
@@ -101,14 +108,14 @@ function LoadImg(value) {
 	<div class="breadcrumb-area">
 
 		<div class="container">
-		<h2 style="margin-left: 35%;">음식사진 칼로리재기</h2>
+		<div class="section-heading text-center">
+						<h2 style="font-family: js;">음식 칼로리 측정</h2>
+					</div>
 			<div class="row">
 				<div class="col-12">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#"><i
-									class="fa fa-home"></i> Home</a></li>
-							<li class="breadcrumb-item active" aria-current="page">칼로리
+							<li class="breadcrumb-item active" aria-current="page" style="font-size: x-large; font-family: js;">칼로리
 								측정</li>
 						</ol>
 					</nav>
@@ -177,7 +184,7 @@ function LoadImg(value) {
 					<!-- Section Heading -->
 					<div class="section-heading">
 						<h2>칼로리 측정</h2>
-						<p>여러분 이 음식의 칼로리는 저기저기입니다</p>
+						<p>이 음식의 칼로리는 ???입니다!!</p>
 					</div>
 					<!-- Contact Information -->
 					<div class="contact-information">

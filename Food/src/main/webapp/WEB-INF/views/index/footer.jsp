@@ -9,7 +9,7 @@
   
  
 <!-- Title -->
-<title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+
 
 <!-- 달력을 위한 CSS -->
 <link href='/Food/resources/css/fullcalendar.css' rel='stylesheet' />
@@ -63,21 +63,25 @@
           </ul>
   			</div>
   			<div class="col-md-3">
-  				<h2 class="footerh2">service</h2>
+  				<h2 class="footerh2">create</h2>
   				<ul class="footer" >
-            <li><a href="#">Event</a></li>
-            <li><a href="#">Business</a></li>
-            <li><a href="#">Agency</a></li>
-            <li><a href="#">Start-up</a></li>
+  			    <li><a href="#">ryu</a></li>
+            <li><a href="#">maria</a></li>
+            <li><a href="#">iron</a></li>
+            <li><a href="#">Bacteria</a></li>
+            <li><a href="#">James</a></li>
+            <li><a href="#">River</a></li>	
+          
           </ul>
   			</div>
   			<div class="col-md-3">
-  				<h2 class="footerh2">account</h2>
+  				<h2 class="footerh2">고객센터</h2>
   				<ul class="footer">
-            <li><a href="#">profile</a></li>
-            <li><a href="#">user details</a></li>
-            <li><a href="#">projects</a></li>
-            <li><a href="#">account</a></li>
+          <li><a href="#">신고 문의 제안</a></li>
+            <li><a href="#">상담원 연결</a></li>
+            <li><a href="#">전화 7777-7777</a></li>
+            <li><a href="#" style="color: darkred">이메일 eat@naver.com</a></li>
+            
           </ul>
   			</div>
   			<div class="col-md-3">
@@ -87,9 +91,9 @@
           <i class="fa fa-android"></i></p>
           <p class="social">
         
-          <a href="#"><i class="fa fa-facebook-square"></i></a>
-          <a href="#"><i class="fa fa-twitter-square"></i></a>
-          <a href="#"><i class="fa fa-google-plus-square"></i></a>
+          <a href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i></a>
+          <a href="https://twitter.com/"><i class="fa fa-twitter-square"></i></a>
+          <a href="https://www.google.com/"><i class="fa fa-google-plus-square"></i></a>
           <a href="#"><i class="fa fa-linkedin-square"></i></a></p>
   		
   			</div>
