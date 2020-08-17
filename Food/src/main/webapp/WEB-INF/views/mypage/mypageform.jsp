@@ -13,7 +13,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+ 
 
     <!-- Favicon -->
 	<link rel="icon" href="/Food/resources/img/core-img/fri.jpg">
@@ -72,7 +72,7 @@
     <div class="grid-cell2"><a href="shopinfo.do?s_brand_name=${user_Info.S_BRAND_NAME }&m_id=${sessionScope.user_id}" class="cen"><span style="color: crimson;">MY INFO</span><br/>매장정보</a></div>
     <div class="grid-cell2"><a href="myreview.do?s_brand_name=${user_Info.S_BRAND_NAME }" class="cen"><span style="color: cornflowerblue;">MY BOARD</span><br/>리뷰목록</a></div>
     <div class="grid-cell2"><a href="shopmodify.do?s_brand_name=${user_Info.S_BRAND_NAME }&m_id=${sessionScope.user_id}" class="cen"><span style="color: lightcoral;">MODIFY</span><br/>매장정보수정</a></div>
-    <div class="grid-cell2"><a href="/Food/mypage/wordCloud.do"><span style="color: lightcoral;">Wordcloud</span><br/>검색어</a></div>
+    <div class="grid-cell2"><a href="/Food/mypage/wordCloud.do" class="cen"><span style="color: cornflowerblue;">Wordcloud</span><br/>검색어</a></div>
   </div>
   
 </div>	
