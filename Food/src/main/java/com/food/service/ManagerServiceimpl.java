@@ -181,9 +181,24 @@ public class ManagerServiceimpl implements ManagerService{
 		return managerDAO.selectAlarm(id);
 	}
 
+
+
 	@Override
-	public void updateMsg(String msg) {
-		managerDAO.updateMsg(msg);
+	public void updateAlarm(AlarmVO vo) {
+		
+		managerDAO.updateAlarm(vo);
+	}
+
+	@Override
+	public void deleteAlarm(String id) {
+		managerDAO.deleteAlarm(id);
+		
+	}
+
+	@Override
+	public void updateAlarmAll(String id) {
+		managerDAO.updateAlarmAll(id);
+		
 		
 	}
 

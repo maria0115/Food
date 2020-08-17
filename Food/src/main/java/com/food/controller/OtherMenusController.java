@@ -115,21 +115,16 @@ public class OtherMenusController {
 		for(int i =0; i<wish.size();i++) {
 			WishlistVO vo = new WishlistVO();
 			vo = wish.get(i);
-			if(vo.getW_store_name().equals(w_store_name)) {
-				
-				service.deltodaywish(wvo);
-				
+			if(vo.getW_store_name().equals(w_store_name)) {			
+				service.deltodaywish(wvo);				
 				check=false;
-				System.out.println("같은거 들어옴");
-				
+				System.out.println("같은거 들어옴");			
 			}
 		}
 		if(check) {
-
 			List<WishlistVO> list = service.todaywish(wvo);
 			System.out.println("입력하셧음");
-		}
-		
+		}		
 		return w_store_name;
 		
 	}

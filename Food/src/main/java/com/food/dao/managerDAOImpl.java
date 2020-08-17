@@ -209,14 +209,29 @@ public class managerDAOImpl implements managerDAO{
 
 		@Override
 		public List<AlarmVO> selectAlarm(String id) {
-			System.out.println("==>ManagerMapper countAlarm() 호출");
-			return mybatis.selectOne("managerDAO.countAlarm",id);
+			System.out.println("==>ManagerMapper selectAlarm() 호출");
+			return mybatis.selectList("managerDAO.selectAlarm",id);
+		}
+
+
+
+		@Override
+		public void updateAlarm(AlarmVO vo) {
+			System.out.println("==>ManagerMapper updateAlarm() 호출");
+			mybatis.update("managerDAO.updateAlarm",vo);
 		}
 
 		@Override
-		public void updateMsg(String msg) {
-			System.out.println("==>ManagerMapper updateMsg() 호출");
-			mybatis.selectOne("managerDAO.updateMsg",msg);
+		public void deleteAlarm(String id) {
+			System.out.println("==>ManagerMapper deleteAlarm() 호출");
+			mybatis.delete("managerDAO.deleteAlarm",id);
+			
+		}
+
+		@Override
+		public void updateAlarmAll(String id) {
+			System.out.println("==>ManagerMapper updateAlarmAll() 호출");
+			mybatis.update("managerDAO.updateAlarmAll",id);
 		}
 
 

@@ -795,9 +795,6 @@ public class ManageController {
 			 }else if(cmd.equals("reserv")) {
 				 vo.setrAlarm_rtime(receiveNum);
 				 saveMsg = cmd+","+"1,"+senderId+"님이 "+receiveNum+"에 예약하셨습니다";
-			 }else if(cmd.equals("stateY")) {
-				 vo.setAlarm_storename(receiveStorename);
-				 saveMsg=cmd+","+"관리자님이 "+receiveStorename+"의 승인요청을 승인했습니다";
 			 }
 			 
 			 
@@ -834,13 +831,18 @@ public class ManageController {
 		return result;
 	}
 	
+	@ResponseBody
 	@RequestMapping("/selectAlarm.do")
 	public Map selectAlarm(HttpSession session){
 		Map result = new HashMap();
 		String id=(String) session.getAttribute("user_id");
-		System.out.println(id);
+		System.out.println("id:"+id);
+		System.out.println("selectAlarm들어옴");
 		List<AlarmVO> selectAlarm = managerService.selectAlarm(id);
 		
+		for(int i=0;i<selectAlarm.size();i++) {
+			System.out.println(selectAlarm.get(i).getAlarm_msg());
+		}
 		result.put("selectAlarm",selectAlarm );
 		result.put("selectAlarmSize",selectAlarm.size());
 		
@@ -850,7 +852,36 @@ public class ManageController {
 		return result;
 	}
 	
+	@ResponseBody
+	@RequestMapping("/updateAlarm.do")
+	public void updateAlarm(AlarmVO vo,@RequestParam("cmd") String cmd, @RequestParam("receive")String receive) {
+		
+		if(cmd.equals("reply")) {
+			vo.setQaAlarm_bno(Integer.parseInt(receive));
+		}else{
+			vo.setAlarm_Id(receive);
+		}
+		System.out.println("Alarm_Id:"+vo.getAlarm_Id());
+		System.out.println("Alarm_replyTime:"+vo.getAlarm_replyTime());
+		System.out.println("qaAlarm_bno"+vo.getQaAlarm_bno());
+		managerService.updateAlarm(vo);
+	}
 	
+	@ResponseBody
+	@RequestMapping("/deleteAlarm.do")
+	public void deleteAlarm(HttpSession session) {
+		String id= (String)session.getAttribute("user_id");
+	
+		managerService.deleteAlarm(id);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/updateAlarmAll.do")
+	public void updateAlarmAll(HttpSession session) {
+		String id= (String)session.getAttribute("user_id");
+	
+		managerService.updateAlarmAll(id);
+	}
 	
 }
 	

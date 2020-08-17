@@ -100,7 +100,14 @@ public interface ManagerService {
 	public List<AlarmVO> selectAlarm(String id);
 
 
-	public void updateMsg(String msg);
+
+	public void updateAlarm(AlarmVO vo);
+
+
+	public void deleteAlarm(String id);
+
+
+	public void updateAlarmAll(String id);
 
 
 	

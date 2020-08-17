@@ -434,10 +434,15 @@ overflow-y: scroll;
 									</li>
 									<li class="nav-item"><a href="#addi-info" class="nav-link"
 										data-toggle="tab" role="tab">Shop information</a></li>
-									<li class="nav-item"><a href="#reviews" class="nav-link"
+										
+									<li class="nav-item">
+									
+									<a href="#reviews" class="nav-link"
 										data-toggle="tab" role="tab" id="reviewKing">Reviews <span
 											class="text-muted"></span></a></li>
+								
 								</ul>
+								
 								<!-- Tab Content -->
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane fade show active"
@@ -551,7 +556,7 @@ overflow-y: scroll;
 
 			
 
-										
+										<c:if test= "${not empty sessionScope.user_id && sessionScope.user_id != 'admin1234' }">	
 										<div class="submit_a_review_area mt-50">
 											<h4>리뷰 쓰기</h4>
 											<form action="reviewInsert.do?name=${list.s_brand_name}"
@@ -622,7 +627,7 @@ overflow-y: scroll;
 													</div>
 											</form>
 										</div>
-										
+										</c:if>
 										
 									</div>
 									</div>

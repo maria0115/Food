@@ -66,7 +66,11 @@ public class MainController {
 		session.setAttribute("longitude", longitude);
 		session.setAttribute("latitude", latitude);
 		session.setAttribute("region", region);
-		}else {
+		}else if((longitude!=null)&&(latitude!=null)) {
+			longitude = (String)session.getAttribute("longitude");
+			latitude = (String)session.getAttribute("latitude");
+		}
+		else {
 			longitude = (String)session.getAttribute("longitude");
 			latitude = (String)session.getAttribute("latitude");
 			region = (String)session.getAttribute("region");
@@ -271,7 +275,7 @@ public class MainController {
 	
 	// ***************** WordCloud 페이지 *******************************
 		// 이거는 사이드바에서 누르면 그냥 넘겨주는 겁니다 스텝타게 하고 지우시면 됩니다.*********
-		@RequestMapping("/manager/wordCloud.do")
+		@RequestMapping("/mypage/wordCloud.do")
 		public void wordcloud() {
 			System.out.println("워드클라우드 컨트롤러");
 			
@@ -281,7 +285,7 @@ public class MainController {
 		
 		// ************** WordCloud 버튼누르면 밸류값 넘어가는거임!!! **************
 		@ResponseBody
-		@RequestMapping("/manager/wordCloudbtn.do")
+		@RequestMapping("/mypage/wordCloudbtn.do")
 		public void wordcloudbtn(@RequestParam(value="keyword") String keyword) throws IOException {
 			System.out.println("워드클라우드 버튼 컨트롤러");
 			System.out.println(keyword);
@@ -306,28 +310,18 @@ public class MainController {
 			   
 			    System.out.println(filesize+":"+mFile.length());
 			    System.out.println(resize+","+result.length());
-//			    
-			    
 				while(true) {
-					
 				Files.write(destinationFile, decodedImg);
-				
 				 if (mFile.exists() )
 				    {
 				        long lFileSize = mFile.length();
-				        
-				        
 				        if(lFileSize== Integer.parseInt(resize)) {
 							break;
 						}
-
 				    }
-				
-				
 				}
 				System.out.println("끝남");
 //				Thread.sleep(1000);
-
 			    }catch(Exception e) {
 			        System.out.println(e.getStackTrace()+e.getMessage());
 			    }
