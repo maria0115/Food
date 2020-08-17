@@ -229,7 +229,8 @@ function divClick(elem){
 			$('#reviewDetailContent').attr("readonly","readonly");
 			$('#detailModify').remove();
 			$('#reviewDetailTitle').attr("style" , "border : none");
-			$('#reviewDetailContent').attr("style" , "border : none");
+			$('#reviewDetailContent').attr("style" , "border : none; height : 125px;");
+			
 			
 			
 		},
@@ -295,7 +296,7 @@ function modifyre(){
 			$('#reviewDetailContent').attr("readonly","readonly");
 			$('#detailModify').remove();
 			$('#reviewDetailTitle').attr("style" , "border : none");
-			$('#reviewDetailContent').attr("style" , "border : none");
+			$('#reviewDetailContent').attr("style" , "border : none; height : 125px;");
 
 			
 		},
@@ -421,7 +422,8 @@ $('#detailReviewModify').click(function(){
 	$('#reviewDetailContent').removeAttr("readonly","readonly");
 	$('#reviewDetailTitle').attr("style","border : revert");
 	$('#reviewDetailContent').attr("style","border : revert");
-	$("#detailReviewModify").css({"display" : "none"});
+	$("#detailReviewModify").css({"display" : "none "});
+	$('#reviewDetailContent').attr("style" , "height : 125px;");
 	$div = $('<a href="#none" id ="detailModify">수정완료</a>');
 	$("#btnArea").append($div);
 	
