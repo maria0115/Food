@@ -1,13 +1,8 @@
 package com.food.controller;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.TreeSet;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +23,7 @@ import com.food.domain.MemberVO;
 import com.food.domain.ProductVO;
 import com.food.domain.ReservationVO;
 import com.food.domain.WishlistVO;
-import com.food.service.FriendBoardService;
+import com.food.service.CartService;
 import com.food.service.MainService;
 import com.nexacro17.xapi.data.DataSet;
 import com.nexacro17.xapi.data.DataTypes;
@@ -41,6 +36,9 @@ public class OtherMenusController {
 
 	@Autowired
 	private MainService service;
+	
+	@Autowired
+	private CartService CartService;
 
 
 	@RequestMapping("/index/choiceMenu.do")
@@ -104,25 +102,33 @@ public class OtherMenusController {
 
 	@ResponseBody
 	@RequestMapping(value = "todaywish.do", produces = "application/text; charset=utf8")
-	public String todaywish(@RequestParam("w_store_name") String w_store_name,@RequestParam("m_id") String m_id)throws Exception {
+	public String todaywish(@RequestParam("w_store_name") String w_store_name,@RequestParam("m_id") String m_id,HttpSession session ,MemberVO mvo)throws Exception {
 
 		System.out.println(w_store_name+m_id);
-		List<WishlistVO> wish = service.todaywishmem(m_id);
+		List<WishlistVO> wishlist = service.todaywishmem(m_id);
 		WishlistVO wvo = new WishlistVO();
 		wvo.setM_id(m_id);
 		wvo.setW_store_name(w_store_name);
 		boolean check=true;
-		for(int i =0; i<wish.size();i++) {
+		
+		
+		for(int i =0; i<wishlist.size();i++) {
 			WishlistVO vo = new WishlistVO();
-			vo = wish.get(i);
+			vo = wishlist.get(i);
 			if(vo.getW_store_name().equals(w_store_name)) {			
 				service.deltodaywish(wvo);				
 				check=false;
-				System.out.println("같은거 들어옴");			
+				System.out.println("같은거 들어옴");
+				mvo.setM_id(vo.getM_id());
+				int wish = CartService.selectCount(mvo); 
+				session.setAttribute("wish", wish);
 			}
 		}
 		if(check) {
 			List<WishlistVO> list = service.todaywish(wvo);
+			mvo.setM_id(m_id);
+			int wish = CartService.selectCount(mvo); 
+			session.setAttribute("wish", wish);
 			System.out.println("입력하셧음");
 		}		
 		return w_store_name;
