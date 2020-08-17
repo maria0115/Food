@@ -395,7 +395,7 @@ overflow-y: scroll;
 									</p>
 									<p></p>
 									
-									<c:if test="${not empty sessionScope.user_id}">
+									<c:if test="${not empty sessionScope.user_id && list.s_state == 'Y' }">
 								<!-- 예약 버튼 -->
 								<button id="reserv" name="addtocart" value="5"
 									class="btn alazea-btn ml-15" style="border-radius: 20px;">예약</button>
@@ -413,8 +413,9 @@ overflow-y: scroll;
                                 </script>
 								<c:if test="${list.s_state == 'N' }">
 								<div style="margin: 0 auto;">
-								<a class="btn btn-info" href="stateY.do?s_brand_name=${list.s_brand_name }&Alarm_Id=${list.r_master }&Alarm_storename=${list.s_brand_name}">승인완료</a>
-								<a class="btn btn-danger" href="stateN.do?s_brand_name=${list.s_brand_name }">승인거절</a>
+								<a class="btn btn-info" href="stateY.do?s_brand_name=${list.s_brand_name }&Alarm_Id=${list.r_master }&Alarm_storename=${list.s_brand_name}" 
+								style="float:left;font-size: 20px;border-radius: 20px; padding: 15px; margin-right: 10px;">승인완료</a>
+								<a class="btn btn-danger" href="stateN.do?s_brand_name=${list.s_brand_name }" style="float:left;font-size: 20px;border-radius: 20px; padding: 15px;">승인거절</a>
 								</div>
 								</c:if>
 
