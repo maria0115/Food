@@ -72,7 +72,7 @@ img {
                   <button id = "wordcloud" class="btn btn-default" style="font-size: x-large; font-family: js;">입력</button>
                </div>   
                <div id= cont;>
-            <img id="wordimg" src="/Food/resources/img/bg.jpg" style="height: auto;max-width: 100%;border-radius: 35%; border: 5px solid darkslategray; margin-bottom: 3%;" />
+            <img id="wordimg" src="/Food/resources/img/bg.jpg" style="height: 350px;max-width: 100%;border-radius: 35%; border: 5px solid darkslategray; margin-bottom: 3%;" />
                   </div>
                   
                   
