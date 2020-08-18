@@ -39,6 +39,9 @@ var detailAddr="";
 		    	region = result[0].address.region_2depth_name;
 		    	location.href="main.do?latitude="+latitude+"&longitude="+longitude+"&region="+region;
 		    }
+		    else{
+		    	location.href="main.do?latitude=37.473083599999995&longitude=126.8788276&region=금천구";
+			    }
 		};
 
 		geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
