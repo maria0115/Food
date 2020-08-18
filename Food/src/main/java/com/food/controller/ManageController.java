@@ -128,21 +128,12 @@ public class ManageController {
 		model.addAttribute("paging", pvo);
 		
 		//모델에 "memList" List 추가 , db에서 조건에 해당하는 상품 목록을 가지고 온다
-	
-
-
-		
-		
 		model.addAttribute("memList",managerService.selectBoard(pvo,searchType,keyword));
 		
 		//모델에 "searchType" 검색타입 추가
 		model.addAttribute("searchType", searchType);
 		//모델에 "keyword" 검색키워드 추가
 		model.addAttribute("keyword", keyword);
-		
-	
-		
-		
 		return "manager/member-list";
 	}
 	
@@ -235,6 +226,7 @@ public class ManageController {
 				result=managerService.memberDelete(vo);
 			
 			System.out.println("result: "+result);
+			
 			if(result==1) {//삭제 성공
 			return "listSuccess.do"; 
 			}else		   //삭제 실패
@@ -448,6 +440,7 @@ public class ManageController {
 		model.addAttribute("declaView",boardService.boardView(vo));
 		return "manager/declaView";
 	}
+	
 	@RequestMapping("/dashBoard.do")
 	public String dash(Model model) {
 		int todayHire = managerService.todayHire();
@@ -755,7 +748,6 @@ public class ManageController {
 		Date time = new Date();
 
 		String nTime = format1.format(time);
-		System.out.println(nTime);
 		String cmd = null;
 		String receiveNum = null;
 		String receiveId = null;
@@ -763,16 +755,9 @@ public class ManageController {
 		String senderId = null;
 		String saveMsg = null;
 		String receiveDate=null;
-		System.out.println("rAlarm_rtime:"+vo.getrAlarm_rtime());
-		
-		
 		
 		String[] strs = msg.split(",");
 		
-		System.out.println(msg);
-		for(int i=0;strs.length>i;i++) {
-			System.out.println(i+"번"+strs[i]);
-		}
 		if(strs !=null && strs.length==4) {
 			 cmd =strs[0];
 			 receiveId = strs[1];
@@ -782,12 +767,10 @@ public class ManageController {
 			 senderId=(String)session.getAttribute("user_id");
 			 
 			 if(receiveId.equals(senderId)) {
-				 
 				 return;
 			 }
 			 if(cmd.equals("reply")) {
 				 vo.setQaAlarm_bno(Integer.parseInt(receiveNum));
-				 System.out.println("1245125125125215");
 				 saveMsg = cmd+","+receiveNum+","+senderId+"님이 Q&A게시판 "+receiveNum+"번 게시글에 댓글을 남겼습니다";
 			 }else if(cmd.equals("mfChat")) {
 				 vo.setMfAlarm_bno(receiveNum);
@@ -795,14 +778,9 @@ public class ManageController {
 			 }else if(cmd.equals("reserv")) {
 				 vo.setrAlarm_rtime(receiveNum);
 				 saveMsg = cmd+","+"1,"+senderId+"님이 "+receiveNum+"에 예약하셨습니다";
-			 }
-			 
-			 
+			 } 	 
 		}
-		System.out.println(cmd);
-		System.out.println(receiveId);
-		System.out.println(receiveNum);
-		
+
 		vo.setAlarm_Id(receiveId);
 		vo.setAlarm_replyTime(nTime);
 		vo.setAlarm_msg(saveMsg);
@@ -836,8 +814,7 @@ public class ManageController {
 	public Map selectAlarm(HttpSession session){
 		Map result = new HashMap();
 		String id=(String) session.getAttribute("user_id");
-		System.out.println("id:"+id);
-		System.out.println("selectAlarm들어옴");
+
 		List<AlarmVO> selectAlarm = managerService.selectAlarm(id);
 		
 		for(int i=0;i<selectAlarm.size();i++) {
@@ -861,9 +838,6 @@ public class ManageController {
 		}else{
 			vo.setAlarm_Id(receive);
 		}
-		System.out.println("Alarm_Id:"+vo.getAlarm_Id());
-		System.out.println("Alarm_replyTime:"+vo.getAlarm_replyTime());
-		System.out.println("qaAlarm_bno"+vo.getQaAlarm_bno());
 		managerService.updateAlarm(vo);
 	}
 	

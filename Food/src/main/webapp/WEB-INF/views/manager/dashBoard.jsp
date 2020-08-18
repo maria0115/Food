@@ -136,7 +136,8 @@
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
-					<a href="/Food/manager/member-list.do" style="text-decoration: none !important; color: #495057;">
+					<a href="/Food/manager/member-list.do" 
+					style="text-decoration: none !important; color: #495057;">
 						<c:if test="${newReserv lt 0}">
 						<div class="text-right text-red">
 							${newReserv}%<i class="icon-down"></i>
@@ -174,7 +175,7 @@
 			<div class="col-6 col-sm-4 col-lg-2">
 				<div class="card">
 					<div class="card-body p-3 text-center">
-					<a href="/Food/manager/BoardList.do" style="text-decoration: none !important; color: #495057;">
+					<a href="/Food/nexalist.do" style="text-decoration: none !important; color: #495057;">
 						<c:if test="${newBoard lt 0}">
 						<div class="text-right text-red">
 							${newBoard}%<i class="icon-down"></i>
@@ -247,11 +248,8 @@
 										<div style="margin: 10px;">
 											<!-- tab 영역이다. -->
 											<ul class="nav nav-tabs">
-												<!-- data-load를 넣어서 이미 로드를 했는지 않했는지의 판단 값을 넣는다. -->
-												<!-- true면 이미 content영역에 load가 끝나서 더이상 load가 필요없다는 뜻이다. -->
 												<li class="active"><a href="#first" data-toggle="tab"
 													data-load="true">일별 예약</a></li>
-												<!-- false라면 data-url영역의 url주소로 데이터를 가져와서 tab-content에 표시한다. -->
 												<li><a href="#second" data-toggle="tab"
 													data-load="false" data-url="">방문자 수</a></li>
 											</ul>
@@ -267,8 +265,6 @@
 												</div>
 											</div>
 										</div>
-
-
 									</div>
 								</div>
 							</div>

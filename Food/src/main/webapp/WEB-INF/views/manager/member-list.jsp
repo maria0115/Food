@@ -118,8 +118,7 @@
 									<th>Date</th>
 									<th>Email</th>
 									<th><div class="check_all"><input type='checkbox' id="check_all"></div></th>
-							
-							
+
 								</tr>
 								<c:forEach items="${memList }" var="member">
 									<tr>

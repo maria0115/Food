@@ -115,14 +115,9 @@ var chartOptions=[{
 
 
 $(function(){
-
 	makeChartAjax();
 	makecategoryChartAjax();
-	//setInterval(makeChart(),10000);
 	makeVisitChart();
-
-
-
 });
 //일별 회원가입 차트 요청
 function makeChartAjax(){
@@ -147,7 +142,6 @@ function makeChartAjax(){
 }
 
 //카테고리 일별 예약수 요청
-
 function makecategoryChartAjax(){
 	var chartId= "categoryDayChart";
 	$('#categoryDayContainer').empty();
@@ -166,7 +160,6 @@ function makecategoryChartAjax(){
 			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
-
 }
 
 //주간 방문자수
@@ -257,23 +250,18 @@ function makeAjaxChartData(resultData){
 						borderColor:chartColor[0],
 						data:asFoodData,
 						yAxisID: "y-axis-1"
-
 					},{
 						label: "중식",
 						fill: false,
 						backgroundColor: chartColor[1],
 						borderColor: chartColor[1],
 						data: cFoodData
-						
-						
 					}, {
 						label: "분식",
 						fill: false,
 						backgroundColor: chartColor[2],
 						borderColor: chartColor[2],
 						data: sFoodData
-						
-
 					}, {
 						label: "양식",
 						fill: false,
@@ -298,7 +286,6 @@ function makeAjaxChartData(resultData){
 					}
 					]
 		};
-
 	}
 	else if(resultData.chartNum==3){
 		for(var i=0;i<resultData.visitCountSize;i++){

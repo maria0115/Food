@@ -10,15 +10,9 @@ $("#btn_reserv").on('click',function(){
 			contentType: "application/json; charset=utf-8",
 			dataType : 'text',
 			success : function(data){
-				
-				
-				
-				
 			},
 			error:function(err){
 				console.log(err);
 			}
-			
-			
 		});
 	});

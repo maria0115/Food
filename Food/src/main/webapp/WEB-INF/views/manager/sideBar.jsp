@@ -72,13 +72,7 @@
 										class="mini-sub-pro">Store</span></a>
 
 						</li>
-						<li>
-							
-								<a title="WordCloud" href="/Food/manager/wordCloud.do"><i
-										class="fa fa-cloud sub-icon-mg" aria-hidden="true"></i> <span
-										class="mini-sub-pro">WordCloud</span></a>
 
-						</li>
 					</ul>
 				</nav>
 			</div>

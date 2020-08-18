@@ -220,8 +220,7 @@
 
          
 
-         alert("!");
-         
+        
          toastr.options.escapeHtml = true;
          toastr.options.closeButton = true;
          toastr.options.newestOnTop = false;
